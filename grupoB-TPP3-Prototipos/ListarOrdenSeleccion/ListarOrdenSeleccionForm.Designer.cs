@@ -95,7 +95,7 @@
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(618, 306);
+            VolverButton.Location = new Point(630, 306);
             VolverButton.Margin = new Padding(2);
             VolverButton.Name = "VolverButton";
             VolverButton.Size = new Size(128, 30);
