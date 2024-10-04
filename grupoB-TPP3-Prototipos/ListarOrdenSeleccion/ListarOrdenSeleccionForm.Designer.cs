@@ -34,13 +34,13 @@
             label2 = new Label();
             BuscarButton = new Button();
             VolverButton = new Button();
-            listView1 = new ListView();
+            OrdenSeleccionBuscarList = new ListView();
             IdOrdenSeleccionColumna = new ColumnHeader();
             FechaOSColumna = new ColumnHeader();
             DescripcionProductoColumna = new ColumnHeader();
             CantidadColumna = new ColumnHeader();
             UbicacionColumna = new ColumnHeader();
-            listView2 = new ListView();
+            OrdenSeleccionList = new ListView();
             IdOrdenSeleccion2Columna = new ColumnHeader();
             FechaOS2Columna = new ColumnHeader();
             DescripcionProducto2Columna = new ColumnHeader();
@@ -103,15 +103,15 @@
             VolverButton.Text = "Volver";
             VolverButton.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // OrdenSeleccionBuscarList
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccionColumna, FechaOSColumna, DescripcionProductoColumna, CantidadColumna, UbicacionColumna });
-            listView1.Location = new Point(23, 95);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(735, 195);
-            listView1.TabIndex = 16;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            OrdenSeleccionBuscarList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccionColumna, FechaOSColumna, DescripcionProductoColumna, CantidadColumna, UbicacionColumna });
+            OrdenSeleccionBuscarList.Location = new Point(23, 95);
+            OrdenSeleccionBuscarList.Name = "OrdenSeleccionBuscarList";
+            OrdenSeleccionBuscarList.Size = new Size(735, 195);
+            OrdenSeleccionBuscarList.TabIndex = 16;
+            OrdenSeleccionBuscarList.UseCompatibleStateImageBehavior = false;
+            OrdenSeleccionBuscarList.View = View.Details;
             // 
             // IdOrdenSeleccionColumna
             // 
@@ -138,15 +138,15 @@
             UbicacionColumna.Text = "Ubicación";
             UbicacionColumna.Width = 100;
             // 
-            // listView2
+            // OrdenSeleccionList
             // 
-            listView2.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccion2Columna, FechaOS2Columna, DescripcionProducto2Columna, Cantidad2Columna, Ubicacion2Columna, EstadoColumna });
-            listView2.Location = new Point(23, 353);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(735, 195);
-            listView2.TabIndex = 17;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
+            OrdenSeleccionList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccion2Columna, FechaOS2Columna, DescripcionProducto2Columna, Cantidad2Columna, Ubicacion2Columna, EstadoColumna });
+            OrdenSeleccionList.Location = new Point(23, 353);
+            OrdenSeleccionList.Name = "OrdenSeleccionList";
+            OrdenSeleccionList.Size = new Size(735, 195);
+            OrdenSeleccionList.TabIndex = 17;
+            OrdenSeleccionList.UseCompatibleStateImageBehavior = false;
+            OrdenSeleccionList.View = View.Details;
             // 
             // IdOrdenSeleccion2Columna
             // 
@@ -194,8 +194,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 607);
             Controls.Add(VolverListaButton);
-            Controls.Add(listView2);
-            Controls.Add(listView1);
+            Controls.Add(OrdenSeleccionList);
+            Controls.Add(OrdenSeleccionBuscarList);
             Controls.Add(BuscarButton);
             Controls.Add(VolverButton);
             Controls.Add(label2);
@@ -216,13 +216,13 @@
         private Label label2;
         private Button BuscarButton;
         private Button VolverButton;
-        private ListView listView1;
+        private ListView OrdenSeleccionBuscarList;
         private ColumnHeader IdOrdenSeleccionColumna;
         private ColumnHeader FechaOSColumna;
         private ColumnHeader DescripcionProductoColumna;
         private ColumnHeader CantidadColumna;
         private ColumnHeader UbicacionColumna;
-        private ListView listView2;
+        private ListView OrdenSeleccionList;
         private ColumnHeader IdOrdenSeleccion2Columna;
         private ColumnHeader FechaOS2Columna;
         private ColumnHeader DescripcionProducto2Columna;
