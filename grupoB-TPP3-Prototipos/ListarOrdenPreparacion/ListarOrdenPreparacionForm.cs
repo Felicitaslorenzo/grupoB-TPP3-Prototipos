@@ -12,9 +12,12 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
 {
     public partial class ListarOrdenPreparacionForm : Form
     {
+        private ListarOrdenPreparacionModel model;
         public ListarOrdenPreparacionForm()
         {
             InitializeComponent();
         }
+
+
     }
 }
