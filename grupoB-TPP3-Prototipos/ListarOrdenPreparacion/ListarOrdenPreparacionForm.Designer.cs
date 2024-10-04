@@ -1,6 +1,6 @@
 ﻿namespace grupoB_TPP3_Prototipos
 {
-    partial class Form1
+    partial class ListarOrdenPreparacionForm
     {
         /// <summary>
         ///  Required designer variable.

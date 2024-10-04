@@ -1,8 +1,8 @@
 namespace grupoB_TPP3_Prototipos
 {
-    public partial class Form1 : Form
+    public partial class ListarOrdenPreparacionForm : Form
     {
-        public Form1()
+        public ListarOrdenPreparacionForm()
         {
             InitializeComponent();
         }
