@@ -43,7 +43,11 @@
             FechaOrdenPreparacionLabel = new Label();
             VolverButton = new Button();
             BuscarButton = new Button();
+            ListaOrdenesPreparacionGroup = new GroupBox();
+            OrdenesPreparacionList = new ListView();
+            VolverListaButton = new Button();
             ListarOrdenesPreparacionGroup.SuspendLayout();
+            ListaOrdenesPreparacionGroup.SuspendLayout();
             SuspendLayout();
             // 
             // ListarOrdenesPreparacionGroup
@@ -187,16 +191,45 @@
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
             // 
+            // ListaOrdenesPreparacionGroup
+            // 
+            ListaOrdenesPreparacionGroup.Controls.Add(VolverListaButton);
+            ListaOrdenesPreparacionGroup.Controls.Add(OrdenesPreparacionList);
+            ListaOrdenesPreparacionGroup.Location = new Point(23, 513);
+            ListaOrdenesPreparacionGroup.Name = "ListaOrdenesPreparacionGroup";
+            ListaOrdenesPreparacionGroup.Size = new Size(1219, 444);
+            ListaOrdenesPreparacionGroup.TabIndex = 1;
+            ListaOrdenesPreparacionGroup.TabStop = false;
+            // 
+            // OrdenesPreparacionList
+            // 
+            OrdenesPreparacionList.Location = new Point(27, 49);
+            OrdenesPreparacionList.Name = "OrdenesPreparacionList";
+            OrdenesPreparacionList.Size = new Size(1180, 328);
+            OrdenesPreparacionList.TabIndex = 0;
+            OrdenesPreparacionList.UseCompatibleStateImageBehavior = false;
+            // 
+            // VolverListaButton
+            // 
+            VolverListaButton.Location = new Point(999, 383);
+            VolverListaButton.Name = "VolverListaButton";
+            VolverListaButton.Size = new Size(208, 47);
+            VolverListaButton.TabIndex = 14;
+            VolverListaButton.Text = "Volver";
+            VolverListaButton.UseVisualStyleBackColor = true;
+            // 
             // ListarOrdenPreparacionForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1255, 982);
+            Controls.Add(ListaOrdenesPreparacionGroup);
             Controls.Add(ListarOrdenesPreparacionGroup);
             Name = "ListarOrdenPreparacionForm";
             Text = "Listar Órdenes de Preparación";
             ListarOrdenesPreparacionGroup.ResumeLayout(false);
             ListarOrdenesPreparacionGroup.PerformLayout();
+            ListaOrdenesPreparacionGroup.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -217,5 +250,8 @@
         private Button VolverButton;
         private Label FechaOrdenPreparacionLabel;
         private DateTimePicker FechaOrdenPreparacionPicker;
+        private GroupBox ListaOrdenesPreparacionGroup;
+        private Button VolverListaButton;
+        private ListView OrdenesPreparacionList;
     }
 }
