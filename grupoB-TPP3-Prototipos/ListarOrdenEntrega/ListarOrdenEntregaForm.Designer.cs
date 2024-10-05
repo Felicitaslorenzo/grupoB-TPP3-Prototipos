@@ -52,7 +52,7 @@
             VolverButton = new Button();
             label2 = new Label();
             label1 = new Label();
-            FechaOSPicker = new DateTimePicker();
+            FechaOEPicker = new DateTimePicker();
             IdOrdenCombo = new ComboBox();
             label6 = new Label();
             UbicacionCombo = new ComboBox();
@@ -228,12 +228,12 @@
             label1.TabIndex = 36;
             label1.Text = "ID Orden";
             // 
-            // FechaOSPicker
+            // FechaOEPicker
             // 
-            FechaOSPicker.Location = new Point(324, 51);
-            FechaOSPicker.Name = "FechaOSPicker";
-            FechaOSPicker.Size = new Size(293, 27);
-            FechaOSPicker.TabIndex = 35;
+            FechaOEPicker.Location = new Point(324, 51);
+            FechaOEPicker.Name = "FechaOEPicker";
+            FechaOEPicker.Size = new Size(293, 27);
+            FechaOEPicker.TabIndex = 35;
             // 
             // IdOrdenCombo
             // 
@@ -279,7 +279,7 @@
             Controls.Add(VolverButton);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(FechaOSPicker);
+            Controls.Add(FechaOEPicker);
             Controls.Add(IdOrdenCombo);
             Name = "ListarOrdenEntregaForm";
             Text = "ListarOrdenEntregaForm";
@@ -313,7 +313,7 @@
         private Button VolverButton;
         private Label label2;
         private Label label1;
-        private DateTimePicker FechaOSPicker;
+        private DateTimePicker FechaOEPicker;
         private ComboBox IdOrdenCombo;
         private Label label6;
         private ComboBox UbicacionCombo;

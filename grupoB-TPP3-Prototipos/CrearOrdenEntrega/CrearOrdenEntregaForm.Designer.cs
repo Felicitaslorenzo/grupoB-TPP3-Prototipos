@@ -47,7 +47,7 @@
             VolverButton = new Button();
             label2 = new Label();
             label1 = new Label();
-            FechaOSPicker = new DateTimePicker();
+            FechaOEPicker = new DateTimePicker();
             IdOrdenSeleccionCombo = new ComboBox();
             GenerarOrdenDeEntregaButton = new Button();
             SuspendLayout();
@@ -187,12 +187,12 @@
             label1.TabIndex = 46;
             label1.Text = "ID Orden Preparación";
             // 
-            // FechaOSPicker
+            // FechaOEPicker
             // 
-            FechaOSPicker.Location = new Point(321, 49);
-            FechaOSPicker.Name = "FechaOSPicker";
-            FechaOSPicker.Size = new Size(300, 27);
-            FechaOSPicker.TabIndex = 45;
+            FechaOEPicker.Location = new Point(321, 49);
+            FechaOEPicker.Name = "FechaOEPicker";
+            FechaOEPicker.Size = new Size(300, 27);
+            FechaOEPicker.TabIndex = 45;
             // 
             // IdOrdenSeleccionCombo
             // 
@@ -227,7 +227,7 @@
             Controls.Add(VolverButton);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(FechaOSPicker);
+            Controls.Add(FechaOEPicker);
             Controls.Add(IdOrdenSeleccionCombo);
             Name = "CrearOrdenEntregaForm";
             Text = "CrearOrdenEntregaForm";
@@ -256,7 +256,7 @@
         private Button VolverButton;
         private Label label2;
         private Label label1;
-        private DateTimePicker FechaOSPicker;
+        private DateTimePicker FechaOEPicker;
         private ComboBox IdOrdenSeleccionCombo;
         private ColumnHeader IdOrdenSeleccionColumna;
         private Button GenerarOrdenDeEntregaButton;

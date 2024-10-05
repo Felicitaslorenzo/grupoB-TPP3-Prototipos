@@ -40,7 +40,7 @@
             VolverButton = new Button();
             label2 = new Label();
             label1 = new Label();
-            FechaOSPicker = new DateTimePicker();
+            FechaOEPicker = new DateTimePicker();
             IdOrdenEntregaCombo = new ComboBox();
             GenerarOrdenDespacharList = new ListView();
             IdOrden2Columna = new ColumnHeader();
@@ -144,12 +144,12 @@
             label1.TabIndex = 74;
             label1.Text = "ID Orden Entrega";
             // 
-            // FechaOSPicker
+            // FechaOEPicker
             // 
-            FechaOSPicker.Location = new Point(310, 38);
-            FechaOSPicker.Name = "FechaOSPicker";
-            FechaOSPicker.Size = new Size(300, 27);
-            FechaOSPicker.TabIndex = 73;
+            FechaOEPicker.Location = new Point(310, 38);
+            FechaOEPicker.Name = "FechaOEPicker";
+            FechaOEPicker.Size = new Size(300, 27);
+            FechaOEPicker.TabIndex = 73;
             // 
             // IdOrdenEntregaCombo
             // 
@@ -203,7 +203,7 @@
             Controls.Add(VolverButton);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(FechaOSPicker);
+            Controls.Add(FechaOEPicker);
             Controls.Add(IdOrdenEntregaCombo);
             Name = "DespacharOrdenEntregaForm";
             Text = "DespacharOrdenEntregaForm";
@@ -225,7 +225,7 @@
         private Button VolverButton;
         private Label label2;
         private Label label1;
-        private DateTimePicker FechaOSPicker;
+        private DateTimePicker FechaOEPicker;
         private ComboBox IdOrdenEntregaCombo;
         private ListView GenerarOrdenDespacharList;
         private ColumnHeader IdOrden2Columna;
