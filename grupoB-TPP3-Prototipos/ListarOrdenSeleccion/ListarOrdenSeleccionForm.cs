@@ -22,41 +22,72 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-            // Obtener el valor del documento ingresado en el ComboBox
-            if (IdOrdenSeleccionCombo.SelectedItem != null && FechaOSPicker.Value != null &&
-                DateTime.TryParse(FechaOSPicker.Value.ToString(), out DateTime FechaOS))
+            // Obtener los valores seleccionados
+            string idOrdenSeleccionada = IdOrdenSeleccionCombo.Text;
+            DateTime fechaSeleccionada = FechaOSPicker.Value.Date;
+
+            // Validar si al menos un filtro está activo
+            if (string.IsNullOrEmpty(idOrdenSeleccionada) && !FechaOSPicker.Checked)
             {
-                // Obtener el ID de la orden seleccionada del ComboBox
-                string idOrdenSeleccion = IdOrdenSeleccionCombo.SelectedItem.ToString();
-
-                // Filtrar la lista de órdenes
-                var ordenBuscada = modelo.OrdenesSeleccionadas.FirstOrDefault(p =>
-                    p.IdOrdenSeleccion == idOrdenSeleccion &&
-                    p.FechaOS.Date == FechaOS.Date); // Comparar solo la fecha
-
-                if (ordenBuscada != null)
-                {
-                    // Limpiar el ListView antes de mostrar los resultados de la búsqueda
-                    ListarOrdenSeleccionBuscarList.Items.Clear();
-
-                    // Crear un nuevo elemento para el ListView con la orden encontrada
-                    ListViewItem item = new ListViewItem(ordenBuscada.IdOrdenSeleccion);
-                    item.SubItems.Add(ordenBuscada.FechaOS.ToShortDateString()); // Mostrar la fecha en formato corto
-                    item.SubItems.Add(ordenBuscada.DescripcionProducto);
-                    item.SubItems.Add(ordenBuscada.Cantidad.ToString());
-                    item.SubItems.Add(ordenBuscada.Ubicacion);
-
-                    // Agregar el elemento al ListView
-                    ListarOrdenSeleccionBuscarList.Items.Add(item);
-                }
-                else
-                {
-                    MessageBox.Show("No se encontró ninguna orden con ese ID y fecha.");
-                }
+                MessageBox.Show("Por favor, selecciona al menos un filtro.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else
+
+            // Filtrar OrdenesSeleccionadasList basado en los valores seleccionados (si ambos están activos o solo uno)
+            var ordenesFiltradas = modelo.OrdenesSeleccionadas.Where(o =>
+                (string.IsNullOrEmpty(idOrdenSeleccionada) || o.IdOrdenSeleccion == idOrdenSeleccionada)
+            ).ToList();
+
+            // Limpiar la lista antes de agregar los elementos filtrados
+            ListarOrdenSeleccionList.Items.Clear();
+
+            // Verificar si no se encontraron resultados
+            if (ordenesFiltradas.Count == 0)
             {
-                MessageBox.Show("Por favor, seleccione un ID de orden y una fecha válidos para buscar.");
+                MessageBox.Show("No se encontraron resultados con los filtros seleccionados.", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Agregar los elementos filtrados a la lista
+            foreach (var ordenSeleccion in ordenesFiltradas)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = ordenSeleccion.IdOrdenSeleccion;
+                item.SubItems.Add(ordenSeleccion.FechaOS.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(ordenSeleccion.DescripcionProducto);
+                item.SubItems.Add(ordenSeleccion.Cantidad.ToString());
+                item.SubItems.Add(ordenSeleccion.Ubicacion);
+                item.SubItems.Add(ordenSeleccion.Estado);
+
+                ListarOrdenSeleccionList.Items.Add(item);
+            }
+        }
+
+        private void ListarOrdenSeleccionForm_Load(object sender, EventArgs e)
+        {
+            var ordenesSeleccion = modelo.OrdenesSeleccionadas;
+
+            // Extraer datos para cada ComboBox
+            var idOrdenesSeleccion = ordenesSeleccion.Select(o => o.IdOrdenSeleccion).Distinct().ToList();
+            var FechaOS = ordenesSeleccion.Select(o => o.FechaOS).Distinct().ToList();
+
+            // Cargar datos en los desplegables
+            foreach (var idOrdenSeleccion in idOrdenesSeleccion)
+            {
+                IdOrdenSeleccionCombo.Items.Add(idOrdenSeleccion);
+            }
+            foreach (var ordenPreparacion in modelo.OrdenesSeleccionadas)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = ordenPreparacion.IdOrdenSeleccion.ToString();
+                item.SubItems.Add(ordenPreparacion.FechaOS.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(ordenPreparacion.DescripcionProducto.ToString());
+                item.SubItems.Add(ordenPreparacion.Cantidad.ToString());
+                item.SubItems.Add(ordenPreparacion.Ubicacion);
+                item.SubItems.Add(ordenPreparacion.Estado);
+                
+
+                ListarOrdenSeleccionList.Items.Add(item);
             }
         }
     }

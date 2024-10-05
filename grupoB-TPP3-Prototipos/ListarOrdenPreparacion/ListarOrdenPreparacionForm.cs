@@ -120,6 +120,16 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
 
             }
         }
+
+        private void ListarOrdenesPreparacionGroup_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListarOrdenPreparacionForm_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

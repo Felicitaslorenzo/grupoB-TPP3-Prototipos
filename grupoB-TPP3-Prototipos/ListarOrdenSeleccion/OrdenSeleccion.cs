@@ -13,5 +13,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
         public string DescripcionProducto { get; set; }
         public int Cantidad { get; set; }
         public string Ubicacion { get; set; }
+        public string Estado {  get; set; }
     }
 }

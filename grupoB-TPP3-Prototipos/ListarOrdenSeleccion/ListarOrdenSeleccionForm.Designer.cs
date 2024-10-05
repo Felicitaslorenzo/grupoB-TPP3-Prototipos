@@ -34,18 +34,12 @@
             label2 = new Label();
             BuscarButton = new Button();
             VolverButton = new Button();
-            ListarOrdenSeleccionBuscarList = new ListView();
+            ListarOrdenSeleccionList = new ListView();
             IdOrdenSeleccionColumna = new ColumnHeader();
             FechaOSColumna = new ColumnHeader();
             DescripcionProductoColumna = new ColumnHeader();
             CantidadColumna = new ColumnHeader();
             UbicacionColumna = new ColumnHeader();
-            ListarOrdenSeleccionList = new ListView();
-            IdOrdenSeleccion2Columna = new ColumnHeader();
-            FechaOS2Columna = new ColumnHeader();
-            DescripcionProducto2Columna = new ColumnHeader();
-            Cantidad2Columna = new ColumnHeader();
-            Ubicacion2Columna = new ColumnHeader();
             EstadoColumna = new ColumnHeader();
             VolverListaButton = new Button();
             SuspendLayout();
@@ -85,7 +79,7 @@
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(467, 306);
+            BuscarButton.Location = new Point(435, 107);
             BuscarButton.Margin = new Padding(2);
             BuscarButton.Name = "BuscarButton";
             BuscarButton.Size = new Size(128, 30);
@@ -96,7 +90,7 @@
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(630, 306);
+            VolverButton.Location = new Point(630, 107);
             VolverButton.Margin = new Padding(2);
             VolverButton.Name = "VolverButton";
             VolverButton.Size = new Size(128, 30);
@@ -104,15 +98,15 @@
             VolverButton.Text = "Volver";
             VolverButton.UseVisualStyleBackColor = true;
             // 
-            // ListarOrdenSeleccionBuscarList
+            // ListarOrdenSeleccionList
             // 
-            ListarOrdenSeleccionBuscarList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccionColumna, FechaOSColumna, DescripcionProductoColumna, CantidadColumna, UbicacionColumna });
-            ListarOrdenSeleccionBuscarList.Location = new Point(23, 95);
-            ListarOrdenSeleccionBuscarList.Name = "ListarOrdenSeleccionBuscarList";
-            ListarOrdenSeleccionBuscarList.Size = new Size(735, 195);
-            ListarOrdenSeleccionBuscarList.TabIndex = 16;
-            ListarOrdenSeleccionBuscarList.UseCompatibleStateImageBehavior = false;
-            ListarOrdenSeleccionBuscarList.View = View.Details;
+            ListarOrdenSeleccionList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccionColumna, FechaOSColumna, DescripcionProductoColumna, CantidadColumna, UbicacionColumna, EstadoColumna });
+            ListarOrdenSeleccionList.Location = new Point(23, 164);
+            ListarOrdenSeleccionList.Name = "ListarOrdenSeleccionList";
+            ListarOrdenSeleccionList.Size = new Size(735, 195);
+            ListarOrdenSeleccionList.TabIndex = 16;
+            ListarOrdenSeleccionList.UseCompatibleStateImageBehavior = false;
+            ListarOrdenSeleccionList.View = View.Details;
             // 
             // IdOrdenSeleccionColumna
             // 
@@ -139,41 +133,6 @@
             UbicacionColumna.Text = "Ubicación";
             UbicacionColumna.Width = 100;
             // 
-            // ListarOrdenSeleccionList
-            // 
-            ListarOrdenSeleccionList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccion2Columna, FechaOS2Columna, DescripcionProducto2Columna, Cantidad2Columna, Ubicacion2Columna, EstadoColumna });
-            ListarOrdenSeleccionList.Location = new Point(23, 353);
-            ListarOrdenSeleccionList.Name = "ListarOrdenSeleccionList";
-            ListarOrdenSeleccionList.Size = new Size(735, 195);
-            ListarOrdenSeleccionList.TabIndex = 17;
-            ListarOrdenSeleccionList.UseCompatibleStateImageBehavior = false;
-            ListarOrdenSeleccionList.View = View.Details;
-            // 
-            // IdOrdenSeleccion2Columna
-            // 
-            IdOrdenSeleccion2Columna.Text = "ID Orden Seleccion";
-            IdOrdenSeleccion2Columna.Width = 150;
-            // 
-            // FechaOS2Columna
-            // 
-            FechaOS2Columna.Text = "Fecha";
-            FechaOS2Columna.Width = 100;
-            // 
-            // DescripcionProducto2Columna
-            // 
-            DescripcionProducto2Columna.Text = "Descripción Producto";
-            DescripcionProducto2Columna.Width = 180;
-            // 
-            // Cantidad2Columna
-            // 
-            Cantidad2Columna.Text = "Cantidad";
-            Cantidad2Columna.Width = 100;
-            // 
-            // Ubicacion2Columna
-            // 
-            Ubicacion2Columna.Text = "Ubicación";
-            Ubicacion2Columna.Width = 100;
-            // 
             // EstadoColumna
             // 
             EstadoColumna.Text = "Estado";
@@ -181,7 +140,7 @@
             // 
             // VolverListaButton
             // 
-            VolverListaButton.Location = new Point(618, 563);
+            VolverListaButton.Location = new Point(630, 383);
             VolverListaButton.Margin = new Padding(2);
             VolverListaButton.Name = "VolverListaButton";
             VolverListaButton.Size = new Size(128, 30);
@@ -193,10 +152,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 607);
+            ClientSize = new Size(800, 426);
             Controls.Add(VolverListaButton);
             Controls.Add(ListarOrdenSeleccionList);
-            Controls.Add(ListarOrdenSeleccionBuscarList);
             Controls.Add(BuscarButton);
             Controls.Add(VolverButton);
             Controls.Add(label2);
@@ -205,6 +163,7 @@
             Controls.Add(IdOrdenSeleccionCombo);
             Name = "ListarOrdenSeleccionForm";
             Text = "ListarOrdenSeleccionForm";
+            Load += ListarOrdenSeleccionForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -217,19 +176,13 @@
         private Label label2;
         private Button BuscarButton;
         private Button VolverButton;
-        private ListView ListarOrdenSeleccionBuscarList;
+        private ListView ListarOrdenSeleccionList;
         private ColumnHeader IdOrdenSeleccionColumna;
         private ColumnHeader FechaOSColumna;
         private ColumnHeader DescripcionProductoColumna;
         private ColumnHeader CantidadColumna;
         private ColumnHeader UbicacionColumna;
-        private ListView ListarOrdenSeleccionList;
-        private ColumnHeader IdOrdenSeleccion2Columna;
-        private ColumnHeader FechaOS2Columna;
-        private ColumnHeader DescripcionProducto2Columna;
-        private ColumnHeader Cantidad2Columna;
-        private ColumnHeader Ubicacion2Columna;
-        private ColumnHeader EstadoColumna;
         private Button VolverListaButton;
+        private ColumnHeader EstadoColumna;
     }
 }
