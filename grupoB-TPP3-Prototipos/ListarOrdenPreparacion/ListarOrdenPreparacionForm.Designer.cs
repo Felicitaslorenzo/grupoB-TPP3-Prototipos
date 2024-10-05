@@ -46,10 +46,10 @@
             ListaOrdenesPreparacionGroup = new GroupBox();
             VolverListaButton = new Button();
             OrdenesPreparacionList = new ListView();
-            idOrdenPreparacionColumna = new ColumnHeader();
+            IdOrdenColumna = new ColumnHeader();
             idClienteColumna = new ColumnHeader();
             nombreClienteColumna = new ColumnHeader();
-            estadoOrdenPreparacionColumna = new ColumnHeader();
+            estadoOrdenColumna = new ColumnHeader();
             fechaOrdenColumna = new ColumnHeader();
             ListarOrdenesPreparacionGroup.SuspendLayout();
             ListaOrdenesPreparacionGroup.SuspendLayout();
@@ -129,6 +129,7 @@
             // 
             // PrioridadOrdenPreparacionCombo
             // 
+            PrioridadOrdenPreparacionCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             PrioridadOrdenPreparacionCombo.FormattingEnabled = true;
             PrioridadOrdenPreparacionCombo.Location = new Point(218, 139);
             PrioridadOrdenPreparacionCombo.Margin = new Padding(2);
@@ -148,6 +149,7 @@
             // 
             // EstadoOrdenPreparacionCombo
             // 
+            EstadoOrdenPreparacionCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             EstadoOrdenPreparacionCombo.FormattingEnabled = true;
             EstadoOrdenPreparacionCombo.Location = new Point(18, 139);
             EstadoOrdenPreparacionCombo.Margin = new Padding(2);
@@ -167,6 +169,7 @@
             // 
             // NombreClienteCombo
             // 
+            NombreClienteCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             NombreClienteCombo.FormattingEnabled = true;
             NombreClienteCombo.Location = new Point(534, 139);
             NombreClienteCombo.Margin = new Padding(2);
@@ -186,6 +189,7 @@
             // 
             // IdClienteCombo
             // 
+            IdClienteCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             IdClienteCombo.FormattingEnabled = true;
             IdClienteCombo.Location = new Point(534, 55);
             IdClienteCombo.Margin = new Padding(2);
@@ -205,6 +209,7 @@
             // 
             // IdOrdenPreparacionCombo
             // 
+            IdOrdenPreparacionCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             IdOrdenPreparacionCombo.FormattingEnabled = true;
             IdOrdenPreparacionCombo.Location = new Point(18, 55);
             IdOrdenPreparacionCombo.Margin = new Padding(2);
@@ -236,7 +241,7 @@
             // 
             // OrdenesPreparacionList
             // 
-            OrdenesPreparacionList.Columns.AddRange(new ColumnHeader[] { idOrdenPreparacionColumna, idClienteColumna, nombreClienteColumna, estadoOrdenPreparacionColumna, fechaOrdenColumna });
+            OrdenesPreparacionList.Columns.AddRange(new ColumnHeader[] { IdOrdenColumna, idClienteColumna, nombreClienteColumna, estadoOrdenColumna, fechaOrdenColumna });
             OrdenesPreparacionList.Location = new Point(21, 38);
             OrdenesPreparacionList.Margin = new Padding(2);
             OrdenesPreparacionList.Name = "OrdenesPreparacionList";
@@ -245,10 +250,10 @@
             OrdenesPreparacionList.UseCompatibleStateImageBehavior = false;
             OrdenesPreparacionList.View = View.Details;
             // 
-            // idOrdenPreparacionColumna
+            // IdOrdenColumna
             // 
-            idOrdenPreparacionColumna.Text = "ID Orden";
-            idOrdenPreparacionColumna.Width = 100;
+            IdOrdenColumna.Text = "ID Orden";
+            IdOrdenColumna.Width = 100;
             // 
             // idClienteColumna
             // 
@@ -260,10 +265,10 @@
             nombreClienteColumna.Text = "Nombre Cliente";
             nombreClienteColumna.Width = 150;
             // 
-            // estadoOrdenPreparacionColumna
+            // estadoOrdenColumna
             // 
-            estadoOrdenPreparacionColumna.Text = "Estado";
-            estadoOrdenPreparacionColumna.Width = 80;
+            estadoOrdenColumna.Text = "Estado";
+            estadoOrdenColumna.Width = 80;
             // 
             // fechaOrdenColumna
             // 
@@ -306,10 +311,10 @@
         private GroupBox ListaOrdenesPreparacionGroup;
         private Button VolverListaButton;
         private ListView OrdenesPreparacionList;
-        private ColumnHeader idOrdenPreparacionColumna;
+        private ColumnHeader IdOrdenColumna;
         private ColumnHeader idClienteColumna;
         private ColumnHeader nombreClienteColumna;
-        private ColumnHeader estadoOrdenPreparacionColumna;
+        private ColumnHeader estadoOrdenColumna;
         private ColumnHeader fechaOrdenColumna;
     }
 }
