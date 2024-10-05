@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
 {
-    public partial class GenerarOrdenPreparacionForm : Form
+    public partial class GenerarOrdenSeleccionForm : Form
     {
-        public GenerarOrdenPreparacionForm()
+        public GenerarOrdenSeleccionForm()
         {
             InitializeComponent();
         }
