@@ -8,7 +8,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
 {
     internal class OrdenPreparacion
     {
-        public int IdOrden { get; set; }
+        public string IdOrden { get; set; }
         public int IdCliente { get; set; }
         public string Nombre { get; set; }
         public string Estado { get; set; }

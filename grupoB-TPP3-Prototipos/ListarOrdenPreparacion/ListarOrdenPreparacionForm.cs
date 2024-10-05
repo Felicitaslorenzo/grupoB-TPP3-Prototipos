@@ -63,7 +63,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
             foreach (var ordenPreparacion in model.ObtenerOrdenesPreparacion())
             {
                 ListViewItem item = new ListViewItem();
-                item.Text = ordenPreparacion.IdOrden.ToString();
+                item.Text = ordenPreparacion.IdOrden;
                 item.SubItems.Add(ordenPreparacion.IdCliente.ToString());
                 item.SubItems.Add(ordenPreparacion.Nombre);
                 item.SubItems.Add(ordenPreparacion.Estado);
@@ -87,20 +87,21 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
             else
             {
                 // valores seleccionados en los desplegables
-                int.TryParse(IdOrdenPreparacionCombo.Text, out int idOrdenSeleccionado);
                 int.TryParse(IdClienteCombo.Text, out int idClienteSeleccionado);
+                string idOrdenSeleccionado = IdOrdenPreparacionCombo.Text;
                 string nombreClienteSeleccionado = NombreClienteCombo.Text;
                 string estadoSeleccionado = EstadoOrdenPreparacionCombo.Text;
                 string prioridadSeleccionada = PrioridadOrdenPreparacionCombo.Text;
 
                 // Filtrar OrdenesPreparacionList
                 var ordenesFiltradas = model.ObtenerOrdenesPreparacion().Where(o =>
-                    (idOrdenSeleccionado == 0 || o.IdOrden == idOrdenSeleccionado) &&
+                    (string.IsNullOrEmpty(idOrdenSeleccionado) || o.IdOrden == idOrdenSeleccionado) && 
                     (idClienteSeleccionado == 0 || o.IdCliente == idClienteSeleccionado) &&
                     (string.IsNullOrEmpty(nombreClienteSeleccionado) || o.Nombre == nombreClienteSeleccionado) &&
                     (string.IsNullOrEmpty(estadoSeleccionado) || o.Estado == estadoSeleccionado) &&
                     (string.IsNullOrEmpty(prioridadSeleccionada) || o.Prioridad == prioridadSeleccionada)
                 ).ToList();
+
 
                 // Limpiar la OrdenesPreparacionList antes de agregar los elementos filtrados
                 OrdenesPreparacionList.Items.Clear();
