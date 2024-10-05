@@ -92,6 +92,7 @@
             BuscarButton.TabIndex = 15;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
+            BuscarButton.Click += BuscarButton_Click;
             // 
             // VolverButton
             // 
