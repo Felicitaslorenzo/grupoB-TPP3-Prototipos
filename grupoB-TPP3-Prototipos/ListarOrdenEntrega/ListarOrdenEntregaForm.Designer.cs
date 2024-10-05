@@ -34,14 +34,14 @@
             IdClienteCombo = new ComboBox();
             label3 = new Label();
             PrioridadCombo = new ComboBox();
-            GenerarOrdenSeleccionList = new ListView();
+            ListarOrdenEntregaBuscarList = new ListView();
             IdOrdenSeleccion2Columna = new ColumnHeader();
             FechaOS2Columna = new ColumnHeader();
             DescripcionProducto2Columna = new ColumnHeader();
             Cantidad2Columna = new ColumnHeader();
             Ubicacion2Columna = new ColumnHeader();
             Estado2Columna = new ColumnHeader();
-            GenerarOrdenSeleccionBuscarList = new ListView();
+            ListarOrdenEntregaList = new ListView();
             IdOrdenSeleccionColumna = new ColumnHeader();
             FechaOSColumna = new ColumnHeader();
             DescripcionProductoColumna = new ColumnHeader();
@@ -109,15 +109,15 @@
             PrioridadCombo.Size = new Size(216, 28);
             PrioridadCombo.TabIndex = 43;
             // 
-            // GenerarOrdenSeleccionList
+            // ListarOrdenEntregaBuscarList
             // 
-            GenerarOrdenSeleccionList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccion2Columna, FechaOS2Columna, DescripcionProducto2Columna, Cantidad2Columna, Ubicacion2Columna, Estado2Columna });
-            GenerarOrdenSeleccionList.Location = new Point(26, 171);
-            GenerarOrdenSeleccionList.Name = "GenerarOrdenSeleccionList";
-            GenerarOrdenSeleccionList.Size = new Size(847, 195);
-            GenerarOrdenSeleccionList.TabIndex = 41;
-            GenerarOrdenSeleccionList.UseCompatibleStateImageBehavior = false;
-            GenerarOrdenSeleccionList.View = View.Details;
+            ListarOrdenEntregaBuscarList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccion2Columna, FechaOS2Columna, DescripcionProducto2Columna, Cantidad2Columna, Ubicacion2Columna, Estado2Columna });
+            ListarOrdenEntregaBuscarList.Location = new Point(26, 171);
+            ListarOrdenEntregaBuscarList.Name = "ListarOrdenEntregaBuscarList";
+            ListarOrdenEntregaBuscarList.Size = new Size(847, 195);
+            ListarOrdenEntregaBuscarList.TabIndex = 41;
+            ListarOrdenEntregaBuscarList.UseCompatibleStateImageBehavior = false;
+            ListarOrdenEntregaBuscarList.View = View.Details;
             // 
             // IdOrdenSeleccion2Columna
             // 
@@ -149,16 +149,16 @@
             Estado2Columna.Text = "Estado";
             Estado2Columna.Width = 100;
             // 
-            // GenerarOrdenSeleccionBuscarList
+            // ListarOrdenEntregaList
             // 
-            GenerarOrdenSeleccionBuscarList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccionColumna, FechaOSColumna, DescripcionProductoColumna, CantidadColumna, UbicacionColumna, EstadoColumna });
-            GenerarOrdenSeleccionBuscarList.Location = new Point(26, 442);
-            GenerarOrdenSeleccionBuscarList.Name = "GenerarOrdenSeleccionBuscarList";
-            GenerarOrdenSeleccionBuscarList.Size = new Size(847, 195);
-            GenerarOrdenSeleccionBuscarList.TabIndex = 40;
-            GenerarOrdenSeleccionBuscarList.UseCompatibleStateImageBehavior = false;
-            GenerarOrdenSeleccionBuscarList.View = View.Details;
-            GenerarOrdenSeleccionBuscarList.SelectedIndexChanged += GenerarOrdenSeleccionBuscarList_SelectedIndexChanged;
+            ListarOrdenEntregaList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccionColumna, FechaOSColumna, DescripcionProductoColumna, CantidadColumna, UbicacionColumna, EstadoColumna });
+            ListarOrdenEntregaList.Location = new Point(26, 442);
+            ListarOrdenEntregaList.Name = "ListarOrdenEntregaList";
+            ListarOrdenEntregaList.Size = new Size(847, 195);
+            ListarOrdenEntregaList.TabIndex = 40;
+            ListarOrdenEntregaList.UseCompatibleStateImageBehavior = false;
+            ListarOrdenEntregaList.View = View.Details;
+            ListarOrdenEntregaList.SelectedIndexChanged += GenerarOrdenSeleccionBuscarList_SelectedIndexChanged;
             // 
             // IdOrdenSeleccionColumna
             // 
@@ -273,8 +273,8 @@
             Controls.Add(IdClienteCombo);
             Controls.Add(label3);
             Controls.Add(PrioridadCombo);
-            Controls.Add(GenerarOrdenSeleccionList);
-            Controls.Add(GenerarOrdenSeleccionBuscarList);
+            Controls.Add(ListarOrdenEntregaBuscarList);
+            Controls.Add(ListarOrdenEntregaList);
             Controls.Add(BuscarButton);
             Controls.Add(VolverButton);
             Controls.Add(label2);
@@ -295,14 +295,14 @@
         private ComboBox IdClienteCombo;
         private Label label3;
         private ComboBox PrioridadCombo;
-        private ListView GenerarOrdenSeleccionList;
+        private ListView ListarOrdenEntregaBuscarList;
         private ColumnHeader IdOrdenSeleccion2Columna;
         private ColumnHeader FechaOS2Columna;
         private ColumnHeader DescripcionProducto2Columna;
         private ColumnHeader Cantidad2Columna;
         private ColumnHeader Ubicacion2Columna;
         private ColumnHeader Estado2Columna;
-        private ListView GenerarOrdenSeleccionBuscarList;
+        private ListView ListarOrdenEntregaList;
         private ColumnHeader IdOrdenSeleccionColumna;
         private ColumnHeader FechaOSColumna;
         private ColumnHeader DescripcionProductoColumna;

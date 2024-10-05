@@ -31,13 +31,13 @@
             EmpaquetarOrdenButton = new Button();
             label3 = new Label();
             PrioridadCombo = new ComboBox();
-            GenerarOrdenEntregaList = new ListView();
+            CrearOrdenEntregaList = new ListView();
             IdOrden2Columna = new ColumnHeader();
             IdCliente2Columna = new ColumnHeader();
             DescripcionProducto2Columna = new ColumnHeader();
             Cantidad2Columna = new ColumnHeader();
             Estado2Columna = new ColumnHeader();
-            ListarOrdenEntregaBuscarList = new ListView();
+            ListarEmpaquetarOrdenList = new ListView();
             IdOrdenColumna = new ColumnHeader();
             IdClienteColumna = new ColumnHeader();
             DescripcionProductoColumna = new ColumnHeader();
@@ -79,15 +79,15 @@
             PrioridadCombo.Size = new Size(203, 28);
             PrioridadCombo.TabIndex = 52;
             // 
-            // GenerarOrdenEntregaList
+            // CrearOrdenEntregaList
             // 
-            GenerarOrdenEntregaList.Columns.AddRange(new ColumnHeader[] { IdOrden2Columna, IdCliente2Columna, DescripcionProducto2Columna, Cantidad2Columna, Estado2Columna });
-            GenerarOrdenEntregaList.Location = new Point(23, 420);
-            GenerarOrdenEntregaList.Name = "GenerarOrdenEntregaList";
-            GenerarOrdenEntregaList.Size = new Size(847, 195);
-            GenerarOrdenEntregaList.TabIndex = 51;
-            GenerarOrdenEntregaList.UseCompatibleStateImageBehavior = false;
-            GenerarOrdenEntregaList.View = View.Details;
+            CrearOrdenEntregaList.Columns.AddRange(new ColumnHeader[] { IdOrden2Columna, IdCliente2Columna, DescripcionProducto2Columna, Cantidad2Columna, Estado2Columna });
+            CrearOrdenEntregaList.Location = new Point(23, 420);
+            CrearOrdenEntregaList.Name = "CrearOrdenEntregaList";
+            CrearOrdenEntregaList.Size = new Size(847, 195);
+            CrearOrdenEntregaList.TabIndex = 51;
+            CrearOrdenEntregaList.UseCompatibleStateImageBehavior = false;
+            CrearOrdenEntregaList.View = View.Details;
             // 
             // IdOrden2Columna
             // 
@@ -114,15 +114,15 @@
             Estado2Columna.Text = "Estado";
             Estado2Columna.Width = 100;
             // 
-            // ListarOrdenEntregaBuscarList
+            // ListarEmpaquetarOrdenList
             // 
-            ListarOrdenEntregaBuscarList.Columns.AddRange(new ColumnHeader[] { IdOrdenColumna, IdClienteColumna, DescripcionProductoColumna, CantidadColumna, EstadoColumna });
-            ListarOrdenEntregaBuscarList.Location = new Point(23, 155);
-            ListarOrdenEntregaBuscarList.Name = "ListarOrdenEntregaBuscarList";
-            ListarOrdenEntregaBuscarList.Size = new Size(847, 195);
-            ListarOrdenEntregaBuscarList.TabIndex = 50;
-            ListarOrdenEntregaBuscarList.UseCompatibleStateImageBehavior = false;
-            ListarOrdenEntregaBuscarList.View = View.Details;
+            ListarEmpaquetarOrdenList.Columns.AddRange(new ColumnHeader[] { IdOrdenColumna, IdClienteColumna, DescripcionProductoColumna, CantidadColumna, EstadoColumna });
+            ListarEmpaquetarOrdenList.Location = new Point(23, 155);
+            ListarEmpaquetarOrdenList.Name = "ListarEmpaquetarOrdenList";
+            ListarEmpaquetarOrdenList.Size = new Size(847, 195);
+            ListarEmpaquetarOrdenList.TabIndex = 50;
+            ListarEmpaquetarOrdenList.UseCompatibleStateImageBehavior = false;
+            ListarEmpaquetarOrdenList.View = View.Details;
             // 
             // IdOrdenColumna
             // 
@@ -221,8 +221,8 @@
             Controls.Add(EmpaquetarOrdenButton);
             Controls.Add(label3);
             Controls.Add(PrioridadCombo);
-            Controls.Add(GenerarOrdenEntregaList);
-            Controls.Add(ListarOrdenEntregaBuscarList);
+            Controls.Add(CrearOrdenEntregaList);
+            Controls.Add(ListarEmpaquetarOrdenList);
             Controls.Add(BuscarButton);
             Controls.Add(VolverButton);
             Controls.Add(label2);
@@ -240,13 +240,13 @@
         private Button EmpaquetarOrdenButton;
         private Label label3;
         private ComboBox PrioridadCombo;
-        private ListView GenerarOrdenEntregaList;
+        private ListView CrearOrdenEntregaList;
         private ColumnHeader IdOrden2Columna;
         private ColumnHeader IdCliente2Columna;
         private ColumnHeader DescripcionProducto2Columna;
         private ColumnHeader Cantidad2Columna;
         private ColumnHeader Estado2Columna;
-        private ListView ListarOrdenEntregaBuscarList;
+        private ListView ListarEmpaquetarOrdenList;
         private ColumnHeader IdOrdenColumna;
         private ColumnHeader IdClienteColumna;
         private ColumnHeader DescripcionProductoColumna;
