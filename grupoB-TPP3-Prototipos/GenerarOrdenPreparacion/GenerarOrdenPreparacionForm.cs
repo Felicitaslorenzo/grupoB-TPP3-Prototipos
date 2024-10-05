@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
+namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 {
     public partial class GenerarOrdenPreparacionForm : Form
     {
