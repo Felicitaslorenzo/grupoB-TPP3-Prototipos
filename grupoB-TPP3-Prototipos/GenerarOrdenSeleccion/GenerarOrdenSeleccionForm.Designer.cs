@@ -37,7 +37,7 @@
             Estado2Columna = new ColumnHeader();
             GenerarOrdenSeleccionBuscarList = new ListView();
             IdOrdenPreparacionColumna = new ColumnHeader();
-            FechaOEColumna = new ColumnHeader();
+            FechaOPColumna = new ColumnHeader();
             DescripcionProductoColumna = new ColumnHeader();
             EstadoColumna = new ColumnHeader();
             PrioridadColumna = new ColumnHeader();
@@ -54,13 +54,15 @@
             label5 = new Label();
             EstadoCombo = new ComboBox();
             GenerarOrdenButton = new Button();
+            CantidadColumna = new ColumnHeader();
+            UbicacionColumna = new ColumnHeader();
             SuspendLayout();
             // 
             // GenerarOrdenSeleccionList
             // 
             GenerarOrdenSeleccionList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccionColumna, FechaOE2Columna, DescripcionProducto2Columna, Cantidad2Columna, Ubicacion2Columna, Estado2Columna });
             GenerarOrdenSeleccionList.Location = new Point(36, 541);
-            GenerarOrdenSeleccionList.Margin = new Padding(4, 4, 4, 4);
+            GenerarOrdenSeleccionList.Margin = new Padding(4);
             GenerarOrdenSeleccionList.Name = "GenerarOrdenSeleccionList";
             GenerarOrdenSeleccionList.Size = new Size(1058, 243);
             GenerarOrdenSeleccionList.TabIndex = 26;
@@ -99,9 +101,9 @@
             // 
             // GenerarOrdenSeleccionBuscarList
             // 
-            GenerarOrdenSeleccionBuscarList.Columns.AddRange(new ColumnHeader[] { IdOrdenPreparacionColumna, FechaOEColumna, DescripcionProductoColumna, EstadoColumna, PrioridadColumna });
+            GenerarOrdenSeleccionBuscarList.Columns.AddRange(new ColumnHeader[] { FechaOPColumna, DescripcionProductoColumna, IdOrdenPreparacionColumna, EstadoColumna, CantidadColumna, UbicacionColumna, PrioridadColumna });
             GenerarOrdenSeleccionBuscarList.Location = new Point(36, 246);
-            GenerarOrdenSeleccionBuscarList.Margin = new Padding(4, 4, 4, 4);
+            GenerarOrdenSeleccionBuscarList.Margin = new Padding(4);
             GenerarOrdenSeleccionBuscarList.Name = "GenerarOrdenSeleccionBuscarList";
             GenerarOrdenSeleccionBuscarList.Size = new Size(1058, 243);
             GenerarOrdenSeleccionBuscarList.TabIndex = 25;
@@ -110,16 +112,19 @@
             // 
             // IdOrdenPreparacionColumna
             // 
+            IdOrdenPreparacionColumna.DisplayIndex = 0;
             IdOrdenPreparacionColumna.Text = "ID Orden Preparación";
             IdOrdenPreparacionColumna.Width = 170;
             // 
-            // FechaOEColumna
+            // FechaOPColumna
             // 
-            FechaOEColumna.Text = "Fecha";
-            FechaOEColumna.Width = 100;
+            FechaOPColumna.DisplayIndex = 1;
+            FechaOPColumna.Text = "Fecha";
+            FechaOPColumna.Width = 100;
             // 
             // DescripcionProductoColumna
             // 
+            DescripcionProductoColumna.DisplayIndex = 2;
             DescripcionProductoColumna.Text = "Descripción Producto";
             DescripcionProductoColumna.Width = 180;
             // 
@@ -130,12 +135,13 @@
             // 
             // PrioridadColumna
             // 
+            PrioridadColumna.DisplayIndex = 4;
             PrioridadColumna.Text = "Prioridad";
             PrioridadColumna.Width = 100;
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(730, 181);
+            BuscarButton.Location = new Point(915, 180);
             BuscarButton.Margin = new Padding(2);
             BuscarButton.Name = "BuscarButton";
             BuscarButton.Size = new Size(160, 38);
@@ -145,7 +151,7 @@
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(912, 181);
+            VolverButton.Location = new Point(666, 804);
             VolverButton.Margin = new Padding(2);
             VolverButton.Name = "VolverButton";
             VolverButton.Size = new Size(160, 38);
@@ -176,7 +182,7 @@
             // FechaOSPicker
             // 
             FechaOSPicker.Location = new Point(409, 46);
-            FechaOSPicker.Margin = new Padding(4, 4, 4, 4);
+            FechaOSPicker.Margin = new Padding(4);
             FechaOSPicker.Name = "FechaOSPicker";
             FechaOSPicker.Size = new Size(374, 31);
             FechaOSPicker.TabIndex = 20;
@@ -185,7 +191,7 @@
             // 
             IdOrdenSeleccionCombo.FormattingEnabled = true;
             IdOrdenSeleccionCombo.Location = new Point(36, 45);
-            IdOrdenSeleccionCombo.Margin = new Padding(4, 4, 4, 4);
+            IdOrdenSeleccionCombo.Margin = new Padding(4);
             IdOrdenSeleccionCombo.Name = "IdOrdenSeleccionCombo";
             IdOrdenSeleccionCombo.Size = new Size(312, 33);
             IdOrdenSeleccionCombo.TabIndex = 19;
@@ -204,7 +210,7 @@
             // 
             PrioridadCombo.FormattingEnabled = true;
             PrioridadCombo.Location = new Point(841, 49);
-            PrioridadCombo.Margin = new Padding(4, 4, 4, 4);
+            PrioridadCombo.Margin = new Padding(4);
             PrioridadCombo.Name = "PrioridadCombo";
             PrioridadCombo.Size = new Size(253, 33);
             PrioridadCombo.TabIndex = 28;
@@ -223,7 +229,7 @@
             // 
             DescripcionClienteCombo.FormattingEnabled = true;
             DescripcionClienteCombo.Location = new Point(36, 135);
-            DescripcionClienteCombo.Margin = new Padding(4, 4, 4, 4);
+            DescripcionClienteCombo.Margin = new Padding(4);
             DescripcionClienteCombo.Name = "DescripcionClienteCombo";
             DescripcionClienteCombo.Size = new Size(312, 33);
             DescripcionClienteCombo.TabIndex = 30;
@@ -242,7 +248,7 @@
             // 
             EstadoCombo.FormattingEnabled = true;
             EstadoCombo.Location = new Point(409, 134);
-            EstadoCombo.Margin = new Padding(4, 4, 4, 4);
+            EstadoCombo.Margin = new Padding(4);
             EstadoCombo.Name = "EstadoCombo";
             EstadoCombo.Size = new Size(253, 33);
             EstadoCombo.TabIndex = 32;
@@ -257,7 +263,19 @@
             GenerarOrdenButton.Text = "Generar Orden";
             GenerarOrdenButton.UseVisualStyleBackColor = true;
             // 
-            // GenerarOrdenSeleccionForm
+            // CantidadColumna
+            // 
+            CantidadColumna.DisplayIndex = 5;
+            CantidadColumna.Text = "Cantidad";
+            CantidadColumna.Width = 100;
+            // 
+            // UbicacionColumna
+            // 
+            UbicacionColumna.DisplayIndex = 6;
+            UbicacionColumna.Text = "Ubicacion";
+            UbicacionColumna.Width = 100;
+            // 
+            // GenerarOrdenPreparacionForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -277,8 +295,8 @@
             Controls.Add(label1);
             Controls.Add(FechaOSPicker);
             Controls.Add(IdOrdenSeleccionCombo);
-            Margin = new Padding(4, 4, 4, 4);
-            Name = "GenerarOrdenSeleccionForm";
+            Margin = new Padding(4);
+            Name = "GenerarOrdenPreparacionForm";
             Text = "GenerarOrdenSeleccionForm";
             ResumeLayout(false);
             PerformLayout();
@@ -294,7 +312,7 @@
         private ColumnHeader Estado2Columna;
         private ListView GenerarOrdenSeleccionBuscarList;
         private ColumnHeader IdOrdenPreparacionColumna;
-        private ColumnHeader FechaOEColumna;
+        private ColumnHeader FechaOPColumna;
         private ColumnHeader DescripcionProductoColumna;
         private ColumnHeader EstadoColumna;
         private Button BuscarButton;
@@ -311,5 +329,7 @@
         private ComboBox EstadoCombo;
         private ColumnHeader PrioridadColumna;
         private Button GenerarOrdenButton;
+        private ColumnHeader CantidadColumna;
+        private ColumnHeader UbicacionColumna;
     }
 }

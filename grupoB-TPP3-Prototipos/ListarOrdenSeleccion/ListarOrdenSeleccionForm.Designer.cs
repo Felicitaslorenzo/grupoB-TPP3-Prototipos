@@ -33,7 +33,6 @@
             label1 = new Label();
             label2 = new Label();
             BuscarButton = new Button();
-            VolverButton = new Button();
             ListarOrdenSeleccionList = new ListView();
             IdOrdenSeleccionColumna = new ColumnHeader();
             FechaOSColumna = new ColumnHeader();
@@ -47,63 +46,58 @@
             // IdOrdenSeleccionCombo
             // 
             IdOrdenSeleccionCombo.FormattingEnabled = true;
-            IdOrdenSeleccionCombo.Location = new Point(23, 46);
+            IdOrdenSeleccionCombo.Location = new Point(29, 58);
+            IdOrdenSeleccionCombo.Margin = new Padding(4, 4, 4, 4);
             IdOrdenSeleccionCombo.Name = "IdOrdenSeleccionCombo";
-            IdOrdenSeleccionCombo.Size = new Size(250, 28);
+            IdOrdenSeleccionCombo.Size = new Size(312, 33);
             IdOrdenSeleccionCombo.TabIndex = 0;
             // 
             // FechaOSPicker
             // 
-            FechaOSPicker.Location = new Point(331, 47);
+            FechaOSPicker.Location = new Point(414, 59);
+            FechaOSPicker.Margin = new Padding(4, 4, 4, 4);
             FechaOSPicker.Name = "FechaOSPicker";
-            FechaOSPicker.Size = new Size(291, 27);
+            FechaOSPicker.Size = new Size(363, 31);
             FechaOSPicker.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(23, 22);
+            label1.Location = new Point(29, 28);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(136, 20);
+            label1.Size = new Size(163, 25);
             label1.TabIndex = 2;
             label1.Text = "ID Orden Selección";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(331, 24);
+            label2.Location = new Point(414, 30);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(47, 20);
+            label2.Size = new Size(57, 25);
             label2.TabIndex = 3;
             label2.Text = "Fecha";
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(435, 107);
+            BuscarButton.Location = new Point(763, 131);
             BuscarButton.Margin = new Padding(2);
             BuscarButton.Name = "BuscarButton";
-            BuscarButton.Size = new Size(128, 30);
+            BuscarButton.Size = new Size(160, 38);
             BuscarButton.TabIndex = 15;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
             BuscarButton.Click += BuscarButton_Click;
             // 
-            // VolverButton
-            // 
-            VolverButton.Location = new Point(630, 107);
-            VolverButton.Margin = new Padding(2);
-            VolverButton.Name = "VolverButton";
-            VolverButton.Size = new Size(128, 30);
-            VolverButton.TabIndex = 14;
-            VolverButton.Text = "Volver";
-            VolverButton.UseVisualStyleBackColor = true;
-            // 
             // ListarOrdenSeleccionList
             // 
             ListarOrdenSeleccionList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccionColumna, FechaOSColumna, DescripcionProductoColumna, CantidadColumna, UbicacionColumna, EstadoColumna });
-            ListarOrdenSeleccionList.Location = new Point(23, 164);
+            ListarOrdenSeleccionList.Location = new Point(29, 205);
+            ListarOrdenSeleccionList.Margin = new Padding(4, 4, 4, 4);
             ListarOrdenSeleccionList.Name = "ListarOrdenSeleccionList";
-            ListarOrdenSeleccionList.Size = new Size(735, 195);
+            ListarOrdenSeleccionList.Size = new Size(918, 243);
             ListarOrdenSeleccionList.TabIndex = 16;
             ListarOrdenSeleccionList.UseCompatibleStateImageBehavior = false;
             ListarOrdenSeleccionList.View = View.Details;
@@ -140,27 +134,27 @@
             // 
             // VolverListaButton
             // 
-            VolverListaButton.Location = new Point(630, 383);
+            VolverListaButton.Location = new Point(776, 466);
             VolverListaButton.Margin = new Padding(2);
             VolverListaButton.Name = "VolverListaButton";
-            VolverListaButton.Size = new Size(128, 30);
+            VolverListaButton.Size = new Size(160, 38);
             VolverListaButton.TabIndex = 18;
             VolverListaButton.Text = "Volver";
             VolverListaButton.UseVisualStyleBackColor = true;
             // 
             // ListarOrdenSeleccionForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 426);
+            ClientSize = new Size(1000, 532);
             Controls.Add(VolverListaButton);
             Controls.Add(ListarOrdenSeleccionList);
             Controls.Add(BuscarButton);
-            Controls.Add(VolverButton);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(FechaOSPicker);
             Controls.Add(IdOrdenSeleccionCombo);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "ListarOrdenSeleccionForm";
             Text = "ListarOrdenSeleccionForm";
             Load += ListarOrdenSeleccionForm_Load;
@@ -175,7 +169,6 @@
         private Label label1;
         private Label label2;
         private Button BuscarButton;
-        private Button VolverButton;
         private ListView ListarOrdenSeleccionList;
         private ColumnHeader IdOrdenSeleccionColumna;
         private ColumnHeader FechaOSColumna;

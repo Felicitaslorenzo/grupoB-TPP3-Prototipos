@@ -56,9 +56,9 @@
             // ProductosListView
             // 
             ProductosListView.Columns.AddRange(new ColumnHeader[] { IdProductoColumna, idClienteColumna, NombreClienteColumna, DescripcionColumna, CantidadColumna, UbicacionColumna });
-            ProductosListView.Location = new Point(21, 286);
+            ProductosListView.Location = new Point(36, 246);
             ProductosListView.Name = "ProductosListView";
-            ProductosListView.Size = new Size(935, 306);
+            ProductosListView.Size = new Size(901, 306);
             ProductosListView.TabIndex = 0;
             ProductosListView.UseCompatibleStateImageBehavior = false;
             ProductosListView.View = View.Details;
@@ -99,7 +99,6 @@
             GenerarOrdenesPreparacionGroup.Controls.Add(CantidadTextBox);
             GenerarOrdenesPreparacionGroup.Controls.Add(DescripcionProductoLabel);
             GenerarOrdenesPreparacionGroup.Controls.Add(ProductoCombo);
-            GenerarOrdenesPreparacionGroup.Controls.Add(EliminarProductoButton);
             GenerarOrdenesPreparacionGroup.Controls.Add(AgregarProductoButton);
             GenerarOrdenesPreparacionGroup.Controls.Add(IdClienteLabel);
             GenerarOrdenesPreparacionGroup.Controls.Add(IdClienteCombo);
@@ -107,7 +106,7 @@
             GenerarOrdenesPreparacionGroup.Margin = new Padding(2);
             GenerarOrdenesPreparacionGroup.Name = "GenerarOrdenesPreparacionGroup";
             GenerarOrdenesPreparacionGroup.Padding = new Padding(2);
-            GenerarOrdenesPreparacionGroup.Size = new Size(917, 203);
+            GenerarOrdenesPreparacionGroup.Size = new Size(898, 203);
             GenerarOrdenesPreparacionGroup.TabIndex = 1;
             GenerarOrdenesPreparacionGroup.TabStop = false;
             // 
@@ -150,7 +149,7 @@
             // 
             // EliminarProductoButton
             // 
-            EliminarProductoButton.Location = new Point(482, 133);
+            EliminarProductoButton.Location = new Point(720, 572);
             EliminarProductoButton.Margin = new Padding(2);
             EliminarProductoButton.Name = "EliminarProductoButton";
             EliminarProductoButton.Size = new Size(177, 37);
@@ -160,7 +159,7 @@
             // 
             // AgregarProductoButton
             // 
-            AgregarProductoButton.Location = new Point(256, 133);
+            AgregarProductoButton.Location = new Point(665, 123);
             AgregarProductoButton.Margin = new Padding(2);
             AgregarProductoButton.Name = "AgregarProductoButton";
             AgregarProductoButton.Size = new Size(182, 37);
@@ -192,7 +191,7 @@
             // 
             EstadoComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             EstadoComboBox.FormattingEnabled = true;
-            EstadoComboBox.Location = new Point(39, 645);
+            EstadoComboBox.Location = new Point(39, 635);
             EstadoComboBox.Margin = new Padding(2);
             EstadoComboBox.Name = "EstadoComboBox";
             EstadoComboBox.Size = new Size(232, 33);
@@ -202,7 +201,7 @@
             // 
             PrioridadComoBox.DropDownStyle = ComboBoxStyle.DropDownList;
             PrioridadComoBox.FormattingEnabled = true;
-            PrioridadComoBox.Location = new Point(342, 645);
+            PrioridadComoBox.Location = new Point(342, 635);
             PrioridadComoBox.Margin = new Padding(2);
             PrioridadComoBox.Name = "PrioridadComoBox";
             PrioridadComoBox.Size = new Size(219, 33);
@@ -211,7 +210,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(39, 618);
+            label2.Location = new Point(39, 599);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(66, 25);
@@ -221,7 +220,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(342, 618);
+            label3.Location = new Point(342, 599);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(84, 25);
@@ -252,11 +251,12 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1012, 775);
+            ClientSize = new Size(1003, 775);
             Controls.Add(VolverButton);
             Controls.Add(GenerarOrdenButton);
             Controls.Add(label3);
             Controls.Add(label2);
+            Controls.Add(EliminarProductoButton);
             Controls.Add(PrioridadComoBox);
             Controls.Add(EstadoComboBox);
             Controls.Add(GenerarOrdenesPreparacionGroup);
