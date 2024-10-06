@@ -29,36 +29,39 @@
         private void InitializeComponent()
         {
             IdOrdenSeleccionCombo = new ComboBox();
-            FechaOSPicker = new DateTimePicker();
+            FechaDesdeOSPicker = new DateTimePicker();
             label1 = new Label();
             label2 = new Label();
             BuscarButton = new Button();
             ListarOrdenSeleccionList = new ListView();
             IdOrdenSeleccionColumna = new ColumnHeader();
-            FechaOSColumna = new ColumnHeader();
+            FechaEmisionOSColumna = new ColumnHeader();
             DescripcionProductoColumna = new ColumnHeader();
             CantidadColumna = new ColumnHeader();
             UbicacionColumna = new ColumnHeader();
             EstadoColumna = new ColumnHeader();
             VolverListaButton = new Button();
+            FechaHastaOSPicker = new DateTimePicker();
+            label4 = new Label();
+            FechaEstadoColumna = new ColumnHeader();
             SuspendLayout();
             // 
             // IdOrdenSeleccionCombo
             // 
             IdOrdenSeleccionCombo.FormattingEnabled = true;
             IdOrdenSeleccionCombo.Location = new Point(29, 58);
-            IdOrdenSeleccionCombo.Margin = new Padding(4, 4, 4, 4);
+            IdOrdenSeleccionCombo.Margin = new Padding(4);
             IdOrdenSeleccionCombo.Name = "IdOrdenSeleccionCombo";
             IdOrdenSeleccionCombo.Size = new Size(312, 33);
             IdOrdenSeleccionCombo.TabIndex = 0;
             // 
-            // FechaOSPicker
+            // FechaDesdeOSPicker
             // 
-            FechaOSPicker.Location = new Point(414, 59);
-            FechaOSPicker.Margin = new Padding(4, 4, 4, 4);
-            FechaOSPicker.Name = "FechaOSPicker";
-            FechaOSPicker.Size = new Size(363, 31);
-            FechaOSPicker.TabIndex = 1;
+            FechaDesdeOSPicker.Location = new Point(414, 59);
+            FechaDesdeOSPicker.Margin = new Padding(4);
+            FechaDesdeOSPicker.Name = "FechaDesdeOSPicker";
+            FechaDesdeOSPicker.Size = new Size(230, 31);
+            FechaDesdeOSPicker.TabIndex = 1;
             // 
             // label1
             // 
@@ -76,9 +79,9 @@
             label2.Location = new Point(414, 30);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(57, 25);
+            label2.Size = new Size(110, 25);
             label2.TabIndex = 3;
-            label2.Text = "Fecha";
+            label2.Text = "Fecha desde";
             // 
             // BuscarButton
             // 
@@ -93,9 +96,9 @@
             // 
             // ListarOrdenSeleccionList
             // 
-            ListarOrdenSeleccionList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccionColumna, FechaOSColumna, DescripcionProductoColumna, CantidadColumna, UbicacionColumna, EstadoColumna });
+            ListarOrdenSeleccionList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccionColumna, DescripcionProductoColumna, CantidadColumna, UbicacionColumna, EstadoColumna, FechaEmisionOSColumna, FechaEstadoColumna });
             ListarOrdenSeleccionList.Location = new Point(29, 205);
-            ListarOrdenSeleccionList.Margin = new Padding(4, 4, 4, 4);
+            ListarOrdenSeleccionList.Margin = new Padding(4);
             ListarOrdenSeleccionList.Name = "ListarOrdenSeleccionList";
             ListarOrdenSeleccionList.Size = new Size(918, 243);
             ListarOrdenSeleccionList.TabIndex = 16;
@@ -107,28 +110,33 @@
             IdOrdenSeleccionColumna.Text = "ID Orden Seleccion";
             IdOrdenSeleccionColumna.Width = 150;
             // 
-            // FechaOSColumna
+            // FechaEmisionOSColumna
             // 
-            FechaOSColumna.Text = "Fecha";
-            FechaOSColumna.Width = 100;
+            FechaEmisionOSColumna.DisplayIndex = 1;
+            FechaEmisionOSColumna.Text = "Fecha de Emision";
+            FechaEmisionOSColumna.Width = 100;
             // 
             // DescripcionProductoColumna
             // 
+            DescripcionProductoColumna.DisplayIndex = 2;
             DescripcionProductoColumna.Text = "Descripción Producto";
             DescripcionProductoColumna.Width = 180;
             // 
             // CantidadColumna
             // 
+            CantidadColumna.DisplayIndex = 3;
             CantidadColumna.Text = "Cantidad";
             CantidadColumna.Width = 100;
             // 
             // UbicacionColumna
             // 
+            UbicacionColumna.DisplayIndex = 4;
             UbicacionColumna.Text = "Ubicación";
             UbicacionColumna.Width = 100;
             // 
             // EstadoColumna
             // 
+            EstadoColumna.DisplayIndex = 5;
             EstadoColumna.Text = "Estado";
             EstadoColumna.Width = 100;
             // 
@@ -142,19 +150,44 @@
             VolverListaButton.Text = "Volver";
             VolverListaButton.UseVisualStyleBackColor = true;
             // 
+            // FechaHastaOSPicker
+            // 
+            FechaHastaOSPicker.Location = new Point(680, 60);
+            FechaHastaOSPicker.Margin = new Padding(4);
+            FechaHastaOSPicker.Name = "FechaHastaOSPicker";
+            FechaHastaOSPicker.Size = new Size(201, 31);
+            FechaHastaOSPicker.TabIndex = 19;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(680, 31);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(104, 25);
+            label4.TabIndex = 21;
+            label4.Text = "Fecha hasta";
+            // 
+            // FechaEstadoColumna
+            // 
+            FechaEstadoColumna.Text = "Fecha Estado";
+            FechaEstadoColumna.Width = 150;
+            // 
             // ListarOrdenSeleccionForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 532);
+            Controls.Add(label4);
+            Controls.Add(FechaHastaOSPicker);
             Controls.Add(VolverListaButton);
             Controls.Add(ListarOrdenSeleccionList);
             Controls.Add(BuscarButton);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(FechaOSPicker);
+            Controls.Add(FechaDesdeOSPicker);
             Controls.Add(IdOrdenSeleccionCombo);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "ListarOrdenSeleccionForm";
             Text = "ListarOrdenSeleccionForm";
             Load += ListarOrdenSeleccionForm_Load;
@@ -165,17 +198,20 @@
         #endregion
 
         private ComboBox IdOrdenSeleccionCombo;
-        private DateTimePicker FechaOSPicker;
+        private DateTimePicker FechaDesdeOSPicker;
         private Label label1;
         private Label label2;
         private Button BuscarButton;
         private ListView ListarOrdenSeleccionList;
         private ColumnHeader IdOrdenSeleccionColumna;
-        private ColumnHeader FechaOSColumna;
+        private ColumnHeader FechaEmisionOSColumna;
         private ColumnHeader DescripcionProductoColumna;
         private ColumnHeader CantidadColumna;
         private ColumnHeader UbicacionColumna;
         private Button VolverListaButton;
         private ColumnHeader EstadoColumna;
+        private DateTimePicker FechaHastaOSPicker;
+        private Label label4;
+        private ColumnHeader FechaEstadoColumna;
     }
 }

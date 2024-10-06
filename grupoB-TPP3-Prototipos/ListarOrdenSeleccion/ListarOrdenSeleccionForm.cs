@@ -24,10 +24,10 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
         {
             // Obtener los valores seleccionados
             string idOrdenSeleccionada = IdOrdenSeleccionCombo.Text;
-            DateTime fechaSeleccionada = FechaOSPicker.Value.Date;
+            DateTime fechaSeleccionada = FechaDesdeOSPicker.Value.Date;
 
             // Validar si al menos un filtro está activo
-            if (string.IsNullOrEmpty(idOrdenSeleccionada) && !FechaOSPicker.Checked)
+            if (string.IsNullOrEmpty(idOrdenSeleccionada) && !FechaDesdeOSPicker.Checked)
             {
                 MessageBox.Show("Por favor, selecciona al menos un filtro.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

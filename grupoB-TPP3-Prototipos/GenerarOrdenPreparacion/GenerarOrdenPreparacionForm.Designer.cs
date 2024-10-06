@@ -30,8 +30,6 @@
         {
             ProductosListView = new ListView();
             IdProductoColumna = new ColumnHeader();
-            idClienteColumna = new ColumnHeader();
-            NombreClienteColumna = new ColumnHeader();
             DescripcionColumna = new ColumnHeader();
             CantidadColumna = new ColumnHeader();
             GenerarOrdenesPreparacionGroup = new GroupBox();
@@ -49,12 +47,13 @@
             PrioridadLabel = new Label();
             GenerarOrdenButton = new Button();
             VolverButton = new Button();
+            UbicacionColumna = new ColumnHeader();
             GenerarOrdenesPreparacionGroup.SuspendLayout();
             SuspendLayout();
             // 
             // ProductosListView
             // 
-            ProductosListView.Columns.AddRange(new ColumnHeader[] { IdProductoColumna, idClienteColumna, NombreClienteColumna, DescripcionColumna, CantidadColumna });
+            ProductosListView.Columns.AddRange(new ColumnHeader[] { IdProductoColumna, DescripcionColumna, CantidadColumna, UbicacionColumna });
             ProductosListView.Location = new Point(36, 246);
             ProductosListView.Name = "ProductosListView";
             ProductosListView.Size = new Size(901, 306);
@@ -66,16 +65,6 @@
             // 
             IdProductoColumna.Text = "ID Producto";
             IdProductoColumna.Width = 120;
-            // 
-            // idClienteColumna
-            // 
-            idClienteColumna.Text = "ID Cliente";
-            idClienteColumna.Width = 100;
-            // 
-            // NombreClienteColumna
-            // 
-            NombreClienteColumna.Text = "Nombre Cliente";
-            NombreClienteColumna.Width = 140;
             // 
             // DescripcionColumna
             // 
@@ -239,6 +228,11 @@
             VolverButton.Text = "Volver";
             VolverButton.UseVisualStyleBackColor = true;
             // 
+            // UbicacionColumna
+            // 
+            UbicacionColumna.Text = "Ubicacion";
+            UbicacionColumna.Width = 100;
+            // 
             // GenerarOrdenPreparacionForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -267,8 +261,6 @@
 
         private ListView ProductosListView;
         private ColumnHeader IdProductoColumna;
-        private ColumnHeader idClienteColumna;
-        private ColumnHeader NombreClienteColumna;
         private ColumnHeader DescripcionColumna;
         private ColumnHeader CantidadColumna;
         private GroupBox GenerarOrdenesPreparacionGroup;
@@ -286,5 +278,6 @@
         private Label PrioridadLabel;
         private Button GenerarOrdenButton;
         private Button VolverButton;
+        private ColumnHeader UbicacionColumna;
     }
 }
