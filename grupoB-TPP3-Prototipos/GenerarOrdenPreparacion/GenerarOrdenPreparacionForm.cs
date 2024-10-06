@@ -17,28 +17,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
         public GenerarOrdenPreparacionForm()
         {
             InitializeComponent();
-            CargarProductos();
-        }
-
-        private void CargarProductos()
-        {
-            // Limpiar el ListView antes de cargar nuevos productos
-            ProductosListView.Items.Clear();
-
-            // Iterar sobre cada orden en el modelo
-            foreach (var orden in modelo.ordenes)
-            {
-                // Iterar sobre cada producto en la orden
-                foreach (var producto in orden.Productos)
-                {
-                    ListViewItem item = new ListViewItem(producto.IDProducto);
-                    item.SubItems.Add(producto.DescripcionProducto);
-                    item.SubItems.Add(producto.Cantidad.ToString());
-                    item.SubItems.Add(producto.Ubicacion);
-                    // Agregar el item al ListView
-                    ProductosListView.Items.Add(item);
-                }
-            }
         }
 
         private void AgregarProductoButton_Click(object sender, EventArgs e)
@@ -204,6 +182,8 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
             // Mostrar un mensaje de que la orden ha sido creada
             MessageBox.Show($"Orden {nuevoIDOrden} creada exitosamente.");
+
+            ProductosListView.Items.Clear();
         }
 
         // Método para generar un nuevo ID de orden
