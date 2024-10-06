@@ -136,10 +136,20 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private void GenerarOrdenButton_Click(object sender, EventArgs e)
         {
+            // Verificar si hay productos disponibles
             if (ProductosListView.Items.Count == 0)
             {
                 MessageBox.Show("No hay productos disponibles para crear una orden.");
                 return; // Salir si no hay productos
+            }
+
+            // Verificar que se haya seleccionado un cliente, prioridad y transportista
+            if (string.IsNullOrWhiteSpace(IdClienteCombo.Text) ||
+                string.IsNullOrWhiteSpace(PrioridadComboBox.Text) ||
+                string.IsNullOrWhiteSpace(TransportistaComboBox.Text))
+            {
+                MessageBox.Show("Por favor, selecciona un cliente, su prioridad y un transportista.");
+                return; // Salir si falta información
             }
 
             // Obtener el último ID de orden
@@ -166,14 +176,14 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             {
                 IDOrdenPreparacion = nuevoIDOrden,
                 Clientes = new List<Clientes>
-                {
-                    new Clientes
-                    {
-                        IdCliente = "CLIENTE009", // Cambia esto según sea necesario
-                        Prioridad = "Baja", // Cambia esto según sea necesario
-                        Transportista = "Transportista I" // Cambia esto según sea necesario
-                    }
-                },
+        {
+            new Clientes
+            {
+                IdCliente = IdClienteCombo.Text, // Asumiendo que se selecciona el cliente de un ComboBox
+                Prioridad = PrioridadComboBox.Text, // Asumiendo que se selecciona la prioridad de un ComboBox
+                Transportista = TransportistaComboBox.Text // Asumiendo que se selecciona el transportista de un ComboBox
+            }
+        },
                 Productos = productosOrden // Asignar la lista de productos extraída
             };
 
@@ -183,7 +193,13 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             // Mostrar un mensaje de que la orden ha sido creada
             MessageBox.Show($"Orden {nuevoIDOrden} creada exitosamente.");
 
+            // Limpiar los elementos del ListView
             ProductosListView.Items.Clear();
+
+            // Limpiar los controles de selección
+            IdClienteCombo.SelectedIndex = -1; // Restablecer a ningún elemento seleccionado
+            PrioridadComboBox.SelectedIndex = -1; // Restablecer a ningún elemento seleccionado
+            TransportistaComboBox.SelectedIndex = -1; // Restablecer a ningún elemento seleccionado
         }
 
         // Método para generar un nuevo ID de orden

@@ -42,8 +42,8 @@
             IdClienteLabel = new Label();
             IdClienteCombo = new ComboBox();
             EliminarProductoButton = new Button();
-            EstadoComboBox = new ComboBox();
-            PrioridadComoBox = new ComboBox();
+            TransportistaComboBox = new ComboBox();
+            PrioridadComboBox = new ComboBox();
             TransportistaLabel = new Label();
             PrioridadLabel = new Label();
             GenerarOrdenButton = new Button();
@@ -181,27 +181,27 @@
             EliminarProductoButton.UseVisualStyleBackColor = true;
             EliminarProductoButton.Click += EliminarProductoButton_Click;
             // 
-            // EstadoComboBox
+            // TransportistaComboBox
             // 
-            EstadoComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            EstadoComboBox.FormattingEnabled = true;
-            EstadoComboBox.Items.AddRange(new object[] { "Transportista A", "Transportista B", "Transportista C", "Transportista D", "Transportista E", "Transportista F", "Transportista G", "Transportista H", "Transportista I", "Transportista J" });
-            EstadoComboBox.Location = new Point(497, 49);
-            EstadoComboBox.Margin = new Padding(2);
-            EstadoComboBox.Name = "EstadoComboBox";
-            EstadoComboBox.Size = new Size(186, 28);
-            EstadoComboBox.TabIndex = 7;
+            TransportistaComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            TransportistaComboBox.FormattingEnabled = true;
+            TransportistaComboBox.Items.AddRange(new object[] { "Transportista A", "Transportista B", "Transportista C", "Transportista D", "Transportista E", "Transportista F", "Transportista G", "Transportista H", "Transportista I", "Transportista J" });
+            TransportistaComboBox.Location = new Point(497, 49);
+            TransportistaComboBox.Margin = new Padding(2);
+            TransportistaComboBox.Name = "TransportistaComboBox";
+            TransportistaComboBox.Size = new Size(186, 28);
+            TransportistaComboBox.TabIndex = 7;
             // 
-            // PrioridadComoBox
+            // PrioridadComboBox
             // 
-            PrioridadComoBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            PrioridadComoBox.FormattingEnabled = true;
-            PrioridadComoBox.Items.AddRange(new object[] { "Con prioridad de entrega", "Sin prioridad" });
-            PrioridadComoBox.Location = new Point(286, 49);
-            PrioridadComoBox.Margin = new Padding(2);
-            PrioridadComoBox.Name = "PrioridadComoBox";
-            PrioridadComoBox.Size = new Size(176, 28);
-            PrioridadComoBox.TabIndex = 9;
+            PrioridadComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            PrioridadComboBox.FormattingEnabled = true;
+            PrioridadComboBox.Items.AddRange(new object[] { "Con prioridad de entrega", "Sin prioridad" });
+            PrioridadComboBox.Location = new Point(286, 49);
+            PrioridadComboBox.Margin = new Padding(2);
+            PrioridadComboBox.Name = "PrioridadComboBox";
+            PrioridadComboBox.Size = new Size(176, 28);
+            PrioridadComboBox.TabIndex = 9;
             // 
             // TransportistaLabel
             // 
@@ -256,8 +256,8 @@
             Controls.Add(TransportistaLabel);
             Controls.Add(EliminarProductoButton);
             Controls.Add(IdClienteLabel);
-            Controls.Add(PrioridadComoBox);
-            Controls.Add(EstadoComboBox);
+            Controls.Add(PrioridadComboBox);
+            Controls.Add(TransportistaComboBox);
             Controls.Add(GenerarOrdenesPreparacionGroup);
             Controls.Add(ProductosListView);
             Margin = new Padding(2);
@@ -284,8 +284,8 @@
         private Label ProductoLabel;
         private TextBox CantidadTextBox;
         private Label label1;
-        private ComboBox EstadoComboBox;
-        private ComboBox PrioridadComoBox;
+        private ComboBox TransportistaComboBox;
+        private ComboBox PrioridadComboBox;
         private Label TransportistaLabel;
         private Label PrioridadLabel;
         private Button GenerarOrdenButton;
