@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing.Text;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -35,8 +36,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 }
             }
         }
-
-
 
         private void AgregarProductoButton_Click(object sender, EventArgs e)
         {
@@ -116,7 +115,63 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private void GenerarOrdenButton_Click(object sender, EventArgs e)
         {
+            if (ProductosListView.Items.Count == 0)
+            {
+                MessageBox.Show("No hay productos disponibles para crear una orden.");
+                return; // Salir si no hay productos
+            }
 
+            // Obtener el último ID de orden
+            string nuevoIDOrden = GenerarNuevoIDOrden();
+
+            // Crear una lista para almacenar los productos de la nueva orden
+            List<ProductoOrden> productosOrden = new List<ProductoOrden>();
+
+            // Recorrer los elementos del ListView y agregar los productos a la lista
+            foreach (ListViewItem productoItem in ProductosListView.Items)
+            {
+                var producto = new ProductoOrden
+                {
+                    IDProducto = productoItem.SubItems[0].Text, // Suponiendo que el ID del producto está en la primera columna
+                    DescripcionProducto = productoItem.SubItems[1].Text, // Suponiendo que la descripción está en la segunda columna
+                    Cantidad = int.Parse(productoItem.SubItems[2].Text), // Suponiendo que la cantidad está en la tercera columna
+                    Ubicacion = productoItem.SubItems[3].Text // Suponiendo que la ubicación está en la cuarta columna
+                };
+                productosOrden.Add(producto);
+            }
+
+            // Crear la nueva orden
+            var nuevaOrden = new OrdenPreparacion
+            {
+                IDOrdenPreparacion = nuevoIDOrden,
+                IdCliente = "CLIENTE009", // Cambia esto según sea necesario
+                Prioridad = "Baja", // Cambia esto según sea necesario
+                Transportista = "Transportista I", // Cambia esto según sea necesario
+                Productos = productosOrden // Asignar la lista de productos extraída
+            };
+
+            // Agregar la nueva orden al modelo
+            modelo.ordenes.Add(nuevaOrden);
+
+            // Mostrar un mensaje de que la orden ha sido creada
+            MessageBox.Show($"Orden {nuevoIDOrden} creada exitosamente.");
+        }
+
+        // Método para generar un nuevo ID de orden
+        private string GenerarNuevoIDOrden()
+        {
+            int nuevoId = 1; // Valor por defecto para la primera orden
+
+            // Verificar si ya hay órdenes en el modelo
+            if (modelo.ordenes.Count > 0)
+            {
+                // Obtener el último ID de orden existente
+                var ultimaOrden = modelo.ordenes.Last();
+                string ultimoIdOrden = ultimaOrden.IDOrdenPreparacion; // Suponiendo que el ID es de la forma "ORD00X"
+                nuevoId = int.Parse(ultimoIdOrden.Substring(3)) + 1; // Asumiendo que el ID es de la forma "ORD00X"
+            }
+
+            return "ORD00" + nuevoId.ToString(); // Formato del nuevo ID
         }
 
         private void ProductosListView_SelectedIndexChanged(object sender, EventArgs e)
