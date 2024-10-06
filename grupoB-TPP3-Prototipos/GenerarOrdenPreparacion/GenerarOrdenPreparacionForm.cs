@@ -2,6 +2,8 @@
 using System.Drawing.Text;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Linq; // Asegúrate de tener esta directiva
+
 
 namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 {
@@ -9,6 +11,8 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
     {
         private GenerarOrdenPreparacionModel modelo = new GenerarOrdenPreparacionModel();
         private List<OrdenPreparacion> Ordenes { get; set; }
+        private List<ProductoOrden> productosOrden = new List<ProductoOrden>();
+
 
         public GenerarOrdenPreparacionForm()
         {
@@ -39,31 +43,70 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private void AgregarProductoButton_Click(object sender, EventArgs e)
         {
-            // Obtener el ID de la orden seleccionada (puede ser de un ComboBox, TextBox, etc.)
-            string idOrdenPreparacion = "ORD001"; // Cambia esto según tu lógica para obtener la orden correcta
+            // Obtener los valores de los controles
+            string idProducto = ProductoCombo.Text; // Asumiendo que este ComboBox tiene los IDs de productos
+            int cantidad;
 
-            // Encuentra la orden correspondiente
-            var ordenActual = Ordenes.FirstOrDefault(o => o.IDOrdenPreparacion == idOrdenPreparacion);
-            if (ordenActual != null)
+            // Verificar que la cantidad es un número válido
+            if (int.TryParse(CantidadTextBox.Text, out cantidad))
             {
-                // Crea un nuevo producto a partir de los datos ingresados
-                var nuevoProducto = new ProductoOrden
+                // Buscar el producto en las órdenes de preparación
+                bool productoEncontrado = false;
+                string ubicacionProducto = string.Empty;
+                string descripcionProducto = string.Empty; // Variable para la descripción
+
+                // Iterar sobre las órdenes de preparación
+                foreach (var orden in modelo.ordenes)
                 {
-                    IDProducto = ProductoCombo.SelectedItem.ToString(), // Asumiendo que el ComboBox tiene el ID del producto
-                    DescripcionProducto = "Descripción del Producto", // Puede obtenerse de otro lugar
-                    Cantidad = int.Parse(CantidadTextBox.Text), // Asegúrate de manejar excepciones si no es un número
-                    Ubicacion = "Ubicación del Producto" // También puede obtenerse de otro lugar
-                };
+                    foreach (var producto in orden.Productos)
+                    {
+                        if (producto.IDProducto == idProducto)
+                        {
+                            ubicacionProducto = producto.Ubicacion;
+                            descripcionProducto = producto.DescripcionProducto; // Obtener la descripción real
+                            productoEncontrado = true;
+                            break; // Salir del bucle interno si se encuentra el producto
+                        }
+                    }
 
-                // Agrega el nuevo producto a la lista de productos de la orden
-                ordenActual.Productos.Add(nuevoProducto);
+                    if (productoEncontrado) break; // Salir del bucle externo si se encuentra el producto
+                }
 
-                // Actualiza el ListView para reflejar el cambio
-                ActualizarListView(idOrdenPreparacion);
+                // Verificar si el producto se encontró
+                if (productoEncontrado)
+                {
+                    // Crear un nuevo producto para agregar al ListView
+                    var nuevoProducto = new ProductoOrden
+                    {
+                        IDProducto = idProducto,
+                        Cantidad = cantidad,
+                        DescripcionProducto = descripcionProducto, // Usar la descripción encontrada
+                        Ubicacion = ubicacionProducto // Usar la ubicación encontrada
+                    };
+
+                    // Crear el ListViewItem
+                    var item = new ListViewItem(nuevoProducto.IDProducto);
+                    item.SubItems.Add(nuevoProducto.DescripcionProducto);
+                    item.SubItems.Add(nuevoProducto.Cantidad.ToString());
+                    item.SubItems.Add(nuevoProducto.Ubicacion);
+
+                    // Agregar el nuevo producto al ListView
+                    ProductosListView.Items.Add(item);
+
+                    // Limpiar los campos de entrada
+                    CantidadTextBox.Clear();
+                    ProductoCombo.SelectedIndex = -1; // Resetea el ComboBox si es necesario
+
+                    MessageBox.Show($"El producto {nuevoProducto.DescripcionProducto} se ha agregado a la lista.");
+                }
+                else
+                {
+                    MessageBox.Show("El producto no se encontró en las órdenes de preparación.");
+                }
             }
             else
             {
-                MessageBox.Show("Orden no encontrada.");
+                MessageBox.Show("Ingrese una cantidad válida.");
             }
         }
 
@@ -144,9 +187,15 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             var nuevaOrden = new OrdenPreparacion
             {
                 IDOrdenPreparacion = nuevoIDOrden,
-                IdCliente = "CLIENTE009", // Cambia esto según sea necesario
-                Prioridad = "Baja", // Cambia esto según sea necesario
-                Transportista = "Transportista I", // Cambia esto según sea necesario
+                Clientes = new List<Clientes>
+                {
+                    new Clientes
+                    {
+                        IdCliente = "CLIENTE009", // Cambia esto según sea necesario
+                        Prioridad = "Baja", // Cambia esto según sea necesario
+                        Transportista = "Transportista I" // Cambia esto según sea necesario
+                    }
+                },
                 Productos = productosOrden // Asignar la lista de productos extraída
             };
 

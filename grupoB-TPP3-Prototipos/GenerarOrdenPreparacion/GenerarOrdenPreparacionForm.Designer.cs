@@ -132,6 +132,7 @@
             // 
             ProductoCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             ProductoCombo.FormattingEnabled = true;
+            ProductoCombo.Items.AddRange(new object[] { "SKU001", "SKU002", "SKU003", "SKU004", "SKU005", "SKU006", "SKU007", "SKU008", "SKU009", "SKU010", "SKU011", "SKU012", "SKU013", "SKU014", "SKU015", "SKU016", "SKU017", "SKU018", "SKU019", "SKU020", "SKU021", "SKU022", "SKU023", "SKU024", "SKU025", "SKU026", "SKU027", "SKU028", "SKU029", "SKU030", "SKU031", "SKU032" });
             ProductoCombo.Location = new Point(12, 47);
             ProductoCombo.Margin = new Padding(2);
             ProductoCombo.Name = "ProductoCombo";
@@ -162,6 +163,7 @@
             // 
             IdClienteCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             IdClienteCombo.FormattingEnabled = true;
+            IdClienteCombo.Items.AddRange(new object[] { "CLIENTE001", "CLIENTE002", "CLIENTE003", "CLIENTE004", "CLIENTE005", "CLIENTE006", "CLIENTE007", "CLIENTE008", "CLIENTE009", "CLIENTE010" });
             IdClienteCombo.Location = new Point(41, 49);
             IdClienteCombo.Margin = new Padding(2);
             IdClienteCombo.Name = "IdClienteCombo";
@@ -183,6 +185,7 @@
             // 
             EstadoComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             EstadoComboBox.FormattingEnabled = true;
+            EstadoComboBox.Items.AddRange(new object[] { "Transportista A", "Transportista B", "Transportista C", "Transportista D", "Transportista E", "Transportista F", "Transportista G", "Transportista H", "Transportista I", "Transportista J" });
             EstadoComboBox.Location = new Point(497, 49);
             EstadoComboBox.Margin = new Padding(2);
             EstadoComboBox.Name = "EstadoComboBox";
@@ -193,6 +196,7 @@
             // 
             PrioridadComoBox.DropDownStyle = ComboBoxStyle.DropDownList;
             PrioridadComoBox.FormattingEnabled = true;
+            PrioridadComoBox.Items.AddRange(new object[] { "Con prioridad de entrega", "Sin prioridad" });
             PrioridadComoBox.Location = new Point(286, 49);
             PrioridadComoBox.Margin = new Padding(2);
             PrioridadComoBox.Name = "PrioridadComoBox";

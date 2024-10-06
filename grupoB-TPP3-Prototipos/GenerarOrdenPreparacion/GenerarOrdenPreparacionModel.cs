@@ -13,9 +13,10 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             new OrdenPreparacion
             {
                 IDOrdenPreparacion = "ORD001",
-                IdCliente = "CLIENTE001",
-                Prioridad = "Alta",
-                Transportista = "Transportista A",
+                Clientes = new List<Clientes>
+                {
+                    new Clientes { IdCliente = "CL001", Prioridad = "Con prioridad de entrega", Transportista = "Transportista A" }
+                },
                 Productos = new List<ProductoOrden>
                 {
                     new ProductoOrden { IDProducto = "SKU001", DescripcionProducto = "Café Arábica", Cantidad = 2, Ubicacion = "Estante 1" },
@@ -27,9 +28,10 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             new OrdenPreparacion
             {
                 IDOrdenPreparacion = "ORD002",
-                IdCliente = "CLIENTE002",
-                Prioridad = "Media",
-                Transportista = "Transportista B",
+                Clientes = new List<Clientes>
+                {
+                    new Clientes { IdCliente = "CL002", Prioridad = "Sin prioridad", Transportista = "Transportista B" }
+                },
                 Productos = new List<ProductoOrden>
                 {
                     new ProductoOrden { IDProducto = "SKU005", DescripcionProducto = "Pastel de Chocolate", Cantidad = 3, Ubicacion = "Estante 3" },
@@ -40,9 +42,10 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             new OrdenPreparacion
             {
                 IDOrdenPreparacion = "ORD003",
-                IdCliente = "CLIENTE003",
-                Prioridad = "Baja",
-                Transportista = "Transportista C",
+                Clientes = new List<Clientes>
+                {
+                    new Clientes { IdCliente = "CL003", Prioridad = "Sin prioridad", Transportista = "Transportista C" }
+                },
                 Productos = new List<ProductoOrden>
                 {
                     new ProductoOrden { IDProducto = "SKU008", DescripcionProducto = "Manzanas", Cantidad = 10, Ubicacion = "Estante 4" },
@@ -54,9 +57,10 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             new OrdenPreparacion
             {
                 IDOrdenPreparacion = "ORD004",
-                IdCliente = "CLIENTE004",
-                Prioridad = "Alta",
-                Transportista = "Transportista D",
+                Clientes = new List<Clientes>
+                {
+                    new Clientes { IdCliente = "CL004", Prioridad = "Con prioridad de entrega", Transportista = "Transportista D" }
+                },
                 Productos = new List<ProductoOrden>
                 {
                     new ProductoOrden { IDProducto = "SKU012", DescripcionProducto = "Zanahorias", Cantidad = 6, Ubicacion = "Estante 5" },
@@ -67,9 +71,10 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             new OrdenPreparacion
             {
                 IDOrdenPreparacion = "ORD005",
-                IdCliente = "CLIENTE005",
-                Prioridad = "Media",
-                Transportista = "Transportista E",
+                Clientes = new List<Clientes>
+                {
+                    new Clientes { IdCliente = "CL005", Prioridad = "Sin prioridad", Transportista = "Transportista E" }
+                },
                 Productos = new List<ProductoOrden>
                 {
                     new ProductoOrden { IDProducto = "SKU015", DescripcionProducto = "Agua Mineral", Cantidad = 5, Ubicacion = "Estante 6" },
@@ -80,9 +85,10 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             new OrdenPreparacion
             {
                 IDOrdenPreparacion = "ORD006",
-                IdCliente = "CLIENTE006",
-                Prioridad = "Baja",
-                Transportista = "Transportista F",
+                Clientes = new List<Clientes>
+                {
+                    new Clientes { IdCliente = "CL006", Prioridad = "Sin prioridad", Transportista = "Transportista F" }
+                },
                 Productos = new List<ProductoOrden>
                 {
                     new ProductoOrden { IDProducto = "SKU018", DescripcionProducto = "Papas Fritas", Cantidad = 4, Ubicacion = "Estante 7" },
@@ -94,9 +100,10 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             new OrdenPreparacion
             {
                 IDOrdenPreparacion = "ORD007",
-                IdCliente = "CLIENTE007",
-                Prioridad = "Alta",
-                Transportista = "Transportista G",
+                Clientes = new List<Clientes>
+                {
+                    new Clientes { IdCliente = "CL007", Prioridad = "Con prioridad de entrega", Transportista = "Transportista G" }
+                },
                 Productos = new List<ProductoOrden>
                 {
                     new ProductoOrden { IDProducto = "SKU022", DescripcionProducto = "Hamburguesas", Cantidad = 6, Ubicacion = "Refrigerador" },
@@ -108,9 +115,10 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             new OrdenPreparacion
             {
                 IDOrdenPreparacion = "ORD008",
-                IdCliente = "CLIENTE008",
-                Prioridad = "Media",
-                Transportista = "Transportista H",
+                Clientes = new List<Clientes>
+                {
+                    new Clientes { IdCliente = "CL008", Prioridad = "Sin prioridad", Transportista = "Transportista H" }
+                },
                 Productos = new List<ProductoOrden>
                 {
                     new ProductoOrden { IDProducto = "SKU026", DescripcionProducto = "Pollo", Cantidad = 3, Ubicacion = "Congelador" },
@@ -122,9 +130,10 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             new OrdenPreparacion
             {
                 IDOrdenPreparacion = "ORD009",
-                IdCliente = "CLIENTE009",
-                Prioridad = "Baja",
-                Transportista = "Transportista I",
+                Clientes = new List<Clientes>
+                {
+                    new Clientes { IdCliente = "CL009", Prioridad = "Sin prioridad", Transportista = "Transportista I" }
+                },
                 Productos = new List<ProductoOrden>
                 {
                     new ProductoOrden { IDProducto = "SKU030", DescripcionProducto = "Leche", Cantidad = 5, Ubicacion = "Refrigerador" },

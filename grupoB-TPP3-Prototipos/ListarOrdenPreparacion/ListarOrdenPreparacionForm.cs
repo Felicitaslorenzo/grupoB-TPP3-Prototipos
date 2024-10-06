@@ -95,7 +95,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
 
                 // Filtrar OrdenesPreparacionList
                 var ordenesFiltradas = model.ObtenerOrdenesPreparacion().Where(o =>
-                    (string.IsNullOrEmpty(idOrdenSeleccionado) || o.IdOrden == idOrdenSeleccionado) && 
+                    (string.IsNullOrEmpty(idOrdenSeleccionado) || o.IdOrden == idOrdenSeleccionado) &&
                     (idClienteSeleccionado == 0 || o.IdCliente == idClienteSeleccionado) &&
                     (string.IsNullOrEmpty(nombreClienteSeleccionado) || o.Nombre == nombreClienteSeleccionado) &&
                     (string.IsNullOrEmpty(estadoSeleccionado) || o.Estado == estadoSeleccionado) &&
@@ -128,6 +128,11 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
         }
 
         private void ListarOrdenPreparacionForm_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BuscarButton_Click_1(object sender, EventArgs e)
         {
 
         }

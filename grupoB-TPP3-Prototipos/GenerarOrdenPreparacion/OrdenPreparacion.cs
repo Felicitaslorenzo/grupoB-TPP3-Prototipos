@@ -9,9 +9,8 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
     internal class OrdenPreparacion
     {
         public string IDOrdenPreparacion { get; set; }
-        public string IdCliente {  get; set; }
-        public string Prioridad { get; set; }
-        public string Transportista { get; set; }
+        
+        public List<Clientes> Clientes { get; set; }
         public List<ProductoOrden> Productos { get; set; }
     }
 }
