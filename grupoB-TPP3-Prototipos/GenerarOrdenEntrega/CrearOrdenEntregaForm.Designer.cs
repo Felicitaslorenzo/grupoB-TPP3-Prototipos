@@ -29,245 +29,214 @@
         private void InitializeComponent()
         {
             EmpaquetarOrdenButton = new Button();
-            label3 = new Label();
-            PrioridadCombo = new ComboBox();
             CrearOrdenEntregaList = new ListView();
-            IdOrden2Columna = new ColumnHeader();
-            IdCliente2Columna = new ColumnHeader();
-            DescripcionProducto2Columna = new ColumnHeader();
-            Cantidad2Columna = new ColumnHeader();
-            Estado2Columna = new ColumnHeader();
             ListarEmpaquetarOrdenList = new ListView();
-            IdOrdenColumna = new ColumnHeader();
-            IdClienteColumna = new ColumnHeader();
-            DescripcionProductoColumna = new ColumnHeader();
-            CantidadColumna = new ColumnHeader();
-            EstadoColumna = new ColumnHeader();
-            BuscarButton = new Button();
+            Producto = new ColumnHeader();
+            Cantidad = new ColumnHeader();
             VolverButton = new Button();
-            label2 = new Label();
-            IdOrdenlabel = new Label();
-            FechaOEPicker = new DateTimePicker();
-            IdOrdenSeleccionCombo = new ComboBox();
             GenerarOrdenDeEntregaButton = new Button();
+            EliminarOrden = new Button();
+            GenerarOrdenesPreparacionGroup = new GroupBox();
+            Cliente = new Label();
+            IdClienteLabel = new Label();
+            Producto1 = new ColumnHeader();
+            Cantidad1 = new ColumnHeader();
+            Transportista = new Label();
+            label1 = new Label();
+            OP = new Label();
+            label2 = new Label();
+            GenerarOrdenesPreparacionGroup.SuspendLayout();
             SuspendLayout();
             // 
             // EmpaquetarOrdenButton
             // 
-            EmpaquetarOrdenButton.Location = new Point(845, 462);
-            EmpaquetarOrdenButton.Margin = new Padding(2);
+            EmpaquetarOrdenButton.Location = new Point(592, 217);
+            EmpaquetarOrdenButton.Margin = new Padding(1);
             EmpaquetarOrdenButton.Name = "EmpaquetarOrdenButton";
-            EmpaquetarOrdenButton.Size = new Size(242, 38);
+            EmpaquetarOrdenButton.Size = new Size(169, 23);
             EmpaquetarOrdenButton.TabIndex = 58;
-            EmpaquetarOrdenButton.Text = "Empaquetar Orden";
+            EmpaquetarOrdenButton.Text = "Empaquetar Producto";
             EmpaquetarOrdenButton.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(834, 35);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(84, 25);
-            label3.TabIndex = 53;
-            label3.Text = "Prioridad";
-            // 
-            // PrioridadCombo
-            // 
-            PrioridadCombo.FormattingEnabled = true;
-            PrioridadCombo.Location = new Point(834, 64);
-            PrioridadCombo.Margin = new Padding(4, 4, 4, 4);
-            PrioridadCombo.Name = "PrioridadCombo";
-            PrioridadCombo.Size = new Size(253, 33);
-            PrioridadCombo.TabIndex = 52;
             // 
             // CrearOrdenEntregaList
             // 
-            CrearOrdenEntregaList.Columns.AddRange(new ColumnHeader[] { IdOrden2Columna, IdCliente2Columna, DescripcionProducto2Columna, Cantidad2Columna, Estado2Columna });
-            CrearOrdenEntregaList.Location = new Point(29, 525);
-            CrearOrdenEntregaList.Margin = new Padding(4, 4, 4, 4);
+            CrearOrdenEntregaList.Columns.AddRange(new ColumnHeader[] { Producto1, Cantidad1 });
+            CrearOrdenEntregaList.Location = new Point(19, 266);
+            CrearOrdenEntregaList.Margin = new Padding(3, 2, 3, 2);
             CrearOrdenEntregaList.Name = "CrearOrdenEntregaList";
-            CrearOrdenEntregaList.Size = new Size(1058, 243);
+            CrearOrdenEntregaList.Size = new Size(742, 125);
             CrearOrdenEntregaList.TabIndex = 51;
             CrearOrdenEntregaList.UseCompatibleStateImageBehavior = false;
             CrearOrdenEntregaList.View = View.Details;
             // 
-            // IdOrden2Columna
-            // 
-            IdOrden2Columna.Text = "ID Orden";
-            IdOrden2Columna.Width = 150;
-            // 
-            // IdCliente2Columna
-            // 
-            IdCliente2Columna.Text = "IdCliente";
-            IdCliente2Columna.Width = 100;
-            // 
-            // DescripcionProducto2Columna
-            // 
-            DescripcionProducto2Columna.Text = "Descripción Producto";
-            DescripcionProducto2Columna.Width = 180;
-            // 
-            // Cantidad2Columna
-            // 
-            Cantidad2Columna.Text = "Cantidad";
-            Cantidad2Columna.Width = 100;
-            // 
-            // Estado2Columna
-            // 
-            Estado2Columna.Text = "Estado";
-            Estado2Columna.Width = 100;
-            // 
             // ListarEmpaquetarOrdenList
             // 
-            ListarEmpaquetarOrdenList.Columns.AddRange(new ColumnHeader[] { IdOrdenColumna, IdClienteColumna, DescripcionProductoColumna, CantidadColumna, EstadoColumna });
-            ListarEmpaquetarOrdenList.Location = new Point(29, 194);
-            ListarEmpaquetarOrdenList.Margin = new Padding(4, 4, 4, 4);
+            ListarEmpaquetarOrdenList.Columns.AddRange(new ColumnHeader[] { Producto, Cantidad });
+            ListarEmpaquetarOrdenList.Location = new Point(20, 98);
+            ListarEmpaquetarOrdenList.Margin = new Padding(3, 2, 3, 2);
             ListarEmpaquetarOrdenList.Name = "ListarEmpaquetarOrdenList";
-            ListarEmpaquetarOrdenList.Size = new Size(1058, 243);
+            ListarEmpaquetarOrdenList.Size = new Size(740, 116);
             ListarEmpaquetarOrdenList.TabIndex = 50;
             ListarEmpaquetarOrdenList.UseCompatibleStateImageBehavior = false;
             ListarEmpaquetarOrdenList.View = View.Details;
             // 
-            // IdOrdenColumna
+            // Producto
             // 
-            IdOrdenColumna.Text = "ID Orden";
-            IdOrdenColumna.Width = 150;
+            Producto.Text = "Producto";
+            Producto.Width = 80;
             // 
-            // IdClienteColumna
+            // Cantidad
             // 
-            IdClienteColumna.Text = "ID Cliente";
-            IdClienteColumna.Width = 100;
-            // 
-            // DescripcionProductoColumna
-            // 
-            DescripcionProductoColumna.Text = "Descripción Producto";
-            DescripcionProductoColumna.Width = 180;
-            // 
-            // CantidadColumna
-            // 
-            CantidadColumna.Text = "Cantidad";
-            CantidadColumna.Width = 100;
-            // 
-            // EstadoColumna
-            // 
-            EstadoColumna.Text = "Estado";
-            EstadoColumna.Width = 100;
-            // 
-            // BuscarButton
-            // 
-            BuscarButton.Location = new Point(916, 130);
-            BuscarButton.Margin = new Padding(2);
-            BuscarButton.Name = "BuscarButton";
-            BuscarButton.Size = new Size(160, 38);
-            BuscarButton.TabIndex = 49;
-            BuscarButton.Text = "Buscar";
-            BuscarButton.UseVisualStyleBackColor = true;
+            Cantidad.Text = "Cantidad";
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(662, 798);
-            VolverButton.Margin = new Padding(2);
+            VolverButton.Location = new Point(649, 479);
+            VolverButton.Margin = new Padding(1);
             VolverButton.Name = "VolverButton";
-            VolverButton.Size = new Size(160, 38);
+            VolverButton.Size = new Size(112, 34);
             VolverButton.TabIndex = 48;
             VolverButton.Text = "Volver";
             VolverButton.UseVisualStyleBackColor = true;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(401, 32);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(57, 25);
-            label2.TabIndex = 47;
-            label2.Text = "Fecha";
-            // 
-            // IdOrdenlabel
-            // 
-            IdOrdenlabel.AutoSize = true;
-            IdOrdenlabel.Location = new Point(29, 30);
-            IdOrdenlabel.Margin = new Padding(4, 0, 4, 0);
-            IdOrdenlabel.Name = "IdOrdenlabel";
-            IdOrdenlabel.Size = new Size(85, 25);
-            IdOrdenlabel.TabIndex = 46;
-            IdOrdenlabel.Text = "ID Orden";
-            // 
-            // FechaOEPicker
-            // 
-            FechaOEPicker.Location = new Point(401, 61);
-            FechaOEPicker.Margin = new Padding(4, 4, 4, 4);
-            FechaOEPicker.Name = "FechaOEPicker";
-            FechaOEPicker.Size = new Size(374, 31);
-            FechaOEPicker.TabIndex = 45;
-            // 
-            // IdOrdenSeleccionCombo
-            // 
-            IdOrdenSeleccionCombo.FormattingEnabled = true;
-            IdOrdenSeleccionCombo.Location = new Point(29, 60);
-            IdOrdenSeleccionCombo.Margin = new Padding(4, 4, 4, 4);
-            IdOrdenSeleccionCombo.Name = "IdOrdenSeleccionCombo";
-            IdOrdenSeleccionCombo.Size = new Size(312, 33);
-            IdOrdenSeleccionCombo.TabIndex = 44;
-            // 
             // GenerarOrdenDeEntregaButton
             // 
-            GenerarOrdenDeEntregaButton.Location = new Point(845, 798);
-            GenerarOrdenDeEntregaButton.Margin = new Padding(2);
+            GenerarOrdenDeEntregaButton.Location = new Point(465, 479);
+            GenerarOrdenDeEntregaButton.Margin = new Padding(1);
             GenerarOrdenDeEntregaButton.Name = "GenerarOrdenDeEntregaButton";
-            GenerarOrdenDeEntregaButton.Size = new Size(242, 38);
+            GenerarOrdenDeEntregaButton.Size = new Size(169, 34);
             GenerarOrdenDeEntregaButton.TabIndex = 59;
             GenerarOrdenDeEntregaButton.Text = "Generar Orden de Entrega";
             GenerarOrdenDeEntregaButton.UseVisualStyleBackColor = true;
             // 
+            // EliminarOrden
+            // 
+            EliminarOrden.Location = new Point(591, 394);
+            EliminarOrden.Margin = new Padding(1);
+            EliminarOrden.Name = "EliminarOrden";
+            EliminarOrden.Size = new Size(169, 23);
+            EliminarOrden.TabIndex = 60;
+            EliminarOrden.Text = "Eliminar Producto";
+            EliminarOrden.UseVisualStyleBackColor = true;
+            // 
+            // GenerarOrdenesPreparacionGroup
+            // 
+            GenerarOrdenesPreparacionGroup.Controls.Add(label2);
+            GenerarOrdenesPreparacionGroup.Controls.Add(OP);
+            GenerarOrdenesPreparacionGroup.Controls.Add(label1);
+            GenerarOrdenesPreparacionGroup.Controls.Add(Transportista);
+            GenerarOrdenesPreparacionGroup.Controls.Add(Cliente);
+            GenerarOrdenesPreparacionGroup.Controls.Add(IdClienteLabel);
+            GenerarOrdenesPreparacionGroup.Location = new Point(20, 10);
+            GenerarOrdenesPreparacionGroup.Margin = new Padding(1);
+            GenerarOrdenesPreparacionGroup.Name = "GenerarOrdenesPreparacionGroup";
+            GenerarOrdenesPreparacionGroup.Padding = new Padding(1);
+            GenerarOrdenesPreparacionGroup.Size = new Size(740, 71);
+            GenerarOrdenesPreparacionGroup.TabIndex = 61;
+            GenerarOrdenesPreparacionGroup.TabStop = false;
+            // 
+            // Cliente
+            // 
+            Cliente.AutoSize = true;
+            Cliente.Location = new Point(309, 39);
+            Cliente.Name = "Cliente";
+            Cliente.Size = new Size(0, 15);
+            Cliente.TabIndex = 6;
+            // 
+            // IdClienteLabel
+            // 
+            IdClienteLabel.AutoSize = true;
+            IdClienteLabel.Location = new Point(309, 17);
+            IdClienteLabel.Margin = new Padding(1, 0, 1, 0);
+            IdClienteLabel.Name = "IdClienteLabel";
+            IdClienteLabel.Size = new Size(44, 15);
+            IdClienteLabel.TabIndex = 5;
+            IdClienteLabel.Text = "Cliente";
+            // 
+            // Producto1
+            // 
+            Producto1.Text = "Producto";
+            Producto1.Width = 80;
+            // 
+            // Cantidad1
+            // 
+            Cantidad1.Text = "Cantidad";
+            // 
+            // Transportista
+            // 
+            Transportista.AutoSize = true;
+            Transportista.Location = new Point(582, 17);
+            Transportista.Margin = new Padding(1, 0, 1, 0);
+            Transportista.Name = "Transportista";
+            Transportista.Size = new Size(74, 15);
+            Transportista.TabIndex = 7;
+            Transportista.Text = "Transportista";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(582, 39);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 15);
+            label1.TabIndex = 8;
+            // 
+            // OP
+            // 
+            OP.AutoSize = true;
+            OP.Location = new Point(19, 17);
+            OP.Margin = new Padding(1, 0, 1, 0);
+            OP.Name = "OP";
+            OP.Size = new Size(122, 15);
+            OP.TabIndex = 9;
+            OP.Text = "Orden de Preparación";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(30, 39);
+            label2.Name = "label2";
+            label2.Size = new Size(0, 15);
+            label2.TabIndex = 10;
+            // 
             // CrearOrdenEntregaForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1129, 850);
+            ClientSize = new Size(790, 533);
+            Controls.Add(GenerarOrdenesPreparacionGroup);
+            Controls.Add(EliminarOrden);
             Controls.Add(GenerarOrdenDeEntregaButton);
             Controls.Add(EmpaquetarOrdenButton);
-            Controls.Add(label3);
-            Controls.Add(PrioridadCombo);
             Controls.Add(CrearOrdenEntregaList);
             Controls.Add(ListarEmpaquetarOrdenList);
-            Controls.Add(BuscarButton);
             Controls.Add(VolverButton);
-            Controls.Add(label2);
-            Controls.Add(IdOrdenlabel);
-            Controls.Add(FechaOEPicker);
-            Controls.Add(IdOrdenSeleccionCombo);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "CrearOrdenEntregaForm";
             Text = "CrearOrdenEntregaForm";
+            GenerarOrdenesPreparacionGroup.ResumeLayout(false);
+            GenerarOrdenesPreparacionGroup.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Button EmpaquetarOrdenButton;
-        private Label label3;
-        private ComboBox PrioridadCombo;
         private ListView CrearOrdenEntregaList;
-        private ColumnHeader IdOrden2Columna;
-        private ColumnHeader IdCliente2Columna;
-        private ColumnHeader DescripcionProducto2Columna;
-        private ColumnHeader Cantidad2Columna;
-        private ColumnHeader Estado2Columna;
         private ListView ListarEmpaquetarOrdenList;
-        private ColumnHeader IdOrdenColumna;
-        private ColumnHeader IdClienteColumna;
-        private ColumnHeader DescripcionProductoColumna;
-        private ColumnHeader EstadoColumna;
-        private ColumnHeader CantidadColumna;
-        private Button BuscarButton;
         private Button VolverButton;
-        private Label label2;
-        private Label IdOrdenlabel;
-        private DateTimePicker FechaOEPicker;
-        private ComboBox IdOrdenSeleccionCombo;
         private ColumnHeader IdOrdenSeleccionColumna;
         private Button GenerarOrdenDeEntregaButton;
+        private Button EliminarOrden;
+        private ColumnHeader Producto;
+        private ColumnHeader Cantidad;
+        private GroupBox GenerarOrdenesPreparacionGroup;
+        private Label Cliente;
+        private Label IdClienteLabel;
+        private ColumnHeader Producto1;
+        private ColumnHeader Cantidad1;
+        private Label label1;
+        private Label Transportista;
+        private Label label2;
+        private Label OP;
     }
 }
