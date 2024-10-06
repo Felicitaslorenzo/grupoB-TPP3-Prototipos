@@ -15,7 +15,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 IDOrdenPreparacion = "ORD001",
                 Clientes = new List<Clientes>
                 {
-                    new Clientes { IdCliente = "CL001", Prioridad = "Con prioridad de entrega", Transportista = "Transportista A" }
+                    new Clientes { IdCliente = "CL001", Prioridad = "Con prioridad de entrega", Transportista = "T1" }
                 },
                 Productos = new List<ProductoOrden>
                 {
@@ -30,7 +30,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 IDOrdenPreparacion = "ORD002",
                 Clientes = new List<Clientes>
                 {
-                    new Clientes { IdCliente = "CL002", Prioridad = "Sin prioridad", Transportista = "Transportista B" }
+                    new Clientes { IdCliente = "CL002", Prioridad = "Sin prioridad", Transportista = "T2" }
                 },
                 Productos = new List<ProductoOrden>
                 {
@@ -44,7 +44,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 IDOrdenPreparacion = "ORD003",
                 Clientes = new List<Clientes>
                 {
-                    new Clientes { IdCliente = "CL003", Prioridad = "Sin prioridad", Transportista = "Transportista C" }
+                    new Clientes { IdCliente = "CL003", Prioridad = "Sin prioridad", Transportista = "T3" }
                 },
                 Productos = new List<ProductoOrden>
                 {
@@ -59,7 +59,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 IDOrdenPreparacion = "ORD004",
                 Clientes = new List<Clientes>
                 {
-                    new Clientes { IdCliente = "CL004", Prioridad = "Con prioridad de entrega", Transportista = "Transportista D" }
+                    new Clientes { IdCliente = "CL004", Prioridad = "Con prioridad de entrega", Transportista = "T4" }
                 },
                 Productos = new List<ProductoOrden>
                 {
@@ -73,7 +73,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 IDOrdenPreparacion = "ORD005",
                 Clientes = new List<Clientes>
                 {
-                    new Clientes { IdCliente = "CL005", Prioridad = "Sin prioridad", Transportista = "Transportista E" }
+                    new Clientes { IdCliente = "CL005", Prioridad = "Sin prioridad", Transportista = "T5" }
                 },
                 Productos = new List<ProductoOrden>
                 {
@@ -87,7 +87,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 IDOrdenPreparacion = "ORD006",
                 Clientes = new List<Clientes>
                 {
-                    new Clientes { IdCliente = "CL006", Prioridad = "Sin prioridad", Transportista = "Transportista F" }
+                    new Clientes { IdCliente = "CL006", Prioridad = "Sin prioridad", Transportista = "T6" }
                 },
                 Productos = new List<ProductoOrden>
                 {
@@ -102,7 +102,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 IDOrdenPreparacion = "ORD007",
                 Clientes = new List<Clientes>
                 {
-                    new Clientes { IdCliente = "CL007", Prioridad = "Con prioridad de entrega", Transportista = "Transportista G" }
+                    new Clientes { IdCliente = "CL007", Prioridad = "Con prioridad de entrega", Transportista = "T7" }
                 },
                 Productos = new List<ProductoOrden>
                 {
@@ -117,7 +117,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 IDOrdenPreparacion = "ORD008",
                 Clientes = new List<Clientes>
                 {
-                    new Clientes { IdCliente = "CL008", Prioridad = "Sin prioridad", Transportista = "Transportista H" }
+                    new Clientes { IdCliente = "CL008", Prioridad = "Sin prioridad", Transportista = "T8" }
                 },
                 Productos = new List<ProductoOrden>
                 {
@@ -132,7 +132,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 IDOrdenPreparacion = "ORD009",
                 Clientes = new List<Clientes>
                 {
-                    new Clientes { IdCliente = "CL009", Prioridad = "Sin prioridad", Transportista = "Transportista I" }
+                    new Clientes { IdCliente = "CL009", Prioridad = "Sin prioridad", Transportista = "T9" }
                 },
                 Productos = new List<ProductoOrden>
                 {

@@ -55,10 +55,10 @@
             // 
             ProductosListView.Columns.AddRange(new ColumnHeader[] { IdProductoColumna, DescripcionColumna, CantidadColumna, UbicacionColumna });
             ProductosListView.FullRowSelect = true;
-            ProductosListView.Location = new Point(29, 197);
+            ProductosListView.Location = new Point(36, 246);
             ProductosListView.Margin = new Padding(2);
             ProductosListView.Name = "ProductosListView";
-            ProductosListView.Size = new Size(722, 246);
+            ProductosListView.Size = new Size(902, 306);
             ProductosListView.TabIndex = 0;
             ProductosListView.UseCompatibleStateImageBehavior = false;
             ProductosListView.View = View.Details;
@@ -91,38 +91,38 @@
             GenerarOrdenesPreparacionGroup.Controls.Add(AgregarProductoButton);
             GenerarOrdenesPreparacionGroup.Controls.Add(ProductoCombo);
             GenerarOrdenesPreparacionGroup.Controls.Add(ProductoLabel);
-            GenerarOrdenesPreparacionGroup.Location = new Point(29, 88);
+            GenerarOrdenesPreparacionGroup.Location = new Point(36, 110);
             GenerarOrdenesPreparacionGroup.Margin = new Padding(2);
             GenerarOrdenesPreparacionGroup.Name = "GenerarOrdenesPreparacionGroup";
             GenerarOrdenesPreparacionGroup.Padding = new Padding(2);
-            GenerarOrdenesPreparacionGroup.Size = new Size(721, 95);
+            GenerarOrdenesPreparacionGroup.Size = new Size(901, 119);
             GenerarOrdenesPreparacionGroup.TabIndex = 1;
             GenerarOrdenesPreparacionGroup.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(258, 26);
+            label1.Location = new Point(322, 32);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(69, 20);
+            label1.Size = new Size(83, 25);
             label1.TabIndex = 17;
             label1.Text = "Cantidad";
             // 
             // CantidadTextBox
             // 
-            CantidadTextBox.Location = new Point(257, 49);
+            CantidadTextBox.Location = new Point(321, 61);
             CantidadTextBox.Margin = new Padding(2);
             CantidadTextBox.Name = "CantidadTextBox";
-            CantidadTextBox.Size = new Size(176, 27);
+            CantidadTextBox.Size = new Size(219, 31);
             CantidadTextBox.TabIndex = 16;
             // 
             // AgregarProductoButton
             // 
-            AgregarProductoButton.Location = new Point(468, 46);
+            AgregarProductoButton.Location = new Point(585, 58);
             AgregarProductoButton.Margin = new Padding(2);
             AgregarProductoButton.Name = "AgregarProductoButton";
-            AgregarProductoButton.Size = new Size(155, 30);
+            AgregarProductoButton.Size = new Size(194, 38);
             AgregarProductoButton.TabIndex = 12;
             AgregarProductoButton.Text = "Agregar Producto";
             AgregarProductoButton.UseVisualStyleBackColor = true;
@@ -133,29 +133,29 @@
             ProductoCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             ProductoCombo.FormattingEnabled = true;
             ProductoCombo.Items.AddRange(new object[] { "SKU001", "SKU002", "SKU003", "SKU004", "SKU005", "SKU006", "SKU007", "SKU008", "SKU009", "SKU010", "SKU011", "SKU012", "SKU013", "SKU014", "SKU015", "SKU016", "SKU017", "SKU018", "SKU019", "SKU020", "SKU021", "SKU022", "SKU023", "SKU024", "SKU025", "SKU026", "SKU027", "SKU028", "SKU029", "SKU030", "SKU031", "SKU032" });
-            ProductoCombo.Location = new Point(12, 47);
+            ProductoCombo.Location = new Point(15, 59);
             ProductoCombo.Margin = new Padding(2);
             ProductoCombo.Name = "ProductoCombo";
-            ProductoCombo.Size = new Size(218, 28);
+            ProductoCombo.Size = new Size(272, 33);
             ProductoCombo.TabIndex = 14;
             // 
             // ProductoLabel
             // 
             ProductoLabel.AutoSize = true;
-            ProductoLabel.Location = new Point(12, 26);
+            ProductoLabel.Location = new Point(15, 32);
             ProductoLabel.Margin = new Padding(2, 0, 2, 0);
             ProductoLabel.Name = "ProductoLabel";
-            ProductoLabel.Size = new Size(69, 20);
+            ProductoLabel.Size = new Size(85, 25);
             ProductoLabel.TabIndex = 15;
             ProductoLabel.Text = "Producto";
             // 
             // IdClienteLabel
             // 
             IdClienteLabel.AutoSize = true;
-            IdClienteLabel.Location = new Point(41, 27);
+            IdClienteLabel.Location = new Point(51, 34);
             IdClienteLabel.Margin = new Padding(2, 0, 2, 0);
             IdClienteLabel.Name = "IdClienteLabel";
-            IdClienteLabel.Size = new Size(74, 20);
+            IdClienteLabel.Size = new Size(88, 25);
             IdClienteLabel.TabIndex = 3;
             IdClienteLabel.Text = "ID Cliente";
             // 
@@ -164,18 +164,19 @@
             IdClienteCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             IdClienteCombo.FormattingEnabled = true;
             IdClienteCombo.Items.AddRange(new object[] { "CLIENTE001", "CLIENTE002", "CLIENTE003", "CLIENTE004", "CLIENTE005", "CLIENTE006", "CLIENTE007", "CLIENTE008", "CLIENTE009", "CLIENTE010" });
-            IdClienteCombo.Location = new Point(41, 49);
+            IdClienteCombo.Location = new Point(51, 61);
             IdClienteCombo.Margin = new Padding(2);
             IdClienteCombo.Name = "IdClienteCombo";
-            IdClienteCombo.Size = new Size(218, 28);
+            IdClienteCombo.Size = new Size(272, 33);
             IdClienteCombo.TabIndex = 2;
+            IdClienteCombo.SelectedIndexChanged += ClienteComboBox_SelectedIndexChanged;
             // 
             // EliminarProductoButton
             // 
-            EliminarProductoButton.Location = new Point(608, 458);
+            EliminarProductoButton.Location = new Point(760, 572);
             EliminarProductoButton.Margin = new Padding(2);
             EliminarProductoButton.Name = "EliminarProductoButton";
-            EliminarProductoButton.Size = new Size(142, 30);
+            EliminarProductoButton.Size = new Size(178, 38);
             EliminarProductoButton.TabIndex = 13;
             EliminarProductoButton.Text = "Eliminar Producto";
             EliminarProductoButton.UseVisualStyleBackColor = true;
@@ -186,10 +187,10 @@
             TransportistaComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             TransportistaComboBox.FormattingEnabled = true;
             TransportistaComboBox.Items.AddRange(new object[] { "Transportista A", "Transportista B", "Transportista C", "Transportista D", "Transportista E", "Transportista F", "Transportista G", "Transportista H", "Transportista I", "Transportista J" });
-            TransportistaComboBox.Location = new Point(497, 49);
+            TransportistaComboBox.Location = new Point(621, 61);
             TransportistaComboBox.Margin = new Padding(2);
             TransportistaComboBox.Name = "TransportistaComboBox";
-            TransportistaComboBox.Size = new Size(186, 28);
+            TransportistaComboBox.Size = new Size(232, 33);
             TransportistaComboBox.TabIndex = 7;
             // 
             // PrioridadComboBox
@@ -197,38 +198,38 @@
             PrioridadComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             PrioridadComboBox.FormattingEnabled = true;
             PrioridadComboBox.Items.AddRange(new object[] { "Con prioridad de entrega", "Sin prioridad" });
-            PrioridadComboBox.Location = new Point(286, 49);
+            PrioridadComboBox.Location = new Point(358, 61);
             PrioridadComboBox.Margin = new Padding(2);
             PrioridadComboBox.Name = "PrioridadComboBox";
-            PrioridadComboBox.Size = new Size(176, 28);
+            PrioridadComboBox.Size = new Size(219, 33);
             PrioridadComboBox.TabIndex = 9;
             // 
             // TransportistaLabel
             // 
             TransportistaLabel.AutoSize = true;
-            TransportistaLabel.Location = new Point(497, 27);
+            TransportistaLabel.Location = new Point(621, 34);
             TransportistaLabel.Margin = new Padding(2, 0, 2, 0);
             TransportistaLabel.Name = "TransportistaLabel";
-            TransportistaLabel.Size = new Size(94, 20);
+            TransportistaLabel.Size = new Size(113, 25);
             TransportistaLabel.TabIndex = 10;
             TransportistaLabel.Text = "Transportista";
             // 
             // PrioridadLabel
             // 
             PrioridadLabel.AutoSize = true;
-            PrioridadLabel.Location = new Point(286, 27);
+            PrioridadLabel.Location = new Point(358, 34);
             PrioridadLabel.Margin = new Padding(2, 0, 2, 0);
             PrioridadLabel.Name = "PrioridadLabel";
-            PrioridadLabel.Size = new Size(70, 20);
+            PrioridadLabel.Size = new Size(84, 25);
             PrioridadLabel.TabIndex = 11;
             PrioridadLabel.Text = "Prioridad";
             // 
             // GenerarOrdenButton
             // 
-            GenerarOrdenButton.Location = new Point(442, 531);
+            GenerarOrdenButton.Location = new Point(552, 664);
             GenerarOrdenButton.Margin = new Padding(2);
             GenerarOrdenButton.Name = "GenerarOrdenButton";
-            GenerarOrdenButton.Size = new Size(146, 49);
+            GenerarOrdenButton.Size = new Size(182, 61);
             GenerarOrdenButton.TabIndex = 13;
             GenerarOrdenButton.Text = "Generar Orden";
             GenerarOrdenButton.UseVisualStyleBackColor = true;
@@ -236,19 +237,19 @@
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(604, 531);
+            VolverButton.Location = new Point(755, 664);
             VolverButton.Margin = new Padding(2);
             VolverButton.Name = "VolverButton";
-            VolverButton.Size = new Size(146, 49);
+            VolverButton.Size = new Size(182, 61);
             VolverButton.TabIndex = 14;
             VolverButton.Text = "Volver";
             VolverButton.UseVisualStyleBackColor = true;
             // 
             // GenerarOrdenPreparacionForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(802, 599);
+            ClientSize = new Size(1002, 749);
             Controls.Add(VolverButton);
             Controls.Add(IdClienteCombo);
             Controls.Add(GenerarOrdenButton);

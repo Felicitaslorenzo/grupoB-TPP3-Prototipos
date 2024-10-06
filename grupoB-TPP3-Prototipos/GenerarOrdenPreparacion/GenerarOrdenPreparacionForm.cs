@@ -2,7 +2,7 @@
 using System.Drawing.Text;
 using System.Reflection;
 using System.Windows.Forms;
-using System.Linq; // Asegúrate de tener esta directiva
+using System.Linq;
 
 
 namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
@@ -21,19 +21,17 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private void AgregarProductoButton_Click(object sender, EventArgs e)
         {
-            // Obtener los valores de los controles
-            string idProducto = ProductoCombo.Text; // Asumiendo que este ComboBox tiene los IDs de productos
+            string idProducto = ProductoCombo.Text;
             int cantidad;
 
             // Verificar que la cantidad es un número válido
             if (int.TryParse(CantidadTextBox.Text, out cantidad))
             {
-                // Buscar el producto en las órdenes de preparación
+                // busco el producto en las órdenes de preparación
                 bool productoEncontrado = false;
                 string ubicacionProducto = string.Empty;
-                string descripcionProducto = string.Empty; // Variable para la descripción
+                string descripcionProducto = string.Empty;
 
-                // Iterar sobre las órdenes de preparación
                 foreach (var orden in modelo.ordenes)
                 {
                     foreach (var producto in orden.Productos)
@@ -41,39 +39,37 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                         if (producto.IDProducto == idProducto)
                         {
                             ubicacionProducto = producto.Ubicacion;
-                            descripcionProducto = producto.DescripcionProducto; // Obtener la descripción real
+                            descripcionProducto = producto.DescripcionProducto; 
                             productoEncontrado = true;
-                            break; // Salir del bucle interno si se encuentra el producto
+                            break; 
                         }
                     }
 
-                    if (productoEncontrado) break; // Salir del bucle externo si se encuentra el producto
+                    if (productoEncontrado) break; 
                 }
 
                 // Verificar si el producto se encontró
                 if (productoEncontrado)
                 {
-                    // Crear un nuevo producto para agregar al ListView
                     var nuevoProducto = new ProductoOrden
                     {
                         IDProducto = idProducto,
                         Cantidad = cantidad,
-                        DescripcionProducto = descripcionProducto, // Usar la descripción encontrada
-                        Ubicacion = ubicacionProducto // Usar la ubicación encontrada
+                        DescripcionProducto = descripcionProducto, 
+                        Ubicacion = ubicacionProducto 
                     };
 
-                    // Crear el ListViewItem
+                    // crear lista de productos
                     var item = new ListViewItem(nuevoProducto.IDProducto);
                     item.SubItems.Add(nuevoProducto.DescripcionProducto);
                     item.SubItems.Add(nuevoProducto.Cantidad.ToString());
                     item.SubItems.Add(nuevoProducto.Ubicacion);
 
-                    // Agregar el nuevo producto al ListView
+                    // agregar el nuevo producto a la lista
                     ProductosListView.Items.Add(item);
 
-                    // Limpiar los campos de entrada
                     CantidadTextBox.Clear();
-                    ProductoCombo.SelectedIndex = -1; // Resetea el ComboBox si es necesario
+                    ProductoCombo.SelectedIndex = -1; 
 
                     MessageBox.Show($"El producto {nuevoProducto.DescripcionProducto} se ha agregado a la lista.");
                 }
@@ -90,14 +86,13 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private void ActualizarListView(string idOrdenPreparacion)
         {
-            // Limpia los items actuales en el ListView
             ProductosListView.Items.Clear();
 
             // Busca la orden correspondiente
             var ordenActual = Ordenes.FirstOrDefault(o => o.IDOrdenPreparacion == idOrdenPreparacion);
             if (ordenActual != null)
             {
-                // Agrega cada producto a la lista de vista
+                // Agrega cada producto a la lista
                 foreach (var producto in ordenActual.Productos)
                 {
                     ListViewItem item = new ListViewItem(producto.IDProducto);
@@ -119,14 +114,11 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             // Verifica si hay algún elemento seleccionado
             if (ProductosListView.SelectedItems.Count > 0)
             {
-                // Obtiene el elemento seleccionado
+                // Obtiene el producto seleccionado
                 ListViewItem itemSeleccionado = ProductosListView.SelectedItems[0];
 
-                // Elimina el elemento del ListView
                 ProductosListView.Items.Remove(itemSeleccionado);
 
-                // Opcional: Aquí podrías realizar alguna acción adicional, como
-                // actualizar el modelo de datos, si es necesario.
             }
             else
             {
@@ -140,7 +132,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             if (ProductosListView.Items.Count == 0)
             {
                 MessageBox.Show("No hay productos disponibles para crear una orden.");
-                return; // Salir si no hay productos
+                return; 
             }
 
             // Verificar que se haya seleccionado un cliente, prioridad y transportista
@@ -149,24 +141,22 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 string.IsNullOrWhiteSpace(TransportistaComboBox.Text))
             {
                 MessageBox.Show("Por favor, selecciona un cliente, su prioridad y un transportista.");
-                return; // Salir si falta información
+                return; 
             }
 
-            // Obtener el último ID de orden
+           
             string nuevoIDOrden = GenerarNuevoIDOrden();
 
-            // Crear una lista para almacenar los productos de la nueva orden
             List<ProductoOrden> productosOrden = new List<ProductoOrden>();
 
-            // Recorrer los elementos del ListView y agregar los productos a la lista
             foreach (ListViewItem productoItem in ProductosListView.Items)
             {
                 var producto = new ProductoOrden
                 {
-                    IDProducto = productoItem.SubItems[0].Text, // Suponiendo que el ID del producto está en la primera columna
-                    DescripcionProducto = productoItem.SubItems[1].Text, // Suponiendo que la descripción está en la segunda columna
-                    Cantidad = int.Parse(productoItem.SubItems[2].Text), // Suponiendo que la cantidad está en la tercera columna
-                    Ubicacion = productoItem.SubItems[3].Text // Suponiendo que la ubicación está en la cuarta columna
+                    IDProducto = productoItem.SubItems[0].Text, 
+                    DescripcionProducto = productoItem.SubItems[1].Text, 
+                    Cantidad = int.Parse(productoItem.SubItems[2].Text), 
+                    Ubicacion = productoItem.SubItems[3].Text 
                 };
                 productosOrden.Add(producto);
             }
@@ -179,50 +169,73 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
         {
             new Clientes
             {
-                IdCliente = IdClienteCombo.Text, // Asumiendo que se selecciona el cliente de un ComboBox
-                Prioridad = PrioridadComboBox.Text, // Asumiendo que se selecciona la prioridad de un ComboBox
-                Transportista = TransportistaComboBox.Text // Asumiendo que se selecciona el transportista de un ComboBox
+                IdCliente = IdClienteCombo.Text, 
+                Prioridad = PrioridadComboBox.Text, 
+                Transportista = TransportistaComboBox.Text 
             }
         },
-                Productos = productosOrden // Asignar la lista de productos extraída
+                Productos = productosOrden 
             };
 
             // Agregar la nueva orden al modelo
             modelo.ordenes.Add(nuevaOrden);
 
-            // Mostrar un mensaje de que la orden ha sido creada
             MessageBox.Show($"Orden {nuevoIDOrden} creada exitosamente.");
 
-            // Limpiar los elementos del ListView
             ProductosListView.Items.Clear();
 
             // Limpiar los controles de selección
-            IdClienteCombo.SelectedIndex = -1; // Restablecer a ningún elemento seleccionado
-            PrioridadComboBox.SelectedIndex = -1; // Restablecer a ningún elemento seleccionado
-            TransportistaComboBox.SelectedIndex = -1; // Restablecer a ningún elemento seleccionado
+            IdClienteCombo.SelectedIndex = -1; 
+            PrioridadComboBox.SelectedIndex = -1; 
+            TransportistaComboBox.SelectedIndex = -1; 
         }
 
-        // Método para generar un nuevo ID de orden
+        // método para generar un nuevo ID de orden
         private string GenerarNuevoIDOrden()
         {
-            int nuevoId = 1; // Valor por defecto para la primera orden
+            int nuevoId = 1; // valor para la primera orden
 
-            // Verificar si ya hay órdenes en el modelo
             if (modelo.ordenes.Count > 0)
             {
-                // Obtener el último ID de orden existente
+                // obtener el último ID de orden existente
                 var ultimaOrden = modelo.ordenes.Last();
-                string ultimoIdOrden = ultimaOrden.IDOrdenPreparacion; // Suponiendo que el ID es de la forma "ORD00X"
-                nuevoId = int.Parse(ultimoIdOrden.Substring(3)) + 1; // Asumiendo que el ID es de la forma "ORD00X"
+                string ultimoIdOrden = ultimaOrden.IDOrdenPreparacion; 
+                nuevoId = int.Parse(ultimoIdOrden.Substring(3)) + 1; 
             }
 
-            return "ORD00" + nuevoId.ToString(); // Formato del nuevo ID
+            return "ORD00" + nuevoId.ToString(); 
         }
 
         private void ProductosListView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+        private string clienteSeleccionado = ""; // almacena el cliente seleccionado
+
+        private void ClienteComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string nuevoCliente = IdClienteCombo.SelectedItem.ToString();
+
+            // si ya hay productos en la lista, verificar si el cliente ha cambiado
+            if (ProductosListView.Items.Count > 0)
+            {
+                if (!string.IsNullOrEmpty(clienteSeleccionado) && clienteSeleccionado != nuevoCliente)
+                {
+                    ProductosListView.Items.Clear();
+                    productosOrden.Clear(); 
+
+                    MessageBox.Show("El cliente ha sido cambiado. Se han eliminado los productos agregados.");
+
+                    CantidadTextBox.Clear();
+                    ProductoCombo.SelectedIndex = -1;
+                }
+            }
+
+            clienteSeleccionado = nuevoCliente;
+        }
+
+
     }
 }
 
