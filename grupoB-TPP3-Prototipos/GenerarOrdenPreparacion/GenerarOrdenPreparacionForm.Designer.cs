@@ -54,6 +54,7 @@
             // ProductosListView
             // 
             ProductosListView.Columns.AddRange(new ColumnHeader[] { IdProductoColumna, DescripcionColumna, CantidadColumna, UbicacionColumna });
+            ProductosListView.FullRowSelect = true;
             ProductosListView.Location = new Point(29, 197);
             ProductosListView.Margin = new Padding(2);
             ProductosListView.Name = "ProductosListView";

@@ -12,21 +12,30 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
         public GenerarOrdenPreparacionForm()
         {
             InitializeComponent();
-            CargarOrdenes();
+            CargarProductos();
         }
 
-        private void CargarOrdenes()
+        private void CargarProductos()
         {
+            // Limpiar el ListView antes de cargar nuevos productos
+            ProductosListView.Items.Clear();
+
+            // Iterar sobre cada orden en el modelo
             foreach (var orden in modelo.ordenes)
             {
-                ListViewItem item = new ListViewItem(orden.IDOrdenPreparacion);
-                item.SubItems.Add(orden.IdCliente);
-                item.SubItems.Add(orden.Prioridad);
-                item.SubItems.Add(orden.Transportista);
-                // Puedes agregar más subitems según sea necesario
-                ProductosListView.Items.Add(item); // Asegúrate de que "OrdenesListView" sea el nombre correcto de tu ListView
+                // Iterar sobre cada producto en la orden
+                foreach (var producto in orden.Productos)
+                {
+                    ListViewItem item = new ListViewItem(producto.IDProducto);
+                    item.SubItems.Add(producto.DescripcionProducto);
+                    item.SubItems.Add(producto.Cantidad.ToString());
+                    item.SubItems.Add(producto.Ubicacion);
+                    // Agregar el item al ListView
+                    ProductosListView.Items.Add(item);
+                }
             }
         }
+
 
 
         private void AgregarProductoButton_Click(object sender, EventArgs e)
@@ -87,7 +96,22 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private void EliminarProductoButton_Click(object sender, EventArgs e)
         {
+            // Verifica si hay algún elemento seleccionado
+            if (ProductosListView.SelectedItems.Count > 0)
+            {
+                // Obtiene el elemento seleccionado
+                ListViewItem itemSeleccionado = ProductosListView.SelectedItems[0];
 
+                // Elimina el elemento del ListView
+                ProductosListView.Items.Remove(itemSeleccionado);
+
+                // Opcional: Aquí podrías realizar alguna acción adicional, como
+                // actualizar el modelo de datos, si es necesario.
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un producto para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void GenerarOrdenButton_Click(object sender, EventArgs e)
