@@ -50,6 +50,7 @@
             buttonGenerarOrden.TabIndex = 1;
             buttonGenerarOrden.Text = "Generar Orden de Preparación";
             buttonGenerarOrden.UseVisualStyleBackColor = true;
+            buttonGenerarOrden.Click += buttonGenerarOrden_Click;
             // 
             // MenuOrdenesPreparacionForm
             // 

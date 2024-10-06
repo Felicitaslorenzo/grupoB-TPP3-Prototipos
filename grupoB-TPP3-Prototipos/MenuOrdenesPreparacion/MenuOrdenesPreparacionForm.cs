@@ -1,4 +1,5 @@
-﻿using System;
+﻿using grupoB_TPP3_Prototipos.GenerarOrdenPreparacion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,13 @@ namespace grupoB_TPP3_Prototipos.MenuOrdenesPreparacion
         private void buttonListarOrdenesPreparacion_Click(object sender, EventArgs e)
         {
             ListarOrdenPreparacion.ListarOrdenPreparacionForm listarOrdenPreparacionForm = new ListarOrdenPreparacion.ListarOrdenPreparacionForm();
-            listarOrdenPreparacionForm.ShowDialog(); 
+            listarOrdenPreparacionForm.ShowDialog();
+        }
+
+        private void buttonGenerarOrden_Click(object sender, EventArgs e)
+        {
+            GenerarOrdenPreparacion.GenerarOrdenPreparacionForm GenerarOrdenPreparacionForm = new GenerarOrdenPreparacion.GenerarOrdenPreparacionForm();
+            GenerarOrdenPreparacionForm.ShowDialog();
         }
     }
 }

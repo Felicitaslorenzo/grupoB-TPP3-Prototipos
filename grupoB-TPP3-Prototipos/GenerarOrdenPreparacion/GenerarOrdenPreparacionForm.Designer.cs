@@ -32,6 +32,7 @@
             IdProductoColumna = new ColumnHeader();
             DescripcionColumna = new ColumnHeader();
             CantidadColumna = new ColumnHeader();
+            UbicacionColumna = new ColumnHeader();
             GenerarOrdenesPreparacionGroup = new GroupBox();
             label1 = new Label();
             CantidadTextBox = new TextBox();
@@ -47,19 +48,20 @@
             PrioridadLabel = new Label();
             GenerarOrdenButton = new Button();
             VolverButton = new Button();
-            UbicacionColumna = new ColumnHeader();
             GenerarOrdenesPreparacionGroup.SuspendLayout();
             SuspendLayout();
             // 
             // ProductosListView
             // 
             ProductosListView.Columns.AddRange(new ColumnHeader[] { IdProductoColumna, DescripcionColumna, CantidadColumna, UbicacionColumna });
-            ProductosListView.Location = new Point(36, 246);
+            ProductosListView.Location = new Point(29, 197);
+            ProductosListView.Margin = new Padding(2);
             ProductosListView.Name = "ProductosListView";
-            ProductosListView.Size = new Size(901, 306);
+            ProductosListView.Size = new Size(722, 246);
             ProductosListView.TabIndex = 0;
             ProductosListView.UseCompatibleStateImageBehavior = false;
             ProductosListView.View = View.Details;
+            ProductosListView.SelectedIndexChanged += ProductosListView_SelectedIndexChanged;
             // 
             // IdProductoColumna
             // 
@@ -76,6 +78,11 @@
             CantidadColumna.Text = "Cantidad";
             CantidadColumna.Width = 100;
             // 
+            // UbicacionColumna
+            // 
+            UbicacionColumna.Text = "Ubicacion";
+            UbicacionColumna.Width = 100;
+            // 
             // GenerarOrdenesPreparacionGroup
             // 
             GenerarOrdenesPreparacionGroup.Controls.Add(label1);
@@ -83,68 +90,70 @@
             GenerarOrdenesPreparacionGroup.Controls.Add(AgregarProductoButton);
             GenerarOrdenesPreparacionGroup.Controls.Add(ProductoCombo);
             GenerarOrdenesPreparacionGroup.Controls.Add(ProductoLabel);
-            GenerarOrdenesPreparacionGroup.Location = new Point(36, 110);
+            GenerarOrdenesPreparacionGroup.Location = new Point(29, 88);
             GenerarOrdenesPreparacionGroup.Margin = new Padding(2);
             GenerarOrdenesPreparacionGroup.Name = "GenerarOrdenesPreparacionGroup";
             GenerarOrdenesPreparacionGroup.Padding = new Padding(2);
-            GenerarOrdenesPreparacionGroup.Size = new Size(901, 119);
+            GenerarOrdenesPreparacionGroup.Size = new Size(721, 95);
             GenerarOrdenesPreparacionGroup.TabIndex = 1;
             GenerarOrdenesPreparacionGroup.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(322, 33);
+            label1.Location = new Point(258, 26);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(83, 25);
+            label1.Size = new Size(69, 20);
             label1.TabIndex = 17;
             label1.Text = "Cantidad";
             // 
             // CantidadTextBox
             // 
-            CantidadTextBox.Location = new Point(321, 61);
+            CantidadTextBox.Location = new Point(257, 49);
+            CantidadTextBox.Margin = new Padding(2);
             CantidadTextBox.Name = "CantidadTextBox";
-            CantidadTextBox.Size = new Size(219, 31);
+            CantidadTextBox.Size = new Size(176, 27);
             CantidadTextBox.TabIndex = 16;
             // 
             // AgregarProductoButton
             // 
-            AgregarProductoButton.Location = new Point(585, 58);
+            AgregarProductoButton.Location = new Point(468, 46);
             AgregarProductoButton.Margin = new Padding(2);
             AgregarProductoButton.Name = "AgregarProductoButton";
-            AgregarProductoButton.Size = new Size(194, 37);
+            AgregarProductoButton.Size = new Size(155, 30);
             AgregarProductoButton.TabIndex = 12;
             AgregarProductoButton.Text = "Agregar Producto";
             AgregarProductoButton.UseVisualStyleBackColor = true;
+            AgregarProductoButton.Click += AgregarProductoButton_Click;
             // 
             // ProductoCombo
             // 
             ProductoCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             ProductoCombo.FormattingEnabled = true;
-            ProductoCombo.Location = new Point(15, 59);
+            ProductoCombo.Location = new Point(12, 47);
             ProductoCombo.Margin = new Padding(2);
             ProductoCombo.Name = "ProductoCombo";
-            ProductoCombo.Size = new Size(271, 33);
+            ProductoCombo.Size = new Size(218, 28);
             ProductoCombo.TabIndex = 14;
             // 
             // ProductoLabel
             // 
             ProductoLabel.AutoSize = true;
-            ProductoLabel.Location = new Point(15, 32);
+            ProductoLabel.Location = new Point(12, 26);
             ProductoLabel.Margin = new Padding(2, 0, 2, 0);
             ProductoLabel.Name = "ProductoLabel";
-            ProductoLabel.Size = new Size(85, 25);
+            ProductoLabel.Size = new Size(69, 20);
             ProductoLabel.TabIndex = 15;
             ProductoLabel.Text = "Producto";
             // 
             // IdClienteLabel
             // 
             IdClienteLabel.AutoSize = true;
-            IdClienteLabel.Location = new Point(51, 34);
+            IdClienteLabel.Location = new Point(41, 27);
             IdClienteLabel.Margin = new Padding(2, 0, 2, 0);
             IdClienteLabel.Name = "IdClienteLabel";
-            IdClienteLabel.Size = new Size(88, 25);
+            IdClienteLabel.Size = new Size(74, 20);
             IdClienteLabel.TabIndex = 3;
             IdClienteLabel.Text = "ID Cliente";
             // 
@@ -152,92 +161,89 @@
             // 
             IdClienteCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             IdClienteCombo.FormattingEnabled = true;
-            IdClienteCombo.Location = new Point(51, 61);
+            IdClienteCombo.Location = new Point(41, 49);
             IdClienteCombo.Margin = new Padding(2);
             IdClienteCombo.Name = "IdClienteCombo";
-            IdClienteCombo.Size = new Size(271, 33);
+            IdClienteCombo.Size = new Size(218, 28);
             IdClienteCombo.TabIndex = 2;
             // 
             // EliminarProductoButton
             // 
-            EliminarProductoButton.Location = new Point(760, 572);
+            EliminarProductoButton.Location = new Point(608, 458);
             EliminarProductoButton.Margin = new Padding(2);
             EliminarProductoButton.Name = "EliminarProductoButton";
-            EliminarProductoButton.Size = new Size(177, 37);
+            EliminarProductoButton.Size = new Size(142, 30);
             EliminarProductoButton.TabIndex = 13;
             EliminarProductoButton.Text = "Eliminar Producto";
             EliminarProductoButton.UseVisualStyleBackColor = true;
+            EliminarProductoButton.Click += EliminarProductoButton_Click;
             // 
             // EstadoComboBox
             // 
             EstadoComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             EstadoComboBox.FormattingEnabled = true;
-            EstadoComboBox.Location = new Point(621, 61);
+            EstadoComboBox.Location = new Point(497, 49);
             EstadoComboBox.Margin = new Padding(2);
             EstadoComboBox.Name = "EstadoComboBox";
-            EstadoComboBox.Size = new Size(232, 33);
+            EstadoComboBox.Size = new Size(186, 28);
             EstadoComboBox.TabIndex = 7;
             // 
             // PrioridadComoBox
             // 
             PrioridadComoBox.DropDownStyle = ComboBoxStyle.DropDownList;
             PrioridadComoBox.FormattingEnabled = true;
-            PrioridadComoBox.Location = new Point(357, 61);
+            PrioridadComoBox.Location = new Point(286, 49);
             PrioridadComoBox.Margin = new Padding(2);
             PrioridadComoBox.Name = "PrioridadComoBox";
-            PrioridadComoBox.Size = new Size(219, 33);
+            PrioridadComoBox.Size = new Size(176, 28);
             PrioridadComoBox.TabIndex = 9;
             // 
             // TransportistaLabel
             // 
             TransportistaLabel.AutoSize = true;
-            TransportistaLabel.Location = new Point(621, 34);
+            TransportistaLabel.Location = new Point(497, 27);
             TransportistaLabel.Margin = new Padding(2, 0, 2, 0);
             TransportistaLabel.Name = "TransportistaLabel";
-            TransportistaLabel.Size = new Size(113, 25);
+            TransportistaLabel.Size = new Size(94, 20);
             TransportistaLabel.TabIndex = 10;
             TransportistaLabel.Text = "Transportista";
             // 
             // PrioridadLabel
             // 
             PrioridadLabel.AutoSize = true;
-            PrioridadLabel.Location = new Point(357, 34);
+            PrioridadLabel.Location = new Point(286, 27);
             PrioridadLabel.Margin = new Padding(2, 0, 2, 0);
             PrioridadLabel.Name = "PrioridadLabel";
-            PrioridadLabel.Size = new Size(84, 25);
+            PrioridadLabel.Size = new Size(70, 20);
             PrioridadLabel.TabIndex = 11;
             PrioridadLabel.Text = "Prioridad";
             // 
             // GenerarOrdenButton
             // 
-            GenerarOrdenButton.Location = new Point(552, 664);
+            GenerarOrdenButton.Location = new Point(442, 531);
             GenerarOrdenButton.Margin = new Padding(2);
             GenerarOrdenButton.Name = "GenerarOrdenButton";
-            GenerarOrdenButton.Size = new Size(182, 61);
+            GenerarOrdenButton.Size = new Size(146, 49);
             GenerarOrdenButton.TabIndex = 13;
             GenerarOrdenButton.Text = "Generar Orden";
             GenerarOrdenButton.UseVisualStyleBackColor = true;
+            GenerarOrdenButton.Click += GenerarOrdenButton_Click;
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(755, 664);
+            VolverButton.Location = new Point(604, 531);
             VolverButton.Margin = new Padding(2);
             VolverButton.Name = "VolverButton";
-            VolverButton.Size = new Size(182, 61);
+            VolverButton.Size = new Size(146, 49);
             VolverButton.TabIndex = 14;
             VolverButton.Text = "Volver";
             VolverButton.UseVisualStyleBackColor = true;
             // 
-            // UbicacionColumna
-            // 
-            UbicacionColumna.Text = "Ubicacion";
-            UbicacionColumna.Width = 100;
-            // 
             // GenerarOrdenPreparacionForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1003, 749);
+            ClientSize = new Size(802, 599);
             Controls.Add(VolverButton);
             Controls.Add(IdClienteCombo);
             Controls.Add(GenerarOrdenButton);
@@ -249,6 +255,7 @@
             Controls.Add(EstadoComboBox);
             Controls.Add(GenerarOrdenesPreparacionGroup);
             Controls.Add(ProductosListView);
+            Margin = new Padding(2);
             Name = "GenerarOrdenPreparacionForm";
             Text = "GenerarOrdenPreparacionForm";
             GenerarOrdenesPreparacionGroup.ResumeLayout(false);
