@@ -16,5 +16,10 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
         {
             InitializeComponent();
         }
+
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -22,5 +22,17 @@ namespace grupoB_TPP3_Prototipos.MenuOrdenesSeleccion
             ListarOrdenSeleccion.ListarOrdenSeleccionForm listarOrdenSeleccionForm = new ListarOrdenSeleccion.ListarOrdenSeleccionForm();
             listarOrdenSeleccionForm.ShowDialog();
         }
+
+        private void buttonRetirarOrden_Click(object sender, EventArgs e)
+        {
+            PrepararOrdenSeleccion.RetirarOrdenSeleccionForm RetirarOrdenSeleccionForm = new PrepararOrdenSeleccion.RetirarOrdenSeleccionForm();
+            RetirarOrdenSeleccionForm.ShowDialog();
+        }
+
+        private void buttonGenerarOrden_Click(object sender, EventArgs e)
+        {
+            GenerarOrdenSelección.GenerarOrdenSeleccionForm GenerarOrdenSeleccionForm = new GenerarOrdenSelección.GenerarOrdenSeleccionForm();
+            GenerarOrdenSeleccionForm.ShowDialog();
+        }
     }
 }

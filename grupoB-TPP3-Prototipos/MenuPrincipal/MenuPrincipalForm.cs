@@ -1,4 +1,5 @@
-﻿using System;
+﻿using grupoB_TPP3_Prototipos.MenuOrdenesEntrega;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,12 @@ namespace grupoB_TPP3_Prototipos.MenuPrincipal
         {
             MenuOrdenesSeleccion.MenuOrdenesSeleccionForm menuOrdenesSeleccionForm = new MenuOrdenesSeleccion.MenuOrdenesSeleccionForm();
             menuOrdenesSeleccionForm.ShowDialog();
+        }
+
+        private void buttonOrdenesDeEntrega_Click(object sender, EventArgs e)
+        {
+            MenuOrdenesEntrega.MenuOrdenesEntregaForm menuOrdenesEntregaForm = new MenuOrdenesEntrega.MenuOrdenesEntregaForm();
+            menuOrdenesEntregaForm.ShowDialog();
         }
     }
 }

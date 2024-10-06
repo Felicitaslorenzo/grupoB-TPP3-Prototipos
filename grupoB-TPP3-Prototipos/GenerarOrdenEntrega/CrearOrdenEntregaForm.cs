@@ -16,5 +16,10 @@ namespace grupoB_TPP3_Prototipos.CrearOrdenEntrega
         {
             InitializeComponent();
         }
+
+        private void EmpaquetarOrdenButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

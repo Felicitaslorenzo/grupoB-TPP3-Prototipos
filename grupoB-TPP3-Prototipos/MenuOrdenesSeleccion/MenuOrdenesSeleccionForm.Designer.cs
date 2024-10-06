@@ -35,10 +35,9 @@
             // 
             // buttonListarOrdenesSeleccion
             // 
-            buttonListarOrdenesSeleccion.Location = new Point(246, 11);
-            buttonListarOrdenesSeleccion.Margin = new Padding(3, 2, 3, 2);
+            buttonListarOrdenesSeleccion.Location = new Point(281, 15);
             buttonListarOrdenesSeleccion.Name = "buttonListarOrdenesSeleccion";
-            buttonListarOrdenesSeleccion.Size = new Size(170, 91);
+            buttonListarOrdenesSeleccion.Size = new Size(194, 121);
             buttonListarOrdenesSeleccion.TabIndex = 0;
             buttonListarOrdenesSeleccion.Text = "Listar Órdenes de Selección";
             buttonListarOrdenesSeleccion.UseVisualStyleBackColor = true;
@@ -46,33 +45,32 @@
             // 
             // buttonGenerarOrden
             // 
-            buttonGenerarOrden.Location = new Point(246, 236);
-            buttonGenerarOrden.Margin = new Padding(3, 2, 3, 2);
+            buttonGenerarOrden.Location = new Point(281, 315);
             buttonGenerarOrden.Name = "buttonGenerarOrden";
-            buttonGenerarOrden.Size = new Size(170, 91);
+            buttonGenerarOrden.Size = new Size(194, 121);
             buttonGenerarOrden.TabIndex = 1;
             buttonGenerarOrden.Text = "Generar orden de Selección";
             buttonGenerarOrden.UseVisualStyleBackColor = true;
+            buttonGenerarOrden.Click += buttonGenerarOrden_Click;
             // 
             // buttonRetirarOrden
             // 
-            buttonRetirarOrden.Location = new Point(246, 124);
-            buttonRetirarOrden.Margin = new Padding(3, 2, 3, 2);
+            buttonRetirarOrden.Location = new Point(281, 165);
             buttonRetirarOrden.Name = "buttonRetirarOrden";
-            buttonRetirarOrden.Size = new Size(170, 91);
+            buttonRetirarOrden.Size = new Size(194, 121);
             buttonRetirarOrden.TabIndex = 2;
             buttonRetirarOrden.Text = "Retirar orden de Selección";
             buttonRetirarOrden.UseVisualStyleBackColor = true;
+            buttonRetirarOrden.Click += buttonRetirarOrden_Click;
             // 
             // MenuOrdenesSeleccionForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(674, 338);
+            ClientSize = new Size(770, 451);
             Controls.Add(buttonRetirarOrden);
             Controls.Add(buttonGenerarOrden);
             Controls.Add(buttonListarOrdenesSeleccion);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "MenuOrdenesSeleccionForm";
             Text = "MenuOrdenesSeleccionForm";
             ResumeLayout(false);
