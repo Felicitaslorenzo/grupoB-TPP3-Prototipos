@@ -38,14 +38,14 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                         IDProducto = idProducto,
                         Cantidad = cantidad,
                         DescripcionProducto = resultadoProducto.Item2,
-                        Ubicacion = resultadoProducto.Item3
+                        // Ubicacion = resultadoProducto.Item3
                     };
 
 
                     var item = new ListViewItem(nuevoProducto.IDProducto);
                     item.SubItems.Add(nuevoProducto.DescripcionProducto);
                     item.SubItems.Add(nuevoProducto.Cantidad.ToString());
-                    item.SubItems.Add(nuevoProducto.Ubicacion);
+                    // item.SubItems.Add(nuevoProducto.Ubicacion);
                     ProductosListView.Items.Add(item);
 
                     // Limpiar campos de entrada
@@ -147,6 +147,19 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
         private void GenerarOrdenPreparacionForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void IdClienteCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Limpia los productos del ListView
+            ProductosListView.Items.Clear(); // Elimina todos los elementos del ListView
+
+            if (IdClienteCombo.SelectedItem is Cliente selectedCliente)
+            {
+                // Cargar transportistas y productos al seleccionar un cliente
+                modelo.CargarTransportistas(selectedCliente, TransportistaCombo);
+                modelo.CargarProductos(selectedCliente, ProductoCombo);
+            }
         }
     }
 }

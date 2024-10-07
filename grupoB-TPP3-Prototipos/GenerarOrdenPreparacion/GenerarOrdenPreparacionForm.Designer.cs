@@ -33,12 +33,12 @@
             DescripcionColumna = new ColumnHeader();
             CantidadColumna = new ColumnHeader();
             GenerarOrdenesPreparacionGroup = new GroupBox();
-            FechaOPPicker = new DateTimePicker();
-            label2 = new Label();
             label1 = new Label();
             CantidadTextBox = new TextBox();
             ProductoCombo = new ComboBox();
             ProductoLabel = new Label();
+            FechaOPPicker = new DateTimePicker();
+            label2 = new Label();
             AgregarProductoButton = new Button();
             IdClienteLabel = new Label();
             IdClienteCombo = new ComboBox();
@@ -94,24 +94,6 @@
             GenerarOrdenesPreparacionGroup.TabIndex = 1;
             GenerarOrdenesPreparacionGroup.TabStop = false;
             // 
-            // FechaOPPicker
-            // 
-            FechaOPPicker.Location = new Point(21, 118);
-            FechaOPPicker.Margin = new Padding(3, 2, 3, 2);
-            FechaOPPicker.Name = "FechaOPPicker";
-            FechaOPPicker.Size = new Size(187, 27);
-            FechaOPPicker.TabIndex = 21;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(21, 90);
-            label2.Margin = new Padding(1, 0, 1, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(123, 20);
-            label2.TabIndex = 19;
-            label2.Text = "Fecha de entrega";
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -150,6 +132,24 @@
             ProductoLabel.TabIndex = 15;
             ProductoLabel.Text = "Producto";
             // 
+            // FechaOPPicker
+            // 
+            FechaOPPicker.Location = new Point(21, 118);
+            FechaOPPicker.Margin = new Padding(3, 2, 3, 2);
+            FechaOPPicker.Name = "FechaOPPicker";
+            FechaOPPicker.Size = new Size(187, 27);
+            FechaOPPicker.TabIndex = 21;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(21, 90);
+            label2.Margin = new Padding(1, 0, 1, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(123, 20);
+            label2.TabIndex = 19;
+            label2.Text = "Fecha de entrega";
+            // 
             // AgregarProductoButton
             // 
             AgregarProductoButton.Location = new Point(589, 229);
@@ -180,6 +180,7 @@
             IdClienteCombo.Name = "IdClienteCombo";
             IdClienteCombo.Size = new Size(175, 28);
             IdClienteCombo.TabIndex = 2;
+            IdClienteCombo.SelectedIndexChanged += IdClienteCombo_SelectedIndexChanged;
             // 
             // EliminarProductoButton
             // 
