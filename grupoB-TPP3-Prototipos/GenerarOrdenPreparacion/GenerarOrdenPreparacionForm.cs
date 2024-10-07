@@ -10,7 +10,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
     public partial class GenerarOrdenPreparacionForm : Form
     {
         private GenerarOrdenPreparacionModel modelo = new GenerarOrdenPreparacionModel();
-        private List<OrdenPreparacion> Ordenes { get; set; }
+        private List<OrdenPreparacion> Ordenes = new List<OrdenPreparacion>();
         private List<ProductoOrden> productosOrden = new List<ProductoOrden>();
 
 
@@ -215,6 +215,11 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private void ClienteComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(IdClienteCombo.SelectedItem == null)
+            {
+                return;
+            }
+
             string nuevoCliente = IdClienteCombo.SelectedItem.ToString();
 
             // si ya hay productos en la lista, verificar si el cliente ha cambiado
