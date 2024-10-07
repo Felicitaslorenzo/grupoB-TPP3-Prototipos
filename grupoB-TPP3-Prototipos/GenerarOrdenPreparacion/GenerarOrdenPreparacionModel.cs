@@ -213,74 +213,155 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             return "ORD00" + nuevoId.ToString();
         }
 
-
-
-        internal List<Producto> BuscarProductoCliente(Cliente cliente)
+        internal void CargarCliente(ComboBox IdClienteCombo, ComboBox TransportistaCombo, ComboBox ProductosCombo)
         {
-            //TODO: devolver algo distinto para cada cliente.
-
-            if (cliente.IdCliente == "CL001")
-            {
-                return new List<Producto> {
-                    new Producto { IDProducto = "SKU030", DescripcionProducto = "Leche" },
-                    new Producto { IDProducto = "SKU031", DescripcionProducto = "Yogur" },
-                    new Producto { IDProducto = "SKU032", DescripcionProducto = "Mantequilla" }
-                };
-            }
-            else if (cliente.IdCliente == "CL002")
-            {
-                return new List<Producto>
-                    {
-                        new Producto { IDProducto = "SKU001", DescripcionProducto = "Arroz" },
-                        new Producto { IDProducto = "SKU001", DescripcionProducto = "Yogur" },
-                        new Producto { IDProducto = "SKU003", DescripcionProducto = "Mantequilla" }
-                    };
-            }
-            else
-            {
-                // Devuelve una lista vacía si no coincide con los clientes anteriores
-                return new List<Producto>();
-            }
-        }
-
-        internal void CargarCliente(ComboBox IdClienteCombo, ComboBox TransportistaCombo)
-        {
-   
             var clientes = ObtenerCliente();
 
+            // Carga de los clientes en el ComboBox
             foreach (var cliente in clientes)
             {
-                IdClienteCombo.Items.Add(cliente); 
+                IdClienteCombo.Items.Add(cliente);
             }
 
-            IdClienteCombo.DisplayMember = "IdCliente"; 
+            IdClienteCombo.DisplayMember = "IdCliente";
 
-   
+            // Evento cuando se selecciona un cliente
             IdClienteCombo.SelectedIndexChanged += (s, e) =>
             {
                 if (IdClienteCombo.SelectedItem is Cliente selectedCliente)
                 {
-                    CargarTransportistas(selectedCliente, TransportistaCombo); 
+                    // Cargar transportistas y productos al seleccionar un cliente
+                    CargarTransportistas(selectedCliente, TransportistaCombo);
+                    CargarProductos(selectedCliente, ProductosCombo);
                 }
             };
         }
 
         internal void CargarTransportistas(Cliente cliente, ComboBox TransportistaCombo)
         {
+            // Limpia los transportistas anteriores
+            TransportistaCombo.Items.Clear();
 
+            // Agrega el transportista del cliente seleccionado
             TransportistaCombo.Items.Add(cliente.Transportista);
+            TransportistaCombo.SelectedIndex = 0; // Selecciona el primer elemento automáticamente
+        }
+
+        internal void CargarProductos(Cliente cliente, ComboBox ProductosCombo)
+        {
+            // Limpia los productos anteriores
+            ProductosCombo.Items.Clear();
+
+            // Carga los productos devueltos por la función BuscarProductoCliente
+            var productos = BuscarProductoCliente(cliente);
+            foreach (var producto in productos)
+            {
+                ProductosCombo.Items.Add(producto);
+            }
+
+            ProductosCombo.DisplayMember = "IDProducto";
+        }
+
+        internal List<Producto> BuscarProductoCliente(Cliente cliente)
+        {
+            if (cliente.IdCliente == "CL001")
+            {
+                return new List<Producto> 
+                {
+                    new Producto { IDProducto = "SKU001", DescripcionProducto = "Ropa" },
+                    new Producto { IDProducto = "SKU001", DescripcionProducto = "Mueble" },
+                    new Producto { IDProducto = "SKU002", DescripcionProducto = "Electrodomestico" }
+                };
+            }
+            else if (cliente.IdCliente == "CL002")
+            {
+                return new List<Producto>
+                {
+                    new Producto { IDProducto = "SKU001", DescripcionProducto = "Ropa" },
+                    new Producto { IDProducto = "SKU004", DescripcionProducto = "Ladrillos" },
+                    new Producto { IDProducto = "SKU005", DescripcionProducto = "Cemento" }
+                };
+            }
+            else if (cliente.IdCliente == "CL003")
+            {
+                return new List<Producto>
+                {
+                    new Producto { IDProducto = "SKU007", DescripcionProducto = "Articulo de decoración" },
+                    new Producto { IDProducto = "SKU008", DescripcionProducto = "Ladrillos" },
+                    new Producto { IDProducto = "SKU009", DescripcionProducto = "Cemento" }
+                };
+            }
+            else if (cliente.IdCliente == "CL004")
+            {
+                return new List<Producto>
+                {
+                    new Producto { IDProducto = "SKU007", DescripcionProducto = "Articulo de decoración" },
+                    new Producto { IDProducto = "SKU010", DescripcionProducto = "Metales" },
+                    new Producto { IDProducto = "SKU011", DescripcionProducto = "Producto farmacéutico" }
+                };
+            }
+            else if (cliente.IdCliente == "CL005")
+            {
+                return new List<Producto>
+                {
+                    new Producto { IDProducto = "SKU011", DescripcionProducto = "Producto farmacéutico" },
+                    new Producto { IDProducto = "SKU012", DescripcionProducto = "Inventario de lujo" },
+                    new Producto { IDProducto = "SKU013", DescripcionProducto = "Material sensible" }
+                };
+            }
+            else if (cliente.IdCliente == "CL006")
+            {
+                return new List<Producto>
+                {
+                    new Producto { IDProducto = "SKU007", DescripcionProducto = "Articulos de decoración" },
+                    new Producto { IDProducto = "SKU010", DescripcionProducto = "Metales" },
+                    new Producto { IDProducto = "SKU014", DescripcionProducto = "Dispositivo electronico" }
+                };
+            }
+            else if (cliente.IdCliente == "CL007")
+            {
+                return new List<Producto>
+                {
+                    new Producto { IDProducto = "SKU007", DescripcionProducto = "Articulos de decoración" },
+                    new Producto { IDProducto = "SKU015", DescripcionProducto = "Maquinas" },
+                    new Producto { IDProducto = "SKU016", DescripcionProducto = "Muebles" }
+                };
+            }
+            else if (cliente.IdCliente == "CL008")
+            {
+                return new List<Producto>
+                {
+                    new Producto { IDProducto = "SKU017", DescripcionProducto = "Herramienta industrial" },
+                    new Producto { IDProducto = "SKU018", DescripcionProducto = "Calzado" },
+                    new Producto { IDProducto = "SKU019", DescripcionProducto = "Accesorio" }
+                };
+            }
+            else if (cliente.IdCliente == "CL009")
+            {
+                return new List<Producto>
+                {
+                    new Producto { IDProducto = "SKU015", DescripcionProducto = "Maquinas" },
+                    new Producto { IDProducto = "SKU016", DescripcionProducto = "Muebles" }
+                };
+            }
+            else
+            {
+                return new List<Producto>(); // Devuelve lista vacía si no coincide
+            }
         }
 
         public List<Cliente> ObtenerCliente()
         {
             return new List<Cliente>
-            {
-                new Cliente { IdCliente = "CL001", Transportista = "TR001" },
-                new Cliente { IdCliente = "CL002", Transportista = "TR002" },
-                new Cliente { IdCliente = "CL003", Transportista = "TR003" },
-                new Cliente { IdCliente = "CL004", Transportista = "TR004" },
-            };
+    {
+        new Cliente { IdCliente = "CL001", Transportista = "TR001" },
+        new Cliente { IdCliente = "CL002", Transportista = "TR002" },
+        new Cliente { IdCliente = "CL003", Transportista = "TR003" },
+        new Cliente { IdCliente = "CL004", Transportista = "TR004" },
+    };
         }
+
+
     }
 }
 

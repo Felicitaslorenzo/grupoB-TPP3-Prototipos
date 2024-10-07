@@ -15,7 +15,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
         {
             InitializeComponent();
             //TODO: cargar el combo de clientes.
-            modelo.CargarCliente(IdClienteCombo, TransportistaCombo);
+            modelo.CargarCliente(IdClienteCombo, TransportistaCombo, ProductoCombo);
             //TODO: foreach cliente in clientes bla bla...
             //IdClienteCombo.Items.Add(cliente); //un objeto cliente.
         }
@@ -131,7 +131,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
             //ejemplo: ver producto seleccionado:
             //var prodSel = (Producto)ProductoCombo.SelectedItem;
-        } 
+        }
 
         private void ProductosListView_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -142,6 +142,11 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 string productoId = selectedItem.SubItems[0].Text;
                 MessageBox.Show($"Producto seleccionado: {productoId}");
             }
+        }
+
+        private void GenerarOrdenPreparacionForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
