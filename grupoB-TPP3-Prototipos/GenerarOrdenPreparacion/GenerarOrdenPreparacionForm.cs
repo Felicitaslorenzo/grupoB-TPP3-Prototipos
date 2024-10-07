@@ -28,31 +28,39 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             // Validación de cantidad
             if (int.TryParse(CantidadTextBox.Text, out cantidad))
             {
+
                 // Llamada al modelo para verificar si el producto existe en las órdenes
                 var resultadoProducto = modelo.BuscarProductoEnOrdenes(idProducto);
 
                 if (resultadoProducto.Item1)
                 {
-                    var nuevoProducto = new Producto
+                    if (cantidad <= 0)
                     {
-                        IDProducto = idProducto,
-                        Cantidad = cantidad,
-                        DescripcionProducto = resultadoProducto.Item2,
-                        Ubicacion = resultadoProducto.Item3
-                    };
+                        MessageBox.Show("La cantidad debe ser mayor a 0");
+                    }
+                    else
+                    {
+                        var nuevoProducto = new Producto
+                        {
+                            IDProducto = idProducto,
+                            Cantidad = cantidad,
+                            DescripcionProducto = resultadoProducto.Item2,
+                            Ubicacion = resultadoProducto.Item3
+                        };
 
+                        var item = new ListViewItem(nuevoProducto.IDProducto);
+                        item.SubItems.Add(nuevoProducto.DescripcionProducto);
+                        item.SubItems.Add(nuevoProducto.Cantidad.ToString());
+                        item.SubItems.Add(nuevoProducto.Ubicacion);
+                        ProductosListView.Items.Add(item);
 
-                    var item = new ListViewItem(nuevoProducto.IDProducto);
-                    item.SubItems.Add(nuevoProducto.DescripcionProducto);
-                    item.SubItems.Add(nuevoProducto.Cantidad.ToString());
-                    item.SubItems.Add(nuevoProducto.Ubicacion);
-                    ProductosListView.Items.Add(item);
+                        // Limpiar campos de entrada
+                        CantidadTextBox.Clear();
+                        ProductoCombo.SelectedIndex = -1;
 
-                    // Limpiar campos de entrada
-                    CantidadTextBox.Clear();
-                    ProductoCombo.SelectedIndex = -1;
+                        MessageBox.Show($"El producto {nuevoProducto.DescripcionProducto} se ha agregado a la lista.");
+                    }
 
-                    MessageBox.Show($"El producto {nuevoProducto.DescripcionProducto} se ha agregado a la lista.");
                 }
                 else
                 {
