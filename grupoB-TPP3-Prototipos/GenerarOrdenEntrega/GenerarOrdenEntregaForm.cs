@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace grupoB_TPP3_Prototipos.CrearOrdenEntrega
+namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
 {
-    public partial class CrearOrdenEntregaForm : Form
+    public partial class GenerarOrdenEntregaForm : Form
     {
-        public CrearOrdenEntregaForm()
+        public GenerarOrdenEntregaForm()
         {
             InitializeComponent();
-        }
-
-        private void EmpaquetarOrdenButton_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

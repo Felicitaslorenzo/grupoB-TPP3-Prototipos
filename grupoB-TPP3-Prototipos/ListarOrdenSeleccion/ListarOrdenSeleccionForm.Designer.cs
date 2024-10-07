@@ -35,15 +35,19 @@
             BuscarButton = new Button();
             ListarOrdenSeleccionList = new ListView();
             IdOrdenSeleccionColumna = new ColumnHeader();
-            FechaEmisionOSColumna = new ColumnHeader();
-            DescripcionProductoColumna = new ColumnHeader();
-            CantidadColumna = new ColumnHeader();
-            UbicacionColumna = new ColumnHeader();
             EstadoColumna = new ColumnHeader();
+            FechaEmisionOSColumna = new ColumnHeader();
+            FechaEstadoColumna = new ColumnHeader();
             VolverListaButton = new Button();
             FechaHastaOSPicker = new DateTimePicker();
             label4 = new Label();
-            FechaEstadoColumna = new ColumnHeader();
+            listView1 = new ListView();
+            IdOrdenPreparacionColumna = new ColumnHeader();
+            ClienteColumna = new ColumnHeader();
+            TransportistaColumna = new ColumnHeader();
+            listView2 = new ListView();
+            cantidadColumna = new ColumnHeader();
+            DescripcionColumna = new ColumnHeader();
             SuspendLayout();
             // 
             // IdOrdenSeleccionCombo
@@ -85,10 +89,10 @@
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(763, 131);
+            BuscarButton.Location = new Point(735, 106);
             BuscarButton.Margin = new Padding(2);
             BuscarButton.Name = "BuscarButton";
-            BuscarButton.Size = new Size(160, 38);
+            BuscarButton.Size = new Size(165, 38);
             BuscarButton.TabIndex = 15;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
@@ -96,8 +100,8 @@
             // 
             // ListarOrdenSeleccionList
             // 
-            ListarOrdenSeleccionList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccionColumna, DescripcionProductoColumna, CantidadColumna, UbicacionColumna, EstadoColumna, FechaEmisionOSColumna, FechaEstadoColumna });
-            ListarOrdenSeleccionList.Location = new Point(29, 205);
+            ListarOrdenSeleccionList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccionColumna, FechaEmisionOSColumna, EstadoColumna, FechaEstadoColumna });
+            ListarOrdenSeleccionList.Location = new Point(18, 161);
             ListarOrdenSeleccionList.Margin = new Padding(4);
             ListarOrdenSeleccionList.Name = "ListarOrdenSeleccionList";
             ListarOrdenSeleccionList.Size = new Size(918, 243);
@@ -108,41 +112,26 @@
             // IdOrdenSeleccionColumna
             // 
             IdOrdenSeleccionColumna.Text = "ID Orden Seleccion";
-            IdOrdenSeleccionColumna.Width = 150;
-            // 
-            // FechaEmisionOSColumna
-            // 
-            FechaEmisionOSColumna.DisplayIndex = 1;
-            FechaEmisionOSColumna.Text = "Fecha de Emision";
-            FechaEmisionOSColumna.Width = 100;
-            // 
-            // DescripcionProductoColumna
-            // 
-            DescripcionProductoColumna.DisplayIndex = 2;
-            DescripcionProductoColumna.Text = "Descripción Producto";
-            DescripcionProductoColumna.Width = 180;
-            // 
-            // CantidadColumna
-            // 
-            CantidadColumna.DisplayIndex = 3;
-            CantidadColumna.Text = "Cantidad";
-            CantidadColumna.Width = 100;
-            // 
-            // UbicacionColumna
-            // 
-            UbicacionColumna.DisplayIndex = 4;
-            UbicacionColumna.Text = "Ubicación";
-            UbicacionColumna.Width = 100;
+            IdOrdenSeleccionColumna.Width = 180;
             // 
             // EstadoColumna
             // 
-            EstadoColumna.DisplayIndex = 5;
             EstadoColumna.Text = "Estado";
             EstadoColumna.Width = 100;
             // 
+            // FechaEmisionOSColumna
+            // 
+            FechaEmisionOSColumna.Text = "Fecha de Emision";
+            FechaEmisionOSColumna.Width = 160;
+            // 
+            // FechaEstadoColumna
+            // 
+            FechaEstadoColumna.Text = "Fecha Estado";
+            FechaEstadoColumna.Width = 150;
+            // 
             // VolverListaButton
             // 
-            VolverListaButton.Location = new Point(776, 466);
+            VolverListaButton.Location = new Point(764, 979);
             VolverListaButton.Margin = new Padding(2);
             VolverListaButton.Name = "VolverListaButton";
             VolverListaButton.Size = new Size(160, 38);
@@ -155,7 +144,7 @@
             FechaHastaOSPicker.Location = new Point(680, 60);
             FechaHastaOSPicker.Margin = new Padding(4);
             FechaHastaOSPicker.Name = "FechaHastaOSPicker";
-            FechaHastaOSPicker.Size = new Size(201, 31);
+            FechaHastaOSPicker.Size = new Size(220, 31);
             FechaHastaOSPicker.TabIndex = 19;
             // 
             // label4
@@ -168,16 +157,60 @@
             label4.TabIndex = 21;
             label4.Text = "Fecha hasta";
             // 
-            // FechaEstadoColumna
+            // listView1
             // 
-            FechaEstadoColumna.Text = "Fecha Estado";
-            FechaEstadoColumna.Width = 150;
+            listView1.Columns.AddRange(new ColumnHeader[] { IdOrdenPreparacionColumna, ClienteColumna, TransportistaColumna });
+            listView1.Location = new Point(18, 432);
+            listView1.Margin = new Padding(4);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(918, 243);
+            listView1.TabIndex = 22;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // IdOrdenPreparacionColumna
+            // 
+            IdOrdenPreparacionColumna.Text = "ID Orden Preparacion";
+            IdOrdenPreparacionColumna.Width = 200;
+            // 
+            // ClienteColumna
+            // 
+            ClienteColumna.Text = "Ciente";
+            ClienteColumna.Width = 100;
+            // 
+            // TransportistaColumna
+            // 
+            TransportistaColumna.Text = "Transportista";
+            TransportistaColumna.Width = 120;
+            // 
+            // listView2
+            // 
+            listView2.Columns.AddRange(new ColumnHeader[] { cantidadColumna, DescripcionColumna });
+            listView2.Location = new Point(19, 707);
+            listView2.Margin = new Padding(4);
+            listView2.Name = "listView2";
+            listView2.Size = new Size(918, 243);
+            listView2.TabIndex = 23;
+            listView2.UseCompatibleStateImageBehavior = false;
+            listView2.View = View.Details;
+            // 
+            // cantidadColumna
+            // 
+            cantidadColumna.Text = "Cantidad";
+            cantidadColumna.Width = 100;
+            // 
+            // DescripcionColumna
+            // 
+            DescripcionColumna.Text = "Descripción Producto";
+            DescripcionColumna.Width = 200;
             // 
             // ListarOrdenSeleccionForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1000, 532);
+            ClientSize = new Size(950, 1038);
+            Controls.Add(listView2);
+            Controls.Add(listView1);
             Controls.Add(label4);
             Controls.Add(FechaHastaOSPicker);
             Controls.Add(VolverListaButton);
@@ -205,13 +238,17 @@
         private ListView ListarOrdenSeleccionList;
         private ColumnHeader IdOrdenSeleccionColumna;
         private ColumnHeader FechaEmisionOSColumna;
-        private ColumnHeader DescripcionProductoColumna;
-        private ColumnHeader CantidadColumna;
-        private ColumnHeader UbicacionColumna;
         private Button VolverListaButton;
         private ColumnHeader EstadoColumna;
         private DateTimePicker FechaHastaOSPicker;
         private Label label4;
         private ColumnHeader FechaEstadoColumna;
+        private ListView listView1;
+        private ColumnHeader IdOrdenPreparacionColumna;
+        private ColumnHeader ClienteColumna;
+        private ColumnHeader TransportistaColumna;
+        private ListView listView2;
+        private ColumnHeader cantidadColumna;
+        private ColumnHeader DescripcionColumna;
     }
 }
