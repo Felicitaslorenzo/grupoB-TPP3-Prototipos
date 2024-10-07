@@ -53,20 +53,25 @@
             QuitarSeleccionadasOSButton = new Button();
             TotalesOSSeleccionadasLabel = new Label();
             TotalesOSSeleccionadasList = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
+            ProductoOrdenSeleccionadaColumna = new ColumnHeader();
+            CantidadOrdenSeleccionadaColumna = new ColumnHeader();
             GenerarOSSeleccionadasList = new ListView();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
-            columnHeader5 = new ColumnHeader();
+            IdOPSeleccionadaColumna = new ColumnHeader();
+            FechaOPSeleccionadaColumna = new ColumnHeader();
+            PrioridadOPSeleccionadaColumna = new ColumnHeader();
+            ClienteOSColumna = new ColumnHeader();
+            ClienteSeleccionadoColumna = new ColumnHeader();
+            UbicacionOrdenSeleccionadaColumna = new ColumnHeader();
+            UbicacionOSColumna = new ColumnHeader();
             SuspendLayout();
             // 
             // GenerarOrdenSeleccionBuscarList
             // 
-            GenerarOrdenSeleccionBuscarList.Columns.AddRange(new ColumnHeader[] { IdOrdenPreparacionColumna, FechaOPColumna, PrioridadColumna });
-            GenerarOrdenSeleccionBuscarList.Location = new Point(29, 197);
+            GenerarOrdenSeleccionBuscarList.Columns.AddRange(new ColumnHeader[] { IdOrdenPreparacionColumna, FechaOPColumna, PrioridadColumna, ClienteOSColumna });
+            GenerarOrdenSeleccionBuscarList.Location = new Point(47, 315);
+            GenerarOrdenSeleccionBuscarList.Margin = new Padding(5, 5, 5, 5);
             GenerarOrdenSeleccionBuscarList.Name = "GenerarOrdenSeleccionBuscarList";
-            GenerarOrdenSeleccionBuscarList.Size = new Size(466, 195);
+            GenerarOrdenSeleccionBuscarList.Size = new Size(755, 310);
             GenerarOrdenSeleccionBuscarList.TabIndex = 25;
             GenerarOrdenSeleccionBuscarList.UseCompatibleStateImageBehavior = false;
             GenerarOrdenSeleccionBuscarList.View = View.Details;
@@ -74,7 +79,7 @@
             // IdOrdenPreparacionColumna
             // 
             IdOrdenPreparacionColumna.Text = "ID Orden Preparación";
-            IdOrdenPreparacionColumna.Width = 170;
+            IdOrdenPreparacionColumna.Width = 250;
             // 
             // FechaOPColumna
             // 
@@ -84,14 +89,13 @@
             // PrioridadColumna
             // 
             PrioridadColumna.Text = "Prioridad";
-            PrioridadColumna.Width = 100;
+            PrioridadColumna.Width = 120;
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(327, 102);
-            BuscarButton.Margin = new Padding(2);
+            BuscarButton.Location = new Point(531, 163);
             BuscarButton.Name = "BuscarButton";
-            BuscarButton.Size = new Size(548, 30);
+            BuscarButton.Size = new Size(890, 48);
             BuscarButton.TabIndex = 24;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
@@ -99,10 +103,9 @@
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(746, 742);
-            VolverButton.Margin = new Padding(2);
+            VolverButton.Location = new Point(1212, 1187);
             VolverButton.Name = "VolverButton";
-            VolverButton.Size = new Size(128, 30);
+            VolverButton.Size = new Size(208, 48);
             VolverButton.TabIndex = 23;
             VolverButton.Text = "Volver";
             VolverButton.UseVisualStyleBackColor = true;
@@ -110,76 +113,83 @@
             // FechaDesdeLabel
             // 
             FechaDesdeLabel.AutoSize = true;
-            FechaDesdeLabel.Location = new Point(327, 13);
+            FechaDesdeLabel.Location = new Point(531, 21);
+            FechaDesdeLabel.Margin = new Padding(5, 0, 5, 0);
             FechaDesdeLabel.Name = "FechaDesdeLabel";
-            FechaDesdeLabel.Size = new Size(93, 20);
+            FechaDesdeLabel.Size = new Size(150, 32);
             FechaDesdeLabel.TabIndex = 22;
             FechaDesdeLabel.Text = "Fecha Desde";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(29, 12);
+            label1.Location = new Point(47, 19);
+            label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(152, 20);
+            label1.Size = new Size(243, 32);
             label1.TabIndex = 21;
             label1.Text = "ID Orden Preparación";
             // 
             // FechaOSDesdePicker
             // 
-            FechaOSDesdePicker.Location = new Point(327, 36);
+            FechaOSDesdePicker.Location = new Point(531, 58);
+            FechaOSDesdePicker.Margin = new Padding(5, 5, 5, 5);
             FechaOSDesdePicker.Name = "FechaOSDesdePicker";
-            FechaOSDesdePicker.Size = new Size(144, 27);
+            FechaOSDesdePicker.Size = new Size(232, 39);
             FechaOSDesdePicker.TabIndex = 20;
             // 
             // IdOrdenSeleccionCombo
             // 
             IdOrdenSeleccionCombo.FormattingEnabled = true;
-            IdOrdenSeleccionCombo.Location = new Point(29, 36);
+            IdOrdenSeleccionCombo.Location = new Point(47, 58);
+            IdOrdenSeleccionCombo.Margin = new Padding(5, 5, 5, 5);
             IdOrdenSeleccionCombo.Name = "IdOrdenSeleccionCombo";
-            IdOrdenSeleccionCombo.Size = new Size(250, 28);
+            IdOrdenSeleccionCombo.Size = new Size(404, 40);
             IdOrdenSeleccionCombo.TabIndex = 19;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(673, 16);
+            label3.Location = new Point(1094, 26);
+            label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
-            label3.Size = new Size(70, 20);
+            label3.Size = new Size(109, 32);
             label3.TabIndex = 29;
             label3.Text = "Prioridad";
             // 
             // PrioridadCombo
             // 
             PrioridadCombo.FormattingEnabled = true;
-            PrioridadCombo.Location = new Point(673, 39);
+            PrioridadCombo.Location = new Point(1094, 62);
+            PrioridadCombo.Margin = new Padding(5, 5, 5, 5);
             PrioridadCombo.Name = "PrioridadCombo";
-            PrioridadCombo.Size = new Size(203, 28);
+            PrioridadCombo.Size = new Size(327, 40);
             PrioridadCombo.TabIndex = 28;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(29, 84);
+            label4.Location = new Point(47, 134);
+            label4.Margin = new Padding(5, 0, 5, 0);
             label4.Name = "label4";
-            label4.Size = new Size(137, 20);
+            label4.Size = new Size(220, 32);
             label4.TabIndex = 31;
             label4.Text = "Descripción Cliente";
             // 
             // DescripcionClienteCombo
             // 
             DescripcionClienteCombo.FormattingEnabled = true;
-            DescripcionClienteCombo.Location = new Point(29, 108);
+            DescripcionClienteCombo.Location = new Point(47, 173);
+            DescripcionClienteCombo.Margin = new Padding(5, 5, 5, 5);
             DescripcionClienteCombo.Name = "DescripcionClienteCombo";
-            DescripcionClienteCombo.Size = new Size(250, 28);
+            DescripcionClienteCombo.Size = new Size(404, 40);
             DescripcionClienteCombo.TabIndex = 30;
             // 
             // GenerarOrdenButton
             // 
-            GenerarOrdenButton.Location = new Point(538, 742);
-            GenerarOrdenButton.Margin = new Padding(2);
+            GenerarOrdenButton.Location = new Point(874, 1187);
             GenerarOrdenButton.Name = "GenerarOrdenButton";
-            GenerarOrdenButton.Size = new Size(194, 30);
+            GenerarOrdenButton.Size = new Size(315, 48);
             GenerarOrdenButton.TabIndex = 43;
             GenerarOrdenButton.Text = "Generar Orden";
             GenerarOrdenButton.UseVisualStyleBackColor = true;
@@ -187,35 +197,37 @@
             // FechaHastaLabel
             // 
             FechaHastaLabel.AutoSize = true;
-            FechaHastaLabel.Location = new Point(495, 14);
+            FechaHastaLabel.Location = new Point(804, 22);
+            FechaHastaLabel.Margin = new Padding(5, 0, 5, 0);
             FechaHastaLabel.Name = "FechaHastaLabel";
-            FechaHastaLabel.Size = new Size(89, 20);
+            FechaHastaLabel.Size = new Size(142, 32);
             FechaHastaLabel.TabIndex = 45;
             FechaHastaLabel.Text = "Fecha Hasta";
             // 
             // FechaOSHastaPicker
             // 
-            FechaOSHastaPicker.Location = new Point(495, 37);
+            FechaOSHastaPicker.Location = new Point(804, 59);
+            FechaOSHastaPicker.Margin = new Padding(5, 5, 5, 5);
             FechaOSHastaPicker.Name = "FechaOSHastaPicker";
-            FechaOSHastaPicker.Size = new Size(144, 27);
+            FechaOSHastaPicker.Size = new Size(232, 39);
             FechaOSHastaPicker.TabIndex = 44;
             // 
             // AgregarSeleccionadaOSButton
             // 
-            AgregarSeleccionadaOSButton.Location = new Point(690, 396);
-            AgregarSeleccionadaOSButton.Margin = new Padding(2);
+            AgregarSeleccionadaOSButton.Location = new Point(1121, 634);
             AgregarSeleccionadaOSButton.Name = "AgregarSeleccionadaOSButton";
-            AgregarSeleccionadaOSButton.Size = new Size(184, 30);
+            AgregarSeleccionadaOSButton.Size = new Size(299, 48);
             AgregarSeleccionadaOSButton.TabIndex = 46;
             AgregarSeleccionadaOSButton.Text = "Agregar Seleccionadas";
             AgregarSeleccionadaOSButton.UseVisualStyleBackColor = true;
             // 
             // DetalleOSList
             // 
-            DetalleOSList.Columns.AddRange(new ColumnHeader[] { ProductoColumna, CantidadColumna });
-            DetalleOSList.Location = new Point(518, 227);
+            DetalleOSList.Columns.AddRange(new ColumnHeader[] { ProductoColumna, CantidadColumna, UbicacionOSColumna });
+            DetalleOSList.Location = new Point(842, 363);
+            DetalleOSList.Margin = new Padding(5, 5, 5, 5);
             DetalleOSList.Name = "DetalleOSList";
-            DetalleOSList.Size = new Size(358, 165);
+            DetalleOSList.Size = new Size(579, 262);
             DetalleOSList.TabIndex = 47;
             DetalleOSList.UseCompatibleStateImageBehavior = false;
             DetalleOSList.View = View.Details;
@@ -223,27 +235,28 @@
             // ProductoColumna
             // 
             ProductoColumna.Text = "Producto";
-            ProductoColumna.Width = 100;
+            ProductoColumna.Width = 120;
             // 
             // CantidadColumna
             // 
             CantidadColumna.Text = "Cantidad";
+            CantidadColumna.Width = 120;
             // 
             // DetalleOSLabel
             // 
             DetalleOSLabel.AutoSize = true;
-            DetalleOSLabel.Location = new Point(518, 197);
+            DetalleOSLabel.Location = new Point(842, 315);
+            DetalleOSLabel.Margin = new Padding(5, 0, 5, 0);
             DetalleOSLabel.Name = "DetalleOSLabel";
-            DetalleOSLabel.Size = new Size(139, 20);
+            DetalleOSLabel.Size = new Size(222, 32);
             DetalleOSLabel.TabIndex = 48;
             DetalleOSLabel.Text = "Detalle de la Orden";
             // 
             // QuitarSeleccionadasOSButton
             // 
-            QuitarSeleccionadasOSButton.Location = new Point(690, 686);
-            QuitarSeleccionadasOSButton.Margin = new Padding(2);
+            QuitarSeleccionadasOSButton.Location = new Point(1121, 1098);
             QuitarSeleccionadasOSButton.Name = "QuitarSeleccionadasOSButton";
-            QuitarSeleccionadasOSButton.Size = new Size(184, 30);
+            QuitarSeleccionadasOSButton.Size = new Size(299, 48);
             QuitarSeleccionadasOSButton.TabIndex = 49;
             QuitarSeleccionadasOSButton.Text = "Quitar Seleccionadas";
             QuitarSeleccionadasOSButton.UseVisualStyleBackColor = true;
@@ -251,61 +264,85 @@
             // TotalesOSSeleccionadasLabel
             // 
             TotalesOSSeleccionadasLabel.AutoSize = true;
-            TotalesOSSeleccionadasLabel.Location = new Point(518, 487);
+            TotalesOSSeleccionadasLabel.Location = new Point(842, 779);
+            TotalesOSSeleccionadasLabel.Margin = new Padding(5, 0, 5, 0);
             TotalesOSSeleccionadasLabel.Name = "TotalesOSSeleccionadasLabel";
-            TotalesOSSeleccionadasLabel.Size = new Size(56, 20);
+            TotalesOSSeleccionadasLabel.Size = new Size(88, 32);
             TotalesOSSeleccionadasLabel.TabIndex = 52;
             TotalesOSSeleccionadasLabel.Text = "Totales";
             // 
             // TotalesOSSeleccionadasList
             // 
-            TotalesOSSeleccionadasList.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
-            TotalesOSSeleccionadasList.Location = new Point(518, 518);
+            TotalesOSSeleccionadasList.Columns.AddRange(new ColumnHeader[] { ProductoOrdenSeleccionadaColumna, CantidadOrdenSeleccionadaColumna, UbicacionOrdenSeleccionadaColumna });
+            TotalesOSSeleccionadasList.Location = new Point(842, 829);
+            TotalesOSSeleccionadasList.Margin = new Padding(5, 5, 5, 5);
             TotalesOSSeleccionadasList.Name = "TotalesOSSeleccionadasList";
-            TotalesOSSeleccionadasList.Size = new Size(358, 165);
+            TotalesOSSeleccionadasList.Size = new Size(579, 262);
             TotalesOSSeleccionadasList.TabIndex = 51;
             TotalesOSSeleccionadasList.UseCompatibleStateImageBehavior = false;
             TotalesOSSeleccionadasList.View = View.Details;
             // 
-            // columnHeader1
+            // ProductoOrdenSeleccionadaColumna
             // 
-            columnHeader1.Text = "Producto";
-            columnHeader1.Width = 100;
+            ProductoOrdenSeleccionadaColumna.Text = "Producto";
+            ProductoOrdenSeleccionadaColumna.Width = 120;
             // 
-            // columnHeader2
+            // CantidadOrdenSeleccionadaColumna
             // 
-            columnHeader2.Text = "Cantidad";
+            CantidadOrdenSeleccionadaColumna.Text = "Cantidad";
+            CantidadOrdenSeleccionadaColumna.Width = 120;
             // 
             // GenerarOSSeleccionadasList
             // 
-            GenerarOSSeleccionadasList.Columns.AddRange(new ColumnHeader[] { columnHeader3, columnHeader4, columnHeader5 });
-            GenerarOSSeleccionadasList.Location = new Point(29, 487);
+            GenerarOSSeleccionadasList.Columns.AddRange(new ColumnHeader[] { IdOPSeleccionadaColumna, FechaOPSeleccionadaColumna, PrioridadOPSeleccionadaColumna, ClienteSeleccionadoColumna });
+            GenerarOSSeleccionadasList.Location = new Point(47, 779);
+            GenerarOSSeleccionadasList.Margin = new Padding(5, 5, 5, 5);
             GenerarOSSeleccionadasList.Name = "GenerarOSSeleccionadasList";
-            GenerarOSSeleccionadasList.Size = new Size(466, 195);
+            GenerarOSSeleccionadasList.Size = new Size(755, 310);
             GenerarOSSeleccionadasList.TabIndex = 50;
             GenerarOSSeleccionadasList.UseCompatibleStateImageBehavior = false;
             GenerarOSSeleccionadasList.View = View.Details;
             // 
-            // columnHeader3
+            // IdOPSeleccionadaColumna
             // 
-            columnHeader3.Text = "ID Orden Preparación";
-            columnHeader3.Width = 170;
+            IdOPSeleccionadaColumna.Text = "ID Orden Preparación";
+            IdOPSeleccionadaColumna.Width = 270;
             // 
-            // columnHeader4
+            // FechaOPSeleccionadaColumna
             // 
-            columnHeader4.Text = "Fecha";
-            columnHeader4.Width = 100;
+            FechaOPSeleccionadaColumna.Text = "Fecha";
+            FechaOPSeleccionadaColumna.Width = 100;
             // 
-            // columnHeader5
+            // PrioridadOPSeleccionadaColumna
             // 
-            columnHeader5.Text = "Prioridad";
-            columnHeader5.Width = 100;
+            PrioridadOPSeleccionadaColumna.Text = "Prioridad";
+            PrioridadOPSeleccionadaColumna.Width = 150;
+            // 
+            // ClienteOSColumna
+            // 
+            ClienteOSColumna.Text = "Descripcion Cliente";
+            ClienteOSColumna.Width = 220;
+            // 
+            // ClienteSeleccionadoColumna
+            // 
+            ClienteSeleccionadoColumna.Text = "Descripcion Cliente";
+            ClienteSeleccionadoColumna.Width = 250;
+            // 
+            // UbicacionOrdenSeleccionadaColumna
+            // 
+            UbicacionOrdenSeleccionadaColumna.Text = "Ubicacion";
+            UbicacionOrdenSeleccionadaColumna.Width = 120;
+            // 
+            // UbicacionOSColumna
+            // 
+            UbicacionOSColumna.Text = "Ubicacion";
+            UbicacionOSColumna.Width = 120;
             // 
             // GenerarOrdenSeleccionForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(917, 788);
+            ClientSize = new Size(1490, 1261);
             Controls.Add(TotalesOSSeleccionadasLabel);
             Controls.Add(TotalesOSSeleccionadasList);
             Controls.Add(GenerarOSSeleccionadasList);
@@ -327,6 +364,7 @@
             Controls.Add(label1);
             Controls.Add(FechaOSDesdePicker);
             Controls.Add(IdOrdenSeleccionCombo);
+            Margin = new Padding(5, 5, 5, 5);
             Name = "GenerarOrdenSeleccionForm";
             Text = "Generar Orden de Selección";
             ResumeLayout(false);
@@ -366,11 +404,15 @@
         private Button QuitarSeleccionadasOSButton;
         private Label TotalesOSSeleccionadasLabel;
         private ListView TotalesOSSeleccionadasList;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
+        private ColumnHeader ProductoOrdenSeleccionadaColumna;
+        private ColumnHeader CantidadOrdenSeleccionadaColumna;
         private ListView GenerarOSSeleccionadasList;
-        private ColumnHeader columnHeader3;
-        private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader5;
+        private ColumnHeader IdOPSeleccionadaColumna;
+        private ColumnHeader FechaOPSeleccionadaColumna;
+        private ColumnHeader PrioridadOPSeleccionadaColumna;
+        private ColumnHeader ClienteOSColumna;
+        private ColumnHeader ClienteSeleccionadoColumna;
+        private ColumnHeader UbicacionOrdenSeleccionadaColumna;
+        private ColumnHeader UbicacionOSColumna;
     }
 }
