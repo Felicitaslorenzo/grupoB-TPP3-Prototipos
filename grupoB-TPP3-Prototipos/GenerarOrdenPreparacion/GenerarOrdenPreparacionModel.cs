@@ -210,6 +210,20 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             }
             return "ORD00" + nuevoId.ToString();
         }
+
+        internal List<Producto> BuscarProductoCliente(Cliente cliente)
+        {
+            //TODO: devolver algo distinto para cada cliente.
+
+            return new List<Producto> {
+                new Producto{ ID = "SKU030", Descripcion = "Leche" },
+                new Producto{ ID = "SKU031", Descripcion = "Yogur" },
+                new Producto { ID = "SKU032", Descripcion = "Mantequilla" }
+            };
+
+        }
+
+        internal List<Cliente> ObtenerClientes() => throw new NotImplementedException();
     }
 }
-    
+

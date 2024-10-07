@@ -10,11 +10,14 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
     public partial class GenerarOrdenPreparacionForm : Form
     {
         private GenerarOrdenPreparacionModel modelo = new GenerarOrdenPreparacionModel();
-        private List<ProductoOrden> productosOrden = new List<ProductoOrden>();
 
         public GenerarOrdenPreparacionForm()
         {
             InitializeComponent();
+            //TODO: cargar el combo de clientes.
+            var clientes = modelo.ObtenerClientes();
+            //TODO: foreach cliente in clientes bla bla...
+            //IdClienteCombo.Items.Add(cliente); //un objeto cliente.
         }
 
         private void AgregarProductoButton_Click(object sender, EventArgs e)
@@ -28,7 +31,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 // Llamada al modelo para verificar si el producto existe en las órdenes
                 var resultadoProducto = modelo.BuscarProductoEnOrdenes(idProducto);
 
-                if (resultadoProducto.Item1) 
+                if (resultadoProducto.Item1)
                 {
                     var nuevoProducto = new ProductoOrden
                     {
@@ -38,7 +41,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                         Ubicacion = resultadoProducto.Item3
                     };
 
-                    
+
                     var item = new ListViewItem(nuevoProducto.IDProducto);
                     item.SubItems.Add(nuevoProducto.DescripcionProducto);
                     item.SubItems.Add(nuevoProducto.Cantidad.ToString());
@@ -77,7 +80,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private void GenerarOrdenButton_Click(object sender, EventArgs e)
         {
-           
+
             if (ProductosListView.Items.Count == 0)
             {
                 MessageBox.Show("No hay productos disponibles para crear una orden.");
@@ -92,7 +95,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 return;
             }
 
-         
+
             var resultado = modelo.GenerarNuevaOrden(IdClienteCombo.Text, PrioridadComboBox.Text, TransportistaComboBox.Text, ProductosListView);
 
             MessageBox.Show(resultado);
@@ -106,16 +109,28 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private void ClienteComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //TODO: confirmar y dar la posibilidad de cancelar.
+            var confirmacion = MessageBox.Show("El cliente ha sido cambiado. Se eliminar los datos ingresados. ¿Está ud. seguro?", "Pampazon", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (confirmacion == DialogResult.No)
+            {
+                return;
+            }
+
+            ProductoCombo.Items.Clear();
+            ProductosListView.Items.Clear();
+
             if (IdClienteCombo.SelectedItem == null) return;
 
-            string nuevoCliente = IdClienteCombo.SelectedItem.ToString();
-            if (ProductosListView.Items.Count > 0 && modelo.CambiarCliente(ref productosOrden, nuevoCliente))
+            Cliente nuevoCliente = (Cliente)IdClienteCombo.SelectedItem;
+            var productosCliente = modelo.BuscarProductoCliente(nuevoCliente);
+
+            foreach (var producto in productosCliente)
             {
-                ProductosListView.Items.Clear();
-                MessageBox.Show("El cliente ha sido cambiado. Se han eliminado los productos agregados.");
-                CantidadTextBox.Clear();
-                ProductoCombo.SelectedIndex = -1;
+                ProductoCombo.Items.Add(producto);
             }
+
+            //ejemplo: ver producto seleccionado:
+            //var prodSel = (Producto)ProductoCombo.SelectedItem;
         }
 
         private void ProductosListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -124,7 +139,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             if (ProductosListView.SelectedItems.Count > 0)
             {
                 var selectedItem = ProductosListView.SelectedItems[0];
-                string productoId = selectedItem.SubItems[0].Text; 
+                string productoId = selectedItem.SubItems[0].Text;
                 MessageBox.Show($"Producto seleccionado: {productoId}");
             }
         }
