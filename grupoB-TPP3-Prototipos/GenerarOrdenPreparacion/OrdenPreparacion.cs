@@ -10,7 +10,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
     {
         public string IDOrdenPreparacion { get; set; }
         
-        public List<Clientes> Clientes { get; set; }
-        public List<ProductoOrden> Productos { get; set; }
+        public List<Cliente> Clientes { get; set; }
+        public List<Producto> Productos { get; set; }
     }
 }

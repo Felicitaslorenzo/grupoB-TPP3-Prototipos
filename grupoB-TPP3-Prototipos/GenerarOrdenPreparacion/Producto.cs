@@ -2,8 +2,10 @@
 
 internal class Producto
 {
-    public string ID { get; set; }
-    public string Descripcion { get; set; }
+    public string IDProducto { get; set; }
+    public string DescripcionProducto { get; set; }
+    public int Cantidad { get; set; }
+    public string Ubicacion { get; set; }
 
-    public override string ToString() => $"{ID} - {Descripcion}";
+    public override string ToString() => $"{IDProducto} - {DescripcionProducto}";
 }

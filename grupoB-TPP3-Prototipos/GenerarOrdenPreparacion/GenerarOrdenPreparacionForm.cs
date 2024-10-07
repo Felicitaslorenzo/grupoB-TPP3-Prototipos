@@ -15,7 +15,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
         {
             InitializeComponent();
             //TODO: cargar el combo de clientes.
-            var clientes = modelo.ObtenerClientes();
+            modelo.CargarCliente(IdClienteCombo);
             //TODO: foreach cliente in clientes bla bla...
             //IdClienteCombo.Items.Add(cliente); //un objeto cliente.
         }
@@ -33,7 +33,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
                 if (resultadoProducto.Item1)
                 {
-                    var nuevoProducto = new ProductoOrden
+                    var nuevoProducto = new Producto
                     {
                         IDProducto = idProducto,
                         Cantidad = cantidad,
@@ -107,7 +107,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             TransportistaComboBox.SelectedIndex = -1;
         }
 
-        private void ClienteComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        /* private void ClienteComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             //TODO: confirmar y dar la posibilidad de cancelar.
             var confirmacion = MessageBox.Show("El cliente ha sido cambiado. Se eliminar los datos ingresados. ¿Está ud. seguro?", "Pampazon", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -131,7 +131,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
             //ejemplo: ver producto seleccionado:
             //var prodSel = (Producto)ProductoCombo.SelectedItem;
-        }
+        } */
 
         private void ProductosListView_SelectedIndexChanged(object sender, EventArgs e)
         {

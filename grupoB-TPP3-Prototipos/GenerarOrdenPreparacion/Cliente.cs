@@ -2,4 +2,7 @@
 
 internal class Cliente
 {
+    public string IdCliente { get; set; }
+    public string Prioridad { get; set; }
+    public string Transportista { get; set; }
 }

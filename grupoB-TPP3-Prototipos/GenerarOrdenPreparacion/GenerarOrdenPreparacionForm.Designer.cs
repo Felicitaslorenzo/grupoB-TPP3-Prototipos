@@ -32,7 +32,6 @@
             IdProductoColumna = new ColumnHeader();
             DescripcionColumna = new ColumnHeader();
             CantidadColumna = new ColumnHeader();
-            FechaEntregaColumna = new ColumnHeader();
             GenerarOrdenesPreparacionGroup = new GroupBox();
             FechaOPPicker = new DateTimePicker();
             label2 = new Label();
@@ -55,12 +54,12 @@
             // 
             // ProductosListView
             // 
-            ProductosListView.Columns.AddRange(new ColumnHeader[] { IdProductoColumna, DescripcionColumna, CantidadColumna, FechaEntregaColumna });
+            ProductosListView.Columns.AddRange(new ColumnHeader[] { IdProductoColumna, DescripcionColumna, CantidadColumna });
             ProductosListView.FullRowSelect = true;
-            ProductosListView.Location = new Point(36, 292);
+            ProductosListView.Location = new Point(29, 234);
             ProductosListView.Margin = new Padding(1, 2, 1, 2);
             ProductosListView.Name = "ProductosListView";
-            ProductosListView.Size = new Size(903, 306);
+            ProductosListView.Size = new Size(723, 246);
             ProductosListView.TabIndex = 0;
             ProductosListView.UseCompatibleStateImageBehavior = false;
             ProductosListView.View = View.Details;
@@ -81,11 +80,6 @@
             CantidadColumna.Text = "Cantidad";
             CantidadColumna.Width = 100;
             // 
-            // FechaEntregaColumna
-            // 
-            FechaEntregaColumna.Text = "Fecha Entrega";
-            FechaEntregaColumna.Width = 150;
-            // 
             // GenerarOrdenesPreparacionGroup
             // 
             GenerarOrdenesPreparacionGroup.Controls.Add(FechaOPPicker);
@@ -94,77 +88,76 @@
             GenerarOrdenesPreparacionGroup.Controls.Add(CantidadTextBox);
             GenerarOrdenesPreparacionGroup.Controls.Add(ProductoCombo);
             GenerarOrdenesPreparacionGroup.Controls.Add(ProductoLabel);
-            GenerarOrdenesPreparacionGroup.Location = new Point(36, 110);
+            GenerarOrdenesPreparacionGroup.Location = new Point(29, 88);
             GenerarOrdenesPreparacionGroup.Margin = new Padding(1, 2, 1, 2);
             GenerarOrdenesPreparacionGroup.Name = "GenerarOrdenesPreparacionGroup";
             GenerarOrdenesPreparacionGroup.Padding = new Padding(1, 2, 1, 2);
-            GenerarOrdenesPreparacionGroup.Size = new Size(901, 118);
+            GenerarOrdenesPreparacionGroup.Size = new Size(721, 94);
             GenerarOrdenesPreparacionGroup.TabIndex = 1;
             GenerarOrdenesPreparacionGroup.TabStop = false;
             // 
             // FechaOPPicker
             // 
-            FechaOPPicker.Location = new Point(586, 62);
-            FechaOPPicker.Margin = new Padding(4, 3, 4, 3);
+            FechaOPPicker.Location = new Point(469, 50);
+            FechaOPPicker.Margin = new Padding(3, 2, 3, 2);
             FechaOPPicker.Name = "FechaOPPicker";
-            FechaOPPicker.Size = new Size(233, 31);
+            FechaOPPicker.Size = new Size(187, 27);
             FechaOPPicker.TabIndex = 21;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(586, 28);
+            label2.Location = new Point(469, 22);
             label2.Margin = new Padding(1, 0, 1, 0);
             label2.Name = "label2";
-            label2.Size = new Size(147, 25);
+            label2.Size = new Size(123, 20);
             label2.TabIndex = 19;
             label2.Text = "Fecha de entrega";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(321, 32);
+            label1.Location = new Point(257, 26);
             label1.Margin = new Padding(1, 0, 1, 0);
             label1.Name = "label1";
-            label1.Size = new Size(83, 25);
+            label1.Size = new Size(69, 20);
             label1.TabIndex = 17;
             label1.Text = "Cantidad";
             // 
             // CantidadTextBox
             // 
-            CantidadTextBox.Location = new Point(321, 62);
+            CantidadTextBox.Location = new Point(257, 50);
             CantidadTextBox.Margin = new Padding(1, 2, 1, 2);
             CantidadTextBox.Name = "CantidadTextBox";
-            CantidadTextBox.Size = new Size(218, 31);
+            CantidadTextBox.Size = new Size(175, 27);
             CantidadTextBox.TabIndex = 16;
             // 
             // ProductoCombo
             // 
             ProductoCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             ProductoCombo.FormattingEnabled = true;
-            ProductoCombo.Items.AddRange(new object[] { "SKU001", "SKU002", "SKU003", "SKU004", "SKU005", "SKU006", "SKU007", "SKU008", "SKU009", "SKU010", "SKU011", "SKU012", "SKU013", "SKU014", "SKU015", "SKU016", "SKU017", "SKU018", "SKU019", "SKU020", "SKU021", "SKU022", "SKU023", "SKU024", "SKU025", "SKU026", "SKU027", "SKU028", "SKU029", "SKU030", "SKU031", "SKU032" });
-            ProductoCombo.Location = new Point(14, 58);
+            ProductoCombo.Location = new Point(11, 46);
             ProductoCombo.Margin = new Padding(1, 2, 1, 2);
             ProductoCombo.Name = "ProductoCombo";
-            ProductoCombo.Size = new Size(273, 33);
+            ProductoCombo.Size = new Size(219, 28);
             ProductoCombo.TabIndex = 14;
             // 
             // ProductoLabel
             // 
             ProductoLabel.AutoSize = true;
-            ProductoLabel.Location = new Point(14, 32);
+            ProductoLabel.Location = new Point(11, 26);
             ProductoLabel.Margin = new Padding(1, 0, 1, 0);
             ProductoLabel.Name = "ProductoLabel";
-            ProductoLabel.Size = new Size(85, 25);
+            ProductoLabel.Size = new Size(69, 20);
             ProductoLabel.TabIndex = 15;
             ProductoLabel.Text = "Producto";
             // 
             // AgregarProductoButton
             // 
-            AgregarProductoButton.Location = new Point(746, 232);
+            AgregarProductoButton.Location = new Point(597, 186);
             AgregarProductoButton.Margin = new Padding(1, 2, 1, 2);
             AgregarProductoButton.Name = "AgregarProductoButton";
-            AgregarProductoButton.Size = new Size(194, 38);
+            AgregarProductoButton.Size = new Size(155, 30);
             AgregarProductoButton.TabIndex = 12;
             AgregarProductoButton.Text = "Agregar Producto";
             AgregarProductoButton.UseVisualStyleBackColor = true;
@@ -173,10 +166,10 @@
             // IdClienteLabel
             // 
             IdClienteLabel.AutoSize = true;
-            IdClienteLabel.Location = new Point(51, 33);
+            IdClienteLabel.Location = new Point(41, 26);
             IdClienteLabel.Margin = new Padding(1, 0, 1, 0);
             IdClienteLabel.Name = "IdClienteLabel";
-            IdClienteLabel.Size = new Size(88, 25);
+            IdClienteLabel.Size = new Size(74, 20);
             IdClienteLabel.TabIndex = 3;
             IdClienteLabel.Text = "ID Cliente";
             // 
@@ -184,20 +177,19 @@
             // 
             IdClienteCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             IdClienteCombo.FormattingEnabled = true;
-            IdClienteCombo.Items.AddRange(new object[] { "CLIENTE001", "CLIENTE002", "CLIENTE003", "CLIENTE004", "CLIENTE005", "CLIENTE006", "CLIENTE007", "CLIENTE008", "CLIENTE009", "CLIENTE010" });
-            IdClienteCombo.Location = new Point(51, 62);
+            IdClienteCombo.Location = new Point(41, 50);
             IdClienteCombo.Margin = new Padding(1, 2, 1, 2);
             IdClienteCombo.Name = "IdClienteCombo";
-            IdClienteCombo.Size = new Size(273, 33);
+            IdClienteCombo.Size = new Size(219, 28);
             IdClienteCombo.TabIndex = 2;
-            IdClienteCombo.SelectedIndexChanged += ClienteComboBox_SelectedIndexChanged;
+            // IdClienteCombo.SelectedIndexChanged += ClienteComboBox_SelectedIndexChanged;
             // 
             // EliminarProductoButton
             // 
-            EliminarProductoButton.Location = new Point(761, 603);
+            EliminarProductoButton.Location = new Point(609, 482);
             EliminarProductoButton.Margin = new Padding(1, 2, 1, 2);
             EliminarProductoButton.Name = "EliminarProductoButton";
-            EliminarProductoButton.Size = new Size(179, 38);
+            EliminarProductoButton.Size = new Size(143, 30);
             EliminarProductoButton.TabIndex = 13;
             EliminarProductoButton.Text = "Eliminar Producto";
             EliminarProductoButton.UseVisualStyleBackColor = true;
@@ -207,11 +199,10 @@
             // 
             TransportistaComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             TransportistaComboBox.FormattingEnabled = true;
-            TransportistaComboBox.Items.AddRange(new object[] { "Transportista A", "Transportista B", "Transportista C", "Transportista D", "Transportista E", "Transportista F", "Transportista G", "Transportista H", "Transportista I", "Transportista J" });
-            TransportistaComboBox.Location = new Point(621, 62);
+            TransportistaComboBox.Location = new Point(497, 50);
             TransportistaComboBox.Margin = new Padding(1, 2, 1, 2);
             TransportistaComboBox.Name = "TransportistaComboBox";
-            TransportistaComboBox.Size = new Size(233, 33);
+            TransportistaComboBox.Size = new Size(187, 28);
             TransportistaComboBox.TabIndex = 7;
             // 
             // PrioridadComboBox
@@ -219,38 +210,38 @@
             PrioridadComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             PrioridadComboBox.FormattingEnabled = true;
             PrioridadComboBox.Items.AddRange(new object[] { "Con prioridad de entrega", "Sin prioridad" });
-            PrioridadComboBox.Location = new Point(359, 62);
+            PrioridadComboBox.Location = new Point(287, 50);
             PrioridadComboBox.Margin = new Padding(1, 2, 1, 2);
             PrioridadComboBox.Name = "PrioridadComboBox";
-            PrioridadComboBox.Size = new Size(218, 33);
+            PrioridadComboBox.Size = new Size(175, 28);
             PrioridadComboBox.TabIndex = 9;
             // 
             // TransportistaLabel
             // 
             TransportistaLabel.AutoSize = true;
-            TransportistaLabel.Location = new Point(621, 33);
+            TransportistaLabel.Location = new Point(497, 26);
             TransportistaLabel.Margin = new Padding(1, 0, 1, 0);
             TransportistaLabel.Name = "TransportistaLabel";
-            TransportistaLabel.Size = new Size(113, 25);
+            TransportistaLabel.Size = new Size(94, 20);
             TransportistaLabel.TabIndex = 10;
             TransportistaLabel.Text = "Transportista";
             // 
             // PrioridadLabel
             // 
             PrioridadLabel.AutoSize = true;
-            PrioridadLabel.Location = new Point(359, 33);
+            PrioridadLabel.Location = new Point(287, 26);
             PrioridadLabel.Margin = new Padding(1, 0, 1, 0);
             PrioridadLabel.Name = "PrioridadLabel";
-            PrioridadLabel.Size = new Size(84, 25);
+            PrioridadLabel.Size = new Size(70, 20);
             PrioridadLabel.TabIndex = 11;
             PrioridadLabel.Text = "Prioridad";
             // 
             // GenerarOrdenButton
             // 
-            GenerarOrdenButton.Location = new Point(551, 663);
+            GenerarOrdenButton.Location = new Point(441, 530);
             GenerarOrdenButton.Margin = new Padding(1, 2, 1, 2);
             GenerarOrdenButton.Name = "GenerarOrdenButton";
-            GenerarOrdenButton.Size = new Size(181, 62);
+            GenerarOrdenButton.Size = new Size(145, 50);
             GenerarOrdenButton.TabIndex = 13;
             GenerarOrdenButton.Text = "Generar Orden";
             GenerarOrdenButton.UseVisualStyleBackColor = true;
@@ -258,19 +249,19 @@
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(754, 663);
+            VolverButton.Location = new Point(603, 530);
             VolverButton.Margin = new Padding(1, 2, 1, 2);
             VolverButton.Name = "VolverButton";
-            VolverButton.Size = new Size(181, 62);
+            VolverButton.Size = new Size(145, 50);
             VolverButton.TabIndex = 14;
             VolverButton.Text = "Volver";
             VolverButton.UseVisualStyleBackColor = true;
             // 
             // GenerarOrdenPreparacionForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1001, 748);
+            ClientSize = new Size(801, 598);
             Controls.Add(VolverButton);
             Controls.Add(IdClienteCombo);
             Controls.Add(AgregarProductoButton);
@@ -313,7 +304,6 @@
         private Label PrioridadLabel;
         private Button GenerarOrdenButton;
         private Button VolverButton;
-        private ColumnHeader FechaEntregaColumna;
         private Label label2;
         private DateTimePicker FechaOPPicker;
     }
