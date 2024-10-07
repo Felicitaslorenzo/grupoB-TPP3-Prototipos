@@ -141,6 +141,75 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                     new ProductoOrden { IDProducto = "SKU032", DescripcionProducto = "Mantequilla", Cantidad = 3, Ubicacion = "Refrigerador" }
                 }
             }
+
         };
+        public (bool, string, string) BuscarProductoEnOrdenes(string idProducto)
+        {
+            foreach (var orden in ordenes)
+            {
+                foreach (var producto in orden.Productos)
+                {
+                    if (producto.IDProducto == idProducto)
+                    {
+                        return (true, producto.DescripcionProducto, producto.Ubicacion);
+                    }
+                }
+            }
+            return (false, string.Empty, string.Empty);
+        }
+
+        public string GenerarNuevaOrden(string idCliente, string prioridad, string transportista, ListView productosListView)
+        {
+            string nuevoIDOrden = GenerarNuevoIDOrden();
+
+            List<ProductoOrden> productosOrden = new List<ProductoOrden>();
+            foreach (ListViewItem productoItem in productosListView.Items)
+            {
+                productosOrden.Add(new ProductoOrden
+                {
+                    IDProducto = productoItem.SubItems[0].Text,
+                    DescripcionProducto = productoItem.SubItems[1].Text,
+                    Cantidad = int.Parse(productoItem.SubItems[2].Text),
+                    Ubicacion = productoItem.SubItems[3].Text
+                });
+            }
+
+            OrdenPreparacion nuevaOrden = new OrdenPreparacion
+            {
+                IDOrdenPreparacion = nuevoIDOrden,
+                Clientes = new List<Clientes>
+                {
+                    new Clientes { IdCliente = idCliente, Prioridad = prioridad, Transportista = transportista }
+                },
+                Productos = productosOrden
+            };
+
+            ordenes.Add(nuevaOrden);
+
+            return $"Orden {nuevoIDOrden} creada exitosamente.";
+        }
+
+        public bool CambiarCliente(ref List<ProductoOrden> productosOrden, string nuevoCliente)
+        {
+            if (productosOrden.Count > 0)
+            {
+                productosOrden.Clear();
+                return true;
+            }
+            return false;
+        }
+
+        private string GenerarNuevoIDOrden()
+        {
+            int nuevoId = 1;
+            if (ordenes.Count > 0)
+            {
+                var ultimaOrden = ordenes.Last();
+                string ultimoIdOrden = ultimaOrden.IDOrdenPreparacion;
+                nuevoId = int.Parse(ultimoIdOrden.Substring(3)) + 1;
+            }
+            return "ORD00" + nuevoId.ToString();
+        }
     }
 }
+    
