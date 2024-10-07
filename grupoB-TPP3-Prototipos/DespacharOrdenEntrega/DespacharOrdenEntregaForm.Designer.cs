@@ -42,7 +42,7 @@
             // 
             // GenerarOrdenDeDespachoButton
             // 
-            GenerarOrdenDeDespachoButton.Location = new Point(798, 390);
+            GenerarOrdenDeDespachoButton.Location = new Point(616, 390);
             GenerarOrdenDeDespachoButton.Margin = new Padding(2);
             GenerarOrdenDeDespachoButton.Name = "GenerarOrdenDeDespachoButton";
             GenerarOrdenDeDespachoButton.Size = new Size(275, 52);
@@ -93,7 +93,7 @@
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(610, 390);
+            VolverButton.Location = new Point(913, 390);
             VolverButton.Margin = new Padding(2);
             VolverButton.Name = "VolverButton";
             VolverButton.Size = new Size(160, 52);

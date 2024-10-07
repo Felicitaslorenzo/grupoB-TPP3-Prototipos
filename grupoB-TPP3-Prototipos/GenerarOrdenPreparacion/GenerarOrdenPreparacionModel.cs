@@ -243,21 +243,33 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             }
         }
 
-        internal void CargarCliente(ComboBox IdClienteCombo)
+        internal void CargarCliente(ComboBox IdClienteCombo, ComboBox TransportistaCombo)
         {
-            // Llamar al método para obtener la lista de clientes
+   
             var clientes = ObtenerCliente();
 
-            // Obtener los IdCliente únicos
-            var idClientes = clientes.Select(o => o.IdCliente).Distinct().ToList();
-
-            // Poblar el ComboBox
-            foreach (var id in idClientes)
+            foreach (var cliente in clientes)
             {
-                IdClienteCombo.Items.Add(id); // Agregar cada id al ComboBox
+                IdClienteCombo.Items.Add(cliente); 
             }
+
+            IdClienteCombo.DisplayMember = "IdCliente"; 
+
+   
+            IdClienteCombo.SelectedIndexChanged += (s, e) =>
+            {
+                if (IdClienteCombo.SelectedItem is Cliente selectedCliente)
+                {
+                    CargarTransportistas(selectedCliente, TransportistaCombo); 
+                }
+            };
         }
 
+        internal void CargarTransportistas(Cliente cliente, ComboBox TransportistaCombo)
+        {
+
+            TransportistaCombo.Items.Add(cliente.Transportista);
+        }
 
         public List<Cliente> ObtenerCliente()
         {
@@ -271,5 +283,8 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
         }
     }
 }
+
+
+
 
 

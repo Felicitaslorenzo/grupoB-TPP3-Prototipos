@@ -15,7 +15,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
         {
             InitializeComponent();
             //TODO: cargar el combo de clientes.
-            modelo.CargarCliente(IdClienteCombo);
+            modelo.CargarCliente(IdClienteCombo, TransportistaCombo);
             //TODO: foreach cliente in clientes bla bla...
             //IdClienteCombo.Items.Add(cliente); //un objeto cliente.
         }
@@ -89,14 +89,14 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
             if (string.IsNullOrWhiteSpace(IdClienteCombo.Text) ||
                 string.IsNullOrWhiteSpace(PrioridadComboBox.Text) ||
-                string.IsNullOrWhiteSpace(TransportistaComboBox.Text))
+                string.IsNullOrWhiteSpace(TransportistaCombo.Text))
             {
                 MessageBox.Show("Por favor, selecciona un cliente, su prioridad y un transportista.");
                 return;
             }
 
 
-            var resultado = modelo.GenerarNuevaOrden(IdClienteCombo.Text, PrioridadComboBox.Text, TransportistaComboBox.Text, ProductosListView);
+            var resultado = modelo.GenerarNuevaOrden(IdClienteCombo.Text, PrioridadComboBox.Text, TransportistaCombo.Text, ProductosListView);
 
             MessageBox.Show(resultado);
 
@@ -104,10 +104,10 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             ProductosListView.Items.Clear();
             IdClienteCombo.SelectedIndex = -1;
             PrioridadComboBox.SelectedIndex = -1;
-            TransportistaComboBox.SelectedIndex = -1;
+            TransportistaCombo.SelectedIndex = -1;
         }
 
-        /* private void ClienteComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void ClienteComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             //TODO: confirmar y dar la posibilidad de cancelar.
             var confirmacion = MessageBox.Show("El cliente ha sido cambiado. Se eliminar los datos ingresados. ¿Está ud. seguro?", "Pampazon", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -131,7 +131,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
             //ejemplo: ver producto seleccionado:
             //var prodSel = (Producto)ProductoCombo.SelectedItem;
-        } */
+        } 
 
         private void ProductosListView_SelectedIndexChanged(object sender, EventArgs e)
         {
