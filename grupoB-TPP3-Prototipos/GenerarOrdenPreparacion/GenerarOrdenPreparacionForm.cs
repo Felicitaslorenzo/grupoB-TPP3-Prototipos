@@ -10,15 +10,19 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
     public partial class GenerarOrdenPreparacionForm : Form
     {
         private GenerarOrdenPreparacionModel modelo = new GenerarOrdenPreparacionModel();
+        private Cliente clienteAnterior;
 
         public GenerarOrdenPreparacionForm()
         {
             InitializeComponent();
-            //TODO: cargar el combo de clientes.
             modelo.CargarCliente(IdClienteCombo, TransportistaCombo, ProductoCombo);
+            clienteAnterior = (Cliente)IdClienteCombo.SelectedItem;
+            this.IdClienteCombo.SelectedIndexChanged += IdClienteCombo_SelectedIndexChanged;
+
             //TODO: foreach cliente in clientes bla bla...
             //IdClienteCombo.Items.Add(cliente); //un objeto cliente.
         }
+
 
         private void AgregarProductoButton_Click(object sender, EventArgs e)
         {
@@ -117,31 +121,48 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             TransportistaCombo.SelectedIndex = -1;
         }
 
-        private void ClienteComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void IdClienteCombo_SelectedIndexChanged(object? sender, EventArgs e)
         {
-            //TODO: confirmar y dar la posibilidad de cancelar.
-            var confirmacion = MessageBox.Show("El cliente ha sido cambiado. Se eliminar los datos ingresados. ¿Está ud. seguro?", "Pampazon", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (confirmacion == DialogResult.No)
+
+            if (IdClienteCombo.SelectedItem == clienteAnterior) return;
+
+            if (ProductosListView.Items.Count > 0)
             {
-                return;
+                var confirmacion = MessageBox.Show("El cliente ha sido cambiado. Se eliminarán los datos ingresados. ¿Está usted seguro?",
+                                                    "Pampazon", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+
+                if (confirmacion == DialogResult.No)
+                {
+                    IdClienteCombo.SelectedIndexChanged -= IdClienteCombo_SelectedIndexChanged;
+                    IdClienteCombo.SelectedItem = clienteAnterior;
+                    IdClienteCombo.SelectedIndexChanged += IdClienteCombo_SelectedIndexChanged;
+                    return;
+                }
+
+                // si el usuario confirma, sen eliminan los productos
+                ProductoCombo.Items.Clear();
+                ProductosListView.Items.Clear();
             }
 
-            ProductoCombo.Items.Clear();
-            ProductosListView.Items.Clear();
-
-            if (IdClienteCombo.SelectedItem == null) return;
-
-            Cliente nuevoCliente = (Cliente)IdClienteCombo.SelectedItem;
-            var productosCliente = modelo.BuscarProductoCliente(nuevoCliente);
-
-            foreach (var producto in productosCliente)
+            // se guarda el cliente recién seleccionado como el clienteAnterior
+            if (IdClienteCombo.SelectedItem is Cliente nuevoCliente)
             {
-                ProductoCombo.Items.Add(producto);
-            }
+                clienteAnterior = nuevoCliente;
 
-            //ejemplo: ver producto seleccionado:
-            //var prodSel = (Producto)ProductoCombo.SelectedItem;
+                // Cargar los transportistas y productos del nuevo cliente
+                modelo.CargarTransportistas(nuevoCliente, TransportistaCombo);
+
+                var productosCliente = modelo.BuscarProductoCliente(nuevoCliente);
+
+                // llenar el desplegable con los productos
+                ProductoCombo.Items.Clear();
+                foreach (var producto in productosCliente)
+                {
+                    ProductoCombo.Items.Add(producto);
+                }
+            }
         }
+    
 
         private void ProductosListView_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -159,18 +180,18 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         }
 
-        private void IdClienteCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Limpia los productos del ListView
-            ProductosListView.Items.Clear(); // Elimina todos los elementos del ListView
+        //private void IdClienteCombo_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    // Limpia los productos del ListView
+        //    ProductosListView.Items.Clear(); // Elimina todos los elementos del ListView
 
-            if (IdClienteCombo.SelectedItem is Cliente selectedCliente)
-            {
-                // Cargar transportistas y productos al seleccionar un cliente
-                modelo.CargarTransportistas(selectedCliente, TransportistaCombo);
-                modelo.CargarProductos(selectedCliente, ProductoCombo);
-            }
-        }
+        //    if (IdClienteCombo.SelectedItem is Cliente selectedCliente)
+        //    {
+        //        // Cargar transportistas y productos al seleccionar un cliente
+        //        modelo.CargarTransportistas(selectedCliente, TransportistaCombo);
+        //        modelo.CargarProductos(selectedCliente, ProductoCombo);
+        //    }
+        //}
     }
 }
 

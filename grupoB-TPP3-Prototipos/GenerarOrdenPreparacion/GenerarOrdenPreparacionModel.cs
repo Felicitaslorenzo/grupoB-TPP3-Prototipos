@@ -54,7 +54,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                     }
                 }
             }
-            return (false, string.Empty); // Devuelve false y un string vacío si no se encuentra el producto
+            return (false, string.Empty); 
         }
 
         public string GenerarNuevaOrden(string idCliente, string prioridad, string transportista, ListView productosListView)
@@ -96,11 +96,11 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private string GenerarNuevoIDOrden()
         {
-            int nuevoId = 1; // Valor inicial para la primera orden
+            int nuevoId = 1; 
 
             if (ordenes.Count > 0)
             {
-                // Obtener todos los IDs existentes y convertir a int
+                // obtener ID y convertir a int
                 var idsExistentes = ordenes
                 .Where(o => o != null && o.IDOrdenPreparacion != null && o.IDOrdenPreparacion.Length >= 6) // Verificar que el objeto y la propiedad no sean nulos
                 .Select(o => int.Parse(o.IDOrdenPreparacion.Substring(3))) // Obtener solo la parte numérica
@@ -110,12 +110,12 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 // Verificar si hay IDs existentes y calcular el nuevo ID
                 if (idsExistentes.Count > 0)
                 {
-                    nuevoId = idsExistentes.Max() + 1; // Tomar el máximo y sumar 1
+                    nuevoId = idsExistentes.Max() + 1; 
                 }
             }
 
-            // Retornar el nuevo ID en el formato requerido
-            return "ORD" + nuevoId.ToString("D3"); // Asegura que el nuevo ID tenga 3 dígitos
+            
+            return "ORD" + nuevoId.ToString("D3"); 
         }
 
         internal void CargarCliente(ComboBox IdClienteCombo, ComboBox TransportistaCombo, ComboBox ProductosCombo)
@@ -144,17 +144,16 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         internal void CargarTransportistas(Cliente cliente, ComboBox TransportistaCombo)
         {
-            // Limpia los transportistas anteriores
+            
             TransportistaCombo.Items.Clear();
 
-            // Agrega el transportista del cliente seleccionado
             TransportistaCombo.Items.Add(cliente.Transportista);
             TransportistaCombo.SelectedIndex = 0; // Selecciona el primer elemento automáticamente
         }
 
         internal void CargarProductos(Cliente cliente, ComboBox ProductosCombo)
         {
-            // Limpia los productos anteriores
+            
             ProductosCombo.Items.Clear();
 
             // Carga los productos devueltos por la función BuscarProductoCliente
