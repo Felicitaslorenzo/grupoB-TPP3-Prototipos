@@ -28,6 +28,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             // Validación de cantidad
             if (int.TryParse(CantidadTextBox.Text, out cantidad))
             {
+
                 // Llamada al modelo para verificar si el producto existe en las órdenes
                 var resultadoProducto = modelo.BuscarProductoEnOrdenes(idProducto);
 
