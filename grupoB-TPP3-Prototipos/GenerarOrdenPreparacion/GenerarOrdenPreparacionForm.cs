@@ -144,12 +144,12 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 ProductosListView.Items.Clear();
             }
 
-            // se guarda el cliente recién seleccionado como el clienteAnterior
+            // guarda el cliente recién seleccionado como el clienteAnterior
             if (IdClienteCombo.SelectedItem is Cliente nuevoCliente)
             {
                 clienteAnterior = nuevoCliente;
 
-                // Cargar los transportistas y productos del nuevo cliente
+                // carga los transportistas y productos del nuevo cliente
                 modelo.CargarTransportistas(nuevoCliente, TransportistaCombo);
 
                 var productosCliente = modelo.BuscarProductoCliente(nuevoCliente);
@@ -180,18 +180,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         }
 
-        //private void IdClienteCombo_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    // Limpia los productos del ListView
-        //    ProductosListView.Items.Clear(); // Elimina todos los elementos del ListView
-
-        //    if (IdClienteCombo.SelectedItem is Cliente selectedCliente)
-        //    {
-        //        // Cargar transportistas y productos al seleccionar un cliente
-        //        modelo.CargarTransportistas(selectedCliente, TransportistaCombo);
-        //        modelo.CargarProductos(selectedCliente, ProductoCombo);
-        //    }
-        //}
     }
 }
 
