@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing.Text;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +12,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 {
     internal class GenerarOrdenPreparacionModel
     {
-        private List<OrdenPreparacion> ordenes = new List<OrdenPreparacion>
+        public List<OrdenPreparacion> ordenes = new List<OrdenPreparacion>
 {
     new OrdenPreparacion
     {
@@ -41,8 +42,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
     }
 };
 
-
-        public (bool, string, string) BuscarProductoEnOrdenes(string idProducto)
+        public (bool, string) BuscarProductoEnOrdenes(string idProducto)
         {
             foreach (var orden in ordenes)
             {
@@ -50,11 +50,11 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 {
                     if (producto.IDProducto == idProducto)
                     {
-                        return (true, producto.DescripcionProducto, producto.Ubicacion);
+                        return (true, producto.DescripcionProducto); 
                     }
                 }
             }
-            return (false, string.Empty, string.Empty);
+            return (false, string.Empty); // Devuelve false y un string vacío si no se encuentra el producto
         }
 
         public string GenerarNuevaOrden(string idCliente, string prioridad, string transportista, ListView productosListView)
@@ -71,7 +71,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                         IDProducto = productoItem.SubItems[0].Text,
                         DescripcionProducto = productoItem.SubItems[1].Text,
                         Cantidad = cantidad,
-                        Ubicacion = productoItem.SubItems[3].Text
+                        // Ubicacion = productoItem.SubItems[3].Text
                     });
                 }
                 else
@@ -92,16 +92,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
             ordenes.Add(nuevaOrden);
             return $"Orden {nuevoIDOrden} creada exitosamente.";
-        }
-
-        public bool CambiarCliente(ref List<Producto> productosOrden, string nuevoCliente)
-        {
-            if (productosOrden.Count > 0)
-            {
-                productosOrden.Clear();
-                return true;
-            }
-            return false;
         }
 
         private string GenerarNuevoIDOrden()
@@ -127,8 +117,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             // Retornar el nuevo ID en el formato requerido
             return "ORD" + nuevoId.ToString("D3"); // Asegura que el nuevo ID tenga 3 dígitos
         }
-
-
 
         internal void CargarCliente(ComboBox IdClienteCombo, ComboBox TransportistaCombo, ComboBox ProductosCombo)
         {
