@@ -85,7 +85,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 IDOrdenPreparacion = nuevoIDOrden,
                 Clientes = new List<Cliente>
         {
-            new Cliente { IdCliente = idCliente, Prioridad = prioridad, Transportista = transportista }
+            new Cliente { IdCliente = idCliente, Prioridad = prioridad, Transportistas = new List<string> { transportista }}
         },
                 Productos = productosOrden
             };
@@ -136,6 +136,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 if (IdClienteCombo.SelectedItem is Cliente selectedCliente)
                 {
                     // Cargar transportistas y productos al seleccionar un cliente
+                    
                     CargarTransportistas(selectedCliente, TransportistaCombo);
                     CargarProductos(selectedCliente, ProductosCombo);
                 }
@@ -144,12 +145,18 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         internal void CargarTransportistas(Cliente cliente, ComboBox TransportistaCombo)
         {
-            
             TransportistaCombo.Items.Clear();
 
-            TransportistaCombo.Items.Add(cliente.Transportista);
-            TransportistaCombo.SelectedIndex = 0; // Selecciona el primer elemento automáticamente
+            // Cargar todos los transportistas del cliente seleccionado
+            foreach (var transportista in cliente.Transportistas)
+            {
+                TransportistaCombo.Items.Add(transportista);
+            }
+
+            // No establecer ninguna opción seleccionada, dejar el combo vacío
+            TransportistaCombo.SelectedIndex = -1;
         }
+
 
         internal void CargarProductos(Cliente cliente, ComboBox ProductosCombo)
         {
@@ -260,16 +267,16 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
         {
             return new List<Cliente>
             {
-                new Cliente { IdCliente = "CL001", Transportista = "TR001" },
-                new Cliente { IdCliente = "CL002", Transportista = "TR002" },
-                new Cliente { IdCliente = "CL003", Transportista = "TR003" },
-                new Cliente { IdCliente = "CL004", Transportista = "TR004" },
-                new Cliente { IdCliente = "CL005", Transportista = "TR005" },
-                new Cliente { IdCliente = "CL006", Transportista = "TR006" },
-                new Cliente { IdCliente = "CL007", Transportista = "TR007" },
-                new Cliente { IdCliente = "CL008", Transportista = "TR008" },
-                new Cliente { IdCliente = "CL009", Transportista = "TR009" },
-                new Cliente { IdCliente = "CL010", Transportista = "TR010" },
+                new Cliente { IdCliente = "CL001", Transportistas = new List<string> {"TR001", "TR002", "TR003", "CL001"}},
+                new Cliente { IdCliente = "CL002", Transportistas = new List<string> {"TR004", "TR005", "CL002"}},
+                new Cliente { IdCliente = "CL003", Transportistas = new List<string> {"TR006", "TR007", "CL003"}},
+                new Cliente { IdCliente = "CL004", Transportistas = new List<string> {"TR008", "TR009", "TR010", "TR011", "CL004"}},
+                new Cliente { IdCliente = "CL005", Transportistas = new List<string> {"TR012", "TR013", "CL005"}},
+                new Cliente { IdCliente = "CL006", Transportistas = new List<string> {"TR014", "TR015", "CL006"}},
+                new Cliente { IdCliente = "CL007", Transportistas = new List<string> {"TR016", "TR017", "CL007"}},
+                new Cliente { IdCliente = "CL008", Transportistas = new List<string> {"TR018", "TR019", "CL008"}},
+                new Cliente { IdCliente = "CL009", Transportistas = new List<string> {"TR019", "TR020", "CL009"}},
+                new Cliente { IdCliente = "CL010", Transportistas = new List<string> {"TR021", "TR022", "CL010"}},
             };
         }
     }
