@@ -19,8 +19,25 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             clienteAnterior = (Cliente)IdClienteCombo.SelectedItem;
             this.IdClienteCombo.SelectedIndexChanged += IdClienteCombo_SelectedIndexChanged;
 
+            FechaOPPicker.MinDate = DateTime.Today.AddDays(1);
+
             //TODO: foreach cliente in clientes bla bla...
             //IdClienteCombo.Items.Add(cliente); //un objeto cliente.
+        }
+
+        private void FechaOPPicker_ValueChanged(object sender, EventArgs e)
+        {
+
+            //Validación de fecha
+
+            DateTime fechaSeleccionada = FechaOPPicker.Value;
+            DateTime fechaMinima = DateTime.Today.AddDays(1);
+
+            if (fechaSeleccionada < fechaMinima)
+            {
+                MessageBox.Show("Por favor, selecciona una fecha a partir de mañana.", "Fecha inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                FechaOPPicker.Value = fechaMinima;
+            }
         }
 
 
