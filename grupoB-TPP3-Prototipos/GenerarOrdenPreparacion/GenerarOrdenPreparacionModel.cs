@@ -115,7 +115,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             }
 
             
-            return "ORD" + nuevoId.ToString("D3"); 
+            return "OP" + nuevoId.ToString("D3"); 
         }
 
         internal void CargarCliente(ComboBox IdClienteCombo, ComboBox TransportistaCombo, ComboBox ProductosCombo)

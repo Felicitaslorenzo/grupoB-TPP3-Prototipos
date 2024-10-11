@@ -29,7 +29,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
             var nombresClientes = ordenesPreparacion.Select(o => o.Nombre).Distinct().ToList();
             var idsClientes = ordenesPreparacion.Select(o => o.IdCliente).Distinct().ToList();
             var idsOrdenesPreparacion = ordenesPreparacion.Select(o => o.IdOrden).Distinct().ToList();
-            var prioridadesOrdenPreparacion = ordenesPreparacion.Select(o => o.Prioridad).Distinct().ToList();
+            // var prioridadesOrdenPreparacion = ordenesPreparacion.Select(o => o.Prioridad).Distinct().ToList();
             var estadosOrdenPreparacion = ordenesPreparacion.Select(o => o.Estado).Distinct().ToList();
 
             // Cargar datos en los desplegables
@@ -48,10 +48,10 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                 IdOrdenPreparacionCombo.Items.Add(id);
             }
 
-            foreach (var prioridad in prioridadesOrdenPreparacion)
+            /* foreach (var prioridad in prioridadesOrdenPreparacion)
             {
                 PrioridadOrdenPreparacionCombo.Items.Add(prioridad);
-            }
+            } */
 
             foreach (var estado in estadosOrdenPreparacion)
             {
@@ -67,11 +67,14 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                 item.SubItems.Add(ordenPreparacion.IdCliente.ToString());
                 item.SubItems.Add(ordenPreparacion.Nombre);
                 item.SubItems.Add(ordenPreparacion.Estado);
-                item.SubItems.Add(ordenPreparacion.Fecha.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(ordenPreparacion.FechaEstado.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(ordenPreparacion.FechaEmision.ToString("dd/MM/yyyy"));
 
                 OrdenesPreparacionList.Items.Add(item);
             }
 
+            // Vincular el evento
+            OrdenesPreparacionList.SelectedIndexChanged += OrdenesPreparacionList_SelectedIndexChanged;
         }
         private void BuscarButton_Click(object sender, EventArgs e)
         {
@@ -87,7 +90,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
             else
             {
                 // valores seleccionados en los desplegables
-                int.TryParse(IdClienteCombo.Text, out int idClienteSeleccionado);
+                string idClienteSeleccionado = IdClienteCombo.Text;
                 string idOrdenSeleccionado = IdOrdenPreparacionCombo.Text;
                 string nombreClienteSeleccionado = NombreClienteCombo.Text;
                 string estadoSeleccionado = EstadoOrdenPreparacionCombo.Text;
@@ -96,11 +99,9 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                 // Filtrar OrdenesPreparacionList
                 var ordenesFiltradas = model.ObtenerOrdenesPreparacion().Where(o =>
                     (string.IsNullOrEmpty(idOrdenSeleccionado) || o.IdOrden == idOrdenSeleccionado) &&
-                    (idClienteSeleccionado == 0 || o.IdCliente == idClienteSeleccionado) &&
+                    (string.IsNullOrEmpty(idClienteSeleccionado) || o.IdCliente == idClienteSeleccionado) &&
                     (string.IsNullOrEmpty(nombreClienteSeleccionado) || o.Nombre == nombreClienteSeleccionado) &&
-                    (string.IsNullOrEmpty(estadoSeleccionado) || o.Estado == estadoSeleccionado) &&
-                    (string.IsNullOrEmpty(prioridadSeleccionada) || o.Prioridad == prioridadSeleccionada)
-                ).ToList();
+                    (string.IsNullOrEmpty(estadoSeleccionado) || o.Estado == estadoSeleccionado)).ToList();
 
 
                 // Limpiar la OrdenesPreparacionList antes de agregar los elementos filtrados
@@ -114,7 +115,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     item.SubItems.Add(ordenPreparacion.IdCliente.ToString());
                     item.SubItems.Add(ordenPreparacion.Nombre);
                     item.SubItems.Add(ordenPreparacion.Estado);
-                    item.SubItems.Add(ordenPreparacion.Fecha.ToString("dd/MM/yyyy"));
+                    item.SubItems.Add(ordenPreparacion.FechaEstado.ToString("dd/MM/yyyy"));
+                    item.SubItems.Add(ordenPreparacion.FechaEmision.ToString("dd/MM/yyyy"));
 
                     OrdenesPreparacionList.Items.Add(item);
                 }
@@ -129,12 +131,47 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
 
         private void ListarOrdenPreparacionForm_Load_1(object sender, EventArgs e)
         {
-
         }
 
         private void BuscarButton_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void OrdenesPreparacionList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Verificar si hay una selección
+            if (OrdenesPreparacionList.SelectedItems.Count > 0)
+            {
+                // Obtener la orden seleccionada (primer elemento seleccionado)
+                var idOrdenSeleccionada = OrdenesPreparacionList.SelectedItems[0].Text;
+
+                // Buscar la orden en el modelo de datos
+                var ordenSeleccionada = model.ObtenerOrdenesPreparacion().FirstOrDefault(o => o.IdOrden == idOrdenSeleccionada);
+
+                if (ordenSeleccionada != null)
+                {
+                    // Limpiar la lista de productos antes de cargar los nuevos
+                    ProductosList.Items.Clear();
+
+                    // Cargar los productos relacionados a la orden seleccionada
+                    foreach (var producto in ordenSeleccionada.Producto)
+                    {
+                        ListViewItem item = new ListViewItem();
+                        item.Text = producto.IDProducto;
+                        item.SubItems.Add(producto.DescripcionProducto);
+                        item.SubItems.Add(producto.Cantidad.ToString());
+                        item.SubItems.Add(producto.Ubicacion);
+
+                        ProductosList.Items.Add(item);
+                    }
+                }
+            }
+        }
+
+        private void VolverListaButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
