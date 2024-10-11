@@ -61,6 +61,7 @@
             Controls.Add(buttonListarOrdenesPreparacion);
             Name = "MenuOrdenesPreparacionForm";
             Text = "MenuOrdenesPreparacionForm";
+            Load += MenuOrdenesPreparacionForm_Load;
             ResumeLayout(false);
         }
 

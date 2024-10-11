@@ -11,16 +11,16 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
     {
         internal void CargarCliente(ComboBox IdClienteCombo)
         {
-            var clientes = ObtenerCliente();
+            // var clientes = ObtenerCliente();
 
             IdClienteCombo.Items.Clear();
-            foreach (var cliente in clientes)
+            /* foreach (var cliente in clientes)
             {
                 IdClienteCombo.Items.Add(cliente);
             }
-            IdClienteCombo.DisplayMember = "IdCliente";
+            IdClienteCombo.DisplayMember = "IdCliente"; */
         }
-        public List<Cliente> ObtenerCliente()
+        /* public List<Cliente> ObtenerCliente()
         {
             return new List<Cliente>
             {
@@ -34,7 +34,7 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                 new Cliente { IdCliente = "CL008", Transportista = "TR008" },
                 new Cliente { IdCliente = "CL009", Transportista = "TR009" },
                 new Cliente { IdCliente = "CL010", Transportista = "TR010" },
-            };
-        }
+            }; 
+        } */
     }
 }

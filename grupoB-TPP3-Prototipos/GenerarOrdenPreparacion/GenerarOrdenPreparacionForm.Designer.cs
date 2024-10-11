@@ -254,6 +254,7 @@
             VolverButton.TabIndex = 14;
             VolverButton.Text = "Volver";
             VolverButton.UseVisualStyleBackColor = true;
+            VolverButton.Click += VolverButton_Click;
             // 
             // GenerarOrdenPreparacionForm
             // 

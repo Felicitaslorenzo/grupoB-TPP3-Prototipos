@@ -29,5 +29,10 @@ namespace grupoB_TPP3_Prototipos.MenuOrdenesPreparacion
             GenerarOrdenPreparacion.GenerarOrdenPreparacionForm GenerarOrdenPreparacionForm = new GenerarOrdenPreparacion.GenerarOrdenPreparacionForm();
             GenerarOrdenPreparacionForm.ShowDialog();
         }
+
+        private void MenuOrdenesPreparacionForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Drawing.Text;
 using System.Reflection;
 using System.Windows.Forms;
 using System.Linq;
+using grupoB_TPP3_Prototipos.MenuOrdenesPreparacion;
 
 
 namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
@@ -55,7 +56,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
                 if (resultadoProducto.Item1)
                 {
-                    if(cantidad<=0)
+                    if (cantidad <= 0)
                     {
                         MessageBox.Show("La cantidad tiene que ser mayor a 0");
                     }
@@ -83,7 +84,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                         MessageBox.Show($"El producto {nuevoProducto.DescripcionProducto} se ha agregado a la lista.");
 
                     }
-                    
+
                 }
                 else
                 {
@@ -146,7 +147,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             if (ProductosListView.Items.Count > 0)
             {
                 var confirmacion = MessageBox.Show("El cliente ha sido cambiado. Se eliminarán los datos ingresados. ¿Está usted seguro?",
-                                                    "Pampazon", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                                                    "Pampazon", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (confirmacion == DialogResult.No)
                 {
@@ -179,7 +180,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 }
             }
         }
-    
+
 
         private void ProductosListView_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -197,6 +198,10 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         }
 
+        private void VolverButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 
