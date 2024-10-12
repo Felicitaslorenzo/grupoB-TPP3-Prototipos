@@ -26,7 +26,7 @@ namespace grupoB_TPP3_Prototipos.MenuOrdenesEntrega
 
         private void buttonGenerarOrdenEntrega_Click(object sender, EventArgs e)
         {
-            CrearOrdenEntrega.EmpaquetadoForm crearOrdenEntregaForm = new CrearOrdenEntrega.EmpaquetadoForm();
+            GenerarOrdenEntrega.GenerarOrdenEntregaForm crearOrdenEntregaForm = new GenerarOrdenEntrega.GenerarOrdenEntregaForm();
             crearOrdenEntregaForm.ShowDialog();
         }
 
