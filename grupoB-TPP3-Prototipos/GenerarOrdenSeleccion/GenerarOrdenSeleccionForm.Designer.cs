@@ -38,7 +38,7 @@
             FechaDesdeLabel = new Label();
             label1 = new Label();
             FechaOSDesdePicker = new DateTimePicker();
-            IdOrdenSeleccionCombo = new ComboBox();
+            IdOrdenPreparacionCombo = new ComboBox();
             label3 = new Label();
             PrioridadCombo = new ComboBox();
             label4 = new Label();
@@ -99,7 +99,7 @@
             // BuscarButton
             // 
             BuscarButton.Location = new Point(286, 76);
-            BuscarButton.Margin = new Padding(1, 1, 1, 1);
+            BuscarButton.Margin = new Padding(1);
             BuscarButton.Name = "BuscarButton";
             BuscarButton.Size = new Size(480, 23);
             BuscarButton.TabIndex = 24;
@@ -110,7 +110,7 @@
             // VolverButton
             // 
             VolverButton.Location = new Point(652, 556);
-            VolverButton.Margin = new Padding(1, 1, 1, 1);
+            VolverButton.Margin = new Padding(1);
             VolverButton.Name = "VolverButton";
             VolverButton.Size = new Size(112, 23);
             VolverButton.TabIndex = 23;
@@ -143,15 +143,15 @@
             FechaOSDesdePicker.Size = new Size(126, 23);
             FechaOSDesdePicker.TabIndex = 20;
             // 
-            // IdOrdenSeleccionCombo
+            // IdOrdenPreparacionCombo
             // 
-            IdOrdenSeleccionCombo.DropDownStyle = ComboBoxStyle.DropDownList;
-            IdOrdenSeleccionCombo.FormattingEnabled = true;
-            IdOrdenSeleccionCombo.Location = new Point(25, 27);
-            IdOrdenSeleccionCombo.Margin = new Padding(3, 2, 3, 2);
-            IdOrdenSeleccionCombo.Name = "IdOrdenSeleccionCombo";
-            IdOrdenSeleccionCombo.Size = new Size(220, 23);
-            IdOrdenSeleccionCombo.TabIndex = 19;
+            IdOrdenPreparacionCombo.DropDownStyle = ComboBoxStyle.DropDownList;
+            IdOrdenPreparacionCombo.FormattingEnabled = true;
+            IdOrdenPreparacionCombo.Location = new Point(25, 27);
+            IdOrdenPreparacionCombo.Margin = new Padding(3, 2, 3, 2);
+            IdOrdenPreparacionCombo.Name = "IdOrdenPreparacionCombo";
+            IdOrdenPreparacionCombo.Size = new Size(220, 23);
+            IdOrdenPreparacionCombo.TabIndex = 19;
             // 
             // label3
             // 
@@ -166,6 +166,7 @@
             // 
             PrioridadCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             PrioridadCombo.FormattingEnabled = true;
+            PrioridadCombo.Items.AddRange(new object[] { "Con prioridad de entrega", "Sin prioridad" });
             PrioridadCombo.Location = new Point(589, 29);
             PrioridadCombo.Margin = new Padding(3, 2, 3, 2);
             PrioridadCombo.Name = "PrioridadCombo";
@@ -194,7 +195,7 @@
             // GenerarOrdenButton
             // 
             GenerarOrdenButton.Location = new Point(470, 556);
-            GenerarOrdenButton.Margin = new Padding(1, 1, 1, 1);
+            GenerarOrdenButton.Margin = new Padding(1);
             GenerarOrdenButton.Name = "GenerarOrdenButton";
             GenerarOrdenButton.Size = new Size(169, 23);
             GenerarOrdenButton.TabIndex = 43;
@@ -221,7 +222,7 @@
             // AgregarSeleccionadaOSButton
             // 
             AgregarSeleccionadaOSButton.Location = new Point(603, 297);
-            AgregarSeleccionadaOSButton.Margin = new Padding(1, 1, 1, 1);
+            AgregarSeleccionadaOSButton.Margin = new Padding(1);
             AgregarSeleccionadaOSButton.Name = "AgregarSeleccionadaOSButton";
             AgregarSeleccionadaOSButton.Size = new Size(161, 23);
             AgregarSeleccionadaOSButton.TabIndex = 46;
@@ -266,7 +267,7 @@
             // QuitarSeleccionadasOSButton
             // 
             QuitarSeleccionadasOSButton.Location = new Point(603, 515);
-            QuitarSeleccionadasOSButton.Margin = new Padding(1, 1, 1, 1);
+            QuitarSeleccionadasOSButton.Margin = new Padding(1);
             QuitarSeleccionadasOSButton.Name = "QuitarSeleccionadasOSButton";
             QuitarSeleccionadasOSButton.Size = new Size(161, 23);
             QuitarSeleccionadasOSButton.TabIndex = 49;
@@ -364,7 +365,7 @@
             Controls.Add(FechaDesdeLabel);
             Controls.Add(label1);
             Controls.Add(FechaOSDesdePicker);
-            Controls.Add(IdOrdenSeleccionCombo);
+            Controls.Add(IdOrdenPreparacionCombo);
             Margin = new Padding(3, 2, 3, 2);
             Name = "GenerarOrdenSeleccionForm";
             Text = "Generar Orden de Selección";
@@ -388,7 +389,7 @@
         private Label FechaDesdeLabel;
         private Label label1;
         private DateTimePicker FechaOSDesdePicker;
-        private ComboBox IdOrdenSeleccionCombo;
+        private ComboBox IdOrdenPreparacionCombo;
         private Label label3;
         private ComboBox PrioridadCombo;
         private Label label4;
