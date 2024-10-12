@@ -275,8 +275,8 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 new Cliente { IdCliente = "CL006", Transportistas = new List<string> {"TR014", "TR015", "CL006"}},
                 new Cliente { IdCliente = "CL007", Transportistas = new List<string> {"TR016", "TR017", "CL007"}},
                 new Cliente { IdCliente = "CL008", Transportistas = new List<string> {"TR018", "TR019", "CL008"}},
-                new Cliente { IdCliente = "CL009", Transportistas = new List<string> {"TR019", "TR020", "CL009"}},
-                new Cliente { IdCliente = "CL010", Transportistas = new List<string> {"TR021", "TR022", "CL010"}},
+                new Cliente { IdCliente = "CL009", Transportistas = new List<string> {"TR020", "TR021", "CL009"}},
+                new Cliente { IdCliente = "CL010", Transportistas = new List<string> {"TR022", "TR023", "CL010"}},
             };
         }
     }

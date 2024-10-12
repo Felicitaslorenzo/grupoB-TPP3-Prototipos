@@ -33,9 +33,10 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
                 return;
             }
 
-            // Filtrar OrdenesSeleccionadasList basado en los valores seleccionados (si ambos están activos o solo uno)
+            // Filtrar OrdenesSeleccionadasList basado en los valores seleccionados
             var ordenesFiltradas = modelo.OrdenesSeleccionadas.Where(o =>
-                (string.IsNullOrEmpty(idOrdenSeleccionada) || o.IdOrdenSeleccion == idOrdenSeleccionada)
+                (string.IsNullOrEmpty(idOrdenSeleccionada) || o.IdOrdenSeleccion == idOrdenSeleccionada) &&
+                (!FechaDesdeOSPicker.Checked || o.FechaEmision.Date >= fechaSeleccionada) // Ajusta aquí según tu lógica
             ).ToList();
 
             // Limpiar la lista antes de agregar los elementos filtrados
@@ -53,10 +54,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
             {
                 ListViewItem item = new ListViewItem();
                 item.Text = ordenSeleccion.IdOrdenSeleccion;
-                item.SubItems.Add(ordenSeleccion.FechaOS.ToString("dd/MM/yyyy"));
-                item.SubItems.Add(ordenSeleccion.DescripcionProducto);
-                item.SubItems.Add(ordenSeleccion.Cantidad.ToString());
-                item.SubItems.Add(ordenSeleccion.Ubicacion);
+                item.SubItems.Add(ordenSeleccion.FechaEmision.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(ordenSeleccion.FechaEstado.ToString("dd/MM/yyyy"));
                 item.SubItems.Add(ordenSeleccion.Estado);
 
                 ListarOrdenSeleccionList.Items.Add(item);
@@ -67,27 +66,102 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
         {
             var ordenesSeleccion = modelo.OrdenesSeleccionadas;
 
-            // Extraer datos para cada ComboBox
-            var idOrdenesSeleccion = ordenesSeleccion.Select(o => o.IdOrdenSeleccion).Distinct().ToList();
-            var FechaOS = ordenesSeleccion.Select(o => o.FechaOS).Distinct().ToList();
+            // Extraer datos para cada ComboBox sin duplicados
+            var idOrdenesSeleccion = ordenesSeleccion.Select(o => o.IdOrdenSeleccion).Distinct();
+            var fechasEmision = ordenesSeleccion.Select(o => o.FechaEmision).Distinct();
+            var fechasEstado = ordenesSeleccion.Select(o => o.FechaEstado).Distinct();
 
-            // Cargar datos en los desplegables
-            foreach (var idOrdenSeleccion in idOrdenesSeleccion)
+            // Cargar datos en los ComboBox
+            IdOrdenSeleccionCombo.Items.AddRange(idOrdenesSeleccion.ToArray());
+            // Si tienes otros ComboBoxes para fechas, deberías hacer lo mismo
+
+            // Llenar ListView
+            ListarOrdenSeleccionList.Items.Clear(); // Limpiar antes de llenar
+            foreach (var orden in ordenesSeleccion)
             {
-                IdOrdenSeleccionCombo.Items.Add(idOrdenSeleccion);
+                ListViewItem item = new ListViewItem
+                {
+                    Text = orden.IdOrdenSeleccion.ToString(),
+                    SubItems =
+            {
+                orden.FechaEmision.ToString("dd/MM/yyyy"),
+                orden.FechaEstado.ToString("dd/MM/yyyy"),
+                orden.Estado
             }
-            foreach (var ordenPreparacion in modelo.OrdenesSeleccionadas)
-            {
-                ListViewItem item = new ListViewItem();
-                item.Text = ordenPreparacion.IdOrdenSeleccion.ToString();
-                item.SubItems.Add(ordenPreparacion.FechaOS.ToString("dd/MM/yyyy"));
-                item.SubItems.Add(ordenPreparacion.DescripcionProducto.ToString());
-                item.SubItems.Add(ordenPreparacion.Cantidad.ToString());
-                item.SubItems.Add(ordenPreparacion.Ubicacion);
-                item.SubItems.Add(ordenPreparacion.Estado);
-                
+                };
 
                 ListarOrdenSeleccionList.Items.Add(item);
+            }
+        }
+
+        private void VolverListaButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ListarOrdenSeleccionList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Verificar si hay una selección
+            if (ListarOrdenSeleccionList.SelectedItems.Count > 0)
+            {
+                // Obtener la orden seleccionada (primer elemento seleccionado)
+                var idOrdenSeleccionada = ListarOrdenSeleccionList.SelectedItems[0].Text;
+
+                // Buscar la orden en el modelo de datos
+                var ordenSeleccionada = modelo.OrdenesSeleccionadas.FirstOrDefault(o => o.IdOrdenSeleccion == idOrdenSeleccionada);
+
+                if (ordenSeleccionada != null)
+                {
+                    // Limpiar la lista de productos antes de cargar los nuevos
+                    listOrdenPreparacion.Items.Clear();
+
+                    // Cargar los productos relacionados a la orden seleccionada
+                    foreach (var ordenPreparacion in ordenSeleccionada.OrdenesPreparacion)
+                    {
+                        ListViewItem item = new ListViewItem();
+                        item.Text = ordenPreparacion.IdOrden;
+                        item.SubItems.Add(ordenPreparacion.IdCliente);
+                        item.SubItems.Add(ordenPreparacion.Transportista);
+
+                        listOrdenPreparacion.Items.Add(item);
+                    }
+                }
+            }
+        }
+
+        private void ProductosList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void listOrdenPreparacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Verificar si hay una selección
+            if (listOrdenPreparacion.SelectedItems.Count > 0)
+            {
+                // Obtener la orden de preparación seleccionada
+                var idOrdenPreparacionSeleccionada = listOrdenPreparacion.SelectedItems[0].Text;
+
+                // Buscar la orden de preparación en el modelo de datos
+                var ordenPreparacionSeleccionada = modelo.OrdenesSeleccionadas
+                    .SelectMany(o => o.OrdenesPreparacion) // Aplana la lista de órdenes de preparación
+                    .FirstOrDefault(op => op.IdOrden == idOrdenPreparacionSeleccionada);
+
+                if (ordenPreparacionSeleccionada != null)
+                {
+                    // Limpiar la lista de productos antes de cargar los nuevos
+                    ProductosList.Items.Clear();
+
+                    // Cargar los productos relacionados a la orden de preparación seleccionada
+                    foreach (var producto in ordenPreparacionSeleccionada.Productos)
+                    {
+                        ListViewItem item = new ListViewItem();
+                        item.Text = producto.DescripcionProducto; // Suponiendo que aquí agregas la descripción del producto
+                        item.SubItems.Add(producto.Cantidad.ToString()); // Agregar la cantidad como subitem
+
+                        // Agregar el item a la lista
+                        ProductosList.Items.Add(item);
+                    }
+                }
             }
         }
     }
