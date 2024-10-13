@@ -188,5 +188,12 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
             // Restaura el estado de confirmación
             model.IsConfirming = false; // Permitir nuevas selecciones
         }
+
+        private void CancelarButton_Click(object sender, EventArgs e)
+        {
+            listView2.Items.Clear();
+            listView1.Items.Clear();
+            CargarOrdenesEnComboBox();
+        }
     }
 }

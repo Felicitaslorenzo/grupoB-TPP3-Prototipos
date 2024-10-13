@@ -155,6 +155,7 @@
             CancelarButton.TabIndex = 6;
             CancelarButton.Text = "Cancelar";
             CancelarButton.UseVisualStyleBackColor = true;
+            CancelarButton.Click += CancelarButton_Click;
             // 
             // label3
             // 
