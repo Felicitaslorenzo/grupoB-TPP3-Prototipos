@@ -33,22 +33,14 @@
             Producto = new ColumnHeader();
             Cantidad = new ColumnHeader();
             VolverButton = new Button();
-            GenerarOrdenesPreparacionGroup = new GroupBox();
-            labelOP = new Label();
-            OP = new Label();
-            labelTransportista = new Label();
-            Transportista = new Label();
-            labelCliente = new Label();
-            IdClienteLabel = new Label();
-            GenerarOrdenesPreparacionGroup.SuspendLayout();
             SuspendLayout();
             // 
             // EmpaquetarOrdenButton
             // 
-            EmpaquetarOrdenButton.Location = new Point(549, 306);
+            EmpaquetarOrdenButton.Location = new Point(480, 230);
             EmpaquetarOrdenButton.Margin = new Padding(1);
             EmpaquetarOrdenButton.Name = "EmpaquetarOrdenButton";
-            EmpaquetarOrdenButton.Size = new Size(168, 42);
+            EmpaquetarOrdenButton.Size = new Size(147, 32);
             EmpaquetarOrdenButton.TabIndex = 58;
             EmpaquetarOrdenButton.Text = "Empaquetado";
             EmpaquetarOrdenButton.UseVisualStyleBackColor = true;
@@ -57,9 +49,10 @@
             // ListarEmpaquetarOrdenList
             // 
             ListarEmpaquetarOrdenList.Columns.AddRange(new ColumnHeader[] { Producto, Cantidad });
-            ListarEmpaquetarOrdenList.Location = new Point(23, 131);
+            ListarEmpaquetarOrdenList.Location = new Point(20, 11);
+            ListarEmpaquetarOrdenList.Margin = new Padding(3, 2, 3, 2);
             ListarEmpaquetarOrdenList.Name = "ListarEmpaquetarOrdenList";
-            ListarEmpaquetarOrdenList.Size = new Size(845, 153);
+            ListarEmpaquetarOrdenList.Size = new Size(740, 203);
             ListarEmpaquetarOrdenList.TabIndex = 50;
             ListarEmpaquetarOrdenList.UseCompatibleStateImageBehavior = false;
             ListarEmpaquetarOrdenList.View = View.Details;
@@ -76,99 +69,27 @@
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(738, 305);
+            VolverButton.Location = new Point(646, 229);
             VolverButton.Margin = new Padding(1);
             VolverButton.Name = "VolverButton";
-            VolverButton.Size = new Size(129, 45);
+            VolverButton.Size = new Size(113, 34);
             VolverButton.TabIndex = 48;
             VolverButton.Text = "Volver";
             VolverButton.UseVisualStyleBackColor = true;
             VolverButton.Click += VolverButton_Click;
             // 
-            // GenerarOrdenesPreparacionGroup
-            // 
-            GenerarOrdenesPreparacionGroup.Controls.Add(labelOP);
-            GenerarOrdenesPreparacionGroup.Controls.Add(OP);
-            GenerarOrdenesPreparacionGroup.Controls.Add(labelTransportista);
-            GenerarOrdenesPreparacionGroup.Controls.Add(Transportista);
-            GenerarOrdenesPreparacionGroup.Controls.Add(labelCliente);
-            GenerarOrdenesPreparacionGroup.Controls.Add(IdClienteLabel);
-            GenerarOrdenesPreparacionGroup.Location = new Point(23, 13);
-            GenerarOrdenesPreparacionGroup.Margin = new Padding(1);
-            GenerarOrdenesPreparacionGroup.Name = "GenerarOrdenesPreparacionGroup";
-            GenerarOrdenesPreparacionGroup.Padding = new Padding(1);
-            GenerarOrdenesPreparacionGroup.Size = new Size(846, 95);
-            GenerarOrdenesPreparacionGroup.TabIndex = 61;
-            GenerarOrdenesPreparacionGroup.TabStop = false;
-            // 
-            // labelOP
-            // 
-            labelOP.AutoSize = true;
-            labelOP.Location = new Point(34, 52);
-            labelOP.Name = "labelOP";
-            labelOP.Size = new Size(0, 20);
-            labelOP.TabIndex = 10;
-            // 
-            // OP
-            // 
-            OP.AutoSize = true;
-            OP.Location = new Point(22, 23);
-            OP.Margin = new Padding(1, 0, 1, 0);
-            OP.Name = "OP";
-            OP.Size = new Size(154, 20);
-            OP.TabIndex = 9;
-            OP.Text = "Orden de Preparación";
-            // 
-            // labelTransportista
-            // 
-            labelTransportista.AutoSize = true;
-            labelTransportista.Location = new Point(665, 52);
-            labelTransportista.Name = "labelTransportista";
-            labelTransportista.Size = new Size(0, 20);
-            labelTransportista.TabIndex = 8;
-            // 
-            // Transportista
-            // 
-            Transportista.AutoSize = true;
-            Transportista.Location = new Point(665, 23);
-            Transportista.Margin = new Padding(1, 0, 1, 0);
-            Transportista.Name = "Transportista";
-            Transportista.Size = new Size(94, 20);
-            Transportista.TabIndex = 7;
-            Transportista.Text = "Transportista";
-            // 
-            // labelCliente
-            // 
-            labelCliente.AutoSize = true;
-            labelCliente.Location = new Point(353, 52);
-            labelCliente.Name = "labelCliente";
-            labelCliente.Size = new Size(0, 20);
-            labelCliente.TabIndex = 6;
-            // 
-            // IdClienteLabel
-            // 
-            IdClienteLabel.AutoSize = true;
-            IdClienteLabel.Location = new Point(353, 23);
-            IdClienteLabel.Margin = new Padding(1, 0, 1, 0);
-            IdClienteLabel.Name = "IdClienteLabel";
-            IdClienteLabel.Size = new Size(55, 20);
-            IdClienteLabel.TabIndex = 5;
-            IdClienteLabel.Text = "Cliente";
-            // 
             // EmpaquetadoForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(888, 368);
-            Controls.Add(GenerarOrdenesPreparacionGroup);
+            ClientSize = new Size(777, 276);
             Controls.Add(EmpaquetarOrdenButton);
             Controls.Add(ListarEmpaquetarOrdenList);
             Controls.Add(VolverButton);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "EmpaquetadoForm";
             Text = "EmpaquetadoForm";
             Load += EmpaquetadoForm_Load;
-            GenerarOrdenesPreparacionGroup.ResumeLayout(false);
-            GenerarOrdenesPreparacionGroup.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -180,12 +101,5 @@
         private ColumnHeader IdOrdenSeleccionColumna;
         private ColumnHeader Producto;
         private ColumnHeader Cantidad;
-        private GroupBox GenerarOrdenesPreparacionGroup;
-        private Label labelCliente;
-        private Label IdClienteLabel;
-        private Label labelTransportista;
-        private Label Transportista;
-        private Label labelOP;
-        private Label OP;
     }
 }

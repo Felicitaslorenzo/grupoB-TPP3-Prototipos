@@ -49,14 +49,8 @@
             DetalleOSList = new ListView();
             ProductoColumna = new ColumnHeader();
             CantidadColumna = new ColumnHeader();
-            UbicacionOSColumna = new ColumnHeader();
             DetalleOSLabel = new Label();
             QuitarSeleccionadasOSButton = new Button();
-            TotalesOSSeleccionadasLabel = new Label();
-            TotalesOSSeleccionadasList = new ListView();
-            ProductoOrdenSeleccionadaColumna = new ColumnHeader();
-            CantidadOrdenSeleccionadaColumna = new ColumnHeader();
-            UbicacionOrdenSeleccionadaColumna = new ColumnHeader();
             GenerarOSSeleccionadasList = new ListView();
             IdOPSeleccionadaColumna = new ColumnHeader();
             ClienteSeleccionadoColumna = new ColumnHeader();
@@ -102,7 +96,7 @@
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(652, 556);
+            VolverButton.Location = new Point(634, 654);
             VolverButton.Margin = new Padding(1);
             VolverButton.Name = "VolverButton";
             VolverButton.Size = new Size(112, 23);
@@ -187,7 +181,7 @@
             // 
             // GenerarOrdenButton
             // 
-            GenerarOrdenButton.Location = new Point(470, 556);
+            GenerarOrdenButton.Location = new Point(454, 654);
             GenerarOrdenButton.Margin = new Padding(1);
             GenerarOrdenButton.Name = "GenerarOrdenButton";
             GenerarOrdenButton.Size = new Size(169, 23);
@@ -224,7 +218,7 @@
             // 
             // DetalleOSList
             // 
-            DetalleOSList.Columns.AddRange(new ColumnHeader[] { ProductoColumna, CantidadColumna, UbicacionOSColumna });
+            DetalleOSList.Columns.AddRange(new ColumnHeader[] { ProductoColumna, CantidadColumna });
             DetalleOSList.Location = new Point(454, 170);
             DetalleOSList.Margin = new Padding(3, 2, 3, 2);
             DetalleOSList.Name = "DetalleOSList";
@@ -242,11 +236,6 @@
             // 
             CantidadColumna.Text = "Cantidad";
             CantidadColumna.Width = 120;
-            // 
-            // UbicacionOSColumna
-            // 
-            UbicacionOSColumna.Text = "Ubicacion";
-            UbicacionOSColumna.Width = 120;
             // 
             // DetalleOSLabel
             // 
@@ -267,48 +256,13 @@
             QuitarSeleccionadasOSButton.Text = "Quitar Seleccionadas";
             QuitarSeleccionadasOSButton.UseVisualStyleBackColor = true;
             // 
-            // TotalesOSSeleccionadasLabel
-            // 
-            TotalesOSSeleccionadasLabel.AutoSize = true;
-            TotalesOSSeleccionadasLabel.Location = new Point(454, 365);
-            TotalesOSSeleccionadasLabel.Name = "TotalesOSSeleccionadasLabel";
-            TotalesOSSeleccionadasLabel.Size = new Size(43, 15);
-            TotalesOSSeleccionadasLabel.TabIndex = 52;
-            TotalesOSSeleccionadasLabel.Text = "Totales";
-            // 
-            // TotalesOSSeleccionadasList
-            // 
-            TotalesOSSeleccionadasList.Columns.AddRange(new ColumnHeader[] { ProductoOrdenSeleccionadaColumna, CantidadOrdenSeleccionadaColumna, UbicacionOrdenSeleccionadaColumna });
-            TotalesOSSeleccionadasList.Location = new Point(454, 389);
-            TotalesOSSeleccionadasList.Margin = new Padding(3, 2, 3, 2);
-            TotalesOSSeleccionadasList.Name = "TotalesOSSeleccionadasList";
-            TotalesOSSeleccionadasList.Size = new Size(313, 125);
-            TotalesOSSeleccionadasList.TabIndex = 51;
-            TotalesOSSeleccionadasList.UseCompatibleStateImageBehavior = false;
-            TotalesOSSeleccionadasList.View = View.Details;
-            // 
-            // ProductoOrdenSeleccionadaColumna
-            // 
-            ProductoOrdenSeleccionadaColumna.Text = "Producto";
-            ProductoOrdenSeleccionadaColumna.Width = 120;
-            // 
-            // CantidadOrdenSeleccionadaColumna
-            // 
-            CantidadOrdenSeleccionadaColumna.Text = "Cantidad";
-            CantidadOrdenSeleccionadaColumna.Width = 120;
-            // 
-            // UbicacionOrdenSeleccionadaColumna
-            // 
-            UbicacionOrdenSeleccionadaColumna.Text = "Ubicacion";
-            UbicacionOrdenSeleccionadaColumna.Width = 120;
-            // 
             // GenerarOSSeleccionadasList
             // 
             GenerarOSSeleccionadasList.Columns.AddRange(new ColumnHeader[] { IdOPSeleccionadaColumna, ClienteSeleccionadoColumna, FechaOPSeleccionadaColumna });
             GenerarOSSeleccionadasList.Location = new Point(25, 365);
             GenerarOSSeleccionadasList.Margin = new Padding(3, 2, 3, 2);
             GenerarOSSeleccionadasList.Name = "GenerarOSSeleccionadasList";
-            GenerarOSSeleccionadasList.Size = new Size(409, 147);
+            GenerarOSSeleccionadasList.Size = new Size(739, 147);
             GenerarOSSeleccionadasList.TabIndex = 50;
             GenerarOSSeleccionadasList.UseCompatibleStateImageBehavior = false;
             GenerarOSSeleccionadasList.View = View.Details;
@@ -332,9 +286,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(802, 548);
-            Controls.Add(TotalesOSSeleccionadasLabel);
-            Controls.Add(TotalesOSSeleccionadasList);
+            ClientSize = new Size(802, 704);
             Controls.Add(GenerarOSSeleccionadasList);
             Controls.Add(QuitarSeleccionadasOSButton);
             Controls.Add(DetalleOSLabel);
@@ -391,16 +343,10 @@
         private ColumnHeader CantidadColumna;
         private Label DetalleOSLabel;
         private Button QuitarSeleccionadasOSButton;
-        private Label TotalesOSSeleccionadasLabel;
-        private ListView TotalesOSSeleccionadasList;
-        private ColumnHeader ProductoOrdenSeleccionadaColumna;
-        private ColumnHeader CantidadOrdenSeleccionadaColumna;
         private ListView GenerarOSSeleccionadasList;
         private ColumnHeader IdOPSeleccionadaColumna;
         private ColumnHeader FechaOPSeleccionadaColumna;
         private ColumnHeader ClienteOSColumna;
         private ColumnHeader ClienteSeleccionadoColumna;
-        private ColumnHeader UbicacionOrdenSeleccionadaColumna;
-        private ColumnHeader UbicacionOSColumna;
     }
 }

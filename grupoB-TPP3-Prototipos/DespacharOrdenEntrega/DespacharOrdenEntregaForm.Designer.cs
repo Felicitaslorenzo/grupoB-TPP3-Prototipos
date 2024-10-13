@@ -32,8 +32,6 @@
             ListarOrdenDespacharBuscarList = new ListView();
             IdOrdenColumna = new ColumnHeader();
             IdClienteColumna = new ColumnHeader();
-            FechaColumna = new ColumnHeader();
-            EstadoColumna = new ColumnHeader();
             BuscarButton = new Button();
             VolverButton = new Button();
             TransportistaLabel = new Label();
@@ -42,21 +40,21 @@
             // 
             // GenerarOrdenDeDespachoButton
             // 
-            GenerarOrdenDeDespachoButton.Location = new Point(616, 390);
-            GenerarOrdenDeDespachoButton.Margin = new Padding(2);
+            GenerarOrdenDeDespachoButton.Location = new Point(431, 234);
+            GenerarOrdenDeDespachoButton.Margin = new Padding(1, 1, 1, 1);
             GenerarOrdenDeDespachoButton.Name = "GenerarOrdenDeDespachoButton";
-            GenerarOrdenDeDespachoButton.Size = new Size(275, 52);
+            GenerarOrdenDeDespachoButton.Size = new Size(192, 31);
             GenerarOrdenDeDespachoButton.TabIndex = 81;
             GenerarOrdenDeDespachoButton.Text = "Generar Orden de Despacho";
             GenerarOrdenDeDespachoButton.UseVisualStyleBackColor = true;
             // 
             // ListarOrdenDespacharBuscarList
             // 
-            ListarOrdenDespacharBuscarList.Columns.AddRange(new ColumnHeader[] { IdOrdenColumna, IdClienteColumna, FechaColumna, EstadoColumna });
-            ListarOrdenDespacharBuscarList.Location = new Point(15, 116);
-            ListarOrdenDespacharBuscarList.Margin = new Padding(4);
+            ListarOrdenDespacharBuscarList.Columns.AddRange(new ColumnHeader[] { IdOrdenColumna, IdClienteColumna });
+            ListarOrdenDespacharBuscarList.Location = new Point(10, 70);
+            ListarOrdenDespacharBuscarList.Margin = new Padding(3, 2, 3, 2);
             ListarOrdenDespacharBuscarList.Name = "ListarOrdenDespacharBuscarList";
-            ListarOrdenDespacharBuscarList.Size = new Size(1058, 243);
+            ListarOrdenDespacharBuscarList.Size = new Size(742, 147);
             ListarOrdenDespacharBuscarList.TabIndex = 78;
             ListarOrdenDespacharBuscarList.UseCompatibleStateImageBehavior = false;
             ListarOrdenDespacharBuscarList.View = View.Details;
@@ -71,32 +69,22 @@
             IdClienteColumna.Text = "ID Cliente";
             IdClienteColumna.Width = 100;
             // 
-            // FechaColumna
-            // 
-            FechaColumna.Text = "Fecha";
-            FechaColumna.Width = 100;
-            // 
-            // EstadoColumna
-            // 
-            EstadoColumna.Text = "Estado";
-            EstadoColumna.Width = 100;
-            // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(401, 45);
-            BuscarButton.Margin = new Padding(2);
+            BuscarButton.Location = new Point(281, 27);
+            BuscarButton.Margin = new Padding(1, 1, 1, 1);
             BuscarButton.Name = "BuscarButton";
-            BuscarButton.Size = new Size(160, 38);
+            BuscarButton.Size = new Size(112, 23);
             BuscarButton.TabIndex = 77;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(913, 390);
-            VolverButton.Margin = new Padding(2);
+            VolverButton.Location = new Point(639, 234);
+            VolverButton.Margin = new Padding(1, 1, 1, 1);
             VolverButton.Name = "VolverButton";
-            VolverButton.Size = new Size(160, 52);
+            VolverButton.Size = new Size(112, 31);
             VolverButton.TabIndex = 76;
             VolverButton.Text = "Volver";
             VolverButton.UseVisualStyleBackColor = true;
@@ -104,34 +92,33 @@
             // TransportistaLabel
             // 
             TransportistaLabel.AutoSize = true;
-            TransportistaLabel.Location = new Point(15, 16);
-            TransportistaLabel.Margin = new Padding(4, 0, 4, 0);
+            TransportistaLabel.Location = new Point(10, 10);
             TransportistaLabel.Name = "TransportistaLabel";
-            TransportistaLabel.Size = new Size(113, 25);
+            TransportistaLabel.Size = new Size(74, 15);
             TransportistaLabel.TabIndex = 74;
             TransportistaLabel.Text = "Transportista";
             // 
             // IdOrdenEntregaCombo
             // 
             IdOrdenEntregaCombo.FormattingEnabled = true;
-            IdOrdenEntregaCombo.Location = new Point(15, 45);
-            IdOrdenEntregaCombo.Margin = new Padding(4);
+            IdOrdenEntregaCombo.Location = new Point(12, 28);
+            IdOrdenEntregaCombo.Margin = new Padding(3, 2, 3, 2);
             IdOrdenEntregaCombo.Name = "IdOrdenEntregaCombo";
-            IdOrdenEntregaCombo.Size = new Size(312, 33);
+            IdOrdenEntregaCombo.Size = new Size(220, 23);
             IdOrdenEntregaCombo.TabIndex = 72;
             // 
             // DespacharOrdenEntregaForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1107, 481);
+            ClientSize = new Size(775, 289);
             Controls.Add(GenerarOrdenDeDespachoButton);
             Controls.Add(ListarOrdenDespacharBuscarList);
             Controls.Add(BuscarButton);
             Controls.Add(VolverButton);
             Controls.Add(TransportistaLabel);
             Controls.Add(IdOrdenEntregaCombo);
-            Margin = new Padding(4);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "DespacharOrdenEntregaForm";
             Text = "DespacharOrdenEntregaForm";
             ResumeLayout(false);
@@ -144,8 +131,6 @@
         private ListView ListarOrdenDespacharBuscarList;
         private ColumnHeader IdOrdenColumna;
         private ColumnHeader IdClienteColumna;
-        private ColumnHeader FechaColumna;
-        private ColumnHeader EstadoColumna;
         private Button BuscarButton;
         private Button VolverButton;
         private Label TransportistaLabel;
