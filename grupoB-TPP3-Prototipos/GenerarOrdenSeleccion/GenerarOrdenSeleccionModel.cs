@@ -11,7 +11,6 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
     {
         public List<OrdenPreparacion> ObtenerOrdenesPreparacion()
         {
-            // Crear una lista para almacenar las órdenes de preparación
             var ordenesPreparacion = new List<OrdenPreparacion>
             {
                 new OrdenPreparacion
@@ -166,9 +165,54 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                     }
                 }
             };
-
-            // Retornar la lista completa de órdenes de preparación
             return ordenesPreparacion;
+        }
+        public List<Cliente> ObtenerClientes()
+        {
+            return new List<Cliente>
+            {
+                new Cliente { IdCliente = "CL001", Transportistas = new List<string> {"TR001", "TR002", "TR003", "CL001"}},
+                new Cliente { IdCliente = "CL002", Transportistas = new List<string> {"TR004", "TR005", "CL002"}},
+                new Cliente { IdCliente = "CL003", Transportistas = new List<string> {"TR006", "TR007", "CL003"}},
+                new Cliente { IdCliente = "CL004", Transportistas = new List<string> {"TR008", "TR009", "TR010", "TR011", "CL004"}},
+                new Cliente { IdCliente = "CL005", Transportistas = new List<string> {"TR012", "TR013", "CL005"}},
+                new Cliente { IdCliente = "CL006", Transportistas = new List<string> {"TR014", "TR015", "CL006"}},
+                new Cliente { IdCliente = "CL007", Transportistas = new List<string> {"TR016", "TR017", "CL007"}},
+                new Cliente { IdCliente = "CL008", Transportistas = new List<string> {"TR018", "TR019", "CL008"}},
+                new Cliente { IdCliente = "CL009", Transportistas = new List<string> {"TR020", "TR021", "CL009"}},
+                new Cliente { IdCliente = "CL010", Transportistas = new List<string> {"TR022", "TR023", "CL010"}},
+            };
+        }
+        public List<OrdenPreparacion> FiltrarOrdenes(List<OrdenPreparacion> ordenesPreparacion, string idOrden, DateTime? fechaDesde, DateTime? fechaHasta, string prioridad, string idCliente)
+        {
+            var ordenesFiltradas = ordenesPreparacion.AsQueryable();
+
+            if (!string.IsNullOrEmpty(idOrden))
+            {
+                ordenesFiltradas = ordenesFiltradas.Where(o => o.IdOrden == idOrden);
+            }
+
+            if (fechaDesde.HasValue)
+            {
+                ordenesFiltradas = ordenesFiltradas.Where(o => o.FechaEmision >= fechaDesde.Value);
+            }
+
+            if (fechaHasta.HasValue)
+            {
+                ordenesFiltradas = ordenesFiltradas.Where(o => o.FechaEmision <= fechaHasta.Value);
+            }
+
+            /*if (!string.IsNullOrEmpty(prioridad))
+            {
+                ordenesFiltradas = ordenesFiltradas.Where(o => o.Prioridad == prioridad);
+            }
+            */
+            if (!string.IsNullOrEmpty(idCliente))
+            {
+                ordenesFiltradas = ordenesFiltradas.Where(o => o.IdCliente == idCliente);
+            }
+
+            return ordenesFiltradas.ToList();
         }
     }
 }

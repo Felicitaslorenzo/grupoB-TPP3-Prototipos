@@ -32,7 +32,6 @@
             IdOrdenPreparacionColumna = new ColumnHeader();
             ClienteOSColumna = new ColumnHeader();
             FechaOPColumna = new ColumnHeader();
-            PrioridadColumna = new ColumnHeader();
             BuscarButton = new Button();
             VolverButton = new Button();
             FechaDesdeLabel = new Label();
@@ -62,12 +61,11 @@
             IdOPSeleccionadaColumna = new ColumnHeader();
             ClienteSeleccionadoColumna = new ColumnHeader();
             FechaOPSeleccionadaColumna = new ColumnHeader();
-            PrioridadOPSeleccionadaColumna = new ColumnHeader();
             SuspendLayout();
             // 
             // GenerarOrdenSeleccionBuscarList
             // 
-            GenerarOrdenSeleccionBuscarList.Columns.AddRange(new ColumnHeader[] { IdOrdenPreparacionColumna, ClienteOSColumna, FechaOPColumna, PrioridadColumna });
+            GenerarOrdenSeleccionBuscarList.Columns.AddRange(new ColumnHeader[] { IdOrdenPreparacionColumna, ClienteOSColumna, FechaOPColumna });
             GenerarOrdenSeleccionBuscarList.Location = new Point(25, 148);
             GenerarOrdenSeleccionBuscarList.Margin = new Padding(3, 2, 3, 2);
             GenerarOrdenSeleccionBuscarList.Name = "GenerarOrdenSeleccionBuscarList";
@@ -90,11 +88,6 @@
             // 
             FechaOPColumna.Text = "Fecha";
             FechaOPColumna.Width = 100;
-            // 
-            // PrioridadColumna
-            // 
-            PrioridadColumna.Text = "Prioridad";
-            PrioridadColumna.Width = 120;
             // 
             // BuscarButton
             // 
@@ -178,9 +171,9 @@
             label4.AutoSize = true;
             label4.Location = new Point(25, 63);
             label4.Name = "label4";
-            label4.Size = new Size(109, 15);
+            label4.Size = new Size(44, 15);
             label4.TabIndex = 31;
-            label4.Text = "Descripción Cliente";
+            label4.Text = "Cliente";
             // 
             // DescripcionClienteCombo
             // 
@@ -311,7 +304,7 @@
             // 
             // GenerarOSSeleccionadasList
             // 
-            GenerarOSSeleccionadasList.Columns.AddRange(new ColumnHeader[] { IdOPSeleccionadaColumna, ClienteSeleccionadoColumna, FechaOPSeleccionadaColumna, PrioridadOPSeleccionadaColumna });
+            GenerarOSSeleccionadasList.Columns.AddRange(new ColumnHeader[] { IdOPSeleccionadaColumna, ClienteSeleccionadoColumna, FechaOPSeleccionadaColumna });
             GenerarOSSeleccionadasList.Location = new Point(25, 365);
             GenerarOSSeleccionadasList.Margin = new Padding(3, 2, 3, 2);
             GenerarOSSeleccionadasList.Name = "GenerarOSSeleccionadasList";
@@ -334,11 +327,6 @@
             // 
             FechaOPSeleccionadaColumna.Text = "Fecha";
             FechaOPSeleccionadaColumna.Width = 100;
-            // 
-            // PrioridadOPSeleccionadaColumna
-            // 
-            PrioridadOPSeleccionadaColumna.Text = "Prioridad";
-            PrioridadOPSeleccionadaColumna.Width = 150;
             // 
             // GenerarOrdenSeleccionForm
             // 
@@ -394,7 +382,6 @@
         private ComboBox PrioridadCombo;
         private Label label4;
         private ComboBox DescripcionClienteCombo;
-        private ColumnHeader PrioridadColumna;
         private Button GenerarOrdenButton;
         private Label FechaHastaLabel;
         private DateTimePicker FechaOSHastaPicker;
@@ -411,7 +398,6 @@
         private ListView GenerarOSSeleccionadasList;
         private ColumnHeader IdOPSeleccionadaColumna;
         private ColumnHeader FechaOPSeleccionadaColumna;
-        private ColumnHeader PrioridadOPSeleccionadaColumna;
         private ColumnHeader ClienteOSColumna;
         private ColumnHeader ClienteSeleccionadoColumna;
         private ColumnHeader UbicacionOrdenSeleccionadaColumna;
