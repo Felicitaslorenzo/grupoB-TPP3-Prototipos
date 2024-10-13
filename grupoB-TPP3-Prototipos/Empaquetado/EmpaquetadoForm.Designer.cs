@@ -34,21 +34,21 @@
             Cantidad = new ColumnHeader();
             VolverButton = new Button();
             GenerarOrdenesPreparacionGroup = new GroupBox();
-            label2 = new Label();
+            labelOP = new Label();
             OP = new Label();
-            label1 = new Label();
+            labelTransportista = new Label();
             Transportista = new Label();
-            Cliente = new Label();
+            labelCliente = new Label();
             IdClienteLabel = new Label();
             GenerarOrdenesPreparacionGroup.SuspendLayout();
             SuspendLayout();
             // 
             // EmpaquetarOrdenButton
             // 
-            EmpaquetarOrdenButton.Location = new Point(686, 383);
+            EmpaquetarOrdenButton.Location = new Point(549, 306);
             EmpaquetarOrdenButton.Margin = new Padding(1);
             EmpaquetarOrdenButton.Name = "EmpaquetarOrdenButton";
-            EmpaquetarOrdenButton.Size = new Size(210, 53);
+            EmpaquetarOrdenButton.Size = new Size(168, 42);
             EmpaquetarOrdenButton.TabIndex = 58;
             EmpaquetarOrdenButton.Text = "Empaquetado";
             EmpaquetarOrdenButton.UseVisualStyleBackColor = true;
@@ -57,10 +57,9 @@
             // ListarEmpaquetarOrdenList
             // 
             ListarEmpaquetarOrdenList.Columns.AddRange(new ColumnHeader[] { Producto, Cantidad });
-            ListarEmpaquetarOrdenList.Location = new Point(29, 164);
-            ListarEmpaquetarOrdenList.Margin = new Padding(4, 4, 4, 4);
+            ListarEmpaquetarOrdenList.Location = new Point(23, 131);
             ListarEmpaquetarOrdenList.Name = "ListarEmpaquetarOrdenList";
-            ListarEmpaquetarOrdenList.Size = new Size(1055, 190);
+            ListarEmpaquetarOrdenList.Size = new Size(845, 153);
             ListarEmpaquetarOrdenList.TabIndex = 50;
             ListarEmpaquetarOrdenList.UseCompatibleStateImageBehavior = false;
             ListarEmpaquetarOrdenList.View = View.Details;
@@ -77,99 +76,97 @@
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(923, 381);
+            VolverButton.Location = new Point(738, 305);
             VolverButton.Margin = new Padding(1);
             VolverButton.Name = "VolverButton";
-            VolverButton.Size = new Size(161, 56);
+            VolverButton.Size = new Size(129, 45);
             VolverButton.TabIndex = 48;
             VolverButton.Text = "Volver";
             VolverButton.UseVisualStyleBackColor = true;
+            VolverButton.Click += VolverButton_Click;
             // 
             // GenerarOrdenesPreparacionGroup
             // 
-            GenerarOrdenesPreparacionGroup.Controls.Add(label2);
+            GenerarOrdenesPreparacionGroup.Controls.Add(labelOP);
             GenerarOrdenesPreparacionGroup.Controls.Add(OP);
-            GenerarOrdenesPreparacionGroup.Controls.Add(label1);
+            GenerarOrdenesPreparacionGroup.Controls.Add(labelTransportista);
             GenerarOrdenesPreparacionGroup.Controls.Add(Transportista);
-            GenerarOrdenesPreparacionGroup.Controls.Add(Cliente);
+            GenerarOrdenesPreparacionGroup.Controls.Add(labelCliente);
             GenerarOrdenesPreparacionGroup.Controls.Add(IdClienteLabel);
-            GenerarOrdenesPreparacionGroup.Location = new Point(29, 16);
+            GenerarOrdenesPreparacionGroup.Location = new Point(23, 13);
             GenerarOrdenesPreparacionGroup.Margin = new Padding(1);
             GenerarOrdenesPreparacionGroup.Name = "GenerarOrdenesPreparacionGroup";
             GenerarOrdenesPreparacionGroup.Padding = new Padding(1);
-            GenerarOrdenesPreparacionGroup.Size = new Size(1058, 119);
+            GenerarOrdenesPreparacionGroup.Size = new Size(846, 95);
             GenerarOrdenesPreparacionGroup.TabIndex = 61;
             GenerarOrdenesPreparacionGroup.TabStop = false;
             // 
-            // label2
+            // labelOP
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(42, 65);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(0, 25);
-            label2.TabIndex = 10;
+            labelOP.AutoSize = true;
+            labelOP.Location = new Point(34, 52);
+            labelOP.Name = "labelOP";
+            labelOP.Size = new Size(0, 20);
+            labelOP.TabIndex = 10;
             // 
             // OP
             // 
             OP.AutoSize = true;
-            OP.Location = new Point(28, 29);
+            OP.Location = new Point(22, 23);
             OP.Margin = new Padding(1, 0, 1, 0);
             OP.Name = "OP";
-            OP.Size = new Size(185, 25);
+            OP.Size = new Size(154, 20);
             OP.TabIndex = 9;
             OP.Text = "Orden de Preparación";
             // 
-            // label1
+            // labelTransportista
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(831, 65);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 25);
-            label1.TabIndex = 8;
+            labelTransportista.AutoSize = true;
+            labelTransportista.Location = new Point(665, 52);
+            labelTransportista.Name = "labelTransportista";
+            labelTransportista.Size = new Size(0, 20);
+            labelTransportista.TabIndex = 8;
             // 
             // Transportista
             // 
             Transportista.AutoSize = true;
-            Transportista.Location = new Point(831, 29);
+            Transportista.Location = new Point(665, 23);
             Transportista.Margin = new Padding(1, 0, 1, 0);
             Transportista.Name = "Transportista";
-            Transportista.Size = new Size(113, 25);
+            Transportista.Size = new Size(94, 20);
             Transportista.TabIndex = 7;
             Transportista.Text = "Transportista";
             // 
-            // Cliente
+            // labelCliente
             // 
-            Cliente.AutoSize = true;
-            Cliente.Location = new Point(441, 65);
-            Cliente.Margin = new Padding(4, 0, 4, 0);
-            Cliente.Name = "Cliente";
-            Cliente.Size = new Size(0, 25);
-            Cliente.TabIndex = 6;
+            labelCliente.AutoSize = true;
+            labelCliente.Location = new Point(353, 52);
+            labelCliente.Name = "labelCliente";
+            labelCliente.Size = new Size(0, 20);
+            labelCliente.TabIndex = 6;
             // 
             // IdClienteLabel
             // 
             IdClienteLabel.AutoSize = true;
-            IdClienteLabel.Location = new Point(441, 29);
+            IdClienteLabel.Location = new Point(353, 23);
             IdClienteLabel.Margin = new Padding(1, 0, 1, 0);
             IdClienteLabel.Name = "IdClienteLabel";
-            IdClienteLabel.Size = new Size(65, 25);
+            IdClienteLabel.Size = new Size(55, 20);
             IdClienteLabel.TabIndex = 5;
             IdClienteLabel.Text = "Cliente";
             // 
             // EmpaquetadoForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1110, 460);
+            ClientSize = new Size(888, 368);
             Controls.Add(GenerarOrdenesPreparacionGroup);
             Controls.Add(EmpaquetarOrdenButton);
             Controls.Add(ListarEmpaquetarOrdenList);
             Controls.Add(VolverButton);
-            Margin = new Padding(4, 4, 4, 4);
             Name = "EmpaquetadoForm";
             Text = "EmpaquetadoForm";
+            Load += EmpaquetadoForm_Load;
             GenerarOrdenesPreparacionGroup.ResumeLayout(false);
             GenerarOrdenesPreparacionGroup.PerformLayout();
             ResumeLayout(false);
@@ -184,11 +181,11 @@
         private ColumnHeader Producto;
         private ColumnHeader Cantidad;
         private GroupBox GenerarOrdenesPreparacionGroup;
-        private Label Cliente;
+        private Label labelCliente;
         private Label IdClienteLabel;
-        private Label label1;
+        private Label labelTransportista;
         private Label Transportista;
-        private Label label2;
+        private Label labelOP;
         private Label OP;
     }
 }

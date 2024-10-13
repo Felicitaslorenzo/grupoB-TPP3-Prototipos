@@ -1,4 +1,6 @@
-﻿using grupoB_TPP3_Prototipos.DespacharOrdenEntrega;
+﻿using grupoB_TPP3_Prototipos.CrearOrdenEntrega;
+using grupoB_TPP3_Prototipos.DespacharOrdenEntrega;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +36,12 @@ namespace grupoB_TPP3_Prototipos.MenuOrdenesEntrega
         {
             DespacharOrdenEntrega.DespacharOrdenEntregaForm despacharOrdenEntregaForm = new DespacharOrdenEntrega.DespacharOrdenEntregaForm();
             despacharOrdenEntregaForm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CrearOrdenEntrega.EmpaquetadoForm empaquetadoForm = new CrearOrdenEntrega.EmpaquetadoForm();
+            empaquetadoForm.ShowDialog();
         }
     }
 }
