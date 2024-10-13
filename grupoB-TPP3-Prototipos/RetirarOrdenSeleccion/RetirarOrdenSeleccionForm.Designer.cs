@@ -49,30 +49,30 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(8, 97);
+            label1.Location = new Point(11, 87);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(133, 15);
+            label1.Size = new Size(168, 20);
             label1.TabIndex = 0;
             label1.Text = "Ordenes de Preparación";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(459, 97);
+            label2.Location = new Point(527, 87);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(111, 15);
+            label2.Size = new Size(139, 20);
             label2.TabIndex = 1;
             label2.Text = "Productos de orden";
             // 
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { ProductoColumna, CantidadColumna, UbicacionColumna });
-            listView1.Location = new Point(459, 129);
-            listView1.Margin = new Padding(2);
+            listView1.Location = new Point(527, 110);
+            listView1.Margin = new Padding(2, 3, 2, 3);
             listView1.Name = "listView1";
-            listView1.Size = new Size(346, 145);
+            listView1.Size = new Size(395, 192);
             listView1.TabIndex = 2;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -95,13 +95,14 @@
             // listView2
             // 
             listView2.Columns.AddRange(new ColumnHeader[] { IdOrdenColumna, nombreClienteColumna, fechaEmisionColumna, fechaDespachoColumna });
-            listView2.Location = new Point(8, 129);
-            listView2.Margin = new Padding(2);
+            listView2.Location = new Point(11, 110);
+            listView2.Margin = new Padding(2, 3, 2, 3);
             listView2.Name = "listView2";
-            listView2.Size = new Size(426, 145);
+            listView2.Size = new Size(486, 192);
             listView2.TabIndex = 3;
             listView2.UseCompatibleStateImageBehavior = false;
             listView2.View = View.Details;
+            listView2.SelectedIndexChanged += listView2_SelectedIndexChanged;
             // 
             // IdOrdenColumna
             // 
@@ -125,30 +126,32 @@
             // 
             // SeleccionarButton
             // 
-            SeleccionarButton.Location = new Point(344, 298);
-            SeleccionarButton.Margin = new Padding(2);
+            SeleccionarButton.Location = new Point(394, 315);
+            SeleccionarButton.Margin = new Padding(2, 3, 2, 3);
             SeleccionarButton.Name = "SeleccionarButton";
-            SeleccionarButton.Size = new Size(90, 22);
+            SeleccionarButton.Size = new Size(103, 29);
             SeleccionarButton.TabIndex = 4;
             SeleccionarButton.Text = "Seleccionar";
             SeleccionarButton.UseVisualStyleBackColor = true;
+            SeleccionarButton.Click += SeleccionarButton_Click;
             // 
             // ConfirmarButton
             // 
-            ConfirmarButton.Location = new Point(599, 293);
-            ConfirmarButton.Margin = new Padding(2);
+            ConfirmarButton.Location = new Point(696, 308);
+            ConfirmarButton.Margin = new Padding(2, 3, 2, 3);
             ConfirmarButton.Name = "ConfirmarButton";
-            ConfirmarButton.Size = new Size(90, 27);
+            ConfirmarButton.Size = new Size(103, 36);
             ConfirmarButton.TabIndex = 5;
             ConfirmarButton.Text = "Confirmar";
             ConfirmarButton.UseVisualStyleBackColor = true;
+            ConfirmarButton.Click += ConfirmarButton_Click;
             // 
             // CancelarButton
             // 
-            CancelarButton.Location = new Point(707, 293);
-            CancelarButton.Margin = new Padding(2);
+            CancelarButton.Location = new Point(819, 308);
+            CancelarButton.Margin = new Padding(2, 3, 2, 3);
             CancelarButton.Name = "CancelarButton";
-            CancelarButton.Size = new Size(90, 27);
+            CancelarButton.Size = new Size(103, 36);
             CancelarButton.TabIndex = 6;
             CancelarButton.Text = "Cancelar";
             CancelarButton.UseVisualStyleBackColor = true;
@@ -156,10 +159,10 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(8, 25);
+            label3.Location = new Point(11, 15);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(109, 15);
+            label3.Size = new Size(138, 20);
             label3.TabIndex = 7;
             label3.Text = "Orden de Selección";
             // 
@@ -167,17 +170,18 @@
             // 
             ProductoCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             ProductoCombo.FormattingEnabled = true;
-            ProductoCombo.Location = new Point(8, 50);
+            ProductoCombo.Location = new Point(11, 36);
             ProductoCombo.Margin = new Padding(1);
             ProductoCombo.Name = "ProductoCombo";
-            ProductoCombo.Size = new Size(789, 23);
+            ProductoCombo.Size = new Size(911, 28);
             ProductoCombo.TabIndex = 15;
+            ProductoCombo.SelectedIndexChanged += ProductoCombo_SelectedIndexChanged;
             // 
             // RetirarOrdenSeleccionForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(816, 355);
+            ClientSize = new Size(933, 414);
             Controls.Add(ProductoCombo);
             Controls.Add(label3);
             Controls.Add(CancelarButton);
@@ -187,9 +191,10 @@
             Controls.Add(listView1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "RetirarOrdenSeleccionForm";
             Text = "PrepararOrdenSeleccionForm";
+            Load += RetirarOrdenSeleccionForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
