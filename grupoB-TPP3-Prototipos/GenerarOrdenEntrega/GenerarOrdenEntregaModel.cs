@@ -43,22 +43,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
             return "a";
         }
 
-        public List<Cliente> ObtenerCliente()
-        {
-            return new List<Cliente>
-            {
-                new Cliente { IdCliente = "CL001", Transportistas = new List<string> {"TR001", "TR002", "TR003", "CL001"}},
-                new Cliente { IdCliente = "CL002", Transportistas = new List<string> {"TR004", "TR005", "CL002"}},
-                new Cliente { IdCliente = "CL003", Transportistas = new List<string> {"TR006", "TR007", "CL003"}},
-                new Cliente { IdCliente = "CL004", Transportistas = new List<string> {"TR008", "TR009", "TR010", "TR011", "CL004"}},
-                new Cliente { IdCliente = "CL005", Transportistas = new List<string> {"TR012", "TR013", "CL005"}},
-                new Cliente { IdCliente = "CL006", Transportistas = new List<string> {"TR014", "TR015", "CL006"}},
-                new Cliente { IdCliente = "CL007", Transportistas = new List<string> {"TR016", "TR017", "CL007"}},
-                new Cliente { IdCliente = "CL008", Transportistas = new List<string> {"TR018", "TR019", "CL008"}},
-                new Cliente { IdCliente = "CL009", Transportistas = new List<string> {"TR020", "TR021", "CL009"}},
-                new Cliente { IdCliente = "CL010", Transportistas = new List<string> {"TR022", "TR023", "CL010"}},
-            };
-        }
 
         internal List<Cliente> BuscarOrdenCliente(OrdenPreparacion ordenPreparacion)
         {
@@ -144,25 +128,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
                 new Cliente { IdCliente = "CL019" },
                 new Cliente { IdCliente = "CL014" }
             };
-
-                default:
-                    return new List<Cliente>();
-            }
-
         }
 
-        public List<OrdenPreparacion> ordenesPreparacion = new List<OrdenPreparacion>()
-        {
-            new OrdenPreparacion{IdOrden="OP001"},
-            new OrdenPreparacion{IdOrden="OP002"},
-            new OrdenPreparacion{IdOrden="OP003"},
-            new OrdenPreparacion{IdOrden="OP004"},
-            new OrdenPreparacion{IdOrden="OP005"},
-            new OrdenPreparacion{IdOrden="OP006"},
-            new OrdenPreparacion{IdOrden="OP007"},
-            new OrdenPreparacion{IdOrden="OP008"},
-            new OrdenPreparacion{IdOrden="OP009"},
-            new OrdenPreparacion{IdOrden="OP010"}
-        };
     }
 }

@@ -19,25 +19,8 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
             InitializeComponent();
         }
 
-        //Validación Fecha
-        private void FechaDesdedateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            DateTime fechadesde = FechaDesdedateTimePicker.Value;
-            DateTime fechahasta = FechaHastadateTimePicker.Value;
-            DateTime fechaminima = DateTime.Now.AddDays(1);
 
-            if (fechadesde < fechaminima)
-            {
-                MessageBox.Show("Por favor, selecciona una fecha a partir de mañana.", "Fecha inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                FechaDesdedateTimePicker.Value = fechaminima;
-            }
 
-            if (fechahasta < fechadesde)
-            {
-                MessageBox.Show("La fecha hasta no puede ser menor a la fecha desde.", "Fecha inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-        }
 
         //Boton Volver
         private void VolverButton_Click(object sender, EventArgs e)
@@ -57,9 +40,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
                 var idordenprep = new ListViewItem(IdOrdenPreparacioncomboBox3.Text);
                 string idordenpreparacion = IdOrdenPreparacioncomboBox3.Text;
 
-                //Limpiar campos
-                ClienteComboBox.Items.Clear();
-                IdOrdenPreparacioncomboBox3.Items.Clear();
 
                 MessageBox.Show($"La Orden de Preparación {idordenpreparacion} ha sido agregada exitosamente a la lista.");
             }
