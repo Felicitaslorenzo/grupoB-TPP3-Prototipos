@@ -26,9 +26,6 @@ namespace grupoB_TPP3_Prototipos.CrearOrdenEntrega
             var orden = model.ObtenerOrdenActual();
             if (orden != null)
             {
-                labelOP.Text = orden.IdOrden; // Muestra el ID de la orden
-                labelCliente.Text = orden.Nombre; // Muestra el nombre del cliente
-                labelTransportista.Text = orden.Transportista; // Muestra el transportista
                 ListarEmpaquetarOrdenList.Items.Clear(); // Limpia el ListView
 
                 foreach (var producto in orden.Producto)

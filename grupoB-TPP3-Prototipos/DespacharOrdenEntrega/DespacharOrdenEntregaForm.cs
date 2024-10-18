@@ -18,10 +18,10 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
             VolverButton.Click += new EventHandler(VolverButton_Click);
             GenerarOrdenDeDespachoButton.Enabled = false;
             ListarOrdenDespacharBuscarList.SelectedIndexChanged += new EventHandler(ListarOrdenDespacharBuscarList_SelectedIndexChanged);
-            ListarOrdenDespacharBuscarList.MultiSelect = true; 
-            ListarOrdenDespacharBuscarList.FullRowSelect = true; 
-
+            ListarOrdenDespacharBuscarList.MultiSelect = true;
+            ListarOrdenDespacharBuscarList.FullRowSelect = true;
         }
+
         private void ListarOrdenDespacharBuscarList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ListarOrdenDespacharBuscarList.SelectedItems.Count > 0)
@@ -33,10 +33,10 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
                 GenerarOrdenDeDespachoButton.Enabled = false;
             }
         }
+
         private void DespacharOrdenEntregaForm_Load(object sender, EventArgs e)
         {
             _model = new DespacharOrdenEntregaModel();
-
             CargarTransportistasEnComboBox();
         }
 
@@ -77,19 +77,22 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
 
             var ordenes = _model.ObtenerOrdenesEntregaPorCliente(clienteAsociado);
 
+            // Limpia el ListView antes de agregar los nuevos elementos
             ListarOrdenDespacharBuscarList.Items.Clear();
+
+            // Agrega las órdenes sin incluir la fecha
             foreach (var orden in ordenes)
             {
                 ListViewItem item = new ListViewItem(new[]
                 {
-            orden.IdOrden,
-            orden.IdCliente, 
-            orden.Fecha.ToString("g"),
-            orden.Estado
-        });
+                orden.IdOrden,    // Columna para el ID de la Orden
+                orden.IdCliente,  // Columna para el ID del Cliente
+                orden.Estado      // Columna para el Estado de la Orden
+            });
                 ListarOrdenDespacharBuscarList.Items.Add(item);
             }
         }
+
         private void GenerarOrdenDeDespachoButton_Click(object sender, EventArgs e)
         {
             if (ListarOrdenDespacharBuscarList.SelectedItems.Count == 0)
@@ -97,11 +100,13 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
                 MessageBox.Show("Por favor, selecciona una orden de la lista antes de generar la orden de despacho.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             MessageBox.Show("Generando orden de despacho...", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
         private void VolverButton_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            this.Close();
         }
     }
 }

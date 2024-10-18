@@ -47,26 +47,26 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
         {
             return new List<OrdenEntrega>
             {
-               new OrdenEntrega("ORD001", "CL001", DateTime.Now, "Pendiente"),
-               new OrdenEntrega("ORD002", "CL002", DateTime.Now.AddDays(-1), "En Proceso"),
-               new OrdenEntrega("ORD003", "CL003", DateTime.Now.AddDays(-2), "Completada"),
-               new OrdenEntrega("ORD004", "CL004", DateTime.Now.AddDays(-3), "Pendiente"),
-               new OrdenEntrega("ORD005", "CL005", DateTime.Now.AddDays(-4), "En Proceso"),
-               new OrdenEntrega("ORD006", "CL006", DateTime.Now.AddDays(-5), "Completada"),
-               new OrdenEntrega("ORD007", "CL007", DateTime.Now.AddDays(-6), "Pendiente"),
-               new OrdenEntrega("ORD008", "CL008", DateTime.Now.AddDays(-7), "En Proceso"),
-               new OrdenEntrega("ORD009", "CL009", DateTime.Now.AddDays(-8), "Completada"),
-               new OrdenEntrega("ORD010", "CL010", DateTime.Now.AddDays(-9), "Pendiente"),
-               new OrdenEntrega("ORD011", "CL001", DateTime.Now.AddDays(-10), "En Proceso"),
-               new OrdenEntrega("ORD012", "CL002", DateTime.Now.AddDays(-11), "Completada"),
-               new OrdenEntrega("ORD013", "CL003", DateTime.Now.AddDays(-12), "Pendiente"),
-               new OrdenEntrega("ORD014", "CL004", DateTime.Now.AddDays(-13), "En Proceso"),
-               new OrdenEntrega("ORD015", "CL005", DateTime.Now.AddDays(-14), "Completada"),
-               new OrdenEntrega("ORD016", "CL006", DateTime.Now.AddDays(-15), "Pendiente"),
-               new OrdenEntrega("ORD017", "CL007", DateTime.Now.AddDays(-16), "En Proceso"),
-               new OrdenEntrega("ORD018", "CL008", DateTime.Now.AddDays(-17), "Completada"),
-               new OrdenEntrega("ORD019", "CL009", DateTime.Now.AddDays(-18), "Pendiente"),
-               new OrdenEntrega("ORD020", "CL010", DateTime.Now.AddDays(-19), "En Proceso")
+               new OrdenEntrega("ORD001", "CL001", "Pendiente"),
+               new OrdenEntrega("ORD002", "CL002", "En Proceso"),
+               new OrdenEntrega("ORD003", "CL003",  "Completada"),
+               new OrdenEntrega("ORD004", "CL004", "Pendiente"),
+               new OrdenEntrega("ORD005", "CL005",  "En Proceso"),
+               new OrdenEntrega("ORD006", "CL006",  "Completada"),
+               new OrdenEntrega("ORD007", "CL007",  "Pendiente"),
+               new OrdenEntrega("ORD008", "CL008",  "En Proceso"),
+               new OrdenEntrega("ORD009", "CL009", "Completada"),
+               new OrdenEntrega("ORD010", "CL010",  "Pendiente"),
+               new OrdenEntrega("ORD011", "CL001",  "En Proceso"),
+               new OrdenEntrega("ORD012", "CL002",  "Completada"),
+               new OrdenEntrega("ORD013", "CL003",  "Pendiente"),
+               new OrdenEntrega("ORD014", "CL004",  "En Proceso"),
+               new OrdenEntrega("ORD015", "CL005",  "Completada"),
+               new OrdenEntrega("ORD016", "CL006",  "Pendiente"),
+               new OrdenEntrega("ORD017", "CL007", "En Proceso"),
+               new OrdenEntrega("ORD018", "CL008",  "Completada"),
+               new OrdenEntrega("ORD019", "CL009",  "Pendiente"),
+               new OrdenEntrega("ORD020", "CL010",  "En Proceso")
             };
         }
 

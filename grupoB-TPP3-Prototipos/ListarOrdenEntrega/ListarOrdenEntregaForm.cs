@@ -42,7 +42,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
             // Extraer datos para cada ComboBox
             var idsClientes = ordenesEntrega.Select(o => o.IdCliente).Distinct().ToList();
             var idsOrdenesEntrega = ordenesEntrega.Select(o => o.IdOrden).Distinct().ToList();
-            var prioridadesOrdenEntrega = ordenesEntrega.Select(o => o.Prioridad).Distinct().ToList();
             var estadosOrdenEntrega = ordenesEntrega.Select(o => o.Estado).Distinct().ToList();
 
             FechaDesdeOEPicker.Format = DateTimePickerFormat.Custom;
@@ -63,12 +62,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
                 IdOrdenCombo.Items.Add(id);
             }
 
-            PrioridadCombo.Items.Clear();
-            foreach (var prioridad in prioridadesOrdenEntrega)
-            {
-                PrioridadCombo.Items.Add(prioridad);
-            }
-
             EstadoCombo.Items.Clear();
             foreach (var estado in estadosOrdenEntrega)
             {
@@ -86,7 +79,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
                 item.SubItems.Add(orden.FechaEmision.ToString("yyyy-MM-dd"));
                 item.SubItems.Add(orden.Estado);
                 item.SubItems.Add(orden.FechaEstado.ToString("yyyy-MM-dd"));
-                item.SubItems.Add(orden.Prioridad);
 
                 ListarOrdenEntregaList.Items.Add(item);
             }
@@ -107,7 +99,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
             if (string.IsNullOrEmpty(IdOrdenCombo.Text) &&
                 string.IsNullOrEmpty(IdClienteCombo.Text) &&
                 string.IsNullOrEmpty(EstadoCombo.Text) &&
-                string.IsNullOrEmpty(PrioridadCombo.Text) &&
                 !FechaDesdeOEPicker.Checked &&
                 !FechaHastaOEPicker.Checked)
             {
@@ -136,10 +127,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
                 ordenesFiltradas = ordenesFiltradas.Where(orden => orden.Estado == EstadoCombo.Text);
             }
 
-            if (!string.IsNullOrEmpty(PrioridadCombo.Text))
-            {
-                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.Prioridad == PrioridadCombo.Text);
-            }
 
             if (FechaDesdeOEPicker.Checked && FechaHastaOEPicker.Checked)
             {

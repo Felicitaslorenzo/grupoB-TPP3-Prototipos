@@ -53,8 +53,6 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                 new OrdenPreparacion
                 {
                     IdOrden = "OP001",
-                    Nombre = "Porter SA",
-                    Transportista = "TR001",
                     Producto = new List<Producto>
                     {
                         new Producto { DescripcionProducto = "Ropa", Cantidad = 30 },
@@ -64,8 +62,6 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                 new OrdenPreparacion
                 {
                     IdOrden = "OP002",
-                    Nombre = "Ferreteria SRL", 
-                    Transportista = "TR005",
                     Producto = new List<Producto>
                     {
                         new Producto { DescripcionProducto = "Ladrillos", Cantidad = 50 },
@@ -75,8 +71,6 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                 new OrdenPreparacion
                 {
                     IdOrden = "OP008",
-                    Nombre = "Alimentos Granjeros",
-                    Transportista = "TR019",
                     Producto = new List<Producto>
                     {
                         new Producto { DescripcionProducto = "Calzado", Cantidad = 100 },
@@ -86,8 +80,6 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                 new OrdenPreparacion
                 {
                     IdOrden = "OP009",
-                    Nombre = "Distribuciones Alfa", 
-                    Transportista = "TR023",
                     Producto = new List<Producto>
                     {
                         new Producto { DescripcionProducto = "Accesorio", Cantidad = 200 },
@@ -97,8 +89,6 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                 new OrdenPreparacion
                 {
                     IdOrden = "OP010",
-                    Nombre = "Construcciones Beta", 
-                    Transportista = "TR008",
                     Producto = new List<Producto>
                     {
                         new Producto { DescripcionProducto = "Metales", Cantidad = 500 }
@@ -107,8 +97,6 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                 new OrdenPreparacion
                 {
                     IdOrden = "OP011",
-                    Nombre = "Porter SA",
-                    Transportista = "TR003",
                     Producto = new List<Producto>
                     {
                         new Producto { DescripcionProducto = "Ropa", Cantidad = 50 },
@@ -118,8 +106,6 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                 new OrdenPreparacion
                 {
                     IdOrden = "OP015",
-                    Nombre = "Techno Corp",
-                    Transportista = "TR012",
                     Producto = new List<Producto>
                     {
                         new Producto { DescripcionProducto = "Producto farmacéutico", Cantidad = 100 },
@@ -129,8 +115,6 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                 new OrdenPreparacion
                 {
                     IdOrden = "OP018",
-                    Nombre = "Alimentos Granjeros",
-                    Transportista = "TR018",
                     Producto = new List<Producto>
                     {
                         new Producto { DescripcionProducto = "Calzado", Cantidad = 800 },

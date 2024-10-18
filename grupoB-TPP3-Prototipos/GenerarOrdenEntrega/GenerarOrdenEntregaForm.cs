@@ -30,19 +30,19 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(IdOrdenPreparacioncomboBox3.Text)||string.IsNullOrWhiteSpace(ClienteComboBox.Text))
-            {
-                MessageBox.Show("Los campos de Id Orden Preparacion y Cliente, no pueden estar vacíos");
-            }
-            else
-            {
-                var cliente = new ListViewItem(ClienteComboBox.Text);
-                var idordenprep = new ListViewItem(IdOrdenPreparacioncomboBox3.Text);
-                string idordenpreparacion = IdOrdenPreparacioncomboBox3.Text;
+            //if(string.IsNullOrWhiteSpace(IdOrdenPreparacioncomboBox3.Text)||string.IsNullOrWhiteSpace(ClienteComboBox.Text))
+            //{
+            //    MessageBox.Show("Los campos de Id Orden Preparacion y Cliente, no pueden estar vacíos");
+            //}
+            //else
+            //{
+            //    var cliente = new ListViewItem(ClienteComboBox.Text);
+            //    var idordenprep = new ListViewItem(IdOrdenPreparacioncomboBox3.Text);
+            //    string idordenpreparacion = IdOrdenPreparacioncomboBox3.Text;
 
 
-                MessageBox.Show($"La Orden de Preparación {idordenpreparacion} ha sido agregada exitosamente a la lista.");
-            }
+            //    MessageBox.Show($"La Orden de Preparación {idordenpreparacion} ha sido agregada exitosamente a la lista.");
+            //}
 
 
         }

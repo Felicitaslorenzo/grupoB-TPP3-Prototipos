@@ -28,14 +28,14 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                             IDProducto = "SKU001",
                             DescripcionProducto = "Ropa",
                             Cantidad = 30,
-                            Ubicacion = "1-2-4"
+                        
                         },
                         new Producto
                         {
                             IDProducto = "SKU002",
                             DescripcionProducto = "Mueble",
                             Cantidad = 40,
-                            Ubicacion = "1-2-3"
+                           
                         }
                     }
                 },
@@ -49,8 +49,8 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                     FechaEmision = DateTime.Parse("2024-09-29"),
                     Producto = new List<Producto>
                     {
-                        new Producto { IDProducto = "SKU004", DescripcionProducto = "Ladrillos", Cantidad = 50, Ubicacion = "2-3-1" },
-                        new Producto { IDProducto = "SKU005", DescripcionProducto = "Cemento", Cantidad = 100, Ubicacion = "2-3-2" }
+                        new Producto { IDProducto = "SKU004", DescripcionProducto = "Ladrillos", Cantidad = 50 },
+                        new Producto { IDProducto = "SKU005", DescripcionProducto = "Cemento", Cantidad = 100 }
                     }
                 },
                 new OrdenPreparacion
@@ -63,8 +63,8 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                     FechaEmision = DateTime.Parse("2024-10-05"),
                     Producto = new List<Producto>
                     {
-                        new Producto { IDProducto = "SKU003", DescripcionProducto = "Electrodoméstico", Cantidad = 15, Ubicacion = "3-1-2" },
-                        new Producto { IDProducto = "SKU007", DescripcionProducto = "Artículo de decoración", Cantidad = 50, Ubicacion = "3-1-4" }
+                        new Producto { IDProducto = "SKU003", DescripcionProducto = "Electrodoméstico", Cantidad = 15},
+                        new Producto { IDProducto = "SKU007", DescripcionProducto = "Artículo de decoración", Cantidad = 50}
                     }
                 },
                 new OrdenPreparacion
@@ -77,9 +77,9 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                     FechaEmision = DateTime.Parse("2024-09-25"),
                     Producto = new List<Producto>
                     {
-                        new Producto { IDProducto = "SKU011", DescripcionProducto = "Producto farmacéutico", Cantidad = 100, Ubicacion = "4-2-1" },
-                        new Producto { IDProducto = "SKU012", DescripcionProducto = "Inventario de lujo", Cantidad = 20, Ubicacion = "4-2-3" },
-                        new Producto { IDProducto = "SKU013", DescripcionProducto = "Material sensible", Cantidad = 10, Ubicacion = "4-2-5" }
+                        new Producto { IDProducto = "SKU011", DescripcionProducto = "Producto farmacéutico", Cantidad = 100},
+                        new Producto { IDProducto = "SKU012", DescripcionProducto = "Inventario de lujo", Cantidad = 20},
+                        new Producto { IDProducto = "SKU013", DescripcionProducto = "Material sensible", Cantidad = 10 }
                     }
                 },
                 new OrdenPreparacion
@@ -92,8 +92,8 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                     FechaEmision = DateTime.Parse("2024-09-28"),
                     Producto = new List<Producto>
                     {
-                        new Producto { IDProducto = "SKU007", DescripcionProducto = "Artículo de decoración", Cantidad = 60, Ubicacion = "5-1-3" },
-                        new Producto { IDProducto = "SKU011", DescripcionProducto = "Producto farmacéutico", Cantidad = 70, Ubicacion = "5-1-5" }
+                        new Producto { IDProducto = "SKU007", DescripcionProducto = "Artículo de decoración", Cantidad = 60 },
+                        new Producto { IDProducto = "SKU011", DescripcionProducto = "Producto farmacéutico", Cantidad = 70}
                     }
                 },
                 new OrdenPreparacion
@@ -106,8 +106,8 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                     FechaEmision = DateTime.Parse("2024-09-23"),
                     Producto = new List<Producto>
                     {
-                        new Producto { IDProducto = "SKU007", DescripcionProducto = "Artículo de decoración", Cantidad = 40, Ubicacion = "6-2-1" },
-                        new Producto { IDProducto = "SKU018", DescripcionProducto = "Calzado", Cantidad = 120, Ubicacion = "6-2-3" }
+                        new Producto { IDProducto = "SKU007", DescripcionProducto = "Artículo de decoración", Cantidad = 40},
+                        new Producto { IDProducto = "SKU018", DescripcionProducto = "Calzado", Cantidad = 120 }
                     }
                 },
                 new OrdenPreparacion
@@ -120,7 +120,7 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                     FechaEmision = DateTime.Parse("2024-09-30"),
                     Producto = new List<Producto>
                     {
-                        new Producto { IDProducto = "SKU015", DescripcionProducto = "Máquinas", Cantidad = 5, Ubicacion = "7-1-1" }
+                        new Producto { IDProducto = "SKU015", DescripcionProducto = "Máquinas", Cantidad = 5 }
                     }
                 },
                 new OrdenPreparacion
@@ -133,8 +133,8 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                     FechaEmision = DateTime.Parse("2024-09-26"),
                     Producto = new List<Producto>
                     {
-                        new Producto { IDProducto = "SKU018", DescripcionProducto = "Calzado", Cantidad = 100, Ubicacion = "8-1-2" },
-                        new Producto { IDProducto = "SKU019", DescripcionProducto = "Accesorio", Cantidad = 150, Ubicacion = "8-1-3" }
+                        new Producto { IDProducto = "SKU018", DescripcionProducto = "Calzado", Cantidad = 100 },
+                        new Producto { IDProducto = "SKU019", DescripcionProducto = "Accesorio", Cantidad = 150}
                     }
                 },
                 new OrdenPreparacion
@@ -147,8 +147,8 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                     FechaEmision = DateTime.Parse("2024-09-27"),
                     Producto = new List<Producto>
                     {
-                        new Producto { IDProducto = "SKU019", DescripcionProducto = "Accesorio", Cantidad = 200, Ubicacion = "9-1-1" },
-                        new Producto { IDProducto = "SKU014", DescripcionProducto = "Dispositivo electrónico", Cantidad = 80, Ubicacion = "9-1-2" }
+                        new Producto { IDProducto = "SKU019", DescripcionProducto = "Accesorio", Cantidad = 200 },
+                        new Producto { IDProducto = "SKU014", DescripcionProducto = "Dispositivo electrónico", Cantidad = 80 }
                     }
                 },
                 new OrdenPreparacion
@@ -161,7 +161,7 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                     FechaEmision = DateTime.Parse("2024-09-30"),
                     Producto = new List<Producto>
                     {
-                        new Producto { IDProducto = "SKU010", DescripcionProducto = "Metales", Cantidad = 500, Ubicacion = "10-1-2" }
+                        new Producto { IDProducto = "SKU010", DescripcionProducto = "Metales", Cantidad = 500}
                     }
                 }
             };

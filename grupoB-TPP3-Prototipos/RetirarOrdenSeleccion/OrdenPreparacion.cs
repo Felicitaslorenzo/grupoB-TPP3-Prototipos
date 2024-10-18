@@ -15,3 +15,4 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
         public List<Producto> Producto { get; set; }
     }
 }
+

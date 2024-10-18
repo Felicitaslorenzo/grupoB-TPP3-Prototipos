@@ -4,14 +4,12 @@
     {
         public string IdOrden { get; set; }
         public string IdCliente { get; set; }
-        public DateTime Fecha { get; set; }
         public string Estado { get; set; }
 
-        public OrdenEntrega(string idOrden, string idCliente, DateTime fecha, string estado)
+        public OrdenEntrega(string idOrden, string idCliente, string estado)
         {
             IdOrden = idOrden;
             IdCliente = idCliente;
-            Fecha = fecha;
             Estado = estado;
         }
     }
