@@ -22,37 +22,30 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
             FechaHastaOSPicker.ValueChanged += FechaHastaOSPicker_ValueChanged;
         }
 
-        private void FechaDesdeOSPicker_ValueChanged(object sender, EventArgs e)
+        private void FechaDesdeOSPicker_ValueChanged(object? sender, EventArgs e)
         {
             FechaDesdeOSPicker.Format = DateTimePickerFormat.Short;
         }
 
-        private void FechaHastaOSPicker_ValueChanged(object sender, EventArgs e)
+        private void FechaHastaOSPicker_ValueChanged(object? sender, EventArgs e)
         {
             FechaHastaOSPicker.Format = DateTimePickerFormat.Short;
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            if (string.IsNullOrEmpty(IdOrdenSeleccionCombo.Text) &&
-                !FechaDesdeOSPicker.Checked &&
-                !FechaHastaOSPicker.Checked)
-=======
             // Obtener los valores seleccionados
             string idOrdenSeleccionada = IdOrdenSeleccionCombo.Text;
             DateTime fechaSeleccionada = FechaDesdeOSPicker.Value.Date;
             DateTime fechaHSeleccionada = FechaHastaOSPicker.Value.Date;
 
             // Validar si al menos un filtro está activo
-            if (string.IsNullOrEmpty(idOrdenSeleccionada) && !FechaDesdeOSPicker.Checked)
->>>>>>> 0bfe25b41d54916d8f9e28b25349b5ab05624787
+            if (string.IsNullOrEmpty(idOrdenSeleccionada) && !FechaDesdeOSPicker.Checked && !FechaHastaOSPicker.Checked)
             {
                 MessageBox.Show("No se ha seleccionado ningún filtro", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-<<<<<<< HEAD
             var ordenesSeleccion = modelo.OrdenesSeleccionadas;
 
             // Aplicar los filtros
@@ -79,14 +72,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
                 DateTime fechaHasta = FechaHastaOSPicker.Value;
                 ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision <= fechaHasta);
             }
-=======
-            // Filtrar OrdenesSeleccionadasList basado en los valores seleccionados
-            var ordenesFiltradas = modelo.OrdenesSeleccionadas.Where(o =>
-                (string.IsNullOrEmpty(idOrdenSeleccionada) || o.IdOrdenSeleccion == idOrdenSeleccionada) &&
-                (!FechaDesdeOSPicker.Checked || o.FechaEmision.Date >= fechaSeleccionada &&
-                (!FechaHastaOSPicker.Checked || o.FechaEstado.Date >= fechaHSeleccionada)) // Ajusta aquí según tu lógica
-            ).ToList();
->>>>>>> 0bfe25b41d54916d8f9e28b25349b5ab05624787
 
             // Limpiar la lista antes de agregar los elementos filtrados
             ListarOrdenSeleccionList.Items.Clear();
@@ -111,8 +96,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
             }
         }
 
-
-
         private void ListarOrdenSeleccionForm_Load(object sender, EventArgs e)
         {
             var ordenesSeleccion = modelo.OrdenesSeleccionadas;
@@ -134,11 +117,11 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
                 {
                     Text = orden.IdOrdenSeleccion.ToString(),
                     SubItems =
-            {
-                orden.FechaEmision.ToString("dd/MM/yyyy"),
-                orden.FechaEstado.ToString("dd/MM/yyyy"),
-                orden.Estado
-            }
+                    {
+                        orden.FechaEmision.ToString("dd/MM/yyyy"),
+                        orden.FechaEstado.ToString("dd/MM/yyyy"),
+                        orden.Estado
+                    }
                 };
 
                 ListarOrdenSeleccionList.Items.Add(item);
