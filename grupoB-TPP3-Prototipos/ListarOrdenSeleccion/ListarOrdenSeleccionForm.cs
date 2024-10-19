@@ -18,32 +18,62 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
         public ListarOrdenSeleccionForm()
         {
             InitializeComponent();
+            FechaDesdeOSPicker.ValueChanged += FechaDesdeOSPicker_ValueChanged;
+            FechaHastaOSPicker.ValueChanged += FechaHastaOSPicker_ValueChanged;
+        }
+
+        private void FechaDesdeOSPicker_ValueChanged(object sender, EventArgs e)
+        {
+            FechaDesdeOSPicker.Format = DateTimePickerFormat.Short;
+        }
+
+        private void FechaHastaOSPicker_ValueChanged(object sender, EventArgs e)
+        {
+            FechaHastaOSPicker.Format = DateTimePickerFormat.Short;
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-            // Obtener los valores seleccionados
-            string idOrdenSeleccionada = IdOrdenSeleccionCombo.Text;
-            DateTime fechaSeleccionada = FechaDesdeOSPicker.Value.Date;
-
-            // Validar si al menos un filtro está activo
-            if (string.IsNullOrEmpty(idOrdenSeleccionada) && !FechaDesdeOSPicker.Checked)
+            if (string.IsNullOrEmpty(IdOrdenSeleccionCombo.Text) &&
+                !FechaDesdeOSPicker.Checked &&
+                !FechaHastaOSPicker.Checked)
             {
-                MessageBox.Show("Por favor, selecciona al menos un filtro.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No se ha seleccionado ningún filtro", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Filtrar OrdenesSeleccionadasList basado en los valores seleccionados
-            var ordenesFiltradas = modelo.OrdenesSeleccionadas.Where(o =>
-                (string.IsNullOrEmpty(idOrdenSeleccionada) || o.IdOrdenSeleccion == idOrdenSeleccionada) &&
-                (!FechaDesdeOSPicker.Checked || o.FechaEmision.Date >= fechaSeleccionada) // Ajusta aquí según tu lógica
-            ).ToList();
+            var ordenesSeleccion = modelo.OrdenesSeleccionadas;
+
+            // Aplicar los filtros
+            var ordenesFiltradas = ordenesSeleccion.AsEnumerable();
+
+            if (!string.IsNullOrEmpty(IdOrdenSeleccionCombo.Text))
+            {
+                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.IdOrdenSeleccion == IdOrdenSeleccionCombo.Text);
+            }
+
+            if (FechaDesdeOSPicker.Checked && FechaHastaOSPicker.Checked)
+            {
+                DateTime fechaDesde = FechaDesdeOSPicker.Value;
+                DateTime fechaHasta = FechaHastaOSPicker.Value;
+                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision >= fechaDesde && orden.FechaEmision <= fechaHasta);
+            }
+            else if (FechaDesdeOSPicker.Checked)
+            {
+                DateTime fechaDesde = FechaDesdeOSPicker.Value;
+                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision >= fechaDesde);
+            }
+            else if (FechaHastaOSPicker.Checked)
+            {
+                DateTime fechaHasta = FechaHastaOSPicker.Value;
+                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision <= fechaHasta);
+            }
 
             // Limpiar la lista antes de agregar los elementos filtrados
             ListarOrdenSeleccionList.Items.Clear();
 
             // Verificar si no se encontraron resultados
-            if (ordenesFiltradas.Count == 0)
+            if (!ordenesFiltradas.Any())
             {
                 MessageBox.Show("No se encontraron resultados con los filtros seleccionados.", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -61,6 +91,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
                 ListarOrdenSeleccionList.Items.Add(item);
             }
         }
+
+
 
         private void ListarOrdenSeleccionForm_Load(object sender, EventArgs e)
         {
