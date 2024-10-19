@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
 {
-    internal class OrdenPreparacion
+    public class OrdenPreparacion
     {
         public string IdOrden { get; set; }
         public string IdCliente { get; set; }
-        public string Nombre { get; set; }
-        public string Estado { get; set; }
-        public DateTime FechaEstado { get; set; }
-        public DateTime FechaEmision { get; set; }
-        public List<Producto> Producto { get; set; }
+        public DateTime FechaEntrega { get; set; }
     }
 }

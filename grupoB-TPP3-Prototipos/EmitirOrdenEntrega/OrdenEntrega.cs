@@ -9,7 +9,13 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         public List<Cliente> Clientes { get; set; } = new List<Cliente>();
         public DateTime FechaEmision { get; set; }
 
-        //public List<OrdenPreparacion> OrdenPreparacion { get; set; } = new List<OrdenPreparacion>();
+        // Agregar una lista para almacenar las órdenes de preparación
+        public List<OrdenPreparacion> OrdenesPreparacion { get; set; }
 
+        // Constructor para inicializar la lista de órdenes de preparación
+        public OrdenEntrega()
+        {
+            OrdenesPreparacion = new List<OrdenPreparacion>();
+        }
     }
 }
