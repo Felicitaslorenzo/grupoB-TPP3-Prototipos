@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            GenerarOrdenDeDespachoButton = new Button();
+            EmitirOrdenDeDespachoButton = new Button();
             ListarOrdenDespacharBuscarList = new ListView();
             IdOrdenColumna = new ColumnHeader();
             IdClienteColumna = new ColumnHeader();
@@ -38,15 +38,15 @@
             IdOrdenEntregaCombo = new ComboBox();
             SuspendLayout();
             // 
-            // GenerarOrdenDeDespachoButton
+            // EmitirOrdenDeDespachoButton
             // 
-            GenerarOrdenDeDespachoButton.Location = new Point(431, 234);
-            GenerarOrdenDeDespachoButton.Margin = new Padding(1, 1, 1, 1);
-            GenerarOrdenDeDespachoButton.Name = "GenerarOrdenDeDespachoButton";
-            GenerarOrdenDeDespachoButton.Size = new Size(192, 31);
-            GenerarOrdenDeDespachoButton.TabIndex = 81;
-            GenerarOrdenDeDespachoButton.Text = "Generar Orden de Despacho";
-            GenerarOrdenDeDespachoButton.UseVisualStyleBackColor = true;
+            EmitirOrdenDeDespachoButton.Location = new Point(431, 234);
+            EmitirOrdenDeDespachoButton.Margin = new Padding(1, 1, 1, 1);
+            EmitirOrdenDeDespachoButton.Name = "EmitirOrdenDeDespachoButton";
+            EmitirOrdenDeDespachoButton.Size = new Size(192, 31);
+            EmitirOrdenDeDespachoButton.TabIndex = 81;
+            EmitirOrdenDeDespachoButton.Text = "Emitir Orden de Despacho";
+            EmitirOrdenDeDespachoButton.UseVisualStyleBackColor = true;
             // 
             // ListarOrdenDespacharBuscarList
             // 
@@ -112,7 +112,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(775, 289);
-            Controls.Add(GenerarOrdenDeDespachoButton);
+            Controls.Add(EmitirOrdenDeDespachoButton);
             Controls.Add(ListarOrdenDespacharBuscarList);
             Controls.Add(BuscarButton);
             Controls.Add(VolverButton);
@@ -127,7 +127,7 @@
 
         #endregion
 
-        private Button GenerarOrdenDeDespachoButton;
+        private Button EmitirOrdenDeDespachoButton;
         private ListView ListarOrdenDespacharBuscarList;
         private ColumnHeader IdOrdenColumna;
         private ColumnHeader IdClienteColumna;

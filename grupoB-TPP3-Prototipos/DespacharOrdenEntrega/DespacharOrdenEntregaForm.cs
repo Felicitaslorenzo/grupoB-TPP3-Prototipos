@@ -17,9 +17,10 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
             InitializeComponent();
             this.Load += new EventHandler(DespacharOrdenEntregaForm_Load);
             BuscarButton.Click += new EventHandler(BuscarButton_Click);
-            GenerarOrdenDeDespachoButton.Click += new EventHandler(GenerarOrdenDeDespachoButton_Click);
+            EmitirOrdenDeDespachoButton.Click += new EventHandler(EmitirOrdenDeDespachoButton_Click);
+            IdOrdenEntregaCombo.DropDownStyle = ComboBoxStyle.DropDownList; // Aquí se establece el estilo
             VolverButton.Click += new EventHandler(VolverButton_Click);
-            GenerarOrdenDeDespachoButton.Enabled = false;
+            EmitirOrdenDeDespachoButton.Enabled = false;
             ListarOrdenDespacharBuscarList.SelectedIndexChanged += new EventHandler(ListarOrdenDespacharBuscarList_SelectedIndexChanged);
             ListarOrdenDespacharBuscarList.MultiSelect = true;
             ListarOrdenDespacharBuscarList.FullRowSelect = true;
@@ -29,11 +30,11 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
         {
             if (ListarOrdenDespacharBuscarList.SelectedItems.Count > 0)
             {
-                GenerarOrdenDeDespachoButton.Enabled = true;
+                EmitirOrdenDeDespachoButton.Enabled = true;
             }
             else
             {
-                GenerarOrdenDeDespachoButton.Enabled = false;
+                EmitirOrdenDeDespachoButton.Enabled = false;
             }
         }
 
@@ -96,7 +97,7 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
             }
         }
 
-        private void GenerarOrdenDeDespachoButton_Click(object sender, EventArgs e)
+        private void EmitirOrdenDeDespachoButton_Click(object sender, EventArgs e)
         {
             if (ListarOrdenDespacharBuscarList.SelectedItems.Count == 0)
             {
@@ -104,7 +105,9 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
                 return;
             }
 
-            MessageBox.Show("Generando orden de despacho...", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("La orden de despacho se ha generado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ListarOrdenDespacharBuscarList.Items.Clear();
+
         }
 
         private void VolverButton_Click(object sender, EventArgs e)

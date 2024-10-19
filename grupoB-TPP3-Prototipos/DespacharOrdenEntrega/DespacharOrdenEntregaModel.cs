@@ -30,16 +30,16 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
         {
             return new List<Cliente>
             {
-                new Cliente { IdCliente = "CL001", Transportistas = new List<string> {"TR001", "TR002", "TR003", "CL001"}},
-                new Cliente { IdCliente = "CL002", Transportistas = new List<string> {"TR004", "TR005", "CL002"}},
-                new Cliente { IdCliente = "CL003", Transportistas = new List<string> {"TR006", "TR007", "CL003"}},
-                new Cliente { IdCliente = "CL004", Transportistas = new List<string> {"TR008", "TR009", "TR010", "TR011", "CL004"}},
-                new Cliente { IdCliente = "CL005", Transportistas = new List<string> {"TR012", "TR013", "CL005"}},
-                new Cliente { IdCliente = "CL006", Transportistas = new List<string> {"TR014", "TR015", "CL006"}},
-                new Cliente { IdCliente = "CL007", Transportistas = new List<string> {"TR016", "TR017", "CL007"}},
-                new Cliente { IdCliente = "CL008", Transportistas = new List<string> {"TR018", "TR019", "CL008"}},
-                new Cliente { IdCliente = "CL009", Transportistas = new List<string> {"TR019", "TR020", "CL009"}},
-                new Cliente { IdCliente = "CL010", Transportistas = new List<string> {"TR021", "TR022", "CL010"}},
+                new Cliente { IdCliente = "CL001", Transportistas = new List<string> {"TR001", "TR002", "TR003"}},
+                new Cliente { IdCliente = "CL002", Transportistas = new List<string> {"TR004", "TR005"}},
+                new Cliente { IdCliente = "CL003", Transportistas = new List<string> {"TR006", "TR007"}},
+                new Cliente { IdCliente = "CL004", Transportistas = new List<string> {"TR008", "TR009", "TR010", "TR011"}},
+                new Cliente { IdCliente = "CL005", Transportistas = new List<string> {"TR012", "TR013"}},
+                new Cliente { IdCliente = "CL006", Transportistas = new List<string> {"TR014", "TR015"}},
+                new Cliente { IdCliente = "CL007", Transportistas = new List<string> {"TR016", "TR017"}},
+                new Cliente { IdCliente = "CL008", Transportistas = new List<string> {"TR018", "TR019"}},
+                new Cliente { IdCliente = "CL009", Transportistas = new List<string> {"TR019", "TR020"}},
+                new Cliente { IdCliente = "CL010", Transportistas = new List<string> {"TR021", "TR022"}},
             };
         }
 
