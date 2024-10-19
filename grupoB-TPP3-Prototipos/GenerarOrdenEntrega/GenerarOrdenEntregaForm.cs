@@ -55,4 +55,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         //Boton Generar Orden de Entrega
         //TODO
     }
+        }
+    }
 }
