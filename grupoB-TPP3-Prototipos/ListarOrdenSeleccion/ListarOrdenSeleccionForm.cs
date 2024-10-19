@@ -34,14 +34,25 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             if (string.IsNullOrEmpty(IdOrdenSeleccionCombo.Text) &&
                 !FechaDesdeOSPicker.Checked &&
                 !FechaHastaOSPicker.Checked)
+=======
+            // Obtener los valores seleccionados
+            string idOrdenSeleccionada = IdOrdenSeleccionCombo.Text;
+            DateTime fechaSeleccionada = FechaDesdeOSPicker.Value.Date;
+            DateTime fechaHSeleccionada = FechaHastaOSPicker.Value.Date;
+
+            // Validar si al menos un filtro está activo
+            if (string.IsNullOrEmpty(idOrdenSeleccionada) && !FechaDesdeOSPicker.Checked)
+>>>>>>> 0bfe25b41d54916d8f9e28b25349b5ab05624787
             {
                 MessageBox.Show("No se ha seleccionado ningún filtro", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+<<<<<<< HEAD
             var ordenesSeleccion = modelo.OrdenesSeleccionadas;
 
             // Aplicar los filtros
@@ -68,6 +79,14 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
                 DateTime fechaHasta = FechaHastaOSPicker.Value;
                 ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision <= fechaHasta);
             }
+=======
+            // Filtrar OrdenesSeleccionadasList basado en los valores seleccionados
+            var ordenesFiltradas = modelo.OrdenesSeleccionadas.Where(o =>
+                (string.IsNullOrEmpty(idOrdenSeleccionada) || o.IdOrdenSeleccion == idOrdenSeleccionada) &&
+                (!FechaDesdeOSPicker.Checked || o.FechaEmision.Date >= fechaSeleccionada &&
+                (!FechaHastaOSPicker.Checked || o.FechaEstado.Date >= fechaHSeleccionada)) // Ajusta aquí según tu lógica
+            ).ToList();
+>>>>>>> 0bfe25b41d54916d8f9e28b25349b5ab05624787
 
             // Limpiar la lista antes de agregar los elementos filtrados
             ListarOrdenSeleccionList.Items.Clear();
