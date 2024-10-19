@@ -34,9 +34,10 @@
             // 
             // buttonListarOrdenesPreparacion
             // 
-            buttonListarOrdenesPreparacion.Location = new Point(272, 65);
+            buttonListarOrdenesPreparacion.Location = new Point(340, 81);
+            buttonListarOrdenesPreparacion.Margin = new Padding(4, 4, 4, 4);
             buttonListarOrdenesPreparacion.Name = "buttonListarOrdenesPreparacion";
-            buttonListarOrdenesPreparacion.Size = new Size(200, 123);
+            buttonListarOrdenesPreparacion.Size = new Size(250, 154);
             buttonListarOrdenesPreparacion.TabIndex = 0;
             buttonListarOrdenesPreparacion.Text = "Listar Ordenes de Preparación";
             buttonListarOrdenesPreparacion.UseVisualStyleBackColor = true;
@@ -44,21 +45,23 @@
             // 
             // buttonGenerarOrden
             // 
-            buttonGenerarOrden.Location = new Point(272, 240);
+            buttonGenerarOrden.Location = new Point(340, 300);
+            buttonGenerarOrden.Margin = new Padding(4, 4, 4, 4);
             buttonGenerarOrden.Name = "buttonGenerarOrden";
-            buttonGenerarOrden.Size = new Size(200, 123);
+            buttonGenerarOrden.Size = new Size(250, 154);
             buttonGenerarOrden.TabIndex = 1;
-            buttonGenerarOrden.Text = "Generar Orden de Preparación";
+            buttonGenerarOrden.Text = "Emitir Orden de Preparación";
             buttonGenerarOrden.UseVisualStyleBackColor = true;
             buttonGenerarOrden.Click += buttonGenerarOrden_Click;
             // 
             // MenuOrdenesPreparacionForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(740, 443);
+            ClientSize = new Size(925, 554);
             Controls.Add(buttonGenerarOrden);
             Controls.Add(buttonListarOrdenesPreparacion);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "MenuOrdenesPreparacionForm";
             Text = "MenuOrdenesPreparacionForm";
             Load += MenuOrdenesPreparacionForm_Load;

@@ -8,12 +8,12 @@ using grupoB_TPP3_Prototipos.MenuOrdenesPreparacion;
 
 namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 {
-    public partial class GenerarOrdenPreparacionForm : Form
+    public partial class EmitirOrdenPreparacionForm : Form
     {
-        private GenerarOrdenPreparacionModel modelo = new GenerarOrdenPreparacionModel();
+        private EmitirOrdenPreparacionModel modelo = new EmitirOrdenPreparacionModel();
         private Cliente clienteAnterior;
 
-        public GenerarOrdenPreparacionForm()
+        public EmitirOrdenPreparacionForm()
         {
             InitializeComponent();
             modelo.CargarCliente(IdClienteCombo, TransportistaCombo, ProductoCombo);

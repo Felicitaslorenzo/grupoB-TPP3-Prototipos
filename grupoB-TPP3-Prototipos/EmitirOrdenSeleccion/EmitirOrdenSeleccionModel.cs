@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
 {
-    internal class GenerarOrdenSeleccionModel
+    internal class EmitirOrdenSeleccionModel
     {
         public List<OrdenPreparacion> ObtenerOrdenesPreparacion()
         {

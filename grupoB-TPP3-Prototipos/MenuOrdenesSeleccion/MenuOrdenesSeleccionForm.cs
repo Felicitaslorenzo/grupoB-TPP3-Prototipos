@@ -31,7 +31,7 @@ namespace grupoB_TPP3_Prototipos.MenuOrdenesSeleccion
 
         private void buttonGenerarOrden_Click(object sender, EventArgs e)
         {
-            GenerarOrdenSelección.GenerarOrdenSeleccionForm GenerarOrdenSeleccionForm = new GenerarOrdenSelección.GenerarOrdenSeleccionForm();
+            GenerarOrdenSelección.EmitirOrdenSeleccionForm GenerarOrdenSeleccionForm = new GenerarOrdenSelección.EmitirOrdenSeleccionForm();
             GenerarOrdenSeleccionForm.ShowDialog();
         }
     }

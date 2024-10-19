@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 {
-    internal class GenerarOrdenPreparacionModel
+    internal class EmitirOrdenPreparacionModel
     {
         public List<OrdenPreparacion> ordenes = new List<OrdenPreparacion>
 {

@@ -36,9 +36,10 @@
             // 
             // buttonListarOrdenesEntrega
             // 
-            buttonListarOrdenesEntrega.Location = new Point(222, 146);
+            buttonListarOrdenesEntrega.Location = new Point(278, 182);
+            buttonListarOrdenesEntrega.Margin = new Padding(4, 4, 4, 4);
             buttonListarOrdenesEntrega.Name = "buttonListarOrdenesEntrega";
-            buttonListarOrdenesEntrega.Size = new Size(173, 97);
+            buttonListarOrdenesEntrega.Size = new Size(216, 121);
             buttonListarOrdenesEntrega.TabIndex = 0;
             buttonListarOrdenesEntrega.Text = "Listar Ordenes de Entrega";
             buttonListarOrdenesEntrega.UseVisualStyleBackColor = true;
@@ -46,9 +47,10 @@
             // 
             // buttonDespacharOrdenEntrega
             // 
-            buttonDespacharOrdenEntrega.Location = new Point(222, 391);
+            buttonDespacharOrdenEntrega.Location = new Point(278, 489);
+            buttonDespacharOrdenEntrega.Margin = new Padding(4, 4, 4, 4);
             buttonDespacharOrdenEntrega.Name = "buttonDespacharOrdenEntrega";
-            buttonDespacharOrdenEntrega.Size = new Size(173, 97);
+            buttonDespacharOrdenEntrega.Size = new Size(216, 121);
             buttonDespacharOrdenEntrega.TabIndex = 1;
             buttonDespacharOrdenEntrega.Text = "Despachar Orden de Entrega";
             buttonDespacharOrdenEntrega.UseVisualStyleBackColor = true;
@@ -56,19 +58,21 @@
             // 
             // buttonGenerarOrdenEntrega
             // 
-            buttonGenerarOrdenEntrega.Location = new Point(222, 266);
+            buttonGenerarOrdenEntrega.Location = new Point(278, 332);
+            buttonGenerarOrdenEntrega.Margin = new Padding(4, 4, 4, 4);
             buttonGenerarOrdenEntrega.Name = "buttonGenerarOrdenEntrega";
-            buttonGenerarOrdenEntrega.Size = new Size(173, 97);
+            buttonGenerarOrdenEntrega.Size = new Size(216, 121);
             buttonGenerarOrdenEntrega.TabIndex = 2;
-            buttonGenerarOrdenEntrega.Text = "Generar Orden de Entrega ";
+            buttonGenerarOrdenEntrega.Text = "Emitir Orden de Entrega ";
             buttonGenerarOrdenEntrega.UseVisualStyleBackColor = true;
             buttonGenerarOrdenEntrega.Click += buttonGenerarOrdenEntrega_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(222, 24);
+            button1.Location = new Point(278, 30);
+            button1.Margin = new Padding(4, 4, 4, 4);
             button1.Name = "button1";
-            button1.Size = new Size(173, 97);
+            button1.Size = new Size(216, 121);
             button1.TabIndex = 3;
             button1.Text = "Empaquetado";
             button1.UseVisualStyleBackColor = true;
@@ -76,13 +80,14 @@
             // 
             // MenuOrdenesEntregaForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(608, 515);
+            ClientSize = new Size(760, 644);
             Controls.Add(button1);
             Controls.Add(buttonGenerarOrdenEntrega);
             Controls.Add(buttonDespacharOrdenEntrega);
             Controls.Add(buttonListarOrdenesEntrega);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "MenuOrdenesEntregaForm";
             Text = "MenuOrdenesEntregaForm";
             ResumeLayout(false);
