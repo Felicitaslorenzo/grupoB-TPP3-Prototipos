@@ -16,12 +16,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         private List<OrdenPreparacion> ordenesPreparacion;
         
 
-        public GenerarOrdenEntregaModel()
-        {
-            ordenesPreparacion = ObtenerOrdenesPreparacion();
-            indiceActual = 0;
-        }
-
         public OrdenPreparacion ObtenerOrdenPorFechaActual()
         {
             // Obtener la fecha actual sin la parte de la hora
@@ -56,7 +50,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
 
 
         }
-
         public string GenerarNuevaOrden()
         {
             string idorden = GenerarIdOrden();
@@ -70,92 +63,3 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
 
 
 
-//        internal List<Cliente> BuscarOrdenCliente(OrdenPreparacion ordenPreparacion)
-//        {
-//            switch(ordenPreparacion.IdOrden)
-//            {
-//                case "OP001":
-//                    return new List<Cliente>
-//            {
-//                new Cliente { IdCliente = "CL001" },
-//                new Cliente { IdCliente = "CL002" },
-//                new Cliente { IdCliente = "CL003" },
-//                new Cliente { IdCliente = "CL007" },
-//            };
-
-//                case "OP002":
-//                    return new List<Cliente>
-//            {
-//                new Cliente { IdCliente = "CL001" },
-//                new Cliente { IdCliente = "SKU004" },
-//                new Cliente { IdCliente = "SKU005" }
-//            };
-
-//                case "OP003":
-//                    return new List<Cliente>
-//            {
-//                new Cliente { IdCliente = "CL007" },
-//                new Cliente { IdCliente = "CL008" },
-//                new Cliente { IdCliente = "CL009" }
-//            };
-
-//                case "OP004":
-//                    return new List<Cliente>
-//            {
-//                new Cliente { IdCliente = "CL007" },
-//                new Cliente { IdCliente = "CL010" },
-//                new Cliente { IdCliente = "CL011" }
-//            };
-
-//                case "OP005":
-//                    return new List<Cliente>
-//            {
-//                new Cliente { IdCliente = "CL011" },
-//                new Cliente { IdCliente = "CL012" },
-//                new Cliente { IdCliente = "SKU013" }
-//            };
-
-//                case "OP006":
-//                    return new List<Cliente>
-//            {
-//                new Cliente { IdCliente = "CL007" },
-//                new Cliente { IdCliente = "CL010" },
-//                new Cliente { IdCliente = "CL014" }
-//            };
-
-//                case "OP007":
-//                    return new List<Cliente>
-//            {
-//                new Cliente { IdCliente = "CL007" },
-//                new Cliente { IdCliente = "CL015" },
-//                new Cliente { IdCliente = "CL016" }
-//            };
-
-//                case "OP008":
-//                    return new List<Cliente>
-//            {
-//                new Cliente { IdCliente = "CL017" },
-//                new Cliente { IdCliente = "CL018" },
-//                new Cliente { IdCliente = "CL019" }
-//            };
-
-//                case "OP009":
-//                    return new List<Cliente>
-//            {
-//                new Cliente { IdCliente = "CL015" },
-//                new Cliente { IdCliente = "CL016" }
-//            };
-
-//                case "OP010":
-//                    return new List<Cliente>
-//            {
-//                new Cliente { IdCliente = "CL007" },
-//                new Cliente { IdCliente = "CL018" },
-//                new Cliente { IdCliente = "CL019" },
-//                new Cliente { IdCliente = "CL014" }
-//            };
-//        }
-
-//    }
-//}
-//}
