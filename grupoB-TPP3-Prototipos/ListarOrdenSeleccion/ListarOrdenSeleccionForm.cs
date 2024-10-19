@@ -25,6 +25,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
             // Obtener los valores seleccionados
             string idOrdenSeleccionada = IdOrdenSeleccionCombo.Text;
             DateTime fechaSeleccionada = FechaDesdeOSPicker.Value.Date;
+            DateTime fechaHSeleccionada = FechaHastaOSPicker.Value.Date;
 
             // Validar si al menos un filtro está activo
             if (string.IsNullOrEmpty(idOrdenSeleccionada) && !FechaDesdeOSPicker.Checked)
@@ -36,7 +37,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
             // Filtrar OrdenesSeleccionadasList basado en los valores seleccionados
             var ordenesFiltradas = modelo.OrdenesSeleccionadas.Where(o =>
                 (string.IsNullOrEmpty(idOrdenSeleccionada) || o.IdOrdenSeleccion == idOrdenSeleccionada) &&
-                (!FechaDesdeOSPicker.Checked || o.FechaEmision.Date >= fechaSeleccionada) // Ajusta aquí según tu lógica
+                (!FechaDesdeOSPicker.Checked || o.FechaEmision.Date >= fechaSeleccionada &&
+                (!FechaHastaOSPicker.Checked || o.FechaEstado.Date >= fechaHSeleccionada)) // Ajusta aquí según tu lógica
             ).ToList();
 
             // Limpiar la lista antes de agregar los elementos filtrados
