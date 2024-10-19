@@ -9,6 +9,9 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
     {
         private DespacharOrdenEntregaModel _model;
 
+        // A TENER EN CUENTA: SOLO mostrar las OP que estén en estado "Preparada" 
+        // y que tengan fecha de hoy o anterior.
+
         public DespacharOrdenEntregaForm()
         {
             InitializeComponent();

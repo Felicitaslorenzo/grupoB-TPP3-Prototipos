@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
 {
+
     public partial class ListarOrdenPreparacionForm : Form
     {
         private ListarOrdenPreparacionModel model = new();
@@ -73,7 +74,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                 OrdenesPreparacionList.Items.Add(item);
             }
 
-            // Vincular el evento
+    
             OrdenesPreparacionList.SelectedIndexChanged += OrdenesPreparacionList_SelectedIndexChanged;
         }
         private void BuscarButton_Click(object sender, EventArgs e)
@@ -103,8 +104,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     (string.IsNullOrEmpty(nombreClienteSeleccionado) || o.Nombre == nombreClienteSeleccionado) &&
                     (string.IsNullOrEmpty(estadoSeleccionado) || o.Estado == estadoSeleccionado)).ToList();
 
-
-                // Limpiar la OrdenesPreparacionList antes de agregar los elementos filtrados
                 OrdenesPreparacionList.Items.Clear();
 
                 // agregar elementos filtrados a la OrdenesPreparacionList
@@ -140,34 +139,37 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
 
         private void OrdenesPreparacionList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Verificar si hay una selección
             if (OrdenesPreparacionList.SelectedItems.Count > 0)
             {
-                // Obtener la orden seleccionada (primer elemento seleccionado)
+                
                 var idOrdenSeleccionada = OrdenesPreparacionList.SelectedItems[0].Text;
-
-                // Buscar la orden en el modelo de datos
                 var ordenSeleccionada = model.ObtenerOrdenesPreparacion().FirstOrDefault(o => o.IdOrden == idOrdenSeleccionada);
 
                 if (ordenSeleccionada != null)
                 {
-                    // Limpiar la lista de productos antes de cargar los nuevos
                     ProductosList.Items.Clear();
 
-                    // Cargar los productos relacionados a la orden seleccionada
-                    foreach (var producto in ordenSeleccionada.Producto)
+                    if (ordenSeleccionada.Producto != null && ordenSeleccionada.Producto.Any())
                     {
-                        ListViewItem item = new ListViewItem();
-                        item.Text = producto.IDProducto;
-                        item.SubItems.Add(producto.DescripcionProducto);
-                        item.SubItems.Add(producto.Cantidad.ToString());
-                        item.SubItems.Add(producto.Ubicacion);
+                        // Agregamos cada producto al ListView de productos
+                        foreach (var producto in ordenSeleccionada.Producto)
+                        {
+                            ListViewItem item = new ListViewItem(producto.IDProducto); 
+                            item.SubItems.Add(producto.DescripcionProducto); 
+                            item.SubItems.Add(producto.Cantidad.ToString()); 
 
-                        ProductosList.Items.Add(item);
+                            ProductosList.Items.Add(item); 
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontraron productos para esta orden.");
                     }
                 }
             }
         }
+
+
 
         private void VolverListaButton_Click(object sender, EventArgs e)
         {

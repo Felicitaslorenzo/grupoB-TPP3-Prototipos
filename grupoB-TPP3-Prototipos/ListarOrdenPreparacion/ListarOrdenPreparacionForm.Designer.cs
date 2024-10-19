@@ -87,7 +87,7 @@
             ListarOrdenesPreparacionGroup.Size = new Size(656, 194);
             ListarOrdenesPreparacionGroup.TabIndex = 0;
             ListarOrdenesPreparacionGroup.TabStop = false;
-            ListarOrdenesPreparacionGroup.Enter += ListarOrdenesPreparacionGroup_Enter;
+            //ListarOrdenesPreparacionGroup.Enter += ListarOrdenesPreparacionGroup_Enter;
             // 
             // label1
             // 
