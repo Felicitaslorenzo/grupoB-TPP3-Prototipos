@@ -10,9 +10,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSeleccion
     internal class OrdenPreparacion
     {
         public string IdOrden { get; set; }
-        public string IdCliente { get; set; }
         public string Nombre { get; set; }
-        public string Estado { get; set; }
         public DateTime FechaEstado { get; set; }
         public DateTime FechaEmision { get; set; }
         public List<Producto> Producto { get; set; }
