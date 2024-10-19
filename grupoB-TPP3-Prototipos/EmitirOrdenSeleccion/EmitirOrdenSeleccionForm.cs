@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
 {
-    public partial class GenerarOrdenSeleccionForm : Form
+    public partial class EmitirOrdenSeleccionForm : Form
     {
-        private GenerarOrdenSeleccionModel model = new GenerarOrdenSeleccionModel();
-        public GenerarOrdenSeleccionForm()
+        private EmitirOrdenSeleccionModel model = new EmitirOrdenSeleccionModel();
+        public EmitirOrdenSeleccionForm()
         {
             InitializeComponent();
-            var modelo = new GenerarOrdenSeleccionModel();
+            var modelo = new EmitirOrdenSeleccionModel();
             var ordenesPreparacion = modelo.ObtenerOrdenesPreparacion();
             CargarOrdenesEnComboBox(ordenesPreparacion);
             var clientes = modelo.ObtenerClientes();

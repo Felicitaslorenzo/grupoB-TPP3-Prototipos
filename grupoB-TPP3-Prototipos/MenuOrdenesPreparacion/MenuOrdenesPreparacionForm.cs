@@ -26,7 +26,7 @@ namespace grupoB_TPP3_Prototipos.MenuOrdenesPreparacion
 
         private void buttonGenerarOrden_Click(object sender, EventArgs e)
         {
-            GenerarOrdenPreparacion.GenerarOrdenPreparacionForm GenerarOrdenPreparacionForm = new GenerarOrdenPreparacion.GenerarOrdenPreparacionForm();
+            GenerarOrdenPreparacion.EmitirOrdenPreparacionForm GenerarOrdenPreparacionForm = new GenerarOrdenPreparacion.EmitirOrdenPreparacionForm();
             GenerarOrdenPreparacionForm.ShowDialog();
         }
 
