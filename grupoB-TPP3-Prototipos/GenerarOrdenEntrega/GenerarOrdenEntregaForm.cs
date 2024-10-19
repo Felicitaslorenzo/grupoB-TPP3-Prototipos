@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,19 +19,22 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         public GenerarOrdenEntregaForm()
         {
             InitializeComponent();
+            MostrarOrdenActual();
         }
 
 
-
-
-        //Boton Volver
-        private void VolverButton_Click(object sender, EventArgs e)
+        private void MostrarOrdenActual()
         {
-            this.Close();
-        }
+            var orden = modelo.ObtenerOrdenPorFechaActual(); // Llamada al método para obtener la orden
+            if (orden != null)
+            {
+                // Completa las columnas de la orden y la fecha de entrega
+                IdOrdenPreparacionColumna.Text = orden.IdOrden;
+                ClienteColumna.Text = orden.IdCliente;
+                FechaEntregaColumna.Text = orden.FechaEntrega.ToShortDateString(); // Muestra la fecha en formato corto
 
-        private void BuscarButton_Click(object sender, EventArgs e)
-        {
+        //private void BuscarButton_Click(object sender, EventArgs e)
+        //{
             //if(string.IsNullOrWhiteSpace(IdOrdenPreparacioncomboBox3.Text)||string.IsNullOrWhiteSpace(ClienteComboBox.Text))
             //{
             //    MessageBox.Show("Los campos de Id Orden Preparacion y Cliente, no pueden estar vacíos");
@@ -41,10 +46,13 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
             //    string idordenpreparacion = IdOrdenPreparacioncomboBox3.Text;
 
 
-            //    MessageBox.Show($"La Orden de Preparación {idordenpreparacion} ha sido agregada exitosamente a la lista.");
-            //}
-
-
+        //Boton Volver
+        private void VolverButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
+
+        //Boton Generar Orden de Entrega
+        //TODO
     }
 }

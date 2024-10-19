@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,28 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         {
             new OrdenEntrega()
         };
+        private List<OrdenPreparacion> ordenesPreparacion;
+        
+
+        public GenerarOrdenEntregaModel()
+        {
+            ordenesPreparacion = ObtenerOrdenesPreparacion();
+            indiceActual = 0;
+        }
+
+        public OrdenPreparacion ObtenerOrdenPorFechaActual()
+        {
+            // Obtener la fecha actual sin la parte de la hora
+            DateTime fechaActual = DateTime.Today;
+
+            // Buscar una orden cuya FechaEntrega coincida con la fecha actual
+            var orden = ObtenerOrdenesPreparacion().FirstOrDefault(o => o.FechaEntrega.Date == fechaActual);
+
+            // Retornar la orden encontrada (o null si no hay ninguna)
+            return orden;
+        }
+
+
 
         private string GenerarIdOrden()
         {
