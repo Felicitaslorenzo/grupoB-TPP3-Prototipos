@@ -135,6 +135,9 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
 
         private void ListarOrdenSeleccionList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Limpiar la lista de productos antes de cargar los nuevos (de la orden de preparación)
+            ProductosList.Items.Clear();
+
             // Verificar si hay una selección
             if (ListarOrdenSeleccionList.SelectedItems.Count > 0)
             {
