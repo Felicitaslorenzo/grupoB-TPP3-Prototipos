@@ -12,8 +12,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-
-
 namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
 {
     public partial class RetirarOrdenSeleccionForm : Form
@@ -33,6 +31,9 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
         {
             // Verifica que no se esté en modo de confirmación
             if (model.IsConfirming) return;
+
+            // Limpia el ListView antes de agregar los nuevos elementos
+            listView1.Items.Clear();
 
             // Verifica que se haya seleccionado algo
             if (ProductoCombo.SelectedItem != null)
