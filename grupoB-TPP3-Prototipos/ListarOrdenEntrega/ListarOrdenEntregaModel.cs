@@ -9,23 +9,242 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
     internal class ListarOrdenEntregaModel
     {
 
+        public List<OrdenEntrega> OrdenesEntregadas = new List<OrdenEntrega>
+        {
+            new OrdenEntrega { IdOrdenEntrega = "OS001", FechaEmision = DateTime.Parse("2024-01-15"), FechaEstado = DateTime.Parse("2024-01-18"), Estado = "Seleccionada",
+                OrdenesPreparacion = new List <OrdenPreparacion>
+                {
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP001",
+                        IdCliente = "CL001",
+                        Transportista = "TR001",
+                        FechaEstado = DateTime.Parse("2024-01-18")
+                    },
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP002",
+                        IdCliente = "CL002",
+                        Transportista = "TR005",
+                        FechaEstado = DateTime.Parse("2024-01-18")
+                    },
+                }
+            },
+            new OrdenEntrega { IdOrdenEntrega = "OS002", FechaEmision = DateTime.Parse("2024-01-20"), FechaEstado = DateTime.Parse("2024-01-22"), Estado = "Despachada",
+                OrdenesPreparacion = new List <OrdenPreparacion>
+                {
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP003",
+                        IdCliente = "CL001",
+                        Transportista = "TR002",
+                        FechaEstado = DateTime.Parse("2024-01-22")
+                    }
+                }
+            },
+            new OrdenEntrega { IdOrdenEntrega = "OS003", FechaEmision = DateTime.Parse("2024-02-05"), FechaEstado = DateTime.Parse("2024-02-06"), Estado = "Preparada",
+                OrdenesPreparacion = new List<OrdenPreparacion>
+                {
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP004",
+                        IdCliente = "CL005",
+                        Transportista = "TR013",
+                        FechaEstado = DateTime.Parse("2024-02-06")
+                    },
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP005",
+                        IdCliente = "CL004",
+                        Transportista = "TR010",
+                        FechaEstado = DateTime.Parse("2024-02-06")
+                    },
+                }
+            },
+            new OrdenEntrega { IdOrdenEntrega = "OS004", FechaEmision = DateTime.Parse("2024-02-10"), FechaEstado = DateTime.Parse("2024-02-18"), Estado = "En selección",
+                OrdenesPreparacion = new List<OrdenPreparacion>
+                {
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP006",
+                        IdCliente = "CL010",
+                        Transportista = "TR022",
+                        FechaEstado = DateTime.Parse("2024-02-18")
+                    },
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP007",
+                        IdCliente = "CL009",
+                        Transportista = "TR020",
+                        FechaEstado = DateTime.Parse("2024-02-18")
+                    },
+                }
+            },
+            new OrdenEntrega { IdOrdenEntrega = "OS005", FechaEmision = DateTime.Parse("2024-02-15"), FechaEstado = DateTime.Parse("2024-02-18"), Estado = "Pendiente",
+                OrdenesPreparacion = new List<OrdenPreparacion>
+                {
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP008",
+                        IdCliente = "CL008",
+                        Transportista = "TR019",
+                        FechaEstado = DateTime.Parse("2024-02-18")
+                    },
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP009",
+                        IdCliente = "CL010",
+                        Transportista = "TR023",
+                        FechaEstado = DateTime.Parse("2024-02-18")
+                    },
+                }
+            },
+            new OrdenEntrega { IdOrdenEntrega = "OS006", FechaEmision = DateTime.Parse("2024-02-16"), FechaEstado = DateTime.Parse("2024-02-19"), Estado = "Pendiente",
+                OrdenesPreparacion = new List<OrdenPreparacion>
+                {
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP010",
+                        IdCliente = "CL004",
+                        Transportista = "TR008",
+                        FechaEstado = DateTime.Parse("2024-02-19")
+                    },
+                }
+            },
+            new OrdenEntrega { IdOrdenEntrega = "OS007", FechaEmision = DateTime.Parse("2024-02-20"), FechaEstado = DateTime.Parse("2024-02-22"), Estado = "Seleccionada",
+                OrdenesPreparacion = new List<OrdenPreparacion>
+                {
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP011",
+                        IdCliente = "CL001",
+                        Transportista = "TR003",
+                        FechaEstado = DateTime.Parse("2024-02-22")
+                    },
+                }
+            },
+            new OrdenEntrega { IdOrdenEntrega = "OS008", FechaEmision = DateTime.Parse("2024-02-22"), FechaEstado = DateTime.Parse("2024-02-25"), Estado = "Preparada",
+                OrdenesPreparacion = new List<OrdenPreparacion>
+                {
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP012",
+                        IdCliente = "CL002",
+                        Transportista = "TR005",
+                        FechaEstado = DateTime.Parse("2024-02-25")
+                    },
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP013",
+                        IdCliente = "CL003",
+                        Transportista = "TR006",
+                        FechaEstado = DateTime.Parse("2024-02-25")
+                    },
+                }
+            },
+            new OrdenEntrega { IdOrdenEntrega = "OS009", FechaEmision = DateTime.Parse("2024-02-25"), FechaEstado = DateTime.Parse("2024-02-27"), Estado = "Despachada",
+                OrdenesPreparacion = new List<OrdenPreparacion>
+                {
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP014",
+                        IdCliente = "CL004",
+                        Transportista = "TR011",
+                        FechaEstado = DateTime.Parse("2024-02-27")
+                    },
+                }
+            },
+            new OrdenEntrega { IdOrdenEntrega = "OS010", FechaEmision = DateTime.Parse("2024-02-26"), FechaEstado = DateTime.Parse("2024-02-28"), Estado = "En selección",
+                OrdenesPreparacion = new List<OrdenPreparacion>
+                {
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP015",
+                        IdCliente = "CL005",
+                        Transportista = "TR012",
+                        FechaEstado = DateTime.Parse("2024-02-28")
+                    },
+                }
+            },
+            new OrdenEntrega { IdOrdenEntrega = "OS011", FechaEmision = DateTime.Parse("2024-02-29"), FechaEstado = DateTime.Parse("2024-03-01"), Estado = "Preparada",
+                OrdenesPreparacion = new List<OrdenPreparacion>
+                {
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP016",
+                        IdCliente = "CL006",
+                        Transportista = "TR014",
+                        FechaEstado = DateTime.Parse("2024-03-01")
+                    },
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP017",
+                        IdCliente = "CL007",
+                        Transportista = "TR016",
+                        FechaEstado = DateTime.Parse("2024-03-01")
+                    },
+                }
+            },
+            new OrdenEntrega { IdOrdenEntrega = "OS012", FechaEmision = DateTime.Parse("2024-03-01"), FechaEstado = DateTime.Parse("2024-03-03"), Estado = "Seleccionada",
+                OrdenesPreparacion = new List<OrdenPreparacion>
+                {
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP018",
+                        IdCliente = "CL008",
+                        Transportista = "TR018",
+                        FechaEstado = DateTime.Parse("2024-03-03")
+                    },
+                }
+            },
+            new OrdenEntrega { IdOrdenEntrega = "OS013", FechaEmision = DateTime.Parse("2024-03-03"), FechaEstado = DateTime.Parse("2024-03-07"), Estado = "Preparada",
+                OrdenesPreparacion = new List<OrdenPreparacion>
+                {
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP019",
+                        IdCliente = "CL009",
+                        Transportista = "TR021",
+                        FechaEstado = DateTime.Parse("2024-03-07")
+                    },
+                }
+            },
+            new OrdenEntrega { IdOrdenEntrega = "OS014", FechaEmision = DateTime.Parse("2024-03-05"), FechaEstado = DateTime.Parse("2024-03-10"), Estado = "Despachada",
+                OrdenesPreparacion = new List<OrdenPreparacion>
+                {
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP020",
+                        IdCliente = "CL010",
+                        Transportista = "TR023",
+                        FechaEstado = DateTime.Parse("2024-03-10")
+                    },
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP021",
+                        IdCliente = "CL003",
+                        Transportista = "TR007",
+                        FechaEstado = DateTime.Parse("2024-03-10")
+                    }
+                }
+            },
+            new OrdenEntrega { IdOrdenEntrega = "OS015", FechaEmision = DateTime.Parse("2024-03-10"), FechaEstado = DateTime.Parse("2024-03-14"), Estado = "Preparada",
+                OrdenesPreparacion = new List<OrdenPreparacion>
+                {
+                    new OrdenPreparacion
+                    {
+                        IdOrden = "OP021",
+                        IdCliente = "CL006",
+                        Transportista = "TR015",
+                        FechaEstado = DateTime.Parse("2024-03-14")
+                    }
+                }
+            }
+        };
+
         public List<OrdenEntrega> ObtenerOrdenesEntrega()
         {
-                    return new List<OrdenEntrega>
-            {
-                new OrdenEntrega { IdOrden = "OP-0001", IdCliente = 1, Nombre = "Porter SA", Estado = "Preparada", FechaEstado = DateTime.Parse("2024-09-30"), FechaEmision = DateTime.Parse("2024-09-20") },
-                new OrdenEntrega { IdOrden = "OP-0002", IdCliente = 2, Nombre = "Ferreteria SRL", Estado = "Preparada",  FechaEstado = DateTime.Parse("2024-09-25"), FechaEmision = DateTime.Parse("2024-09-22")},
-                new OrdenEntrega { IdOrden = "OP-0003", IdCliente = 3, Nombre = "Orbital SA", Estado = "Preparada", FechaEstado = DateTime.Parse("2024-09-18"), FechaEmision = DateTime.Parse("2024-10-01") },
-                new OrdenEntrega { IdOrden = "OP-0004", IdCliente = 4, Nombre = "Techno Corp", Estado = "Preparada", FechaEstado = DateTime.Parse("2024-09-22"), FechaEmision = DateTime.Parse("2024-09-21") },
-                new OrdenEntrega { IdOrden = "OP-0005", IdCliente = 5, Nombre = "Construcciones Beta", Estado = "Preparada", FechaEstado = DateTime.Parse("2024-09-24"), FechaEmision = DateTime.Parse("2024-09-09")},
-                new OrdenEntrega { IdOrden = "OP-0006", IdCliente = 6, Nombre = "Distribuciones Alfa", Estado = "Preparada",  FechaEstado = DateTime.Parse("2024-09-19"), FechaEmision = DateTime.Parse("2024-09-02") },
-                new OrdenEntrega { IdOrden = "OP-0007", IdCliente = 7, Nombre = "Electro SA", Estado = "Preparada",  FechaEstado = DateTime.Parse("2024-09-30"), FechaEmision = DateTime.Parse("2024-09-26")},
-                new OrdenEntrega { IdOrden = "OP-0008", IdCliente = 8, Nombre = "Alimentos Granjeros", Estado = "Preparada",  FechaEstado = DateTime.Parse("2024-09-28"), FechaEmision = DateTime.Parse("2024-09-22") },
-                new OrdenEntrega { IdOrden = "OP-0009", IdCliente = 9, Nombre = "Textiles Delta", Estado = "Preparada",  FechaEstado = DateTime.Parse("2024-09-23"), FechaEmision = DateTime.Parse("2024-09-01")},
-                new OrdenEntrega{ IdOrden = "OP-0010", IdCliente = 10, Nombre = "Autopartes Gamma", Estado = "Preparada",  FechaEstado = DateTime.Parse("2024-09-27"), FechaEmision = DateTime.Parse("2024-09-11") }
-            };
+            return OrdenesEntregadas;
         }
-
-
     }
 }

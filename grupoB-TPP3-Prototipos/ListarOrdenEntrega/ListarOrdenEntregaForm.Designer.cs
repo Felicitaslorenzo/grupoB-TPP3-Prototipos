@@ -45,7 +45,7 @@
             IdOrdenCombo = new ComboBox();
             FechaHastaOELabel = new Label();
             FechaHastaOEPicker = new DateTimePicker();
-            listView1 = new ListView();
+            DetalleOrdenesPreparacionList = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
@@ -54,49 +54,49 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(270, 20);
+            label5.Location = new Point(309, 27);
             label5.Name = "label5";
-            label5.Size = new Size(42, 15);
+            label5.Size = new Size(54, 20);
             label5.TabIndex = 48;
             label5.Text = "Estado";
             // 
             // EstadoCombo
             // 
+            EstadoCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             EstadoCombo.FormattingEnabled = true;
-            EstadoCombo.Location = new Point(270, 38);
-            EstadoCombo.Margin = new Padding(3, 2, 3, 2);
+            EstadoCombo.Location = new Point(309, 51);
             EstadoCombo.Name = "EstadoCombo";
-            EstadoCombo.Size = new Size(494, 23);
+            EstadoCombo.Size = new Size(564, 28);
             EstadoCombo.TabIndex = 47;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(22, 72);
+            label4.Location = new Point(25, 96);
             label4.Name = "label4";
-            label4.Size = new Size(58, 15);
+            label4.Size = new Size(74, 20);
             label4.TabIndex = 46;
             label4.Text = "ID Cliente";
             // 
             // IdClienteCombo
             // 
+            IdClienteCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             IdClienteCombo.FormattingEnabled = true;
-            IdClienteCombo.Location = new Point(22, 89);
-            IdClienteCombo.Margin = new Padding(3, 2, 3, 2);
+            IdClienteCombo.Location = new Point(25, 119);
             IdClienteCombo.Name = "IdClienteCombo";
-            IdClienteCombo.Size = new Size(220, 23);
+            IdClienteCombo.Size = new Size(251, 28);
             IdClienteCombo.TabIndex = 45;
             // 
             // ListarOrdenEntregaList
             // 
             ListarOrdenEntregaList.Columns.AddRange(new ColumnHeader[] { IdOrdenEntregaColumna, FechaOEColumna, Estado2Columna, FechaEstadoOEColumna });
-            ListarOrdenEntregaList.Location = new Point(22, 185);
-            ListarOrdenEntregaList.Margin = new Padding(3, 2, 3, 2);
+            ListarOrdenEntregaList.Location = new Point(25, 247);
             ListarOrdenEntregaList.Name = "ListarOrdenEntregaList";
-            ListarOrdenEntregaList.Size = new Size(742, 185);
+            ListarOrdenEntregaList.Size = new Size(847, 245);
             ListarOrdenEntregaList.TabIndex = 41;
             ListarOrdenEntregaList.UseCompatibleStateImageBehavior = false;
             ListarOrdenEntregaList.View = View.Details;
+            ListarOrdenEntregaList.SelectedIndexChanged += ListarOrdenEntregaList_SelectedIndexChanged;
             // 
             // IdOrdenEntregaColumna
             // 
@@ -110,30 +110,33 @@
             // 
             // Estado2Columna
             // 
+            Estado2Columna.DisplayIndex = 3;
             Estado2Columna.Text = "Estado";
             Estado2Columna.Width = 100;
             // 
             // FechaEstadoOEColumna
             // 
+            FechaEstadoOEColumna.DisplayIndex = 2;
             FechaEstadoOEColumna.Text = "Fecha Estado";
             FechaEstadoOEColumna.Width = 170;
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(650, 138);
-            BuscarButton.Margin = new Padding(1, 1, 1, 1);
+            BuscarButton.Location = new Point(743, 184);
+            BuscarButton.Margin = new Padding(1);
             BuscarButton.Name = "BuscarButton";
-            BuscarButton.Size = new Size(112, 23);
+            BuscarButton.Size = new Size(128, 31);
             BuscarButton.TabIndex = 39;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
+            BuscarButton.Click += BuscarButton_Click_1;
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(650, 597);
-            VolverButton.Margin = new Padding(1, 1, 1, 1);
+            VolverButton.Location = new Point(743, 796);
+            VolverButton.Margin = new Padding(1);
             VolverButton.Name = "VolverButton";
-            VolverButton.Size = new Size(112, 23);
+            VolverButton.Size = new Size(128, 31);
             VolverButton.TabIndex = 38;
             VolverButton.Text = "Volver";
             VolverButton.UseVisualStyleBackColor = true;
@@ -142,70 +145,67 @@
             // FechaDesdeOELabel
             // 
             FechaDesdeOELabel.AutoSize = true;
-            FechaDesdeOELabel.Location = new Point(270, 71);
+            FechaDesdeOELabel.Location = new Point(309, 95);
             FechaDesdeOELabel.Name = "FechaDesdeOELabel";
-            FechaDesdeOELabel.Size = new Size(72, 15);
+            FechaDesdeOELabel.Size = new Size(91, 20);
             FechaDesdeOELabel.TabIndex = 37;
             FechaDesdeOELabel.Text = "Fecha desde";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 19);
+            label1.Location = new Point(25, 25);
             label1.Name = "label1";
-            label1.Size = new Size(54, 15);
+            label1.Size = new Size(69, 20);
             label1.TabIndex = 36;
             label1.Text = "ID Orden";
             // 
             // FechaDesdeOEPicker
             // 
             FechaDesdeOEPicker.Checked = false;
-            FechaDesdeOEPicker.Location = new Point(270, 89);
-            FechaDesdeOEPicker.Margin = new Padding(3, 2, 3, 2);
+            FechaDesdeOEPicker.Location = new Point(309, 119);
             FechaDesdeOEPicker.Name = "FechaDesdeOEPicker";
             FechaDesdeOEPicker.ShowCheckBox = true;
-            FechaDesdeOEPicker.Size = new Size(235, 23);
+            FechaDesdeOEPicker.Size = new Size(268, 27);
             FechaDesdeOEPicker.TabIndex = 35;
             FechaDesdeOEPicker.Value = new DateTime(2024, 10, 12, 13, 39, 11, 0);
             // 
             // IdOrdenCombo
             // 
+            IdOrdenCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             IdOrdenCombo.FormattingEnabled = true;
-            IdOrdenCombo.Location = new Point(22, 37);
-            IdOrdenCombo.Margin = new Padding(3, 2, 3, 2);
+            IdOrdenCombo.Location = new Point(25, 49);
             IdOrdenCombo.Name = "IdOrdenCombo";
-            IdOrdenCombo.Size = new Size(220, 23);
+            IdOrdenCombo.Size = new Size(251, 28);
             IdOrdenCombo.TabIndex = 34;
             // 
             // FechaHastaOELabel
             // 
             FechaHastaOELabel.AutoSize = true;
-            FechaHastaOELabel.Location = new Point(528, 72);
+            FechaHastaOELabel.Location = new Point(603, 96);
             FechaHastaOELabel.Name = "FechaHastaOELabel";
-            FechaHastaOELabel.Size = new Size(69, 15);
+            FechaHastaOELabel.Size = new Size(86, 20);
             FechaHastaOELabel.TabIndex = 52;
             FechaHastaOELabel.Text = "Fecha hasta";
             // 
             // FechaHastaOEPicker
             // 
             FechaHastaOEPicker.Checked = false;
-            FechaHastaOEPicker.Location = new Point(528, 90);
-            FechaHastaOEPicker.Margin = new Padding(3, 2, 3, 2);
+            FechaHastaOEPicker.Location = new Point(603, 120);
             FechaHastaOEPicker.Name = "FechaHastaOEPicker";
             FechaHastaOEPicker.ShowCheckBox = true;
-            FechaHastaOEPicker.Size = new Size(236, 23);
+            FechaHastaOEPicker.Size = new Size(269, 27);
             FechaHastaOEPicker.TabIndex = 51;
             // 
-            // listView1
+            // DetalleOrdenesPreparacionList
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader3, columnHeader4 });
-            listView1.Location = new Point(20, 394);
-            listView1.Margin = new Padding(3, 2, 3, 2);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(742, 185);
-            listView1.TabIndex = 53;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            DetalleOrdenesPreparacionList.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader3, columnHeader4 });
+            DetalleOrdenesPreparacionList.Location = new Point(23, 525);
+            DetalleOrdenesPreparacionList.Name = "DetalleOrdenesPreparacionList";
+            DetalleOrdenesPreparacionList.Size = new Size(847, 245);
+            DetalleOrdenesPreparacionList.TabIndex = 53;
+            DetalleOrdenesPreparacionList.UseCompatibleStateImageBehavior = false;
+            DetalleOrdenesPreparacionList.View = View.Details;
             // 
             // columnHeader1
             // 
@@ -224,10 +224,10 @@
             // 
             // ListarOrdenEntregaForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(790, 641);
-            Controls.Add(listView1);
+            ClientSize = new Size(903, 855);
+            Controls.Add(DetalleOrdenesPreparacionList);
             Controls.Add(FechaHastaOELabel);
             Controls.Add(FechaHastaOEPicker);
             Controls.Add(label5);
@@ -241,7 +241,6 @@
             Controls.Add(label1);
             Controls.Add(FechaDesdeOEPicker);
             Controls.Add(IdOrdenCombo);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "ListarOrdenEntregaForm";
             Text = "Listar Ordenes de Entrega";
             ResumeLayout(false);
@@ -267,7 +266,7 @@
         private Label FechaHastaOELabel;
         private DateTimePicker FechaHastaOEPicker;
         private ColumnHeader FechaEstadoOEColumna;
-        private ListView listView1;
+        private ListView DetalleOrdenesPreparacionList;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
