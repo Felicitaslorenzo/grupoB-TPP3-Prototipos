@@ -18,7 +18,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdOrden = "OP001",
                     IdCliente = "CL001",
                     Nombre = "Porter SA",
-                    Estado = "Seleccionada",
+                    Estado = "Pendiente",
+                    Prioridad = "Con prioridad",
                     FechaEstado = DateTime.Parse("2024-09-30"),
                     FechaEmision = DateTime.Parse("2024-10-03"),
                     Producto = new List<Producto>
@@ -33,6 +34,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdCliente = "CL002",
                     Nombre = "Ferreteria SRL",
                     Estado = "Seleccionada",
+                    Prioridad = "Con prioridad",
                     FechaEstado = DateTime.Parse("2024-09-25"),
                     FechaEmision = DateTime.Parse("2024-09-29"),
                     Producto = new List<Producto>
@@ -47,6 +49,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdCliente = "CL001",
                     Nombre = "Porter SA",
                     Estado = "Despachada",
+                    Prioridad = "Con prioridad",
                     FechaEstado = DateTime.Parse("2024-10-01"),
                     FechaEmision = DateTime.Parse("2024-10-05"),
                     Producto = new List<Producto>
@@ -60,7 +63,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdOrden = "OP004",
                     IdCliente = "CL005",
                     Nombre = "Techno Corp",
-                    Estado = "Preparada",
+                    Estado = "En seleccion",
+                    Prioridad = "Con prioridad",
                     FechaEstado = DateTime.Parse("2024-09-21"),
                     FechaEmision = DateTime.Parse("2024-09-25"),
                     Producto = new List<Producto>
@@ -76,6 +80,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdCliente = "CL004",
                     Nombre = "Construcciones Beta",
                     Estado = "Preparada",
+                    Prioridad = "Sin prioridad",
                     FechaEstado = DateTime.Parse("2024-09-24"),
                     FechaEmision = DateTime.Parse("2024-09-28"),
                     Producto = new List<Producto>
@@ -89,7 +94,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdOrden = "OP006",
                     IdCliente = "CL010",
                     Nombre = "Distribuciones Alfa",
-                    Estado = "Despachada",
+                    Estado = "Pendiente",
+                    Prioridad = "Sin prioridad",
                     FechaEstado = DateTime.Parse("2024-09-19"),
                     FechaEmision = DateTime.Parse("2024-09-23"),
                     Producto = new List<Producto>
@@ -103,7 +109,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdOrden = "OP007",
                     IdCliente = "CL009",
                     Nombre = "Electro SA",
-                    Estado = "Despachada",
+                    Estado = "Pendiente",
+                    Prioridad = "Sin prioridad",
                     FechaEstado = DateTime.Parse("2024-09-26"),
                     FechaEmision = DateTime.Parse("2024-09-30"),
                     Producto = new List<Producto>
@@ -117,6 +124,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdCliente = "CL008",
                     Nombre = "Alimentos Granjeros",
                     Estado = "Seleccionada",
+                    Prioridad = "Sin prioridad",
                     FechaEstado = DateTime.Parse("2024-09-22"),
                     FechaEmision = DateTime.Parse("2024-09-26"),
                     Producto = new List<Producto>
@@ -130,7 +138,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdOrden = "OP009",
                     IdCliente = "CL010",
                     Nombre = "Distribuciones Alfa",
-                    Estado = "Seleccionada",
+                    Estado = "En seleccion",
+                    Prioridad = "Sin prioridad",
                     FechaEstado = DateTime.Parse("2024-09-23"),
                     FechaEmision = DateTime.Parse("2024-09-27"),
                     Producto = new List<Producto>
@@ -145,6 +154,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdCliente = "CL004",
                     Nombre = "Construcciones Beta",
                     Estado = "Seleccionada",
+                    Prioridad = "Con prioridad",
                     FechaEstado = DateTime.Parse("2024-09-27"),
                     FechaEmision = DateTime.Parse("2024-09-30"),
                     Producto = new List<Producto>
@@ -158,6 +168,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdCliente = "CL001",
                     Nombre = "Porter SA",
                     Estado = "Seleccionada",
+                    Prioridad = "Con prioridad",
                     FechaEstado = DateTime.Parse("2024-10-01"),
                     FechaEmision = DateTime.Parse("2024-10-05"),
                     Producto = new List<Producto>
@@ -171,7 +182,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdOrden = "OP012",
                     IdCliente = "CL002",
                     Nombre = "Ferreteria SRL",
-                    Estado = "Preparada",
+                    Estado = "Pendiente",
+                    Prioridad = "Con prioridad",
                     FechaEstado = DateTime.Parse("2024-10-02"),
                     FechaEmision = DateTime.Parse("2024-10-06"),
                     Producto = new List<Producto>
@@ -186,6 +198,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdCliente = "CL003",
                     Nombre = "Materiales SRL",
                     Estado = "Preparada",
+                    Prioridad = "Sin prioridad",
                     FechaEstado = DateTime.Parse("2024-10-03"),
                     FechaEmision = DateTime.Parse("2024-10-07"),
                     Producto = new List<Producto>
@@ -199,7 +212,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdOrden = "OP014",
                     IdCliente = "CL004",
                     Nombre = "Construcciones Beta",
-                    Estado = "Despachada",
+                    Estado = "En seleccion",
+                    Prioridad = "Sin prioridad",
                     FechaEstado = DateTime.Parse("2024-10-04"),
                     FechaEmision = DateTime.Parse("2024-10-08"),
                     Producto = new List<Producto>
@@ -214,6 +228,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdCliente = "CL005",
                     Nombre = "Techno Corp",
                     Estado = "Seleccionada",
+                    Prioridad = "Con prioridad",
                     FechaEstado = DateTime.Parse("2024-10-05"),
                     FechaEmision = DateTime.Parse("2024-10-09"),
                     Producto = new List<Producto>
@@ -227,7 +242,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdOrden = "OP016",
                     IdCliente = "CL006",
                     Nombre = "Distribuciones Omega",
-                    Estado = "Preparada",
+                    Estado = "En seleccion",
+                    Prioridad = "Sin prioridad",
                     FechaEstado = DateTime.Parse("2024-10-06"),
                     FechaEmision = DateTime.Parse("2024-10-10"),
                     Producto = new List<Producto>
@@ -242,6 +258,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdCliente = "CL007",
                     Nombre = "Decoraciones SA",
                     Estado = "Preparada",
+                    Prioridad = "Sin prioridad",
                     FechaEstado = DateTime.Parse("2024-10-07"),
                     FechaEmision = DateTime.Parse("2024-10-11"),
                     Producto = new List<Producto>
@@ -256,6 +273,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdCliente = "CL008",
                     Nombre = "Alimentos Granjeros",
                     Estado = "Seleccionada",
+                    Prioridad = "Sin prioridad",
                     FechaEstado = DateTime.Parse("2024-10-08"),
                     FechaEmision = DateTime.Parse("2024-10-12"),
                     Producto = new List<Producto>
@@ -270,6 +288,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdCliente = "CL009",
                     Nombre = "Electro SA",
                     Estado = "Preparada",
+                    Prioridad = "Con prioridad",    
                     FechaEstado = DateTime.Parse("2024-10-09"),
                     FechaEmision = DateTime.Parse("2024-10-13"),
                     Producto = new List<Producto>
@@ -284,6 +303,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdCliente = "CL010",
                     Nombre = "Distribuciones Alfa",
                     Estado = "Despachada",
+                    Prioridad = "Sin prioridad",
                     FechaEstado = DateTime.Parse("2024-10-10"),
                     FechaEmision = DateTime.Parse("2024-10-14"),
                     Producto = new List<Producto>
@@ -298,6 +318,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdCliente = "CL003",
                     Nombre = "Materiales SRL",
                     Estado = "Despachada",
+                    Prioridad = "Con prioridad",
                     FechaEstado = DateTime.Parse("2024-10-12"),
                     FechaEmision = DateTime.Parse("2024-10-16"),
                     Producto = new List<Producto>
@@ -312,6 +333,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                     IdCliente = "CL006",
                     Nombre = "Distribuciones Omega",
                     Estado = "Preparada",
+                    Prioridad = "Con prioridad",
                     FechaEstado = DateTime.Parse("2024-10-14"),
                     FechaEmision = DateTime.Parse("2024-10-16"),
                     Producto = new List<Producto>
