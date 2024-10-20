@@ -28,30 +28,33 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private void FechaOPPicker_ValueChanged(object sender, EventArgs e)
         {
-
-            //Validación de fecha
-
+           
             DateTime fechaSeleccionada = FechaOPPicker.Value;
             DateTime fechaMinima = DateTime.Today.AddDays(1);
 
-            if (fechaSeleccionada < fechaMinima)
-            {
-                MessageBox.Show("Por favor, selecciona una fecha a partir de mañana.", "Fecha inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                FechaOPPicker.Value = fechaMinima;
-            }
+            //if (fechaSeleccionada < fechaMinima)
+            //{
+            //    MessageBox.Show("Por favor, selecciona una fecha a partir de mañana.", "Fecha inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    FechaOPPicker.Value = fechaMinima;
+            //}
         }
-
 
         private void AgregarProductoButton_Click(object sender, EventArgs e)
         {
+            // verifica si se selecionó una fecha
+            if (!FechaOPPicker.Checked)
+            {
+                MessageBox.Show("Debe seleccionar una fecha de entrega.", "Fecha de entrega requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string idProducto = ProductoCombo.Text;
             int cantidad;
 
             // Validación de cantidad
             if (int.TryParse(CantidadTextBox.Text, out cantidad))
             {
-
-                // Llamada al modelo para verificar si el producto existe en las órdenes
+               
                 var resultadoProducto = modelo.BuscarProductoEnOrdenes(idProducto);
 
                 if (resultadoProducto.Item1)
@@ -70,21 +73,18 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                             // Ubicacion = resultadoProducto.Item3
                         };
 
-
                         var item = new ListViewItem(nuevoProducto.IDProducto);
                         item.SubItems.Add(nuevoProducto.DescripcionProducto);
                         item.SubItems.Add(nuevoProducto.Cantidad.ToString());
                         // item.SubItems.Add(nuevoProducto.Ubicacion);
                         ProductosListView.Items.Add(item);
 
-                        // Limpiar campos de entrada
+                       
                         CantidadTextBox.Clear();
                         ProductoCombo.SelectedIndex = -1;
 
-                        MessageBox.Show($"El producto {nuevoProducto.DescripcionProducto} se ha agregado a la lista.");
-
+                        //MessageBox.Show($"El producto {nuevoProducto.DescripcionProducto} se ha agregado a la lista.");
                     }
-
                 }
                 else
                 {
@@ -96,6 +96,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 MessageBox.Show("Ingrese una cantidad válida.");
             }
         }
+
 
         private void EliminarProductoButton_Click(object sender, EventArgs e)
         {
@@ -112,7 +113,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private void GenerarOrdenButton_Click(object sender, EventArgs e)
         {
-
             if (ProductosListView.Items.Count == 0)
             {
                 MessageBox.Show("No hay productos disponibles para crear una orden.");
@@ -127,7 +127,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 return;
             }
 
-
             var resultado = modelo.GenerarNuevaOrden(IdClienteCombo.Text, PrioridadComboBox.Text, TransportistaCombo.Text, ProductosListView);
 
             MessageBox.Show(resultado);
@@ -137,11 +136,12 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             IdClienteCombo.SelectedIndex = -1;
             PrioridadComboBox.SelectedIndex = -1;
             TransportistaCombo.SelectedIndex = -1;
+            FechaOPPicker.Value = DateTime.Today.AddDays(1);
+            FechaOPPicker.Checked = false;
         }
 
         private void IdClienteCombo_SelectedIndexChanged(object? sender, EventArgs e)
         {
-
             if (IdClienteCombo.SelectedItem == clienteAnterior) return;
 
             if (ProductosListView.Items.Count > 0)
@@ -157,9 +157,14 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                     return;
                 }
 
-                // si el usuario confirma, sen eliminan los productos
+                // si el usuario confirma, se eliminan los productos
                 ProductoCombo.Items.Clear();
                 ProductosListView.Items.Clear();
+
+                // Limpiar campos "Prioridad" y "Fecha de entrega"
+                PrioridadComboBox.SelectedIndex = -1;
+                FechaOPPicker.Value = DateTime.Today.AddDays(1);
+                FechaOPPicker.Checked = false;
             }
 
             // guarda el cliente recién seleccionado como el clienteAnterior
@@ -181,7 +186,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             }
         }
 
-
         private void ProductosListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Verifica si hay algún elemento seleccionado
@@ -189,11 +193,11 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             {
                 var selectedItem = ProductosListView.SelectedItems[0];
                 string productoId = selectedItem.SubItems[0].Text;
-                MessageBox.Show($"Producto seleccionado: {productoId}");
+                //MessageBox.Show($"Producto seleccionado: {productoId}");
             }
         }
 
-        private void GenerarOrdenPreparacionForm_Load(object sender, EventArgs e)
+        private void EmitirOrdenPreparacionForm_Load(object sender, EventArgs e)
         {
 
         }

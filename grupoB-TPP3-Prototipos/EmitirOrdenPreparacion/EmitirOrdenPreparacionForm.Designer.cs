@@ -134,9 +134,11 @@
             // 
             // FechaOPPicker
             // 
+            FechaOPPicker.Checked = false;
             FechaOPPicker.Location = new Point(26, 148);
             FechaOPPicker.Margin = new Padding(4, 2, 4, 2);
             FechaOPPicker.Name = "FechaOPPicker";
+            FechaOPPicker.ShowCheckBox = true;
             FechaOPPicker.Size = new Size(233, 31);
             FechaOPPicker.TabIndex = 21;
             // 
@@ -278,7 +280,7 @@
             Margin = new Padding(1, 2, 1, 2);
             Name = "EmitirOrdenPreparacionForm";
             Text = "EmitirOrdenPreparacionForm";
-            Load += GenerarOrdenPreparacionForm_Load;
+            Load += EmitirOrdenPreparacionForm_Load;
             GenerarOrdenesPreparacionGroup.ResumeLayout(false);
             GenerarOrdenesPreparacionGroup.PerformLayout();
             ResumeLayout(false);
