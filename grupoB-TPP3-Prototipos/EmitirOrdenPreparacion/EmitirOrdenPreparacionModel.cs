@@ -279,5 +279,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 new Cliente { IdCliente = "CL010", Transportistas = new List<string> {"TR022", "TR023", "CL010"}},
             };
         }
+        public Cliente ClienteAnterior { get; set; }
     }
 }

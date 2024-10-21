@@ -11,13 +11,12 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
     public partial class EmitirOrdenPreparacionForm : Form
     {
         private EmitirOrdenPreparacionModel modelo = new EmitirOrdenPreparacionModel();
-        private Cliente clienteAnterior;
 
         public EmitirOrdenPreparacionForm()
         {
             InitializeComponent();
             modelo.CargarCliente(IdClienteCombo, TransportistaCombo, ProductoCombo);
-            clienteAnterior = (Cliente)IdClienteCombo.SelectedItem;
+            // clienteAnterior = (Cliente)IdClienteCombo.SelectedItem;
             this.IdClienteCombo.SelectedIndexChanged += IdClienteCombo_SelectedIndexChanged;
 
             FechaOPPicker.MinDate = DateTime.Today.AddDays(1);
@@ -142,7 +141,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private void IdClienteCombo_SelectedIndexChanged(object? sender, EventArgs e)
         {
-            if (IdClienteCombo.SelectedItem == clienteAnterior) return;
+            if (IdClienteCombo.SelectedItem == modelo.ClienteAnterior) return;
 
             if (ProductosListView.Items.Count > 0)
             {
@@ -152,7 +151,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 if (confirmacion == DialogResult.No)
                 {
                     IdClienteCombo.SelectedIndexChanged -= IdClienteCombo_SelectedIndexChanged;
-                    IdClienteCombo.SelectedItem = clienteAnterior;
+                    IdClienteCombo.SelectedItem = modelo.ClienteAnterior;
                     IdClienteCombo.SelectedIndexChanged += IdClienteCombo_SelectedIndexChanged;
                     return;
                 }
@@ -170,7 +169,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             // guarda el cliente recién seleccionado como el clienteAnterior
             if (IdClienteCombo.SelectedItem is Cliente nuevoCliente)
             {
-                clienteAnterior = nuevoCliente;
+                modelo.ClienteAnterior = nuevoCliente;
 
                 // carga los transportistas y productos del nuevo cliente
                 modelo.CargarTransportistas(nuevoCliente, TransportistaCombo);
