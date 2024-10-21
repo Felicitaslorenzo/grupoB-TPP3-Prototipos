@@ -39,9 +39,10 @@
             // OrdenesEntregalistView
             // 
             OrdenesEntregalistView.Columns.AddRange(new ColumnHeader[] { IdOrdenPreparacionColumna, ClienteColumna, FechaEntregaColumna });
-            OrdenesEntregalistView.Location = new Point(16, 18);
+            OrdenesEntregalistView.Location = new Point(13, 14);
+            OrdenesEntregalistView.Margin = new Padding(2, 2, 2, 2);
             OrdenesEntregalistView.Name = "OrdenesEntregalistView";
-            OrdenesEntregalistView.Size = new Size(740, 526);
+            OrdenesEntregalistView.Size = new Size(593, 422);
             OrdenesEntregalistView.TabIndex = 7;
             OrdenesEntregalistView.UseCompatibleStateImageBehavior = false;
             OrdenesEntregalistView.View = View.Details;
@@ -63,9 +64,10 @@
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(583, 577);
+            VolverButton.Location = new Point(466, 462);
+            VolverButton.Margin = new Padding(2, 2, 2, 2);
             VolverButton.Name = "VolverButton";
-            VolverButton.Size = new Size(173, 53);
+            VolverButton.Size = new Size(138, 42);
             VolverButton.TabIndex = 15;
             VolverButton.Text = "Volver";
             VolverButton.UseVisualStyleBackColor = true;
@@ -73,21 +75,24 @@
             // 
             // GenerarOEbutton
             // 
-            GenerarOEbutton.Location = new Point(324, 577);
+            GenerarOEbutton.Location = new Point(259, 462);
+            GenerarOEbutton.Margin = new Padding(2, 2, 2, 2);
             GenerarOEbutton.Name = "GenerarOEbutton";
-            GenerarOEbutton.Size = new Size(244, 53);
+            GenerarOEbutton.Size = new Size(195, 42);
             GenerarOEbutton.TabIndex = 16;
             GenerarOEbutton.Text = "Emitir Orden de Entrega";
             GenerarOEbutton.UseVisualStyleBackColor = true;
+            GenerarOEbutton.Click += GenerarOEbutton_Click;
             // 
             // EmitirOrdenEntregaForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(779, 653);
+            ClientSize = new Size(623, 522);
             Controls.Add(GenerarOEbutton);
             Controls.Add(VolverButton);
             Controls.Add(OrdenesEntregalistView);
+            Margin = new Padding(2, 2, 2, 2);
             MaximizeBox = false;
             Name = "EmitirOrdenEntregaForm";
             Text = "Emitir Orden de Entrega";

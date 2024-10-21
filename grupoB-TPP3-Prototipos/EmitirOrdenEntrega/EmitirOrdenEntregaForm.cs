@@ -62,6 +62,19 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         }
 
         private ListView listView1;
+
+        private void GenerarOEbutton_Click(object sender, EventArgs e)
+        {
+            if (OrdenesEntregalistView.Items.Count > 0)
+            {
+                MessageBox.Show("Se generó la orden de entrega.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Aquí puedes agregar la lógica para generar la orden de entrega
+            }
+            else
+            {
+                MessageBox.Show("Solo se puede generar una orden si la lista tiene órdenes de preparación.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
 

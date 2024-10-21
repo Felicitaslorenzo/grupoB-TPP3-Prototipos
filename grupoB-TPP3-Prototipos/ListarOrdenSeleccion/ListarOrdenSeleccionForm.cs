@@ -105,6 +105,9 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
             var fechasEmision = ordenesSeleccion.Select(o => o.FechaEmision).Distinct();
             var fechasEstado = ordenesSeleccion.Select(o => o.FechaEstado).Distinct();
 
+            // Cargar la opción vacía
+            IdOrdenSeleccionCombo.Items.Add(string.Empty); // Opción vacía
+
             // Cargar datos en los ComboBox
             IdOrdenSeleccionCombo.Items.AddRange(idOrdenesSeleccion.ToArray());
             // Si tienes otros ComboBoxes para fechas, deberías hacer lo mismo
