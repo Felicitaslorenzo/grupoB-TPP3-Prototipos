@@ -17,11 +17,19 @@ namespace grupoB_TPP3_Prototipos
 
             //Cargar los datos desde almacenes aca:
             ClienteAlmacen.Leer();
+            ProductoAlmacen.Leer();
+            OrdenEntregaAlmacen.Leer();
+            OrdenPreparacionAlmacen.Leer();
+            OrdenSeleccionAlmacen.Leer();
 
             Application.Run(new MenuPrincipal.MenuPrincipalForm());
 
             //Grabar los datos desde almacenes aca:
             ClienteAlmacen.Grabar();
+            ProductoAlmacen.Grabar();
+            OrdenEntregaAlmacen.Grabar();
+            OrdenPreparacionAlmacen.Grabar();
+            OrdenSeleccionAlmacen.Grabar();
         }
     }
 }
