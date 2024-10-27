@@ -21,6 +21,7 @@ namespace grupoB_TPP3_Prototipos
             OrdenEntregaAlmacen.Leer();
             OrdenPreparacionAlmacen.Leer();
             OrdenSeleccionAlmacen.Leer();
+            TransportistaAlmacen.Leer();
 
             Application.Run(new MenuPrincipal.MenuPrincipalForm());
 
@@ -30,6 +31,7 @@ namespace grupoB_TPP3_Prototipos
             OrdenEntregaAlmacen.Grabar();
             OrdenPreparacionAlmacen.Grabar();
             OrdenSeleccionAlmacen.Grabar();
+            TransportistaAlmacen.Grabar();
         }
     }
 }
