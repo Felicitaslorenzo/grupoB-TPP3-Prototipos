@@ -1,3 +1,4 @@
+using grupoB_TPP3_Prototipos.Almacenes;
 using grupoB_TPP3_Prototipos.ListarOrdenPreparacion;
 
 namespace grupoB_TPP3_Prototipos
@@ -13,7 +14,14 @@ namespace grupoB_TPP3_Prototipos
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+
+            //Cargar los datos desde almacenes aca:
+            ClienteAlmacen.Leer();
+
             Application.Run(new MenuPrincipal.MenuPrincipalForm());
+
+            //Grabar los datos desde almacenes aca:
+            ClienteAlmacen.Grabar();
         }
     }
 }
