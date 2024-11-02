@@ -9,9 +9,9 @@ namespace grupoB_TPP3_Prototipos.Almacenes
 {
     internal static class ProductoAlmacen
     {
-        private static List<ProductoEntidad> productos = new List<ProductoEntidad>();
+        private static List<ProductoEnt> productos = new List<ProductoEnt>();
 
-        public static IReadOnlyCollection<ProductoEntidad> Productos => productos.AsReadOnly();
+        public static IReadOnlyCollection<ProductoEnt> Productos => productos.AsReadOnly();
 
         public static void Grabar()
         {
@@ -27,7 +27,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
             }
             var datos = File.ReadAllText("Productos.json");
 
-            productos = JsonSerializer.Deserialize<List<ProductoEntidad>>(datos)!;
+            productos = JsonSerializer.Deserialize<List<ProductoEnt>>(datos)!;
 
         }
 

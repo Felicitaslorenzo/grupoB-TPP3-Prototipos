@@ -2,6 +2,6 @@
 
 public class OrdenPreparacionDetalle
 {
-    public string IdProducto { get; set; }
+    public string SKUProducto { get; set; }
     public int Cantidad { get; set; }
 }

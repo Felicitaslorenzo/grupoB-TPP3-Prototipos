@@ -11,9 +11,9 @@ namespace grupoB_TPP3_Prototipos.Almacenes
     internal static class OrdenSeleccionAlmacen
     {
 
-        private static List<OrdenSeleccionEntidad> ordenesseleccion = new List<OrdenSeleccionEntidad>();
+        private static List<OrdenSeleccionEnt> ordenesseleccion = new List<OrdenSeleccionEnt>();
 
-        public static IReadOnlyCollection<OrdenSeleccionEntidad> OrdenesSeleccion => ordenesseleccion.AsReadOnly();
+        public static IReadOnlyCollection<OrdenSeleccionEnt> OrdenesSeleccion => ordenesseleccion.AsReadOnly();
 
         public static void Grabar()
         {            
@@ -29,7 +29,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
             }
             var datos = File.ReadAllText("OrdenesSeleccion.json");
 
-            ordenesseleccion = JsonSerializer.Deserialize<List<OrdenSeleccionEntidad>>(datos)!;
+            ordenesseleccion = JsonSerializer.Deserialize<List<OrdenSeleccionEnt>>(datos)!;
 
         }
     }

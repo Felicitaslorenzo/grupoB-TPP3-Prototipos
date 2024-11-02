@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace grupoB_TPP3_Prototipos.Almacenes
 {
-    internal class OrdenEntregaEntidad
+    internal class RemitoEnt
     {
-        public string IdOrdenEntrega { get; set; }
-        public string Estado { get; set; }
-        public DateTime FechaEstado { get; set; }
+        public string IdRemito { get; set; }
         public DateTime FechaEmision { get; set; }
-        public string IdCliente { get; set; }
-
+        public List<string> OrdenesPreparacion { get; } = new();
+        public string IdTransportista { get; set; }
     }
 }

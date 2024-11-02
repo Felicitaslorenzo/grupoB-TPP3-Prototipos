@@ -11,9 +11,9 @@ namespace grupoB_TPP3_Prototipos.Almacenes
     internal static class OrdenEntregaAlmacen
     {
 
-        private static List<OrdenEntregaEntidad> ordenesentrega = new List<OrdenEntregaEntidad>();
+        private static List<OrdenEntregaEnt> ordenesentrega = new List<OrdenEntregaEnt>();
 
-        public static IReadOnlyCollection<OrdenEntregaEntidad> OrdenesEntrega => ordenesentrega.AsReadOnly();
+        public static IReadOnlyCollection<OrdenEntregaEnt> OrdenesEntrega => ordenesentrega.AsReadOnly();
 
         public static void Grabar()
         {            
@@ -29,7 +29,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
             }
             var datos = File.ReadAllText("OrdenesEntrega.json");
 
-            ordenesentrega = JsonSerializer.Deserialize<List<OrdenEntregaEntidad>>(datos)!;
+            ordenesentrega = JsonSerializer.Deserialize<List<OrdenEntregaEnt>>(datos)!;
 
         }
     }

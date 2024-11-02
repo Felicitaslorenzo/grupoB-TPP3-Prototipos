@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace grupoB_TPP3_Prototipos.Almacenes
 {
-    internal class OrdenDePreparacionEnt
+    internal class OrdenPreparacionEnt
     {
-        public string IdOrdenDePreparacion { get; set; }
+        public string IdOrdenPreparacion { get; set; }
         public string IdCliente { get; set; }
         public DateTime FechaEmision { get; set; }
         public DateTime FechaEntrega { get; set; }

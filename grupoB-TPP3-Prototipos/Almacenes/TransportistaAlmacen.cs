@@ -11,9 +11,9 @@ namespace grupoB_TPP3_Prototipos.Almacenes
     internal static class TransportistaAlmacen
     {
 
-        private static List<TransportistaEntidad> transportistas = new List<TransportistaEntidad>();
+        private static List<TransportistaEnt> transportistas = new List<TransportistaEnt>();
 
-        public static IReadOnlyCollection<TransportistaEntidad> Transportistas => transportistas.AsReadOnly();
+        public static IReadOnlyCollection<TransportistaEnt> Transportistas => transportistas.AsReadOnly();
 
         public static void Grabar()
         {            
@@ -29,7 +29,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
             }
             var datos = File.ReadAllText("Transportistas.json");
 
-            transportistas = JsonSerializer.Deserialize<List<TransportistaEntidad>>(datos)!;
+            transportistas = JsonSerializer.Deserialize<List<TransportistaEnt>>(datos)!;
 
         }
     }

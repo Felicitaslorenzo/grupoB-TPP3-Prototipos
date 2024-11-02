@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace grupoB_TPP3_Prototipos.Almacenes
 {
-    internal class TransportistaEntidad
+    internal class TransportistaEnt
     {
-        public string IDTransportista { get; set; }
+        public string IdCliente { get; set; }
+        public string IdTransportista { get; set; }
         public string NombreTransportista { get; set; }
     }
 }

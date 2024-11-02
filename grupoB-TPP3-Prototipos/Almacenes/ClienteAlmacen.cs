@@ -11,9 +11,9 @@ namespace grupoB_TPP3_Prototipos.Almacenes
     internal static class ClienteAlmacen
     {
 
-        private static List<ClienteEntidad> clientes = new List<ClienteEntidad>();
+        private static List<ClienteEnt> clientes = new List<ClienteEnt>();
 
-        public static IReadOnlyCollection<ClienteEntidad> Clientes => clientes.AsReadOnly();
+        public static IReadOnlyCollection<ClienteEnt> Clientes => clientes.AsReadOnly();
 
         public static void Grabar()
         {            
@@ -29,7 +29,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
             }
             var datos = File.ReadAllText("Clientes.json");
 
-            clientes = JsonSerializer.Deserialize<List<ClienteEntidad>>(datos)!;
+            clientes = JsonSerializer.Deserialize<List<ClienteEnt>>(datos)!;
 
         }
     }

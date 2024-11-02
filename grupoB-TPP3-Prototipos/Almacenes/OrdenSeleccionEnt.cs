@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace grupoB_TPP3_Prototipos.Almacenes
 {
-    internal class OrdenSeleccionEntidad
+    internal class OrdenSeleccionEnt
     {
         public string IdOrdenSeleccion { get; set; }
-        public string Estado { get; set; }
+        public EstadoOrdenSelEnum Estado { get; set; }
         public DateTime FechaEstado { get; set; }
         public DateTime FechaEmision { get; set; }
+        public List<string> OrdenesPreparacion { get; } = new();
 
     }
 }
