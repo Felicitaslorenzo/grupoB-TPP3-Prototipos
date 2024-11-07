@@ -1,4 +1,5 @@
-﻿using grupoB_TPP3_Prototipos.GenerarOrdenPreparacion;
+﻿using grupoB_TPP3_Prototipos.Almacenes;
+using grupoB_TPP3_Prototipos.GenerarOrdenPreparacion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,28 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
     {
         public List<OrdenPreparacion> ObtenerOrdenesPreparacion()
         {
-            return new List<OrdenPreparacion>
+            var Listar = new List<OrdenPreparacion>();
+
+            foreach (var Ordenpreparacionent in OrdenPreparacionAlmacen.OrdenesPreparacion)
+            {
+                var ordenesmodelo  = new OrdenPreparacion();
+                ordenesmodelo.IdCliente = Ordenpreparacionent.IdCliente;
+                ordenesmodelo.IdOrdenPreparacion = Ordenpreparacionent.IdOrdenPreparacion;
+                ordenesmodelo.Prioridad = Ordenpreparacionent.Prioridad;
+                ordenesmodelo.Estado = Ordenpreparacionent.Estado;
+                ordenesmodelo.FechaEmision = Ordenpreparacionent.FechaEmision;
+                ordenesmodelo.FechaEntrega = Ordenpreparacionent.FechaEntrega;
+                ordenesmodelo.Detalle = Ordenpreparacionent.Detalle;
+
+                Listar.Add(ordenesmodelo);
+            }
+
+            return Listar;
+
+
+
+
+            return  new List<OrdenPreparacion>
             {
                 new OrdenPreparacion
                 {
