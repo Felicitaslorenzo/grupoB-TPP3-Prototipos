@@ -25,11 +25,11 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                         Estado = ordenEntidad.Estado.ToString(),
                         FechaEmision = ordenEntidad.FechaEmision,
                         //FechaEntrega = ordenEntidad.FechaEntrega.ToString(), // No tenemos fecha de entrega en la clase.
-                        Producto = ordenEntidad.Productos.Select(p => new Producto
+                        /*Producto = ordenEntidad.Productos.Select(p => new Producto
                         {
                             DescripcionProducto = p.DescripcionProducto,
                             Cantidad = p.Cantidad
-                        }).ToList()
+                        }).ToList()*/
                     };
 
                     listarOrdenes.Add(ordenModelo);
