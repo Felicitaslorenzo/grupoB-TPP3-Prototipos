@@ -1,0 +1,93 @@
+[
+  {
+    "IdCliente": "CL001",
+    "Inventario": [
+      {
+        "SKUProducto": "SKU001",
+        "DescripcionProducto": "Ropa"
+      },
+      {
+        "SKUProducto": "SKU002",
+        "DescripcionProducto": "Mueble"
+      }
+    ]
+  },
+  {
+    "IdCliente": "CL002",
+    "Inventario": [
+      {
+        "SKUProducto": "SKU004",
+        "DescripcionProducto": "Ladrillos"
+      },
+      {
+        "SKUProducto": "SKU005",
+        "DescripcionProducto": "Cemento"
+      }
+    ]
+  },
+  {
+    "IdCliente": "CL003",
+    "Inventario": [
+      {
+        "SKUProducto": "SKU003",
+        "DescripcionProducto": "Electrodoméstico"
+      },
+      {
+        "SKUProducto": "SKU007",
+        "DescripcionProducto": "Artículo de decoración"
+      }
+    ]
+  },
+  {
+    "IdCliente": "CL005",
+    "Inventario": [
+      {
+        "SKUProducto": "SKU011",
+        "DescripcionProducto": "Producto farmacéutico"
+      },
+      {
+        "SKUProducto": "SKU012",
+        "DescripcionProducto": "Inventario de lujo"
+      },
+      {
+        "SKUProducto": "SKU013",
+        "DescripcionProducto": "Material sensible"
+      }
+    ]
+  },
+  {
+    "IdCliente": "CL004",
+    "Inventario": [
+      {
+        "SKUProducto": "SKU007",
+        "DescripcionProducto": "Artículo de decoración"
+      },
+      {
+        "SKUProducto": "SKU011",
+        "DescripcionProducto": "Producto farmacéutico"
+      }
+    ]
+  },
+  {
+    "IdCliente": "CL010",
+    "Inventario": [
+      {
+        "SKUProducto": "SKU007",
+        "DescripcionProducto": "Artículo de decoración"
+      },
+      {
+        "SKUProducto": "SKU018",
+        "DescripcionProducto": "Calzado"
+      }
+    ]
+  },
+  {
+    "IdCliente": "CL009",
+    "Inventario": [
+      {
+        "SKUProducto": "SKU015",
+        "DescripcionProducto": "Máquinas"
+      }
+    ]
+  }
+]

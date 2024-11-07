@@ -1,0 +1,42 @@
+[
+  {
+    "IdCliente": "CL001",
+    "NombreCliente": "Porter SA"
+  },
+  {
+    "IdCliente": "CL002",
+    "NombreCliente": "Ferreteria SRL"
+  },
+  {
+    "IdCliente": "CL003",
+    "NombreCliente": "Materiales SRL"
+  },
+  {
+    "IdCliente": "CL004",
+    "NombreCliente": "Construcciones Beta"
+  },
+  {
+    "IdCliente": "CL005",
+    "NombreCliente": "Techno Corp"
+  },
+  {
+    "IdCliente": "CL006",
+    "NombreCliente": "Distribuciones Omega"
+  },
+  {
+    "IdCliente": "CL007",
+    "NombreCliente": "Decoraciones SA"
+  },
+  {
+    "IdCliente": "CL008",
+    "NombreCliente": "Alimentos Granjeros"
+  },
+  {
+    "IdCliente": "CL009",
+    "NombreCliente": "Electro SA"
+  },
+  {
+    "IdCliente": "CL010",
+    "NombreCliente": "Distribuciones Alfa"
+  }
+]

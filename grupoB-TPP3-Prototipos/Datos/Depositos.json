@@ -1,0 +1,18 @@
+[
+  {
+    "IdDeposito": "DP001",
+    "Nombre": "GBA Zona Norte 1"
+  },
+  {
+    "IdDeposito": "DP002",
+    "Nombre": "GBA Zona Norte 2"
+  },
+  {
+    "IdDeposito": "DP003",
+    "Nombre": "GBA Zona Sur 1"
+  },
+  {
+    "IdDeposito": "DP004",
+    "Nombre": "GBA Zona Sur 2"
+  }
+]
