@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
@@ -167,7 +168,16 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         public List<Cliente> ObtenerCliente()
         {
-            return new List<Cliente>
+            // Obtenemos los clientes de ClienteAlmacen y sus transportistas correspondientes de TransportistaAlmacen
+            return ClienteAlmacen.Clientes.Select(cliente => new Cliente
+            {
+                IdCliente = cliente.IdCliente,
+                Transportistas = TransportistaAlmacen.Transportistas
+                    .Where(transportista => transportista.IdCliente == cliente.IdCliente)
+                    .Select(transportista => transportista.IdTransportista)
+                    .ToList()
+            }).ToList();
+            /* return new List<Cliente>
             {
                 new Cliente { IdCliente = "CL001", Transportistas = new List<string> {"TR001", "TR002", "TR003", "CL001"}},
                 new Cliente { IdCliente = "CL002", Transportistas = new List<string> {"TR004", "TR005", "CL002"}},
@@ -179,8 +189,9 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 new Cliente { IdCliente = "CL008", Transportistas = new List<string> {"TR018", "TR019", "CL008"}},
                 new Cliente { IdCliente = "CL009", Transportistas = new List<string> {"TR020", "TR021", "CL009"}},
                 new Cliente { IdCliente = "CL010", Transportistas = new List<string> {"TR022", "TR023", "CL010"}},
-            };
+            }; */
         }
+
         public Cliente ClienteAnterior { get; set; }
     }
 }

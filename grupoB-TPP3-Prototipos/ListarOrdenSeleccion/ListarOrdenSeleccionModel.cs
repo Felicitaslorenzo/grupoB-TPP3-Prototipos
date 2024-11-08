@@ -18,7 +18,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
                 Estado = os.Estado.ToString(),
 
                 // Obtiene las órdenes de preparación asociadas para cada orden de selección.
-              OrdenesPreparacion = OrdenPreparacionAlmacen.OrdenesPreparacion
+                OrdenesPreparacion = OrdenPreparacionAlmacen.OrdenesPreparacion
                 .Where(op => op.IdOrdenPreparacion == os.IdOrdenSeleccion)
                 .Select(op => new OrdenPreparacion
                 {

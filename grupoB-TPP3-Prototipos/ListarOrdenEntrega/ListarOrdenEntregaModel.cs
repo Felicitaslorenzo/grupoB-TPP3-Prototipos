@@ -13,7 +13,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
         public List<OrdenEntrega> OrdenesEntregadas = new List<OrdenEntrega>
         {
 
-               /*  VER CON ANDRES, si esta bien el codigo y como hacer con los datos que no figuran en OrdenEntregaEntidad
+               /*  VER CON ANDRES, si esta bien el codigo y como hacer con los datos que no figuran en OrdenEntregaEntidad 
                 
         OrdenEntregaAlmacen.OrdenesEntrega.Select(oe => new OrdenEntrega
        {

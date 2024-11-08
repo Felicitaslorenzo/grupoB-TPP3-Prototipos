@@ -25,7 +25,7 @@
   },
   {
     "SKUProducto": "SKU003",
-    "DescripcionProducto": "Electrodomésticos inteligentes",
+    "DescripcionProducto": "Electrodomï¿½sticos inteligentes",
     "IdCliente": "CL002",
     "Inventario": [
       {
@@ -37,7 +37,7 @@
   },
   {
     "SKUProducto": "SKU004",
-    "DescripcionProducto": "Herramientas eléctricas profesionales",
+    "DescripcionProducto": "Herramientas elï¿½ctricas profesionales",
     "IdCliente": "CL002",
     "Inventario": [
       {
@@ -61,7 +61,7 @@
   },
   {
     "SKUProducto": "SKU006",
-    "DescripcionProducto": "Paneles solares portátiles",
+    "DescripcionProducto": "Paneles solares portï¿½tiles",
     "IdCliente": "CL003",
     "Inventario": [
       {
@@ -73,7 +73,7 @@
   },
   {
     "SKUProducto": "SKU007",
-    "DescripcionProducto": "Sillas ergonómicas de oficina",
+    "DescripcionProducto": "Sillas ergonï¿½micas de oficina",
     "IdCliente": "CL004",
     "Inventario": [
       {
@@ -85,7 +85,7 @@
   },
   {
     "SKUProducto": "SKU008",
-    "DescripcionProducto": "Cámaras de vigilancia de alta definición",
+    "DescripcionProducto": "Cï¿½maras de vigilancia de alta definiciï¿½n",
     "IdCliente": "CL004",
     "Inventario": [
       {
@@ -97,7 +97,7 @@
   },
   {
     "SKUProducto": "SKU009",
-    "DescripcionProducto": "Sistemas de calefacción industrial",
+    "DescripcionProducto": "Sistemas de calefacciï¿½n industrial",
     "IdCliente": "CL005",
     "Inventario": [
       {
@@ -109,7 +109,7 @@
   },
   {
     "SKUProducto": "SKU010",
-    "DescripcionProducto": "Generadores eléctricos portátiles",
+    "DescripcionProducto": "Generadores elï¿½ctricos portï¿½tiles",
     "IdCliente": "CL005",
     "Inventario": [
       {
@@ -121,7 +121,7 @@
   },
   {
     "SKUProducto": "SKU011",
-    "DescripcionProducto": "Lámparas LED industriales",
+    "DescripcionProducto": "Lï¿½mparas LED industriales",
     "IdCliente": "CL006",
     "Inventario": [
       {
@@ -133,7 +133,7 @@
   },
   {
     "SKUProducto": "SKU012",
-    "DescripcionProducto": "Hidrolavadoras de alta presión",
+    "DescripcionProducto": "Hidrolavadoras de alta presiï¿½n",
     "IdCliente": "CL006",
     "Inventario": [
       {
@@ -157,7 +157,7 @@
   },
   {
     "SKUProducto": "SKU014",
-    "DescripcionProducto": "Estanterías metálicas de almacenaje",
+    "DescripcionProducto": "Estanterï¿½as metï¿½licas de almacenaje",
     "IdCliente": "CL007",
     "Inventario": [
       {
@@ -169,7 +169,7 @@
   },
   {
     "SKUProducto": "SKU015",
-    "DescripcionProducto": "Herramientas hidráulicas",
+    "DescripcionProducto": "Herramientas hidrï¿½ulicas",
     "IdCliente": "CL008",
     "Inventario": [
       {
@@ -193,7 +193,7 @@
   },
   {
     "SKUProducto": "SKU017",
-    "DescripcionProducto": "Chillers industriales para refrigeración",
+    "DescripcionProducto": "Chillers industriales para refrigeraciï¿½n",
     "IdCliente": "CL009",
     "Inventario": [
       {
@@ -205,7 +205,7 @@
   },
   {
     "SKUProducto": "SKU018",
-    "DescripcionProducto": "Kits de instalación eléctrica",
+    "DescripcionProducto": "Kits de instalaciï¿½n elï¿½ctrica",
     "IdCliente": "CL009",
     "Inventario": [
       {
@@ -229,7 +229,7 @@
   },
   {
     "SKUProducto": "SKU020",
-    "DescripcionProducto": "Placas de yeso para construcción",
+    "DescripcionProducto": "Placas de yeso para construcciï¿½n",
     "IdCliente": "CL010",
     "Inventario": [
       {
@@ -265,7 +265,7 @@
   },
   {
     "SKUProducto": "SKU023",
-    "DescripcionProducto": "Sistemas de filtración de agua",
+    "DescripcionProducto": "Sistemas de filtraciï¿½n de agua",
     "IdCliente": "CL010",
     "Inventario": [
       {
@@ -289,7 +289,7 @@
   },
   {
     "SKUProducto": "SKU025",
-    "DescripcionProducto": "Paredes móviles de oficina",
+    "DescripcionProducto": "Paredes mï¿½viles de oficina",
     "IdCliente": "CL010",
     "Inventario": [
       {

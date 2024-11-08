@@ -31,12 +31,12 @@
       {
         "SKUProducto": "SKU003",
         "Cantidad": 50,
-        "DescripcionProducto": "Electrodomésticos inteligentes"
+        "DescripcionProducto": "Electrodomï¿½sticos inteligentes"
       },
       {
         "SKUProducto": "SKU004",
         "Cantidad": 100,
-        "DescripcionProducto": "Herramientas eléctricas profesionales"
+        "DescripcionProducto": "Herramientas elï¿½ctricas profesionales"
       }
     ]
   },
@@ -73,12 +73,12 @@
       {
         "SKUProducto": "SKU009",
         "Cantidad": 100,
-        "DescripcionProducto": "Sistemas de calefacción industrial"
+        "DescripcionProducto": "Sistemas de calefacciï¿½n industrial"
       },
       {
         "SKUProducto": "SKU010",
         "Cantidad": 20,
-        "DescripcionProducto": "Generadores eléctricos portátiles"
+        "DescripcionProducto": "Generadores elï¿½ctricos portï¿½tiles"
       }
     ]
   },
@@ -94,12 +94,12 @@
       {
         "SKUProducto": "SKU007",
         "Cantidad": 60,
-        "DescripcionProducto": "Sillas ergonómicas de oficina"
+        "DescripcionProducto": "Sillas ergonï¿½micas de oficina"
       },
       {
         "SKUProducto": "SKU008",
         "Cantidad": 70,
-        "DescripcionProducto": "Cámaras de vigilancia de alta definición"
+        "DescripcionProducto": "Cï¿½maras de vigilancia de alta definiciï¿½n"
       }
     ]
   },
@@ -115,7 +115,7 @@
       {
         "SKUProducto": "SKU020",
         "Cantidad": 40,
-        "DescripcionProducto": "Placas de yeso para construcción"
+        "DescripcionProducto": "Placas de yeso para construcciï¿½n"
       },
       {
         "SKUProducto": "SKU021",
@@ -141,7 +141,7 @@
       {
         "SKUProducto": "SKU017",
         "Cantidad": 5,
-        "DescripcionProducto": "Chillers industriales para refrigeración"
+        "DescripcionProducto": "Chillers industriales para refrigeraciï¿½n"
       }
     ]
   },
@@ -157,7 +157,7 @@
       {
         "SKUProducto": "SKU015",
         "Cantidad": 100,
-        "DescripcionProducto": "Herramientas hidráulicas"
+        "DescripcionProducto": "Herramientas hidrï¿½ulicas"
       },
       {
         "SKUProducto": "SKU016",
@@ -183,7 +183,7 @@
       {
         "SKUProducto": "SKU023",
         "Cantidad": 80,
-        "DescripcionProducto": "Sistemas de filtración de agua"
+        "DescripcionProducto": "Sistemas de filtraciï¿½n de agua"
       }
     ]
   },
@@ -199,7 +199,7 @@
       {
         "SKUProducto": "SKU007",
         "Cantidad": 500,
-        "DescripcionProducto": "Sillas ergonómicas de oficina"
+        "DescripcionProducto": "Sillas ergonï¿½micas de oficina"
       }
     ]
   },
@@ -236,12 +236,12 @@
       {
         "SKUProducto": "SKU003",
         "Cantidad": 20,
-        "DescripcionProducto": "Electrodomésticos inteligentes"
+        "DescripcionProducto": "Electrodomï¿½sticos inteligentes"
       },
       {
         "SKUProducto": "SKU004",
         "Cantidad": 80,
-        "DescripcionProducto": "Herramientas eléctricas profesionales"
+        "DescripcionProducto": "Herramientas elï¿½ctricas profesionales"
       }
     ]
   },
@@ -262,7 +262,7 @@
       {
         "SKUProducto": "SKU006",
         "Cantidad": 10,
-        "DescripcionProducto": "Paneles solares portátiles"
+        "DescripcionProducto": "Paneles solares portï¿½tiles"
       }
     ]
   },
@@ -282,7 +282,7 @@
       },
       {
         "SKUProducto": "SKU014",
-        "DescripcionProducto": "Estanterías metálicas de almacenaje",
+        "DescripcionProducto": "Estanterï¿½as metï¿½licas de almacenaje",
         "Cantidad": 100
       }
     ]
@@ -298,12 +298,12 @@
     "Detalle": [
       {
         "SKUProducto": "SKU007",
-        "DescripcionProducto": "Sillas ergonómicas de oficina",
+        "DescripcionProducto": "Sillas ergonï¿½micas de oficina",
         "Cantidad": 200
       },
       {
         "SKUProducto": "SKU008",
-        "DescripcionProducto": "Cámaras de vigilancia de alta definición",
+        "DescripcionProducto": "Cï¿½maras de vigilancia de alta definiciï¿½n",
         "Cantidad": 120
       }
     ]
@@ -319,12 +319,12 @@
     "Detalle": [
       {
         "SKUProducto": "SKU003",
-        "DescripcionProducto": "Electrodomésticos inteligentes",
+        "DescripcionProducto": "Electrodomï¿½sticos inteligentes",
         "Cantidad": 10
       },
       {
         "SKUProducto": "SKU004",
-        "DescripcionProducto": "Herramientas eléctricas profesionales",
+        "DescripcionProducto": "Herramientas elï¿½ctricas profesionales",
         "Cantidad": 50
       }
     ]
@@ -340,12 +340,12 @@
     "Detalle": [
       {
         "SKUProducto": "SKU011",
-        "DescripcionProducto": "Lámparas LED industriales",
+        "DescripcionProducto": "Lï¿½mparas LED industriales",
         "Cantidad": 150
       },
       {
         "SKUProducto": "SKU012",
-        "DescripcionProducto": "Hidrolavadoras de alta presión",
+        "DescripcionProducto": "Hidrolavadoras de alta presiï¿½n",
         "Cantidad": 80
       }
     ]
@@ -361,12 +361,12 @@
     "Detalle": [
       {
         "SKUProducto": "SKU009",
-        "DescripcionProducto": "Sistemas de calefacción industrial",
+        "DescripcionProducto": "Sistemas de calefacciï¿½n industrial",
         "Cantidad": 50
       },
       {
         "SKUProducto": "SKU010",
-        "DescripcionProducto": "Generadores eléctricos portátiles",
+        "DescripcionProducto": "Generadores elï¿½ctricos portï¿½tiles",
         "Cantidad": 10
       }
     ]
@@ -382,7 +382,7 @@
     "Detalle": [
       {
         "SKUProducto": "SKU015",
-        "DescripcionProducto": "Herramientas hidráulicas",
+        "DescripcionProducto": "Herramientas hidrï¿½ulicas",
         "Cantidad": 60
       },
       {
@@ -403,12 +403,12 @@
     "Detalle": [
       {
         "SKUProducto": "SKU017",
-        "DescripcionProducto": "Chillers industriales para refrigeración",
+        "DescripcionProducto": "Chillers industriales para refrigeraciï¿½n",
         "Cantidad": 500
       },
       {
         "SKUProducto": "SKU018",
-        "DescripcionProducto": "Kits de instalación eléctrica",
+        "DescripcionProducto": "Kits de instalaciï¿½n elï¿½ctrica",
         "Cantidad": 50
       }
     ]
@@ -429,7 +429,7 @@
       },
       {
         "SKUProducto": "SKU018",
-        "DescripcionProducto": "Kits de instalación eléctrica",
+        "DescripcionProducto": "Kits de instalaciï¿½n elï¿½ctrica",
         "Cantidad": 200
       }
     ]
@@ -445,7 +445,7 @@
     "Detalle": [
       {
         "SKUProducto": "SKU006",
-        "DescripcionProducto": "Paneles solares portátiles",
+        "DescripcionProducto": "Paneles solares portï¿½tiles",
         "Cantidad": 50
       },
       {
@@ -466,12 +466,12 @@
     "Detalle": [
       {
         "SKUProducto": "SKU007",
-        "DescripcionProducto": "Sillas ergonómicas de oficina",
+        "DescripcionProducto": "Sillas ergonï¿½micas de oficina",
         "Cantidad": 100
       },
       {
         "SKUProducto": "SKU008",
-        "DescripcionProducto": "Cámaras de vigilancia de alta definición",
+        "DescripcionProducto": "Cï¿½maras de vigilancia de alta definiciï¿½n",
         "Cantidad": 50
       }
     ]
@@ -487,12 +487,12 @@
     "Detalle": [
       {
         "SKUProducto": "SKU012",
-        "DescripcionProducto": "Hidrolavadoras de alta presión",
+        "DescripcionProducto": "Hidrolavadoras de alta presiï¿½n",
         "Cantidad": 10
       },
       {
         "SKUProducto": "SKU011",
-        "DescripcionProducto": "Lámparas LED industriales",
+        "DescripcionProducto": "Lï¿½mparas LED industriales",
         "Cantidad": 200
       }
     ]
@@ -508,12 +508,12 @@
     "Detalle": [
       {
         "SKUProducto": "SKU017",
-        "DescripcionProducto": "Chillers industriales para refrigeración",
+        "DescripcionProducto": "Chillers industriales para refrigeraciï¿½n",
         "Cantidad": 15
       },
       {
         "SKUProducto": "SKU018",
-        "DescripcionProducto": "Kits de instalación eléctrica",
+        "DescripcionProducto": "Kits de instalaciï¿½n elï¿½ctrica",
         "Cantidad": 50
       }
     ]
@@ -529,7 +529,7 @@
     "Detalle": [
       {
         "SKUProducto": "SKU025",
-        "DescripcionProducto": "Paredes móviles de oficina",
+        "DescripcionProducto": "Paredes mï¿½viles de oficina",
         "Cantidad": 20
       },
       {
@@ -550,12 +550,12 @@
     "Detalle": [
       {
         "SKUProducto": "SKU003",
-        "DescripcionProducto": "Electrodomésticos inteligentes",
+        "DescripcionProducto": "Electrodomï¿½sticos inteligentes",
         "Cantidad": 30
       },
       {
         "SKUProducto": "SKU004",
-        "DescripcionProducto": "Herramientas eléctricas profesionales",
+        "DescripcionProducto": "Herramientas elï¿½ctricas profesionales",
         "Cantidad": 50
       }
     ]
@@ -576,7 +576,7 @@
       },
       {
         "SKUProducto": "SKU006",
-        "DescripcionProducto": "Paneles solares portátiles",
+        "DescripcionProducto": "Paneles solares portï¿½tiles",
         "Cantidad": 60
       }
     ]
@@ -592,12 +592,12 @@
     "Detalle": [
       {
         "SKUProducto": "SKU007",
-        "DescripcionProducto": "Sillas ergonómicas de oficina",
+        "DescripcionProducto": "Sillas ergonï¿½micas de oficina",
         "Cantidad": 15
       },
       {
         "SKUProducto": "SKU008",
-        "DescripcionProducto": "Cámaras de vigilancia de alta definición",
+        "DescripcionProducto": "Cï¿½maras de vigilancia de alta definiciï¿½n",
         "Cantidad": 25
       }
     ]
@@ -613,7 +613,7 @@
     "Detalle": [
       {
         "SKUProducto": "SKU020",
-        "DescripcionProducto": "Placas de yeso para construcción",
+        "DescripcionProducto": "Placas de yeso para construcciï¿½n",
         "Cantidad": 10
       },
       {
@@ -628,7 +628,7 @@
       },
       {
         "SKUProducto": "SKU023",
-        "DescripcionProducto": "Sistemas de filtración de agua",
+        "DescripcionProducto": "Sistemas de filtraciï¿½n de agua",
         "Cantidad": 8
       },
       {
@@ -638,7 +638,7 @@
       },
       {
         "SKUProducto": "SKU025",
-        "DescripcionProducto": "Paredes móviles de oficina",
+        "DescripcionProducto": "Paredes mï¿½viles de oficina",
         "Cantidad": 12
       }
     ]
