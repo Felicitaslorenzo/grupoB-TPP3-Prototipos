@@ -21,7 +21,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
 
         public static void Leer()
         {
-            if (!File.Exists("Ubicaciones.json"))
+            if (!File.Exists(@"Ubicaciones.json"))
             {
                 return;
             }

@@ -23,7 +23,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
 
         public static void Leer()
         {
-            if(!File.Exists("OrdenesSeleccion.json"))
+            if(!File.Exists(@"OrdenesSeleccion.json"))
             {
                 return;
             }
