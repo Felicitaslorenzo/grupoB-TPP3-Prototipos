@@ -1,18 +1,51 @@
 [
   {
-    "IdDeposito": "DP001",
+    "IdDeposito": "GBAN1",
     "Nombre": "GBA Zona Norte 1"
   },
   {
-    "IdDeposito": "DP002",
+    "IdDeposito": "GBAN2",
     "Nombre": "GBA Zona Norte 2"
   },
   {
-    "IdDeposito": "DP003",
+    "IdDeposito": "GBAS1",
     "Nombre": "GBA Zona Sur 1"
   },
   {
-    "IdDeposito": "DP004",
+    "IdDeposito": "GBAS2",
     "Nombre": "GBA Zona Sur 2"
+  },
+  {
+    "IdDeposito": "ROS",
+    "Nombre": "Rosario"
+  },
+  {
+    "IdDeposito": "CBA",
+    "Nombre": "Córdoba"
+  },
+  {
+    "IdDeposito": "MDZ",
+    "Nombre": "Mendoza"
+  },
+  {
+    "IdDeposito": "BHB",
+    "Nombre": "Bahía Blanca"
+  },
+  {
+    "IdDeposito": "USH",
+    "Nombre": "Tierra del Fuego"
+  },
+  {
+    "IdDeposito": "STA",
+    "Nombre": "Salta"
+  },
+  {
+    "IdDeposito": "NQN",
+    "Nombre": "Neuquén"
+  },
+  {
+    "IdDeposito": "MSN",
+    "Nombre": "Misiones"
   }
 ]
+

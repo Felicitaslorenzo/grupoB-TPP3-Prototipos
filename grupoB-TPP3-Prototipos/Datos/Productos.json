@@ -1,92 +1,301 @@
 [
   {
+    "SKUProducto": "SKU001",
+    "DescripcionProducto": "Muebles modulares de oficina",
     "IdCliente": "CL001",
     "Inventario": [
       {
-        "SKUProducto": "SKU001",
-        "DescripcionProducto": "Ropa"
-      },
-      {
-        "SKUProducto": "SKU002",
-        "DescripcionProducto": "Mueble"
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 50
       }
     ]
   },
   {
+    "SKUProducto": "SKU002",
+    "DescripcionProducto": "Cementos de alta resistencia",
+    "IdCliente": "CL001",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 200
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU003",
+    "DescripcionProducto": "Electrodomésticos inteligentes",
     "IdCliente": "CL002",
     "Inventario": [
       {
-        "SKUProducto": "SKU004",
-        "DescripcionProducto": "Ladrillos"
-      },
-      {
-        "SKUProducto": "SKU005",
-        "DescripcionProducto": "Cemento"
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-3-1",
+        "Cantidad": 400
       }
     ]
   },
   {
+    "SKUProducto": "SKU004",
+    "DescripcionProducto": "Herramientas eléctricas profesionales",
+    "IdCliente": "CL002",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 100
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU005",
+    "DescripcionProducto": "Cajas fuertes de seguridad",
     "IdCliente": "CL003",
     "Inventario": [
       {
-        "SKUProducto": "SKU003",
-        "DescripcionProducto": "Electrodoméstico"
-      },
-      {
-        "SKUProducto": "SKU007",
-        "DescripcionProducto": "Artículo de decoración"
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 20
       }
     ]
   },
   {
-    "IdCliente": "CL005",
+    "SKUProducto": "SKU006",
+    "DescripcionProducto": "Paneles solares portátiles",
+    "IdCliente": "CL003",
     "Inventario": [
       {
-        "SKUProducto": "SKU011",
-        "DescripcionProducto": "Producto farmacéutico"
-      },
-      {
-        "SKUProducto": "SKU012",
-        "DescripcionProducto": "Inventario de lujo"
-      },
-      {
-        "SKUProducto": "SKU013",
-        "DescripcionProducto": "Material sensible"
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 900
       }
     ]
   },
   {
+    "SKUProducto": "SKU007",
+    "DescripcionProducto": "Sillas ergonómicas de oficina",
     "IdCliente": "CL004",
     "Inventario": [
       {
-        "SKUProducto": "SKU007",
-        "DescripcionProducto": "Artículo de decoración"
-      },
-      {
-        "SKUProducto": "SKU011",
-        "DescripcionProducto": "Producto farmacéutico"
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-4-2",
+        "Cantidad": 500
       }
     ]
   },
   {
-    "IdCliente": "CL010",
+    "SKUProducto": "SKU008",
+    "DescripcionProducto": "Cámaras de vigilancia de alta definición",
+    "IdCliente": "CL004",
     "Inventario": [
       {
-        "SKUProducto": "SKU007",
-        "DescripcionProducto": "Artículo de decoración"
-      },
-      {
-        "SKUProducto": "SKU018",
-        "DescripcionProducto": "Calzado"
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 800
       }
     ]
   },
   {
+    "SKUProducto": "SKU009",
+    "DescripcionProducto": "Sistemas de calefacción industrial",
+    "IdCliente": "CL005",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 100
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU010",
+    "DescripcionProducto": "Generadores eléctricos portátiles",
+    "IdCliente": "CL005",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 200
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU011",
+    "DescripcionProducto": "Lámparas LED industriales",
+    "IdCliente": "CL006",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 1000
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU012",
+    "DescripcionProducto": "Hidrolavadoras de alta presión",
+    "IdCliente": "CL006",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-4-2",
+        "Cantidad": 200
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU013",
+    "DescripcionProducto": "Equipos de aire acondicionado industrial",
+    "IdCliente": "CL007",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 50
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU014",
+    "DescripcionProducto": "Estanterías metálicas de almacenaje",
+    "IdCliente": "CL007",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 400
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU015",
+    "DescripcionProducto": "Herramientas hidráulicas",
+    "IdCliente": "CL008",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 1000
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU016",
+    "DescripcionProducto": "Compresores industriales",
+    "IdCliente": "CL008",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-4-2",
+        "Cantidad": 50
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU017",
+    "DescripcionProducto": "Chillers industriales para refrigeración",
     "IdCliente": "CL009",
     "Inventario": [
       {
-        "SKUProducto": "SKU015",
-        "DescripcionProducto": "Máquinas"
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 100
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU018",
+    "DescripcionProducto": "Kits de instalación eléctrica",
+    "IdCliente": "CL009",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 200
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU019",
+    "DescripcionProducto": "Equipos de seguridad industrial",
+    "IdCliente": "CL009",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 900
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU020",
+    "DescripcionProducto": "Placas de yeso para construcción",
+    "IdCliente": "CL010",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-4-2",
+        "Cantidad": 1000
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU021",
+    "DescripcionProducto": "Herramientas de corte industrial",
+    "IdCliente": "CL010",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 1000
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU022",
+    "DescripcionProducto": "Compresores de aire industrial",
+    "IdCliente": "CL010",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 200
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU023",
+    "DescripcionProducto": "Sistemas de filtración de agua",
+    "IdCliente": "CL010",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 500
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU024",
+    "DescripcionProducto": "Cintas transportadoras industriales",
+    "IdCliente": "CL010",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 200
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU025",
+    "DescripcionProducto": "Paredes móviles de oficina",
+    "IdCliente": "CL010",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 60
       }
     ]
   }

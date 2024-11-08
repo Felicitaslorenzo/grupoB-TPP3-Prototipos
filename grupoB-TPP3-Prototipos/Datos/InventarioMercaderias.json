@@ -2,96 +2,217 @@
   {
     "Cantidad": 30,
     "Ubicacion": "1-2-4",
-    "IdDeposito": "DP001"
+    "IdDeposito": "GBAN1"
   },
   {
     "Cantidad": 40,
-    "Ubicacion": "1-2-3",
-    "IdDeposito": "DP002"
+    "Ubicacion": "2-3-1",
+    "IdDeposito": "GBAN2"
   },
   {
     "Cantidad": 50,
-    "Ubicacion": "2-3-1",
-    "IdDeposito": "DP003"
+    "Ubicacion": "2-3-4",
+    "IdDeposito": "GBAS1"
   },
   {
     "Cantidad": 100,
-    "Ubicacion": "2-3-2",
-    "IdDeposito": "DP004"
+    "Ubicacion": "2-4-2",
+    "IdDeposito": "GBAS2"
   },
   {
     "Cantidad": 15,
-    "Ubicacion": "3-1-2",
-    "IdDeposito": "DP001"
+    "Ubicacion": "3-1-5",
+    "IdDeposito": "GBAN1"
   },
   {
     "Cantidad": 50,
-    "Ubicacion": "3-1-4",
-    "IdDeposito": "DP002"
+    "Ubicacion": "3-1-6",
+    "IdDeposito": "GBAN2"
   },
   {
     "Cantidad": 100,
     "Ubicacion": "4-2-1",
-    "IdDeposito": "DP003"
+    "IdDeposito": "GBAS1"
   },
   {
     "Cantidad": 20,
-    "Ubicacion": "4-2-3",
-    "IdDeposito": "DP004"
+    "Ubicacion": "4-3-2",
+    "IdDeposito": "GBAS2"
   },
   {
     "Cantidad": 10,
-    "Ubicacion": "4-2-5",
-    "IdDeposito": "DP001"
+    "Ubicacion": "1-5-3",
+    "IdDeposito": "GBAN1"
   },
   {
     "Cantidad": 60,
-    "Ubicacion": "5-1-3",
-    "IdDeposito": "DP002"
+    "Ubicacion": "2-3-1",
+    "IdDeposito": "GBAN2"
   },
   {
     "Cantidad": 70,
-    "Ubicacion": "5-1-5",
-    "IdDeposito": "DP003"
+    "Ubicacion": "2-3-4",
+    "IdDeposito": "GBAS1"
   },
   {
     "Cantidad": 40,
-    "Ubicacion": "6-2-1",
-    "IdDeposito": "DP004"
+    "Ubicacion": "3-4-1",
+    "IdDeposito": "GBAS2"
   },
   {
     "Cantidad": 120,
-    "Ubicacion": "6-2-3",
-    "IdDeposito": "DP001"
+    "Ubicacion": "3-1-5",
+    "IdDeposito": "GBAN1"
   },
   {
     "Cantidad": 5,
-    "Ubicacion": "7-1-1",
-    "IdDeposito": "DP002"
+    "Ubicacion": "1-2-2",
+    "IdDeposito": "GBAN2"
   },
   {
     "Cantidad": 100,
     "Ubicacion": "8-1-2",
-    "IdDeposito": "DP003"
+    "IdDeposito": "GBAS1"
   },
   {
     "Cantidad": 150,
     "Ubicacion": "8-1-3",
-    "IdDeposito": "DP004"
+    "IdDeposito": "GBAS2"
   },
   {
     "Cantidad": 200,
     "Ubicacion": "9-1-1",
-    "IdDeposito": "DP001"
+    "IdDeposito": "GBAN1"
   },
   {
     "Cantidad": 80,
     "Ubicacion": "9-1-2",
-    "IdDeposito": "DP002"
+    "IdDeposito": "GBAN2"
   },
   {
     "Cantidad": 500,
     "Ubicacion": "10-1-2",
-    "IdDeposito": "DP003"
-  }
-]
+    "IdDeposito": "GBAS1"
+  },
+    {
+      "Cantidad": 30,
+      "Ubicacion": "1-2-4",
+      "IdDeposito": "GBAN1"
+    },
+    {
+      "Cantidad": 40,
+      "Ubicacion": "2-3-1",
+      "IdDeposito": "GBAN2"
+    },
+    {
+      "Cantidad": 50,
+      "Ubicacion": "2-3-4",
+      "IdDeposito": "GBAS1"
+    },
+    {
+      "Cantidad": 100,
+      "Ubicacion": "2-4-2",
+      "IdDeposito": "GBAS2"
+    },
+    {
+      "Cantidad": 15,
+      "Ubicacion": "3-1-5",
+      "IdDeposito": "GBAN1"
+    },
+    {
+      "Cantidad": 50,
+      "Ubicacion": "3-1-6",
+      "IdDeposito": "GBAN2"
+    },
+    {
+      "Cantidad": 100,
+      "Ubicacion": "4-2-1",
+      "IdDeposito": "GBAS1"
+    },
+    {
+      "Cantidad": 20,
+      "Ubicacion": "4-3-2",
+      "IdDeposito": "GBAS2"
+    },
+    {
+      "Cantidad": 10,
+      "Ubicacion": "1-5-3",
+      "IdDeposito": "GBAN1"
+    },
+    {
+      "Cantidad": 60,
+      "Ubicacion": "2-3-1",
+      "IdDeposito": "GBAN2"
+    },
+    {
+      "Cantidad": 70,
+      "Ubicacion": "2-3-4",
+      "IdDeposito": "GBAS1"
+    },
+    {
+      "Cantidad": 40,
+      "Ubicacion": "3-4-1",
+      "IdDeposito": "GBAS2"
+    },
+    {
+      "Cantidad": 120,
+      "Ubicacion": "3-1-5",
+      "IdDeposito": "GBAN1"
+    },
+    {
+      "Cantidad": 5,
+      "Ubicacion": "1-2-2",
+      "IdDeposito": "GBAN2"
+    },
+    {
+      "Cantidad": 100,
+      "Ubicacion": "8-1-2",
+      "IdDeposito": "GBAS1"
+    },
+    {
+      "Cantidad": 150,
+      "Ubicacion": "8-1-3",
+      "IdDeposito": "GBAS2"
+    },
+    {
+      "Cantidad": 200,
+      "Ubicacion": "9-1-1",
+      "IdDeposito": "GBAN1"
+    },
+    {
+      "Cantidad": 80,
+      "Ubicacion": "9-1-2",
+      "IdDeposito": "GBAN2"
+    },
+    {
+      "Cantidad": 500,
+      "Ubicacion": "10-1-2",
+      "IdDeposito": "GBAS1"
+    },
+    {
+      "Cantidad": 100,
+      "Ubicacion": "2-1-5",
+      "IdDeposito": "GBAN1"
+    },
+    {
+      "Cantidad": 60,
+      "Ubicacion": "3-4-1",
+      "IdDeposito": "GBAN2"
+    },
+    {
+      "Cantidad": 150,
+      "Ubicacion": "1-2-2",
+      "IdDeposito": "GBAS1"
+    },
+    {
+      "Cantidad": 200,
+      "Ubicacion": "4-2-1",
+      "IdDeposito": "GBAS2"
+    },
+    {
+      "Cantidad": 90,
+      "Ubicacion": "2-1-5",
+      "IdDeposito": "GBAN2"
+    }
+  ]
+

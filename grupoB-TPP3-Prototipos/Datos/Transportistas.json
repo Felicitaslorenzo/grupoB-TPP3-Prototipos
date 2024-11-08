@@ -1,0 +1,117 @@
+[
+  {
+    "IdCliente": "CL001",
+    "IdTransportista": "TR001",
+    "NombreTransportista": "Transportista 1"
+  },
+  {
+    "IdCliente": "CL001",
+    "IdTransportista": "TR002",
+    "NombreTransportista": "Transportista 2"
+  },
+  {
+    "IdCliente": "CL001",
+    "IdTransportista": "TR003",
+    "NombreTransportista": "Transportista 3"
+  },
+  {
+    "IdCliente": "CL002",
+    "IdTransportista": "TR004",
+    "NombreTransportista": "Transportista 4"
+  },
+  {
+    "IdCliente": "CL002",
+    "IdTransportista": "TR005",
+    "NombreTransportista": "Transportista 5"
+  },
+  {
+    "IdCliente": "CL003",
+    "IdTransportista": "TR006",
+    "NombreTransportista": "Transportista 6"
+  },
+  {
+    "IdCliente": "CL003",
+    "IdTransportista": "TR007",
+    "NombreTransportista": "Transportista 7"
+  },
+  {
+    "IdCliente": "CL004",
+    "IdTransportista": "TR008",
+    "NombreTransportista": "Transportista 8"
+  },
+  {
+    "IdCliente": "CL004",
+    "IdTransportista": "TR009",
+    "NombreTransportista": "Transportista 9"
+  },
+  {
+    "IdCliente": "CL004",
+    "IdTransportista": "TR010",
+    "NombreTransportista": "Transportista 10"
+  },
+  {
+    "IdCliente": "CL004",
+    "IdTransportista": "TR011",
+    "NombreTransportista": "Transportista 11"
+  },
+  {
+    "IdCliente": "CL005",
+    "IdTransportista": "TR012",
+    "NombreTransportista": "Transportista 12"
+  },
+  {
+    "IdCliente": "CL005",
+    "IdTransportista": "TR013",
+    "NombreTransportista": "Transportista 13"
+  },
+  {
+    "IdCliente": "CL006",
+    "IdTransportista": "TR014",
+    "NombreTransportista": "Transportista 14"
+  },
+  {
+    "IdCliente": "CL006",
+    "IdTransportista": "TR015",
+    "NombreTransportista": "Transportista 15"
+  },
+  {
+    "IdCliente": "CL007",
+    "IdTransportista": "TR016",
+    "NombreTransportista": "Transportista 16"
+  },
+  {
+    "IdCliente": "CL007",
+    "IdTransportista": "TR017",
+    "NombreTransportista": "Transportista 17"
+  },
+  {
+    "IdCliente": "CL008",
+    "IdTransportista": "TR018",
+    "NombreTransportista": "Transportista 18"
+  },
+  {
+    "IdCliente": "CL008",
+    "IdTransportista": "TR019",
+    "NombreTransportista": "Transportista 19"
+  },
+  {
+    "IdCliente": "CL009",
+    "IdTransportista": "TR020",
+    "NombreTransportista": "Transportista 20"
+  },
+  {
+    "IdCliente": "CL009",
+    "IdTransportista": "TR021",
+    "NombreTransportista": "Transportista 21"
+  },
+  {
+    "IdCliente": "CL010",
+    "IdTransportista": "TR022",
+    "NombreTransportista": "Transportista 22"
+  },
+  {
+    "IdCliente": "CL010",
+    "IdTransportista": "TR023",
+    "NombreTransportista": "Transportista 23"
+  }
+]

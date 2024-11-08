@@ -1,45 +1,42 @@
 [
   {
     "IdOrdenEntrega": "OE001",
-    "FechaEntrega": "2024-09-30T00:00:00",
+    "FechaEntrega": "2024-10-08T00:00:00",
     "OrdenesPreparacion": [
-      "OP001",
-      "OP002",
-      "OP003"
+      "OP021",
+      "OP022",
+      "OP023"
     ]
   },
   {
     "IdOrdenEntrega": "OE002",
-    "FechaEntrega": "2024-09-25T00:00:00",
+    "FechaEntrega": "2024-10-22T00:00:00",
     "OrdenesPreparacion": [
-      "OP004",
-      "OP005"
+      "OP024",
+      "OP025"
     ]
   },
   {
     "IdOrdenEntrega": "OE003",
-    "FechaEntrega": "2024-10-05T00:00:00",
+    "FechaEntrega": "2024-10-25T00:00:00",
     "OrdenesPreparacion": [
-      "OP006",
-      "OP007",
-      "OP008"
+      "OP026",
+      "OP027"
     ]
   },
   {
     "IdOrdenEntrega": "OE004",
-    "FechaEntrega": "2024-10-07T00:00:00",
+    "FechaEntrega": "2024-10-24T00:00:00",
     "OrdenesPreparacion": [
-      "OP009",
-      "OP010"
+      "OP028",
+      "OP029"
     ]
   },
   {
     "IdOrdenEntrega": "OE005",
-    "FechaEntrega": "2024-10-10T00:00:00",
+    "FechaEntrega": "2024-11-02T00:00:00",
     "OrdenesPreparacion": [
-      "OP011",
-      "OP012",
-      "OP013"
+      "OP030"
     ]
   }
 ]
