@@ -11,45 +11,49 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
     {
         public bool IsConfirming { get; set; } = false;
 
-        public List<OrdenSeleccion> OrdenesSeleccionadas()
+        public List<OrdenSeleccion> OrdenesSeleccionadas
         {
-            // Lista que contendrá las ordenes seleccionadas
-            var listarOrdenesSeleccion = new List<OrdenSeleccion>();
-
-            // Recorrer todas las OrdenesSeleccion
-            foreach (var ordenEntidad in OrdenSeleccionAlmacen.OrdenesSeleccion)
+            get
             {
-                var ordenModelo = new OrdenSeleccion
+                // Lista que contendrá las ordenes seleccionadas
+                var listarOrdenesSeleccion = new List<OrdenSeleccion>();
+
+                // Recorrer todas las OrdenesSeleccion
+                foreach (var ordenEntidad in OrdenSeleccionAlmacen.OrdenesSeleccion)
                 {
-                    IdOrdenSeleccion = ordenEntidad.IdOrdenSeleccion // Asignación correcta para OrdenSeleccion
-                };
-
-                // Buscar las OrdenesPreparacion asociadas con la OrdenSeleccion actual
-                var ordenesPreparacionRelacionadas = OrdenPreparacionAlmacen.OrdenesPreparacion
-                    .Where(orden => ordenEntidad.OrdenesPreparacion.Contains(orden.IdOrdenPreparacion.ToString())) // Comparar si el IdOrdenPreparacion está en la lista de strings
-                    .Select(ordenEntidad2 => new OrdenPreparacion
+                    var ordenModelo = new OrdenSeleccion
                     {
-                        IdOrden = ordenEntidad2.IdOrdenPreparacion,
-                        Cliente = ClienteAlmacen.Clientes.First(c => c.IdCliente == ordenEntidad2.IdCliente).NombreCliente,
-                        FechaEmision = ordenEntidad2.FechaEmision,
-                        FechaDespacho = ordenEntidad2.FechaEntrega,
-                        Producto = ordenEntidad2.Detalle.Select(detalle => new Producto
+                        IdOrdenSeleccion = ordenEntidad.IdOrdenSeleccion // Asignación correcta para OrdenSeleccion
+                    };
+
+                    // Buscar las OrdenesPreparacion asociadas con la OrdenSeleccion actual
+                    var ordenesPreparacionRelacionadas = OrdenPreparacionAlmacen.OrdenesPreparacion
+                        .Where(orden => ordenEntidad.OrdenesPreparacion.Contains(orden.IdOrdenPreparacion.ToString())) // Comparar si el IdOrdenPreparacion está en la lista de strings
+                        .Select(ordenEntidad2 => new OrdenPreparacion
                         {
-                            DescripcionProducto = ProductoAlmacen.Productos.First(pr => pr.SKUProducto == detalle.SKUProducto).DescripcionProducto,
-                            Cantidad = detalle.Cantidad
-                        }).ToList()
-                    }).ToList();
+                            IdOrden = ordenEntidad2.IdOrdenPreparacion,
+                            Cliente = ClienteAlmacen.Clientes.First(c => c.IdCliente == ordenEntidad2.IdCliente).NombreCliente,
+                            FechaEmision = ordenEntidad2.FechaEmision,
+                            FechaDespacho = ordenEntidad2.FechaEntrega,
+                            Producto = ordenEntidad2.Detalle.Select(detalle => new Producto
+                            {
+                                DescripcionProducto = ProductoAlmacen.Productos.First(pr => pr.SKUProducto == detalle.SKUProducto).DescripcionProducto,
+                                Cantidad = detalle.Cantidad,
+                                // Ubicacion = InventarioMercaderiaAlmacen.Ubicacion
 
-                // Asociar las ordenes de preparación a la orden de selección
-                ordenModelo.OrdenesPreparacion = ordenesPreparacionRelacionadas;
+                            }).ToList()
+                        }).ToList();
 
-                // Agregar el modelo de la orden seleccionada a la lista
-                listarOrdenesSeleccion.Add(ordenModelo);
+                    // Asociar las ordenes de preparación a la orden de selección
+                    ordenModelo.OrdenesPreparacion = ordenesPreparacionRelacionadas;
+
+                    // Agregar el modelo de la orden seleccionada a la lista
+                    listarOrdenesSeleccion.Add(ordenModelo);
+                }
+
+                // Devolver la lista de ordenes seleccionadas con sus respectivas ordenes de preparación
+                return listarOrdenesSeleccion;
             }
-
-            // Devolver la lista de ordenes seleccionadas con sus respectivas ordenes de preparación
-            return listarOrdenesSeleccion;
-
 
             /*
             new OrdenSeleccion { IdOrdenSeleccion = "OS001",

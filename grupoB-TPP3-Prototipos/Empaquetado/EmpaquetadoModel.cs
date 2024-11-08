@@ -1,4 +1,5 @@
-﻿using grupoB_TPP3_Prototipos.DespacharOrdenEntrega;
+﻿using grupoB_TPP3_Prototipos.Almacenes;
+using grupoB_TPP3_Prototipos.DespacharOrdenEntrega;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,6 +49,37 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
         // Mantiene el método ya existente
         public List<OrdenPreparacion> ObtenerOrdenesPreparacion()
         {
+            // Lista que contendrá las ordenes de preparación
+            var listarOrdenesEmpaquetado = new List<OrdenPreparacion>();
+
+            // Recorrer todas las OrdenesPreparacion
+            foreach (var ordenEntidad in OrdenPreparacionAlmacen.OrdenesPreparacion)
+            {
+                var ordenModelo = new OrdenPreparacion
+                {
+                    IdOrden = ordenEntidad.IdOrdenPreparacion,
+                    // Crear la lista de productos
+                    Producto = new List<Producto>()
+                };
+
+                // Recorrer los detalles de la orden
+                foreach (var detalle in ordenEntidad.Detalle)
+                {
+                    // Agregar los productos a la lista
+                    ordenModelo.Producto.Add(new Producto
+                    {
+                        Cantidad = detalle.Cantidad,
+                        DescripcionProducto = detalle.DescripcionProducto
+                    });
+                }
+
+                // Agregar el modelo de la orden de preparación a la lista
+                listarOrdenesEmpaquetado.Add(ordenModelo);
+            }
+
+            // Devolver la lista de ordenes de preparación empaquetadas
+            return listarOrdenesEmpaquetado;
+            /*
             return new List<OrdenPreparacion>
             {
                 new OrdenPreparacion
@@ -120,8 +152,8 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                         new Producto { DescripcionProducto = "Calzado", Cantidad = 800 },
                         new Producto { DescripcionProducto = "Accesorio", Cantidad = 2000 }
                     }
-                }
-            };
+                } */
+        } 
         }
     }
-}
+
