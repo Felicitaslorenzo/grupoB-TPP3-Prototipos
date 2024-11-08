@@ -17,20 +17,43 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
 
                 foreach (var ordenEntidad in OrdenPreparacionAlmacen.OrdenesPreparacion)
                 {
+
                     var ordenModelo = new OrdenPreparacion
                     {
                         IdCliente = ordenEntidad.IdCliente,
                         IdOrden = ordenEntidad.IdOrdenPreparacion,
+                        Nombre = ClienteAlmacen.Clientes.First(c => c.IdCliente == ordenEntidad.IdCliente).NombreCliente,
                         Prioridad = ordenEntidad.Prioridad.ToString(),
                         Estado = ordenEntidad.Estado.ToString(),
                         FechaEmision = ordenEntidad.FechaEmision,
-                        //FechaEntrega = ordenEntidad.FechaEntrega.ToString(), // No tenemos fecha de entrega en la clase.
-                        /*Producto = ordenEntidad.Productos.Select(p => new Producto
+                        FechaEstado = ordenEntidad.FechaEntrega, // No tenemos fecha de entrega en la clase.
+                        Producto = ordenEntidad.Detalle.Select(detalle => new Producto
                         {
-                            DescripcionProducto = p.DescripcionProducto,
-                            Cantidad = p.Cantidad
-                        }).ToList()*/
+                            DescripcionProducto = ProductoAlmacen.Productos.First(pr => pr.SKUProducto == detalle.SKUProducto).DescripcionProducto,
+                            Cantidad = detalle.Cantidad
+                        }).ToList()
                     };
+
+
+                    var producto1 = ProductoAlmacen.Productos.Where(p => p.IdCliente == "1").Select(p => new Producto
+                    {
+
+                    }).ToList();
+
+                    /*
+                    ordenModelo.Producto = new List<Producto>();
+
+                    foreach(var detalleOrden in ordenEntidad.Detalle)
+                    {                        
+                        var productoEntidad = ProductoAlmacen.Productos.First(p => p.SKUProducto == detalleOrden.SKUProducto);
+
+                        var productoModelo = new Producto();
+                        productoModelo.IDProducto = productoEntidad.SKUProducto;
+                        productoModelo.DescripcionProducto = productoEntidad.DescripcionProducto;
+                        productoModelo.Cantidad = detalleOrden.Cantidad;
+
+                        ordenModelo.Producto.Add(productoModelo);
+                    }*/
 
                     listarOrdenes.Add(ordenModelo);
                 }
@@ -38,6 +61,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                 return listarOrdenes;
             }
         }
+
+
         /*public List<OrdenPreparacionEnt> FiltrarOrdenes(DateTime fechaEmisionDesde, DateTime fechaEmisionHasta, string prioridad, string idCliente)
         {
             return ObtenerOrdenesPreparacion().Where(orden =>

@@ -1,4 +1,5 @@
-﻿using grupoB_TPP3_Prototipos.ListarOrdenPreparacion;
+﻿using grupoB_TPP3_Prototipos.Almacenes;
+using grupoB_TPP3_Prototipos.ListarOrdenPreparacion;
 using System;
 using System.Collections.Generic;
 using System.Drawing.Text;
@@ -13,34 +14,15 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
     internal class EmitirOrdenPreparacionModel
     {
         public List<OrdenPreparacion> ordenes = new List<OrdenPreparacion>
-{
-    new OrdenPreparacion
-    {
-        Productos = new List<Producto>
         {
-            new Producto { IDProducto = "SKU001", DescripcionProducto = "Ropa" },
-            new Producto { IDProducto = "SKU002", DescripcionProducto = "Mueble" },
-            new Producto { IDProducto = "SKU003", DescripcionProducto = "Electrodomestico" },
-            new Producto { IDProducto = "SKU004", DescripcionProducto = "Ladrillos" },
-            new Producto { IDProducto = "SKU005", DescripcionProducto = "Cemento" },
-            new Producto { IDProducto = "SKU006", DescripcionProducto = "Herramienta" },
-            new Producto { IDProducto = "SKU007", DescripcionProducto = "Articulo de decoración" },
-            new Producto { IDProducto = "SKU008", DescripcionProducto = "Electrodoméstico pequeño" },
-            new Producto { IDProducto = "SKU009", DescripcionProducto = "Cocina" },
-            new Producto { IDProducto = "SKU010", DescripcionProducto = "Metales" },
-            new Producto { IDProducto = "SKU011", DescripcionProducto = "Producto farmacéutico" },
-            new Producto { IDProducto = "SKU012", DescripcionProducto = "Inventario de lujo" },
-            new Producto { IDProducto = "SKU013", DescripcionProducto = "Material sensible" },
-            new Producto { IDProducto = "SKU014", DescripcionProducto = "Dispositivo electrónico" },
-            new Producto { IDProducto = "SKU015", DescripcionProducto = "Máquinas" },
-            new Producto { IDProducto = "SKU016", DescripcionProducto = "Muebles" },
-            new Producto { IDProducto = "SKU017", DescripcionProducto = "Herramienta industrial" },
-            new Producto { IDProducto = "SKU018", DescripcionProducto = "Calzado" },
-            new Producto { IDProducto = "SKU019", DescripcionProducto = "Accesorio" },
-            new Producto { IDProducto = "SKU020", DescripcionProducto = "Juguete" }
-        }
-    }
-};
+            new OrdenPreparacion
+            {
+                Productos = ProductoAlmacen.Productos.Select(p => new Producto
+                {
+                    IDProducto = p.SKUProducto, DescripcionProducto = p.DescripcionProducto
+                }).ToList()
+            }
+        };
 
         public (bool, string) BuscarProductoEnOrdenes(string idProducto)
         {
@@ -50,11 +32,11 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 {
                     if (producto.IDProducto == idProducto)
                     {
-                        return (true, producto.DescripcionProducto); 
+                        return (true, producto.DescripcionProducto);
                     }
                 }
             }
-            return (false, string.Empty); 
+            return (false, string.Empty);
         }
 
         public string GenerarNuevaOrden(string idCliente, string prioridad, string transportista, ListView productosListView)
@@ -96,7 +78,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private string GenerarNuevoIDOrden()
         {
-            int nuevoId = 1; 
+            int nuevoId = 1;
 
             if (ordenes.Count > 0)
             {
@@ -110,12 +92,12 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 // Verificar si hay IDs existentes y calcular el nuevo ID
                 if (idsExistentes.Count > 0)
                 {
-                    nuevoId = idsExistentes.Max() + 1; 
+                    nuevoId = idsExistentes.Max() + 1;
                 }
             }
 
-            
-            return "OP" + nuevoId.ToString("D3"); 
+
+            return "OP" + nuevoId.ToString("D3");
         }
 
         internal void CargarCliente(ComboBox IdClienteCombo, ComboBox TransportistaCombo, ComboBox ProductosCombo)
@@ -136,7 +118,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 if (IdClienteCombo.SelectedItem is Cliente selectedCliente)
                 {
                     // Cargar transportistas y productos al seleccionar un cliente
-                    
+
                     CargarTransportistas(selectedCliente, TransportistaCombo);
                     CargarProductos(selectedCliente, ProductosCombo);
                 }
@@ -160,7 +142,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         internal void CargarProductos(Cliente cliente, ComboBox ProductosCombo)
         {
-            
+
             ProductosCombo.Items.Clear();
 
             // Carga los productos devueltos por la función BuscarProductoCliente
@@ -175,92 +157,12 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         internal List<Producto> BuscarProductoCliente(Cliente cliente)
         {
-            switch (cliente.IdCliente)
-            {
-                case "CL001":
-                    return new List<Producto>
-            {
-                new Producto { IDProducto = "SKU001", DescripcionProducto = "Ropa" },
-                new Producto { IDProducto = "SKU002", DescripcionProducto = "Mueble" },
-                new Producto { IDProducto = "SKU003", DescripcionProducto = "Electrodomestico" },
-                new Producto { IDProducto = "SKU007", DescripcionProducto = "Articulo de decoración" },
-            };
-
-                case "CL002":
-                    return new List<Producto>
-            {
-                new Producto { IDProducto = "SKU001", DescripcionProducto = "Ropa" },
-                new Producto { IDProducto = "SKU004", DescripcionProducto = "Ladrillos" },
-                new Producto { IDProducto = "SKU005", DescripcionProducto = "Cemento" }
-            };
-
-                case "CL003":
-                    return new List<Producto>
-            {
-                new Producto { IDProducto = "SKU007", DescripcionProducto = "Articulo de decoración" },
-                new Producto { IDProducto = "SKU008", DescripcionProducto = "Ladrillos" },
-                new Producto { IDProducto = "SKU009", DescripcionProducto = "Cemento" }
-            };
-
-                case "CL004":
-                    return new List<Producto>
-            {
-                new Producto { IDProducto = "SKU007", DescripcionProducto = "Articulo de decoración" },
-                new Producto { IDProducto = "SKU010", DescripcionProducto = "Metales" },
-                new Producto { IDProducto = "SKU011", DescripcionProducto = "Producto farmacéutico" }
-            };
-
-                case "CL005":
-                    return new List<Producto>
-            {
-                new Producto { IDProducto = "SKU011", DescripcionProducto = "Producto farmacéutico" },
-                new Producto { IDProducto = "SKU012", DescripcionProducto = "Inventario de lujo" },
-                new Producto { IDProducto = "SKU013", DescripcionProducto = "Material sensible" }
-            };
-
-                case "CL006":
-                    return new List<Producto>
-            {
-                new Producto { IDProducto = "SKU007", DescripcionProducto = "Articulos de decoración" },
-                new Producto { IDProducto = "SKU010", DescripcionProducto = "Metales" },
-                new Producto { IDProducto = "SKU014", DescripcionProducto = "Dispositivo electronico" }
-            };
-
-                case "CL007":
-                    return new List<Producto>
-            {
-                new Producto { IDProducto = "SKU007", DescripcionProducto = "Articulos de decoración" },
-                new Producto { IDProducto = "SKU015", DescripcionProducto = "Maquinas" },
-                new Producto { IDProducto = "SKU016", DescripcionProducto = "Muebles" }
-            };
-
-                case "CL008":
-                    return new List<Producto>
-            {
-                new Producto { IDProducto = "SKU017", DescripcionProducto = "Herramienta industrial" },
-                new Producto { IDProducto = "SKU018", DescripcionProducto = "Calzado" },
-                new Producto { IDProducto = "SKU019", DescripcionProducto = "Accesorio" }
-            };
-
-                case "CL009":
-                    return new List<Producto>
-            {
-                new Producto { IDProducto = "SKU015", DescripcionProducto = "Maquinas" },
-                new Producto { IDProducto = "SKU016", DescripcionProducto = "Muebles" }
-            };
-
-                case "CL010":
-                    return new List<Producto>
-            {
-                new Producto { IDProducto = "SKU007", DescripcionProducto = "Articulos de decoración" },
-                new Producto { IDProducto = "SKU018", DescripcionProducto = "Calzado" },
-                new Producto { IDProducto = "SKU019", DescripcionProducto = "Accesorio" },
-                new Producto { IDProducto = "SKU014", DescripcionProducto = "Dispositivo electronico" }
-            };
-
-                default:
-                    return new List<Producto>();
-            }
+            return ProductoAlmacen.Productos.Where(productoEntidad => productoEntidad.IdCliente == cliente.IdCliente)
+                .Select(producto => new Producto
+                {
+                    IDProducto = producto.SKUProducto,
+                    DescripcionProducto = producto.DescripcionProducto
+                }).ToList();
         }
 
         public List<Cliente> ObtenerCliente()
