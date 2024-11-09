@@ -1,20 +1,20 @@
 [
   {
     "IdOrdenPreparacion": "OP001",
-    "IdCliente": "C123",
+    "IdCliente": "CL001",
     "FechaEmision": "2024-11-01T00:00:00",
     "FechaEntrega": "2024-11-08T00:00:00",
-    "Estado": "Pendiente",
-    "Prioridad": "ConPrioridadDeEntrega",
+    "Estado": 0,
+    "Prioridad": 0,
     "IdTransportista": "T001",
     "Detalle": [
       {
-        "SKUProducto": "P001",
+        "SKUProducto": "SKU001",
         "DescripcionProducto": "Producto 1",
         "Cantidad": 10
       },
       {
-        "SKUProducto": "P002",
+        "SKUProducto": "SKU002",
         "DescripcionProducto": "Producto 2",
         "Cantidad": 5
       }

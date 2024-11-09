@@ -13,35 +13,25 @@ namespace grupoB_TPP3_Prototipos.Almacenes
     {
 
         private static List<OrdenPreparacionEnt> ordenespreparacion = new List<OrdenPreparacionEnt>();
-        static OrdenPreparacionAlmacen()
-        {
-            Leer(); // Cargar datos al inicializar
-        }
 
         public static IReadOnlyCollection<OrdenPreparacionEnt> OrdenesPreparacion => ordenespreparacion.AsReadOnly();
 
         public static void Grabar()
-        {            
+        {
             var datos = JsonSerializer.Serialize(ordenespreparacion);
             File.WriteAllText(@"Datos\OrdenesPreparacion.json", datos);
         }
 
         public static void Leer()
         {
-            if(!File.Exists(@"Datos\OrdenesPreparacion.json"))
+            if (!File.Exists(@"Datos\OrdenesPreparacion.json"))
             {
                 return;
             }
             var datos = File.ReadAllText(@"Datos\OrdenesPreparacion.json");
 
-            var opciones = new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-                Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) }
-            };
-
             // Deserializa el JSON usando las opciones configuradas
-            ordenespreparacion = JsonSerializer.Deserialize<List<OrdenPreparacionEnt>>(datos, opciones)!;
+            ordenespreparacion = JsonSerializer.Deserialize<List<OrdenPreparacionEnt>>(datos)!;
         }
     }
 }

@@ -1,5 +1,7 @@
 using grupoB_TPP3_Prototipos.Almacenes;
 using grupoB_TPP3_Prototipos.ListarOrdenPreparacion;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace grupoB_TPP3_Prototipos
 {

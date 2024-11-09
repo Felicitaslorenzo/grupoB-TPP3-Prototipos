@@ -2,10 +2,10 @@
 
 public enum EstadoOrdenPrepEnum
 {
-    Pendiente,
-    EnSeleccion,
-    Seleccionada,
-    Empaquetada,
-    Preparada,
-    Despachada
+    Pendiente,          //=0
+    EnSeleccion,        //=1
+    Seleccionada,       //=2
+    Empaquetada,        //=3
+    Preparada,          //=4
+    Despachada          //=5
 }

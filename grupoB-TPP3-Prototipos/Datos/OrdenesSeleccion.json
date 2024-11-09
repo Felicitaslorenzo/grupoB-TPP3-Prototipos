@@ -2,7 +2,7 @@
   [
     {
       "IdOrdenSeleccion": "OS001",
-      "Estado": "Preparada",
+      "Estado": 4,
       "FechaEstado": "2024-10-11T00:00:00",
       "FechaEmision": "2024-10-11T00:00:00",
       "OrdenesPreparacion": [
@@ -12,7 +12,7 @@
     },
     {
       "IdOrdenSeleccion": "OS002",
-      "Estado": "Preparada",
+      "Estado": 4,
       "FechaEstado": "2024-10-15T00:00:00",
       "FechaEmision": "2024-10-15T00:00:00",
       "OrdenesPreparacion": [
@@ -23,7 +23,7 @@
     },
     {
       "IdOrdenSeleccion": "OS003",
-      "Estado": "Despachada",
+      "Estado": 5,
       "FechaEstado": "2024-10-21T00:00:00",
       "FechaEmision": "2024-10-21T00:00:00",
       "OrdenesPreparacion": [
@@ -33,7 +33,7 @@
     },
     {
       "IdOrdenSeleccion": "OS004",
-      "Estado": "Despachada",
+      "Estado": 5,
       "FechaEstado": "2024-10-23T00:00:00",
       "FechaEmision": "2024-10-23T00:00:00",
       "OrdenesPreparacion": [
