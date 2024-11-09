@@ -26,7 +26,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                         Prioridad = ordenEntidad.Prioridad.ToString(),
                         Estado = ordenEntidad.Estado.ToString(),
                         FechaEmision = ordenEntidad.FechaEmision,
-                        FechaEstado = ordenEntidad.FechaEntrega, // No tenemos fecha de entrega en la clase.
+                        FechaEstado = ordenEntidad.FechaEntrega,
                         Producto = ordenEntidad.Detalle.Select(detalle => new Producto
                         {
                             DescripcionProducto = ProductoAlmacen.Productos.First(pr => pr.SKUProducto == detalle.SKUProducto).DescripcionProducto,

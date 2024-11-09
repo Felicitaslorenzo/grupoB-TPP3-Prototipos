@@ -5,6 +5,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace grupoB_TPP3_Prototipos.Almacenes
 {
@@ -12,6 +13,10 @@ namespace grupoB_TPP3_Prototipos.Almacenes
     {
 
         private static List<OrdenPreparacionEnt> ordenespreparacion = new List<OrdenPreparacionEnt>();
+        static OrdenPreparacionAlmacen()
+        {
+            Leer(); // Cargar datos al inicializar
+        }
 
         public static IReadOnlyCollection<OrdenPreparacionEnt> OrdenesPreparacion => ordenespreparacion.AsReadOnly();
 
@@ -29,8 +34,14 @@ namespace grupoB_TPP3_Prototipos.Almacenes
             }
             var datos = File.ReadAllText("OrdenesPreparacion.json");
 
-            ordenespreparacion = JsonSerializer.Deserialize<List<OrdenPreparacionEnt>>(datos)!;
+            var opciones = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) }
+            };
 
+            // Deserializa el JSON usando las opciones configuradas
+            ordenespreparacion = JsonSerializer.Deserialize<List<OrdenPreparacionEnt>>(datos, opciones)!;
         }
     }
 }
