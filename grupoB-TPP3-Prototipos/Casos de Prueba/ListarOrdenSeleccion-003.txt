@@ -1,0 +1,17 @@
+﻿CASO 3 - "VALIDACIONES" - LISTAR ÓRDENES DE SELECCIÓN 003
+
+- En el menú principal, presionar botón "Órdenes de Selección" 
+- [Se abre el menú "Órdenes de selección"]
+- Presionar botón "Listar Órdenes de Selección" 
+- [Se abre el form "Listar Órdenes de selección"]
+- Presionar el botón "Buscar"
+- Mensaje: “No se ha  seleccionado ningún filtro"
+- En el desplegable "ID Orden Selección"", seleccionar ......
+- Presionar el botón "Buscar"
+- [Devuelve una lista de órdenes de selección filtrada]
+- Seleccionar ID Orden Seleccion .... de la lista
+- [Devuelve una lista de órdenes de preparación]
+- Seleccionar ID Orden Preparación .... de la lista
+- [Devuelve una lista de productos]
+- Presionar el botón "Volver"
+- [Vuelve al menú principal]

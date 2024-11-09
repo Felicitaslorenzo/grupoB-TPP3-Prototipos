@@ -1,0 +1,13 @@
+﻿CASO 1 - "CAMINO FELIZ" - LISTAR ÓRDENES DE SELECCIÓN 001
+
+- En el menú principal, presionar botón "Órdenes de Selección" 
+- [Se abre el menú "Órdenes de selección"]
+- Presionar botón "Listar Órdenes de Selección" 
+- [Se abre el form "Listar Órdenes de selección"]
+- Seleccionar ID Orden Seleccion .... de la lista
+- [Devuelve una lista de órdenes de preparación]
+- Seleccionar ID Orden Preparación .... de la lista
+- [Devuelve una lista de productos]
+- Presionar el botón "Volver"
+- [Vuelve al menú principal]
+
