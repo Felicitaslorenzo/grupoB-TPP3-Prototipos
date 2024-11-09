@@ -3,7 +3,7 @@
 1 - Menu principal => Seleccionar "Ordenes de Entrega" => Abre menu de Ordenes de Entrega
 2 - Menu Ordenes de Entrega => seleccionar "Listar Ordenes de Entrega" => Abre formulario de Listar Ordenes de Entrega
 3 - Formulario Listar Ordenes de Entrega => Debajo de los filtros aparece listado de las ordenes de entrega disponibles
-4 - Filtro ID Orden => Seleccionar OS001
+4 - Filtro ID Orden => Seleccionar OE001
 5 - Seleccionar boton "Buscar" => En el listado de abajo aparece solo el detalle de OS001 y desaparecen las otras
 6 - Filtro ID Orden => Seleccionar espacio en blanco
 7 - Filtro Estado => Seleccionar "Despachada" => Seleccionar el boton "Buscar" => Aparece solo el detalle de OS002 y desaparecen las otras

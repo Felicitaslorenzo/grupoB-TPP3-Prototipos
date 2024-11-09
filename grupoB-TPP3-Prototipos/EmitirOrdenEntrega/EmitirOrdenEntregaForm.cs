@@ -22,7 +22,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         // Método para mostrar todas las órdenes de preparación con fecha de entrega actual
         private void MostrarOrdenesActuales()
         {
-            var ordenes = modelo.ObtenerOrdenesPorFechaActual(); // Llamada al método para obtener la lista de órdenes
+            var ordenes = modelo.ObtenerOrdenesPorEstadoPreparada(); // Llamada al método para obtener la lista de órdenes
             if (ordenes.Count > 0) // Verifica si hay alguna orden para mostrar
             {
                 // Limpiar el ListView antes de agregar nuevos elementos
@@ -42,7 +42,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
             }
             else
             {
-                MessageBox.Show("No hay órdenes de preparación para la fecha actual.");
+                MessageBox.Show("No hay órdenes de preparación en estado preparada.");
             }
         }
 

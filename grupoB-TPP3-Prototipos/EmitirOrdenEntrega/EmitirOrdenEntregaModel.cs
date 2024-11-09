@@ -1,4 +1,5 @@
-﻿using System;
+﻿using grupoB_TPP3_Prototipos.Almacenes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,19 +22,27 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
             return ordenesPreparacion;
         }
 
-        public List<OrdenPreparacion> ObtenerOrdenesPorFechaActual()
-        {
-            // Obtener la fecha actual sin la parte de la hora
-            DateTime fechaActual = DateTime.Today;
 
-            // Filtrar todas las órdenes que coinciden con la fecha actual
-            var ordenes = ObtenerOrdenesPreparacion().Where(o => o.FechaEntrega.Date == fechaActual).ToList();
+        //public List<OrdenPreparacion> ObtenerOrdenesPorFechaActual()
+        //{
+        // Obtener la fecha actual sin la parte de la hora
+        //  DateTime fechaActual = DateTime.Today;
+
+        // Filtrar todas las órdenes que coinciden con la fecha actual
+        //  var ordenes = ObtenerOrdenesPreparacion().Where(o => o.FechaEntrega.Date == fechaActual).ToList();
+
+        // Retornar la lista de órdenes encontradas (puede ser una lista vacía si no hay coincidencias)
+        //   return ordenes;
+        //    }
+
+        public List<OrdenPreparacion> ObtenerOrdenesPorEstadoPreparada()
+        {
+            // Filtrar todas las órdenes que están en estado "Preparada"
+            var ordenes = ObtenerOrdenesPreparacion().Where(o => o.Estado == EstadoOrdenPrepEnum.Preparada).ToList();
 
             // Retornar la lista de órdenes encontradas (puede ser una lista vacía si no hay coincidencias)
             return ordenes;
         }
-
-
 
 
         private string GenerarIdOrden()
@@ -60,19 +69,19 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         {
             string idorden = GenerarIdOrden();
 
-            // Obtener las órdenes de preparación para la fecha de hoy
-            var ordenesPreparacionHoy = ObtenerOrdenesPorFechaActual();
+            // Obtener las órdenes de preparación en estado "Preparada"
+            var ordenesPreparacionPreparada = ObtenerOrdenesPorEstadoPreparada();
 
-            if (ordenesPreparacionHoy.Count == 0)
+            if (ordenesPreparacionPreparada.Count == 0)
             {
-                return "No hay órdenes de preparación para la fecha actual.";
+                return "No hay órdenes de preparación en estado preparada.";
             }
 
-            // Crear una nueva orden de entrega con las órdenes de preparación de hoy
+            // Crear una nueva orden de entrega con las órdenes de preparación en estado "Preparada"
             OrdenEntrega ordenNueva = new OrdenEntrega
             {
                 IdOdenEntrega = idorden,
-                OrdenesPreparacion = ordenesPreparacionHoy
+                OrdenesPreparacion = ordenesPreparacionPreparada
             };
 
             // Agregar la nueva orden a la lista de órdenes de entrega
