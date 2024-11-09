@@ -9,6 +9,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
     internal class OrdenEntregaEnt
     {
         public string IdOrdenEntrega { get; set; }
+        public DateTime FechaEmision { get; set; }
         public DateTime FechaEntrega { get; set; }
         public List<string> OrdenesPreparacion { get; } = new();
 

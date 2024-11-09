@@ -50,7 +50,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
                 .ToList();
 
             var estadosOrdenEntrega = ordenesEntrega
-                .Select(o => o.Estado) // Accede a Estado de OrdenEntrega
+                // .Select(o => o.Estado) // Accede a Estado de OrdenEntrega
                 .Distinct()
                 .ToList();
 
@@ -91,8 +91,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
             {
                 var item = new ListViewItem(orden.IdOrdenEntrega);
                 item.SubItems.Add(orden.FechaEmision.ToString("yyyy-MM-dd"));
-                item.SubItems.Add(orden.Estado);
-                item.SubItems.Add(orden.FechaEstado.ToString("yyyy-MM-dd"));
+                // item.SubItems.Add(orden.Estado);
+                item.SubItems.Add(orden.FechaEntrega.ToString("yyyy-MM-dd"));
 
                 ListarOrdenEntregaList.Items.Add(item);
             }
@@ -138,10 +138,10 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
                     orden.OrdenesPreparacion.Any(p => p.IdCliente == idClienteSeleccionado)); // Cambia '=' a '=='
             }
 
-            if (!string.IsNullOrEmpty(EstadoCombo.Text))
+            /* if (!string.IsNullOrEmpty(EstadoCombo.Text))
             {
                 ordenesFiltradas = ordenesFiltradas.Where(orden => orden.Estado == EstadoCombo.Text);
-            }
+            } */
 
 
             if (FechaDesdeOEPicker.Checked && FechaHastaOEPicker.Checked)

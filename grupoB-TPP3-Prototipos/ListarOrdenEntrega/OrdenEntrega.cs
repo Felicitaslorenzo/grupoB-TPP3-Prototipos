@@ -10,9 +10,9 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
     internal class OrdenEntrega
     {
         public string IdOrdenEntrega { get; set; }
-        public string Estado { get; set; }
-        public DateTime FechaEstado { get; set; }
+        // public string Estado { get; set; }
         public DateTime FechaEmision { get; set; }
+        public DateTime FechaEntrega { get; set; }
         public List <OrdenPreparacion> OrdenesPreparacion { get; set; }
     }
 }
