@@ -9,6 +9,6 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
     internal class OrdenSeleccion
     {
         public string IdOrdenSeleccion { get; set; }
-        public List<OrdenPreparacion> OrdenesPreparacion { get; set; }
+        public List<Producto> Producto { get; set; }
     }
 }
