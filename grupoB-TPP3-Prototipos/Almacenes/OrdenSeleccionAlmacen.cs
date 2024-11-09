@@ -18,16 +18,16 @@ namespace grupoB_TPP3_Prototipos.Almacenes
         public static void Grabar()
         {            
             var datos = JsonSerializer.Serialize(ordenesseleccion);
-            File.WriteAllText("OrdenesSeleccion.json",datos);
+            File.WriteAllText(@"Datos\OrdenesSeleccion.json", datos);
         }
 
         public static void Leer()
         {
-            if(!File.Exists(@"OrdenesSeleccion.json"))
+            if(!File.Exists(@"Datos\OrdenesSeleccion.json"))
             {
                 return;
             }
-            var datos = File.ReadAllText("OrdenesSeleccion.json");
+            var datos = File.ReadAllText(@"Datos\OrdenesSeleccion.json");
 
             ordenesseleccion = JsonSerializer.Deserialize<List<OrdenSeleccionEnt>>(datos)!;
 

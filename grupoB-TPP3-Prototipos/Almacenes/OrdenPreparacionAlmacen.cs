@@ -23,16 +23,16 @@ namespace grupoB_TPP3_Prototipos.Almacenes
         public static void Grabar()
         {            
             var datos = JsonSerializer.Serialize(ordenespreparacion);
-            File.WriteAllText("OrdenesPreparacion.json",datos);
+            File.WriteAllText(@"Datos\OrdenesPreparacion.json", datos);
         }
 
         public static void Leer()
         {
-            if(!File.Exists(@"OrdenesPreparacion.json"))
+            if(!File.Exists(@"Datos\OrdenesPreparacion.json"))
             {
                 return;
             }
-            var datos = File.ReadAllText("OrdenesPreparacion.json");
+            var datos = File.ReadAllText(@"Datos\OrdenesPreparacion.json");
 
             var opciones = new JsonSerializerOptions
             {

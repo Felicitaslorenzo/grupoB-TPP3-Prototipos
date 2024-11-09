@@ -16,16 +16,16 @@ namespace grupoB_TPP3_Prototipos.Almacenes
         public static void Grabar()
         {
             var datos = JsonSerializer.Serialize(ubicaciones);
-            File.WriteAllText("Ubicaciones.json", datos);
+            File.WriteAllText(@"Datos\Ubicaciones.json", datos);
         }
 
         public static void Leer()
         {
-            if (!File.Exists(@"Ubicaciones.json"))
+            if (!File.Exists(@"Datos\Ubicaciones.json"))
             {
                 return;
             }
-            var datos = File.ReadAllText("Ubicaciones.json");
+            var datos = File.ReadAllText(@"Datos\Ubicaciones.json");
 
             ubicaciones = JsonSerializer.Deserialize<List<UbicacionEnt>>(datos)!;
 
