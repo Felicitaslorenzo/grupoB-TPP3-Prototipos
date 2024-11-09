@@ -49,10 +49,10 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
                 .Distinct()
                 .ToList();
 
-            var estadosOrdenEntrega = ordenesEntrega
-                // .Select(o => o.Estado) // Accede a Estado de OrdenEntrega
-                .Distinct()
-                .ToList();
+            /* var estadosOrdenEntrega = ordenesEntrega
+             // .Select(o => o.Estado) // Accede a Estado de OrdenEntrega
+               .Distinct()
+                .ToList(); */
 
 
             FechaDesdeOEPicker.Format = DateTimePickerFormat.Custom;
@@ -77,23 +77,33 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
 
             EstadoCombo.Items.Clear();
             EstadoCombo.Items.Add(string.Empty); // Opción vacía usando string.Empty
-            foreach (var estado in estadosOrdenEntrega)
+            /* foreach (var estado in estadosOrdenEntrega)
             {
-                EstadoCombo.Items.Add(estado);
-            }
+               EstadoCombo.Items.Add(estado);
+            } */
         }
 
         private void CargarOrdenesEnListView(IEnumerable<OrdenEntrega> ordenes)
         {
+            // Limpiar el ListView antes de cargar los nuevos datos
             ListarOrdenEntregaList.Items.Clear();
 
+            // Iterar sobre la colección de órdenes y agregar cada una al ListView
             foreach (var orden in ordenes)
             {
+                // Crear un nuevo item con el ID de la orden de entrega
                 var item = new ListViewItem(orden.IdOrdenEntrega);
+
+                // Agregar la fecha de emisión como subitem (asegurándose de formatear la fecha)
                 item.SubItems.Add(orden.FechaEmision.ToString("yyyy-MM-dd"));
-                // item.SubItems.Add(orden.Estado);
+
+                // Agregar la fecha de entrega como subitem (también con formato)
                 item.SubItems.Add(orden.FechaEntrega.ToString("yyyy-MM-dd"));
 
+                // Si deseas agregar más datos, por ejemplo, el Estado (descomentando la siguiente línea):
+                // item.SubItems.Add(orden.Estado);
+
+                // Añadir el item al ListView
                 ListarOrdenEntregaList.Items.Add(item);
             }
         }

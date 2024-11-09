@@ -89,7 +89,7 @@
             // 
             // ListarOrdenEntregaList
             // 
-            ListarOrdenEntregaList.Columns.AddRange(new ColumnHeader[] { IdOrdenEntregaColumna, FechaOEColumna, Estado2Columna, FechaEstadoOEColumna });
+            ListarOrdenEntregaList.Columns.AddRange(new ColumnHeader[] { IdOrdenEntregaColumna, FechaOEColumna, FechaEstadoOEColumna, Estado2Columna });
             ListarOrdenEntregaList.Location = new Point(25, 247);
             ListarOrdenEntregaList.Name = "ListarOrdenEntregaList";
             ListarOrdenEntregaList.Size = new Size(847, 245);
@@ -110,13 +110,11 @@
             // 
             // Estado2Columna
             // 
-            Estado2Columna.DisplayIndex = 3;
             Estado2Columna.Text = "Estado";
             Estado2Columna.Width = 100;
             // 
             // FechaEstadoOEColumna
             // 
-            FechaEstadoOEColumna.DisplayIndex = 2;
             FechaEstadoOEColumna.Text = "Fecha Estado";
             FechaEstadoOEColumna.Width = 170;
             // 
