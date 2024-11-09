@@ -3,9 +3,5 @@
 public enum EstadoOrdenSelEnum
 {
     Pendiente,
-    EnSeleccion,
-    Seleccionada,
-    Empaquetada,
-    Preparada,
-    Despachada
+    Preparada
 }

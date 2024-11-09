@@ -1,50 +1,51 @@
 [
   {
     "IdUbicacion": "1-2-2",
-    "DescripcionUbicacion": "Piso 1, Pasillo 2, Estante 2"
+    "DescripcionUbicacion": "Sector 1, Posición 2, Fila 2"
   },
   {
     "IdUbicacion": "1-2-4",
-    "DescripcionUbicacion": "Piso 1, Pasillo 2, Estante 4"
+    "DescripcionUbicacion": "Sector 1, Posición 2, Fila 4"
   },
   {
     "IdUbicacion": "1-5-3",
-    "DescripcionUbicacion": "Piso 1, Pasillo 5, Estante 3"
+    "DescripcionUbicacion": "Sector 1, Posición 5, Fila 3"
   },
   {
     "IdUbicacion": "2-1-5",
-    "DescripcionUbicacion": "Piso 2, Pasillo 1, Estante 5"
+    "DescripcionUbicacion": "Sector 2, Posición 1, Fila 5"
   },
   {
     "IdUbicacion": "2-3-1",
-    "DescripcionUbicacion": "Piso 2, Pasillo 3, Estante 1"
+    "DescripcionUbicacion": "Sector 2, Posición 3, Fila 1"
   },
   {
     "IdUbicacion": "2-3-4",
-    "DescripcionUbicacion": "Piso 2, Pasillo 3, Estante 4"
+    "DescripcionUbicacion": "Sector 2, Posición 3, Fila 4"
   },
   {
     "IdUbicacion": "2-4-2",
-    "DescripcionUbicacion": "Piso 2, Pasillo 4, Estante 2"
+    "DescripcionUbicacion": "Sector 2, Posición 4, Fila 2"
   },
   {
     "IdUbicacion": "3-1-5",
-    "DescripcionUbicacion": "Piso 3, Pasillo 1, Estante 5"
+    "DescripcionUbicacion": "Sector 3, Posición 1, Fila 5"
   },
   {
     "IdUbicacion": "3-1-6",
-    "DescripcionUbicacion": "Piso 3, Pasillo 1, Estante 6"
+    "DescripcionUbicacion": "Sector 3, Posición 1, Fila 6"
   },
   {
     "IdUbicacion": "3-4-1",
-    "DescripcionUbicacion": "Piso 3, Pasillo 4, Estante 1"
+    "DescripcionUbicacion": "Sector 3, Posición 4, Fila 1"
   },
   {
     "IdUbicacion": "4-2-1",
-    "DescripcionUbicacion": "Piso 4, Pasillo 2, Estante 1"
+    "DescripcionUbicacion": "Sector 4, Posición 2, Fila 1"
   },
   {
     "IdUbicacion": "4-3-2",
-    "DescripcionUbicacion": "Piso 4, Pasillo 3, Estante 2"
+    "DescripcionUbicacion": "Sector 4, Posición 3, Fila 2"
   }
 ]
+
