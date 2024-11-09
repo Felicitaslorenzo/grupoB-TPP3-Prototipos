@@ -58,13 +58,22 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
             IdClienteCombo.Items.Add("");
             foreach (var id in idsClientes)
             {
-                IdClienteCombo.Items.Add(id);
+                if (id != null)
+                {
+                    IdOrdenPreparacionCombo.Items.Add(id); //NO ANDA
+                }
+                else
+                {
+                    // Opcional: registro o mensaje para diagnosticar cuál `id` es nulo
+                    Console.WriteLine("Id nulo encontrado en la lista de Ids de orden de preparación");
+                }
+                //IdClienteCombo.Items.Add(id);
             }
 
             IdOrdenPreparacionCombo.Items.Add("");
             foreach (var id in idsOrdenesPreparacion)
             {
-                IdOrdenPreparacionCombo.Items.Add(id);
+               IdOrdenPreparacionCombo.Items.Add(id);
             }
 
             PrioridadOrdenPreparacionCombo.Items.Add("");
