@@ -20,7 +20,9 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
             InitializeComponent();
             FechaDesdeOSPicker.ValueChanged += FechaDesdeOSPicker_ValueChanged;
             FechaHastaOSPicker.ValueChanged += FechaHastaOSPicker_ValueChanged;
+            ListarOrdenSeleccionList.SelectedIndexChanged += ListarOrdenSeleccionList_SelectedIndexChanged; // Asegúrate de que este evento esté asociado
         }
+
 
         private void FechaDesdeOSPicker_ValueChanged(object? sender, EventArgs e)
         {
@@ -43,6 +45,13 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
             if (string.IsNullOrEmpty(idOrdenSeleccionada) && !FechaDesdeOSPicker.Checked && !FechaHastaOSPicker.Checked)
             {
                 MessageBox.Show("No se ha seleccionado ningún filtro", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validar que la fecha hasta no sea menor que la fecha desde
+            if (FechaDesdeOSPicker.Checked && FechaHastaOSPicker.Checked && fechaHSeleccionada < fechaSeleccionada)
+            {
+                MessageBox.Show("La fecha hasta no puede ser menor que la fecha desde", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -138,8 +147,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
 
         private void ListarOrdenSeleccionList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Limpiar la lista de productos antes de cargar los nuevos (de la orden de preparación)
-            ProductosList.Items.Clear();
+            // Limpiar la lista de órdenes de preparación antes de cargar los nuevos
+            listOrdenPreparacion.Items.Clear();
 
             // Verificar si hay una selección
             if (ListarOrdenSeleccionList.SelectedItems.Count > 0)
@@ -152,10 +161,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
 
                 if (ordenSeleccionada != null)
                 {
-                    // Limpiar la lista de productos antes de cargar los nuevos
-                    listOrdenPreparacion.Items.Clear();
-
-                    // Cargar los productos relacionados a la orden seleccionada
+                    // Cargar las órdenes de preparación relacionadas a la orden seleccionada
                     foreach (var ordenPreparacion in ordenSeleccionada.OrdenesPreparacion)
                     {
                         ListViewItem item = new ListViewItem();
@@ -168,6 +174,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
                 }
             }
         }
+
 
         private void ProductosList_SelectedIndexChanged(object sender, EventArgs e)
         {

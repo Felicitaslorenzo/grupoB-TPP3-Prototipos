@@ -6,6 +6,8 @@
 - [Se abre el form "Listar Órdenes de selección"]
 - Presionar el botón "Buscar"
 - Mensaje: “No se ha  seleccionado ningún filtro"
+- En "Fecha desde", ingresar "09/09/2024" y en "Fecha hasta", ingresar "01/09/2024"
+- Mensaje: “La fecha hasta no puede ser menor que la fecha desde"
 - En el desplegable "ID Orden Selección"", seleccionar ......
 - Presionar el botón "Buscar"
 - [Devuelve una lista de órdenes de selección filtrada]
