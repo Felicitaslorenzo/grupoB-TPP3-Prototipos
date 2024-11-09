@@ -1,1 +1,45 @@
-﻿
+﻿Crear Orden con una sola orden de Preparación
+
+1-	Botón: "Emitir Orden de Selección"
+
+2 - ID Orden Preparación: OP021
+
+3 - Botón: "Buscar"
+
+4 - Órdenes Disponibles:
+
+	OP021 - Cliente XYZ - Fecha: 05/11/2024 - Prioridad: Alta
+
+5 -	Seleccionar Orden de Preparación: OP021
+
+	Productos Disponibles en Orden:
+
+	101 Producto ABC Cantidad: 100 Ubicación: Ubicación 1
+	102 Producto DEF Cantidad: 50 Ubicación: Ubicación 2
+	Seleccionar Producto ID: "101"
+
+	Cantidad: "10"
+
+
+7- Botón: "Agregar Seleccionadas"
+
+8-	Productos en Totales:
+
+	101 Producto ABC Cantidad: 10 Ubicación: Ubicación 1
+
+9 - Botón: "Generar Orden"
+
+10- Mensaje: "Orden generada satisfactoriamente. ID de orden 6. Fecha de emisión: 09/11/2024"
+
+11- Cerrar el sistema
+
+12- Verificar en OrdenSeleccion.Json, nuevo registro:
+
+	"IdOrdenSeleccion": "OS001",
+      "Estado": "Preparada",
+      "FechaEstado": "2024-10-11T00:00:00",
+      "FechaEmision": "2024-10-11T00:00:00",
+      "OrdenesPreparacion": [
+        "OP021",
+       
+      ]
