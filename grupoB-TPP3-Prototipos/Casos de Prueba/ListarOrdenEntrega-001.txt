@@ -1,9 +1,9 @@
 ﻿Caso 001: Prueba de carga de formulario
 
-- Menu principal => Seleccionar "Ordenes de Entrega" => Abre menu de Ordenes de Entrega
-- Menu Ordenes de Entrega => seleccionar "Listar Ordenes de Entrega" => Abre formulario de Listar Ordenes de Entrega
-- Formulario Listar Ordenes de Entrega => Debajo de los filtros aparece listado de las ordenes de entrega disponibles
-- Seleccionar orden OS001 => Aparecen la OP001 y OP002 en el listado de abajo
-- Seleccionar botón "Volver" => Vuelve al menu Ordenes de Entrega
-- Menu Ordenes de Entrega => Cerrar menu => Se visualiza el menu principal
-- Menu principal => Cerrar menu => Finaliza la ejecucion del sistema
+1 - Menu principal => Seleccionar "Ordenes de Entrega" => Abre menu de Ordenes de Entrega
+2 - Menu Ordenes de Entrega => seleccionar "Listar Ordenes de Entrega" => Abre formulario de Listar Ordenes de Entrega
+3 - Formulario Listar Ordenes de Entrega => Debajo de los filtros aparece listado de las ordenes de entrega disponibles
+4 - Seleccionar orden OS001 => Aparecen la OP001 y OP002 en el listado de abajo
+5 - Seleccionar botón "Volver" => Vuelve al menu Ordenes de Entrega
+6 - Menu Ordenes de Entrega => Cerrar menu => Se visualiza el menu principal
+7 - Menu principal => Cerrar menu => Finaliza la ejecucion del sistema
