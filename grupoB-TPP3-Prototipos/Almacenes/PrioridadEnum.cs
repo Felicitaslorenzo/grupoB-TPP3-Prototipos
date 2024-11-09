@@ -2,6 +2,6 @@
 
 public enum PrioridadEnum
 {
-    ConPrioridadDeEntrega,
+    ConPrioridad, // DeEntrega,
     SinPrioridad
 }

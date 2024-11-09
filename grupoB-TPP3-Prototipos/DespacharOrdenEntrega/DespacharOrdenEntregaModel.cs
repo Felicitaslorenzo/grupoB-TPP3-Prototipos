@@ -1,4 +1,5 @@
-﻿using System;
+﻿using grupoB_TPP3_Prototipos.Almacenes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -28,6 +29,29 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
 
         public List<Cliente> ObtenerClientes()
         {
+            var listarClientes = new List<Cliente>();
+
+            foreach (var ordenCliente in ClienteAlmacen.Clientes)
+            {
+                // Crear una nueva instancia de Cliente
+                var ordenModelo = new Cliente
+                {
+                    IdCliente = ordenCliente.IdCliente,
+                    // Asumiendo que Cliente tiene una propiedad llamada Transportistas que es una lista de enteros (IdTransportista)
+                    Transportistas = TransportistaAlmacen.Transportistas
+                        .Where(t => t.IdCliente == ordenCliente.IdCliente)
+                        .Select(t => t.IdTransportista)
+                        .ToList()
+                };
+
+                // Agregar el cliente con sus transportistas a la lista
+                listarClientes.Add(ordenModelo);
+            }
+
+            // Devolver la lista de clientes con sus respectivos transportistas
+            return listarClientes;
+        }
+        /*
             return new List<Cliente>
             {
                 new Cliente { IdCliente = "CL001", Transportistas = new List<string> {"TR001", "TR002", "TR003"}},
@@ -41,10 +65,38 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
                 new Cliente { IdCliente = "CL009", Transportistas = new List<string> {"TR019", "TR020"}},
                 new Cliente { IdCliente = "CL010", Transportistas = new List<string> {"TR021", "TR022"}},
             };
-        }
+        } */
 
         public List<OrdenEntrega> ObtenerOrdenesEntrega()
         {
+            var listarOrden = new List<OrdenEntrega>();
+
+            foreach (var ordenEntidad in OrdenPreparacionAlmacen.OrdenesPreparacion)
+            {
+                // Suponiendo que `OrdenEntrega` tiene un constructor que requiere "idOrden", "idCliente" y otros parámetros
+                var idCliente = ClienteAlmacen.Clientes
+                    .Where(c => c.IdCliente == /* usar propiedad correcta aquí */ ordenEntidad.IdCliente) // Ajusta la propiedad correcta de ordenEntidad
+                    .Select(c => c.IdCliente)
+                    .FirstOrDefault();
+
+                var estado = ordenEntidad.Estado.ToString(); // VER ESTADO
+
+                // Crear una nueva instancia de OrdenEntrega con el constructor que requiere los parámetros
+                var ordenModelo = new OrdenEntrega(
+                    ordenEntidad.IdOrdenPreparacion,   // idOrden
+                    idCliente ,                    // idCliente (o proporciona un valor predeterminado si idCliente es nulo)
+                    estado // VER ESTADO
+            /* otros parámetros requeridos */
+                );
+
+                // Agregar la orden de entrega a la lista
+                listarOrden.Add(ordenModelo);
+            }
+
+            // Devolver la lista de órdenes de entrega
+            return listarOrden;
+
+            /*
             return new List<OrdenEntrega>
             {
                new OrdenEntrega("ORD001", "CL001", "Pendiente"),
@@ -67,7 +119,7 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
                new OrdenEntrega("ORD018", "CL008",  "Completada"),
                new OrdenEntrega("ORD019", "CL009",  "Pendiente"),
                new OrdenEntrega("ORD020", "CL010",  "En Proceso")
-            };
+            }; */
         }
 
         public List<OrdenEntrega> ObtenerOrdenesEntregaPorCliente(string idCliente)
