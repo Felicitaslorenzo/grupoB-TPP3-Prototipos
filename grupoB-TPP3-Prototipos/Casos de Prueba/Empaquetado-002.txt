@@ -1,0 +1,11 @@
+CASO 2: Validaciones - Empaquetado de Ordenes
+
+1 - En MenuPrinicipal, hacer click en botón "Ordenes de Entrega" 
+2 - En MenuOrdenesEntrega, hacer click en botón "Empaquetado"
+3 - Ver lista de Productos y sus cantidades // no aparece la lista
+4 - Intentar Seleccionar fila de productos y sus cantidades
+5- Muetsra el mensaje en caso de que no se seleccione ninguna fila de producto: "Por favor, selecciona un producto antes de empaquetar.""
+6 - Hacer click en botón Empaquetado //no funciona (pero creo q es porque no hay productos en la vista) (tampoco aperecen avisos, mensajes de error) 
+7- Muestra el mensaje: "No hay órdenes para empaquetar."
+8- Se cierra el formulario
+
