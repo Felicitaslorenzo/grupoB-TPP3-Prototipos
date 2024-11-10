@@ -40,7 +40,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             return (false, string.Empty);
         }
 
-        // Función para generar una nueva orden a partir de los productos seleccionados en el ListView
         public string GenerarNuevaOrden(string idCliente, string prioridad, string transportista, ListView productosListView)
         {
             // Generar un nuevo ID de orden basado en la lógica de ordenación
@@ -77,39 +76,37 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 Productos = productosOrden
             };
 
-            // Agregar la nueva orden a la lista de órdenes (supongo que la lista "ordenes" está definida en el contexto)
+            // Convertir la nueva orden de tipo OrdenPreparacion a OrdenPreparacionEnt
+            OrdenPreparacionEnt nuevaOrdenEnt = new OrdenPreparacionEnt
+            {
+                IdOrdenPreparacion = nuevaOrden.IDOrdenPreparacion,
+                // Asignar el primer cliente, o lo que sea adecuado en tu caso
+                IdCliente = nuevaOrden.Clientes.FirstOrDefault()?.IdCliente,
+                FechaEmision = DateTime.Now,
+                FechaEntrega = DateTime.Now.AddDays(7), // O la lógica de fecha que prefieras
+                Estado = EstadoOrdenPrepEnum.Pendiente,
+                Prioridad = (PrioridadEnum)Enum.Parse(typeof(PrioridadEnum), prioridad), // Asumiendo que Prioridad es un enum
+                IdTransportista = transportista
+            };
+
+            // Agregar los productos a la propiedad Detalle de OrdenPreparacionEnt
+            foreach (var producto in nuevaOrden.Productos)
+            {
+                nuevaOrdenEnt.Detalle.Add(new OrdenPreparacionDetalle
+                {
+                    SKUProducto = producto.IDProducto,
+                    DescripcionProducto = producto.DescripcionProducto,
+                    Cantidad = producto.Cantidad
+                });
+            }
+
+            // Agregar la nueva orden al almacenamiento
+            OrdenPreparacionAlmacen.AgregarOrdenPreparacion(nuevaOrdenEnt);
+
+            // Agregar la nueva orden a la lista global de órdenes
             ordenes.Add(nuevaOrden);
 
-            // Llamamos a CambiarEstadoOrden para cambiar el estado de la orden recién creada
-            // Suponemos que la nueva orden que acabamos de crear es la que queremos cambiar de estado
-            var ordenItem = new ListViewItem(nuevaOrden.IDOrdenPreparacion); // Asumimos que IDOrdenPreparacion es el identificador de la orden
-            CambiarEstadoOrden(ordenItem);
-
             return $"Orden {nuevoIDOrden} creada exitosamente.";
-        }
-
-        // Función para cambiar el estado de una orden basada en su número de orden
-        public void CambiarEstadoOrden(ListViewItem item)
-        {
-            var partes = item.Text.Split(' '); // Asumimos que el texto contiene un número de orden en algún formato
-            if (partes.Length > 1)
-            {
-                var ordenNum = int.Parse(partes[1]);
-
-                // Buscar la orden pendiente en el almacenamiento de órdenes
-                var orden = OrdenPreparacionAlmacen.OrdenesPreparacion
-    .FirstOrDefault(o =>
-    {
-        int idOrden;
-        return o.Estado == EstadoOrdenPrepEnum.Pendiente && int.TryParse(o.IdOrdenPreparacion, out idOrden) && idOrden == ordenNum;
-    });
-
-                // Si encontramos la orden, cambiamos su estado
-                if (orden != null)
-                {
-                    orden.Estado = EstadoOrdenPrepEnum.EnSeleccion;
-                }
-            }
         }
 
         private string GenerarNuevoIDOrden()

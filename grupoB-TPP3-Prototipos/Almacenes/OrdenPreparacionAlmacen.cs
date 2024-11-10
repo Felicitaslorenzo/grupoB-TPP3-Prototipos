@@ -22,6 +22,24 @@ namespace grupoB_TPP3_Prototipos.Almacenes
             File.WriteAllText(@"Datos\OrdenesPreparacion.json", datos);
         }
 
+        public static void AgregarOrdenPreparacion(OrdenPreparacionEnt nuevaOrden)
+        {
+            ordenespreparacion.Add(nuevaOrden);
+            try
+            {
+                string filePath = @"Datos\OrdenesPreparacion.json"; // Asegúrate de que esta ruta sea correcta
+                string json = JsonSerializer.Serialize(ordenespreparacion, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(filePath, json);
+                Console.WriteLine("Escritura en JSON completada."); // Confirmación en consola
+            }
+            catch (Exception ex)
+            {
+                // Mostrar un mensaje en caso de error
+                MessageBox.Show($"Error al escribir en el archivo JSON: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine($"Excepción capturada: {ex}"); // Para detalles en consola o logs
+            }
+        }
+
         public static void Leer()
         {
             if (!File.Exists(@"Datos\OrdenesPreparacion.json"))
