@@ -202,7 +202,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
         {
             if (OrdenesPreparacionList.SelectedItems.Count > 0)
             {
-                
                 var idOrdenSeleccionada = OrdenesPreparacionList.SelectedItems[0].Text;
                 var ordenSeleccionada = model.ObtenerOrdenesPreparacion().FirstOrDefault(o => o.IdOrden == idOrdenSeleccionada);
 

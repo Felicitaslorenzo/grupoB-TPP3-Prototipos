@@ -16,6 +16,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
         {
             InitializeComponent();
             modelo.CargarCliente(IdClienteCombo, TransportistaCombo, ProductoCombo);
+            PrioridadComboBox.Items.AddRange(modelo.ObtenerPrioridad().ToArray());
             // clienteAnterior = (Cliente)IdClienteCombo.SelectedItem;
             this.IdClienteCombo.SelectedIndexChanged += IdClienteCombo_SelectedIndexChanged;
 
@@ -112,12 +113,14 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private void GenerarOrdenButton_Click(object sender, EventArgs e)
         {
+            // Verifica si hay productos en el ListView
             if (ProductosListView.Items.Count == 0)
             {
                 MessageBox.Show("No hay productos disponibles para crear una orden.");
                 return;
             }
 
+            // Verifica si se han seleccionado un cliente, prioridad y transportista
             if (string.IsNullOrWhiteSpace(IdClienteCombo.Text) ||
                 string.IsNullOrWhiteSpace(PrioridadComboBox.Text) ||
                 string.IsNullOrWhiteSpace(TransportistaCombo.Text))
@@ -126,11 +129,18 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 return;
             }
 
-            var resultado = modelo.GenerarNuevaOrden(IdClienteCombo.Text, PrioridadComboBox.Text, TransportistaCombo.Text, ProductosListView);
+            // Llama al método GenerarNuevaOrden del modelo para generar una nueva orden
+            var resultado = modelo.GenerarNuevaOrden(
+                IdClienteCombo.Text,
+                PrioridadComboBox.Text,  // Pasa la prioridad seleccionada
+                TransportistaCombo.Text,
+                ProductosListView
+            );
 
+            // Muestra un mensaje con el resultado de la operación
             MessageBox.Show(resultado);
 
-            // limpiar controles después de crear la orden
+            // Limpia los controles después de generar la orden
             ProductosListView.Items.Clear();
             IdClienteCombo.SelectedIndex = -1;
             PrioridadComboBox.SelectedIndex = -1;
