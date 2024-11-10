@@ -1,0 +1,18 @@
+﻿Caso 001: Prueba de carga de formulario
+
+1 - Menu principal => Seleccionar "Ordenes de Entrega" => Abre menu de Ordenes de Entrega
+
+2 - Menu Ordenes de Entrega => seleccionar "Emitir Ordenes de Entrega" => Abre formulario de Emitir Ordenes de Entrega
+
+3 - Listado de Emitir Ordenes de Entrega => Aparecen todas las órdenes de entrega disponibles para emitir.
+
+4 - Seleccionar orden ID Orden: OP021 - Cliente: CL009 - Fecha Entrega: 8/10/2024 => Boton "Emitir Orden de Entrega" => 
+	Aparece mensaje de exito: "Se generó a orden de entrega"
+
+5 - Cerrar mensaje de éxito
+
+6 - Seleccionar botón "Volver" => Vuelve al menu Ordenes de Entrega
+
+7 - Menu Ordenes de Entrega => Cerrar menu => Se visualiza el menu principal
+
+8 - Menu principal => Cerrar menu => Finaliza la ejecucion del sistema
