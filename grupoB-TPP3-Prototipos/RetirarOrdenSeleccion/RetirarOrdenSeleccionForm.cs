@@ -1,4 +1,5 @@
-﻿using grupoB_TPP3_Prototipos.ListarOrdenPreparacion;
+﻿using grupoB_TPP3_Prototipos.Almacenes;
+using grupoB_TPP3_Prototipos.ListarOrdenPreparacion;
 using grupoB_TPP3_Prototipos.RetirarOrdenSeleccion;
 using System;
 using System.Collections.Generic;
@@ -18,32 +19,33 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
     {
         private RetirarOrdenSeleccionModelo model = new();
 
+        private List<OrdenSeleccion> ordenesSeleccion;
         public RetirarOrdenSeleccionForm()
         {
             InitializeComponent();
             this.Load += new System.EventHandler(this.RetirarOrdenSeleccionForm_Load);
 
             // Agregar el manejador para el evento SelectedIndexChanged
-            ProductoCombo.SelectedIndexChanged += ProductoCombo_SelectedIndexChanged;
+            OrdenSCombo.SelectedIndexChanged += OrdenSCombo_SelectedIndexChanged;
         }
 
-        private void ProductoCombo_SelectedIndexChanged(object? sender, EventArgs e)
+        private void OrdenSCombo_SelectedIndexChanged(object? sender, EventArgs e)
         {
 
             // Limpia el ListView antes de agregar los nuevos elementos
             listView1.Items.Clear();
 
             // Verifica que se haya seleccionado algo
-            if (ProductoCombo.SelectedItem != null)
+            if (OrdenSCombo.SelectedItem != null)
             {
                 // Obtiene el Id de la orden seleccionada
-                var idSeleccionado = ProductoCombo.SelectedItem.ToString();
+                var idSeleccionado = OrdenSCombo.SelectedItem.ToString();
 
                 // Busca la orden correspondiente en tu modelo
                 var ordenSeleccionada = model.OrdenesSeleccionadas.FirstOrDefault(o => o.IdOrdenSeleccion == idSeleccionado);
 
                 // Verifica que la propiedad OrdenesPreparacion no sea null y contenga elementos
-                foreach (var producto in ordenSeleccionada.Producto)
+               /* foreach (var producto in ordenSeleccionada.Producto)
                 {
                     // Ahora iteramos sobre la lista de productos
                     // Crea un nuevo ListViewItem
@@ -51,7 +53,7 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
                     item.SubItems.Add(producto.DescripcionProducto);
                     item.SubItems.Add(producto.Cantidad.ToString());
                     listView1.Items.Add(item);
-                }
+                }*/
 
             }
         }
@@ -59,36 +61,50 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
 
         private void RetirarOrdenSeleccionForm_Load(object? sender, EventArgs e)
         {
+            ordenesSeleccion = model.OrdenesSeleccionadas ?? new List<OrdenSeleccion>();
+            OrdenSeleccionAlmacen.Leer();
             CargarOrdenesEnComboBox();
         }
 
         private void CargarOrdenesEnComboBox()
         {
             // Limpia los ítems existentes en el ComboBox antes de agregar nuevos
-            ProductoCombo.Items.Clear();
-
+            OrdenSCombo.Items.Clear();
+            ordenesSeleccion = model.OrdenesSeleccionadas;
             // Llenar el ComboBox de órdenes desde el modelo
-            foreach (var orden in model.OrdenesSeleccionadas)
+            var ordenesPendientes = ordenesSeleccion.Where(orden => orden.Estado == EstadoOrdenSelEnum.Pendiente).ToList();
+
+            // Imprimir los estados de las órdenes para depuración
+            foreach (var orden in ordenesPendientes)
             {
-                // Asegúrate de que solo se agregue cada orden una vez
-                if (!ProductoCombo.Items.Contains(orden.IdOrdenSeleccion))
+                Console.WriteLine($"Orden: {orden.IdOrdenSeleccion}, Estado: {orden.Estado}");
+            }
+            // Verifica si hay órdenes pendientes para evitar errores
+            if (ordenesPendientes.Any())
+            {
+                foreach (var orden in ordenesPendientes)
                 {
-                    ProductoCombo.Items.Add(orden.IdOrdenSeleccion); // Asumiendo que IdOrdenSeleccion es el texto que deseas mostrar
+                    // Agrega solo el ID o cualquier atributo que desees mostrar en el ComboBox
+                    OrdenSCombo.Items.Add(orden.IdOrdenSeleccion);
                 }
+            }
+            else
+            {
+                MessageBox.Show("No hay órdenes pendientes para retirar.");
             }
         }
 
         private void ConfirmarButton_Click(object sender, EventArgs e)
         {
             // Verificar que se haya hecho una selección válida
-            if (ProductoCombo.SelectedItem == null)
+            if (OrdenSCombo.SelectedItem == null)
             {
                 MessageBox.Show("Por favor, selecciona una orden."); // Solo si no hay selección
             }
             else
             {
                 // Obtiene el Id de la orden seleccionada
-                var idSeleccionado = ProductoCombo.SelectedItem.ToString();
+                var idSeleccionado = OrdenSCombo.SelectedItem.ToString();
                 var ordenSeleccionada = model.OrdenesSeleccionadas.FirstOrDefault(o => o.IdOrdenSeleccion == idSeleccionado);
 
                 if (ordenSeleccionada != null)
