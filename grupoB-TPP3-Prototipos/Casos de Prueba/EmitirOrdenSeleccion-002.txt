@@ -1,18 +1,20 @@
-﻿Crear Orden con una sola orden de Preparación
+﻿Crear Orden con dos ordenes de Preparación
 
 1-	Botón: "Ordenes de Seleccion"
 
 2 -  Botón: "Emitir orden de Seleccion"
 
-2 - ID Orden Preparación: OP001
+2 - Cliente: Ferreteria SRL
 
 3 - Botón: "Buscar"
 
 4 - Órdenes Disponibles:
 
-	OP001 - Cliente Porter SA	 - Fecha: 30/09/2024 
+	OP002 - Ferreteria SRL	 - Fecha: 25/09/2024 
+	OP012 - Ferreteria SRL	 - Fecha: 02/10/2024 
+	OP027 - Ferreteria SRL	 - Fecha: 25/10/2024 
 
-5 -	Seleccionar Orden de Preparación: OP001  // No figuran los productos cuando selecciono
+5 -	Seleccionar Orden de Preparación: OP002/ OP012
 
 	Productos Disponibles en Orden:
 
@@ -26,7 +28,8 @@
 
 8-	Detalle:
 
-	OP001 - Cliente Porter SA	 - Fecha: 30/09/2024  
+	OP002 - Ferreteria SRL	 - Fecha: 25/09/2024 
+	OP012 - Ferreteria SRL	 - Fecha: 02/10/2024  
 
 9 - Botón: "Emitir Orden"
 
@@ -43,9 +46,12 @@
       "FechaEstado": "2024-10-11T00:00:00",
       "FechaEmision": "2024-10-11T00:00:00",
       "OrdenesPreparacion": [
-        "OP001",
+        "OP002",
+		"OP012"
        
       ]
+
+
 
 	  Debe modificar el OP de pendiente a seleccionada y modifiar el dato desde el archivo.
 	  No guarda los datos en el .json

@@ -68,9 +68,34 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
         // Método para obtener el siguiente número de orden
         public string GenerarNuevaOrden()
         {
+
             string nuevaOrden = $"OS-{numeroOrdenSeleccion:D3}"; // Formato de 3 dígitos
             numeroOrdenSeleccion++; // Incrementar el número de orden
             return nuevaOrden;
+            /*
+            // Obtener el número de orden más alto de las órdenes existentes
+            var ultimoNumeroOrden = OrdenSeleccionAlmacen.OrdenesSeleccion
+                .Max(orden => int.Parse(orden.IdOrdenSeleccion.Split('-')[1])); // Extrae el número de la orden, asumiendo formato "OS-001"
+
+            // Incrementar el número de orden
+            int nuevoNumeroOrden = ultimoNumeroOrden + 1;
+
+            // Formatear el nuevo número de orden con 3 dígitos
+            string nuevaOrden = $"OS-{nuevoNumeroOrden:D3}";
+
+
+            var nuevaOrdenSeleccion = new OrdenSeleccionEnt
+            {
+                IdOrdenSeleccion = nuevaOrden,
+                Estado = EstadoOrdenSelEnum.Pendiente, // Asumiendo que el estado inicial es Pendiente
+                FechaEstado = DateTime.Now, // Fecha del estado
+                FechaEmision = DateTime.Now, // Fecha de emisión
+                OrdenesPreparacion = OrdenPreparacionDetalle, // Aquí puedes agregar las órdenes de preparación si es necesario
+            };
+
+            
+            OrdenSeleccionAlmacen.AgregarOrdenSeleccion(nuevaOrdenSeleccion);
+            */
         }
 
         public void QuitarSeleccionadas(ListView listView)
@@ -117,7 +142,20 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                             break;
                         }
                     }
-
+                    /*
+                    List<int> detalleOrden = new List<int>();
+                    foreach (var item in itemClonado)
+                    {
+                        var ordenNum = int.Parse(item.Split(' ')[1]);
+                        var orden = OrdenPreparacionAlmacen.OrdenesPreparacion.Where(o => o.Estado == EstadoOrdenPrepEnum.Pendiente)
+                            .FirstOrDefault(o => o.Estado == EstadoOrdenPrepEnum.Pendiente && o.IdOrdenPreparacion == ordenNum);
+                        if (orden != null)
+                        {
+                            orden.Estado = EstadoOrdenPrepEnum.EnSeleccion;
+                            detalleOrden.Add(ordenNum);
+                        }
+                    }
+                    */
                     // Si no existe, agregar el elemento clonado al segundo ListView
                     if (!itemExists)
                     {
@@ -155,6 +193,5 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                 var listViewItem = crearItem(item);
                 listView.Items.Add(listViewItem);
             }
-        }
-    }
+    }   }
 }

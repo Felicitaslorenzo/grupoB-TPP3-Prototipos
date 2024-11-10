@@ -32,5 +32,10 @@ namespace grupoB_TPP3_Prototipos.Almacenes
             ordenesseleccion = JsonSerializer.Deserialize<List<OrdenSeleccionEnt>>(datos)!;
 
         }
+        /*
+        public static void AgregarOrdenSeleccion(OrdenSeleccionEnt ordenesseleccion)
+        {
+            ordenesseleccion.Add(ordenesseleccion);
+        }*/
     }
 }
