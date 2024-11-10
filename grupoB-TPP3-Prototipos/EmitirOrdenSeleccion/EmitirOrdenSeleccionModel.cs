@@ -16,15 +16,15 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
             {
                 var listarOrdenes = new List<OrdenPreparacion>();
 
-                foreach (var ordenEntidad in OrdenPreparacionAlmacen.OrdenesPreparacion)
-                {
+                foreach (var ordenEntidad in OrdenPreparacionAlmacen.OrdenesPreparacion.Where(o => o.Estado == EstadoOrdenPrepEnum.Pendiente))
+                {  // Filtra solo las órdenes pendientes
                     var ordenModelo = new OrdenPreparacion
                     {
                         IdCliente = ordenEntidad.IdCliente,
                         IdOrden = ordenEntidad.IdOrdenPreparacion,
                         Nombre = ClienteAlmacen.Clientes.First(c => c.IdCliente == ordenEntidad.IdCliente).NombreCliente,
                         Prioridad = ordenEntidad.Prioridad.ToString(),
-                        Estado = ordenEntidad.Estado,
+                        Estado = ordenEntidad.Estado,  // Asigna directamente el valor de tipo `EstadoOrdenPrepEnum`
                         FechaEmision = ordenEntidad.FechaEmision,
                         FechaEstado = ordenEntidad.FechaEntrega, // Asegúrate de que `FechaEntrega` esté definido en `OrdenPreparacion`.
                         Producto = ordenEntidad.Detalle.Select(detalle => new Producto
