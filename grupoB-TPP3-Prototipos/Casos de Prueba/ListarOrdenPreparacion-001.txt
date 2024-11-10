@@ -1,0 +1,18 @@
+Caso 1: Caso feliz
+
+1- Tocar boton ordenes de preparacion en el menu principal.
+2- Tocar boton Listar ordenes de preparacion.
+3- Abrir el selector de Id orden.
+4- En el campo ID orden seleccionar la orden OP002
+5- En el campo ID cliente seleccionar el cliente CL002
+6- En el campo estado seleccionar Pendiente
+7- En el campo prioridad seleccionar ConPrioridadDeEntrega
+8- En el campo fecha desde seleccionar 16/09/2024
+9- En el campo fecha hasta seleccionar 10/11/2024
+10- En el campo nombre cliente seleccionar Ferreteria SRL
+11- Presionar boton buscar 
+12- [Devuelve un listado de ordenes de preparacion]
+13- Seleccionar la orden de preparacion
+14- [Devuelve la alerta "No se encontraron productos para esta orden"] VER
+15- Presionar boton aceptar.
+16- Presionar boton volver.

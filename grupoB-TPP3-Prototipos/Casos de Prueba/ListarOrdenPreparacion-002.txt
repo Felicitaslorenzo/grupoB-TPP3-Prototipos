@@ -1,0 +1,13 @@
+Caso 2:Validaciones
+
+1- Tocar boton ordenes de preparacion en el menu principal.
+2- Tocar boton Listar ordenes de preparacion.
+3- Tocar boton buscar, sin seleccionar ningun filtro.
+4- [Aparece alerta de error "No se ha seleccionado ningun filtro"]
+5- Tocar aceptar.
+6- En el campo Nombre cliente seleccionar "Porter SA"
+7- [Aparece lista de ordenes de preparacion]
+8- Tocar La orden OP001-
+9- [Aparece error "No se encontraron productos para esta orden]
+10- Tocar aceptar
+11- Tocar volver
