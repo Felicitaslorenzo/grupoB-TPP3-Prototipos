@@ -26,7 +26,7 @@ namespace grupoB_TPP3_Prototipos.MenuOrdenesSeleccion
         private void buttonRetirarOrden_Click(object sender, EventArgs e)
         {
             PrepararOrdenSeleccion.RetirarOrdenSeleccionForm RetirarOrdenSeleccionForm = new PrepararOrdenSeleccion.RetirarOrdenSeleccionForm();
-            RetirarOrdenSeleccionForm.ShowDialog();
+            //RetirarOrdenSeleccionForm.ShowDialog();
         }
 
         private void buttonGenerarOrden_Click(object sender, EventArgs e)

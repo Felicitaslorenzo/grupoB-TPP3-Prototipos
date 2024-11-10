@@ -11,14 +11,14 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+       /* protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
                 components.Dispose();
             }
             base.Dispose(disposing);
-        }
+        }*/
 
         #region Windows Form Designer generated code
 
@@ -37,7 +37,7 @@
             CancelarButton = new Button();
             label3 = new Label();
             OrdenSCombo = new ComboBox();
-            SuspendLayout();
+            //SuspendLayout();
             // 
             // label2
             // 
@@ -84,7 +84,7 @@
             ConfirmarButton.TabIndex = 5;
             ConfirmarButton.Text = "Confirmar";
             ConfirmarButton.UseVisualStyleBackColor = true;
-            ConfirmarButton.Click += ConfirmarButton_Click;
+            //ConfirmarButton.Click += ConfirmarButton_Click;
             // 
             // CancelarButton
             // 
@@ -95,7 +95,7 @@
             CancelarButton.TabIndex = 6;
             CancelarButton.Text = "Cancelar";
             CancelarButton.UseVisualStyleBackColor = true;
-            CancelarButton.Click += CancelarButton_Click;
+            //CancelarButton.Click += CancelarButton_Click;
             // 
             // label3
             // 
@@ -116,11 +116,11 @@
             OrdenSCombo.Name = "OrdenSCombo";
             OrdenSCombo.Size = new Size(798, 23);
             OrdenSCombo.TabIndex = 15;
-            OrdenSCombo.SelectedIndexChanged += OrdenSCombo_SelectedIndexChanged;
+           // OrdenSCombo.SelectedIndexChanged += OrdenSCombo_SelectedIndexChanged;
             // 
             // RetirarOrdenSeleccionForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            /*AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(816, 279);
             Controls.Add(OrdenSCombo);
@@ -134,7 +134,7 @@
             Text = "PrepararOrdenSeleccionForm";
             Load += RetirarOrdenSeleccionForm_Load;
             ResumeLayout(false);
-            PerformLayout();
+            PerformLayout();*/
         }
 
         #endregion
