@@ -1,10 +1,11 @@
-﻿Caso 2: Crear Orden con dos ordenes de Preparación
+﻿Caso 3: Crear Orden con varias ordenes de Preparación filtrando por Fecha Desde y Fecha Hasta
 
 1-	Botón: "Ordenes de Seleccion"
 
 2 -  Botón: "Emitir orden de Seleccion"
 
-2 - Cliente: Ferreteria SRL
+2 - Fecha Desde: 01/09/2024 
+	Fecha Hasta: 10/10/2024
 
 3 - Botón: "Buscar"
 
@@ -14,17 +15,20 @@
 	OP012 - Ferreteria SRL	 - Fecha: 02/10/2024 
 	OP027 - Ferreteria SRL	 - Fecha: 25/10/2024 
 
-5 -	Seleccionar Orden de Preparación: OP002/ OP012
+5 -	Seleccionar Orden de Preparación: OP025/ OP026 / OP027
 
-	Productos Disponibles en Orden:
+	Detalle de la Orden: No muestra detalle productos
 
 	101 Producto ABC Cantidad: 100 Ubicación: Ubicación 1
 	102 Producto DEF Cantidad: 50 Ubicación: Ubicación 2
 
 	Cantidad: "10"
 
+6- Botón: "Agregar Seleccionadas"
 
-7- Botón: "Agregar Seleccionadas"
+7- Seleccionar OP027
+
+8- Botón: "Quitar Seleccionadas"
 
 8-	Detalle:
 
@@ -42,17 +46,16 @@
 12- Verificar en OrdenSeleccion.Json, nuevo registro:
 
 	"IdOrdenSeleccion": "OS001",
-      "Estado": "Preparada",
+      "Estado": "Pendiente",
       "FechaEstado": "2024-10-11T00:00:00",
       "FechaEmision": "2024-10-11T00:00:00",
       "OrdenesPreparacion": [
-        "OP002",
-		"OP012"
+        "OP025",
+		"OP026"
        
       ]
 
-
-
+	  Errores:
 	  Debe modificar el OP de pendiente a seleccionada y modifiar el dato desde el archivo.
 	  No guarda los datos en el .json
 	  No figuran las OP en el .json

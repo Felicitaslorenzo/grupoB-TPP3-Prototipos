@@ -1,4 +1,4 @@
-﻿Crear Orden con una sola orden de Preparación
+﻿Caso 1 : Crear Orden con una sola orden de Preparación
 
 1-	Botón: "Ordenes de Seleccion"
 

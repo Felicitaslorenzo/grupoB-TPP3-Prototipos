@@ -1,0 +1,58 @@
+﻿Caso 4: Validaciones
+
+1-	Botón: "Ordenes de Seleccion"
+
+2 -  Botón: "Emitir orden de Seleccion"
+
+3 - Botón: "Buscar"
+
+4 - Mensaje Alerta: "No se ha seleccionado ningun filtro"
+
+
+5 -	Botón: "Ok"
+
+
+6- Id Orden Preparacion: OP005
+
+3 - Botón: "Buscar"
+
+
+8- Botón: "Agregar Seleccionadas"
+
+8-	 Mensaje Error de Seleccion: "Por favor selecciona una orden antes de agregarla."
+
+9 - Botón: "Ok"
+
+10- Seleccionar Orden de Preparación: OP005
+
+	Detalle de la Orden: No muestra detalle productos
+
+	101 Producto ABC Cantidad: 100 Ubicación: Ubicación 1
+	102 Producto DEF Cantidad: 50 Ubicación: Ubicación 2
+
+	Cantidad: "10"
+
+6- Botón: "Agregar Seleccionadas"
+
+8- Botón: "Quitar Seleccionadas"
+
+9- Mensaje Error de Seleccion: "No hay elementos seleccionados para eliminar."
+
+10 - Botón: "Ok"
+
+11-   Botón: "Volver"
+
+12 - Botón: "Emitir orden de Seleccion"
+
+13 -  Fecha Desde: 01/10/2024
+
+14 - Botón: "Buscar"
+
+15 - Mensaje Informacion: Botón: "No hay ordenes con los criterios seleccionados"
+
+10 - Botón: "Ok"
+
+11 - Cerrar sistema
+
+      Errores: 
+	 /  Modificar mensajes en casos de uso en el word. NO son los mismos mensajes.
