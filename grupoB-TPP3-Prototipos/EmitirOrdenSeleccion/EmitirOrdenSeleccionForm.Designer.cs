@@ -158,6 +158,7 @@
             PrioridadCombo.Name = "PrioridadCombo";
             PrioridadCombo.Size = new Size(203, 28);
             PrioridadCombo.TabIndex = 28;
+            PrioridadCombo.SelectedIndexChanged += PrioridadCombo_SelectedIndexChanged;
             // 
             // label4
             // 

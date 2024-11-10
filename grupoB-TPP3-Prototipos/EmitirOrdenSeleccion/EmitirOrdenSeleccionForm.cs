@@ -40,7 +40,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
 
         private void CargarPrioridadesEnComboBox()
         {
-            var prioridades = new List<string> {"Con prioridad", "Sin prioridad" };
+            var prioridades = new List<string> { "Con prioridad de entrega", "Sin prioridad" };
             model.CargarComboBox(PrioridadCombo, prioridades, p => p); // Aquí simplemente devolvemos el mismo string
         }
 
@@ -208,7 +208,12 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
 
         private void buttonGenerarOrdenSeleccion_Click(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void PrioridadCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

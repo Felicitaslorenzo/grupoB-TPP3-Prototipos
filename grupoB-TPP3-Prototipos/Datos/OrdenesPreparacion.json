@@ -10,7 +10,8 @@
     "Detalle": [
       {
         "SKUProducto": "SKU001",
-        "Cantidad": 50
+        "Cantidad": 50,
+        "DescripcionProducto": "Muebles modulares de oficina"
       },
       {
         "SKUProducto": "SKU002",

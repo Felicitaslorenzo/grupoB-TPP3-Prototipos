@@ -17,10 +17,10 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         private List<OrdenPreparacion> ordenesPreparacion = new List<OrdenPreparacion>();
 
         // Método para obtener la lista de órdenes de preparación
-        public List<OrdenPreparacion> ObtenerOrdenesPreparacion()
+        /* public List<OrdenPreparacion> ObtenerOrdenesPreparacion()
         {
             return ordenesPreparacion;
-        }
+        } */
 
 
         //public List<OrdenPreparacion> ObtenerOrdenesPorFechaActual()
@@ -35,13 +35,61 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         //   return ordenes;
         //    }
 
+        public List<OrdenPreparacion> ObtenerOrdenesPreparacion()
+        {
+            // Obtener las ordenes desde el Almacen
+            var ordenesAlmacen = OrdenPreparacionAlmacen.OrdenesPreparacion;
+
+            // Crear una lista de OrdenPreparacion para devolver
+            List<OrdenPreparacion> ordenesPreparacion = new List<OrdenPreparacion>();
+
+            // Mapear cada OrdenPreparacionEnt a una OrdenPreparacion
+            foreach (var ordenEntidad in ordenesAlmacen)
+            {
+                // Realizar la conversión explícita de OrdenPreparacionEnt a OrdenPreparacion
+                OrdenPreparacion orden = new OrdenPreparacion
+                {
+                    IdOrden = ordenEntidad.IdOrdenPreparacion,
+                    IdCliente = ordenEntidad.IdCliente,
+                    FechaEntrega = ordenEntidad.FechaEntrega,
+                    Estado = ordenEntidad.Estado // Asegúrate de que el Estado sea compatible o lo conviertas adecuadamente
+                };
+
+                // Agregar la orden mapeada a la lista
+                ordenesPreparacion.Add(orden);
+            }
+
+            return ordenesPreparacion;
+        }
+
+        // Método para obtener las órdenes por estado "Preparada" (Estado == 4)
         public List<OrdenPreparacion> ObtenerOrdenesPorEstadoPreparada()
         {
-            // Filtrar todas las órdenes que están en estado "Preparada"
-            var ordenes = ObtenerOrdenesPreparacion().Where(o => o.Estado == EstadoOrdenPrepEnum.Preparada).ToList();
+            // Filtrar todas las órdenes que están en estado "Preparada" (Estado == 4)
+            var ordenesAlmacen = OrdenPreparacionAlmacen.OrdenesPreparacion
+                .Where(o => (int)o.Estado == 4)  // Si Estado es un enum, conviértelo a int
+                .ToList();
 
-            // Retornar la lista de órdenes encontradas (puede ser una lista vacía si no hay coincidencias)
-            return ordenes;
+            // Crear una lista de OrdenPreparacion para devolver
+            List<OrdenPreparacion> ordenesPreparacion = new List<OrdenPreparacion>();
+
+            // Mapear cada OrdenPreparacionEnt a una OrdenPreparacion
+            foreach (var ordenEntidad in ordenesAlmacen)
+            {
+                OrdenPreparacion orden = new OrdenPreparacion
+                {
+                    IdOrden = ordenEntidad.IdOrdenPreparacion,
+                    IdCliente = ordenEntidad.IdCliente,
+                    FechaEntrega = ordenEntidad.FechaEntrega,
+                    Estado = ordenEntidad.Estado // Asegúrate de que el Estado sea compatible o lo conviertas adecuadamente
+                };
+
+                // Agregar la orden mapeada a la lista
+                ordenesPreparacion.Add(orden);
+            }
+
+            // Devolver la lista de OrdenPreparacion
+            return ordenesPreparacion;
         }
 
 
@@ -62,9 +110,8 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
                 }
             }
             return "OE" + id;
-
-
         }
+
         public string GenerarNuevaOrden()
         {
             string idorden = GenerarIdOrden();

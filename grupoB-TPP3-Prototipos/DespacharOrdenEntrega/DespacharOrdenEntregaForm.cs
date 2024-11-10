@@ -7,7 +7,7 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
 {
     public partial class DespacharOrdenEntregaForm : Form
     {
-        private DespacharOrdenEntregaModel _model;
+        private DespacharOrdenEntregaModel model;
 
         // A TENER EN CUENTA: SOLO mostrar las OP que estén en estado "Preparada" 
         // y que tengan fecha de hoy o anterior.
@@ -40,7 +40,7 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
 
         private void DespacharOrdenEntregaForm_Load(object sender, EventArgs e)
         {
-            _model = new DespacharOrdenEntregaModel();
+            model = new DespacharOrdenEntregaModel();
             CargarTransportistasEnComboBox();
         }
 
@@ -48,7 +48,7 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
         {
             IdOrdenEntregaCombo.Items.Clear();
 
-            var transportistas = _model.ObtenerTransportistas();
+            var transportistas = model.ObtenerTransportistas();
 
             foreach (var transportista in transportistas)
             {
@@ -71,15 +71,14 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
                 return;
             }
 
-            string clienteAsociado = _model.ObtenerClientePorTransportista(transportistaSeleccionado);
+            // Obtén las órdenes de entrega por transportista
+            var ordenes = model.ObtenerOrdenesEntregaPorTransportista(transportistaSeleccionado);
 
-            if (clienteAsociado == null)
+            if (ordenes == null || ordenes.Count == 0)
             {
-                MessageBox.Show("No se encontró un cliente asociado a este transportista.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No se encontraron órdenes de entrega para el transportista seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            var ordenes = _model.ObtenerOrdenesEntregaPorCliente(clienteAsociado);
 
             // Limpia el ListView antes de agregar los nuevos elementos
             ListarOrdenDespacharBuscarList.Items.Clear();
@@ -89,10 +88,10 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
             {
                 ListViewItem item = new ListViewItem(new[]
                 {
-                orden.IdOrden,    // Columna para el ID de la Orden
-                orden.IdCliente,  // Columna para el ID del Cliente
-                orden.Estado      // Columna para el Estado de la Orden
-            });
+            orden.IdOrden,    // Columna para el ID de la Orden
+            orden.IdCliente,  // Columna para el ID del Cliente
+            orden.Estado      // Columna para el Estado de la Orden
+        });
                 ListarOrdenDespacharBuscarList.Items.Add(item);
             }
         }
@@ -105,7 +104,7 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
                 return;
             }
 
-            MessageBox.Show("La orden de despacho se ha generado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("El remito se ha generado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ListarOrdenDespacharBuscarList.Items.Clear();
 
         }
@@ -113,6 +112,16 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
         private void VolverButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void EmitirOrdenDeDespachoButton_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BuscarButton_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

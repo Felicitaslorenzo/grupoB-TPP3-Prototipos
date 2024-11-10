@@ -47,6 +47,7 @@
             EmitirOrdenDeDespachoButton.TabIndex = 81;
             EmitirOrdenDeDespachoButton.Text = "Emitir Remito";
             EmitirOrdenDeDespachoButton.UseVisualStyleBackColor = true;
+            EmitirOrdenDeDespachoButton.Click += EmitirOrdenDeDespachoButton_Click_1;
             // 
             // ListarOrdenDespacharBuscarList
             // 
@@ -77,6 +78,7 @@
             BuscarButton.TabIndex = 77;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
+            BuscarButton.Click += BuscarButton_Click_1;
             // 
             // VolverButton
             // 
