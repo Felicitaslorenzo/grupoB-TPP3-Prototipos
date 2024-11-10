@@ -24,40 +24,45 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
         {
             InitializeComponent();
             this.Load += new System.EventHandler(this.RetirarOrdenSeleccionForm_Load);
-
-            // Agregar el manejador para el evento SelectedIndexChanged
             OrdenSCombo.SelectedIndexChanged += OrdenSCombo_SelectedIndexChanged;
         }
 
         private void OrdenSCombo_SelectedIndexChanged(object? sender, EventArgs e)
         {
 
-            // Limpia el ListView antes de agregar los nuevos elementos
             listView1.Items.Clear();
 
-            // Verifica que se haya seleccionado algo
             if (OrdenSCombo.SelectedItem != null)
             {
-                // Obtiene el Id de la orden seleccionada
                 var idSeleccionado = OrdenSCombo.SelectedItem.ToString();
-
-                // Busca la orden correspondiente en tu modelo
                 var ordenSeleccionada = model.OrdenesSeleccionadas.FirstOrDefault(o => o.IdOrdenSeleccion == idSeleccionado);
-
-                // Verifica que la propiedad OrdenesPreparacion no sea null y contenga elementos
-               /* foreach (var producto in ordenSeleccionada.Producto)
+                if (ordenSeleccionada != null)
                 {
-                    // Ahora iteramos sobre la lista de productos
-                    // Crea un nuevo ListViewItem
-                    ListViewItem item = new ListViewItem(producto.Ubicacion);
-                    item.SubItems.Add(producto.DescripcionProducto);
-                    item.SubItems.Add(producto.Cantidad.ToString());
-                    listView1.Items.Add(item);
-                }*/
-
+                    var ordenesPreparacionIds = ordenSeleccionada.OrdenesPreparacion;
+                    CargarProductosYUbicacionesEnGrilla(ordenesPreparacionIds);
+                }
             }
         }
 
+        private void CargarProductosYUbicacionesEnGrilla(List<string> ordenesPreparacionIds)
+        {
+            if (ordenesPreparacionIds == null || !ordenesPreparacionIds.Any())
+            {
+                MessageBox.Show("No hay productos disponibles para esta orden.");
+                return;
+            }
+            var productosConUbicaciones = model.CargarProductosYUbicaciones(ordenesPreparacionIds);
+
+            listView1.Items.Clear();
+            foreach (var producto in productosConUbicaciones)
+            {
+                var item = new ListViewItem(producto.Ubicacion);
+                item.SubItems.Add(producto.DescripcionProducto);
+                item.SubItems.Add(producto.Cantidad.ToString());
+
+                listView1.Items.Add(item);
+            }
+        }
 
         private void RetirarOrdenSeleccionForm_Load(object? sender, EventArgs e)
         {
@@ -68,23 +73,15 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
 
         private void CargarOrdenesEnComboBox()
         {
-            // Limpia los ítems existentes en el ComboBox antes de agregar nuevos
             OrdenSCombo.Items.Clear();
             ordenesSeleccion = model.OrdenesSeleccionadas;
-            // Llenar el ComboBox de órdenes desde el modelo
+
             var ordenesPendientes = ordenesSeleccion.Where(orden => orden.Estado == EstadoOrdenSelEnum.Pendiente).ToList();
 
-            // Imprimir los estados de las órdenes para depuración
-            foreach (var orden in ordenesPendientes)
-            {
-                Console.WriteLine($"Orden: {orden.IdOrdenSeleccion}, Estado: {orden.Estado}");
-            }
-            // Verifica si hay órdenes pendientes para evitar errores
             if (ordenesPendientes.Any())
             {
                 foreach (var orden in ordenesPendientes)
                 {
-                    // Agrega solo el ID o cualquier atributo que desees mostrar en el ComboBox
                     OrdenSCombo.Items.Add(orden.IdOrdenSeleccion);
                 }
             }
