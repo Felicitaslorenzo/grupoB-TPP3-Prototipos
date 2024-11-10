@@ -46,8 +46,8 @@
         "OP001",
        
       ]
-
-	  Debe modificar el OP de pendiente a seleccionada y modifiar el dato desde el archivo.
-	  No guarda los datos en el .json
-	  No figuran las OP en el .json
-	  Fecha de estado no pone el dia en el q se generaa
+- No puedo generar el id OS que lo tome desde el json y le sume uno nuevo
+- No pude hacer que agregue las OP seleccionadas
+- No graba
+- No muestra el detalle de orden cuando seleccionas las OP 
+- No pude hacer que modifique el estado de OP DE PENDIENTE A SELECCIONADA
