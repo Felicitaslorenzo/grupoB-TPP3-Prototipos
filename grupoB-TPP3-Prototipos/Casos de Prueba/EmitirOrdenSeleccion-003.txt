@@ -60,3 +60,5 @@
 	  No guarda los datos en el .json
 	  No figuran las OP en el .json
 	  Fecha de estado no pone el dia en el q se generaa
+	  Deben figurar solo las OP Pendientes en el listado
+	  No figura el detalle de las OP
