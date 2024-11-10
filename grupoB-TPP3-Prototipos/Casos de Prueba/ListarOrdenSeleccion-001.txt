@@ -4,10 +4,10 @@
 - [Se abre el menú "Órdenes de selección"]
 - Presionar botón "Listar Órdenes de Selección" 
 - [Se abre el form "Listar Órdenes de selección"]
-- Seleccionar ID Orden Seleccion .... de la lista
-- [Devuelve una lista de órdenes de preparación]
-- Seleccionar ID Orden Preparación .... de la lista
-- [Devuelve una lista de productos]
-- Presionar el botón "Volver"
+- Seleccionar ID Orden Seleccion OS002 de la lista
+- [Devuelve una lista de órdenes de preparación] //NO ESTÁ DEVOLVIENDO NADA!
+- Seleccionar ID Orden Preparación .... de la lista //NO HAY NADA PARA SELECCIONAR!
+- [Devuelve una lista de productos] //NO ESTÁ DEVOLVIENDO NADA!
+- Presionar el botón "Volver" 
 - [Vuelve al menú principal]
 
