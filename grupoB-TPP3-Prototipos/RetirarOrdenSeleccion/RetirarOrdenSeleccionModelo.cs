@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
 {
     internal class RetirarOrdenSeleccionModelo
-    {
+    {/*
         public List<OrdenSeleccion> OrdenesSeleccionadas
         {
             get
@@ -60,7 +60,7 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
         Devuelvo la lista de ubicaciones y cantidades que utilicé.
         UBICACION A => SACA 100 Remeras
         UBICACION B => SACA 20 Remeras
-        UBICACION C => SACA 50 Zapatillas*/
+        UBICACION C => SACA 50 Zapatillas
                     }
                 }
                 return listarOrdenesSeleccion;
@@ -68,7 +68,7 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
         }
         public List<InventarioMercaderiaEnt> CargarProductosYUbicaciones(List<string> ordenesPreparacionIds)
         {
-            var productosAgrupados = new Dictionary<string, int>();
+           /* var productosAgrupados = new Dictionary<string, int>();
             foreach (var opId in ordenesPreparacionIds)
             {
                 var op = OrdenPreparacionAlmacen.ObtenerOrdenPreparacion(opId);
@@ -123,6 +123,6 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
         internal void Confirmar(string? idSeleccionado)
         {
             //TODO: impactar en inventario con los valores ya calculados.
-        }
+        }*/
     }
 }

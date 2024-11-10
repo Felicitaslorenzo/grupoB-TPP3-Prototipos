@@ -14,7 +14,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
-{
+{/*
     public partial class RetirarOrdenSeleccionForm : Form
     {
         private RetirarOrdenSeleccionModelo model = new();
@@ -29,9 +29,9 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
 
         private void OrdenSCombo_SelectedIndexChanged(object? sender, EventArgs e)
         {
-
+            
             listView1.Items.Clear();
-
+            /*
             if (OrdenSCombo.SelectedItem != null)
             {
                 var idSeleccionado = OrdenSCombo.SelectedItem.ToString();
@@ -40,12 +40,13 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
                 {
                     var ordenesPreparacionIds = ordenSeleccionada.OrdenesPreparacion;
                     CargarProductosYUbicacionesEnGrilla(ordenesPreparacionIds);
+            
                 }
             }
         }
 
         private void CargarProductosYUbicacionesEnGrilla(List<string> ordenesPreparacionIds)
-        {
+        {/*
             if (ordenesPreparacionIds == null || !ordenesPreparacionIds.Any())
             {
                 MessageBox.Show("No hay productos disponibles para esta orden.");
@@ -122,6 +123,6 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
             listView1.Items.Clear();
             CargarOrdenesEnComboBox();
         }
-    }
+    }*/
 }
 
