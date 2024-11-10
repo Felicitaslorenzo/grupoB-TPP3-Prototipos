@@ -11,7 +11,6 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
     {
         public string IdOrdenSeleccion { get; set; }
         public EstadoOrdenSelEnum Estado { get; set; }
-
         public List<Producto> Producto { get; set; }
     }
 }

@@ -33,5 +33,9 @@ namespace grupoB_TPP3_Prototipos.Almacenes
             // Deserializa el JSON usando las opciones configuradas
             ordenespreparacion = JsonSerializer.Deserialize<List<OrdenPreparacionEnt>>(datos)!;
         }
+        public static OrdenPreparacionEnt ObtenerOrdenPreparacion(string idOrdenPreparacion)
+        {
+            return ordenespreparacion.FirstOrDefault(op => op.IdOrdenPreparacion == idOrdenPreparacion);
+        }
     }
 }
