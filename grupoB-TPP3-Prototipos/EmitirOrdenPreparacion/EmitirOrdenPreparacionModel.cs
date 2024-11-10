@@ -77,27 +77,29 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             return $"Orden {nuevoIDOrden} creada exitosamente.";
         }
 
-        private string GenerarNuevoIDOrden()
+        private string GenerarNuevoIDOrden() // actualice para que tome en cuenta el OrdenPreparacionAlmacen
         {
-            int nuevoId = 1;
+            int nuevoId = 1; // Valor predeterminado si no hay ordenes.
 
-            if (ordenes.Count > 0)
-            {
-                // obtener ID y convertir a int
-                var idsExistentes = ordenes
-                .Where(o => o != null && o.IDOrdenPreparacion != null && o.IDOrdenPreparacion.Length >= 6) // Verificar que el objeto y la propiedad no sean nulos
-                .Select(o => int.Parse(o.IDOrdenPreparacion.Substring(3))) // Obtener solo la parte numérica
+            // Acceder a las ordenes cargadas desde el archivo JSON
+            var ordenesExistentes = OrdenPreparacionAlmacen.OrdenesPreparacion
+                .Where(o => o != null && o.IdOrdenPreparacion != null && o.IdOrdenPreparacion.Length >= 6) // Verificar que el objeto y la propiedad no sean nulos
+                .Select(o => o.IdOrdenPreparacion) // Obtener los IDs completos (ej. OP030)
                 .ToList();
 
+            // Verificar si hay IDs existentes y calcular el nuevo ID
+            if (ordenesExistentes.Count > 0)
+            {
+                // Extraer la parte numérica de los IDs (después de 'OP')
+                var idsNumericos = ordenesExistentes
+                    .Select(id => int.Parse(id.Substring(2))) // Obtener la parte numérica del ID (ej. 030)
+                    .ToList();
 
-                // Verificar si hay IDs existentes y calcular el nuevo ID
-                if (idsExistentes.Count > 0)
-                {
-                    nuevoId = idsExistentes.Max() + 1;
-                }
+                // Obtener el máximo valor y sumarle 1 para generar el siguiente ID
+                nuevoId = idsNumericos.Max() + 1; // Sumar 1 al valor máximo encontrado
             }
 
-
+            // Devolver el nuevo ID con formato OP000
             return "OP" + nuevoId.ToString("D3");
         }
 
@@ -177,19 +179,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                     .Select(transportista => transportista.IdTransportista)
                     .ToList()
             }).ToList();
-            /* return new List<Cliente>
-            {
-                new Cliente { IdCliente = "CL001", Transportistas = new List<string> {"TR001", "TR002", "TR003", "CL001"}},
-                new Cliente { IdCliente = "CL002", Transportistas = new List<string> {"TR004", "TR005", "CL002"}},
-                new Cliente { IdCliente = "CL003", Transportistas = new List<string> {"TR006", "TR007", "CL003"}},
-                new Cliente { IdCliente = "CL004", Transportistas = new List<string> {"TR008", "TR009", "TR010", "TR011", "CL004"}},
-                new Cliente { IdCliente = "CL005", Transportistas = new List<string> {"TR012", "TR013", "CL005"}},
-                new Cliente { IdCliente = "CL006", Transportistas = new List<string> {"TR014", "TR015", "CL006"}},
-                new Cliente { IdCliente = "CL007", Transportistas = new List<string> {"TR016", "TR017", "CL007"}},
-                new Cliente { IdCliente = "CL008", Transportistas = new List<string> {"TR018", "TR019", "CL008"}},
-                new Cliente { IdCliente = "CL009", Transportistas = new List<string> {"TR020", "TR021", "CL009"}},
-                new Cliente { IdCliente = "CL010", Transportistas = new List<string> {"TR022", "TR023", "CL010"}},
-            }; */
         }
 
         public Cliente ClienteAnterior { get; set; }

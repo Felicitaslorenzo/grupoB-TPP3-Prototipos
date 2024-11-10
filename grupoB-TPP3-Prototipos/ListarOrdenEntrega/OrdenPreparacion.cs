@@ -12,5 +12,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
         public string IdCliente {  get; set; }
         public string Transportista {  get; set; }
         public DateTime FechaEstado { get; set; }
+        public string Estado {  get; set; }
     }
 }

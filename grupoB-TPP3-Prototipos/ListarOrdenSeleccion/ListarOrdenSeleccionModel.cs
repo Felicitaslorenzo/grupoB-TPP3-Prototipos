@@ -29,7 +29,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
                     // Obtiene la lista de productos de cada orden de preparación.
                      Productos = op.Detalle.Select(det => new Producto
                      {
-                         
                          DescripcionProducto = ProductoAlmacen.Productos
                                           .First(p => p.SKUProducto == det.SKUProducto).DescripcionProducto,
                          Cantidad = det.Cantidad

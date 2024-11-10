@@ -11,26 +11,25 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
     {
 
         public List<OrdenEntrega> OrdenesEntregadas = OrdenEntregaAlmacen.OrdenesEntrega
-     .Select(oe => new OrdenEntrega
-     {
-         IdOrdenEntrega = oe.IdOrdenEntrega,
-         FechaEmision = oe.FechaEmision,
-         FechaEntrega = oe.FechaEntrega,
-         // Estado = oe.Estado, 
+    .Select(oe => new OrdenEntrega
+    {
+        IdOrdenEntrega = oe.IdOrdenEntrega,
+        FechaEmision = oe.FechaEmision,
+        FechaEntrega = oe.FechaEntrega,
 
-         // Asocia las órdenes de preparación usando la lista de identificadores en oe.OrdenesPreparacion
-         OrdenesPreparacion = OrdenPreparacionAlmacen.OrdenesPreparacion
-             .Where(op => oe.OrdenesPreparacion.Contains(op.IdOrdenPreparacion)) // Filtra las órdenes de preparación que coincidan con los IDs en OrdenesPreparacion de OrdenEntrega
-             .Select(op => new OrdenPreparacion
-             {
-                 IdOrden = op.IdOrdenPreparacion,
-                 IdCliente = op.IdCliente,
-                 Transportista = op.IdTransportista,
-                 FechaEstado = op.FechaEntrega // Asegúrate de que esta sea la fecha correcta
-             })
-             .ToList()
-     })
-     .ToList();
+        // Aquí creas la lista de 'OrdenesPreparacion' de forma correcta.
+        OrdenesPreparacion = OrdenPreparacionAlmacen.OrdenesPreparacion
+            .Where(op => oe.OrdenesPreparacion.Contains(op.IdOrdenPreparacion))
+            .Select(op => new OrdenPreparacion
+            {
+                IdOrden = op.IdOrdenPreparacion,   // Asegúrate de que este mapeo es correcto.
+                FechaEstado = op.FechaEntrega,
+                Estado = op.Estado.ToString(),
+            })
+            .ToList(), // Convertimos a lista
+    })
+    .ToList(); // Convertimos la consulta principal a lista
+
 
         public List<OrdenEntrega> ObtenerOrdenesEntrega()
         {

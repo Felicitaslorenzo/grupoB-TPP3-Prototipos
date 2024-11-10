@@ -35,8 +35,8 @@
             ListarOrdenEntregaList = new ListView();
             IdOrdenEntregaColumna = new ColumnHeader();
             FechaOEColumna = new ColumnHeader();
-            Estado2Columna = new ColumnHeader();
             FechaEstadoOEColumna = new ColumnHeader();
+            Estado2Columna = new ColumnHeader();
             BuscarButton = new Button();
             VolverButton = new Button();
             FechaDesdeOELabel = new Label();
@@ -108,15 +108,15 @@
             FechaOEColumna.Text = "Fecha Emision";
             FechaOEColumna.Width = 170;
             // 
-            // Estado2Columna
-            // 
-            Estado2Columna.Text = "Estado";
-            Estado2Columna.Width = 100;
-            // 
             // FechaEstadoOEColumna
             // 
             FechaEstadoOEColumna.Text = "Fecha Estado";
             FechaEstadoOEColumna.Width = 170;
+            // 
+            // Estado2Columna
+            // 
+            Estado2Columna.Text = "Estado";
+            Estado2Columna.Width = 100;
             // 
             // BuscarButton
             // 

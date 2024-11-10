@@ -1,6 +1,6 @@
 [
   {
-    "IdOrden": "OP001",
+    "IdOrdenPreparacion": "OP001",
     "IdCliente": "CL001",
     "FechaEmision": "2024-10-03T00:00:00",
     "FechaEntrega": "2024-09-30T00:00:00",
@@ -20,7 +20,7 @@
     ]
   },
   {
-    "IdOrden": "OP002",
+    "IdOrdenPreparacion": "OP002",
     "IdCliente": "CL002",
     "FechaEmision": "2024-09-29T00:00:00",
     "FechaEntrega": "2024-09-25T00:00:00",
@@ -41,7 +41,7 @@
     ]
   },
   {
-    "IdOrden": "OP003",
+    "IdOrdenPreparacion": "OP003",
     "IdCliente": "CL001",
     "FechaEmision": "2024-10-05T00:00:00",
     "FechaEntrega": "2024-10-01T00:00:00",
@@ -62,7 +62,7 @@
     ]
   },
   {
-    "IdOrden": "OP004",
+    "IdOrdenPreparacion": "OP004",
     "IdCliente": "CL005",
     "FechaEmision": "2024-09-25T00:00:00",
     "FechaEntrega": "2024-09-21T00:00:00",
@@ -83,7 +83,7 @@
     ]
   },
   {
-    "IdOrden": "OP005",
+    "IdOrdenPreparacion": "OP005",
     "IdCliente": "CL004",
     "FechaEmision": "2024-09-28T00:00:00",
     "FechaEntrega": "2024-09-24T00:00:00",
@@ -104,7 +104,7 @@
     ]
   },
   {
-    "IdOrden": "OP006",
+    "IdOrdenPreparacion": "OP006",
     "IdCliente": "CL010",
     "FechaEmision": "2024-09-23T00:00:00",
     "FechaEntrega": "2024-09-19T00:00:00",
@@ -130,7 +130,7 @@
     ]
   },
   {
-    "IdOrden": "OP007",
+    "IdOrdenPreparacion": "OP007",
     "IdCliente": "CL009",
     "FechaEmision": "2024-09-30T00:00:00",
     "FechaEntrega": "2024-09-26T00:00:00",
@@ -146,7 +146,7 @@
     ]
   },
   {
-    "IdOrden": "OP008",
+    "IdOrdenPreparacion": "OP008",
     "IdCliente": "CL008",
     "FechaEmision": "2024-09-26T00:00:00",
     "FechaEntrega": "2024-09-22T00:00:00",
@@ -167,7 +167,7 @@
     ]
   },
   {
-    "IdOrden": "OP009",
+    "IdOrdenPreparacion": "OP009",
     "IdCliente": "CL010",
     "FechaEmision": "2024-09-27T00:00:00",
     "FechaEntrega": "2024-09-23T00:00:00",
@@ -188,7 +188,7 @@
     ]
   },
   {
-    "IdOrden": "OP010",
+    "IdOrdenPreparacion": "OP010",
     "IdCliente": "CL004",
     "FechaEmision": "2024-09-30T00:00:00",
     "FechaEntrega": "2024-09-27T00:00:00",
@@ -204,7 +204,7 @@
     ]
   },
   {
-    "IdOrden": "OP011",
+    "IdOrdenPreparacion": "OP011",
     "IdCliente": "CL001",
     "FechaEmision": "2024-10-05T00:00:00",
     "FechaEntrega": "2024-10-01T00:00:00",
@@ -225,7 +225,7 @@
     ]
   },
   {
-    "IdOrden": "OP012",
+    "IdOrdenPreparacion": "OP012",
     "IdCliente": "CL002",
     "FechaEmision": "2024-10-06T00:00:00",
     "FechaEntrega": "2024-10-02T00:00:00",
@@ -246,7 +246,7 @@
     ]
   },
   {
-    "IdOrden": "OP013",
+    "IdOrdenPreparacion": "OP013",
     "IdCliente": "CL003",
     "FechaEmision": "2024-10-07T00:00:00",
     "FechaEntrega": "2024-10-03T00:00:00",
@@ -267,7 +267,7 @@
     ]
   },
   {
-    "IdOrden": "OP014",
+    "IdOrdenPreparacion": "OP014",
     "IdCliente": "CL004",
     "FechaEmision": "2024-10-08T00:00:00",
     "FechaEntrega": "2024-10-04T00:00:00",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "IdOrden": "OP015",
+    "IdOrdenPreparacion": "OP015",
     "IdCliente": "CL005",
     "FechaEmision": "2024-10-02T00:00:00",
     "FechaEntrega": "2024-09-28T00:00:00",
@@ -309,7 +309,7 @@
     ]
   },
   {
-    "IdOrden": "OP016",
+    "IdOrdenPreparacion": "OP016",
     "IdCliente": "CL006",
     "FechaEmision": "2024-10-01T00:00:00",
     "FechaEntrega": "2024-09-29T00:00:00",
@@ -330,7 +330,7 @@
     ]
   },
   {
-    "IdOrden": "OP017",
+    "IdOrdenPreparacion": "OP017",
     "IdCliente": "CL007",
     "FechaEmision": "2024-10-03T00:00:00",
     "FechaEntrega": "2024-09-30T00:00:00",
@@ -351,7 +351,7 @@
     ]
   },
   {
-    "IdOrden": "OP018",
+    "IdOrdenPreparacion": "OP018",
     "IdCliente": "CL008",
     "FechaEmision": "2024-10-05T00:00:00",
     "FechaEntrega": "2024-10-02T00:00:00",
@@ -372,7 +372,7 @@
     ]
   },
   {
-    "IdOrden": "OP019",
+    "IdOrdenPreparacion": "OP019",
     "IdCliente": "CL009",
     "FechaEmision": "2024-10-07T00:00:00",
     "FechaEntrega": "2024-10-04T00:00:00",
@@ -393,7 +393,7 @@
     ]
   },
   {
-    "IdOrden": "OP020",
+    "IdOrdenPreparacion": "OP020",
     "IdCliente": "CL010",
     "FechaEmision": "2024-10-09T00:00:00",
     "FechaEntrega": "2024-10-06T00:00:00",
@@ -414,7 +414,7 @@
     ]
   },
   {
-    "IdOrden": "OP021",
+    "IdOrdenPreparacion": "OP021",
     "IdCliente": "CL009",
     "FechaEmision": "2024-10-11T00:00:00",
     "FechaEntrega": "2024-10-08T00:00:00",
@@ -435,7 +435,7 @@
     ]
   },
   {
-    "IdOrden": "OP022",
+    "IdOrdenPreparacion": "OP022",
     "IdCliente": "CL003",
     "FechaEmision": "2024-10-15T00:00:00",
     "FechaEntrega": "2024-10-18T00:00:00",
@@ -456,7 +456,7 @@
     ]
   },
   {
-    "IdOrden": "OP023",
+    "IdOrdenPreparacion": "OP023",
     "IdCliente": "CL004",
     "FechaEmision": "2024-10-16T00:00:00",
     "FechaEntrega": "2024-10-20T00:00:00",
@@ -477,7 +477,7 @@
     ]
   },
   {
-    "IdOrden": "OP024",
+    "IdOrdenPreparacion": "OP024",
     "IdCliente": "CL006",
     "FechaEmision": "2024-10-17T00:00:00",
     "FechaEntrega": "2024-10-22T00:00:00",
@@ -498,7 +498,7 @@
     ]
   },
   {
-    "IdOrden": "OP025",
+    "IdOrdenPreparacion": "OP025",
     "IdCliente": "CL009",
     "FechaEmision": "2024-10-19T00:00:00",
     "FechaEntrega": "2024-10-23T00:00:00",
@@ -520,7 +520,7 @@
     ]
   },
   {
-    "IdOrden": "OP026",
+    "IdOrdenPreparacion": "OP026",
     "IdCliente": "CL001",
     "FechaEmision": "2024-10-21T00:00:00",
     "FechaEntrega": "2024-10-24T00:00:00",
@@ -541,7 +541,7 @@
     ]
   },
   {
-    "IdOrden": "OP027",
+    "IdOrdenPreparacion": "OP027",
     "IdCliente": "CL002",
     "FechaEmision": "2024-10-22T00:00:00",
     "FechaEntrega": "2024-10-25T00:00:00",
@@ -562,7 +562,7 @@
     ]
   },
   {
-    "IdOrden": "OP028",
+    "IdOrdenPreparacion": "OP028",
     "IdCliente": "CL003",
     "FechaEmision": "2024-10-23T00:00:00",
     "FechaEntrega": "2024-10-26T00:00:00",
@@ -583,7 +583,7 @@
     ]
   },
   {
-    "IdOrden": "OP029",
+    "IdOrdenPreparacion": "OP029",
     "IdCliente": "CL004",
     "FechaEmision": "2024-10-24T00:00:00",
     "FechaEntrega": "2024-10-28T00:00:00",
@@ -604,7 +604,7 @@
     ]
   },
   {
-    "IdOrden": "OP030",
+    "IdOrdenPreparacion": "OP030",
     "IdCliente": "CL010",
     "FechaEmision": "2024-10-30T00:00:00",
     "FechaEntrega": "2024-11-02T00:00:00",
