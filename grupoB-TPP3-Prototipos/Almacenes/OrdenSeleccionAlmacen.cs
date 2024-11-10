@@ -18,7 +18,20 @@ namespace grupoB_TPP3_Prototipos.Almacenes
         public static void AgregarOrdenSeleccion(OrdenSeleccionEnt nuevaOrden)
         {
             ordenesseleccion.Add(nuevaOrden);
-            Grabar();
+            try
+            {
+                string filePath = @"Datos\OrdenesSeleccion.json"; // Asegúrate de que esta ruta sea correcta
+                string json = JsonSerializer.Serialize(ordenesseleccion, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(filePath, json);
+                Console.WriteLine("Escritura en JSON completada."); // Confirmación en consola
+            }
+            catch (Exception ex)
+            {
+                // Mostrar un mensaje en caso de error
+                MessageBox.Show($"Error al escribir en el archivo JSON: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine($"Excepción capturada: {ex}"); // Para detalles en consola o logs
+            }
+            //Grabar();
         }
         public static void Grabar()
         {            

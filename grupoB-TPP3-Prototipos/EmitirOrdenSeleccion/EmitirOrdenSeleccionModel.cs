@@ -65,25 +65,20 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
 
         private int numeroOrdenSeleccion = 1;
 
-        // Método para obtener el siguiente número de orden
         public static string GenerarNuevaOrden()
         {
-            // Leer las órdenes de selección desde el archivo JSON
             OrdenSeleccionAlmacen.Leer();
 
-            // Obtener el último ID de las órdenes de selección
             var ultimoId = OrdenSeleccionAlmacen.OrdenesSeleccion
-                .Select(o => o.IdOrdenSeleccion)     // Seleccionamos los IDs
-                .OrderByDescending(id => id)         // Los ordenamos en orden descendente
-                .FirstOrDefault();                   // Tomamos el primero (el último ID)
+                .Select(o => o.IdOrdenSeleccion)
+                .OrderByDescending(id => id) 
+                .FirstOrDefault();
 
-            // Si no existe ninguna orden, empezamos con "OS-001"
             if (string.IsNullOrEmpty(ultimoId))
             {
                 return "OS-001";
             }
 
-            // Extraemos el número al final del ID, en el formato "OS-###"
             var numero = int.Parse(ultimoId.Substring(3));  // Asumimos que el ID tiene el formato "OS-###"
 
             // Incrementamos el número
