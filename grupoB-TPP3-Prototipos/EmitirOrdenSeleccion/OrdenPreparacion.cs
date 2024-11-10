@@ -1,4 +1,5 @@
-﻿using grupoB_TPP3_Prototipos.GenerarOrdenSeleccion;
+﻿using grupoB_TPP3_Prototipos.Almacenes;
+using grupoB_TPP3_Prototipos.GenerarOrdenSeleccion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSeleccion
         public string IdCliente { get; set; }
         public string Nombre { get; set; }
         public string Prioridad { get; set; }
-        public string Estado { get; set; }
+        public EstadoOrdenPrepEnum Estado { get; set; }
         public DateTime FechaEstado { get; set; }
         public DateTime FechaEmision { get; set; }
         public List<Producto> Producto { get; set; }

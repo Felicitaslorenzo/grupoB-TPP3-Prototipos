@@ -1,4 +1,5 @@
-﻿using grupoB_TPP3_Prototipos.Generar_orden_de_Selección;
+﻿using grupoB_TPP3_Prototipos.Almacenes;
+using grupoB_TPP3_Prototipos.Generar_orden_de_Selección;
 using grupoB_TPP3_Prototipos.GenerarOrdenSeleccion;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
             var clientes = modelo.ObtenerClientes();
             CargarClientesEnComboBox(clientes);
             CargarOrdenesEnListView(ordenesPreparacion);
-            model.ObtenerOrdenesPreparacion();
             CargarPrioridadesEnComboBox();
         }
         private void CargarClientesEnComboBox(List<Cliente> clientes)
@@ -35,7 +35,11 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
 
         private void CargarOrdenesEnComboBox(List<grupoB_TPP3_Prototipos.GenerarOrdenSeleccion.OrdenPreparacion> ordenesPreparacion)
         {
-            model.CargarComboBox(IdOrdenPreparacionCombo, ordenesPreparacion, o => o.IdOrden);
+            var ordenesPendientes = ordenesPreparacion
+        .Where(o => o.Estado == EstadoOrdenPrepEnum.Pendiente)
+        .ToList();
+
+            model.CargarComboBox(IdOrdenPreparacionCombo, ordenesPendientes, o => o.IdOrden);
         }
 
         private void CargarPrioridadesEnComboBox()
@@ -46,6 +50,8 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
 
         private void CargarOrdenesEnListView(List<OrdenPreparacion> ordenesPreparacion)
         {
+            var ordenesPendientes = ordenesPreparacion.Where(o => o.Estado == EstadoOrdenPrepEnum.Pendiente).ToList();
+
             model.CargarListView(ordenesPreparacion, GenerarOrdenSeleccionBuscarList,
                 orden => new ListViewItem(orden.IdOrden)
                 {
@@ -108,6 +114,9 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
                 DateTime fechaHasta = FechaOSHastaPicker.Value;
                 ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision <= fechaHasta);
             }
+            //Filtramos solo las que están Pendientes
+            ordenesFiltradas = ordenesFiltradas.Where(o => o.Estado == EstadoOrdenPrepEnum.Pendiente);
+
 
             GenerarOrdenSeleccionBuscarList.Items.Clear();
 
@@ -181,8 +190,20 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
 
         private void GenerarOrdenButton_Click(object sender, EventArgs e)
         {
+            List<string> opSeleccionadas = ObtenerOrdenesPreparacionSeleccionadas();
+            var nuevaOrdenSeleccion = new OrdenSeleccionEnt
+            {
+                IdOrdenSeleccion = EmitirOrdenSeleccionModel.GenerarNuevaOrden(), // Generar un ID único
+                FechaEmision = DateTime.Now,
+                Estado = EstadoOrdenSelEnum.Pendiente, // Establecer el estado por defecto
+                FechaEstado = DateTime.Now,
+                OrdenesPreparacion = opSeleccionadas
+            };
+            OrdenSeleccionAlmacen.AgregarOrdenSeleccion(nuevaOrdenSeleccion);
+
+            
             // Generar una nueva orden y mostrar el mensaje
-            string mensaje = $"Se generó {model.GenerarNuevaOrden()}";
+            string mensaje = $"Se generó {EmitirOrdenSeleccionModel.GenerarNuevaOrden()}";
             MessageBox.Show(mensaje, "Orden Generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // Eliminar los elementos seleccionados del ListView principal
@@ -204,6 +225,20 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
             GenerarOSSeleccionadasList.Items.Clear(); // Limpiar el ListView final (o el que quieras limpiar)
 
             // El primer ListView queda sin cambios, por lo que podrás seguir seleccionando y repitiendo el proceso
+            
+        }
+
+        private List<string> ObtenerOrdenesPreparacionSeleccionadas()
+        {
+            List<string> opSeleccionadas = new List<string>();
+
+            foreach (ListViewItem item in GenerarOSSeleccionadasList.Items)
+            {
+                string idOP = item.Text;
+                opSeleccionadas.Add(idOP);
+            }
+
+            return opSeleccionadas;
         }
 
         private void buttonGenerarOrdenSeleccion_Click(object sender, EventArgs e)

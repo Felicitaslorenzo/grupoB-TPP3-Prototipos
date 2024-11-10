@@ -12,7 +12,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
         public EstadoOrdenSelEnum Estado { get; set; }
         public DateTime FechaEstado { get; set; }
         public DateTime FechaEmision { get; set; }
-        public List<string> OrdenesPreparacion { get; } = new();
+        public List<string> OrdenesPreparacion { get; set; } = new();
 
     }
 }

@@ -24,7 +24,7 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                         IdOrden = ordenEntidad.IdOrdenPreparacion,
                         Nombre = ClienteAlmacen.Clientes.First(c => c.IdCliente == ordenEntidad.IdCliente).NombreCliente,
                         Prioridad = ordenEntidad.Prioridad.ToString(),
-                        Estado = ordenEntidad.Estado.ToString(),
+                        Estado = ordenEntidad.Estado,
                         FechaEmision = ordenEntidad.FechaEmision,
                         FechaEstado = ordenEntidad.FechaEntrega, // Asegúrate de que `FechaEntrega` esté definido en `OrdenPreparacion`.
                         Producto = ordenEntidad.Detalle.Select(detalle => new Producto
@@ -66,38 +66,32 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
         private int numeroOrdenSeleccion = 1;
 
         // Método para obtener el siguiente número de orden
-        public string GenerarNuevaOrden()
+        public static string GenerarNuevaOrden()
         {
+            // Leer las órdenes de selección desde el archivo JSON
+            OrdenSeleccionAlmacen.Leer();
 
-            string nuevaOrden = $"OS-{numeroOrdenSeleccion:D3}"; // Formato de 3 dígitos
-            numeroOrdenSeleccion++; // Incrementar el número de orden
-            return nuevaOrden;
-            /*
-            // Obtener el número de orden más alto de las órdenes existentes
-            var ultimoNumeroOrden = OrdenSeleccionAlmacen.OrdenesSeleccion
-                .Max(orden => int.Parse(orden.IdOrdenSeleccion.Split('-')[1])); // Extrae el número de la orden, asumiendo formato "OS-001"
+            // Obtener el último ID de las órdenes de selección
+            var ultimoId = OrdenSeleccionAlmacen.OrdenesSeleccion
+                .Select(o => o.IdOrdenSeleccion)     // Seleccionamos los IDs
+                .OrderByDescending(id => id)         // Los ordenamos en orden descendente
+                .FirstOrDefault();                   // Tomamos el primero (el último ID)
 
-            // Incrementar el número de orden
-            int nuevoNumeroOrden = ultimoNumeroOrden + 1;
-
-            // Formatear el nuevo número de orden con 3 dígitos
-            string nuevaOrden = $"OS-{nuevoNumeroOrden:D3}";
-
-
-            var nuevaOrdenSeleccion = new OrdenSeleccionEnt
+            // Si no existe ninguna orden, empezamos con "OS-001"
+            if (string.IsNullOrEmpty(ultimoId))
             {
-                IdOrdenSeleccion = nuevaOrden,
-                Estado = EstadoOrdenSelEnum.Pendiente, // Asumiendo que el estado inicial es Pendiente
-                FechaEstado = DateTime.Now, // Fecha del estado
-                FechaEmision = DateTime.Now, // Fecha de emisión
-                OrdenesPreparacion = OrdenPreparacionDetalle, // Aquí puedes agregar las órdenes de preparación si es necesario
-            };
+                return "OS-001";
+            }
 
-            
-            OrdenSeleccionAlmacen.AgregarOrdenSeleccion(nuevaOrdenSeleccion);
-            */
+            // Extraemos el número al final del ID, en el formato "OS-###"
+            var numero = int.Parse(ultimoId.Substring(3));  // Asumimos que el ID tiene el formato "OS-###"
+
+            // Incrementamos el número
+            numero++;
+
+            // Generamos el nuevo ID en el formato "OS-###"
+            return $"OS-{numero:D3}";  // El ":D3" asegura que el número tenga 3 dígitos
         }
-
         public void QuitarSeleccionadas(ListView listView)
         {
             if (listView.SelectedItems.Count > 0)

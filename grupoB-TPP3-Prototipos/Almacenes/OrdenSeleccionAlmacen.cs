@@ -15,6 +15,11 @@ namespace grupoB_TPP3_Prototipos.Almacenes
 
         public static IReadOnlyCollection<OrdenSeleccionEnt> OrdenesSeleccion => ordenesseleccion.AsReadOnly();
 
+        public static void AgregarOrdenSeleccion(OrdenSeleccionEnt nuevaOrden)
+        {
+            ordenesseleccion.Add(nuevaOrden);
+            Grabar();
+        }
         public static void Grabar()
         {            
             var datos = JsonSerializer.Serialize(ordenesseleccion);
