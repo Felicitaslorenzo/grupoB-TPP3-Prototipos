@@ -1,0 +1,48 @@
+﻿Caso 1 : Crear Orden con un solo producto
+
+1- Botón: "Ordenes de Preparación"
+
+2- Botón: "Emitir Orden de Preparación"
+
+3- ID Cliente: CL001
+
+3- Prioridad: Con prioridad de entrega
+
+3- Transportista: TR001
+
+3- Fecha entrega: 29/10/2024
+
+5- Producto: SKU001
+
+6- Cantidad: 100
+
+7- Botón: "Agregar Producto"
+
+5- Detalle:
+
+SKU001 - Muebles Modulares de oficina -  100
+
+7- Botón: "Emitir Orden"
+
+10- Mensaje: "Se generó OP-001"
+
+11- Botón: "Ok"
+
+12- Cerrar Sistema
+
+13- Verificar en OrdenPreparacion.json, nuevo registro:
+
+[{"IdOrdenPreparacion":"OP001",
+"IdCliente":"CL001",
+"FechaEmision":"2024-10-03T00:00:00",
+"FechaEntrega":"2024-09-30T00:00:00",
+"Estado":0,"Prioridad":0,
+"IdTransportista":"TR001",
+"Detalle":[]},
+
+Errores:
+No guarde el listado de productos seleccionados
+No guarda en archvo.json
+Cuando se genera el estado debe ser pendiente
+Si pongo 1000 productos, deberia tirar error de cantidad-
+

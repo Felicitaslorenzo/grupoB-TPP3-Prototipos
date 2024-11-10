@@ -40,11 +40,14 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             return (false, string.Empty);
         }
 
+        // Función para generar una nueva orden a partir de los productos seleccionados en el ListView
         public string GenerarNuevaOrden(string idCliente, string prioridad, string transportista, ListView productosListView)
         {
+            // Generar un nuevo ID de orden basado en la lógica de ordenación
             string nuevoIDOrden = GenerarNuevoIDOrden();
             List<Producto> productosOrden = new List<Producto>();
 
+            // Iterar sobre los productos seleccionados en el ListView
             foreach (ListViewItem productoItem in productosListView.Items)
             {
                 if (int.TryParse(productoItem.SubItems[2].Text, out int cantidad))
@@ -54,7 +57,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                         IDProducto = productoItem.SubItems[0].Text,
                         DescripcionProducto = productoItem.SubItems[1].Text,
                         Cantidad = cantidad,
-                        // Ubicacion = productoItem.SubItems[3].Text
+                        // Ubicacion = productoItem.SubItems[3].Text // Si es necesario, puedes agregar más datos como la ubicación
                     });
                 }
                 else
@@ -63,6 +66,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 }
             }
 
+            // Crear la nueva orden
             OrdenPreparacion nuevaOrden = new OrdenPreparacion
             {
                 IDOrdenPreparacion = nuevoIDOrden,
@@ -73,34 +77,66 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 Productos = productosOrden
             };
 
+            // Agregar la nueva orden a la lista de órdenes (supongo que la lista "ordenes" está definida en el contexto)
             ordenes.Add(nuevaOrden);
+
+            // Llamamos a CambiarEstadoOrden para cambiar el estado de la orden recién creada
+            // Suponemos que la nueva orden que acabamos de crear es la que queremos cambiar de estado
+            var ordenItem = new ListViewItem(nuevaOrden.IDOrdenPreparacion); // Asumimos que IDOrdenPreparacion es el identificador de la orden
+            CambiarEstadoOrden(ordenItem);
+
             return $"Orden {nuevoIDOrden} creada exitosamente.";
         }
 
-        private string GenerarNuevoIDOrden() // actualice para que tome en cuenta el OrdenPreparacionAlmacen
+        // Función para cambiar el estado de una orden basada en su número de orden
+        public void CambiarEstadoOrden(ListViewItem item)
         {
-            int nuevoId = 1; // Valor predeterminado si no hay ordenes.
-
-            // Acceder a las ordenes cargadas desde el archivo JSON
-            var ordenesExistentes = OrdenPreparacionAlmacen.OrdenesPreparacion
-                .Where(o => o != null && o.IdOrdenPreparacion != null && o.IdOrdenPreparacion.Length >= 6) // Verificar que el objeto y la propiedad no sean nulos
-                .Select(o => o.IdOrdenPreparacion) // Obtener los IDs completos (ej. OP030)
-                .ToList();
-
-            // Verificar si hay IDs existentes y calcular el nuevo ID
-            if (ordenesExistentes.Count > 0)
+            var partes = item.Text.Split(' '); // Asumimos que el texto contiene un número de orden en algún formato
+            if (partes.Length > 1)
             {
-                // Extraer la parte numérica de los IDs (después de 'OP')
-                var idsNumericos = ordenesExistentes
-                    .Select(id => int.Parse(id.Substring(2))) // Obtener la parte numérica del ID (ej. 030)
-                    .ToList();
+                var ordenNum = int.Parse(partes[1]);
 
-                // Obtener el máximo valor y sumarle 1 para generar el siguiente ID
-                nuevoId = idsNumericos.Max() + 1; // Sumar 1 al valor máximo encontrado
+                // Buscar la orden pendiente en el almacenamiento de órdenes
+                var orden = OrdenPreparacionAlmacen.OrdenesPreparacion
+    .FirstOrDefault(o =>
+    {
+        int idOrden;
+        return o.Estado == EstadoOrdenPrepEnum.Pendiente && int.TryParse(o.IdOrdenPreparacion, out idOrden) && idOrden == ordenNum;
+    });
+
+                // Si encontramos la orden, cambiamos su estado
+                if (orden != null)
+                {
+                    orden.Estado = EstadoOrdenPrepEnum.EnSeleccion;
+                }
+            }
+        }
+
+        private string GenerarNuevoIDOrden()
+        {
+            // Leer las órdenes desde el archivo (simulamos que ya tienes la lógica para leer desde un almacenamiento)
+            OrdenPreparacionAlmacen.Leer();
+
+            // Obtener el último ID de las órdenes
+            var ultimoId = OrdenPreparacionAlmacen.OrdenesPreparacion
+                .Select(o => o.IdOrdenPreparacion)
+                .OrderByDescending(id => id)
+                .FirstOrDefault();
+
+            // Si no existe ninguna orden, empezamos con "OP-001"
+            if (string.IsNullOrEmpty(ultimoId))
+            {
+                return "OP-001";
             }
 
-            // Devolver el nuevo ID con formato OP000
-            return "OP" + nuevoId.ToString("D3");
+            // Extraemos el número al final del ID, en el formato "OP-###"
+            var numero = int.Parse(ultimoId.Substring(3));  // Asumimos que el ID tiene el formato "OP-###"
+
+            // Incrementamos el número
+            numero++;
+
+            // Generamos el nuevo ID en el formato "OP-###"
+            return $"OP-{numero:D3}";  // El ":D3" asegura que el número tenga 3 dígitos
         }
 
         internal void CargarCliente(ComboBox IdClienteCombo, ComboBox TransportistaCombo, ComboBox ProductosCombo)
@@ -142,7 +178,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             TransportistaCombo.SelectedIndex = -1;
         }
 
-
         internal void CargarProductos(Cliente cliente, ComboBox ProductosCombo)
         {
 
@@ -180,7 +215,14 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                     .ToList()
             }).ToList();
         }
-
+        public List<string> ObtenerPrioridad()
+        {
+            // Devuelve los nombres de los valores definidos en el enum
+            return Enum.GetValues(typeof(PrioridadEnum))
+                .Cast<PrioridadEnum>()
+                .Select(p => p.ToString()) // Devolver el nombre del enum como string
+                .ToList();
+        }
         public Cliente ClienteAnterior { get; set; }
     }
 }

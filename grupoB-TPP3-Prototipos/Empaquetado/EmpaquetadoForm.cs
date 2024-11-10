@@ -44,11 +44,23 @@ namespace grupoB_TPP3_Prototipos.CrearOrdenEntrega
 
         private void EmpaquetarOrdenButton_Click(object sender, EventArgs e)
         {
-            // Eliminar la orden actual
-            model.EliminarOrdenActual();
+            // Verificar si se ha seleccionado algún producto en el ListView
+            if (ListarEmpaquetarOrdenList.SelectedItems.Count > 0)
+            {
+                // Eliminar la orden actual
+                model.EliminarOrdenActual();
 
-            // Mostrar la siguiente orden
-            MostrarOrdenActual();
+                // Mostrar la siguiente orden
+                MostrarOrdenActual();
+
+                // Mostrar mensaje de éxito
+                MessageBox.Show("La orden se ha empaquetado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // Si no se ha seleccionado ningún producto
+                MessageBox.Show("Por favor, selecciona un producto antes de empaquetar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void EmpaquetadoForm_Load(object sender, EventArgs e)
