@@ -49,6 +49,18 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
             var estadosOrdenPreparacion = ordenesPreparacion.Select(o => o.Estado).Distinct().ToList();
 
             // Agregar opción vacía y cargar datos en los desplegables
+
+
+            IdOrdenPreparacionCombo.Items.Add("");
+            foreach (var id in idsOrdenesPreparacion)
+            {
+                if (id != null)
+                {
+                    IdOrdenPreparacionCombo.Items.Add(id);
+                }
+
+            }
+
             NombreClienteCombo.Items.Add("");
             foreach (var nombre in nombresClientes)
             {
@@ -60,20 +72,10 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
             {
                 if (id != null)
                 {
-                    IdOrdenPreparacionCombo.Items.Add(id); //NO ANDA
+                    IdClienteCombo.Items.Add(id);
                 }
-                else
-                {
-                    // Opcional: registro o mensaje para diagnosticar cuál `id` es nulo
-                    Console.WriteLine("Id nulo encontrado en la lista de Ids de orden de preparación");
-                }
+               
                 //IdClienteCombo.Items.Add(id);
-            }
-
-            IdOrdenPreparacionCombo.Items.Add("");
-            foreach (var id in idsOrdenesPreparacion)
-            {
-               IdOrdenPreparacionCombo.Items.Add(id);
             }
 
             PrioridadOrdenPreparacionCombo.Items.Add("");
