@@ -38,10 +38,10 @@ namespace grupoB_TPP3_Prototipos
             OrdenPreparacionAlmacen.Grabar();
             OrdenSeleccionAlmacen.Grabar();
             TransportistaAlmacen.Grabar();
-            /* DepositoAlmacen.Grabar();
+            DepositoAlmacen.Grabar();
             InventarioMercaderiaAlmacen.Grabar();
             RemitoAlmacen.Grabar();
-            UbicacionAlmacen.Grabar(); */
+            UbicacionAlmacen.Grabar(); 
         }
     }
 }

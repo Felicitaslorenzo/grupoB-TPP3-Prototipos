@@ -112,7 +112,6 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
 
             // Limpiamos la lista de órdenes de despacho después de generar el remito
             ListarOrdenDespacharBuscarList.Items.Clear();
-
         }
 
         private void VolverButton_Click(object sender, EventArgs e)

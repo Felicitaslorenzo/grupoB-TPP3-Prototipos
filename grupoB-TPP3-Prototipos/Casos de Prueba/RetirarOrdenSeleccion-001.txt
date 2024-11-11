@@ -1,0 +1,11 @@
+CASO 1: Retirar Ordenes de selección: camino feliz
+1 - En MenuPrincipal, hacer click en botón "Ordenes de Seleccion" 
+2 - En MenuOrdenesSeleccion, hacer click en botón "Retirar orden de Selección"
+3 - En el campo Orden de Selección, seleccionar un IdOrdenSeleccion
+4 - Ver lista de Productos, sus cantidades y ubicaciones 
+5 - Seleccionar items de productos y sus cantidades
+6 - Hacer click en botón Confirmar 
+7 - Muestra el mensaje: "El retiro de la orden de selección se ha confirmado"
+8 - Hacer click en botón Cancelar --> vuelve al MenuOrdenesSeleccion
+9 - Menú Ordenes de Entrega => Cerrar Menú => Se visualiza el Menú principal
+10 - Menú principal => Cerrar Menú => Finaliza la ejecución del sistema

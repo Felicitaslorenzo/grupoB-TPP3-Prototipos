@@ -137,7 +137,12 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
             numero++;
 
             // Generamos el nuevo ID en el formato "RM###"
-            return $"RM{numero:D3}";  // El ":D3" asegura que el número tenga 3 dígitos, por ejemplo "RM002"
+            var nuevoIDRemito = $"RM{numero:D3}";  // El ":D3" asegura que el número tenga 3 dígitos, por ejemplo "RM002"
+
+            // Grabar cambios en el archivo JSON
+            RemitoAlmacen.Grabar();
+
+            return nuevoIDRemito;
         }
 
     }
