@@ -112,7 +112,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
         private string GenerarNuevoIDOrden()
         {
             // Leer las órdenes desde el archivo (simulamos que ya tienes la lógica para leer desde un almacenamiento)
-            OrdenPreparacionAlmacen.Leer();
+            
 
             // Obtener el último ID de las órdenes
             var ultimoId = OrdenPreparacionAlmacen.OrdenesPreparacion

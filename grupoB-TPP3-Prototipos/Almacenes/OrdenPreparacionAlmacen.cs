@@ -25,6 +25,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
         public static void AgregarOrdenPreparacion(OrdenPreparacionEnt nuevaOrden)
         {
             ordenespreparacion.Add(nuevaOrden);
+            /*
             try
             {
                 string filePath = @"Datos\OrdenesPreparacion.json"; // Asegúrate de que esta ruta sea correcta
@@ -38,6 +39,8 @@ namespace grupoB_TPP3_Prototipos.Almacenes
                 MessageBox.Show($"Error al escribir en el archivo JSON: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine($"Excepción capturada: {ex}"); // Para detalles en consola o logs
             }
+            */
+            Grabar();
         }
 
         public static void Leer()
@@ -51,6 +54,8 @@ namespace grupoB_TPP3_Prototipos.Almacenes
             // Deserializa el JSON usando las opciones configuradas
             ordenespreparacion = JsonSerializer.Deserialize<List<OrdenPreparacionEnt>>(datos)!;
         }
+
+
         public static OrdenPreparacionEnt ObtenerOrdenPreparacion(string idOrdenPreparacion)
         {
             return ordenespreparacion.FirstOrDefault(op => op.IdOrdenPreparacion == idOrdenPreparacion);
