@@ -41,46 +41,45 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
             // Extraer datos para cada ComboBox
             var idsClientes = ordenesEntrega
                 .SelectMany(o => o.OrdenesPreparacion.Select(p => p.IdCliente))
+                .Where(id => !string.IsNullOrEmpty(id)) // Filtrar valores nulos o vacíos
                 .Distinct()
                 .ToList();
 
             var idsOrdenesEntrega = ordenesEntrega
-                .Select(o => o.IdOrdenEntrega) // Cambia aquí
+                .Select(o => o.IdOrdenEntrega)
                 .Distinct()
                 .ToList();
 
-            /* var estadosOrdenEntrega = ordenesEntrega
-             // .Select(o => o.Estado) // Accede a Estado de OrdenEntrega
-               .Distinct()
-                .ToList(); */
-
-
-            FechaDesdeOEPicker.Format = DateTimePickerFormat.Custom;
-            FechaDesdeOEPicker.CustomFormat = " ";
-            FechaHastaOEPicker.Format = DateTimePickerFormat.Custom;
-            FechaHastaOEPicker.CustomFormat = " ";
+            var estadosOrdenEntrega = ordenesEntrega
+                .SelectMany(o => o.OrdenesPreparacion.Select(p => p.Estado))  // Seleccionar Estado de cada OrdenEntrega
+                .Where(estado => !string.IsNullOrEmpty(estado)) // Filtrar valores nulos o vacíos
+                .Distinct()
+                .ToList();
 
             // Cargar datos en los ComboBox
             IdClienteCombo.Items.Clear();
-            IdClienteCombo.Items.Add(string.Empty); // Opción vacía usando string.Empty
+            IdClienteCombo.Items.Add(string.Empty); // Opción vacía
+
             foreach (var id in idsClientes)
             {
-                IdClienteCombo.Items.Add(id);
+                IdClienteCombo.Items.Add(id); // Asegurarse de que 'id' no sea null
             }
 
             IdOrdenCombo.Items.Clear();
-            IdOrdenCombo.Items.Add(string.Empty); // Opción vacía usando string.Empty
+            IdOrdenCombo.Items.Add(string.Empty); // Opción vacía
+
             foreach (var id in idsOrdenesEntrega)
             {
-                IdOrdenCombo.Items.Add(id);
+                IdOrdenCombo.Items.Add(id); // Agregar las opciones de IdOrdenEntrega
             }
 
             EstadoCombo.Items.Clear();
-            EstadoCombo.Items.Add(string.Empty); // Opción vacía usando string.Empty
-            /* foreach (var estado in estadosOrdenEntrega)
+            EstadoCombo.Items.Add(string.Empty); // Opción vacía
+
+            foreach (var estado in estadosOrdenEntrega)
             {
-               EstadoCombo.Items.Add(estado);
-            } */
+                EstadoCombo.Items.Add(estado); // Agregar las opciones de Estado
+            }
         }
 
         private void CargarOrdenesEnListView(IEnumerable<OrdenEntrega> ordenes)
@@ -121,10 +120,10 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(IdOrdenCombo.Text) &&
-                string.IsNullOrEmpty(IdClienteCombo.Text) &&
-                string.IsNullOrEmpty(EstadoCombo.Text) &&
-                !FechaDesdeOEPicker.Checked &&
-                !FechaHastaOEPicker.Checked)
+         string.IsNullOrEmpty(IdClienteCombo.Text) &&
+         string.IsNullOrEmpty(EstadoCombo.Text) &&
+         !FechaDesdeOEPicker.Checked &&
+         !FechaHastaOEPicker.Checked)
             {
                 MessageBox.Show("No se ha seleccionado ningún filtro", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -135,25 +134,29 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
             // Aplicar los filtros
             var ordenesFiltradas = ordenesEntrega.AsEnumerable();
 
+            // Filtro por IdOrdenEntrega
             if (!string.IsNullOrEmpty(IdOrdenCombo.Text))
             {
                 ordenesFiltradas = ordenesFiltradas.Where(orden => orden.IdOrdenEntrega == IdOrdenCombo.Text);
             }
 
+            // Filtro por IdCliente
             if (!string.IsNullOrEmpty(IdClienteCombo.Text))
             {
-                string idClienteSeleccionado = IdClienteCombo.Text; // No es necesario convertir a int si es string
-                                                                    // Filtra las órdenes de entrega basadas en el IdCliente de las órdenes de preparación
+                string idClienteSeleccionado = IdClienteCombo.Text;
                 ordenesFiltradas = ordenesFiltradas.Where(orden =>
-                    orden.OrdenesPreparacion.Any(p => p.IdCliente == idClienteSeleccionado)); // Cambia '=' a '=='
+                    orden.OrdenesPreparacion.Any(p => p.IdCliente == idClienteSeleccionado)); // Filtra por el IdCliente de las órdenes de preparación
             }
 
-            /* if (!string.IsNullOrEmpty(EstadoCombo.Text))
+            // Filtro por Estado
+            if (!string.IsNullOrEmpty(EstadoCombo.Text))
             {
-                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.Estado == EstadoCombo.Text);
-            } */
+                string estadoSeleccionado = EstadoCombo.Text;
+                ordenesFiltradas = ordenesFiltradas.Where(orden =>
+                    orden.OrdenesPreparacion.Any(p => p.Estado == estadoSeleccionado)); // Filtra por el Estado de las órdenes de preparación
+            }
 
-
+            // Filtro por fechas (FechaDesdeOEPicker y FechaHastaOEPicker)
             if (FechaDesdeOEPicker.Checked && FechaHastaOEPicker.Checked)
             {
                 DateTime fechaDesde = FechaDesdeOEPicker.Value;
@@ -171,8 +174,10 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
                 ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision <= fechaHasta);
             }
 
+            // Cargar las órdenes filtradas en el ListView
             CargarOrdenesEnListView(ordenesFiltradas);
 
+            // Si no se encontraron resultados, mostrar mensaje
             if (ListarOrdenEntregaList.Items.Count == 0)
             {
                 MessageBox.Show("No se encontraron órdenes de entrega con los criterios seleccionados.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -206,15 +211,21 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
         }
         private void CargarOrdenesPreparacionEnListView(List<OrdenPreparacion> ordenesPreparacion)
         {
-            DetalleOrdenesPreparacionList.Items.Clear(); // Asumiendo que tienes un ListView para mostrar las órdenes de preparación
+            DetalleOrdenesPreparacionList.Items.Clear(); // Limpiar el ListView antes de cargar los nuevos datos
 
+            // Iterar sobre la colección de órdenes de preparación y agregar cada una al ListView
             foreach (var orden in ordenesPreparacion)
             {
-                var item = new ListViewItem(orden.IdOrden);
-                item.SubItems.Add(orden.IdCliente);
-                item.SubItems.Add(orden.Transportista);
-                item.SubItems.Add(orden.FechaEstado.ToString("yyyy-MM-dd"));
+                // Crear un nuevo item con el Id de la orden de preparación
+                var item = new ListViewItem(orden.IdOrden.ToString()); // Asegúrate de que 'IdOrden' se mapea correctamente
 
+                // Agregar el estado de la orden de preparación como subitem
+                item.SubItems.Add(orden.Estado.ToString()); // Convertir 'Estado' a string
+
+                // Agregar la fecha de estado de la orden de preparación como subitem
+                item.SubItems.Add(orden.FechaEstado.ToString("yyyy-MM-dd")); // Formatear la fecha
+
+                // Añadir el item al ListView
                 DetalleOrdenesPreparacionList.Items.Add(item);
             }
         }

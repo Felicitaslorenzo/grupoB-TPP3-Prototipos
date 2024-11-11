@@ -23,6 +23,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
             .Select(op => new OrdenPreparacion
             {
                 IdOrden = op.IdOrdenPreparacion,   // Asegúrate de que este mapeo es correcto.
+                IdCliente = op.IdCliente,
                 FechaEstado = op.FechaEntrega,
                 Estado = op.Estado.ToString(),
             })
