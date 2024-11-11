@@ -1,4 +1,4 @@
-﻿Caso 1 : Crear Orden con una sola orden de Preparación
+﻿Caso 1 : Crear Orden con una sola orden de Preparación (Camino Feliz)
 
 1-	Botón: "Ordenes de Seleccion"
 
@@ -46,8 +46,8 @@
         "OP001",
        
       ]
-- No puedo generar el id OS que lo tome desde el json y le sume uno nuevo
-- No pude hacer que agregue las OP seleccionadas
+12 - Verificar en OrdenPreparacion.json, que la OP001 modifique el estado de pendiente a seleccionada // No figuran el cambio de estado
+
+- No puedo generar el id OS que lo tome desde el json y le sume uno nuevo 
 - No graba
 - No muestra el detalle de orden cuando seleccionas las OP 
-- No pude hacer que modifique el estado de OP DE PENDIENTE A SELECCIONADA
