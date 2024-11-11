@@ -98,13 +98,19 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
 
         private void EmitirOrdenDeDespachoButton_Click(object sender, EventArgs e)
         {
-            if (ListarOrdenDespacharBuscarList.SelectedItems.Count == 0)
+            /* if (ListarOrdenDespacharBuscarList.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Por favor, selecciona una orden de la lista antes de generar la orden de despacho.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }
+            } */
 
-            MessageBox.Show("El remito se ha generado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Verifica que la variable 'nuevoIDRemito' esté declarada
+            var nuevoIDRemito = model.GenerarNuevoIDRemito();  // Asegúrate de que 'model' esté instanciado
+
+            // Después puedes usarla
+            MessageBox.Show($"El remito {nuevoIDRemito} se ha generado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Limpiamos la lista de órdenes de despacho después de generar el remito
             ListarOrdenDespacharBuscarList.Items.Clear();
 
         }
