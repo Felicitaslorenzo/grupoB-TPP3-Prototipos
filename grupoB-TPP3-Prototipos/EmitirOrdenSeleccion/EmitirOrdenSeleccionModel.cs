@@ -67,8 +67,6 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
 
         public string GenerarNuevaOrden()
         {
-            OrdenSeleccionAlmacen.Leer();
-
             var ultimoId = OrdenSeleccionAlmacen.OrdenesSeleccion
                 .Select(o => o.IdOrdenSeleccion)
                 .OrderByDescending(id => id) 

@@ -203,7 +203,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
 
             
             // Generar una nueva orden y mostrar el mensaje
-            string mensaje = $"Se generó {model.GenerarNuevaOrden()}";
+            string mensaje = $"Se generó {nuevaOrdenSeleccion.IdOrdenSeleccion}";
             MessageBox.Show(mensaje, "Orden Generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // Eliminar los elementos seleccionados del ListView principal
