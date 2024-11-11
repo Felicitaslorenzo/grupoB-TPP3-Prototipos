@@ -1,9 +1,9 @@
 CASO 1: Empaquetado de Productos: camino feliz
 1 - En MenuPrinicipal, hacer click en botón "Ordenes de Entrega" 
 2 - En MenuOrdenesEntrega, hacer click en botón "Empaquetado"
-3 - Ver lista de Productos y sus cantidades // no aparece la lista
+3 - Ver lista de Productos y sus cantidades 
 4 - Seleccionar fila de productos y sus cantidades
-5 - Hacer click en botón Empaquetado //no funciona (pero creo q es porque no hay productos en la vista) (tampoco aperecen avisos, mensajes de error) 
+5 - Hacer click en botón Empaquetado
 6- Muestra el mensaje: "La orden se ha empaquetado con éxito"
 7- Vuelve a empaquetar órdenes con el botón "Empaquetado"
 8 - Muestra el Mensaje: "No hay más órdenes para empaquetar."
