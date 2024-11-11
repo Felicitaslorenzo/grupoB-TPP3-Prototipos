@@ -1,30 +1,36 @@
-﻿Caso 1 : Crear Orden con un solo producto
+﻿Caso 2: Crear Orden con dos  productos
 
 1- Botón: "Ordenes de Preparación"
 
 2- Botón: "Emitir Orden de Preparación"
 
-3- ID Cliente: CL001
+3- ID Cliente: CL006
 
-3- Prioridad: Con prioridad de entrega
+3- Prioridad: SinPrioridad
 
-3- Transportista: TR001
+3- Transportista: TR014
 
-3- Fecha entrega: 29/10/2024
+3- Fecha entrega: 28/10/2024
 
-5- Producto: SKU001
+5- Producto: SKU011
 
-6- Cantidad: 100
+6- Cantidad: 20
 
 7- Botón: "Agregar Producto"
 
+5- Producto: SKU012
+
+6- Cantidad: 10
+
 5- Detalle:
 
-SKU001 - Muebles Modulares de oficina -  100
+SKU011 - Lamparas LED Industriales -  20
+SKU012 - Hidrolavadoras de alta presion-  10
+
 
 7- Botón: "Emitir Orden"
 
-10- Mensaje: "Se generó OP-001"
+10- Mensaje: "Orden OP-031 creada exitosamente"
 
 11- Botón: "Ok"
 
@@ -32,20 +38,20 @@ SKU001 - Muebles Modulares de oficina -  100
 
 13- Verificar en OrdenPreparacion.json, nuevo registro:
 
-[{"IdOrdenPreparacion":"OP001",
-"IdCliente":"CL001",
+[{"IdOrdenPreparacion":"OP031",
+"IdCliente":"CL006",
 "FechaEmision":"2024-10-03T00:00:00",
 "FechaEntrega":"2024-09-30T00:00:00",
 "Estado":0,"Prioridad":0,
-"IdTransportista":"TR001",
+"IdTransportista":"TR014",
 "Detalle":[]},
 
 Errores:
-No guarda el listado de productos seleccionados
+No guarde el listado de productos seleccionados
 No guarda en archvo.json
 Cuando se genera el estado debe ser pendiente
 Si pongo 1000 productos, deberia tirar error de cantidad-
 No puedo hacer que vea si tiene stock dependiendo lo que ingresa.
-
+No agrega el detalle del producto en el json
 
 
