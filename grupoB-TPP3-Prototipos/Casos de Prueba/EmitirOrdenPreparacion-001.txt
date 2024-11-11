@@ -42,9 +42,7 @@ SKU001 - Muebles Modulares de oficina -  10
 "Detalle":[{"SKUProducto":"SKU001","DescripcionProducto":"Muebles modulares de oficina","Cantidad":10}]}]
 
 Errores:
-No guarda el listado de productos seleccionados
-No guarda en archvo.json
-Cuando se genera el estado debe ser pendiente
+
 Si pongo 1000 productos, deberia tirar error de cantidad-
 No puedo hacer que vea si tiene stock dependiendo lo que ingresa.
 Ver tema ID si lo ponemos con guion o sin guion.
