@@ -25,7 +25,6 @@ namespace grupoB_TPP3_Prototipos
             OrdenSeleccionAlmacen.Leer();
             TransportistaAlmacen.Leer();
             DepositoAlmacen.Leer();
-            InventarioMercaderiaAlmacen.Leer();
             RemitoAlmacen.Leer();
             UbicacionAlmacen.Leer(); 
 
@@ -39,7 +38,6 @@ namespace grupoB_TPP3_Prototipos
             OrdenSeleccionAlmacen.Grabar();
             TransportistaAlmacen.Grabar();
             DepositoAlmacen.Grabar();
-            InventarioMercaderiaAlmacen.Grabar();
             RemitoAlmacen.Grabar();
             UbicacionAlmacen.Grabar(); 
         }

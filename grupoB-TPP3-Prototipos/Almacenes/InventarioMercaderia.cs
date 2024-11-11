@@ -1,6 +1,6 @@
 ﻿namespace grupoB_TPP3_Prototipos.Almacenes
 {
-    public class InventarioMercaderiaEnt
+    public class InventarioMercaderia
     {
         public string IdDeposito { get; set; }
         public string Ubicacion { get; set; }

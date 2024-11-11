@@ -190,8 +190,8 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             ProductosCombo.DisplayMember = "IDProducto";
         }
 
-        /*
-        internal List<Producto> BuscarProductoCliente(Cliente cliente, List<Producto> productosSolicitados)
+        
+        internal List<Producto> BuscarProductoCliente(Cliente cliente)
         {
             // Filtra los productos asociados al cliente y enlaza con InventarioMercaderiaEnt para obtener la cantidad disponible
             var productosCliente = ProductoAlmacen.Productos
@@ -203,6 +203,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                     Cantidad = ObtenerCantidadDisponible(producto.SKUProducto) // Obtener cantidad de InventarioMercaderiaEnt
                 }).ToList();
 
+            /*
             // Verificación de inventario
             foreach (var productoSolicitado in productosSolicitados)
             {
@@ -214,21 +215,24 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                     throw new InvalidOperationException(
                         $"Error: No hay suficiente inventario para el producto {productoSolicitado.DescripcionProducto}. Disponible: {productoEnInventario.Cantidad}, Solicitado: {productoSolicitado.Cantidad}");
                 }
-            }
+            }*/
 
             return productosCliente;
         }
+        
 
         private int ObtenerCantidadDisponible(string skuProducto)
         {
             // Busca en InventarioMercaderiaEnt la cantidad disponible para el SKUProducto específico
-            var inventario = InventarioMercaderiaAlmacen.InventarioMercaderias
-                .FirstOrDefault(inv => inv.SKUProducto == skuProducto);
 
-            return inventario?.Cantidad ?? 0; // Devuelve 0 si no se encuentra el SKUProducto en el inventario
-        }
+            //TODO: hay que restar la cantidad de producto que esté en ordenes en un estado previo
+            //a "retirar ordenes de seleccion" (que es cuando se da de baja de stock)
 
-        */
+            var producto = ProductoAlmacen.Productos.First(p => p.SKUProducto == skuProducto);
+            return producto.Inventario.Sum(d => d.Cantidad);
+        }        
+        
+        /*
 
         internal List<Producto> BuscarProductoCliente(Cliente cliente)
         {
@@ -239,7 +243,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                     DescripcionProducto = producto.DescripcionProducto
                 }).ToList();
         }
-
+        */
 
         public List<Cliente> ObtenerCliente()
         {

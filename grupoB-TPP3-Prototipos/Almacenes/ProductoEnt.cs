@@ -12,7 +12,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
         public string SKUProducto { get; set; }
         public string DescripcionProducto { get; set; }
         public string IdCliente {  get; set; }
-        public List<InventarioMercaderiaEnt> Inventario { get; } = new();
+        public List<InventarioMercaderia> Inventario { get; } = new();
     
     //public override string ToString() => $"{IDProducto} - {DescripcionProducto}"; Ver si va o no
 
