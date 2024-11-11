@@ -25,7 +25,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
              IdOrden = op.IdOrdenPreparacion,
              IdCliente = op.IdCliente,
              Transportista = op.IdTransportista,
-
+             //
              // Obtiene la lista de productos de cada orden de preparación.
              Productos = op.Detalle.Select(det => new Producto
              {
