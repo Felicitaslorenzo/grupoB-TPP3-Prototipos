@@ -24,11 +24,10 @@ namespace grupoB_TPP3_Prototipos
             OrdenPreparacionAlmacen.Leer();
             OrdenSeleccionAlmacen.Leer();
             TransportistaAlmacen.Leer();
-            /* DepositoAlmacen.Leer();
+            DepositoAlmacen.Leer();
             InventarioMercaderiaAlmacen.Leer();
             RemitoAlmacen.Leer();
-            UbicacionAlmacen.Leer(); */
-
+            UbicacionAlmacen.Leer(); 
 
             Application.Run(new MenuPrincipal.MenuPrincipalForm());
 
