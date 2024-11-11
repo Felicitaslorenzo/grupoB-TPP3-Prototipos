@@ -65,14 +65,23 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
 
         private void GenerarOEbutton_Click(object sender, EventArgs e)
         {
-            // Llamamos al método para generar el nuevo ID de orden
-            var nuevoIDOrden = modelo.GenerarNuevoIDOrden();
+            // Verificar si al menos un elemento está seleccionado en el ListView
+            if (OrdenesEntregalistView.SelectedItems.Count > 0)
+            {
+                // Llamamos al método para generar el nuevo ID de orden
+                var nuevoIDOrden = modelo.GenerarNuevoIDOrden();
 
-            // Mostramos un mensaje con el nuevo ID de la orden
-            MessageBox.Show($"Se generó {nuevoIDOrden}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Mostramos un mensaje con el nuevo ID de la orden
+                MessageBox.Show($"Se generó {nuevoIDOrden}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Actualizamos la lista de órdenes
-            MostrarOrdenesActuales();
+                // Actualizamos la lista de órdenes
+                MostrarOrdenesActuales();
+            }
+            else
+            {
+                // Si no hay ninguna orden seleccionada, mostramos un mensaje de error
+                MessageBox.Show("Debe seleccionar al menos una orden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
