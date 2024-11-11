@@ -91,7 +91,7 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
         {
             // Obtener las órdenes de preparación desde el almacén (como una lista de OrdenPreparacionEnt)
             var ordenesPreparacion = OrdenPreparacionAlmacen.OrdenesPreparacion
-                .Where(o => o.IdTransportista == transportista)  // Filtrar por transportista
+                .Where(o => o.IdTransportista == transportista && (int)o.Estado == 4)  // Filtrar por transportista y estado 4 (Despachada)
                 .ToList();
 
             // Convertir la lista de OrdenPreparacionEnt en una lista de OrdenEntrega
@@ -113,6 +113,32 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
             return ordenesEntrega;
         }
 
-    }
+        public string GenerarNuevoIDRemito()
+        {
+            // Leer las órdenes desde el archivo (simulamos que ya tienes la lógica para leer desde un almacenamiento)
+            RemitoAlmacen.Leer();
 
+            // Obtener el último ID de las órdenes
+            var ultimoId = RemitoAlmacen.Remitos
+                .Select(o => o.IdRemito)
+                .OrderByDescending(id => id)
+                .FirstOrDefault();
+
+            // Si no existe ninguna orden, empezamos con "RM001"
+            if (string.IsNullOrEmpty(ultimoId))
+            {
+                return "RM001";
+            }
+
+            // Extraemos el número al final del ID, en el formato "RM###"
+            var numero = int.Parse(ultimoId.Substring(2));  // Asumimos que el ID tiene el formato "RM###" (después de "RM")
+
+            // Incrementamos el número
+            numero++;
+
+            // Generamos el nuevo ID en el formato "RM###"
+            return $"RM{numero:D3}";  // El ":D3" asegura que el número tenga 3 dígitos, por ejemplo "RM002"
+        }
+
+    }
 }
