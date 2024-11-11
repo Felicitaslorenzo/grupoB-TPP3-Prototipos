@@ -11,8 +11,10 @@
 
 5 - Cerrar mensaje de éxito
 
-6 - Seleccionar botón "Volver" => [Vuelve al menu Ordenes de Entrega]
+6 - [La orden seleccionada cambia de estado y desaparece del listado que visualizamos]
 
-7 - Menu Ordenes de Entrega => Cerrar menu => [Se visualiza el menu principal]
+7 - Seleccionar botón "Volver" => [Vuelve al menu Ordenes de Entrega]
 
-8 - Menu principal => Cerrar menu => [Finaliza la ejecucion del sistema]
+8 - Menu Ordenes de Entrega => Cerrar menu => [Se visualiza el menu principal]
+
+9 - Menu principal => Cerrar menu => [Finaliza la ejecucion del sistema]
