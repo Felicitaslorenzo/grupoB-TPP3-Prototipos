@@ -95,7 +95,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 nuevaOrdenEnt.Detalle.Add(new OrdenPreparacionDetalle
                 {
                     SKUProducto = producto.IDProducto,
-                    DescripcionProducto = producto.DescripcionProducto,
+                    // DescripcionProducto = producto.DescripcionProducto,
                     Cantidad = producto.Cantidad
                 });
             }

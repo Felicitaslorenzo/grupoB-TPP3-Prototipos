@@ -1,646 +1,582 @@
 [
   {
     "IdOrdenPreparacion": "OP-001",
-    "IdCliente": "CL001",
+    "IdCliente": "CL-001",
     "FechaEmision": "2024-10-03T00:00:00",
     "FechaEntrega": "2024-09-30T00:00:00",
     "Estado": 0,
     "Prioridad": 0,
-    "IdTransportista": "TR001",
+    "IdTransportista": "TR-001",
     "Detalle": [
       {
-        "SKUProducto": "SKU001",
-        "Cantidad": 50,
-        "DescripcionProducto": "Muebles modulares de oficina"
+        "SKUProducto": "SKU-001",
+        "Cantidad": 50
       },
       {
-        "SKUProducto": "SKU002",
-        "Cantidad": 200,
-        "DescripcionProducto": "Cementos de alta resistencia"
+        "SKUProducto": "SKU-002",
+        "Cantidad": 200
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-002",
-    "IdCliente": "CL002",
+    "IdCliente": "CL-002",
     "FechaEmision": "2024-09-29T00:00:00",
     "FechaEntrega": "2024-09-25T00:00:00",
     "Estado": 0,
     "Prioridad": 0,
-    "IdTransportista": "TR002",
+    "IdTransportista": "TR-002",
     "Detalle": [
       {
-        "SKUProducto": "SKU003",
-        "Cantidad": 50,
-        "DescripcionProducto": "Electrodom�sticos inteligentes"
+        "SKUProducto": "SKU-003",
+        "Cantidad": 50
       },
       {
-        "SKUProducto": "SKU004",
-        "Cantidad": 100,
-        "DescripcionProducto": "Herramientas el�ctricas profesionales"
+        "SKUProducto": "SKU-004",
+        "Cantidad": 100
       }
     ]
   },
   {
-    "IdOrdenPreparacion": "O-P003",
-    "IdCliente": "CL001",
+    "IdOrdenPreparacion": "OP-003",
+    "IdCliente": "CL-001",
     "FechaEmision": "2024-10-05T00:00:00",
     "FechaEntrega": "2024-10-01T00:00:00",
     "Estado": 0,
     "Prioridad": 0,
-    "IdTransportista": "TR003",
+    "IdTransportista": "TR-003",
     "Detalle": [
       {
-        "SKUProducto": "SKU001",
-        "Cantidad": 60,
-        "DescripcionProducto": "Muebles modulares de oficina"
+        "SKUProducto": "SKU-001",
+        "Cantidad": 60
       },
       {
-        "SKUProducto": "SKU002",
-        "Cantidad": 300,
-        "DescripcionProducto": "Cementos de alta resistencia"
+        "SKUProducto": "SKU-002",
+        "Cantidad": 300
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-004",
-    "IdCliente": "CL005",
+    "IdCliente": "CL-005",
     "FechaEmision": "2024-09-25T00:00:00",
     "FechaEntrega": "2024-09-21T00:00:00",
     "Estado": 0,
     "Prioridad": 0,
-    "IdTransportista": "TR004",
+    "IdTransportista": "TR-004",
     "Detalle": [
       {
-        "SKUProducto": "SKU009",
-        "Cantidad": 100,
-        "DescripcionProducto": "Sistemas de calefacci�n industrial"
+        "SKUProducto": "SKU-009",
+        "Cantidad": 100
       },
       {
-        "SKUProducto": "SKU010",
-        "Cantidad": 20,
-        "DescripcionProducto": "Generadores el�ctricos port�tiles"
+        "SKUProducto": "SKU-010",
+        "Cantidad": 20
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-005",
-    "IdCliente": "CL004",
+    "IdCliente": "CL-004",
     "FechaEmision": "2024-09-28T00:00:00",
     "FechaEntrega": "2024-09-24T00:00:00",
     "Estado": 0,
     "Prioridad": 1,
-    "IdTransportista": "TR005",
+    "IdTransportista": "TR-005",
     "Detalle": [
       {
-        "SKUProducto": "SKU007",
-        "Cantidad": 60,
-        "DescripcionProducto": "Sillas ergon�micas de oficina"
+        "SKUProducto": "SKU-007",
+        "Cantidad": 60
       },
       {
-        "SKUProducto": "SKU008",
-        "Cantidad": 70,
-        "DescripcionProducto": "C�maras de vigilancia de alta definici�n"
+        "SKUProducto": "SKU-008",
+        "Cantidad": 70
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-006",
-    "IdCliente": "CL010",
+    "IdCliente": "CL-010",
     "FechaEmision": "2024-09-23T00:00:00",
     "FechaEntrega": "2024-09-19T00:00:00",
     "Estado": 5,
     "Prioridad": 1,
-    "IdTransportista": "TR006",
+    "IdTransportista": "TR-006",
     "Detalle": [
       {
-        "SKUProducto": "SKU020",
-        "Cantidad": 40,
-        "DescripcionProducto": "Placas de yeso para construcci�n"
+        "SKUProducto": "SKU-020",
+        "Cantidad": 40
       },
       {
-        "SKUProducto": "SKU021",
-        "Cantidad": 120,
-        "DescripcionProducto": "Herramientas de corte industrial"
+        "SKUProducto": "SKU-021",
+        "Cantidad": 120
       },
       {
-        "SKUProducto": "SKU022",
-        "Cantidad": 120,
-        "DescripcionProducto": "Compresores de aire industrial"
+        "SKUProducto": "SKU-022",
+        "Cantidad": 120
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-007",
-    "IdCliente": "CL009",
+    "IdCliente": "CL-009",
     "FechaEmision": "2024-09-30T00:00:00",
     "FechaEntrega": "2024-09-26T00:00:00",
     "Estado": 5,
     "Prioridad": 1,
-    "IdTransportista": "TR007",
+    "IdTransportista": "TR-007",
     "Detalle": [
       {
-        "SKUProducto": "SKU017",
-        "Cantidad": 5,
-        "DescripcionProducto": "Chillers industriales para refrigeraci�n"
+        "SKUProducto": "SKU-017",
+        "Cantidad": 5
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-008",
-    "IdCliente": "CL008",
+    "IdCliente": "CL-008",
     "FechaEmision": "2024-09-26T00:00:00",
     "FechaEntrega": "2024-09-22T00:00:00",
     "Estado": 5,
     "Prioridad": 1,
-    "IdTransportista": "TR008",
+    "IdTransportista": "TR-008",
     "Detalle": [
       {
-        "SKUProducto": "SKU015",
-        "Cantidad": 100,
-        "DescripcionProducto": "Herramientas hidr�ulicas"
+        "SKUProducto": "SKU-015",
+        "Cantidad": 100
       },
       {
-        "SKUProducto": "SKU016",
-        "Cantidad": 150,
-        "DescripcionProducto": "Compresores industriales"
+        "SKUProducto": "SKU-016",
+        "Cantidad": 150
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-009",
-    "IdCliente": "CL010",
+    "IdCliente": "CL-010",
     "FechaEmision": "2024-09-27T00:00:00",
     "FechaEntrega": "2024-09-23T00:00:00",
     "Estado": 5,
     "Prioridad": 1,
-    "IdTransportista": "TR009",
+    "IdTransportista": "TR-009",
     "Detalle": [
       {
-        "SKUProducto": "SKU022",
-        "Cantidad": 200,
-        "DescripcionProducto": "Compresores de aire industrial"
+        "SKUProducto": "SKU-022",
+        "Cantidad": 200
       },
       {
-        "SKUProducto": "SKU023",
-        "Cantidad": 80,
-        "DescripcionProducto": "Sistemas de filtraci�n de agua"
+        "SKUProducto": "SKU-023",
+        "Cantidad": 80
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-010",
-    "IdCliente": "CL004",
+    "IdCliente": "CL-004",
     "FechaEmision": "2024-09-30T00:00:00",
     "FechaEntrega": "2024-09-27T00:00:00",
     "Estado": 5,
     "Prioridad": 0,
-    "IdTransportista": "TR010",
+    "IdTransportista": "TR-010",
     "Detalle": [
       {
-        "SKUProducto": "SKU007",
-        "Cantidad": 500,
-        "DescripcionProducto": "Sillas ergon�micas de oficina"
+        "SKUProducto": "SKU-007",
+        "Cantidad": 500
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-011",
-    "IdCliente": "CL001",
+    "IdCliente": "CL-001",
     "FechaEmision": "2024-10-05T00:00:00",
     "FechaEntrega": "2024-10-01T00:00:00",
     "Estado": 2,
     "Prioridad": 0,
-    "IdTransportista": "TR011",
+    "IdTransportista": "TR-011",
     "Detalle": [
       {
-        "SKUProducto": "SKU001",
-        "Cantidad": 50,
-        "DescripcionProducto": "Muebles modulares de oficina"
+        "SKUProducto": "SKU-001",
+        "Cantidad": 50
       },
       {
-        "SKUProducto": "SKU002",
-        "Cantidad": 200,
-        "DescripcionProducto": "Cementos de alta resistencia"
+        "SKUProducto": "SKU-002",
+        "Cantidad": 200
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-012",
-    "IdCliente": "CL002",
+    "IdCliente": "CL-002",
     "FechaEmision": "2024-10-06T00:00:00",
     "FechaEntrega": "2024-10-02T00:00:00",
     "Estado": 2,
     "Prioridad": 0,
-    "IdTransportista": "TR012",
+    "IdTransportista": "TR-012",
     "Detalle": [
       {
-        "SKUProducto": "SKU003",
-        "Cantidad": 20,
-        "DescripcionProducto": "Electrodom�sticos inteligentes"
+        "SKUProducto": "SKU-003",
+        "Cantidad": 20
       },
       {
-        "SKUProducto": "SKU004",
-        "Cantidad": 80,
-        "DescripcionProducto": "Herramientas el�ctricas profesionales"
+        "SKUProducto": "SKU-004",
+        "Cantidad": 80
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-013",
-    "IdCliente": "CL003",
+    "IdCliente": "CL-003",
     "FechaEmision": "2024-10-07T00:00:00",
     "FechaEntrega": "2024-10-03T00:00:00",
     "Estado": 2,
     "Prioridad": 1,
-    "IdTransportista": "TR013",
+    "IdTransportista": "TR-013",
     "Detalle": [
       {
-        "SKUProducto": "SKU005",
-        "Cantidad": 50,
-        "DescripcionProducto": "Cajas fuertes de seguridad"
+        "SKUProducto": "SKU-005",
+        "Cantidad": 50
       },
       {
-        "SKUProducto": "SKU006",
-        "Cantidad": 10,
-        "DescripcionProducto": "Paneles solares portátiles"
+        "SKUProducto": "SKU-006",
+        "Cantidad": 10
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-014",
-    "IdCliente": "CL004",
+    "IdCliente": "CL-004",
     "FechaEmision": "2024-10-08T00:00:00",
     "FechaEntrega": "2024-11-11T00:00:00",
     "Estado": 2,
     "Prioridad": 1,
-    "IdTransportista": "TR014",
+    "IdTransportista": "TR-014",
     "Detalle": [
       {
-        "SKUProducto": "SKU013",
-        "DescripcionProducto": "Equipos de aire acondicionado industrial",
+        "SKUProducto": "SKU-013",
         "Cantidad": 60
       },
       {
-        "SKUProducto": "SKU014",
-        "DescripcionProducto": "Estanterías metálicas de almacenaje",
+        "SKUProducto": "SKU-014",
         "Cantidad": 100
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-015",
-    "IdCliente": "CL005",
+    "IdCliente": "CL-005",
     "FechaEmision": "2024-10-02T00:00:00",
     "FechaEntrega": "2024-11-10T00:00:00",
     "Estado": 2,
     "Prioridad": 0,
-    "IdTransportista": "TR015",
+    "IdTransportista": "TR-015",
     "Detalle": [
       {
-        "SKUProducto": "SKU007",
-        "DescripcionProducto": "Sillas ergon�micas de oficina",
+        "SKUProducto": "SKU-007",
         "Cantidad": 200
       },
       {
-        "SKUProducto": "SKU008",
-        "DescripcionProducto": "C�maras de vigilancia de alta definici�n",
+        "SKUProducto": "SKU-008",
         "Cantidad": 120
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-016",
-    "IdCliente": "CL006",
+    "IdCliente": "CL-006",
     "FechaEmision": "2024-10-01T00:00:00",
     "FechaEntrega": "2024-09-29T00:00:00",
     "Estado": 3,
     "Prioridad": 1,
-    "IdTransportista": "TR016",
+    "IdTransportista": "TR-016",
     "Detalle": [
       {
-        "SKUProducto": "SKU003",
-        "DescripcionProducto": "Electrodom�sticos inteligentes",
+        "SKUProducto": "SKU-003",
         "Cantidad": 10
       },
       {
-        "SKUProducto": "SKU004",
-        "DescripcionProducto": "Herramientas el�ctricas profesionales",
+        "SKUProducto": "SKU-004",
         "Cantidad": 50
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-017",
-    "IdCliente": "CL007",
+    "IdCliente": "CL-007",
     "FechaEmision": "2024-10-03T00:00:00",
     "FechaEntrega": "2024-09-30T00:00:00",
     "Estado": 3,
     "Prioridad": 0,
-    "IdTransportista": "TR017",
+    "IdTransportista": "TR-017",
     "Detalle": [
       {
-        "SKUProducto": "SKU011",
-        "DescripcionProducto": "L�mparas LED industriales",
+        "SKUProducto": "SKU-011",
         "Cantidad": 150
       },
       {
-        "SKUProducto": "SKU012",
-        "DescripcionProducto": "Hidrolavadoras de alta presi�n",
+        "SKUProducto": "SKU-012",
         "Cantidad": 80
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-018",
-    "IdCliente": "CL008",
+    "IdCliente": "CL-008",
     "FechaEmision": "2024-10-05T00:00:00",
     "FechaEntrega": "2024-10-02T00:00:00",
     "Estado": 3,
     "Prioridad": 1,
-    "IdTransportista": "TR018",
+    "IdTransportista": "TR-018",
     "Detalle": [
       {
-        "SKUProducto": "SKU009",
-        "DescripcionProducto": "Sistemas de calefacci�n industrial",
+        "SKUProducto": "SKU-009",
         "Cantidad": 50
       },
       {
-        "SKUProducto": "SKU010",
-        "DescripcionProducto": "Generadores el�ctricos port�tiles",
+        "SKUProducto": "SKU-010",
         "Cantidad": 10
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-019",
-    "IdCliente": "CL009",
+    "IdCliente": "CL-009",
     "FechaEmision": "2024-10-07T00:00:00",
     "FechaEntrega": "2024-10-04T00:00:00",
     "Estado": 3,
     "Prioridad": 0,
-    "IdTransportista": "TR019",
+    "IdTransportista": "TR-019",
     "Detalle": [
       {
-        "SKUProducto": "SKU015",
-        "DescripcionProducto": "Herramientas hidr�ulicas",
+        "SKUProducto": "SKU-015",
         "Cantidad": 60
       },
       {
-        "SKUProducto": "SKU016",
-        "DescripcionProducto": "Compresores industriales",
+        "SKUProducto": "SKU-016",
         "Cantidad": 40
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-020",
-    "IdCliente": "CL010",
+    "IdCliente": "CL-010",
     "FechaEmision": "2024-10-09T00:00:00",
     "FechaEntrega": "2024-10-06T00:00:00",
     "Estado": 3,
     "Prioridad": 1,
-    "IdTransportista": "TR020",
+    "IdTransportista": "TR-020",
     "Detalle": [
       {
-        "SKUProducto": "SKU017",
-        "DescripcionProducto": "Chillers industriales para refrigeraci�n",
+        "SKUProducto": "SKU-017",
         "Cantidad": 500
       },
       {
-        "SKUProducto": "SKU018",
-        "DescripcionProducto": "Kits de instalaci�n el�ctrica",
+        "SKUProducto": "SKU-018",
         "Cantidad": 50
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-021",
-    "IdCliente": "CL009",
+    "IdCliente": "CL-009",
     "FechaEmision": "2024-10-11T00:00:00",
     "FechaEntrega": "2024-10-08T00:00:00",
     "Estado": 4,
     "Prioridad": 0,
-    "IdTransportista": "TR021",
+    "IdTransportista": "TR-021",
     "Detalle": [
       {
-        "SKUProducto": "SKU019",
-        "DescripcionProducto": "Equipos de seguridad industrial",
+        "SKUProducto": "SKU-019",
         "Cantidad": 25
       },
       {
-        "SKUProducto": "SKU018",
-        "DescripcionProducto": "Kits de instalaci�n el�ctrica",
+        "SKUProducto": "SKU-018",
         "Cantidad": 200
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-022",
-    "IdCliente": "CL003",
+    "IdCliente": "CL-003",
     "FechaEmision": "2024-10-15T00:00:00",
     "FechaEntrega": "2024-10-18T00:00:00",
     "Estado": 4,
     "Prioridad": 0,
-    "IdTransportista": "TR006",
+    "IdTransportista": "TR-006",
     "Detalle": [
       {
-        "SKUProducto": "SKU006",
-        "DescripcionProducto": "Paneles solares port�tiles",
+        "SKUProducto": "SKU-006",
         "Cantidad": 50
       },
       {
-        "SKUProducto": "SKU005",
-        "DescripcionProducto": "Cajas fuertes de seguridad",
+        "SKUProducto": "SKU-005",
         "Cantidad": 5
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-023",
-    "IdCliente": "CL004",
+    "IdCliente": "CL-004",
     "FechaEmision": "2024-10-16T00:00:00",
     "FechaEntrega": "2024-10-20T00:00:00",
     "Estado": 4,
     "Prioridad": 0,
-    "IdTransportista": "TR008",
+    "IdTransportista": "TR-008",
     "Detalle": [
       {
-        "SKUProducto": "SKU007",
-        "DescripcionProducto": "Sillas ergon�micas de oficina",
+        "SKUProducto": "SKU-007",
         "Cantidad": 100
       },
       {
-        "SKUProducto": "SKU008",
-        "DescripcionProducto": "C�maras de vigilancia de alta definici�n",
+        "SKUProducto": "SKU-008",
         "Cantidad": 50
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-024",
-    "IdCliente": "CL006",
+    "IdCliente": "CL-006",
     "FechaEmision": "2024-10-17T00:00:00",
     "FechaEntrega": "2024-10-22T00:00:00",
     "Estado": 4,
     "Prioridad": 1,
-    "IdTransportista": "TR014",
+    "IdTransportista": "TR-014",
     "Detalle": [
       {
-        "SKUProducto": "SKU012",
-        "DescripcionProducto": "Hidrolavadoras de alta presi�n",
+        "SKUProducto": "SKU-012",
         "Cantidad": 10
       },
       {
-        "SKUProducto": "SKU011",
-        "DescripcionProducto": "L�mparas LED industriales",
+        "SKUProducto": "SKU-011",
         "Cantidad": 200
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-025",
-    "IdCliente": "CL009",
+    "IdCliente": "CL-009",
     "FechaEmision": "2024-10-19T00:00:00",
     "FechaEntrega": "2024-10-23T00:00:00",
     "Estado": 4,
     "Prioridad": 0,
-    "DescripcionProducto": "Cementos de alta resistencia",
-    "IdTransportista": "TR020",
+    "IdTransportista": "TR-020",
     "Detalle": [
       {
-        "SKUProducto": "SKU017",
-        "DescripcionProducto": "Chillers industriales para refrigeraci�n",
+        "SKUProducto": "SKU-017",
         "Cantidad": 15
       },
       {
-        "SKUProducto": "SKU018",
-        "DescripcionProducto": "Kits de instalaci�n el�ctrica",
+        "SKUProducto": "SKU-018",
         "Cantidad": 50
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-026",
-    "IdCliente": "CL001",
+    "IdCliente": "CL-001",
     "FechaEmision": "2024-10-21T00:00:00",
     "FechaEntrega": "2024-10-24T00:00:00",
     "Estado": 5,
     "Prioridad": 1,
-    "IdTransportista": "TR001",
+    "IdTransportista": "TR-001",
     "Detalle": [
       {
-        "SKUProducto": "SKU025",
-        "DescripcionProducto": "Paredes m�viles de oficina",
+        "SKUProducto": "SKU-025",
         "Cantidad": 20
       },
       {
-        "SKUProducto": "SKU024",
-        "DescripcionProducto": "Cintas transportadoras industriales",
+        "SKUProducto": "SKU-024",
         "Cantidad": 10
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-027",
-    "IdCliente": "CL002",
+    "IdCliente": "CL-002",
     "FechaEmision": "2024-10-22T00:00:00",
     "FechaEntrega": "2024-10-25T00:00:00",
     "Estado": 5,
     "Prioridad": 0,
-    "IdTransportista": "TR004",
+    "IdTransportista": "TR-004",
     "Detalle": [
       {
-        "SKUProducto": "SKU003",
-        "DescripcionProducto": "Electrodom�sticos inteligentes",
+        "SKUProducto": "SKU-003",
         "Cantidad": 30
       },
       {
-        "SKUProducto": "SKU004",
-        "DescripcionProducto": "Herramientas el�ctricas profesionales",
+        "SKUProducto": "SKU-004",
         "Cantidad": 50
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-028",
-    "IdCliente": "CL003",
+    "IdCliente": "CL-003",
     "FechaEmision": "2024-10-23T00:00:00",
     "FechaEntrega": "2024-10-26T00:00:00",
     "Estado": 5,
     "Prioridad": 1,
-    "IdTransportista": "TR006",
+    "IdTransportista": "TR-006",
     "Detalle": [
       {
-        "SKUProducto": "SKU005",
-        "DescripcionProducto": "Cajas fuertes de seguridad",
+        "SKUProducto": "SKU-005",
         "Cantidad": 40
       },
       {
-        "SKUProducto": "SKU006",
-        "DescripcionProducto": "Paneles solares port�tiles",
+        "SKUProducto": "SKU-006",
         "Cantidad": 60
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-029",
-    "IdCliente": "CL004",
+    "IdCliente": "CL-004",
     "FechaEmision": "2024-10-24T00:00:00",
     "FechaEntrega": "2024-10-28T00:00:00",
     "Estado": 5,
     "Prioridad": 0,
-    "IdTransportista": "TR008",
+    "IdTransportista": "TR-008",
     "Detalle": [
       {
-        "SKUProducto": "SKU007",
-        "DescripcionProducto": "Sillas ergon�micas de oficina",
+        "SKUProducto": "SKU-007",
         "Cantidad": 15
       },
       {
-        "SKUProducto": "SKU008",
-        "DescripcionProducto": "C�maras de vigilancia de alta definici�n",
+        "SKUProducto": "SKU-008",
         "Cantidad": 25
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-030",
-    "IdCliente": "CL010",
+    "IdCliente": "CL-010",
     "FechaEmision": "2024-10-30T00:00:00",
     "FechaEntrega": "2024-11-04T00:00:00",
     "Estado": 5,
     "Prioridad": 0,
-    "IdTransportista": "TR022",
+    "IdTransportista": "TR-022",
     "Detalle": [
       {
-        "SKUProducto": "SKU020",
-        "DescripcionProducto": "Placas de yeso para construcci�n",
+        "SKUProducto": "SKU-020",
         "Cantidad": 10
       },
       {
-        "SKUProducto": "SKU021",
-        "DescripcionProducto": "Herramientas de corte industrial",
+        "SKUProducto": "SKU-021",
         "Cantidad": 15
       },
       {
-        "SKUProducto": "SKU022",
-        "DescripcionProducto": "Compresores de aire industrial",
+        "SKUProducto": "SKU-022",
         "Cantidad": 5
       },
       {
-        "SKUProducto": "SKU023",
-        "DescripcionProducto": "Sistemas de filtraci�n de agua",
+        "SKUProducto": "SKU-023",
         "Cantidad": 8
       },
       {
-        "SKUProducto": "SKU024",
-        "DescripcionProducto": "Cintas transportadoras industriales",
+        "SKUProducto": "SKU-024",
         "Cantidad": 20
       },
       {
-        "SKUProducto": "SKU025",
-        "DescripcionProducto": "Paredes m�viles de oficina",
+        "SKUProducto": "SKU-025",
         "Cantidad": 12
       }
     ]

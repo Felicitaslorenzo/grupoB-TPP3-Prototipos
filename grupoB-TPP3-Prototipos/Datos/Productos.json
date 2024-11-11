@@ -1,8 +1,8 @@
 [
   {
-    "SKUProducto": "SKU001",
+    "SKUProducto": "SKU-001",
     "DescripcionProducto": "Muebles modulares de oficina",
-    "IdCliente": "CL001",
+    "IdCliente": "CL-001",
     "Inventario": [
       {
         "IdDeposito": "GBAN1",
@@ -12,9 +12,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU002",
+    "SKUProducto": "SKU-002",
     "DescripcionProducto": "Cementos de alta resistencia",
-    "IdCliente": "CL001",
+    "IdCliente": "CL-001",
     "Inventario": [
       {
         "IdDeposito": "GBAS1",
@@ -24,9 +24,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU003",
-    "DescripcionProducto": "Electrodom�sticos inteligentes",
-    "IdCliente": "CL002",
+    "SKUProducto": "SKU-003",
+    "DescripcionProducto": "Electrodomésticos inteligentes",
+    "IdCliente": "CL-002",
     "Inventario": [
       {
         "IdDeposito": "GBAS2",
@@ -36,9 +36,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU004",
-    "DescripcionProducto": "Herramientas el�ctricas profesionales",
-    "IdCliente": "CL002",
+    "SKUProducto": "SKU-004",
+    "DescripcionProducto": "Herramientas eléctricas profesionales",
+    "IdCliente": "CL-002",
     "Inventario": [
       {
         "IdDeposito": "GBAN1",
@@ -48,9 +48,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU005",
+    "SKUProducto": "SKU-005",
     "DescripcionProducto": "Cajas fuertes de seguridad",
-    "IdCliente": "CL003",
+    "IdCliente": "CL-003",
     "Inventario": [
       {
         "IdDeposito": "GBAN2",
@@ -60,9 +60,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU006",
-    "DescripcionProducto": "Paneles solares port�tiles",
-    "IdCliente": "CL003",
+    "SKUProducto": "SKU-006",
+    "DescripcionProducto": "Paneles solares portátiles",
+    "IdCliente": "CL-003",
     "Inventario": [
       {
         "IdDeposito": "GBAS1",
@@ -72,9 +72,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU007",
-    "DescripcionProducto": "Sillas ergon�micas de oficina",
-    "IdCliente": "CL004",
+    "SKUProducto": "SKU-007",
+    "DescripcionProducto": "Sillas ergonómicas de oficina",
+    "IdCliente": "CL-004",
     "Inventario": [
       {
         "IdDeposito": "GBAS2",
@@ -84,9 +84,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU008",
-    "DescripcionProducto": "C�maras de vigilancia de alta definici�n",
-    "IdCliente": "CL004",
+    "SKUProducto": "SKU-008",
+    "DescripcionProducto": "Cámaras de vigilancia de alta definición",
+    "IdCliente": "CL-004",
     "Inventario": [
       {
         "IdDeposito": "GBAN1",
@@ -96,9 +96,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU009",
-    "DescripcionProducto": "Sistemas de calefacci�n industrial",
-    "IdCliente": "CL005",
+    "SKUProducto": "SKU-009",
+    "DescripcionProducto": "Sistemas de calefacción industrial",
+    "IdCliente": "CL-005",
     "Inventario": [
       {
         "IdDeposito": "GBAS1",
@@ -108,9 +108,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU010",
-    "DescripcionProducto": "Generadores el�ctricos port�tiles",
-    "IdCliente": "CL005",
+    "SKUProducto": "SKU-010",
+    "DescripcionProducto": "Generadores eléctricos portátiles",
+    "IdCliente": "CL-005",
     "Inventario": [
       {
         "IdDeposito": "GBAN2",
@@ -120,9 +120,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU011",
-    "DescripcionProducto": "L�mparas LED industriales",
-    "IdCliente": "CL006",
+    "SKUProducto": "SKU-011",
+    "DescripcionProducto": "Lámparas LED industriales",
+    "IdCliente": "CL-006",
     "Inventario": [
       {
         "IdDeposito": "GBAN1",
@@ -132,9 +132,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU012",
-    "DescripcionProducto": "Hidrolavadoras de alta presi�n",
-    "IdCliente": "CL006",
+    "SKUProducto": "SKU-012",
+    "DescripcionProducto": "Hidrolavadoras de alta presión",
+    "IdCliente": "CL-006",
     "Inventario": [
       {
         "IdDeposito": "GBAS2",
@@ -144,9 +144,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU013",
+    "SKUProducto": "SKU-013",
     "DescripcionProducto": "Equipos de aire acondicionado industrial",
-    "IdCliente": "CL007",
+    "IdCliente": "CL-007",
     "Inventario": [
       {
         "IdDeposito": "GBAS1",
@@ -156,9 +156,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU014",
-    "DescripcionProducto": "Estanter�as met�licas de almacenaje",
-    "IdCliente": "CL007",
+    "SKUProducto": "SKU-014",
+    "DescripcionProducto": "Estanterías metálicas de almacenaje",
+    "IdCliente": "CL-007",
     "Inventario": [
       {
         "IdDeposito": "GBAN2",
@@ -168,9 +168,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU015",
-    "DescripcionProducto": "Herramientas hidr�ulicas",
-    "IdCliente": "CL008",
+    "SKUProducto": "SKU-015",
+    "DescripcionProducto": "Herramientas hidráulicas",
+    "IdCliente": "CL-008",
     "Inventario": [
       {
         "IdDeposito": "GBAS1",
@@ -180,9 +180,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU016",
+    "SKUProducto": "SKU-016",
     "DescripcionProducto": "Compresores industriales",
-    "IdCliente": "CL008",
+    "IdCliente": "CL-008",
     "Inventario": [
       {
         "IdDeposito": "GBAS2",
@@ -192,9 +192,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU017",
-    "DescripcionProducto": "Chillers industriales para refrigeraci�n",
-    "IdCliente": "CL009",
+    "SKUProducto": "SKU-017",
+    "DescripcionProducto": "Chillers industriales para refrigeración",
+    "IdCliente": "CL-009",
     "Inventario": [
       {
         "IdDeposito": "GBAN1",
@@ -204,9 +204,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU018",
-    "DescripcionProducto": "Kits de instalaci�n el�ctrica",
-    "IdCliente": "CL009",
+    "SKUProducto": "SKU-018",
+    "DescripcionProducto": "Kits de instalación eléctrica",
+    "IdCliente": "CL-009",
     "Inventario": [
       {
         "IdDeposito": "GBAN2",
@@ -216,9 +216,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU019",
+    "SKUProducto": "SKU-019",
     "DescripcionProducto": "Equipos de seguridad industrial",
-    "IdCliente": "CL009",
+    "IdCliente": "CL-009",
     "Inventario": [
       {
         "IdDeposito": "GBAS1",
@@ -228,9 +228,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU020",
-    "DescripcionProducto": "Placas de yeso para construcci�n",
-    "IdCliente": "CL010",
+    "SKUProducto": "SKU-020",
+    "DescripcionProducto": "Placas de yeso para construcción",
+    "IdCliente": "CL-010",
     "Inventario": [
       {
         "IdDeposito": "GBAS2",
@@ -240,9 +240,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU021",
+    "SKUProducto": "SKU-021",
     "DescripcionProducto": "Herramientas de corte industrial",
-    "IdCliente": "CL010",
+    "IdCliente": "CL-010",
     "Inventario": [
       {
         "IdDeposito": "GBAN1",
@@ -252,9 +252,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU022",
+    "SKUProducto": "SKU-022",
     "DescripcionProducto": "Compresores de aire industrial",
-    "IdCliente": "CL010",
+    "IdCliente": "CL-010",
     "Inventario": [
       {
         "IdDeposito": "GBAS1",
@@ -264,9 +264,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU023",
-    "DescripcionProducto": "Sistemas de filtraci�n de agua",
-    "IdCliente": "CL010",
+    "SKUProducto": "SKU-023",
+    "DescripcionProducto": "Sistemas de filtración de agua",
+    "IdCliente": "CL-010",
     "Inventario": [
       {
         "IdDeposito": "GBAN2",
@@ -276,9 +276,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU024",
+    "SKUProducto": "SKU-024",
     "DescripcionProducto": "Cintas transportadoras industriales",
-    "IdCliente": "CL010",
+    "IdCliente": "CL-010",
     "Inventario": [
       {
         "IdDeposito": "GBAS1",
@@ -288,9 +288,9 @@
     ]
   },
   {
-    "SKUProducto": "SKU025",
-    "DescripcionProducto": "Paredes m�viles de oficina",
-    "IdCliente": "CL010",
+    "SKUProducto": "SKU-025",
+    "DescripcionProducto": "Paredes móviles de oficina",
+    "IdCliente": "CL-010",
     "Inventario": [
       {
         "IdDeposito": "GBAN1",

@@ -1,42 +1,42 @@
 [
   {
-    "IdCliente": "CL001",
+    "IdCliente": "CL-001",
     "NombreCliente": "Porter SA"
   },
   {
-    "IdCliente": "CL002",
+    "IdCliente": "CL-002",
     "NombreCliente": "Ferreteria SRL"
   },
   {
-    "IdCliente": "CL003",
+    "IdCliente": "CL-003",
     "NombreCliente": "Materiales SRL"
   },
   {
-    "IdCliente": "CL004",
+    "IdCliente": "CL-004",
     "NombreCliente": "Construcciones Beta"
   },
   {
-    "IdCliente": "CL005",
+    "IdCliente": "CL-005",
     "NombreCliente": "Techno Corp"
   },
   {
-    "IdCliente": "CL006",
+    "IdCliente": "CL-006",
     "NombreCliente": "Distribuciones Omega"
   },
   {
-    "IdCliente": "CL007",
+    "IdCliente": "CL-007",
     "NombreCliente": "Decoraciones SA"
   },
   {
-    "IdCliente": "CL008",
+    "IdCliente": "CL-008",
     "NombreCliente": "Alimentos Granjeros"
   },
   {
-    "IdCliente": "CL009",
+    "IdCliente": "CL-009",
     "NombreCliente": "Electro SA"
   },
   {
-    "IdCliente": "CL010",
+    "IdCliente": "CL-010",
     "NombreCliente": "Distribuciones Alfa"
   }
 ]

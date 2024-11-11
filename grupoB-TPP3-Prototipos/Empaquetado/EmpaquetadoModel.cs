@@ -89,7 +89,7 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                         ordenModelo.Producto.Add(new Producto
                         {
                             Cantidad = detalle.Cantidad,
-                            DescripcionProducto = detalle.DescripcionProducto
+                            DescripcionProducto = ProductoAlmacen.Productos.First(pr => pr.SKUProducto == detalle.SKUProducto).DescripcionProducto,
                         });
                     }
 

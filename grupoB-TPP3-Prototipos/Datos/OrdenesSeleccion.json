@@ -5,8 +5,8 @@
     "FechaEstado": "2024-10-11T00:00:00",
     "FechaEmision": "2024-10-11T00:00:00",
     "OrdenesPreparacion": [
-      "OP021",
-      "OP022"
+      "OP-021",
+      "OP-022"
     ]
   },
   {
@@ -15,9 +15,9 @@
     "FechaEstado": "2024-10-15T00:00:00",
     "FechaEmision": "2024-10-15T00:00:00",
     "OrdenesPreparacion": [
-      "OP023",
-      "OP024",
-      "OP025"
+      "OP-023",
+      "OP-024",
+      "OP-025"
     ]
   },
   {
@@ -26,8 +26,8 @@
     "FechaEstado": "2024-10-21T00:00:00",
     "FechaEmision": "2024-10-21T00:00:00",
     "OrdenesPreparacion": [
-      "OP026",
-      "OP027"
+      "OP-026",
+      "OP-027"
     ]
   },
   {
@@ -36,9 +36,9 @@
     "FechaEstado": "2024-10-23T00:00:00",
     "FechaEmision": "2024-10-23T00:00:00",
     "OrdenesPreparacion": [
-      "OP028",
-      "OP029",
-      "OP030"
+      "OP-028",
+      "OP-029",
+      "OP-030"
     ]
   }
 ]

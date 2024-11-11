@@ -1,28 +1,28 @@
 [
   {
-    "IdRemito": "RM001",
+    "IdRemito": "RM-001",
     "FechaEmision": "2024-10-21T00:00:00",
     "OrdenesPreparacion": [
-      "OP026",
-      "OP027"
+      "OP-026",
+      "OP-027"
     ],
-    "IdTransportista": "TR001"
+    "IdTransportista": "TR-001"
   },
   {
-    "IdRemito": "RM002",
+    "IdRemito": "RM-002",
     "FechaEmision": "2024-10-22T00:00:00",
     "OrdenesPreparacion": [
-      "OP028",
-      "OP029"
+      "OP-028",
+      "OP-029"
     ],
-    "IdTransportista": "TR004"
+    "IdTransportista": "TR-004"
   },
   {
-    "IdRemito": "RM003",
+    "IdRemito": "RM-003",
     "FechaEmision": "2024-10-24T00:00:00",
     "OrdenesPreparacion": [
-      "OP030"
+      "OP-030"
     ],
-    "IdTransportista": "TR008"
+    "IdTransportista": "TR-008"
   }
 ]

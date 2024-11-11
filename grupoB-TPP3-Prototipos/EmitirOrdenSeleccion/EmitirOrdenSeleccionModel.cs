@@ -29,7 +29,7 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                         FechaEstado = ordenEntidad.FechaEntrega, // Asegúrate de que `FechaEntrega` esté definido en `OrdenPreparacion`.
                         Producto = ordenEntidad.Detalle.Select(detalle => new Producto
                         {
-                            DescripcionProducto = detalle.DescripcionProducto,
+                            DescripcionProducto = ProductoAlmacen.Productos.First(pr => pr.SKUProducto == detalle.SKUProducto).DescripcionProducto,
                             // DescripcionProducto = ProductoAlmacen.Productos.First(pr => pr.SKUProducto == detalle.SKUProducto).DescripcionProducto,
                             Cantidad = detalle.Cantidad
                         }).ToList()
