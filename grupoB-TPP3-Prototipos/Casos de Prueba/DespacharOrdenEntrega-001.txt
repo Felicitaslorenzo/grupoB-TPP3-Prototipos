@@ -1,0 +1,19 @@
+﻿Caso 001: Prueba emitir remito
+
+1 - Menu principal => Seleccionar "Ordenes de Entrega" => [Abre menu de Ordenes de Entrega]
+
+2 - Menu Ordenes de Entrega => seleccionar "Despachar Ordenes de Entrega" => [Abre formulario de Dspachar Ordenes de Entrega]
+
+3 - [Se visualiza el filtro de transportista junto con un botón de "Buscar"]
+
+4 - Seleccionar Transportista: TR008 => Boton "Buscar" => 
+	[Aparece en el listado de abajo: ID Orden: OP023 - ID Cliente: CL004] =>
+	Seleccionar la orden => Seleccionar botón "Emitir Remito" => [Aparece mensaje de éxito: "El remito RM004 se ha generado correctamente."]
+
+5 - Seleccionar botón "OK" => [Cierra el mensaje de éxito]
+
+6 - Seleccionar botón "Volver" => [Vuelve al menu Ordenes de Entrega]
+
+7 - Menu Ordenes de Entrega => Cerrar menu => [Se visualiza el menu principal]
+
+8 - Menu principal => Cerrar menu => [Finaliza la ejecucion del sistema]

@@ -1,23 +1,23 @@
 ﻿Caso 002: Prueba de filtros del formulario
 
-1 - Menu principal => Seleccionar "Ordenes de Entrega" => Abre menu de Ordenes de Entrega
+1 - Menu principal => Seleccionar "Ordenes de Entrega" => [Abre menu de Ordenes de Entrega]
 
-2 - Menu Ordenes de Entrega => seleccionar "Listar Ordenes de Entrega" => Abre formulario de Listar Ordenes de Entrega
+2 - Menu Ordenes de Entrega => seleccionar "Listar Ordenes de Entrega" => [Abre formulario de Listar Ordenes de Entrega]
 
-3 - Formulario Listar Ordenes de Entrega => Debajo de los filtros aparece listado de las ordenes de entrega disponibles
+3 - Formulario Listar Ordenes de Entrega => [Debajo de los filtros aparece listado de las ordenes de entrega disponibles]
 
 4 - Filtro ID Orden => Seleccionar OE001
 
-5 - Seleccionar boton "Buscar" => En el listado de abajo aparece solo el detalle de OS001 y desaparecen las otras
+5 - Seleccionar boton "Buscar" => [En el listado de abajo aparece solo el detalle de OS001 y desaparecen las otras]
 
 6 - Filtro ID Orden => Seleccionar espacio en blanco
 
-7 - Filtro Estado => Seleccionar "Despachada" => Seleccionar el boton "Buscar" => Aparece solo el detalle de OS002 y desaparecen las otras
+7 - Filtro Estado => Seleccionar "Despachada" => Seleccionar el boton "Buscar" => [Aparece solo el detalle de OS002 y desaparecen las otras]
 
 8 - Filtro Estado => Seleccionar espacio en blanco
 
-9 - Filtro ID Cliente => Seleccionar CL005 => Seleccionar el boton "Buscar" => Aparece aviso de 
-	"No se encontraron órdenes de entrega con los criterios seleccionados"
+9 - Filtro ID Cliente => Seleccionar CL005 => Seleccionar el boton "Buscar" => 
+	[Aparece aviso de: "No se encontraron órdenes de entrega con los criterios seleccionados"]
 
 10 - Filtro ID Cliente => Seleccionar espacio en blanco
 
@@ -25,10 +25,10 @@
 
 12 - Filtro Fecha Hasta => Seleccionar 15/01/2024
 
-13 - Seleccionar boton "Buscar" => Aparece solo el detalle de OS001 y desaparecen las otras
+13 - Seleccionar boton "Buscar" => [Aparece solo el detalle de OS001 y desaparecen las otras]
 
-14 - Seleccionar boton "Volver" => Vuelve al menu Ordenes de Entrega
+14 - Seleccionar boton "Volver" => [Vuelve al menu Ordenes de Entrega]
 
-15 - Menu Ordenes de Entrega => Cerrar menu => Se visualiza el menu principal
+15 - Menu Ordenes de Entrega => Cerrar menu => [Se visualiza el menu principal]
 
-16 - Menu principal => Cerrar menu => Finaliza la ejecucion del sistema
+16 - Menu principal => Cerrar menu => [Finaliza la ejecucion del sistema]
