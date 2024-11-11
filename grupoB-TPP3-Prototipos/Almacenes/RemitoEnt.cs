@@ -10,7 +10,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
     {
         public string IdRemito { get; set; }
         public DateTime FechaEmision { get; set; }
-        public List<string> OrdenesPreparacion { get; } = new();
+        public List<string> OrdenesPreparacion { get; set; } = new();
         public string IdTransportista { get; set; }
     }
 }

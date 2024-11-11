@@ -15,6 +15,6 @@ namespace grupoB_TPP3_Prototipos.Almacenes
         public EstadoOrdenPrepEnum Estado { get; set; }
         public PrioridadEnum Prioridad { get; set; }
         public string IdTransportista { get; set; }
-        public List<OrdenPreparacionDetalle> Detalle { get; } = new();
+        public List<OrdenPreparacionDetalle> Detalle { get; set; } = new();
     }
 }

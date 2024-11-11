@@ -11,7 +11,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
         public string IdOrdenEntrega { get; set; }
         public DateTime FechaEmision { get; set; }
         public DateTime FechaEntrega { get; set; }
-        public List<string> OrdenesPreparacion { get; } = new();
+        public List<string> OrdenesPreparacion { get; set; } = new();
 
     }
 }
