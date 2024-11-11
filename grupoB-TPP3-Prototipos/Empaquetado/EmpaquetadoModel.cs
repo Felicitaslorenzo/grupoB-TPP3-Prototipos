@@ -34,8 +34,23 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
 
         public void EliminarOrdenActual()
         {
+            // Verificar si el índice actual es válido
             if (indiceActual < ordenes.Count)
             {
+                // Obtener la orden a eliminar
+                var ordenAEliminar = ordenes[indiceActual];
+
+                // Cambiar el estado de la orden en OrdenPreparacionAlmacen a 3 (suponiendo que 3 significa "eliminada" o similar)
+                var ordenEnAlmacen = OrdenPreparacionAlmacen.OrdenesPreparacion
+                    .FirstOrDefault(o => o.IdOrdenPreparacion == ordenAEliminar.IdOrden);
+
+                if (ordenEnAlmacen != null)
+                {
+                    // Convertir el valor entero 3 a su correspondiente valor de enum
+                    ordenEnAlmacen.Estado = (EstadoOrdenPrepEnum)3; // Cambiar a Eliminado
+                }
+
+                // Eliminar la orden de la lista local 'ordenes'
                 ordenes.RemoveAt(indiceActual);
 
                 // Actualizar el índice después de eliminar la orden actual
@@ -45,6 +60,8 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                 }
             }
         }
+
+
 
         // Mantiene el método ya existente
         public List<OrdenPreparacion> ObtenerOrdenesPreparacion()
