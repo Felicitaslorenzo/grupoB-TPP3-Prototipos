@@ -65,7 +65,7 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
 
         private int numeroOrdenSeleccion = 1;
 
-        public static string GenerarNuevaOrden()
+        public string GenerarNuevaOrden()
         {
             OrdenSeleccionAlmacen.Leer();
 
@@ -87,6 +87,7 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
             // Generamos el nuevo ID en el formato "OS-###"
             return $"OS-{numero:D3}";  // El ":D3" asegura que el número tenga 3 dígitos
         }
+
         public void QuitarSeleccionadas(ListView listView)
         {
             if (listView.SelectedItems.Count > 0)

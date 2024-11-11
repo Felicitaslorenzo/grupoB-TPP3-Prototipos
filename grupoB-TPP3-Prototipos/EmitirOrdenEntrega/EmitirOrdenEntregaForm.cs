@@ -56,7 +56,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         // Botón Generar Orden de Entrega (aquí podrías agregar la lógica para generar una nueva orden)
         private void GenerarOrdenEntregaButton_Click(object sender, EventArgs e)
         {
-            var resultado = modelo.GenerarNuevaOrden();
+            var resultado = modelo.GenerarNuevoIDOrden();
             MessageBox.Show(resultado);
             MostrarOrdenesActuales(); // Actualiza la vista después de generar la orden
         }
@@ -65,15 +65,14 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
 
         private void GenerarOEbutton_Click(object sender, EventArgs e)
         {
-            if (OrdenesEntregalistView.Items.Count > 0)
-            {
-                MessageBox.Show("Se generó la orden de entrega.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Aquí puedes agregar la lógica para generar la orden de entrega
-            }
-            else
-            {
-                MessageBox.Show("Solo se puede generar una orden si la lista tiene órdenes de preparación.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            // Llamamos al método para generar el nuevo ID de orden
+            var nuevoIDOrden = modelo.GenerarNuevoIDOrden();
+
+            // Mostramos un mensaje con el nuevo ID de la orden
+            MessageBox.Show($"Se generó {nuevoIDOrden}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Actualizamos la lista de órdenes
+            MostrarOrdenesActuales();
         }
     }
 }

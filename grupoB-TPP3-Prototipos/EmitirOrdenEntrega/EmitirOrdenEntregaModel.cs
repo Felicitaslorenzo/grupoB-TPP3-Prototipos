@@ -35,39 +35,11 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         //   return ordenes;
         //    }
 
-        public List<OrdenPreparacion> ObtenerOrdenesPreparacion()
-        {
-            // Obtener las ordenes desde el Almacen
-            var ordenesAlmacen = OrdenPreparacionAlmacen.OrdenesPreparacion;
-
-            // Crear una lista de OrdenPreparacion para devolver
-            List<OrdenPreparacion> ordenesPreparacion = new List<OrdenPreparacion>();
-
-            // Mapear cada OrdenPreparacionEnt a una OrdenPreparacion
-            foreach (var ordenEntidad in ordenesAlmacen)
-            {
-                // Realizar la conversión explícita de OrdenPreparacionEnt a OrdenPreparacion
-                OrdenPreparacion orden = new OrdenPreparacion
-                {
-                    IdOrden = ordenEntidad.IdOrdenPreparacion,
-                    IdCliente = ordenEntidad.IdCliente,
-                    FechaEntrega = ordenEntidad.FechaEntrega,
-                    Estado = ordenEntidad.Estado // Asegúrate de que el Estado sea compatible o lo conviertas adecuadamente
-                };
-
-                // Agregar la orden mapeada a la lista
-                ordenesPreparacion.Add(orden);
-            }
-
-            return ordenesPreparacion;
-        }
-
-        // Método para obtener las órdenes por estado "Preparada" (Estado == 4)
         public List<OrdenPreparacion> ObtenerOrdenesPorEstadoPreparada()
         {
-            // Filtrar todas las órdenes que están en estado "Preparada" (Estado == 4)
+            // Filtrar todas las órdenes que están en estado "Preparada" (Estado == 3)
             var ordenesAlmacen = OrdenPreparacionAlmacen.OrdenesPreparacion
-                .Where(o => (int)o.Estado == 4)  // Si Estado es un enum, conviértelo a int
+                .Where(o => (int)o.Estado == 3)  // Si Estado es un enum, conviértelo a int
                 .ToList();
 
             // Crear una lista de OrdenPreparacion para devolver
@@ -93,48 +65,31 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         }
 
 
-        private string GenerarIdOrden()
+        public string GenerarNuevoIDOrden()
         {
-            int id = 1;
-            if (ordenesEntrega.Count > 0)
+            // Leer las órdenes desde el archivo (simulamos que ya tienes la lógica para leer desde un almacenamiento)
+            OrdenEntregaAlmacen.Leer();
+
+            // Obtener el último ID de las órdenes
+            var ultimoId = OrdenEntregaAlmacen.OrdenesEntrega
+                .Select(o => o.IdOrdenEntrega)
+                .OrderByDescending(id => id)
+                .FirstOrDefault();
+
+            // Si no existe ninguna orden, empezamos con "OP-001"
+            if (string.IsNullOrEmpty(ultimoId))
             {
-                var idexistente = ordenesEntrega
-                .Where(o => o != null && o.IdOdenEntrega != null && o.IdOdenEntrega.Length >= 6) // Verificar que el objeto y la propiedad no sean nulos
-                .Select(o => int.Parse(o.IdOdenEntrega.Substring(3))) // Obtener solo la parte numérica
-                .ToList();
-
-                // Verificar si hay IDs existentes y calcular el nuevo ID
-                if (idexistente.Count > 0)
-                {
-                    id = idexistente.Max() + 1;
-                }
-            }
-            return "OE" + id;
-        }
-
-        public string GenerarNuevaOrden()
-        {
-            string idorden = GenerarIdOrden();
-
-            // Obtener las órdenes de preparación en estado "Preparada"
-            var ordenesPreparacionPreparada = ObtenerOrdenesPorEstadoPreparada();
-
-            if (ordenesPreparacionPreparada.Count == 0)
-            {
-                return "No hay órdenes de preparación en estado preparada.";
+                return "OE-001";
             }
 
-            // Crear una nueva orden de entrega con las órdenes de preparación en estado "Preparada"
-            OrdenEntrega ordenNueva = new OrdenEntrega
-            {
-                IdOdenEntrega = idorden,
-                OrdenesPreparacion = ordenesPreparacionPreparada
-            };
+            // Extraemos el número al final del ID, en el formato "OP-###"
+            var numero = int.Parse(ultimoId.Substring(3));  // Asumimos que el ID tiene el formato "OP-###"
 
-            // Agregar la nueva orden a la lista de órdenes de entrega
-            ordenesEntrega.Add(ordenNueva);
+            // Incrementamos el número
+            numero++;
 
-            return $"Nueva orden de entrega generada con ID: {idorden}";
+            // Generamos el nuevo ID en el formato "OP-###"
+            return $"OE-{numero:D3}";  // El ":D3" asegura que el número tenga 3 dígitos
         }
     }
 }

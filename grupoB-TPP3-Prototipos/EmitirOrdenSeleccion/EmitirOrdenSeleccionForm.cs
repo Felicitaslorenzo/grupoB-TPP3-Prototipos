@@ -193,7 +193,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
             List<string> opSeleccionadas = ObtenerOrdenesPreparacionSeleccionadas();
             var nuevaOrdenSeleccion = new OrdenSeleccionEnt
             {
-                IdOrdenSeleccion = EmitirOrdenSeleccionModel.GenerarNuevaOrden(), // Generar un ID único
+                IdOrdenSeleccion = model.GenerarNuevaOrden(), // Generar un ID único
                 FechaEmision = DateTime.Now,
                 Estado = EstadoOrdenSelEnum.Pendiente, // Establecer el estado por defecto
                 FechaEstado = DateTime.Now,
@@ -203,7 +203,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
 
             
             // Generar una nueva orden y mostrar el mensaje
-            string mensaje = $"Se generó {EmitirOrdenSeleccionModel.GenerarNuevaOrden()}";
+            string mensaje = $"Se generó {model.GenerarNuevaOrden()}";
             MessageBox.Show(mensaje, "Orden Generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // Eliminar los elementos seleccionados del ListView principal
