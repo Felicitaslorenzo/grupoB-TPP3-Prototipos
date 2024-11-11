@@ -12,7 +12,7 @@ Caso 1: Caso feliz
 10- En el campo nombre cliente seleccionar Ferreteria SRL
 11- Presionar boton buscar 
 12- [Devuelve un listado de ordenes de preparacion]
-13- Seleccionar la orden de preparacion
-14- [Devuelve la alerta "No se encontraron productos para esta orden"] VER
-15- Presionar boton aceptar.
-16- Presionar boton volver.
+13- Seleccionar la orden de preparacion OP002
+14- [Devuelve el detalle de la orden de Preparacion: SKU003 Electrodomesticos Inteligentes 500/ SKU004 Herramientas
+electricas profesionales 100].
+15- Presionar boton volver.
