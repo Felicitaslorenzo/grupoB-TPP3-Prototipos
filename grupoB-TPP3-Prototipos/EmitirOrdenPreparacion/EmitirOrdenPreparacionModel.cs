@@ -193,6 +193,46 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             ProductosCombo.DisplayMember = "IDProducto";
         }
 
+        /*
+        internal List<Producto> BuscarProductoCliente(Cliente cliente, List<Producto> productosSolicitados)
+        {
+            // Filtra los productos asociados al cliente y enlaza con InventarioMercaderiaEnt para obtener la cantidad disponible
+            var productosCliente = ProductoAlmacen.Productos
+                .Where(productoEntidad => productoEntidad.IdCliente == cliente.IdCliente)
+                .Select(producto => new Producto
+                {
+                    IDProducto = producto.SKUProducto,
+                    DescripcionProducto = producto.DescripcionProducto,
+                    Cantidad = ObtenerCantidadDisponible(producto.SKUProducto) // Obtener cantidad de InventarioMercaderiaEnt
+                }).ToList();
+
+            // Verificación de inventario
+            foreach (var productoSolicitado in productosSolicitados)
+            {
+                var productoEnInventario = productosCliente
+                    .FirstOrDefault(p => p.IDProducto == productoSolicitado.IDProducto);
+
+                if (productoEnInventario != null && productoSolicitado.Cantidad > productoEnInventario.Cantidad)
+                {
+                    throw new InvalidOperationException(
+                        $"Error: No hay suficiente inventario para el producto {productoSolicitado.DescripcionProducto}. Disponible: {productoEnInventario.Cantidad}, Solicitado: {productoSolicitado.Cantidad}");
+                }
+            }
+
+            return productosCliente;
+        }
+
+        private int ObtenerCantidadDisponible(string skuProducto)
+        {
+            // Busca en InventarioMercaderiaEnt la cantidad disponible para el SKUProducto específico
+            var inventario = InventarioMercaderiaAlmacen.InventarioMercaderias
+                .FirstOrDefault(inv => inv.SKUProducto == skuProducto);
+
+            return inventario?.Cantidad ?? 0; // Devuelve 0 si no se encuentra el SKUProducto en el inventario
+        }
+
+        */
+
         internal List<Producto> BuscarProductoCliente(Cliente cliente)
         {
             return ProductoAlmacen.Productos.Where(productoEntidad => productoEntidad.IdCliente == cliente.IdCliente)
@@ -202,6 +242,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                     DescripcionProducto = producto.DescripcionProducto
                 }).ToList();
         }
+
 
         public List<Cliente> ObtenerCliente()
         {

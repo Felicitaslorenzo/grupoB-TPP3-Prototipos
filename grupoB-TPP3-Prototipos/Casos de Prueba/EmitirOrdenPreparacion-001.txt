@@ -45,4 +45,7 @@ No guarde el listado de productos seleccionados
 No guarda en archvo.json
 Cuando se genera el estado debe ser pendiente
 Si pongo 1000 productos, deberia tirar error de cantidad-
+No puedo hacer que vea si tiene stock dependiendo lo que ingresa.
+No agrega el detalle del producto en el json
+
 
