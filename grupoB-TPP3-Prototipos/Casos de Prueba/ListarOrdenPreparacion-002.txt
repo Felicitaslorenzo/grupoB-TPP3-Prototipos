@@ -6,8 +6,12 @@ Caso 2:Validaciones
 4- [Aparece alerta de error "No se ha seleccionado ningun filtro"]
 5- Tocar aceptar.
 6- En el campo Nombre cliente seleccionar "Porter SA"
-7- [Aparece lista de ordenes de preparacion]
+7- Tocar boton buscar
+8- [Aparece lista de ordenes de preparacion]
 8- Tocar La orden OP001-
-9- [Aparece error "No se encontraron productos para esta orden]
-10- Tocar aceptar
-11- Tocar volver
+9- [Aparece detalle de productos: SKU001 Muebles modulares de oficina 50/ 
+SKU002 Cementos de alta resistencia 200].
+10- Tocar en la primer ListView OP026 
+11- Aparece detalle de productos: SKU025 Paredes moviles de oficina 20/ 
+SKU024 Cintas transportadoras industriales 10].
+12- Tocar volver.
