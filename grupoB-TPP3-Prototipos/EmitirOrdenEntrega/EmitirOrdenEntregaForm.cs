@@ -70,7 +70,8 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
             {
                 // Llamamos al método para generar el nuevo ID de orden
                 var nuevoIDOrden = modelo.GenerarNuevoIDOrden();
-
+                var idOrdenSeleccionada = OrdenesEntregalistView.SelectedItems[0].Text;
+                modelo.CambiarEstadoOrden(idOrdenSeleccionada);
                 // Mostramos un mensaje con el nuevo ID de la orden
                 MessageBox.Show($"Se generó {nuevoIDOrden}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

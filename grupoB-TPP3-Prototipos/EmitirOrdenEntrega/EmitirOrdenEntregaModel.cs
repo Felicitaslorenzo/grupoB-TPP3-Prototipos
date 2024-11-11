@@ -37,7 +37,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
 
         public List<OrdenPreparacion> ObtenerOrdenesPorEstadoPreparada()
         {
-            // Filtrar todas las órdenes que están en estado "Preparada" (Estado == 3)
+            // Filtrar todas las órdenes que están en estado "Empaquetada" (Estado == 3)
             var ordenesAlmacen = OrdenPreparacionAlmacen.OrdenesPreparacion
                 .Where(o => (int)o.Estado == 3)  // Si Estado es un enum, conviértelo a int
                 .ToList();
@@ -90,6 +90,16 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
 
             // Generamos el nuevo ID en el formato "OP-###"
             return $"OE-{numero:D3}";  // El ":D3" asegura que el número tenga 3 dígitos
+        }
+
+        public void CambiarEstadoOrden(string idOrden)
+        {
+            // Encontrar la orden en el almacén y cambiar su estado a "Preparada" usando el valor numérico
+            var orden = OrdenPreparacionAlmacen.OrdenesPreparacion.FirstOrDefault(o => o.IdOrdenPreparacion == idOrden);
+            if (orden != null)
+            {
+                orden.Estado = (EstadoOrdenPrepEnum)4; // Cambiar el estado a "Preparada" (4)
+            }
         }
     }
 }
