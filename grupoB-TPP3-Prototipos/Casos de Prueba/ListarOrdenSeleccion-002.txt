@@ -4,12 +4,12 @@
 - [Se abre el menú "Órdenes de selección"]
 - Presionar botón "Listar Órdenes de Selección" 
 - [Se abre el form "Listar Órdenes de selección"]
-- En el desplegable "ID Orden Selección"", seleccionar OS001
+- En el desplegable "ID Orden Selección"", seleccionar OS-003
 - Presionar el botón "Buscar" con el filtro aplicado
-- [Devuelve una lista de órdenes de selección filtrada] //NO devuelve nada
-- Seleccionar ID Orden Seleccion .... de la lista // NO hay lista
-- [Devuelve una lista de órdenes de preparación] // NO devuelve nada
-- Seleccionar ID Orden Preparación .... de la lista // NO hay lista
-- [Devuelve una lista de productos] // NO devuelve nada
+- [Devuelve una lista de órdenes de selección filtrada] 
+- Seleccionar ID Orden Seleccion OS-003 de la lista 
+- [Devuelve una lista de órdenes de preparación] 
+- Seleccionar ID Orden Preparación OP026 de la lista 
+- [Devuelve una lista de productos] 
 - Presionar el botón "Volver"
 - [Vuelve al menú principal]
