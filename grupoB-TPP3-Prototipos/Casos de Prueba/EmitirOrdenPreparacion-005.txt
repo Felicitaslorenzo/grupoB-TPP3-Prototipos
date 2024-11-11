@@ -1,0 +1,37 @@
+﻿Caso 4: Validaciones 3
+
+1- Botón: "Ordenes de Preparación"
+
+2- Botón: "Emitir Orden de Preparación"
+
+3- ID Cliente: CL006
+
+3- Prioridad: SinPrioridad
+
+3- Transportista: TR014
+
+3- Fecha entrega: 28/11/2024
+
+5- Producto: SKU011
+
+6- Cantidad: 20
+
+7- Botón: "Emitir Orden”
+
+3- Mensaje sistema:  “No hay productos disponibles para crear una orden.”
+// Ver que el msj sea igual
+2- Botón: "Ok"
+
+7- Cantidad 1000
+
+8- Botón: "Agregar Producto"
+// No debe dejar agregar más canitdad de lo que figura en el inventario
+“El campo cantidad debe ser un valor numérico positivo y menor o igual al stock disponible”
+
+5- Detalle:
+
+SKU011 - Lamparas LED Industriales -  1000
+
+
+
+

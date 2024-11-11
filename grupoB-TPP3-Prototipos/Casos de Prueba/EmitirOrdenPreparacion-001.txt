@@ -10,21 +10,21 @@
 
 3- Transportista: TR001
 
-3- Fecha entrega: 29/10/2024
+3- Fecha entrega: 29/11/2024
 
 5- Producto: SKU001
 
-6- Cantidad: 100
+6- Cantidad: 10
 
 7- Botón: "Agregar Producto"
 
 5- Detalle:
 
-SKU001 - Muebles Modulares de oficina -  100
+SKU001 - Muebles Modulares de oficina -  10
 
 7- Botón: "Emitir Orden"
 
-10- Mensaje: "Se generó OP-001"
+10- Mensaje: "Se generó OP-031"
 
 11- Botón: "Ok"
 
@@ -32,13 +32,14 @@ SKU001 - Muebles Modulares de oficina -  100
 
 13- Verificar en OrdenPreparacion.json, nuevo registro:
 
-[{"IdOrdenPreparacion":"OP001",
+{"IdOrdenPreparacion":"OP-031",
 "IdCliente":"CL001",
-"FechaEmision":"2024-10-03T00:00:00",
-"FechaEntrega":"2024-09-30T00:00:00",
-"Estado":0,"Prioridad":0,
+"FechaEmision":"2024-11-11T10:35:56.7218012-03:00",
+"FechaEntrega":"2024-11-18T10:35:56.7218031-03:00",  // Debe figurar la fecha de entrega
+"Estado":0,
+"Prioridad":0,
 "IdTransportista":"TR001",
-"Detalle":[]},
+"Detalle":[{"SKUProducto":"SKU001","DescripcionProducto":"Muebles modulares de oficina","Cantidad":10}]}]
 
 Errores:
 No guarda el listado de productos seleccionados
@@ -46,6 +47,7 @@ No guarda en archvo.json
 Cuando se genera el estado debe ser pendiente
 Si pongo 1000 productos, deberia tirar error de cantidad-
 No puedo hacer que vea si tiene stock dependiendo lo que ingresa.
+Ver tema ID si lo ponemos con guion o sin guion.
 
 
 

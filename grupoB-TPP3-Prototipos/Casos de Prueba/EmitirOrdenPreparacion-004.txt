@@ -1,0 +1,78 @@
+﻿Caso 4: Validaciones 2
+
+1- Botón: "Ordenes de Preparación"
+
+2- Botón: "Emitir Orden de Preparación"
+
+3- ID Cliente: CL008
+
+3- Prioridad: SinPrioridad
+
+3- Transportista: TR018
+
+3- Fecha entrega: Today
+
+7- Botón: "Agregar Producto"
+
+3- Mensaje sistema:  "Ingrese una cantidad valida"  
+// Esta mal el msj debeeria decir  “El campo “Producto” no puede ser vacío”
+
+11- Botón: "Ok"
+
+3- ID Cliente: CL003
+
+3- Prioridad: ConPrioridadDeEntrega
+
+3- Fecha entrega: Today
+
+5- Producto: SKU006
+
+7- Cantidad: 10
+
+7- Botón: "Agregar Producto"
+
+3- Mensaje sistema: “El campo “Transportista” no puede ser vacío”  
+// No salta el mensaje de error, y deja agregar los productos. 
+
+11- Botón: "Ok"
+
+7- 3- Transportista: TR006
+
+5- Producto: SKU005
+
+7- Cantidad: 5
+
+7- Botón: "Agregar Producto"
+
+5- Detalle:
+
+SKU006 - Paneles solares portatiles -  5
+
+3- ID Cliente: CL008
+
+3- Mensaje sistema: Pampazon: “El cliente ha sido cambiado. Se eliminarán los datos ingresados.Estad usted seguro? ”  
+
+7- Botón: "Si"
+
+8- Se limpian todos los campos,queda seleccionado solo ID Cliente: CL008
+
+3- Prioridad: ConPrioridadDeEntrega
+
+3- Transportista: TR018
+	
+3- Fecha entrega: Today
+
+5- Producto: SKU016
+
+7- Cantidad: 10
+
+7- Botón: "Agregar Producto"
+
+3- ID Cliente: CL006
+
+3- Mensaje sistema: Pampazon: “El cliente ha sido cambiado. Se eliminarán los datos ingresados.Estad usted seguro? ”  
+
+7- Botón: "No"
+
+8- Deberían respetar todos los campos como estaban pero se limpia el campo transportista 
+// VER PARA QUE VALIDE CORRECTAMENTE 

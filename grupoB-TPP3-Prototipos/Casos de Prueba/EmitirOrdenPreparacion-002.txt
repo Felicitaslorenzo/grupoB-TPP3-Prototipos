@@ -10,7 +10,7 @@
 
 3- Transportista: TR014
 
-3- Fecha entrega: 28/10/2024
+3- Fecha entrega: 28/11/2024
 
 5- Producto: SKU011
 
@@ -21,6 +21,8 @@
 5- Producto: SKU012
 
 6- Cantidad: 10
+
+7- Botón: "Agregar Producto"
 
 5- Detalle:
 
@@ -38,13 +40,27 @@ SKU012 - Hidrolavadoras de alta presion-  10
 
 13- Verificar en OrdenPreparacion.json, nuevo registro:
 
-[{"IdOrdenPreparacion":"OP031",
-"IdCliente":"CL006",
-"FechaEmision":"2024-10-03T00:00:00",
-"FechaEntrega":"2024-09-30T00:00:00",
-"Estado":0,"Prioridad":0,
-"IdTransportista":"TR014",
-"Detalle":[]},
+{
+        "IdOrdenPreparacion": "OP-031", // Ver numeración no suma
+        "IdCliente": "CL006",
+        "FechaEmision": "2024-11-11T10:47:52.1026197-03:00",
+        "FechaEntrega": "2024-11-18T10:47:52.1026211-03:00",  // No guarda bien la fecha de entrega VER
+        "Estado": 0,
+        "Prioridad": 1,
+        "IdTransportista": "TR014",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU011",
+                "DescripcionProducto": "L\uFFFDmparas LED industriales",
+                "Cantidad": 20
+            },
+            {
+                "SKUProducto": "SKU012",
+                "DescripcionProducto": "Hidrolavadoras de alta presi\uFFFDn",
+                "Cantidad": 10
+            }
+        ]
+    }
 
 Errores:
 No guarde el listado de productos seleccionados
