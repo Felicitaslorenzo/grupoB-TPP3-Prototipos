@@ -3,26 +3,41 @@
     "IdRemito": "RM-001",
     "FechaEmision": "2024-10-21T00:00:00",
     "OrdenesPreparacion": [
-      "OP-026",
-      "OP-027"
+      "OP-026"
     ],
     "IdTransportista": "TR-001"
   },
   {
     "IdRemito": "RM-002",
-    "FechaEmision": "2024-10-22T00:00:00",
+    "FechaEmision": "2024-10-21T00:00:00",
     "OrdenesPreparacion": [
-      "OP-028",
-      "OP-029"
+      "OP-027"
     ],
     "IdTransportista": "TR-004"
   },
   {
     "IdRemito": "RM-003",
+    "FechaEmision": "2024-10-22T00:00:00",
+    "OrdenesPreparacion": [
+      "OP-028"
+    ],
+    "IdTransportista": "TR-006"
+  },
+  {
+    "IdRemito": "RM-004",
+    "FechaEmision": "2024-10-22T00:00:00",
+    "OrdenesPreparacion": [
+      "OP-029"
+    ],
+    "IdTransportista": "TR-008"
+  },
+  {
+    "IdRemito": "RM-005",
     "FechaEmision": "2024-10-24T00:00:00",
     "OrdenesPreparacion": [
       "OP-030"
     ],
-    "IdTransportista": "TR-008"
+    "IdTransportista": "TR-022"
   }
 ]
+

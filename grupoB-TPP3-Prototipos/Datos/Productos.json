@@ -298,5 +298,905 @@
         "Cantidad": 60
       }
     ]
+  },
+  {
+    "SKUProducto": "SKU-026",
+    "DescripcionProducto": "Sillas de oficina ergonómicas",
+    "IdCliente": "CL-001",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 150
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-027",
+    "DescripcionProducto": "Mesas de trabajo ajustables",
+    "IdCliente": "CL-001",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 80
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-028",
+    "DescripcionProducto": "Sistemas de videoconferencia",
+    "IdCliente": "CL-001",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 120
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-029",
+    "DescripcionProducto": "Proyectores multimedia",
+    "IdCliente": "CL-001",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 70
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-030",
+    "DescripcionProducto": "Pantallas táctiles interactivas",
+    "IdCliente": "CL-001",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 50
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-031",
+    "DescripcionProducto": "Sistemas de automatización para oficinas",
+    "IdCliente": "CL-001",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 40
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-032",
+    "DescripcionProducto": "Mobiliario modular para oficinas",
+    "IdCliente": "CL-001",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 300
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-033",
+    "DescripcionProducto": "Pizarras electrónicas interactivas",
+    "IdCliente": "CL-001",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 90
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-034",
+    "DescripcionProducto": "Lámparas industriales LED",
+    "IdCliente": "CL-002",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 150
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-035",
+    "DescripcionProducto": "Estanterías modulares para oficina",
+    "IdCliente": "CL-002",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 120
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-036",
+    "DescripcionProducto": "Sistemas de climatización para oficinas",
+    "IdCliente": "CL-002",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 100
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-037",
+    "DescripcionProducto": "Sillas ergonómicas ajustables",
+    "IdCliente": "CL-002",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 200
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-038",
+    "DescripcionProducto": "Pizarras magnéticas para oficina",
+    "IdCliente": "CL-002",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 50
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-039",
+    "DescripcionProducto": "Mesas de conferencia para oficinas",
+    "IdCliente": "CL-002",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 60
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-040",
+    "DescripcionProducto": "Paneles acústicos para oficinas",
+    "IdCliente": "CL-002",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 80
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-041",
+    "DescripcionProducto": "Proyectores de alta definición para reuniones",
+    "IdCliente": "CL-002",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 40
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-042",
+    "DescripcionProducto": "Paneles solares fotovoltaicos",
+    "IdCliente": "CL-003",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 300
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-043",
+    "DescripcionProducto": "Generadores de energía eólica",
+    "IdCliente": "CL-003",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 150
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-044",
+    "DescripcionProducto": "Baterías solares para almacenamiento",
+    "IdCliente": "CL-003",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 500
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-045",
+    "DescripcionProducto": "Kits de instalación de paneles solares",
+    "IdCliente": "CL-003",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 400
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-046",
+    "DescripcionProducto": "Bomba de agua solar",
+    "IdCliente": "CL-003",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 100
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-047",
+    "DescripcionProducto": "Sistemas de iluminación solar para exteriores",
+    "IdCliente": "CL-003",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 250
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-048",
+    "DescripcionProducto": "Estaciones de carga solares portátiles",
+    "IdCliente": "CL-003",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 180
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-049",
+    "DescripcionProducto": "Paneles solares para vehículos",
+    "IdCliente": "CL-003",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 120
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-050",
+    "DescripcionProducto": "Sistemas de filtración de aire industrial",
+    "IdCliente": "CL-004",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 300
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-051",
+    "DescripcionProducto": "Compresores de aire industrial",
+    "IdCliente": "CL-004",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 250
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-052",
+    "DescripcionProducto": "Elevadores hidráulicos industriales",
+    "IdCliente": "CL-004",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 80
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-053",
+    "DescripcionProducto": "Bombas de agua industriales",
+    "IdCliente": "CL-004",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 500
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-054",
+    "DescripcionProducto": "Cintas transportadoras para fábricas",
+    "IdCliente": "CL-004",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 400
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-055",
+    "DescripcionProducto": "Máquinas de soldadura industrial",
+    "IdCliente": "CL-004",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 120
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-056",
+    "DescripcionProducto": "Herramientas neumáticas para construcción",
+    "IdCliente": "CL-004",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 250
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-057",
+    "DescripcionProducto": "Generadores eléctricos industriales",
+    "IdCliente": "CL-004",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 100
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-058",
+    "DescripcionProducto": "Transformadores eléctricos industriales",
+    "IdCliente": "CL-005",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 200
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-059",
+    "DescripcionProducto": "Bombas sumergibles para agua",
+    "IdCliente": "CL-005",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 150
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-060",
+    "DescripcionProducto": "Plantas industriales de reciclaje",
+    "IdCliente": "CL-005",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 80
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-061",
+    "DescripcionProducto": "Móviles de oficina modulares",
+    "IdCliente": "CL-005",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 300
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-062",
+    "DescripcionProducto": "Escáneres industriales",
+    "IdCliente": "CL-005",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 120
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-063",
+    "DescripcionProducto": "Aire acondicionado industrial",
+    "IdCliente": "CL-005",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 250
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-064",
+    "DescripcionProducto": "Generadores de energía industrial",
+    "IdCliente": "CL-005",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 180
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-065",
+    "DescripcionProducto": "Caminos rodantes industriales",
+    "IdCliente": "CL-005",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 220
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-066",
+    "DescripcionProducto": "Equipos de automatización industrial",
+    "IdCliente": "CL-006",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 300
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-067",
+    "DescripcionProducto": "Sistemas de control de clima industrial",
+    "IdCliente": "CL-006",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 100
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-068",
+    "DescripcionProducto": "Generadores eléctricos industriales",
+    "IdCliente": "CL-006",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 150
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-069",
+    "DescripcionProducto": "Compresores de aire industriales",
+    "IdCliente": "CL-006",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 200
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-070",
+    "DescripcionProducto": "Herramientas eléctricas de precisión",
+    "IdCliente": "CL-006",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 350
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-071",
+    "DescripcionProducto": "Cintas transportadoras industriales",
+    "IdCliente": "CL-006",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 250
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-072",
+    "DescripcionProducto": "Sistemas de energía solar para industrias",
+    "IdCliente": "CL-006",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 500
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-073",
+    "DescripcionProducto": "Estanterías metálicas para almacenaje",
+    "IdCliente": "CL-006",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 600
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-074",
+    "DescripcionProducto": "Máquinas de soldadura industriales",
+    "IdCliente": "CL-007",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 100
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-075",
+    "DescripcionProducto": "Equipos de protección industrial",
+    "IdCliente": "CL-007",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 200
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-076",
+    "DescripcionProducto": "Cajas de herramientas industriales",
+    "IdCliente": "CL-007",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 150
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-077",
+    "DescripcionProducto": "Sistemas de filtración industrial",
+    "IdCliente": "CL-007",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 400
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-078",
+    "DescripcionProducto": "Elevadores industriales hidráulicos",
+    "IdCliente": "CL-007",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 50
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-079",
+    "DescripcionProducto": "Herramientas neumáticas industriales",
+    "IdCliente": "CL-007",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 300
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-080",
+    "DescripcionProducto": "Sistemas de energía renovable",
+    "IdCliente": "CL-007",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 100
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-081",
+    "DescripcionProducto": "Racks metálicos para almacenamiento",
+    "IdCliente": "CL-007",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 500
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-082",
+    "DescripcionProducto": "Motores industriales eléctricos",
+    "IdCliente": "CL-008",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 200
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-083",
+    "DescripcionProducto": "Bombas de agua industriales",
+    "IdCliente": "CL-008",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 300
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-084",
+    "DescripcionProducto": "Compresores de aire industrial",
+    "IdCliente": "CL-008",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 150
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-085",
+    "DescripcionProducto": "Generadores eléctricos industriales",
+    "IdCliente": "CL-008",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 100
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-086",
+    "DescripcionProducto": "Sistemas de climatización industrial",
+    "IdCliente": "CL-008",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 250
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-087",
+    "DescripcionProducto": "Aspiradoras industriales",
+    "IdCliente": "CL-008",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 200
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-088",
+    "DescripcionProducto": "Grúas industriales móviles",
+    "IdCliente": "CL-008",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 50
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-089",
+    "DescripcionProducto": "Elevadores de carga industriales",
+    "IdCliente": "CL-008",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 100
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-090",
+    "DescripcionProducto": "Cámaras de seguridad de alta definición",
+    "IdCliente": "CL-009",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 150
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-091",
+    "DescripcionProducto": "Sistemas de energía solar industrial",
+    "IdCliente": "CL-009",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 200
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-092",
+    "DescripcionProducto": "Kits de herramientas industriales",
+    "IdCliente": "CL-009",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 500
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-093",
+    "DescripcionProducto": "Sillas de oficina ergonómicas",
+    "IdCliente": "CL-009",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 300
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-094",
+    "DescripcionProducto": "Computadoras industriales",
+    "IdCliente": "CL-009",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 50
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-095",
+    "DescripcionProducto": "Generadores eléctricos de respaldo",
+    "IdCliente": "CL-009",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 100
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-096",
+    "DescripcionProducto": "Equipos de protección personal industrial",
+    "IdCliente": "CL-009",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 150
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-097",
+    "DescripcionProducto": "Paneles solares industriales",
+    "IdCliente": "CL-010",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 300
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-098",
+    "DescripcionProducto": "Sistemas de aire acondicionado industrial",
+    "IdCliente": "CL-010",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 150
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-099",
+    "DescripcionProducto": "Generadores de energía eléctrica portátiles",
+    "IdCliente": "CL-010",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 100
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-100",
+    "DescripcionProducto": "Equipos de filtración de agua industrial",
+    "IdCliente": "CL-010",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-4",
+        "Cantidad": 250
+      }
+    ]
   }
 ]
