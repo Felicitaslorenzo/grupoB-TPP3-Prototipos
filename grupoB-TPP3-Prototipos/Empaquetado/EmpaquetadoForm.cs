@@ -69,7 +69,7 @@ namespace grupoB_TPP3_Prototipos.CrearOrdenEntrega
 
             if (ordenActual != null)
             {
-                model.EliminarOrdenActual(); // Elimina la orden actual
+                // model.EliminarOrdenActual(); // Elimina la orden actual
                 MostrarOrdenActual(); // Muestra la siguiente orden
             }
             else

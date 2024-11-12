@@ -40,7 +40,7 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                 // Obtener la orden a eliminar
                 var ordenAEliminar = ordenes[indiceActual];
 
-                // Cambiar el estado de la orden en OrdenPreparacionAlmacen a 3 (suponiendo que 3 significa "eliminada" o similar)
+                // Cambiar el estado de la orden en OrdenPreparacionAlmacen a 3 (Empaquetada)
                 var ordenEnAlmacen = OrdenPreparacionAlmacen.OrdenesPreparacion
                     .FirstOrDefault(o => o.IdOrdenPreparacion == ordenAEliminar.IdOrden);
 
@@ -60,8 +60,6 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                 }
             }
         }
-
-
 
         // Mantiene el método ya existente
         public List<OrdenPreparacion> ObtenerOrdenesPreparacion()
