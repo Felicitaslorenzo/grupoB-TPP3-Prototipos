@@ -137,6 +137,8 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
                 ordenPrepEntidad.Estado = EstadoOrdenPrepEnum.Seleccionada;
             }
 
+            //TODO: baja inventario.
+
             OrdenSeleccionAlmacen.Grabar();
             OrdenPreparacionAlmacen.Grabar();
         }
