@@ -207,8 +207,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
                     foreach (var producto in ordenPreparacionSeleccionada.Productos)
                     {
                         ListViewItem item = new ListViewItem();
-                        item.Text = producto.DescripcionProducto; // Suponiendo que aquí agregas la descripción del producto
-                        item.SubItems.Add(producto.Cantidad.ToString()); // Agregar la cantidad como subitem
+                        item.Text = producto.Cantidad.ToString(); // Agregar la cantidad como subitem
+                        item.SubItems.Add(producto.DescripcionProducto); // Suponiendo que aquí agregas la descripción del producto
 
                         // Agregar el item a la lista
                         ProductosList.Items.Add(item);
