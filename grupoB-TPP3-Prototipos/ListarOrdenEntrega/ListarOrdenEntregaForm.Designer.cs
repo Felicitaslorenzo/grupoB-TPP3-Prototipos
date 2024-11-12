@@ -101,7 +101,7 @@
             // IdOrdenEntregaColumna
             // 
             IdOrdenEntregaColumna.Text = "ID Orden Entrega";
-            IdOrdenEntregaColumna.Width = 200;
+            IdOrdenEntregaColumna.Width = 180;
             // 
             // FechaOEColumna
             // 
@@ -116,7 +116,7 @@
             // Estado2Columna
             // 
             Estado2Columna.Text = "Estado";
-            Estado2Columna.Width = 100;
+            Estado2Columna.Width = 150;
             // 
             // BuscarButton
             // 
@@ -208,12 +208,12 @@
             // columnHeader1
             // 
             columnHeader1.Text = "ID Orden Preparacion";
-            columnHeader1.Width = 200;
+            columnHeader1.Width = 180;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Estado";
-            columnHeader3.Width = 100;
+            columnHeader3.Width = 120;
             // 
             // columnHeader4
             // 

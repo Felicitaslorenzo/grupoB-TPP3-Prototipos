@@ -271,7 +271,7 @@
             // IdOPSeleccionadaColumna
             // 
             IdOPSeleccionadaColumna.Text = "ID Orden Preparación";
-            IdOPSeleccionadaColumna.Width = 200;
+            IdOPSeleccionadaColumna.Width = 180;
             // 
             // ClienteSeleccionadoColumna
             // 
