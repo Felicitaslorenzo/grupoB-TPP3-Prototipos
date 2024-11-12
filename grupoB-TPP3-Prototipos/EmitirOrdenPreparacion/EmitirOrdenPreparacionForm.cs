@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using System.Linq;
 using grupoB_TPP3_Prototipos.MenuOrdenesPreparacion;
+using grupoB_TPP3_Prototipos.Almacenes;
 
 
 namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
@@ -131,14 +132,13 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private void GenerarOrdenButton_Click(object sender, EventArgs e)
         {
-            // Verifica si hay productos en el ListView
+            // Validaciones iniciales
             if (ProductosListView.Items.Count == 0)
             {
                 MessageBox.Show("No hay productos disponibles para crear una orden.");
                 return;
             }
 
-            // Verifica si se han seleccionado un cliente, prioridad y transportista
             if (string.IsNullOrWhiteSpace(IdClienteCombo.Text) ||
                 string.IsNullOrWhiteSpace(PrioridadComboBox.Text) ||
                 string.IsNullOrWhiteSpace(TransportistaCombo.Text))
@@ -147,18 +147,48 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 return;
             }
 
-            // Llama al método GenerarNuevaOrden del modelo para generar una nueva orden
-            var resultado = modelo.GenerarNuevaOrden(
+            // Extraer los productos del ListView y convertirlos en una lista de productos
+            List<Producto> productosOrden = new List<Producto>();
+            foreach (ListViewItem productoItem in ProductosListView.Items)
+            {
+                if (int.TryParse(productoItem.SubItems[2].Text, out int cantidad))
+                {
+                    productosOrden.Add(new Producto
+                    {
+                        IDProducto = productoItem.SubItems[0].Text,
+                        DescripcionProducto = productoItem.SubItems[1].Text,
+                        Cantidad = cantidad
+                    });
+                }
+                else
+                {
+                    MessageBox.Show($"Error: La cantidad para el producto {productoItem.SubItems[1].Text} no es válida.");
+                    return;
+                }
+            }
+
+            // Crear la orden con ayuda del modelo
+            OrdenPreparacion nuevaOrden = modelo.CrearOrdenPreparacion(
                 IdClienteCombo.Text,
-                PrioridadComboBox.Text,  // Pasa la prioridad seleccionada
+                PrioridadComboBox.Text,
                 TransportistaCombo.Text,
-                ProductosListView
+                productosOrden
             );
 
-            // Muestra un mensaje con el resultado de la operación
-            MessageBox.Show(resultado);
+            // Convertirla a OrdenPreparacionEnt
+            OrdenPreparacionEnt nuevaOrdenEnt = modelo.ConvertirOrdenPreparacionEnt(
+                nuevaOrden,
+                TransportistaCombo.Text,
+                PrioridadComboBox.Text
+            );
 
-            // Limpia los controles después de generar la orden
+            // Guardar la orden usando el modelo
+            modelo.GuardarOrdenPreparacion(nuevaOrdenEnt);
+
+            // Mostrar mensaje de éxito
+            MessageBox.Show($"Orden {nuevaOrden.IDOrdenPreparacion} creada exitosamente.");
+
+            // Limpiar controles
             ProductosListView.Items.Clear();
             IdClienteCombo.SelectedIndex = -1;
             PrioridadComboBox.SelectedIndex = -1;

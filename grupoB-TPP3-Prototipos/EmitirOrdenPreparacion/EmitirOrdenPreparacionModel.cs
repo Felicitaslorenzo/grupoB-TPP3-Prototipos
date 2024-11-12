@@ -40,73 +40,56 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             return (false, string.Empty);
         }
 
-        public string GenerarNuevaOrden(string idCliente, string prioridad, string transportista, ListView productosListView)
+        public OrdenPreparacion CrearOrdenPreparacion(string idCliente, string prioridad, string transportista, List<Producto> productosOrden)
         {
-            // Generar un nuevo ID de orden basado en la lógica de ordenación
-            string nuevoIDOrden = GenerarNuevoIDOrden();
-            List<Producto> productosOrden = new List<Producto>();
-
-            // Iterar sobre los productos seleccionados en el ListView
-            foreach (ListViewItem productoItem in productosListView.Items)
+            // Crear y configurar la nueva orden
+            return new OrdenPreparacion
             {
-                if (int.TryParse(productoItem.SubItems[2].Text, out int cantidad))
-                {
-                    productosOrden.Add(new Producto
-                    {
-                        IDProducto = productoItem.SubItems[0].Text,
-                        DescripcionProducto = productoItem.SubItems[1].Text,
-                        Cantidad = cantidad,
-                        // Ubicacion = productoItem.SubItems[3].Text // Si es necesario, puedes agregar más datos como la ubicación
-                    });
-                }
-                else
-                {
-                    return $"Error: La cantidad para el producto {productoItem.SubItems[1].Text} no es válida.";
-                }
-            }
-
-            // Crear la nueva orden
-            OrdenPreparacion nuevaOrden = new OrdenPreparacion
-            {
-                IDOrdenPreparacion = nuevoIDOrden,
+                IDOrdenPreparacion = GenerarNuevoIDOrden(),
                 Clientes = new List<Cliente>
-        {
-            new Cliente { IdCliente = idCliente, Prioridad = prioridad, Transportistas = new List<string> { transportista }}
-        },
+            {
+                new Cliente
+                {
+                    IdCliente = idCliente,
+                    Prioridad = prioridad,
+                    Transportistas = new List<string> { transportista }
+                }
+            },
                 Productos = productosOrden
             };
+        }
 
-            // Convertir la nueva orden de tipo OrdenPreparacion a OrdenPreparacionEnt
+        public OrdenPreparacionEnt ConvertirOrdenPreparacionEnt(OrdenPreparacion nuevaOrden, string transportista, string prioridad)
+        {
+            // Convertir la orden en el tipo Entidad
             OrdenPreparacionEnt nuevaOrdenEnt = new OrdenPreparacionEnt
             {
                 IdOrdenPreparacion = nuevaOrden.IDOrdenPreparacion,
-                // Asignar el primer cliente, o lo que sea adecuado en tu caso
                 IdCliente = nuevaOrden.Clientes.FirstOrDefault()?.IdCliente,
                 FechaEmision = DateTime.Now,
-                FechaEntrega = DateTime.Now.AddDays(7), // O la lógica de fecha que prefieras
+                FechaEntrega = DateTime.Now.AddDays(7),
                 Estado = EstadoOrdenPrepEnum.Pendiente,
-                Prioridad = (PrioridadEnum)Enum.Parse(typeof(PrioridadEnum), prioridad), // Asumiendo que Prioridad es un enum
+                Prioridad = (PrioridadEnum)Enum.Parse(typeof(PrioridadEnum), prioridad),
                 IdTransportista = transportista
             };
 
-            // Agregar los productos a la propiedad Detalle de OrdenPreparacionEnt
+            // Agregar los detalles de cada producto
             foreach (var producto in nuevaOrden.Productos)
             {
                 nuevaOrdenEnt.Detalle.Add(new OrdenPreparacionDetalle
                 {
                     SKUProducto = producto.IDProducto,
-                    // DescripcionProducto = producto.DescripcionProducto,
                     Cantidad = producto.Cantidad
                 });
             }
 
-            // Agregar la nueva orden al almacenamiento
-            OrdenPreparacionAlmacen.AgregarOrdenPreparacion(nuevaOrdenEnt);
+            return nuevaOrdenEnt;
+        }
 
-            // Agregar la nueva orden a la lista global de órdenes
-            ordenes.Add(nuevaOrden);
-
-            return $"Orden {nuevoIDOrden} creada exitosamente.";
+        public void GuardarOrdenPreparacion(OrdenPreparacionEnt orden)
+        {
+            // Guardar la orden en el almacenamiento
+            OrdenPreparacionAlmacen.AgregarOrdenPreparacion(orden);
         }
 
         private string GenerarNuevoIDOrden()
