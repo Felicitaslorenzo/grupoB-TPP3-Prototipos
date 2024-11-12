@@ -193,7 +193,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
         
         internal List<Producto> BuscarProductoCliente(Cliente cliente)
         {
-            // Filtra los productos asociados al cliente y enlaza con InventarioMercaderiaEnt para obtener la cantidad disponible
+            // Filtra los productos asociados al cliente y enlaza con InventarioMercaderia para obtener la cantidad disponible
             var productosCliente = ProductoAlmacen.Productos
                 .Where(productoEntidad => productoEntidad.IdCliente == cliente.IdCliente)
                 .Select(producto => new Producto
@@ -221,17 +221,52 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
         }
         
 
-        private int ObtenerCantidadDisponible(string skuProducto)
+        public int ObtenerCantidadDisponible(string skuProducto)
         {
-            // Busca en InventarioMercaderiaEnt la cantidad disponible para el SKUProducto específico
+            // Busca en InventarioMercaderia la cantidad disponible para el SKUProducto específico
 
             //TODO: hay que restar la cantidad de producto que esté en ordenes en un estado previo
             //a "retirar ordenes de seleccion" (que es cuando se da de baja de stock)
 
             var producto = ProductoAlmacen.Productos.First(p => p.SKUProducto == skuProducto);
-            return producto.Inventario.Sum(d => d.Cantidad);
-        }        
-        
+
+            int cantidadDisponible = producto.Inventario.Sum(d => d.Cantidad);
+
+            int cantidadComprometida = OrdenPreparacionAlmacen.OrdenesPreparacion
+                   .Where(o => o.Detalle.Any(d => d.SKUProducto == skuProducto)
+                               && o.Estado != EstadoOrdenPrepEnum.Pendiente) // Asumimos que "Retirada" significa dado de baja
+                   .Sum(o => o.Detalle
+                       .Where(d => d.SKUProducto == skuProducto)
+                       .Sum(d => d.Cantidad));
+
+            int cantidadRestante = cantidadDisponible - cantidadComprometida;
+            return Math.Max(cantidadRestante, 0); // Aseguramos que no se devuelva un valor negativo
+
+        }
+
+        public (bool exito, string mensaje) ValidarCantidadEnOrdenActual(List<Producto> productosOrden, string skuProducto, int cantidadSolicitada)
+        {
+            // Obtener la cantidad disponible global desde el inventario
+            int cantidadDisponibleGlobal = ObtenerCantidadDisponible(skuProducto);
+
+            // Sumar la cantidad de producto ya solicitada en la orden actual
+            int cantidadEnOrdenActual = productosOrden
+                .Where(p => p.IDProducto == skuProducto)
+                .Sum(p => p.Cantidad);
+
+            // Calcular la cantidad total que el cliente intenta solicitar
+            int cantidadTotalSolicitada = cantidadEnOrdenActual + cantidadSolicitada;
+
+            // Verificar si la cantidad total solicitada excede la cantidad disponible
+            if (cantidadTotalSolicitada > cantidadDisponibleGlobal)
+            {
+                return (false, $"Error: No hay suficiente stock disponible para {skuProducto}. Cantidad disponible: {cantidadDisponibleGlobal}, cantidad solicitada: {cantidadTotalSolicitada}.");
+            }
+
+            return (true, "La cantidad solicitada es válida y se puede agregar a la orden.");
+        }
+
+
         /*
 
         internal List<Producto> BuscarProductoCliente(Cliente cliente)

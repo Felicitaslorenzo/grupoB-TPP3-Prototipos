@@ -41,7 +41,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
         private void AgregarProductoButton_Click(object sender, EventArgs e)
         {
-            // verifica si se selecionó una fecha
             if (!FechaOPPicker.Checked)
             {
                 MessageBox.Show("Debe seleccionar una fecha de entrega.", "Fecha de entrega requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -51,10 +50,8 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             string idProducto = ProductoCombo.Text;
             int cantidad;
 
-            // Validación de cantidad
             if (int.TryParse(CantidadTextBox.Text, out cantidad))
             {
-               
                 var resultadoProducto = modelo.BuscarProductoEnOrdenes(idProducto);
 
                 if (resultadoProducto.Item1)
@@ -62,29 +59,39 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                     if (cantidad <= 0)
                     {
                         MessageBox.Show("La cantidad tiene que ser mayor a 0");
+                        return;
                     }
-                    else
+
+                    // Obtener la cantidad total que ya se ha solicitado para este producto en la orden
+                    int cantidadTotalEnOrden = ObtenerCantidadTotalEnOrden(idProducto);
+                    int cantidadDisponible = modelo.ObtenerCantidadDisponible(idProducto); // Asegúrate de que este método exista y funcione como se espera
+
+                    if (cantidadTotalEnOrden + cantidad > cantidadDisponible)
                     {
-                        var nuevoProducto = new Producto
-                        {
-                            IDProducto = idProducto,
-                            Cantidad = cantidad,
-                            DescripcionProducto = resultadoProducto.Item2,
-                            // Ubicacion = resultadoProducto.Item3
-                        };
-
-                        var item = new ListViewItem(nuevoProducto.IDProducto);
-                        item.SubItems.Add(nuevoProducto.DescripcionProducto);
-                        item.SubItems.Add(nuevoProducto.Cantidad.ToString());
-                        // item.SubItems.Add(nuevoProducto.Ubicacion);
-                        ProductosListView.Items.Add(item);
-
-                       
-                        CantidadTextBox.Clear();
-                        ProductoCombo.SelectedIndex = -1;
-
-                        //MessageBox.Show($"El producto {nuevoProducto.DescripcionProducto} se ha agregado a la lista.");
+                        MessageBox.Show(
+                             $"Error: No hay suficiente stock disponible \nCantidad solicitada: {cantidad} \nCantidad disponible: {cantidadDisponible - cantidadTotalEnOrden}",
+                                 "Cantidad excedida",
+                                 MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning
+                         );
+                        return;
                     }
+
+                    // Si la cantidad es válida, agregar el producto a la orden
+                    var nuevoProducto = new Producto
+                    {
+                        IDProducto = idProducto,
+                        Cantidad = cantidad,
+                        DescripcionProducto = resultadoProducto.Item2,
+                    };
+
+                    var item = new ListViewItem(nuevoProducto.IDProducto);
+                    item.SubItems.Add(nuevoProducto.DescripcionProducto);
+                    item.SubItems.Add(nuevoProducto.Cantidad.ToString());
+                    ProductosListView.Items.Add(item);
+
+                    CantidadTextBox.Clear();
+                    ProductoCombo.SelectedIndex = -1;
                 }
                 else
                 {
@@ -97,7 +104,18 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             }
         }
 
-
+        private int ObtenerCantidadTotalEnOrden(string idProducto)
+        {
+            int cantidadTotal = 0;
+            foreach (ListViewItem item in ProductosListView.Items)
+            {
+                if (item.SubItems[0].Text == idProducto)
+                {
+                    cantidadTotal += int.Parse(item.SubItems[2].Text); // SubItem[2] es donde se almacena la cantidad
+                }
+            }
+            return cantidadTotal;
+        }
         private void EliminarProductoButton_Click(object sender, EventArgs e)
         {
             if (ProductosListView.SelectedItems.Count > 0)
