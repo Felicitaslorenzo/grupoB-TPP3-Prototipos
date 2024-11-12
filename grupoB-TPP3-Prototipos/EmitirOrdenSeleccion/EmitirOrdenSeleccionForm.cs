@@ -272,7 +272,19 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
             };
             OrdenSeleccionAlmacen.AgregarOrdenSeleccion(nuevaOrdenSeleccion);
 
-            
+            // Cambiar el estado de las órdenes de preparación seleccionadas de EnSeleccion a Seleccionada
+            foreach (var idOrdenPrep in opSeleccionadas)
+            {
+                var ordenPrepEntidad = OrdenPreparacionAlmacen.OrdenesPreparacion.FirstOrDefault(o => o.IdOrdenPreparacion == idOrdenPrep);
+                if (ordenPrepEntidad != null && ordenPrepEntidad.Estado == EstadoOrdenPrepEnum.EnSeleccion) // podria sacar este if y solo dejar lo de adentroo
+                {
+                    ordenPrepEntidad.Estado = EstadoOrdenPrepEnum.Seleccionada;
+                }
+            }
+
+            // Grabar los cambios
+            OrdenPreparacionAlmacen.Grabar();
+
             // Generar una nueva orden y mostrar el mensaje
             string mensaje = $"Se generó {nuevaOrdenSeleccion.IdOrdenSeleccion}";
             MessageBox.Show(mensaje, "Orden Generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
