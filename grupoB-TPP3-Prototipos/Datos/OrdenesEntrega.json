@@ -11,8 +11,8 @@
   },
   {
     "IdOrdenEntrega": "OE-002",
-    "FechaEmision": "2024-10-15T00:00:00",
-    "FechaEntrega": "2024-10-22T00:00:00",
+    "FechaEmision": "2024-09-15T00:00:00",
+    "FechaEntrega": "2024-10-01T00:00:00",
     "OrdenesPreparacion": [
       "OP-024",
       "OP-025"
