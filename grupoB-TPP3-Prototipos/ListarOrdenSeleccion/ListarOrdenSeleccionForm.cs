@@ -38,8 +38,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
         {
             // Obtener los valores seleccionados
             string idOrdenSeleccionada = IdOrdenSeleccionCombo.Text;
-            DateTime fechaSeleccionada = FechaDesdeOSPicker.Value.Date;
-            DateTime fechaHSeleccionada = FechaHastaOSPicker.Value.Date;
+            DateTime fechaSeleccionada = FechaDesdeOSPicker.Value.Date;  // Solo fecha sin hora
+            DateTime fechaHSeleccionada = FechaHastaOSPicker.Value.Date;  // Solo fecha sin hora
 
             // Validar si al menos un filtro está activo
             if (string.IsNullOrEmpty(idOrdenSeleccionada) && !FechaDesdeOSPicker.Checked && !FechaHastaOSPicker.Checked)
@@ -60,26 +60,29 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
             // Aplicar los filtros
             var ordenesFiltradas = ordenesSeleccion.AsEnumerable();
 
-            if (!string.IsNullOrEmpty(IdOrdenSeleccionCombo.Text))
+            if (!string.IsNullOrEmpty(idOrdenSeleccionada))
             {
-                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.IdOrdenSeleccion == IdOrdenSeleccionCombo.Text);
+                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.IdOrdenSeleccion == idOrdenSeleccionada);
             }
 
+            // Aplicar filtros de fechas
             if (FechaDesdeOSPicker.Checked && FechaHastaOSPicker.Checked)
             {
-                DateTime fechaDesde = FechaDesdeOSPicker.Value;
-                DateTime fechaHasta = FechaHastaOSPicker.Value;
-                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision >= fechaDesde && orden.FechaEmision <= fechaHasta);
+                // Filtrar por fecha exacta de FechaEmision y FechaEstado
+                ordenesFiltradas = ordenesFiltradas.Where(orden =>
+                    orden.FechaEmision.Date == fechaSeleccionada && orden.FechaEstado.Date == fechaHSeleccionada);
             }
             else if (FechaDesdeOSPicker.Checked)
             {
-                DateTime fechaDesde = FechaDesdeOSPicker.Value;
-                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision >= fechaDesde);
+                // Filtrar solo por FechaEmision
+                ordenesFiltradas = ordenesFiltradas.Where(orden =>
+                    orden.FechaEmision.Date == fechaSeleccionada);
             }
             else if (FechaHastaOSPicker.Checked)
             {
-                DateTime fechaHasta = FechaHastaOSPicker.Value;
-                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision <= fechaHasta);
+                // Filtrar solo por FechaEstado
+                ordenesFiltradas = ordenesFiltradas.Where(orden =>
+                    orden.FechaEstado.Date == fechaHSeleccionada);
             }
 
             // Limpiar la lista antes de agregar los elementos filtrados
@@ -103,6 +106,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
 
                 ListarOrdenSeleccionList.Items.Add(item);
             }
+
+
         }
 
         private void ListarOrdenSeleccionForm_Load(object sender, EventArgs e)

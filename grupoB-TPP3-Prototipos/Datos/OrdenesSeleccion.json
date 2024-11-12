@@ -2,7 +2,7 @@
   {
     "IdOrdenSeleccion": "OS-001",
     "Estado": 0,
-    "FechaEstado": "2024-10-11T00:00:00",
+    "FechaEstado": "2024-11-11T00:00:00",
     "FechaEmision": "2024-10-11T00:00:00",
     "OrdenesPreparacion": [
       "OP-021",
@@ -12,7 +12,7 @@
   {
     "IdOrdenSeleccion": "OS-002",
     "Estado": 0,
-    "FechaEstado": "2024-10-15T00:00:00",
+    "FechaEstado": "2024-11-15T00:00:00",
     "FechaEmision": "2024-10-15T00:00:00",
     "OrdenesPreparacion": [
       "OP-023",
@@ -23,7 +23,7 @@
   {
     "IdOrdenSeleccion": "OS-003",
     "Estado": 1,
-    "FechaEstado": "2024-10-21T00:00:00",
+    "FechaEstado": "2024-11-21T00:00:00",
     "FechaEmision": "2024-10-21T00:00:00",
     "OrdenesPreparacion": [
       "OP-026",
@@ -33,8 +33,8 @@
   {
     "IdOrdenSeleccion": "OS-004",
     "Estado": 1,
-    "FechaEstado": "2024-10-23T00:00:00",
-    "FechaEmision": "2024-10-23T00:00:00",
+    "FechaEstado": "2024-11-23T00:00:00",
+    "FechaEmision": "2024-11-11T00:00:00",
     "OrdenesPreparacion": [
       "OP-028",
       "OP-029",
