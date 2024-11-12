@@ -4,56 +4,51 @@
 
 2 -  Botón: "Emitir orden de Seleccion"
 
-2 - Cliente: Ferreteria SRL
+3 - Cliente: Porter SA
 
-3 - Botón: "Buscar"
+4 - Botón: "Buscar"
 
-4 - Órdenes Disponibles:
+5 - Órdenes Disponibles:
 
-	OP002 - Ferreteria SRL	 - Fecha: 25/09/2024 
-	OP012 - Ferreteria SRL	 - Fecha: 02/10/2024 
-	OP027 - Ferreteria SRL	 - Fecha: 25/10/2024 
-
-5 -	Seleccionar Orden de Preparación: OP002/ OP012
-
-	Productos Disponibles en Orden:
-
-	101 Producto ABC Cantidad: 100 Ubicación: Ubicación 1
-	102 Producto DEF Cantidad: 50 Ubicación: Ubicación 2
-
-	Cantidad: "10"
-
+	OP-001 - Porter SA	 -  30/09/2024
+	OP-003 - Porter SA	 -  01/10/2024 
+	
+6 -	Seleccionar Orden de Preparación: OP-001
 
 7- Botón: "Agregar Seleccionadas"
 
-8-	Detalle:
+8 -	Seleccionar Orden de Preparación: OP-003
 
-	OP002 - Ferreteria SRL	 - Fecha: 25/09/2024 
-	OP012 - Ferreteria SRL	 - Fecha: 02/10/2024  
+9- Botón: "Agregar Seleccionadas"
 
-9 - Botón: "Emitir Orden"
+10-	Detalle:
 
-10- Mensaje: "Se genero OS-001"
+	OP-001 -  Porter SA	 - Fecha: 30/09/2024 
+	OP-003	- Porter SA	 - Fecha: 01/10/2024 
+	 
 
-11- Botón: "Ok"
+11 - Botón: "Emitir Orden"
 
-12 - Cerrar Sistema
+12- Mensaje: "Se genero OS-009"
 
-12- Verificar en OrdenSeleccion.Json, nuevo registro:
+13- Botón: "Ok"
 
-	"IdOrdenSeleccion": "OS001",
-      "Estado": "Preparada",
-      "FechaEstado": "2024-10-11T00:00:00",
-      "FechaEmision": "2024-10-11T00:00:00",
-      "OrdenesPreparacion": [
-        "OP002",
-		"OP012"
-       
-      ]
+14 - Cerrar Sistema
+
+15- Verificar en OrdenSeleccion.Json, nuevo registro:
+
+	{
+        "IdOrdenSeleccion": "OS-009",
+        "Estado": 0,
+        "FechaEstado": "2024-11-12T16:10:58.5559743-03:00",
+        "FechaEmision": "2024-11-12T16:10:58.5559713-03:00",
+        "OrdenesPreparacion": [
+            "OP-001",
+            "OP-003"
+        ]
+    }
 
 
-
-	  Debe modificar el OP de pendiente a seleccionada y modifiar el dato desde el archivo.
-	  No guarda los datos en el .json
-	  No figuran las OP en el .json
-	  Fecha de estado no pone el dia en el q se generaa
+16- Verificar en OrdenesPreparacion.Json, que las ordens "OP-001", "OP-003" pasen de pendiente a En seleccion.
+            // No figuran el cambio de estado
+	  

@@ -4,50 +4,47 @@
 
 2 -  Botón: "Emitir orden de Seleccion"
 
-2 - ID Orden Preparación: OP001
+3 - ID Orden Preparación: OP-001
 
-3 - Botón: "Buscar"
+4 - Botón: "Buscar"
 
-4 - Órdenes Disponibles:
+5 - Órdenes Disponibles:
 
-	OP001 - Cliente Porter SA	 - Fecha: 30/09/2024 
+	OP-001 - Cliente Porter SA	 - Fecha: 30/09/2024 
 
-5 -	Seleccionar Orden de Preparación: OP001  // No figuran los productos cuando selecciono
+6 -	Seleccionar Orden de Preparación: OP-001	
+  
+7 -	Detalle de la Orden:
 
-	Productos Disponibles en Orden:
-
-	101 Producto ABC Cantidad: 100 Ubicación: Ubicación 1
-	102 Producto DEF Cantidad: 50 Ubicación: Ubicación 2
-
-	Cantidad: "10"
+	Muebles modulares de oficina     50
+    Cementos de alta resistencia     200
 
 
-7- Botón: "Agregar Seleccionadas"
+8- Botón: "Agregar Seleccionadas"
 
-8-	Detalle:
+9-	Detalle:
 
-	OP001 - Cliente Porter SA	 - Fecha: 30/09/2024  
+	OP-001 -  Porter SA	 -   30/09/2024  
 
-9 - Botón: "Emitir Orden"
+10 - Botón: "Emitir Orden"
 
-10- Mensaje: "Se genero OS-001"
+11- Mensaje: "Se genero OS-008"
 
-11- Botón: "Ok"
+12- Botón: "Ok"
 
-12 - Cerrar Sistema
+13 - Cerrar Sistema
 
-12- Verificar en OrdenSeleccion.Json, nuevo registro:
+14- Verificar en OrdenesSeleccion.Json, nuevo registro:
 
-	"IdOrdenSeleccion": "OS001",
-      "Estado": "Preparada",
-      "FechaEstado": "2024-10-11T00:00:00",
-      "FechaEmision": "2024-10-11T00:00:00",
-      "OrdenesPreparacion": [
-        "OP001",
-       
-      ]
-12 - Verificar en OrdenPreparacion.json, que la OP001 modifique el estado de pendiente a seleccionada // No figuran el cambio de estado
+	{
+        "IdOrdenSeleccion": "OS-008",
+        "Estado": 0,
+        "FechaEstado": "2024-11-12T15:59:58.0036948-03:00",
+        "FechaEmision": "2024-11-12T15:59:58.0036919-03:00",
+        "OrdenesPreparacion": [
+            "OP-001"
+        ]
+    }
+15 - Verificar en OrdenPreparacion.json, que la OP-001 modifique el estado de pendiente a en seleccion // No figuran el cambio de estado
 
-- No puedo generar el id OS que lo tome desde el json y le sume uno nuevo 
-- No graba
-- No muestra el detalle de orden cuando seleccionas las OP 
+
