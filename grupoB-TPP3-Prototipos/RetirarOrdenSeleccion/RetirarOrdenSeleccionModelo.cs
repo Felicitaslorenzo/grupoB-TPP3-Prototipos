@@ -47,7 +47,7 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
 
             if (ordenSeleccionada == null)
             {
-                return new List<Producto>();  // Si no se encuentra la orden, retorna una lista vacía
+                return new List<Producto>();
             }
 
             var productos = new List<Producto>();
@@ -60,6 +60,8 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
             {
                 foreach (var detalle in ordenPreparacion.Detalle)
                 {
+                    int cantidadRestante = detalle.Cantidad;
+                    
                     var productosCoincidentes = ProductoAlmacen.Productos
                         .Where(p => p.SKUProducto == detalle.SKUProducto)
                         .ToList();
@@ -68,6 +70,12 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
                     {
                         foreach (var inventario in productoAlmacen.Inventario)
                         {
+                            if (cantidadRestante <= 0) break;
+
+                            int cantidadAUtilizar = Math.Min(inventario.Cantidad, cantidadRestante);
+                            cantidadRestante -= cantidadAUtilizar;
+
+
                             var producto = new Producto
                             {
                                 DescripcionProducto = productoAlmacen.DescripcionProducto,
@@ -75,13 +83,13 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
                                 Cantidad = inventario.Cantidad
                             };
 
-                            productos.Add(producto);  // Añadimos el producto a la lista
+                            productos.Add(producto);
                         }
                     }
                 }
             }
 
-            return productos;  // Devolvemos la lista completa de productos relacionados
+            return productos;
         }
 
 
@@ -90,12 +98,12 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
             var orden = ordenesSeleccion.FirstOrDefault(o => o.IdOrdenSeleccion == idOrdenSeleccion);
             if (orden != null)
             {
-                orden.Estado = EstadoOrdenSelEnum.Pendiente; // O el estado correspondiente
+                orden.Estado = EstadoOrdenSelEnum.Preparada;
                 OrdenSeleccionAlmacen.Grabar();
             }
         }
 
-        public List<OrdenSeleccion> ObtenerOrdenesSeleccionadas()
+        /*public List<OrdenSeleccion> ObtenerOrdenesSeleccionadas() //Esto no se está usando, para qué está?
         {
             var listarOrden = new List<OrdenSeleccion>();
 
@@ -147,7 +155,7 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
             }
 
             return listarOrden;
-        }
+        }*/
 
 
         /*
