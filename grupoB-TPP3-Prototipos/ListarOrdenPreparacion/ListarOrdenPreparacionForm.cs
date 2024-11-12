@@ -109,7 +109,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-            // validar si se ha seleccionado algún filtro
+            // Validar si se ha seleccionado algún filtro
             if (string.IsNullOrEmpty(IdOrdenPreparacionCombo.Text) &&
                 string.IsNullOrEmpty(IdClienteCombo.Text) &&
                 string.IsNullOrEmpty(NombreClienteCombo.Text) &&
@@ -122,7 +122,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                 return;
             }
 
-            // valores seleccionados en los desplegables
+            // Valores seleccionados en los desplegables
             string idClienteSeleccionado = IdClienteCombo.Text;
             string idOrdenSeleccionado = IdOrdenPreparacionCombo.Text;
             string nombreClienteSeleccionado = NombreClienteCombo.Text;
@@ -140,30 +140,41 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
             // Aplicar filtros de fechas
             if (FechaDesdeOPPicker.Checked && FechaHastaOPPicker.Checked)
             {
-                DateTime fechaDesde = FechaDesdeOPPicker.Value;
-                DateTime fechaHasta = FechaHastaOPPicker.Value;
-                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision >= fechaDesde && orden.FechaEmision <= fechaHasta);
+                DateTime fechaDesde = FechaDesdeOPPicker.Value.Date;  // Solo fecha (sin la hora)
+                DateTime fechaHasta = FechaHastaOPPicker.Value.Date;  // Solo fecha (sin la hora)
+
+                // Filtrar por FechaEmision usando FechaDesdeOPPicker
+                ordenesFiltradas = ordenesFiltradas.Where(orden =>
+                    orden.FechaEmision.Date == fechaDesde &&
+                    orden.FechaEstado.Date == fechaHasta);  // Filtrar por FechaEstado usando FechaHastaOPPicker
             }
             else if (FechaDesdeOPPicker.Checked)
             {
-                DateTime fechaDesde = FechaDesdeOPPicker.Value;
-                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision >= fechaDesde);
+                DateTime fechaDesde = FechaDesdeOPPicker.Value.Date;  // Solo fecha (sin la hora)
+
+                // Filtrar solo por FechaEmision
+                ordenesFiltradas = ordenesFiltradas.Where(orden =>
+                    orden.FechaEmision.Date == fechaDesde);
             }
             else if (FechaHastaOPPicker.Checked)
             {
-                DateTime fechaHasta = FechaHastaOPPicker.Value;
-                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision <= fechaHasta);
+                DateTime fechaHasta = FechaHastaOPPicker.Value.Date;  // Solo fecha (sin la hora)
+
+                // Filtrar solo por FechaEstado
+                ordenesFiltradas = ordenesFiltradas.Where(orden =>
+                    orden.FechaEstado.Date == fechaHasta);
             }
 
+            // Limpiar el ListView antes de agregar los elementos filtrados
             OrdenesPreparacionList.Items.Clear();
 
             if (!ordenesFiltradas.Any())
             {
                 MessageBox.Show("No hay órdenes con los criterios seleccionados", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return; 
+                return;
             }
 
-            // agregar elementos filtrados a la OrdenesPreparacionList
+            // Agregar elementos filtrados a la lista
             foreach (var ordenPreparacion in ordenesFiltradas)
             {
                 ListViewItem item = new ListViewItem();
@@ -175,14 +186,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                 item.SubItems.Add(ordenPreparacion.FechaEmision.ToString("dd/MM/yyyy"));
 
                 OrdenesPreparacionList.Items.Add(item);
-
-                
             }
         }
-
-
-
-
 
         private void ListarOrdenesPreparacionGroup_Enter(object sender, EventArgs e)
         {
