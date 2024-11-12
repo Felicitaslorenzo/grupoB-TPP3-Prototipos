@@ -6,9 +6,9 @@
 
 3 - [Se visualiza el filtro de transportista junto con un botón de "Buscar"]
 
-4 - Seleccionar Transportista: TR008 => Boton "Buscar" => 
-	[Aparece en el listado de abajo: ID Orden: OP023 - ID Cliente: CL004] =>
-	Seleccionar la orden => Seleccionar botón "Emitir Remito" => [Aparece mensaje de éxito: "El remito RM004 se ha generado correctamente."]
+4 - Seleccionar Transportista: TR-008 => Boton "Buscar" => 
+	[Aparece en el listado de abajo: ID Orden: OP-023 - ID Cliente: CL-004] =>
+	Seleccionar la orden => Seleccionar botón "Emitir Remito" => [Aparece mensaje de éxito: "El remito RM-004 se ha generado correctamente."]
 
 5 - Seleccionar botón "OK" => [Cierra el mensaje de éxito]
 
