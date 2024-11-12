@@ -186,6 +186,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
 
                 OrdenesPreparacionList.Items.Add(item);
             }
+
+            ProductosList.Items.Clear();
         }
 
         private void ListarOrdenesPreparacionGroup_Enter(object sender, EventArgs e)

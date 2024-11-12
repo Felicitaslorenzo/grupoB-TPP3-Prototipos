@@ -50,8 +50,8 @@
             idClienteColumna = new ColumnHeader();
             nombreClienteColumna = new ColumnHeader();
             estadoOrdenColumna = new ColumnHeader();
-            fechaOrdenColumna = new ColumnHeader();
             FechaEmisionColumna = new ColumnHeader();
+            fechaOrdenColumna = new ColumnHeader();
             VolverListaButton = new Button();
             ProductosList = new ListView();
             SKU = new ColumnHeader();
@@ -265,12 +265,12 @@
             // IdOrdenColumna
             // 
             IdOrdenColumna.Text = "ID Orden";
-            IdOrdenColumna.Width = 120;
+            IdOrdenColumna.Width = 90;
             // 
             // idClienteColumna
             // 
             idClienteColumna.Text = "ID Cliente";
-            idClienteColumna.Width = 100;
+            idClienteColumna.Width = 90;
             // 
             // nombreClienteColumna
             // 
@@ -280,17 +280,17 @@
             // estadoOrdenColumna
             // 
             estadoOrdenColumna.Text = "Estado";
-            estadoOrdenColumna.Width = 80;
-            // 
-            // fechaOrdenColumna
-            // 
-            fechaOrdenColumna.Text = "Fecha de Estado";
-            fechaOrdenColumna.Width = 150;
+            estadoOrdenColumna.Width = 100;
             // 
             // FechaEmisionColumna
             // 
             FechaEmisionColumna.Text = "Fecha de Emision";
-            FechaEmisionColumna.Width = 150;
+            FechaEmisionColumna.Width = 140;
+            // 
+            // fechaOrdenColumna
+            // 
+            fechaOrdenColumna.Text = "Fecha de Estado";
+            fechaOrdenColumna.Width = 140;
             // 
             // VolverListaButton
             // 

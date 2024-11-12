@@ -58,6 +58,7 @@
             IdOrdenSeleccionCombo.Name = "IdOrdenSeleccionCombo";
             IdOrdenSeleccionCombo.Size = new Size(250, 28);
             IdOrdenSeleccionCombo.TabIndex = 0;
+            IdOrdenSeleccionCombo.SelectedIndexChanged += IdOrdenSeleccionCombo_SelectedIndexChanged;
             // 
             // FechaDesdeOSPicker
             // 
@@ -115,7 +116,7 @@
             // 
             // FechaEmisionOSColumna
             // 
-            FechaEmisionOSColumna.Text = "Fecha de Emision";
+            FechaEmisionOSColumna.Text = "Fecha Emision";
             FechaEmisionOSColumna.Width = 160;
             // 
             // FechaEstadoColumna
@@ -126,7 +127,7 @@
             // EstadoColumna
             // 
             EstadoColumna.Text = "Estado";
-            EstadoColumna.Width = 100;
+            EstadoColumna.Width = 140;
             // 
             // VolverListaButton
             // 
@@ -171,7 +172,7 @@
             // IdOrdenPreparacionColumna
             // 
             IdOrdenPreparacionColumna.Text = "ID Orden Preparacion";
-            IdOrdenPreparacionColumna.Width = 200;
+            IdOrdenPreparacionColumna.Width = 180;
             // 
             // ClienteColumna
             // 
@@ -202,7 +203,7 @@
             // DescripcionColumna
             // 
             DescripcionColumna.Text = "Descripción Producto";
-            DescripcionColumna.Width = 200;
+            DescripcionColumna.Width = 300;
             // 
             // ListarOrdenSeleccionForm
             // 

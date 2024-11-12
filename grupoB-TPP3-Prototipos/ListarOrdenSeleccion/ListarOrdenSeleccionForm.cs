@@ -107,7 +107,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
                 ListarOrdenSeleccionList.Items.Add(item);
             }
 
-
+            listOrdenPreparacion.Items.Clear();
+            ProductosList.Items.Clear();
         }
 
         private void ListarOrdenSeleccionForm_Load(object sender, EventArgs e)
@@ -215,6 +216,10 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
                     }
                 }
             }
+        }
+
+        private void IdOrdenSeleccionCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }
