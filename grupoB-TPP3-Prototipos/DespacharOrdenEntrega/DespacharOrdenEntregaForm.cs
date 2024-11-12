@@ -1,4 +1,5 @@
-﻿using System;
+﻿using grupoB_TPP3_Prototipos.Almacenes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -107,11 +108,29 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
 
         private void EmitirOrdenDeDespachoButton_Click(object sender, EventArgs e)
         {
-            /* if (ListarOrdenDespacharBuscarList.SelectedItems.Count == 0)
+            // Verifica que haya órdenes seleccionadas en el ListView
+            if (ListarOrdenDespacharBuscarList.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Por favor, selecciona una orden de la lista antes de generar la orden de despacho.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            } */
+            }
+
+            // Actualiza el estado de las órdenes seleccionadas a "Despachada" (estado 5)
+            foreach (ListViewItem selectedItem in ListarOrdenDespacharBuscarList.SelectedItems)
+            {
+                // Obtén el ID de la orden desde el ListView
+                string idOrden = selectedItem.Text;  // Asumiendo que el ID de la orden está en la primera columna
+
+                // Encuentra la orden de preparación correspondiente en la lista de órdenes
+                var orden = OrdenPreparacionAlmacen.OrdenesPreparacion
+                    .FirstOrDefault(o => o.IdOrdenPreparacion == idOrden);
+
+                // Si la orden existe, cambia su estado a "Despachada"
+                if (orden != null)
+                {
+                    orden.Estado = EstadoOrdenPrepEnum.Despachada;  // Cambia el estado de la orden
+                }
+            }
 
             // Verifica que la variable 'nuevoIDRemito' esté declarada
             var nuevoIDRemito = model.GenerarNuevoIDRemito();  // Asegúrate de que 'model' esté instanciado
@@ -121,6 +140,7 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
 
             // Limpiamos la lista de órdenes de despacho después de generar el remito
             ListarOrdenDespacharBuscarList.Items.Clear();
+
         }
 
         private void VolverButton_Click(object sender, EventArgs e)
