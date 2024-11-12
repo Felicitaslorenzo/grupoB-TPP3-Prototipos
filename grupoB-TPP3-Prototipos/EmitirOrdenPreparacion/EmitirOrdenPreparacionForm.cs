@@ -15,7 +15,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
         public EmitirOrdenPreparacionForm()
         {
             InitializeComponent();
-            modelo.CargarCliente(IdClienteCombo, TransportistaCombo, ProductoCombo);
+            CargarCliente(IdClienteCombo, TransportistaCombo, ProductoCombo);
             PrioridadComboBox.Items.AddRange(modelo.ObtenerPrioridad().ToArray());
             // clienteAnterior = (Cliente)IdClienteCombo.SelectedItem;
             this.IdClienteCombo.SelectedIndexChanged += IdClienteCombo_SelectedIndexChanged;
@@ -200,7 +200,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 modelo.ClienteAnterior = nuevoCliente;
 
                 // carga los transportistas y productos del nuevo cliente
-                modelo.CargarTransportistas(nuevoCliente, TransportistaCombo);
+                CargarTransportistas(nuevoCliente, TransportistaCombo);
 
                 var productosCliente = modelo.BuscarProductoCliente(nuevoCliente);
 
@@ -232,6 +232,69 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
         private void VolverButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        // Método que carga los clientes en el ComboBox
+        internal void CargarCliente(ComboBox IdClienteCombo, ComboBox TransportistaCombo, ComboBox ProductosCombo)
+        {
+            var clientes = modelo.ObtenerCliente();
+
+            // Verifica si los clientes están siendo obtenidos correctamente
+            if (clientes == null || clientes.Count == 0)
+            {
+                MessageBox.Show("No se encontraron clientes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Carga de los clientes en el ComboBox
+            foreach (var cliente in clientes)
+            {
+                IdClienteCombo.Items.Add(cliente);
+            }
+
+            IdClienteCombo.DisplayMember = "IdCliente";
+
+            // Evento cuando se selecciona un cliente
+            IdClienteCombo.SelectedIndexChanged += (s, e) =>
+            {
+                if (IdClienteCombo.SelectedItem is Cliente selectedCliente)
+                {
+                    // Cargar transportistas y productos al seleccionar un cliente
+                    // CargarTransportistas(selectedCliente, TransportistaCombo);
+                    CargarProductos(selectedCliente, ProductosCombo);
+                }
+            };
+        }
+
+
+        // Método que carga los transportistas del cliente seleccionado
+        internal void CargarTransportistas(Cliente cliente, ComboBox TransportistaCombo)
+        {
+            TransportistaCombo.Items.Clear();
+
+            // Cargar todos los transportistas del cliente seleccionado
+            foreach (var transportista in cliente.Transportistas)
+            {
+                TransportistaCombo.Items.Add(transportista);
+            }
+
+            // No establecer ninguna opción seleccionada, dejar el combo vacío
+            // TransportistaCombo.SelectedIndex = -1;
+        }
+
+        // Método que carga los productos del cliente seleccionado
+        internal void CargarProductos(Cliente cliente, ComboBox ProductosCombo)
+        {
+            ProductosCombo.Items.Clear();
+
+            // Carga los productos devueltos por la función BuscarProductoCliente
+            var productos = modelo.BuscarProductoCliente(cliente);
+            foreach (var producto in productos)
+            {
+                ProductosCombo.Items.Add(producto);
+            }
+
+            ProductosCombo.DisplayMember = "IDProducto";  // Mostrar el ID del producto
         }
     }
 }

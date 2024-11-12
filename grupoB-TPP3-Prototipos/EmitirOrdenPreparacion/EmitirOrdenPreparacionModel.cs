@@ -136,7 +136,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             return $"OP-{numero:D3}";  // El ":D3" asegura que el número tenga 3 dígitos
         }
 
-        internal void CargarCliente(ComboBox IdClienteCombo, ComboBox TransportistaCombo, ComboBox ProductosCombo)
+        /* internal void CargarCliente(ComboBox IdClienteCombo, ComboBox TransportistaCombo, ComboBox ProductosCombo)
         {
             var clientes = ObtenerCliente();
 
@@ -188,7 +188,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             }
 
             ProductosCombo.DisplayMember = "IDProducto";
-        }
+        } */
 
         
         internal List<Producto> BuscarProductoCliente(Cliente cliente)
@@ -300,6 +300,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 .Select(p => p.ToString()) // Devolver el nombre del enum como string
                 .ToList();
         }
+
         public Cliente ClienteAnterior { get; set; }
     }
 }
