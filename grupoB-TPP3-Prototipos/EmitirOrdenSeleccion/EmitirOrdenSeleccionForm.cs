@@ -30,47 +30,118 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
         }
         private void CargarClientesEnComboBox(List<Cliente> clientes)
         {
-            model.CargarComboBox(DescripcionClienteCombo, clientes, c => c.nombreCliente);
+            DescripcionClienteCombo.Items.Clear();
+            DescripcionClienteCombo.Items.Add(string.Empty);
+
+            foreach (var cliente in clientes)
+            {
+                DescripcionClienteCombo.Items.Add(cliente.nombreCliente);
+            }
         }
 
-        private void CargarOrdenesEnComboBox(List<grupoB_TPP3_Prototipos.GenerarOrdenSeleccion.OrdenPreparacion> ordenesPreparacion)
+        private void CargarOrdenesEnComboBox(List<OrdenPreparacion> ordenesPreparacion)
         {
-            var ordenesPendientes = ordenesPreparacion
-        .Where(o => o.Estado == EstadoOrdenPrepEnum.Pendiente)
-        .ToList();
+            IdOrdenPreparacionCombo.Items.Clear();
+            IdOrdenPreparacionCombo.Items.Add(string.Empty);
 
-            model.CargarComboBox(IdOrdenPreparacionCombo, ordenesPendientes, o => o.IdOrden);
+            var ordenesPendientes = ordenesPreparacion
+                .Where(o => o.Estado == EstadoOrdenPrepEnum.Pendiente)
+                .ToList();
+
+            foreach (var orden in ordenesPendientes)
+            {
+                IdOrdenPreparacionCombo.Items.Add(orden.IdOrden);
+            }
         }
 
         private void CargarPrioridadesEnComboBox()
         {
-            var prioridades = new List<string> { "Con prioridad de entrega", "Sin prioridad" };
-            model.CargarComboBox(PrioridadCombo, prioridades, p => p); // Aquí simplemente devolvemos el mismo string
+            // Obtener las prioridades desde el enum usando el método del modelo
+            var prioridades = model.ObtenerPrioridad();
+
+            // Limpiar el ComboBox y agregar las prioridades
+            PrioridadCombo.Items.Clear();
+            PrioridadCombo.Items.AddRange(prioridades.ToArray());
         }
 
         private void CargarOrdenesEnListView(List<OrdenPreparacion> ordenesPreparacion)
         {
-            var ordenesPendientes = ordenesPreparacion.Where(o => o.Estado == EstadoOrdenPrepEnum.Pendiente).ToList();
+            GenerarOrdenSeleccionBuscarList.Items.Clear();
 
-            model.CargarListView(ordenesPreparacion, GenerarOrdenSeleccionBuscarList,
-                orden => new ListViewItem(orden.IdOrden)
+            var ordenesPendientes = ordenesPreparacion
+                .Where(o => o.Estado == EstadoOrdenPrepEnum.Pendiente)
+                .ToList();
+
+            foreach (var orden in ordenesPendientes)
+            {
+                ListViewItem item = new ListViewItem(orden.IdOrden)
                 {
                     SubItems = {
                 orden.Nombre,
                 orden.FechaEmision.ToString("dd/MM/yyyy")
-                    }
-                });
+            }
+                };
+                GenerarOrdenSeleccionBuscarList.Items.Add(item);
+            }
         }
 
         private void CargarProductosEnListView(List<Producto> productos)
         {
-            model.CargarListView(productos, DetalleOSList,
-                producto => new ListViewItem(producto.DescripcionProducto)
+            DetalleOSList.Items.Clear();
+
+            foreach (var producto in productos)
+            {
+                ListViewItem item = new ListViewItem(producto.DescripcionProducto)
                 {
                     SubItems = {
                 producto.Cantidad.ToString()
+            }
+                };
+                DetalleOSList.Items.Add(item);
+            }
+        }
+
+        private void AgregarSeleccionadas(ListView sourceListView, ListView targetListView)
+        {
+            if (sourceListView.SelectedItems.Count > 0)
+            {
+                foreach (ListViewItem selectedItem in sourceListView.SelectedItems)
+                {
+                    var itemClonado = (ListViewItem)selectedItem.Clone();
+                    bool itemExists = targetListView.Items
+                        .Cast<ListViewItem>()
+                        .Any(item => item.Text == itemClonado.Text);
+
+                    if (!itemExists)
+                    {
+                        targetListView.Items.Add(itemClonado);
                     }
-                });
+                    else
+                    {
+                        MessageBox.Show($"La orden '{itemClonado.Text}' ya fue seleccionada.", "Elemento Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor seleccione una orden antes de agregarla.", "Sin Selección", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void QuitarSeleccionadas(ListView listView)
+        {
+            if (listView.SelectedItems.Count > 0)
+            {
+                var itemsAEliminar = listView.SelectedItems.Cast<ListViewItem>().ToList();
+                foreach (var item in itemsAEliminar)
+                {
+                    listView.Items.Remove(item);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay elementos seleccionados para eliminar.", "Sin Selección", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
@@ -162,7 +233,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
             try
             {
                 // Llamar al método del modelo para agregar elementos seleccionados
-                model.AgregarSeleccionadas(GenerarOrdenSeleccionBuscarList, GenerarOSSeleccionadasList);
+                AgregarSeleccionadas(GenerarOrdenSeleccionBuscarList, GenerarOSSeleccionadasList);
             }
             catch (InvalidOperationException ex)
             {
@@ -175,7 +246,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
             try
             {
                 // Llamar al método del modelo para quitar los elementos seleccionados
-                model.QuitarSeleccionadas(GenerarOSSeleccionadasList);
+                QuitarSeleccionadas(GenerarOSSeleccionadasList);
             }
             catch (InvalidOperationException ex)
             {

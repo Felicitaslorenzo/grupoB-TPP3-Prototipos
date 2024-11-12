@@ -61,7 +61,16 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
             }
 
             return listaClientes;
-        } 
+        }
+
+        public List<string> ObtenerPrioridad()
+        {
+            // Devuelve los nombres de los valores definidos en el enum
+            return Enum.GetValues(typeof(PrioridadEnum))
+                .Cast<PrioridadEnum>()
+                .Select(p => p.ToString()) // Devolver el nombre del enum como string
+                .ToList();
+        }
 
         private int numeroOrdenSeleccion = 1;
 
@@ -85,6 +94,8 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
             // Generamos el nuevo ID en el formato "OS-###"
             return $"OS-{numero:D3}";  // El ":D3" asegura que el número tenga 3 dígitos
         }
+
+        /*
 
         public void QuitarSeleccionadas(ListView listView)
         {
@@ -145,7 +156,7 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                     }
                     */
                     // Si no existe, agregar el elemento clonado al segundo ListView
-                    if (!itemExists)
+                    /* if (!itemExists)
                     {
                         targetListView.Items.Add(itemClonado);
                     }
@@ -181,5 +192,8 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
                 var listViewItem = crearItem(item);
                 listView.Items.Add(listViewItem);
             }
-    }   }
+        }
+
+        */
+    }
 }

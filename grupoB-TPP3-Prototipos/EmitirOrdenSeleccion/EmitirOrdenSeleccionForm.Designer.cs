@@ -71,7 +71,7 @@
             // IdOrdenPreparacionColumna
             // 
             IdOrdenPreparacionColumna.Text = "ID Orden Preparación";
-            IdOrdenPreparacionColumna.Width = 200;
+            IdOrdenPreparacionColumna.Width = 180;
             // 
             // ClienteOSColumna
             // 
@@ -231,12 +231,12 @@
             // ProductoColumna
             // 
             ProductoColumna.Text = "Producto";
-            ProductoColumna.Width = 120;
+            ProductoColumna.Width = 270;
             // 
             // CantidadColumna
             // 
             CantidadColumna.Text = "Cantidad";
-            CantidadColumna.Width = 120;
+            CantidadColumna.Width = 80;
             // 
             // DetalleOSLabel
             // 
@@ -276,7 +276,7 @@
             // ClienteSeleccionadoColumna
             // 
             ClienteSeleccionadoColumna.Text = "Descripcion Cliente";
-            ClienteSeleccionadoColumna.Width = 180;
+            ClienteSeleccionadoColumna.Width = 250;
             // 
             // FechaOPSeleccionadaColumna
             // 
