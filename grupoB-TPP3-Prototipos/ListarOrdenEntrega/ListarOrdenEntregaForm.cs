@@ -99,8 +99,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
                 // Agregar la fecha de entrega como subitem (también con formato)
                 item.SubItems.Add(orden.FechaEntrega.ToString("yyyy-MM-dd"));
 
-                // Si deseas agregar más datos, por ejemplo, el Estado (descomentando la siguiente línea):
-                // item.SubItems.Add(orden.Estado);
+                // Agregar el estado como subitem
+                item.SubItems.Add(orden.Estado); // Estado de OrdenEntrega
 
                 // Añadir el item al ListView
                 ListarOrdenEntregaList.Items.Add(item);
@@ -192,6 +192,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
                 MessageBox.Show("No se encontraron órdenes de entrega con los criterios seleccionados.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+            DetalleOrdenesPreparacionList.Items.Clear();
         }
 
         private void VolverButton_Click(object sender, EventArgs e)
