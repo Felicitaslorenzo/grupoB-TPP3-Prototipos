@@ -1,24 +1,24 @@
-﻿Caso 2: Crear Orden con dos  productos
+﻿Caso 2: Crear Orden con dos  productos (Camino Feliz)
 
 1- Botón: "Ordenes de Preparación"
 
 2- Botón: "Emitir Orden de Preparación"
 
-3- ID Cliente: CL006
+3- ID Cliente: CL-006
 
 3- Prioridad: SinPrioridad
 
-3- Transportista: TR014
+3- Transportista: TR-014
 
 3- Fecha entrega: 28/11/2024
 
-5- Producto: SKU011
+5- Producto: SKU-011
 
 6- Cantidad: 20
 
 7- Botón: "Agregar Producto"
 
-5- Producto: SKU012
+5- Producto: SKU-012
 
 6- Cantidad: 10
 
@@ -26,8 +26,8 @@
 
 5- Detalle:
 
-SKU011 - Lamparas LED Industriales -  20
-SKU012 - Hidrolavadoras de alta presion-  10
+SKU-011 - Lamparas LED Industriales -  20
+SKU-012 - Hidrolavadoras de alta presion-  10
 
 
 7- Botón: "Emitir Orden"
@@ -41,33 +41,26 @@ SKU012 - Hidrolavadoras de alta presion-  10
 13- Verificar en OrdenPreparacion.json, nuevo registro:
 
 {
-        "IdOrdenPreparacion": "OP-031", // Ver numeración no suma
-        "IdCliente": "CL006",
-        "FechaEmision": "2024-11-11T10:47:52.1026197-03:00",
-        "FechaEntrega": "2024-11-18T10:47:52.1026211-03:00",  // No guarda bien la fecha de entrega VER
+        "IdOrdenPreparacion": "OP-031",
+        "IdCliente": "CL-006",
+        "FechaEmision": "2024-11-12T11:44:24.9468444-03:00",
+        "FechaEntrega": "2024-11-19T11:44:24.946846-03:00",  // No guarda bien la fecha de entrega VER
         "Estado": 0,
         "Prioridad": 1,
-        "IdTransportista": "TR014",
+        "IdTransportista": "TR-014",
         "Detalle": [
             {
-                "SKUProducto": "SKU011",
-                "DescripcionProducto": "L\uFFFDmparas LED industriales",
+                "SKUProducto": "SKU-011",
                 "Cantidad": 20
             },
             {
-                "SKUProducto": "SKU012",
-                "DescripcionProducto": "Hidrolavadoras de alta presi\uFFFDn",
+                "SKUProducto": "SKU-012",
                 "Cantidad": 10
             }
         ]
     }
 
-Errores:
-No guarde el listado de productos seleccionados
-No guarda en archvo.json
-Cuando se genera el estado debe ser pendiente
-Si pongo 1000 productos, deberia tirar error de cantidad-
-No puedo hacer que vea si tiene stock dependiendo lo que ingresa.
-No agrega el detalle del producto en el json
+
+
 
 

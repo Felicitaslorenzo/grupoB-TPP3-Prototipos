@@ -1,18 +1,18 @@
-﻿Caso 1 : Crear Orden con un solo producto
+﻿Caso 1 : Crear Orden con un solo producto (Camino Feliz)
 
 1- Botón: "Ordenes de Preparación"
 
 2- Botón: "Emitir Orden de Preparación"
 
-3- ID Cliente: CL001
+3- ID Cliente: CL-001
 
-3- Prioridad: Con prioridad de entrega
+3- Prioridad: ConPrioridadDeEntrega
 
-3- Transportista: TR001
+3- Transportista: TR-001
 
 3- Fecha entrega: 29/11/2024
 
-5- Producto: SKU001
+5- Producto: SKU-026
 
 6- Cantidad: 10
 
@@ -20,11 +20,11 @@
 
 5- Detalle:
 
-SKU001 - Muebles Modulares de oficina -  10
+SKU026 - Sillas de oficina ergonomicas -   10
 
 7- Botón: "Emitir Orden"
 
-10- Mensaje: "Se generó OP-031"
+10- Mensaje: "Orden OP-031 creada exitosamente."
 
 11- Botón: "Ok"
 
@@ -32,20 +32,22 @@ SKU001 - Muebles Modulares de oficina -  10
 
 13- Verificar en OrdenPreparacion.json, nuevo registro:
 
-{"IdOrdenPreparacion":"OP-031",
-"IdCliente":"CL001",
-"FechaEmision":"2024-11-11T10:35:56.7218012-03:00",
-"FechaEntrega":"2024-11-18T10:35:56.7218031-03:00",  // Debe figurar la fecha de entrega
-"Estado":0,
-"Prioridad":0,
-"IdTransportista":"TR001",
-"Detalle":[{"SKUProducto":"SKU001","DescripcionProducto":"Muebles modulares de oficina","Cantidad":10}]}]
+ {
+        "IdOrdenPreparacion": "OP-031",
+        "IdCliente": "CL-001",
+        "FechaEmision": "2024-11-12T10:38:19.5547356-03:00",
+        "FechaEntrega": "2024-11-19T10:38:19.5547371-03:00",   // No guarda bien la fecha de entrega VER
+        "Estado": 0,
+        "Prioridad": 0,
+        "IdTransportista": "TR-001",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-026",
+                "Cantidad": 10
+            }
+        ]
+    }
 
-Errores:
-
-Si pongo 1000 productos, deberia tirar error de cantidad-
-No puedo hacer que vea si tiene stock dependiendo lo que ingresa.
-Ver tema ID si lo ponemos con guion o sin guion.
 
 
 
