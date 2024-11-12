@@ -46,19 +46,28 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
 
         private void CargarTransportistasEnComboBox()
         {
-            IdOrdenEntregaCombo.Items.Clear();
+            IdOrdenEntregaCombo.Items.Clear();  // Limpiar los ítems actuales
 
+            // Obtener los transportistas de las órdenes de preparación
             var transportistas = model.ObtenerTransportistas();
 
+            // Verificar si la lista de transportistas está vacía
+            /* if (transportistas.Count == 0)
+            {
+                MessageBox.Show("No se encontraron transportistas asociados a las órdenes de preparación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            } */
+
+            // Agregar transportistas al ComboBox
             foreach (var transportista in transportistas)
             {
                 IdOrdenEntregaCombo.Items.Add(transportista);
             }
 
-            if (IdOrdenEntregaCombo.Items.Count > 0)
+            // Seleccionar el primer item si hay transportistas
+            /* if (IdOrdenEntregaCombo.Items.Count > 0)
             {
                 IdOrdenEntregaCombo.SelectedIndex = 0;
-            }
+            } */
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)

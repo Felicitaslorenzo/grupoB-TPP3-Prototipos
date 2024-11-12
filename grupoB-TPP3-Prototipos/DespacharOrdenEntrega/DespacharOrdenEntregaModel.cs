@@ -18,14 +18,25 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
 
         public List<string> ObtenerTransportistas()
         {
-            return clientes.SelectMany(c => c.Transportistas).Distinct().ToList();
+            // Filtra las órdenes de preparación que tienen transportistas asignados y están en estado "Preparada" (por ejemplo, 4)
+            var transportistas = OrdenPreparacionAlmacen.OrdenesPreparacion
+                .Where(o => !string.IsNullOrEmpty(o.IdTransportista) && o.Estado == EstadoOrdenPrepEnum.Preparada) // Asegúrate de que haya un transportista asignado y estado "Preparada"
+                .Select(o => o.IdTransportista)    // Extrae el ID del transportista
+                .Distinct()                        // Elimina duplicados
+                .ToList();                         // Convierte a lista
+
+            // Retorna solo los transportistas que están relacionados con órdenes de preparación en estado "Preparada"
+            return transportistas;
+
+
+            // return clientes.SelectMany(c => c.Transportistas).Distinct().ToList();
         }
 
-        public string ObtenerClientePorTransportista(string idTransportista)
+        /* public string ObtenerClientePorTransportista(string idTransportista)
         {
             var cliente = clientes.FirstOrDefault(c => c.Transportistas.Contains(idTransportista));
             return cliente?.IdCliente; 
-        }
+        } */
 
         public List<Cliente> ObtenerClientes()
         {
