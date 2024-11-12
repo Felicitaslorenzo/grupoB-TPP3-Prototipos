@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.DirectoryServices.ActiveDirectory;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -94,13 +95,17 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
 
 
         public void ConfirmarOrden(string idOrdenSeleccion)
-        {
-            var orden = ordenesSeleccion.FirstOrDefault(o => o.IdOrdenSeleccion == idOrdenSeleccion);
-            if (orden != null)
+        {            
+            var ordenEntidad = OrdenSeleccionAlmacen.OrdenesSeleccion.First(o => o.IdOrdenSeleccion == idOrdenSeleccion);
+            ordenEntidad.Estado = EstadoOrdenSelEnum.Preparada; 
+
+            foreach(var ordenPrep in ordenEntidad.OrdenesPreparacion)
             {
-                orden.Estado = EstadoOrdenSelEnum.Preparada;
-                OrdenSeleccionAlmacen.Grabar();
+                var ordenPrepEntidad = OrdenPreparacionAlmacen.OrdenesPreparacion.First(o => o.IdOrdenPreparacion == ordenPrep);
+                ordenPrepEntidad.Estado = EstadoOrdenPrepEnum.Seleccionada;
             }
+
+            OrdenSeleccionAlmacen.Grabar();
         }
 
         /*public List<OrdenSeleccion> ObtenerOrdenesSeleccionadas() //Esto no se está usando, para qué está?
