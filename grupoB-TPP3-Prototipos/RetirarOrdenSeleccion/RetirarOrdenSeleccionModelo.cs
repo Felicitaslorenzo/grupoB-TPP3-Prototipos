@@ -10,7 +10,149 @@ using System.Threading.Tasks;
 namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
 {
     internal class RetirarOrdenSeleccionModelo
-    {/*
+    {
+        private List<OrdenSeleccion> ordenesSeleccion;
+
+        public RetirarOrdenSeleccionModelo()
+        {
+            CargarOrdenes();
+        }
+
+        private void CargarOrdenes()
+        {
+            OrdenSeleccionAlmacen.Leer();
+            ordenesSeleccion = OrdenSeleccionAlmacen.OrdenesSeleccion
+                .Select(ent => new OrdenSeleccion
+                {
+                    IdOrdenSeleccion = ent.IdOrdenSeleccion,
+                    Estado = ent.Estado,
+                    // Asigna las demás propiedades de OrdenSeleccion aquí
+                    // Ejemplo: Producto = ent.Producto.Select(p => new Producto { /* Copia propiedades */ }).ToList()
+                })
+                .ToList();
+        }
+
+
+        public List<OrdenSeleccion> ObtenerOrdenesPendientes()
+        {
+            return ordenesSeleccion
+                .Where(orden => orden.Estado == EstadoOrdenSelEnum.Pendiente)
+                .ToList();
+        }
+
+        public List<Producto> ObtenerProductosPorOrden(string idOrdenSeleccion)
+        {
+            var ordenSeleccionada = OrdenSeleccionAlmacen.OrdenesSeleccion
+                .FirstOrDefault(o => o.IdOrdenSeleccion == idOrdenSeleccion);
+
+            if (ordenSeleccionada == null)
+            {
+                return new List<Producto>();  // Si no se encuentra la orden, retorna una lista vacía
+            }
+
+            var productos = new List<Producto>();
+
+            var ordenesPreparacion = OrdenPreparacionAlmacen.OrdenesPreparacion
+                .Where(op => ordenSeleccionada.OrdenesPreparacion.Contains(op.IdOrdenPreparacion))
+                .ToList();
+
+            foreach (var ordenPreparacion in ordenesPreparacion)
+            {
+                foreach (var detalle in ordenPreparacion.Detalle)
+                {
+                    var productosCoincidentes = ProductoAlmacen.Productos
+                        .Where(p => p.SKUProducto == detalle.SKUProducto)
+                        .ToList();
+
+                    foreach (var productoAlmacen in productosCoincidentes)
+                    {
+                        foreach (var inventario in productoAlmacen.Inventario)
+                        {
+                            var producto = new Producto
+                            {
+                                DescripcionProducto = productoAlmacen.DescripcionProducto,
+                                Ubicacion = inventario.Ubicacion,
+                                Cantidad = inventario.Cantidad
+                            };
+
+                            productos.Add(producto);  // Añadimos el producto a la lista
+                        }
+                    }
+                }
+            }
+
+            return productos;  // Devolvemos la lista completa de productos relacionados
+        }
+
+
+        public void ConfirmarOrden(string idOrdenSeleccion)
+        {
+            var orden = ordenesSeleccion.FirstOrDefault(o => o.IdOrdenSeleccion == idOrdenSeleccion);
+            if (orden != null)
+            {
+                orden.Estado = EstadoOrdenSelEnum.Pendiente; // O el estado correspondiente
+                OrdenSeleccionAlmacen.Grabar();
+            }
+        }
+
+        public List<OrdenSeleccion> ObtenerOrdenesSeleccionadas()
+        {
+            var listarOrden = new List<OrdenSeleccion>();
+
+            // Filtramos las órdenes con estado Pendiente
+            foreach (var ordenEntidad in OrdenSeleccionAlmacen.OrdenesSeleccion)
+            {
+                if (ordenEntidad.Estado == EstadoOrdenSelEnum.Pendiente)
+                {
+                    var ordenSeleccionada = new OrdenSeleccion
+                    {
+                        IdOrdenSeleccion = ordenEntidad.IdOrdenSeleccion,
+                        Estado = ordenEntidad.Estado,
+                        Producto = new List<Producto>()
+                    };
+
+                    var ordenesPreparacion = OrdenPreparacionAlmacen.OrdenesPreparacion
+                        .Where(op => ordenEntidad.OrdenesPreparacion.Contains(op.IdOrdenPreparacion))
+                        .ToList();
+
+                    foreach (var ordenPreparacion in ordenesPreparacion)
+                    {
+                        foreach (var detalle in ordenPreparacion.Detalle)
+                        {
+                            // Busca directamente en ProductoAlmacen por el SKUProducto en detalle
+                            var productosCoincidentes = grupoB_TPP3_Prototipos.Almacenes.ProductoAlmacen.Productos
+                                .Where(p => p.SKUProducto == detalle.SKUProducto)
+                                .ToList();
+
+                            foreach (var productoAlmacen in productosCoincidentes)
+                            {
+                                // Una vez encontrado el producto, accede a su inventario para ubicación y cantidad
+                                foreach (var inventario in productoAlmacen.Inventario)
+                                {
+                                    var producto = new Producto
+                                    {
+                                        DescripcionProducto = productoAlmacen.DescripcionProducto,
+                                        Ubicacion = inventario.Ubicacion,  // Ubicación del inventario
+                                        Cantidad = inventario.Cantidad      // Cantidad del inventario
+                                    };
+
+                                    // Agrega el producto a la lista de productos de la orden seleccionada
+                                    ordenSeleccionada.Producto.Add(producto);
+                                }
+                            }
+                        }
+                    }
+                    listarOrden.Add(ordenSeleccionada);
+                }
+            }
+
+            return listarOrden;
+        }
+
+
+        /*
+         * 
+         *
         public List<OrdenSeleccion> OrdenesSeleccionadas
         {
             get
