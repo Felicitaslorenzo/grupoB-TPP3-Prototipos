@@ -252,7 +252,7 @@
             // 
             // OrdenesPreparacionList
             // 
-            OrdenesPreparacionList.Columns.AddRange(new ColumnHeader[] { IdOrdenColumna, idClienteColumna, nombreClienteColumna, estadoOrdenColumna, fechaOrdenColumna, FechaEmisionColumna });
+            OrdenesPreparacionList.Columns.AddRange(new ColumnHeader[] { IdOrdenColumna, idClienteColumna, nombreClienteColumna, estadoOrdenColumna, FechaEmisionColumna, fechaOrdenColumna });
             OrdenesPreparacionList.Location = new Point(17, 26);
             OrdenesPreparacionList.Margin = new Padding(2);
             OrdenesPreparacionList.Name = "OrdenesPreparacionList";
@@ -289,7 +289,7 @@
             // 
             // FechaEmisionColumna
             // 
-            FechaEmisionColumna.Text = "Fecha de emision";
+            FechaEmisionColumna.Text = "Fecha de Emision";
             FechaEmisionColumna.Width = 150;
             // 
             // VolverListaButton

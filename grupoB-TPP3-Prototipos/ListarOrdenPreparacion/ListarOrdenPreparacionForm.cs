@@ -38,7 +38,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
 
 
     private void ListarOrdenPreparacionForm_Load(object sender, EventArgs e)
-        {
+    {
             var ordenesPreparacion = model.ObtenerOrdenesPreparacion();
 
             // Extraer datos para cada ComboBox
@@ -49,8 +49,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
             var estadosOrdenPreparacion = ordenesPreparacion.Select(o => o.Estado).Distinct().ToList();
 
             // Agregar opción vacía y cargar datos en los desplegables
-
-
             IdOrdenPreparacionCombo.Items.Add("");
             foreach (var id in idsOrdenesPreparacion)
             {
@@ -58,7 +56,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                 {
                     IdOrdenPreparacionCombo.Items.Add(id);
                 }
-
             }
 
             NombreClienteCombo.Items.Add("");
@@ -74,8 +71,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                 {
                     IdClienteCombo.Items.Add(id);
                 }
-               
-                //IdClienteCombo.Items.Add(id);
             }
 
             PrioridadOrdenPreparacionCombo.Items.Add("");
@@ -94,12 +89,14 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
             foreach (var ordenPreparacion in model.ObtenerOrdenesPreparacion())
             {
                 ListViewItem item = new ListViewItem();
-                item.Text = ordenPreparacion.IdOrden;
+                item.Text = ordenPreparacion.IdOrden.ToString();
                 item.SubItems.Add(ordenPreparacion.IdCliente.ToString());
                 item.SubItems.Add(ordenPreparacion.Nombre);
                 item.SubItems.Add(ordenPreparacion.Estado);
-                item.SubItems.Add(ordenPreparacion.FechaEstado.ToString("dd/MM/yyyy"));
+
+                // Cambiar el orden: FechaEmision primero, FechaEstado después
                 item.SubItems.Add(ordenPreparacion.FechaEmision.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(ordenPreparacion.FechaEstado.ToString("dd/MM/yyyy"));
 
                 OrdenesPreparacionList.Items.Add(item);
             }
@@ -107,8 +104,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
             OrdenesPreparacionList.SelectedIndexChanged += OrdenesPreparacionList_SelectedIndexChanged;
         }
 
-        private void BuscarButton_Click(object sender, EventArgs e)
-        {
+    private void BuscarButton_Click(object sender, EventArgs e)
+    {
             // Validar si se ha seleccionado algún filtro
             if (string.IsNullOrEmpty(IdOrdenPreparacionCombo.Text) &&
                 string.IsNullOrEmpty(IdClienteCombo.Text) &&
@@ -140,17 +137,17 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
             // Aplicar filtros de fechas
             if (FechaDesdeOPPicker.Checked && FechaHastaOPPicker.Checked)
             {
-                DateTime fechaDesde = FechaDesdeOPPicker.Value.Date;  // Solo fecha (sin la hora)
-                DateTime fechaHasta = FechaHastaOPPicker.Value.Date;  // Solo fecha (sin la hora)
+                DateTime fechaDesde = FechaDesdeOPPicker.Value.Date;
+                DateTime fechaHasta = FechaHastaOPPicker.Value.Date;
 
-                // Filtrar por FechaEmision usando FechaDesdeOPPicker
+                // Filtrar por FechaEmision y FechaEstado
                 ordenesFiltradas = ordenesFiltradas.Where(orden =>
                     orden.FechaEmision.Date == fechaDesde &&
-                    orden.FechaEstado.Date == fechaHasta);  // Filtrar por FechaEstado usando FechaHastaOPPicker
+                    orden.FechaEstado.Date == fechaHasta);
             }
             else if (FechaDesdeOPPicker.Checked)
             {
-                DateTime fechaDesde = FechaDesdeOPPicker.Value.Date;  // Solo fecha (sin la hora)
+                DateTime fechaDesde = FechaDesdeOPPicker.Value.Date;
 
                 // Filtrar solo por FechaEmision
                 ordenesFiltradas = ordenesFiltradas.Where(orden =>
@@ -158,7 +155,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
             }
             else if (FechaHastaOPPicker.Checked)
             {
-                DateTime fechaHasta = FechaHastaOPPicker.Value.Date;  // Solo fecha (sin la hora)
+                DateTime fechaHasta = FechaHastaOPPicker.Value.Date;
 
                 // Filtrar solo por FechaEstado
                 ordenesFiltradas = ordenesFiltradas.Where(orden =>
@@ -182,8 +179,10 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                 item.SubItems.Add(ordenPreparacion.IdCliente.ToString());
                 item.SubItems.Add(ordenPreparacion.Nombre);
                 item.SubItems.Add(ordenPreparacion.Estado);
-                item.SubItems.Add(ordenPreparacion.FechaEstado.ToString("dd/MM/yyyy"));
+
+                // Cambiar el orden: FechaEmision primero, FechaEstado después
                 item.SubItems.Add(ordenPreparacion.FechaEmision.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(ordenPreparacion.FechaEstado.ToString("dd/MM/yyyy"));
 
                 OrdenesPreparacionList.Items.Add(item);
             }

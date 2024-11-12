@@ -99,7 +99,7 @@
     "IdCliente": "CL-010",
     "FechaEmision": "2024-09-23T00:00:00",
     "FechaEntrega": "2024-09-19T00:00:00",
-    "Estado": 5,
+    "Estado": 1,
     "Prioridad": 1,
     "IdTransportista": "TR-006",
     "Detalle": [
@@ -122,7 +122,7 @@
     "IdCliente": "CL-009",
     "FechaEmision": "2024-09-30T00:00:00",
     "FechaEntrega": "2024-09-26T00:00:00",
-    "Estado": 5,
+    "Estado": 1,
     "Prioridad": 1,
     "IdTransportista": "TR-007",
     "Detalle": [
