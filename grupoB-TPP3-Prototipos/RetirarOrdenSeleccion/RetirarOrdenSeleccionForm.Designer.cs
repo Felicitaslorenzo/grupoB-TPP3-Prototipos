@@ -37,7 +37,7 @@
             CancelarButton = new Button();
             label3 = new Label();
             OrdenSCombo = new ComboBox();
-            //SuspendLayout();
+            SuspendLayout();
             // 
             // label2
             // 
@@ -68,7 +68,7 @@
             // ProductoColumna
             // 
             ProductoColumna.Text = "Producto";
-            ProductoColumna.Width = 100;
+            ProductoColumna.Width = 500;
             // 
             // CantidadColumna
             // 
@@ -84,7 +84,7 @@
             ConfirmarButton.TabIndex = 5;
             ConfirmarButton.Text = "Confirmar";
             ConfirmarButton.UseVisualStyleBackColor = true;
-            //ConfirmarButton.Click += ConfirmarButton_Click;
+            ConfirmarButton.Click += ConfirmarButton_Click_1;
             // 
             // CancelarButton
             // 
@@ -95,7 +95,6 @@
             CancelarButton.TabIndex = 6;
             CancelarButton.Text = "Cancelar";
             CancelarButton.UseVisualStyleBackColor = true;
-            //CancelarButton.Click += CancelarButton_Click;
             // 
             // label3
             // 
@@ -117,7 +116,7 @@
             OrdenSCombo.Size = new Size(798, 23);
             OrdenSCombo.TabIndex = 15;
             OrdenSCombo.SelectedIndexChanged += OrdenSCombo_SelectedIndexChanged;
-            
+            // 
             // RetirarOrdenSeleccionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);

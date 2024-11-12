@@ -60,7 +60,7 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
             {
                 // Suponiendo que `OrdenEntrega` tiene un constructor que requiere "idOrden", "idCliente" y otros parámetros
                 var idCliente = ClienteAlmacen.Clientes
-                    .Where(c => c.IdCliente == /* usar propiedad correcta aquí */ ordenEntidad.IdCliente) // Ajusta la propiedad correcta de ordenEntidad
+                    .Where(c => c.IdCliente == ordenEntidad.IdCliente) // Ajusta la propiedad correcta de ordenEntidad
                     .Select(c => c.IdCliente)
                     .FirstOrDefault();
 

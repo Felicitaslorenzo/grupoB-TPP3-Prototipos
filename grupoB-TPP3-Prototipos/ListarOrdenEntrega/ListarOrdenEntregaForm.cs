@@ -119,11 +119,12 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
+            // Verificar si al menos un filtro está activo
             if (string.IsNullOrEmpty(IdOrdenCombo.Text) &&
-         string.IsNullOrEmpty(IdClienteCombo.Text) &&
-         string.IsNullOrEmpty(EstadoCombo.Text) &&
-         !FechaDesdeOEPicker.Checked &&
-         !FechaHastaOEPicker.Checked)
+                string.IsNullOrEmpty(IdClienteCombo.Text) &&
+                string.IsNullOrEmpty(EstadoCombo.Text) &&
+                !FechaDesdeOEPicker.Checked &&
+                !FechaHastaOEPicker.Checked)
             {
                 MessageBox.Show("No se ha seleccionado ningún filtro", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -159,19 +160,27 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
             // Filtro por fechas (FechaDesdeOEPicker y FechaHastaOEPicker)
             if (FechaDesdeOEPicker.Checked && FechaHastaOEPicker.Checked)
             {
-                DateTime fechaDesde = FechaDesdeOEPicker.Value;
-                DateTime fechaHasta = FechaHastaOEPicker.Value;
-                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision >= fechaDesde && orden.FechaEmision <= fechaHasta);
+                DateTime fechaDesde = FechaDesdeOEPicker.Value.Date;  // Solo la fecha, sin la hora
+                DateTime fechaHasta = FechaHastaOEPicker.Value.Date;  // Solo la fecha, sin la hora
+
+                // Filtrar por FechaEmision para la fecha desde y FechaEstado para la fecha hasta
+                ordenesFiltradas = ordenesFiltradas.Where(orden =>
+                    orden.FechaEmision.Date == fechaDesde &&  // Filtrar por FechaEmision exacta
+                    orden.FechaEntrega.Date == fechaHasta);    // Filtrar por FechaEstado exacta
             }
             else if (FechaDesdeOEPicker.Checked)
             {
-                DateTime fechaDesde = FechaDesdeOEPicker.Value;
-                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision >= fechaDesde);
+                DateTime fechaDesde = FechaDesdeOEPicker.Value.Date;  // Solo la fecha, sin la hora
+                                                                      // Filtrar solo por FechaEmision para la fecha desde
+                ordenesFiltradas = ordenesFiltradas.Where(orden =>
+                    orden.FechaEmision.Date == fechaDesde);  // Filtrar por FechaEmision exacta
             }
             else if (FechaHastaOEPicker.Checked)
             {
-                DateTime fechaHasta = FechaHastaOEPicker.Value;
-                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision <= fechaHasta);
+                DateTime fechaHasta = FechaHastaOEPicker.Value.Date;  // Solo la fecha, sin la hora
+                                                                      // Filtrar solo por FechaEstado para la fecha hasta
+                ordenesFiltradas = ordenesFiltradas.Where(orden =>
+                    orden.FechaEntrega.Date == fechaHasta);  // Filtrar por FechaEstado exacta
             }
 
             // Cargar las órdenes filtradas en el ListView
@@ -182,6 +191,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
             {
                 MessageBox.Show("No se encontraron órdenes de entrega con los criterios seleccionados.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
 
         private void VolverButton_Click(object sender, EventArgs e)

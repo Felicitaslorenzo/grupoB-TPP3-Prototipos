@@ -37,10 +37,10 @@
             // 
             // EmpaquetarOrdenButton
             // 
-            EmpaquetarOrdenButton.Location = new Point(480, 230);
+            EmpaquetarOrdenButton.Location = new Point(549, 307);
             EmpaquetarOrdenButton.Margin = new Padding(1);
             EmpaquetarOrdenButton.Name = "EmpaquetarOrdenButton";
-            EmpaquetarOrdenButton.Size = new Size(147, 32);
+            EmpaquetarOrdenButton.Size = new Size(168, 43);
             EmpaquetarOrdenButton.TabIndex = 58;
             EmpaquetarOrdenButton.Text = "Empaquetado";
             EmpaquetarOrdenButton.UseVisualStyleBackColor = true;
@@ -49,10 +49,9 @@
             // ListarEmpaquetarOrdenList
             // 
             ListarEmpaquetarOrdenList.Columns.AddRange(new ColumnHeader[] { Producto, Cantidad });
-            ListarEmpaquetarOrdenList.Location = new Point(20, 11);
-            ListarEmpaquetarOrdenList.Margin = new Padding(3, 2, 3, 2);
+            ListarEmpaquetarOrdenList.Location = new Point(23, 15);
             ListarEmpaquetarOrdenList.Name = "ListarEmpaquetarOrdenList";
-            ListarEmpaquetarOrdenList.Size = new Size(740, 203);
+            ListarEmpaquetarOrdenList.Size = new Size(845, 269);
             ListarEmpaquetarOrdenList.TabIndex = 50;
             ListarEmpaquetarOrdenList.UseCompatibleStateImageBehavior = false;
             ListarEmpaquetarOrdenList.View = View.Details;
@@ -60,7 +59,7 @@
             // Producto
             // 
             Producto.Text = "Producto";
-            Producto.Width = 100;
+            Producto.Width = 300;
             // 
             // Cantidad
             // 
@@ -69,10 +68,10 @@
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(646, 229);
+            VolverButton.Location = new Point(738, 305);
             VolverButton.Margin = new Padding(1);
             VolverButton.Name = "VolverButton";
-            VolverButton.Size = new Size(113, 34);
+            VolverButton.Size = new Size(129, 45);
             VolverButton.TabIndex = 48;
             VolverButton.Text = "Volver";
             VolverButton.UseVisualStyleBackColor = true;
@@ -80,13 +79,12 @@
             // 
             // EmpaquetadoForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(777, 276);
+            ClientSize = new Size(888, 368);
             Controls.Add(EmpaquetarOrdenButton);
             Controls.Add(ListarEmpaquetarOrdenList);
             Controls.Add(VolverButton);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "EmpaquetadoForm";
             Text = "EmpaquetadoForm";
             Load += EmpaquetadoForm_Load;

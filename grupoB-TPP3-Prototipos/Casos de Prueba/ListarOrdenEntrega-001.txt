@@ -6,7 +6,7 @@
 
 3 - Formulario Listar Ordenes de Entrega => [Debajo de los filtros aparece listado de las ordenes de entrega disponibles]
 
-4 - Seleccionar orden OE001 => [Aparecen la OP001 y OP002 en el listado de abajo]
+4 - Seleccionar orden OE-001 => [Aparecen la OP-021, OP-022 y OP-023 en el listado de abajo]
 
 5 - Seleccionar botón "Volver" => [Vuelve al menu Ordenes de Entrega]
 

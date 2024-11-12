@@ -6,29 +6,33 @@
 
 3 - Formulario Listar Ordenes de Entrega => [Debajo de los filtros aparece listado de las ordenes de entrega disponibles]
 
-4 - Filtro ID Orden => Seleccionar OE001
+4 - Filtro ID Orden => Seleccionar OE-001
 
-5 - Seleccionar boton "Buscar" => [En el listado de abajo aparece solo el detalle de OS001 y desaparecen las otras]
+5 - Seleccionar boton "Buscar" => [En el listado de abajo aparece solo el detalle de OE-001 y desaparecen las otras]
 
 6 - Filtro ID Orden => Seleccionar espacio en blanco
 
-7 - Filtro Estado => Seleccionar "Despachada" => Seleccionar el boton "Buscar" => [Aparece solo el detalle de OS002 y desaparecen las otras]
+7 - Filtro Estado => Seleccionar "Despachada" => Seleccionar el boton "Buscar" => 
+[Aparecen los detalles de OE-003, OE-004 y OE-005, y desaparecen las otras]
 
 8 - Filtro Estado => Seleccionar espacio en blanco
 
-9 - Filtro ID Cliente => Seleccionar CL005 => Seleccionar el boton "Buscar" => 
-	[Aparece aviso de: "No se encontraron órdenes de entrega con los criterios seleccionados"]
+9 - Filtro ID Cliente => Seleccionar CL-004 => Seleccionar el boton "Buscar" => 
+	[Aparece el detalle de las ordenes OE-001 y OE-004]
 
 10 - Filtro ID Cliente => Seleccionar espacio en blanco
 
 11 - Filtro Fecha Desde => Seleccionar 01/01/2024
 
-12 - Filtro Fecha Hasta => Seleccionar 15/01/2024
+12 - Seleccionar boton "Buscar" => [Aparecen loa detalles de las ordenes OE-001, OE-002, OE-003, OE-004, OE-005, y desaparecen las otras]
 
-13 - Seleccionar boton "Buscar" => [Aparece solo el detalle de OS001 y desaparecen las otras]
+13 - Filtro Fehca Desde => Desactivar
 
-14 - Seleccionar boton "Volver" => [Vuelve al menu Ordenes de Entrega]
+14 - Filtro Fecha Hasta => Seleccionar 15/01/2024 => 
+[Aparece mensaje de error: "No se encontraron órdenes de entrega con los criterios seleccionado"]
 
-15 - Menu Ordenes de Entrega => Cerrar menu => [Se visualiza el menu principal]
+15 - Seleccionar boton "Volver" => [Vuelve al menu Ordenes de Entrega]
 
-16 - Menu principal => Cerrar menu => [Finaliza la ejecucion del sistema]
+16 - Menu Ordenes de Entrega => Cerrar menu => [Se visualiza el menu principal]
+
+17 - Menu principal => Cerrar menu => [Finaliza la ejecucion del sistema]

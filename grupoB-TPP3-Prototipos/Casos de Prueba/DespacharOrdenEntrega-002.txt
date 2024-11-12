@@ -6,7 +6,7 @@
 
 3 - [Se visualiza el filtro de transportista junto con un botón de "Buscar"]
 
-4 - Seleccionar Transportista: TR001 => Boton "Buscar" => 
+4 - Seleccionar Transportista: TR-001 => Boton "Buscar" => 
 	[Aparece mensaje de error: "No se encontraron órdenes de entrega para el transportista seleccionado"] =>
 	Seleccionar boton "OK" => [Cierra el mensaje de error]
 
