@@ -43,6 +43,31 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
 
         public List<Producto> ObtenerProductosPorOrden(string idOrdenSeleccion)
         {
+            /*
+                ORDEN SELECCION:
+                    -Orden prep 1
+                        - Producto A...
+                        -Producto B
+                    - Orden prep 2
+                        - Producto A...
+                        -Producto B...
+                    -...n
+
+                El TOTAL es de 120 remeras y 50 zapatillas. -- -
+
+                Para cada producto ...
+                    Para cada ubicacion del producto....Retiro lo que me falta del producto o la cantidad que haya en la ubicacion y agrego un item a la lista de resultado.
+
+                    Sigo recorriendo ubicaciones hasta que haya retirado todo lo necesario.
+
+
+
+                Devuelvo la lista de ubicaciones y cantidades que utilicé.
+                UBICACION A => SACA 100 Remeras
+                UBICACION B => SACA 20 Remeras
+                UBICACION C => SACA 50 Zapatillas
+            */
+
             var ordenSeleccionada = OrdenSeleccionAlmacen.OrdenesSeleccion
                 .FirstOrDefault(o => o.IdOrdenSeleccion == idOrdenSeleccion);
 
@@ -57,36 +82,43 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
                 .Where(op => ordenSeleccionada.OrdenesPreparacion.Contains(op.IdOrdenPreparacion))
                 .ToList();
 
+            Dictionary<string, int> totalRequeridoPorProducto = new();
             foreach (var ordenPreparacion in ordenesPreparacion)
             {
                 foreach (var detalle in ordenPreparacion.Detalle)
                 {
-                    int cantidadRestante = detalle.Cantidad;
-                    
-                    var productosCoincidentes = ProductoAlmacen.Productos
-                        .Where(p => p.SKUProducto == detalle.SKUProducto)
-                        .ToList();
-
-                    foreach (var productoAlmacen in productosCoincidentes)
+                    if (totalRequeridoPorProducto.ContainsKey(detalle.SKUProducto))
                     {
-                        foreach (var inventario in productoAlmacen.Inventario)
-                        {
-                            if (cantidadRestante <= 0) break;
-
-                            int cantidadAUtilizar = Math.Min(inventario.Cantidad, cantidadRestante);
-                            cantidadRestante -= cantidadAUtilizar;
-
-
-                            var producto = new Producto
-                            {
-                                DescripcionProducto = productoAlmacen.DescripcionProducto,
-                                Ubicacion = inventario.Ubicacion,
-                                Cantidad = inventario.Cantidad
-                            };
-
-                            productos.Add(producto);
-                        }
+                        totalRequeridoPorProducto[detalle.SKUProducto] += detalle.Cantidad;
                     }
+                    else
+                    {
+                        totalRequeridoPorProducto.Add(detalle.SKUProducto, detalle.Cantidad);
+                    }
+                }
+            }
+
+            foreach (var productoSku in totalRequeridoPorProducto.Keys)
+            {
+                var productoEntidad = ProductoAlmacen.Productos
+                    .Where(p => p.SKUProducto == productoSku)
+                    .First();
+
+                foreach (var inventario in productoEntidad.Inventario)
+                {
+                    if (totalRequeridoPorProducto[productoSku] <= 0) break;
+
+                    int cantidadAUtilizar = Math.Min(inventario.Cantidad, totalRequeridoPorProducto[productoSku]);
+                    totalRequeridoPorProducto[productoSku] -= cantidadAUtilizar;
+
+                    var producto = new Producto
+                    {
+                        DescripcionProducto = productoEntidad.DescripcionProducto,
+                        Ubicacion = inventario.Ubicacion,
+                        Cantidad = inventario.Cantidad
+                    };
+
+                    productos.Add(producto);
                 }
             }
 
@@ -95,17 +127,18 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
 
 
         public void ConfirmarOrden(string idOrdenSeleccion)
-        {            
+        {
             var ordenEntidad = OrdenSeleccionAlmacen.OrdenesSeleccion.First(o => o.IdOrdenSeleccion == idOrdenSeleccion);
-            ordenEntidad.Estado = EstadoOrdenSelEnum.Preparada; 
+            ordenEntidad.Estado = EstadoOrdenSelEnum.Preparada;
 
-            foreach(var ordenPrep in ordenEntidad.OrdenesPreparacion)
+            foreach (var ordenPrep in ordenEntidad.OrdenesPreparacion)
             {
                 var ordenPrepEntidad = OrdenPreparacionAlmacen.OrdenesPreparacion.First(o => o.IdOrdenPreparacion == ordenPrep);
                 ordenPrepEntidad.Estado = EstadoOrdenPrepEnum.Seleccionada;
             }
 
             OrdenSeleccionAlmacen.Grabar();
+            OrdenPreparacionAlmacen.Grabar();
         }
 
         /*public List<OrdenSeleccion> ObtenerOrdenesSeleccionadas() //Esto no se está usando, para qué está?
