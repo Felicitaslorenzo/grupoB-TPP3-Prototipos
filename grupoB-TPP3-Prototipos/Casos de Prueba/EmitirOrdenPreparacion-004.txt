@@ -4,75 +4,59 @@
 
 2- Botón: "Emitir Orden de Preparación"
 
-3- ID Cliente: CL008
+3- ID Cliente: CL-008
 
-3- Prioridad: SinPrioridad
+4- Prioridad: ConPrioridadDeEntrega
 
-3- Transportista: TR018
+5- Fecha entrega: Today
 
-3- Fecha entrega: Today
-
-7- Botón: "Agregar Producto"
-
-3- Mensaje sistema:  "Ingrese una cantidad valida"  
-// Esta mal el msj debeeria decir  “El campo “Producto” no puede ser vacío”
-
-11- Botón: "Ok"
-
-3- ID Cliente: CL003
-
-3- Prioridad: ConPrioridadDeEntrega
-
-3- Fecha entrega: Today
-
-5- Producto: SKU006
+6- Producto: SKU-015
 
 7- Cantidad: 10
 
-7- Botón: "Agregar Producto"
+8- Botón: "Agregar Producto"
 
-3- Mensaje sistema: “El campo “Transportista” no puede ser vacío”  
-// No salta el mensaje de error, y deja agregar los productos. 
+9- Detalle:
 
-11- Botón: "Ok"
+SKU-015 - Herramientas hidraulicas -  10
 
-7- 3- Transportista: TR006
+10- Botón: "Emitir Orden"
 
-5- Producto: SKU005
+11- Mensaje sistema: “Por favor, selecciona un cliente, su prioaridad y un transportista.”  
 
-7- Cantidad: 5
+12- Botón: "Ok"
 
-7- Botón: "Agregar Producto"
+13- 3- Transportista: TR-018
 
-5- Detalle:
+14- ID Cliente: CL-009
 
-SKU006 - Paneles solares portatiles -  5
+15- Mensaje sistema: Pampazon: “El cliente ha sido cambiado. Se eliminarán los datos ingresados.Estad usted seguro? ”  
 
-3- ID Cliente: CL008
+16- Botón: "Si"
 
-3- Mensaje sistema: Pampazon: “El cliente ha sido cambiado. Se eliminarán los datos ingresados.Estad usted seguro? ”  
+17- Se limpian todos los campos, queda seleccionado solo ID Cliente: CL-009.
 
-7- Botón: "Si"
+18- Prioridad: ConPrioridadDeEntrega
 
-8- Se limpian todos los campos,queda seleccionado solo ID Cliente: CL008
-
-3- Prioridad: ConPrioridadDeEntrega
-
-3- Transportista: TR018
+19- Transportista: TR-020
 	
-3- Fecha entrega: Today
+20- Fecha entrega: Today
 
-5- Producto: SKU016
+21- Producto: SKU-019
 
-7- Cantidad: 10
+22- Cantidad: 10
 
-7- Botón: "Agregar Producto"
+23- Botón: "Agregar Producto"
 
-3- ID Cliente: CL006
+24- ID Cliente: CL-006
 
-3- Mensaje sistema: Pampazon: “El cliente ha sido cambiado. Se eliminarán los datos ingresados.Estad usted seguro? ”  
+25- Mensaje sistema: Pampazon: “El cliente ha sido cambiado. Se eliminarán los datos ingresados.Estad usted seguro? ”  
 
-7- Botón: "No"
+26- Botón: "No"
 
-8- Deberían respetar todos los campos como estaban pero se limpia el campo transportista 
+27- Deberían respetar todos los campos como estaban pero se limpia el campo transportista 
 // VER PARA QUE VALIDE CORRECTAMENTE 
+
+28- Botón: "Volver"
+
+29- Cerrar Sistema

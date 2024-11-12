@@ -6,80 +6,87 @@
 
 3- Botón: "Agregar Producto"
 
-3- ID Cliente: CL005
+4- Mensaje sistema: Fecha Entrega Requerida : "Debe seleccionar una fecha de entrega"
 
-3- Prioridad: SinPrioridad
+5- Botón: "Ok"
 
-3- Transportista: TR013
+6- ID Cliente: CL-005
 
-3- Fecha entrega: 21/11/2024
+7- Prioridad: SinPrioridad
 
-5- Producto: SKU009
+8- Transportista: TR-013
 
-7- Botón: "Agregar Producto"
-3- Mensaje sistema: Fecha Entrega Requerida : "Debe seleccionar una fecha de entrega"  
-// Esta mal el msj debeeria decir El campo ID no puede estar vacio
+9- Fecha entrega: 21/11/2024
 
-11- Botón: "Ok"
+10- Producto: SKU009
 
-3- ID Cliente: CL005
+11- Botón: "Agregar Producto"
 
-3- Prioridad: SinPrioridad
+12- Mensaje sistema: "Ingrese una cantidad valida."  
 
-3- Transportista: TR013
 
-3- Fecha entrega: 21/11/2024
+13- Botón: "Ok"
 
-5- Producto: SKU009
+14- ID Cliente: CL005
 
-7- Botón: "Agregar Producto"
+15- Prioridad: SinPrioridad
 
-3- Mensaje sistema: "Ingrese una cantidad válida."  
-// Esta mal el msj ver el caso de uso  “El campo cantidad debe ser un valor numérico positivo y menor o igual al stock disponible” 
+16- Transportista: TR-013
 
-11- Botón: "Ok"
+17- Fecha entrega: Deseleccionar campo
 
-7- Cantidad: -10
+18- Producto: SKU009
 
-7- Botón: "Agregar Producto"
+19- Botón: "Agregar Producto"
 
-3- Mensaje sistema: " La cantidad tiene que ser mayor a 0"  
+20- Mensaje sistema: Fecha entrega requerida:	"Debe seleccoinar una fecha de entrega	."  
+ 
+
+21- Botón: "Ok"
+
+22- Fecha entrega: 21/11/2024
+
+23- Cantidad: -10
+
+24- Botón: "Agregar Producto"
+
+25- Mensaje sistema: " La cantidad tiene que ser mayor a 0"  
 // Esta mal el msj ver el caso de uso  “El campo cantidad debe ser un valor numérico positivo y menor o igual al stock disponible”
 
-11- Botón: "Ok"
+26- Botón: "Ok"
 
-7- Cantidad: 0
+27- Cantidad: 0
 
-7- Botón: "Agregar Producto"
+28- Botón: "Agregar Producto"
 
-3- Mensaje sistema: " La cantidad tiene que ser mayor a 0"  
+29- Mensaje sistema: " La cantidad tiene que ser mayor a 0"  
 // Esta mal el msj ver el caso de uso  “El campo cantidad debe ser un valor numérico positivo y menor o igual al stock disponible”
 
-11- Botón: "Ok"
+30- Botón: "Ok"
 
-7- Cantidad: /1
+31- Cantidad: /1
 
-7- Botón: "Agregar Producto"
+32- Botón: "Agregar Producto"
 
-3- Mensaje sistema: "Ingrese una cantidad válida."   
+33- Mensaje sistema: "Ingrese una cantidad válida."   
 // Esta mal el msj ver el caso de uso  “El campo cantidad debe ser un valor numérico positivo y menor o igual al stock disponible”
 
-11- Botón: "Ok"
+34- Botón: "Ok"
 
-7- Cantidad: 10
+35- Cantidad: 10
 
-7- Botón: "Agregar Producto"
+36- Botón: "Agregar Producto"
 
-5- Detalle:
+37- Detalle:
 
-SKU009 - Sistemas de calefaccion industrial - 10
+SKU-009 - Sistemas de calefaccion industrial - 10
 
-7- Botón: "Eliminar Producto"
+38- Botón: "Eliminar Producto"
 
-10- Mensaje sistema: Error: "Por favor, seleccione un producto para eliminar."
+39- Mensaje sistema: Error: "Por favor, seleccione un producto para eliminar."
 
-11- Botón: "Ok"
+40- Botón: "Ok"
 
-12- Cerrar Sistema
+41- Cerrar Sistema
 
 

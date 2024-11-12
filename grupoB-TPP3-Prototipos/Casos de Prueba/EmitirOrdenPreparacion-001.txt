@@ -6,31 +6,31 @@
 
 3- ID Cliente: CL-001
 
-3- Prioridad: ConPrioridadDeEntrega
+4- Prioridad: ConPrioridadDeEntrega
 
-3- Transportista: TR-001
+5- Transportista: TR-001
 
-3- Fecha entrega: 29/11/2024
+6- Fecha entrega: 29/11/2024
 
-5- Producto: SKU-026
+7- Producto: SKU-026
 
-6- Cantidad: 10
+8- Cantidad: 10
 
-7- Botón: "Agregar Producto"
+9- Botón: "Agregar Producto"
 
-5- Detalle:
+10- Detalle:
 
 SKU026 - Sillas de oficina ergonomicas -   10
 
-7- Botón: "Emitir Orden"
+11- Botón: "Emitir Orden"
 
-10- Mensaje: "Orden OP-031 creada exitosamente."
+12- Mensaje: "Orden OP-031 creada exitosamente."
 
-11- Botón: "Ok"
+13- Botón: "Ok"
 
-12- Cerrar Sistema
+14- Cerrar Sistema
 
-13- Verificar en OrdenPreparacion.json, nuevo registro:
+15- Verificar en OrdenesPreparacion.json, nuevo registro:
 
  {
         "IdOrdenPreparacion": "OP-031",

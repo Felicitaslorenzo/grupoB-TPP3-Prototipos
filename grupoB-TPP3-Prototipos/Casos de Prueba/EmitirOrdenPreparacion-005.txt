@@ -1,36 +1,49 @@
-﻿Caso 4: Validaciones 3
+﻿Caso 5: Validaciones 3 (Validamos que las cantidades cargadas no excedan el inventario)
 
 1- Botón: "Ordenes de Preparación"
 
 2- Botón: "Emitir Orden de Preparación"
 
-3- ID Cliente: CL006
+3- ID Cliente: CL-006
 
-3- Prioridad: SinPrioridad
+4- Prioridad: SinPrioridad
 
-3- Transportista: TR014
+5- Transportista: TR-014
 
-3- Fecha entrega: 28/11/2024
+6- Fecha entrega: 28/11/2024
 
-5- Producto: SKU011
+7- Producto: SKU-069
 
-6- Cantidad: 20
+8- Cantidad: 205
 
-7- Botón: "Emitir Orden”
+9- Botón: "Agregar Producto"
 
-3- Mensaje sistema:  “No hay productos disponibles para crear una orden.”
-// Ver que el msj sea igual
-2- Botón: "Ok"
+10- Mensaje sistema: Cantidad excedida: “Error: No hay suficiente stock disponible Cantidad solicitada: 205  Cantidad disponible: 200”
 
-7- Cantidad 1000
+11- Botón: "Ok"
 
-8- Botón: "Agregar Producto"
-// No debe dejar agregar más canitdad de lo que figura en el inventario
-“El campo cantidad debe ser un valor numérico positivo y menor o igual al stock disponible”
+12- Cantidad: 200
 
-5- Detalle:
+13- Botón: "Agregar Producto"
 
-SKU011 - Lamparas LED Industriales -  1000
+14- Detalle:
+
+SKU-069 - Compresores de aire industriales -  200
+
+15- Producto: SKU-069
+
+16- Cantidad: 1
+
+17- Botón: "Agregar Producto"
+
+18- Mensaje sistema: Cantidad excedida: “Error: No hay suficiente stock disponible Cantidad solicitada: 1  Cantidad disponible: 0”
+
+19- Botón: "Ok"
+
+20- Botón: "Volver"
+
+21- Cerrar sistema
+
 
 
 
