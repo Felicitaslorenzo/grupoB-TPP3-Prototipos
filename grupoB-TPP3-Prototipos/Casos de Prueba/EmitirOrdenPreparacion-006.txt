@@ -1,0 +1,49 @@
+﻿Caso 6: Eliminar producto del listado
+
+1- Botón: "Ordenes de Preparación"
+
+2- Botón: "Emitir Orden de Preparación"
+
+3- ID Cliente: CL-006
+
+4- Prioridad: SinPrioridad
+
+5- Transportista: TR-014
+
+6- Fecha entrega: 28/11/2024
+
+7- Producto: SKU-011
+
+8- Cantidad: 20
+
+9- Botón: "Agregar Producto"
+
+10- Producto: SKU-012
+
+11- Cantidad: 10
+
+12- Botón: "Agregar Producto"
+
+13- Detalle:
+
+SKU-011 - Lamparas LED Industriales -  20
+SKU-012 - Hidrolavadoras de alta presion-  10
+
+
+14- Seleccionar del detalle: SKU-011
+
+15- Botón: "Eliminar Producto"
+
+16- Detalle:
+
+SKU-012 - Hidrolavadoras de alta presion-  10
+
+17- Botón: "Volver"
+
+18- Cerrar Sistema
+
+
+
+
+
+

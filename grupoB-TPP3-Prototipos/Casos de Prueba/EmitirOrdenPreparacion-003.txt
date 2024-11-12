@@ -39,7 +39,7 @@
 
 19- Botón: "Agregar Producto"
 
-20- Mensaje sistema: Fecha entrega requerida:	"Debe seleccoinar una fecha de entrega	."  
+20- Mensaje sistema: Fecha entrega requerida:	"Debe seleccionar una fecha de entrega	."  
  
 
 21- Botón: "Ok"
