@@ -143,9 +143,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
         {
             // Busca en InventarioMercaderia la cantidad disponible para el SKUProducto específico
 
-            //TODO: hay que restar la cantidad de producto que esté en ordenes en un estado previo
-            //a "retirar ordenes de seleccion" (que es cuando se da de baja de stock)
-
             var depositoActual = DepositoAlmacen.DepositoActual.IdDeposito;
             var producto = ProductoAlmacen.Productos.First(p => p.SKUProducto == skuProducto);
 
