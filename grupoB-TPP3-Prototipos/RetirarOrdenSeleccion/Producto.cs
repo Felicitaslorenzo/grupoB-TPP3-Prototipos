@@ -8,6 +8,7 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
 {
     internal class Producto
     {
+        public string SKUProducto {  get; set; }
         public string DescripcionProducto { get; set; }
         public int Cantidad { get; set; }
         public string Ubicacion { get; set; }

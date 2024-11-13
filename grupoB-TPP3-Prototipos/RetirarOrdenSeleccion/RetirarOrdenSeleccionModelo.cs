@@ -140,10 +140,29 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
                 ordenPrepEntidad.Estado = EstadoOrdenPrepEnum.Seleccionada;
             }
 
-            //TODO: baja inventario.
+            //TO DO: baja inventario.
+            List<Producto> productosConfirmados = ObtenerProductosPorOrden(idOrdenSeleccion);
+
+            foreach (var producto in productosConfirmados)
+            {
+                var inventarioProducto = ProductoAlmacen.Productos.FirstOrDefault(p => p.SKUProducto == producto.SKUProducto);
+
+                if (inventarioProducto != null)
+                {
+                    foreach (var ubicacion in inventarioProducto.Inventario)
+                    {
+                        if (producto.Cantidad <= 0) break;
+
+                        int cantidadARetirar = Math.Min(ubicacion.Cantidad, producto.Cantidad);
+                        ubicacion.Cantidad -= cantidadARetirar;
+                        producto.Cantidad -= cantidadARetirar;
+                    }
+                }
+            }
 
             OrdenSeleccionAlmacen.Grabar();
             OrdenPreparacionAlmacen.Grabar();
+            ProductoAlmacen.Grabar();
         }
 
         /*public List<OrdenSeleccion> ObtenerOrdenesSeleccionadas() //Esto no se está usando, para qué está?
