@@ -19,8 +19,11 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
         public List<string> ObtenerTransportistas()
         {
             // Filtra las órdenes de preparación que tienen transportistas asignados y están en estado "Preparada", y cuya fecha de entrega sea hoy
+            var depositoActual = DepositoAlmacen.DepositoActual.IdDeposito;
+
             var transportistas = OrdenPreparacionAlmacen.OrdenesPreparacion
                 .Where(o => !string.IsNullOrEmpty(o.IdTransportista)
+                    && o.IdDeposito == depositoActual 
                     && o.Estado == EstadoOrdenPrepEnum.Preparada
                     && o.FechaEntrega.Date == DateTime.Now.Date)  // Filtrar por fecha de entrega (hoy)
                 .Select(o => o.IdTransportista)    // Extrae el ID del transportista

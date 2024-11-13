@@ -15,8 +15,8 @@ namespace grupoB_TPP3_Prototipos.Generar_orden_de_Selección
             // get
             {
                 var listarOrdenes = new List<OrdenPreparacion>();
-
-                foreach (var ordenEntidad in OrdenPreparacionAlmacen.OrdenesPreparacion.Where(o => o.Estado == EstadoOrdenPrepEnum.Pendiente))
+                var depositoActual = DepositoAlmacen.DepositoActual.IdDeposito;
+                foreach (var ordenEntidad in OrdenPreparacionAlmacen.OrdenesPreparacion.Where(o => o.Estado == EstadoOrdenPrepEnum.Pendiente && o.IdDeposito == depositoActual))
                 {  // Filtra solo las órdenes pendientes
                     var ordenModelo = new OrdenPreparacion
                     {

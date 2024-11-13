@@ -24,6 +24,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
 
         public static void AgregarOrdenPreparacion(OrdenPreparacionEnt nuevaOrden)
         {
+            nuevaOrden.IdDeposito = DepositoAlmacen.DepositoActual.IdDeposito;
             ordenespreparacion.Add(nuevaOrden);
             /*
             try

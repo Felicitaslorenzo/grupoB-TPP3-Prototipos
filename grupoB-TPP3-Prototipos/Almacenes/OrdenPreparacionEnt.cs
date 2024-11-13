@@ -10,6 +10,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
     {
         public string IdOrdenPreparacion { get; set; }
         public string IdCliente { get; set; }
+        public string IdDeposito { get; set; }
         public DateTime FechaEmision { get; set; }
         public DateTime FechaEntrega { get; set; }
         public EstadoOrdenPrepEnum Estado { get; set; }

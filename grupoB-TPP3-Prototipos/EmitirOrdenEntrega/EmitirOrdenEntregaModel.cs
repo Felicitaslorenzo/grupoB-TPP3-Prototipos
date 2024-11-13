@@ -38,8 +38,10 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         public List<OrdenPreparacion> ObtenerOrdenesPorEstadoPreparada()
         {
             // Filtrar todas las órdenes que están en estado "Empaquetada" (Estado == 3)
+            var depositoActual = DepositoAlmacen.DepositoActual.IdDeposito;
+
             var ordenesAlmacen = OrdenPreparacionAlmacen.OrdenesPreparacion
-                .Where(o => (int)o.Estado == 3)  // Si Estado es un enum, conviértelo a int
+                .Where(o => (int)o.Estado == 3 && o.IdDeposito == depositoActual)  // Si Estado es un enum, conviértelo a int
                 .ToList();
 
             // Crear una lista de OrdenPreparacion para devolver
