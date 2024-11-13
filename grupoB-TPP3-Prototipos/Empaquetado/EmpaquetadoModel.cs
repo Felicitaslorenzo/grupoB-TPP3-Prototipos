@@ -68,14 +68,14 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
             var listarOrdenesEmpaquetado = new List<OrdenPreparacion>();
 
             // Fecha y hora actuales
-            DateTime fechaHoy = DateTime.Now;
+            // DateTime fechaHoy = DateTime.Now;
 
             // Recorrer todas las OrdenesPreparacion
             foreach (var ordenEntidad in OrdenPreparacionAlmacen.OrdenesPreparacion)
             {
                 // Filtrar las órdenes con estado 2 (Suponiendo que 2 es el valor de "Seleccionada") y con FechaEntrega de hoy
-                if ((int)ordenEntidad.Estado == 2 &&
-                    ordenEntidad.FechaEntrega.Date == fechaHoy.Date) // Asegura que la fecha de entrega sea de hoy
+                if ((int)ordenEntidad.Estado == 2) // &&
+                   // ordenEntidad.FechaEntrega.Date == fechaHoy.Date) // Asegura que la fecha de entrega sea de hoy
                 {
                     var ordenModelo = new OrdenPreparacion
                     {
