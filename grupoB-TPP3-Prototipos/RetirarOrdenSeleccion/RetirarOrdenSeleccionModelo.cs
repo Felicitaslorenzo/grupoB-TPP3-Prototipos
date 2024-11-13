@@ -22,7 +22,6 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
         private void CargarOrdenes()
         {
             var depositoActual = DepositoAlmacen.DepositoActual.IdDeposito;
-            OrdenSeleccionAlmacen.Leer();
             ordenesSeleccion = OrdenSeleccionAlmacen.OrdenesSeleccion
                 .Where(o => OrdenPreparacionAlmacen.OrdenesPreparacion.First(ope => ope.IdOrdenPreparacion == o.OrdenesPreparacion.First()).IdDeposito == depositoActual)
                 .Select(ent => new OrdenSeleccion

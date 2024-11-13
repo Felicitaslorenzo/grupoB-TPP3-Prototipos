@@ -128,9 +128,6 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
 
         public string GenerarNuevoIDRemito()
         {
-            // Leer las órdenes desde el archivo (simulamos que ya tienes la lógica para leer desde un almacenamiento)
-            RemitoAlmacen.Leer();
-
             // Obtener el último ID de las órdenes
             var ultimoId = RemitoAlmacen.Remitos
                 .Select(o => o.IdRemito)

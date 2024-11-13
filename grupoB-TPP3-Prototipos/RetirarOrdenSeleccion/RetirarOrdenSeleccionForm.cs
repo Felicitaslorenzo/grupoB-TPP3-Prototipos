@@ -119,7 +119,6 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
         {
             CargarOrdenesEnComboBox();
             //ordenesSeleccion = model.OrdenesSeleccionadas ?? new List<OrdenSeleccion>();
-            // OrdenSeleccionAlmacen.Leer();
             // CargarOrdenesEnComboBox();
         }
 

@@ -69,9 +69,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
 
         public string GenerarNuevoIDOrden()
         {
-            // Leer las órdenes desde el archivo (simulamos que ya tienes la lógica para leer desde un almacenamiento)
-            OrdenEntregaAlmacen.Leer();
-
             // Obtener el último ID de las órdenes
             var ultimoId = OrdenEntregaAlmacen.OrdenesEntrega
                 .Select(o => o.IdOrdenEntrega)
