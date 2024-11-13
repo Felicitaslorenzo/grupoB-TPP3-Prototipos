@@ -20,19 +20,3 @@ SKU024 Cintas transportadoras industriales 10].
 
 
 
-CASO 2: VALIDACIONES CON CORRECCIONES
-1- Tocar boton "Ordenes de preparacion" en el menu principal.
-2- Tocar boton "Listar Ordenes de preparacion".
-3- Tocar boton buscar, sin seleccionar ningun filtro.
-4- [Aparece alerta de error "No se ha seleccionado ningún filtro"]
-5- Tocar aceptar.
-6- En el campo Nombre cliente seleccionar "Porter SA"
-7- Tocar boton buscar
-8- [Aparece lista de ordenes de preparacion]
-8- Tocar La orden OP-001
-9- [Aparece detalle de productos: SKU-001 Muebles modulares de oficina 50/ 
-SKU-002 Cementos de alta resistencia 200].
-10- Tocar en la primer ListView OP026 
-11- Aparece detalle de productos: SKU-025 Paredes moviles de oficina 20/ 
-SKU-024 Cintas transportadoras industriales 10].
-12- Tocar volver.
