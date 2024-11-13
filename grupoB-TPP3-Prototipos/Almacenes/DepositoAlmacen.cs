@@ -13,6 +13,11 @@ namespace grupoB_TPP3_Prototipos.Almacenes
 
         public static IReadOnlyCollection<DepositoEnt> Depositos => depositos.AsReadOnly();
 
+        //TODO: Alguna pantalla tiene que darle al usuario la posibilidad de cambiar esto.
+        //Por ahora (y hasta el final) lo dejamos hard-coded, y una vez que terminemos le agregamos
+        //en la pantalla de menu principal la posibilidad de cambiar de deposito.
+        public static DepositoEnt DepositoActual => Depositos.First();
+
         public static void Grabar()
         {
             var datos = JsonSerializer.Serialize(depositos);

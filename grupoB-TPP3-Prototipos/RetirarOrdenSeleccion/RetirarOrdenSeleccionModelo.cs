@@ -142,22 +142,13 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
 
             //TO DO: baja inventario.
             List<Producto> productosConfirmados = ObtenerProductosPorOrden(idOrdenSeleccion);
+            var depositoActual = DepositoAlmacen.DepositoActual.IdDeposito;
 
             foreach (var producto in productosConfirmados)
             {
-                var inventarioProducto = ProductoAlmacen.Productos.FirstOrDefault(p => p.SKUProducto == producto.SKUProducto);
-
-                if (inventarioProducto != null)
-                {
-                    foreach (var ubicacion in inventarioProducto.Inventario)
-                    {
-                        if (producto.Cantidad <= 0) break;
-
-                        int cantidadARetirar = Math.Min(ubicacion.Cantidad, producto.Cantidad);
-                        ubicacion.Cantidad -= cantidadARetirar;
-                        producto.Cantidad -= cantidadARetirar;
-                    }
-                }
+                var productoEntidad = ProductoAlmacen.Productos.First(p => p.SKUProducto == producto.SKUProducto);
+                var inventarioMercaderia = productoEntidad.Inventario.First(i => i.Ubicacion == producto.Ubicacion && i.IdDeposito == depositoActual);
+                inventarioMercaderia.Cantidad -= producto.Cantidad;
             }
 
             OrdenSeleccionAlmacen.Grabar();

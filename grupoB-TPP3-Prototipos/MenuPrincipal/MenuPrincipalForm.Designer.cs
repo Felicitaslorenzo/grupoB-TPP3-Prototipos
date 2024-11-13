@@ -35,9 +35,10 @@
             // 
             // buttonOrdenesPreparacion
             // 
-            buttonOrdenesPreparacion.Location = new Point(272, 60);
+            buttonOrdenesPreparacion.Location = new Point(238, 45);
+            buttonOrdenesPreparacion.Margin = new Padding(3, 2, 3, 2);
             buttonOrdenesPreparacion.Name = "buttonOrdenesPreparacion";
-            buttonOrdenesPreparacion.Size = new Size(169, 85);
+            buttonOrdenesPreparacion.Size = new Size(148, 64);
             buttonOrdenesPreparacion.TabIndex = 0;
             buttonOrdenesPreparacion.Text = "Ordenes de Preparación";
             buttonOrdenesPreparacion.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@
             // 
             // buttonOrdenesSeleccion
             // 
-            buttonOrdenesSeleccion.Location = new Point(272, 169);
+            buttonOrdenesSeleccion.Location = new Point(238, 127);
+            buttonOrdenesSeleccion.Margin = new Padding(3, 2, 3, 2);
             buttonOrdenesSeleccion.Name = "buttonOrdenesSeleccion";
-            buttonOrdenesSeleccion.Size = new Size(169, 85);
+            buttonOrdenesSeleccion.Size = new Size(148, 64);
             buttonOrdenesSeleccion.TabIndex = 1;
             buttonOrdenesSeleccion.Text = "Ordenes de Seleccion";
             buttonOrdenesSeleccion.UseVisualStyleBackColor = true;
@@ -55,9 +57,10 @@
             // 
             // buttonOrdenesDeEntrega
             // 
-            buttonOrdenesDeEntrega.Location = new Point(272, 280);
+            buttonOrdenesDeEntrega.Location = new Point(238, 210);
+            buttonOrdenesDeEntrega.Margin = new Padding(3, 2, 3, 2);
             buttonOrdenesDeEntrega.Name = "buttonOrdenesDeEntrega";
-            buttonOrdenesDeEntrega.Size = new Size(169, 85);
+            buttonOrdenesDeEntrega.Size = new Size(148, 64);
             buttonOrdenesDeEntrega.TabIndex = 2;
             buttonOrdenesDeEntrega.Text = "Ordenes de Entrega";
             buttonOrdenesDeEntrega.UseVisualStyleBackColor = true;
@@ -65,12 +68,13 @@
             // 
             // MenuPrincipalForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(743, 437);
+            ClientSize = new Size(650, 328);
             Controls.Add(buttonOrdenesDeEntrega);
             Controls.Add(buttonOrdenesSeleccion);
             Controls.Add(buttonOrdenesPreparacion);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "MenuPrincipalForm";
             Text = "MenuPrincipalForm";
             ResumeLayout(false);
