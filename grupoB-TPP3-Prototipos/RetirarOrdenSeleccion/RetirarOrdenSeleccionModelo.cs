@@ -89,10 +89,12 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
                 {
                     if (totalRequeridoPorProducto.ContainsKey(detalle.SKUProducto))
                     {
+                        // Acumular la cantidad requerida para el producto específico
                         totalRequeridoPorProducto[detalle.SKUProducto] += detalle.Cantidad;
                     }
                     else
                     {
+                        // Si no existe en el diccionario, agregar el SKU y la cantidad inicial
                         totalRequeridoPorProducto.Add(detalle.SKUProducto, detalle.Cantidad);
                     }
                 }
@@ -115,7 +117,8 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
                     {
                         DescripcionProducto = productoEntidad.DescripcionProducto,
                         Ubicacion = inventario.Ubicacion,
-                        Cantidad = inventario.Cantidad
+                        Cantidad = cantidadAUtilizar
+                        // Cantidad = inventario.Cantidad
                     };
 
                     productos.Add(producto);
