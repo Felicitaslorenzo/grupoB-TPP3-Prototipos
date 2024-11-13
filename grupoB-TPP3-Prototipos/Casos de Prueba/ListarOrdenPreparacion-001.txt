@@ -1,7 +1,7 @@
 Caso 1: Caso feliz
 
-1- Tocar boton ordenes de preparacion en el menu principal.
-2- Tocar boton Listar ordenes de preparacion.
+1- Tocar boton "Ordenes de preparacion" en el menu principal.
+2- Tocar boton "Listar Ordenes de preparacion".
 3- Abrir el selector de Id orden.
 4- En el campo ID orden seleccionar la orden OP002
 5- En el campo ID cliente seleccionar el cliente CL002
