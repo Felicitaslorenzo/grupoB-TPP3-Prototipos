@@ -18,16 +18,16 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
 
         public List<string> ObtenerTransportistas()
         {
-            // Filtra las órdenes de preparación que tienen transportistas asignados y están en estado "Preparada" (por ejemplo, 4)
+            // Filtra las órdenes de preparación que tienen transportistas asignados y están en estado "Preparada", y cuya fecha de entrega sea hoy
             var transportistas = OrdenPreparacionAlmacen.OrdenesPreparacion
-                .Where(o => !string.IsNullOrEmpty(o.IdTransportista) && o.Estado == EstadoOrdenPrepEnum.Preparada) // Asegúrate de que haya un transportista asignado y estado "Preparada"
+                .Where(o => !string.IsNullOrEmpty(o.IdTransportista)
+                    && o.Estado == EstadoOrdenPrepEnum.Preparada
+                    && o.FechaEntrega.Date == DateTime.Now.Date)  // Filtrar por fecha de entrega (hoy)
                 .Select(o => o.IdTransportista)    // Extrae el ID del transportista
                 .Distinct()                        // Elimina duplicados
                 .ToList();                         // Convierte a lista
 
-            // Retorna solo los transportistas que están relacionados con órdenes de preparación en estado "Preparada"
             return transportistas;
-
 
             // return clientes.SelectMany(c => c.Transportistas).Distinct().ToList();
         }
@@ -69,27 +69,26 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
 
             foreach (var ordenEntidad in OrdenPreparacionAlmacen.OrdenesPreparacion)
             {
-                // Suponiendo que `OrdenEntrega` tiene un constructor que requiere "idOrden", "idCliente" y otros parámetros
+                // Filtrar por fecha de entrega (hoy)
+                if (ordenEntidad.FechaEntrega.Date != DateTime.Now.Date)
+                    continue; // Solo agregamos las órdenes cuya fecha de entrega sea hoy
+
                 var idCliente = ClienteAlmacen.Clientes
-                    .Where(c => c.IdCliente == ordenEntidad.IdCliente) // Ajusta la propiedad correcta de ordenEntidad
+                    .Where(c => c.IdCliente == ordenEntidad.IdCliente)
                     .Select(c => c.IdCliente)
                     .FirstOrDefault();
 
-                var estado = ordenEntidad.Estado.ToString(); // VER ESTADO
+                var estado = ordenEntidad.Estado.ToString();
 
-                // Crear una nueva instancia de OrdenEntrega con el constructor que requiere los parámetros
                 var ordenModelo = new OrdenEntrega(
-                    ordenEntidad.IdOrdenPreparacion,   // idOrden
-                    idCliente ,                    // idCliente (o proporciona un valor predeterminado si idCliente es nulo)
-                    estado // VER ESTADO
-            /* otros parámetros requeridos */
+                    ordenEntidad.IdOrdenPreparacion,
+                    idCliente,
+                    estado
                 );
 
-                // Agregar la orden de entrega a la lista
                 listarOrden.Add(ordenModelo);
             }
 
-            // Devolver la lista de órdenes de entrega
             return listarOrden;
         }
 
