@@ -1210,5 +1210,50 @@
         "Cantidad": 250
       }
     ]
+  },
+  {
+    "SKUProducto": "SKU-101",
+    "DescripcionProducto": "Buzos",
+    "IdCliente": "CL-008",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-5",
+        "Cantidad": 100
+      },
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-6",
+        "Cantidad": 500
+      },
+      {
+        "IdDeposito": "GBAN3",
+        "Ubicacion": "1-2-1",
+        "Cantidad": 900
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-102",
+    "DescripcionProducto": "Zapatillas",
+    "IdCliente": "CL-008",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-7",
+        "Cantidad": 1000
+      },
+      {
+        "IdDeposito": "GBAN2",
+        "Ubicacion": "1-2-8",
+        "Cantidad": 200
+      },
+      {
+        "IdDeposito": "GBAN3",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 1300
+      }
+    ]
   }
+
 ]

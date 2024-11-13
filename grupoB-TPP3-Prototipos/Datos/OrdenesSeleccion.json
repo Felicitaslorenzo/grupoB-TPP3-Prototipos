@@ -40,5 +40,14 @@
       "OP-029",
       "OP-030"
     ]
+  },
+  {
+    "IdOrdenSeleccion": "OS-005",
+    "Estado": 0,
+    "FechaEstado": "2024-11-23T00:00:00",
+    "FechaEmision": "2024-11-11T00:00:00",
+    "OrdenesPreparacion": [
+      "OP-031"
+    ]
   }
 ]
