@@ -28,7 +28,7 @@
 
 10 - Botón: "Emitir Orden"
 
-11- Mensaje: "Se genero OS-008"
+11- Mensaje: "Se genero OS-005"
 
 12- Botón: "Ok"
 
@@ -37,7 +37,7 @@
 14- Verificar en OrdenesSeleccion.Json, nuevo registro:
 
 	{
-        "IdOrdenSeleccion": "OS-008",
+        "IdOrdenSeleccion": "OS-005",
         "Estado": 0,
         "FechaEstado": "2024-11-12T15:59:58.0036948-03:00",
         "FechaEmision": "2024-11-12T15:59:58.0036919-03:00",
@@ -45,6 +45,23 @@
             "OP-001"
         ]
     }
-15 - Verificar en OrdenPreparacion.json, que la OP-001 modifique el estado de pendiente a en seleccion // No figuran el cambio de estado
+15 - Verificar en OrdenPreparacion.json, que la OP-001 modifique el estado de pendiente (0) a en seleccion (1) 
 
-
+       {
+        "IdOrdenPreparacion": "OP-001",
+        "IdCliente": "CL-001",
+        "FechaEmision": "2024-10-03T00:00:00",
+        "FechaEntrega": "2024-09-30T00:00:00",
+        "Estado": 1,
+        "Prioridad": 0,
+        "IdTransportista": "TR-001",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-001",
+                "Cantidad": 50
+            },
+            {
+                "SKUProducto": "SKU-002",
+                "Cantidad": 200
+            }
+        ]

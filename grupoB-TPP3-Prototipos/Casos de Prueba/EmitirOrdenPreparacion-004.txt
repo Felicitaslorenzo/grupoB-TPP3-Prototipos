@@ -54,8 +54,8 @@ SKU-015 - Herramientas hidraulicas -  10
 
 26- Botón: "No"
 
-27- Deberían respetar todos los campos como estaban pero se limpia el campo transportista 
-// VER PARA QUE VALIDE CORRECTAMENTE 
+27- Se mantienen todos los campos como estaban con el detalle de productos correspondiente.
+
 
 28- Botón: "Volver"
 

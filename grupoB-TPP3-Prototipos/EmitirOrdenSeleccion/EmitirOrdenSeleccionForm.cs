@@ -276,9 +276,9 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
             foreach (var idOrdenPrep in opSeleccionadas)
             {
                 var ordenPrepEntidad = OrdenPreparacionAlmacen.OrdenesPreparacion.FirstOrDefault(o => o.IdOrdenPreparacion == idOrdenPrep);
-                if (ordenPrepEntidad != null && ordenPrepEntidad.Estado == EstadoOrdenPrepEnum.EnSeleccion) // podria sacar este if y solo dejar lo de adentroo
+                if (ordenPrepEntidad != null && ordenPrepEntidad.Estado == EstadoOrdenPrepEnum.Pendiente) // podria sacar este if y solo dejar lo de adentroo
                 {
-                    ordenPrepEntidad.Estado = EstadoOrdenPrepEnum.Seleccionada;
+                    ordenPrepEntidad.Estado = EstadoOrdenPrepEnum.EnSeleccion;
                 }
             }
 

@@ -38,7 +38,7 @@
 15- Verificar en OrdenSeleccion.Json, nuevo registro:
 
 	{
-        "IdOrdenSeleccion": "OS-009",
+        "IdOrdenSeleccion": "OS-005",
         "Estado": 0,
         "FechaEstado": "2024-11-12T16:10:58.5559743-03:00",
         "FechaEmision": "2024-11-12T16:10:58.5559713-03:00",
@@ -49,6 +49,42 @@
     }
 
 
-16- Verificar en OrdenesPreparacion.Json, que las ordens "OP-001", "OP-003" pasen de pendiente a En seleccion.
-            // No figuran el cambio de estado
-	  
+16- Verificar en OrdenesPreparacion.Json, que las ordens "OP-001" y "OP-003" pasen de pendiente (0) a En seleccion (1).
+
+        "IdOrdenPreparacion": "OP-001",
+        "IdCliente": "CL-001",
+        "FechaEmision": "2024-10-03T00:00:00",
+        "FechaEntrega": "2024-09-30T00:00:00",
+        "Estado": 1,
+        "Prioridad": 0,
+        "IdTransportista": "TR-001",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-001",
+                "Cantidad": 50
+            },
+            {
+                "SKUProducto": "SKU-002",
+                "Cantidad": 200
+            }
+        ]
+          
+	  {
+        "IdOrdenPreparacion": "OP-003",
+        "IdCliente": "CL-001",
+        "FechaEmision": "2024-10-05T00:00:00",
+        "FechaEntrega": "2024-10-01T00:00:00",
+        "Estado": 1,
+        "Prioridad": 0,
+        "IdTransportista": "TR-003",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-001",
+                "Cantidad": 60
+            },
+            {
+                "SKUProducto": "SKU-002",
+                "Cantidad": 300
+            }
+        ]
+    },
