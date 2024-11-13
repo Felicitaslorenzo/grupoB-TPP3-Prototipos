@@ -119,60 +119,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             return $"OP-{numero:D3}";  // El ":D3" asegura que el número tenga 3 dígitos
         }
 
-        /* internal void CargarCliente(ComboBox IdClienteCombo, ComboBox TransportistaCombo, ComboBox ProductosCombo)
-        {
-            var clientes = ObtenerCliente();
-
-            // Carga de los clientes en el ComboBox
-            foreach (var cliente in clientes)
-            {
-                IdClienteCombo.Items.Add(cliente);
-            }
-
-            IdClienteCombo.DisplayMember = "IdCliente";
-
-            // Evento cuando se selecciona un cliente
-            IdClienteCombo.SelectedIndexChanged += (s, e) =>
-            {
-                if (IdClienteCombo.SelectedItem is Cliente selectedCliente)
-                {
-                    // Cargar transportistas y productos al seleccionar un cliente
-
-                    CargarTransportistas(selectedCliente, TransportistaCombo);
-                    CargarProductos(selectedCliente, ProductosCombo);
-                }
-            };
-        }
-
-        internal void CargarTransportistas(Cliente cliente, ComboBox TransportistaCombo)
-        {
-            TransportistaCombo.Items.Clear();
-
-            // Cargar todos los transportistas del cliente seleccionado
-            foreach (var transportista in cliente.Transportistas)
-            {
-                TransportistaCombo.Items.Add(transportista);
-            }
-
-            // No establecer ninguna opción seleccionada, dejar el combo vacío
-            TransportistaCombo.SelectedIndex = -1;
-        }
-
-        internal void CargarProductos(Cliente cliente, ComboBox ProductosCombo)
-        {
-
-            ProductosCombo.Items.Clear();
-
-            // Carga los productos devueltos por la función BuscarProductoCliente
-            var productos = BuscarProductoCliente(cliente);
-            foreach (var producto in productos)
-            {
-                ProductosCombo.Items.Add(producto);
-            }
-
-            ProductosCombo.DisplayMember = "IDProducto";
-        } */
-
+      
         
         internal List<Producto> BuscarProductoCliente(Cliente cliente)
         {
@@ -186,19 +133,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                     Cantidad = ObtenerCantidadDisponible(producto.SKUProducto) // Obtener cantidad de InventarioMercaderiaEnt
                 }).ToList();
 
-            /*
-            // Verificación de inventario
-            foreach (var productoSolicitado in productosSolicitados)
-            {
-                var productoEnInventario = productosCliente
-                    .FirstOrDefault(p => p.IDProducto == productoSolicitado.IDProducto);
-
-                if (productoEnInventario != null && productoSolicitado.Cantidad > productoEnInventario.Cantidad)
-                {
-                    throw new InvalidOperationException(
-                        $"Error: No hay suficiente inventario para el producto {productoSolicitado.DescripcionProducto}. Disponible: {productoEnInventario.Cantidad}, Solicitado: {productoSolicitado.Cantidad}");
-                }
-            }*/
+           
 
             return productosCliente;
         }
@@ -217,7 +152,8 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
             int cantidadComprometida = OrdenPreparacionAlmacen.OrdenesPreparacion
                    .Where(o => o.Detalle.Any(d => d.SKUProducto == skuProducto)
-                               && o.Estado != EstadoOrdenPrepEnum.Pendiente) // Asumimos que "Retirada" significa dado de baja
+                               && o.Estado != EstadoOrdenPrepEnum.Pendiente
+                               && o.Estado != EstadoOrdenPrepEnum.EnSeleccion) //   Comprometemos las canitdades en estado 0 y 1 ya que en estado 2 se restan de inventario
                    .Sum(o => o.Detalle
                        .Where(d => d.SKUProducto == skuProducto)
                        .Sum(d => d.Cantidad));
@@ -249,19 +185,6 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             return (true, "La cantidad solicitada es válida y se puede agregar a la orden.");
         }
 
-
-        /*
-
-        internal List<Producto> BuscarProductoCliente(Cliente cliente)
-        {
-            return ProductoAlmacen.Productos.Where(productoEntidad => productoEntidad.IdCliente == cliente.IdCliente)
-                .Select(producto => new Producto
-                {
-                    IDProducto = producto.SKUProducto,
-                    DescripcionProducto = producto.DescripcionProducto
-                }).ToList();
-        }
-        */
 
         public List<Cliente> ObtenerCliente()
         {
