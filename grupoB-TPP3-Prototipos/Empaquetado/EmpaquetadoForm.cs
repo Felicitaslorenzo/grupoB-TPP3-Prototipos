@@ -50,11 +50,24 @@ namespace grupoB_TPP3_Prototipos.CrearOrdenEntrega
                 // Eliminar la orden actual
                 model.EliminarOrdenActual();
 
-                // Mostrar la siguiente orden
-                MostrarOrdenActual();
+                // Verificar si hay más órdenes después de eliminar la orden actual
+                var ordenSiguiente = model.ObtenerOrdenActual();
 
                 // Mostrar mensaje de éxito
                 MessageBox.Show("La orden se ha empaquetado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Mostrar la siguiente orden si existe
+                if (ordenSiguiente != null)
+                {
+                    // Mostrar la siguiente orden
+                    MostrarOrdenActual();
+                }
+                else
+                {
+                    // Si no hay más órdenes, mostrar el mensaje de "No hay más órdenes" y cerrar el formulario
+                    MessageBox.Show("No hay más órdenes para empaquetar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close(); // Cierra el formulario
+                }
             }
             else
             {
@@ -65,6 +78,7 @@ namespace grupoB_TPP3_Prototipos.CrearOrdenEntrega
 
         private void EmpaquetadoForm_Load(object sender, EventArgs e)
         {
+            /*
             var ordenActual = model.ObtenerOrdenActual();
 
             if (ordenActual != null)
@@ -77,7 +91,7 @@ namespace grupoB_TPP3_Prototipos.CrearOrdenEntrega
                 // Si no hay más órdenes, muestra un mensaje y cierra el formulario
                 MessageBox.Show("No hay más órdenes para empaquetar.");
                 this.Close(); // Cierra el formulario
-            }
+            } */
         }
 
         private void VolverButton_Click(object sender, EventArgs e)

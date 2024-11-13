@@ -245,8 +245,8 @@
   {
     "IdOrdenPreparacion": "OP-014",
     "IdCliente": "CL-004",
-    "FechaEmision": "2024-10-08T00:00:00",
-    "FechaEntrega": "2024-11-11T00:00:00",
+    "FechaEmision": "2024-11-13T00:00:00",
+    "FechaEntrega": "2024-11-13T00:00:00",
     "Estado": 2,
     "Prioridad": 1,
     "IdTransportista": "TR-014",
@@ -264,8 +264,8 @@
   {
     "IdOrdenPreparacion": "OP-015",
     "IdCliente": "CL-005",
-    "FechaEmision": "2024-10-02T00:00:00",
-    "FechaEntrega": "2024-11-10T00:00:00",
+    "FechaEmision": "2024-11-13T00:00:00",
+    "FechaEntrega": "2024-11-13T00:00:00",
     "Estado": 2,
     "Prioridad": 0,
     "IdTransportista": "TR-015",
