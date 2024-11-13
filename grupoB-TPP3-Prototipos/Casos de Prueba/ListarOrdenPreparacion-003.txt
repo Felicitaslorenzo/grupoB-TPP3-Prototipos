@@ -1,0 +1,23 @@
+CASO 3: CAMINO DE ACCIDENTES
+- Tocar boton "Ordenes de preparacion" en el menu principal.
+- [Se abre el menú "Órdenes de selección"]
+- Tocar boton "Listar Ordenes de preparacion".
+- [Se abre el menú "Listar Ordenes de preparacion"]
+- En el campo ID orden seleccionar la orden OP-014
+- Presionar boton buscar 
+- [Devuelve un listado de ordenes de preparación]
+- Seleccionar la orden de preparacion OP-014 del listado
+- [Devuelve el detalle de la orden de Preparacion: SKU-013 Equipos de aire acondicionado... 60
+/ SKU-014 Estanterias metalicas de almacena... 100].
+- En el campo Id Orden seleccionar el espacio en blanco
+- En el campo ID cliente seleccionar el cliente CL-005
+- Presionar boton buscar  
+- [Devuelve un listado de prepación: OP-005, OP-010, OP-014, OP-023,OP-029]
+- [Limpia items del detalle de la orden de preparacion]
+- En el campo fecha hasta seleccionar 01/10/2024
+- Presionar boton buscar 
+- [Devuelve un listado de ordenes de preparacion: OP-003, OP-011]
+- [Limpia items del detalle de la orden de preparacion]
+- [Devuelve el detalle de la orden de Preparacion: SKU-001 Muebles modulares... 60/ SKU-002 Cementos de alta... 300
+- Presionar boton volver.
+- [Vuelve al menú principal]

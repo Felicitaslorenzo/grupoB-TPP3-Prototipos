@@ -1,0 +1,22 @@
+CASO 4 - CAMINO DE ACCIDENTES 
+- En el menú principal, presionar botón "Órdenes de Selección" 
+- [Se abre el menú "Órdenes de selección"]
+- Presionar botón "Listar Órdenes de Selección" 
+- [Se abre el form "Listar Órdenes de selección"]
+- En el campo ID Orden Seleccion seleccionar la orden OS-004
+- Presionar boton buscar 
+- [Devuelve un listado de ordenes de seleccion]
+- Seleccionar la orden de Seleccion OS-004 del listado
+- [Devuelve un listado de ordenes de preparacion: OP-028, OP-029, OP-030]
+- Seleccionar la orden de Preparacion: OP-028
+- [Devuelve el detalle de productos: 40 Cajas fuertes de seguridad /
+60 Paneles solares portatiles].
+- En el campo Id Orden Seleccion seleccionar el espacio en blanco]
+- En el campo fecha desde seleccionar 15/10/2024
+- Presionar boton buscar 
+- [Devuelve un listado de ordenes de preparacion: OS-002]
+- En el campo fecha desde seleccionar 13/11/2024
+- Presionar boton buscar 
+- Mensaje: No se encontraron resultados con los filtros seleccionados
+- Presionar boton volver.
+- [Vuelve al menú principal]

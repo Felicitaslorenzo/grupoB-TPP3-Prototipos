@@ -9,7 +9,8 @@
 - [Devuelve una lista de órdenes de selección filtrada] 
 - Seleccionar ID Orden Seleccion OS-003 de la lista 
 - [Devuelve una lista de órdenes de preparación] 
-- Seleccionar ID Orden Preparación OP026 de la lista 
-- [Devuelve una lista de productos] 
+- Seleccionar ID Orden Preparación OP-026 de la lista 
+- [Devuelve una lista de productos: 20 Paredes moviles de oficina /
+10 Cintas transportadoras industriales] 
 - Presionar el botón "Volver"
 - [Vuelve al menú principal]

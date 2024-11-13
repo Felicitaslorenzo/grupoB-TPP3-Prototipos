@@ -6,8 +6,24 @@
 - [Se abre el form "Listar Órdenes de selección"]
 - Seleccionar ID Orden Seleccion OS-001 de la lista
 - [Devuelve una lista de órdenes de preparación] 
-- Seleccionar ID Orden Preparación OP021 de la lista 
+- Seleccionar ID Orden Preparación OP-021 de la lista 
 - [Devuelve una lista de productos] 
 - Presionar el botón "Volver" 
 - [Vuelve al menú principal]
 
+
+
+CASO 1 - "CAMINO FELIZ" - LISTAR ÓRDENES DE SELECCIÓN 001 CORRECCIONES
+- En el menú principal, presionar botón "Órdenes de Selección" 
+- [Se abre el menú "Órdenes de selección"]
+- Presionar botón "Listar Órdenes de Selección" 
+- [Se abre el form "Listar Órdenes de selección"]
+- Seleccionar ID Orden Seleccion OS-001 de la lista
+- Seleccionar Fecha Desde "11/10/2024"
+- Seleccionar Fecha Hasta "11/11/2024"
+- [Devuelve una lista de órdenes de preparación] 
+- Seleccionar ID Orden Preparación OP-021 de la lista 
+- [Devuelve una lista de productos: 25 Equipos de seguridad industrial
+/ 200 Kits de instalación eléctrica] 
+- Presionar el botón "Volver" 
+- [Vuelve al menú principal]
