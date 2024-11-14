@@ -11,22 +11,20 @@
 
 4 - Órdenes Disponibles:
 
-	OP002 - Ferreteria SRL	 - Fecha: 25/09/2024 
-	OP012 - Ferreteria SRL	 - Fecha: 02/10/2024 
-	OP027 - Ferreteria SRL	 - Fecha: 25/10/2024 
+	OP-001 : Porter SA- Fecha 03/10/24
+	OP-002: Ferreteria SRL - Fecha 29/09/2024
+	OP-003: Porter SA - Fecha 05/10/24
+	OP-005: Contribuciones Beta - Fecha 28/09/24
 
-5 -	Seleccionar Orden de Preparación: OP025/ OP026 / OP027
+5 -	Seleccionar Orden de Preparación: OP-002
 
-	Detalle de la Orden: No muestra detalle productos
+Detalle de la Orden: 
 
-	101 Producto ABC Cantidad: 100 Ubicación: Ubicación 1
-	102 Producto DEF Cantidad: 50 Ubicación: Ubicación 2
-
-	Cantidad: "10"
+Producto: Electrodomesticos inteligentes x50 unidades / Herramientas electricas profesionales x 100 unidades
 
 6- Botón: "Agregar Seleccionadas"
 
-7- Seleccionar OP027
+7- Seleccionar OP-002
 
 8- Botón: "Quitar Seleccionadas"
 
@@ -45,20 +43,14 @@
 
 12- Verificar en OrdenSeleccion.Json, nuevo registro:
 
-	"IdOrdenSeleccion": "OS001",
+	"IdOrdenSeleccion": "OS011""
       "Estado": "Pendiente",
       "FechaEstado": "2024-10-11T00:00:00",
       "FechaEmision": "2024-10-11T00:00:00",
       "OrdenesPreparacion": [
-        "OP025",
-		"OP026"
-       
+        
       ]
 
-	  Errores:
-	  Debe modificar el OP de pendiente a seleccionada y modifiar el dato desde el archivo.
-	  No guarda los datos en el .json
-	  No figuran las OP en el .json
-	  Fecha de estado no pone el dia en el q se generaa
-	  Deben figurar solo las OP Pendientes en el listado
-	  No figura el detalle de las OP
+	  Errores: Si pongo emitir orden sin haber tocado agregar seleccionadas, se carga la os vacia
+
+	  
