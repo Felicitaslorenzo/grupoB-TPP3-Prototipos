@@ -23,13 +23,13 @@
 
 10-	Detalle:
 
-	OP-001 -  Porter SA	 - Fecha: 30/09/2024 
-	OP-003	- Porter SA	 - Fecha: 01/10/2024 
+	OP-001 -  Porter SA	 - Fecha: 03/10/2024 
+	OP-003	- Porter SA	 - Fecha: 05/10/2024 
 	 
 
 11 - Botón: "Emitir Orden"
 
-12- Mensaje: "Se genero OS-009"
+12- Mensaje: "Se genero OS-006"
 
 13- Botón: "Ok"
 
@@ -38,10 +38,10 @@
 15- Verificar en OrdenSeleccion.Json, nuevo registro:
 
 	{
-        "IdOrdenSeleccion": "OS-005",
+        "IdOrdenSeleccion": "OS-006",
         "Estado": 0,
-        "FechaEstado": "2024-11-12T16:10:58.5559743-03:00",
-        "FechaEmision": "2024-11-12T16:10:58.5559713-03:00",
+        "FechaEstado": "2024-11-14T16:25:36.6327673-03:00",
+        "FechaEmision": "2024-11-14T16:25:36.6327651-03:00",
         "OrdenesPreparacion": [
             "OP-001",
             "OP-003"
@@ -51,10 +51,12 @@
 
 16- Verificar en OrdenesPreparacion.Json, que las ordens "OP-001" y "OP-003" pasen de pendiente (0) a En seleccion (1).
 
+        {
         "IdOrdenPreparacion": "OP-001",
         "IdCliente": "CL-001",
-        "FechaEmision": "2024-10-03T00:00:00",
-        "FechaEntrega": "2024-09-30T00:00:00",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-09-30T00:00:00",
+        "FechaEntrega": "2024-10-03T00:00:00",
         "Estado": 1,
         "Prioridad": 0,
         "IdTransportista": "TR-001",
@@ -68,12 +70,13 @@
                 "Cantidad": 200
             }
         ]
-          
+    },
 	  {
         "IdOrdenPreparacion": "OP-003",
         "IdCliente": "CL-001",
-        "FechaEmision": "2024-10-05T00:00:00",
-        "FechaEntrega": "2024-10-01T00:00:00",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-10-01T00:00:00",
+        "FechaEntrega": "2024-10-05T00:00:00",
         "Estado": 1,
         "Prioridad": 0,
         "IdTransportista": "TR-003",
