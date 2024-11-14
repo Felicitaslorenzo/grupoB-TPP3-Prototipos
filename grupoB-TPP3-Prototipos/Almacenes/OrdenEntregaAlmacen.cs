@@ -21,6 +21,12 @@ namespace grupoB_TPP3_Prototipos.Almacenes
             File.WriteAllText(@"Datos\OrdenesEntrega.json", datos);
         }
 
+        public static void AgregarOrdenEntrega(OrdenEntregaEnt nuevaOrden)
+        {
+            ordenesentrega.Add(nuevaOrden);
+            Grabar();
+        }
+
         public static void Leer()
         {
             if(!File.Exists(@"Datos\OrdenesEntrega.json"))

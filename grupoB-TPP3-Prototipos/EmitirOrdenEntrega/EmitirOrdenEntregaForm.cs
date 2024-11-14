@@ -65,23 +65,49 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
 
         private void GenerarOEbutton_Click(object sender, EventArgs e)
         {
-            // Verificar si al menos un elemento está seleccionado en el ListView
             if (OrdenesEntregalistView.SelectedItems.Count > 0)
             {
-                // Llamamos al método para generar el nuevo ID de orden
+                // Crear el nuevo ID para la orden de entrega
                 var nuevoIDOrden = modelo.GenerarNuevoIDOrden();
-                var idOrdenSeleccionada = OrdenesEntregalistView.SelectedItems[0].Text;
-                modelo.CambiarEstadoOrden(idOrdenSeleccionada);
-                // Mostramos un mensaje con el nuevo ID de la orden
-                MessageBox.Show($"Se generó {nuevoIDOrden}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Actualizamos la lista de órdenes
+                // Obtener los IDs de las órdenes de preparación seleccionadas (de la primera columna)
+                var idsSeleccionados = OrdenesEntregalistView.SelectedItems
+                                    .Cast<ListViewItem>()
+                                    .Select(item => item.SubItems[0].Text)  // Extrae el texto del primer subelemento
+                                    .ToList();
+
+                // Verifica si los IDs seleccionados están correctos
+                foreach (var id in idsSeleccionados)
+                {
+                    Console.WriteLine($"ID de Orden Seleccionada: {id}");
+                }
+
+                // Cambia el estado de las órdenes de preparación seleccionadas
+                modelo.CambiarEstadoOrden(idsSeleccionados);
+
+                // Crear y guardar la nueva orden de entrega con los IDs seleccionados
+                modelo.GenerarNuevaOrdenEntrega(idsSeleccionados);
+
+                // Mostrar un mensaje de éxito
+                MessageBox.Show($"Orden de entrega generada con ID: {nuevoIDOrden}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Actualizar la lista de órdenes de preparación para reflejar los cambios
                 MostrarOrdenesActuales();
             }
             else
             {
-                // Si no hay ninguna orden seleccionada, mostramos un mensaje de error
+                // Mostrar un error si no se seleccionaron órdenes
                 MessageBox.Show("Debe seleccionar al menos una orden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void OrdenesEntregalistView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (OrdenesEntregalistView.SelectedItems.Count > 0)
+            {
+                // Obtener el ID de la orden seleccionada
+                var idSeleccionado = OrdenesEntregalistView.SelectedItems[0].Text;
+                Console.WriteLine($"Orden seleccionada con ID: {idSeleccionado}");
             }
         }
     }
