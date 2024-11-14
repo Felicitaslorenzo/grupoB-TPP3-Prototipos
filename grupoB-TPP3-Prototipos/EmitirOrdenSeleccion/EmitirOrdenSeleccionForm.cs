@@ -261,54 +261,60 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
 
         private void GenerarOrdenButton_Click(object sender, EventArgs e)
         {
-            List<string> opSeleccionadas = ObtenerOrdenesPreparacionSeleccionadas();
-            var nuevaOrdenSeleccion = new OrdenSeleccionEnt
+            // Verificar si hay órdenes seleccionadas en el ListView final
+            if (GenerarOSSeleccionadasList.Items.Count > 0)
             {
-                IdOrdenSeleccion = model.GenerarNuevaOrden(), // Generar un ID único
-                FechaEmision = DateTime.Now,
-                Estado = EstadoOrdenSelEnum.Pendiente, // Establecer el estado por defecto
-                FechaEstado = DateTime.Now,
-                OrdenesPreparacion = opSeleccionadas
-            };
-            OrdenSeleccionAlmacen.AgregarOrdenSeleccion(nuevaOrdenSeleccion);
-
-            // Cambiar el estado de las órdenes de preparación seleccionadas de EnSeleccion a Seleccionada
-            foreach (var idOrdenPrep in opSeleccionadas)
-            {
-                var ordenPrepEntidad = OrdenPreparacionAlmacen.OrdenesPreparacion.FirstOrDefault(o => o.IdOrdenPreparacion == idOrdenPrep);
-                if (ordenPrepEntidad != null && ordenPrepEntidad.Estado == EstadoOrdenPrepEnum.Pendiente) // podria sacar este if y solo dejar lo de adentroo
+                // Obtener las órdenes de preparación seleccionadas
+                List<string> opSeleccionadas = ObtenerOrdenesPreparacionSeleccionadas();
+                var nuevaOrdenSeleccion = new OrdenSeleccionEnt
                 {
-                    ordenPrepEntidad.Estado = EstadoOrdenPrepEnum.EnSeleccion;
-                }
-            }
+                    IdOrdenSeleccion = model.GenerarNuevaOrden(), // Generar un ID único
+                    FechaEmision = DateTime.Now,
+                    Estado = EstadoOrdenSelEnum.Pendiente, // Establecer el estado por defecto
+                    FechaEstado = DateTime.Now,
+                    OrdenesPreparacion = opSeleccionadas
+                };
+                OrdenSeleccionAlmacen.AgregarOrdenSeleccion(nuevaOrdenSeleccion);
 
-            // Grabar los cambios
-            OrdenPreparacionAlmacen.Grabar();
-
-            // Generar una nueva orden y mostrar el mensaje
-            string mensaje = $"Se generó {nuevaOrdenSeleccion.IdOrdenSeleccion}";
-            MessageBox.Show(mensaje, "Orden Generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Eliminar los elementos seleccionados del ListView principal
-            foreach (ListViewItem item in GenerarOSSeleccionadasList.Items)
-            {
-                // Encontrar el mismo elemento en el ListView principal y eliminarlo
-                foreach (ListViewItem mainItem in GenerarOrdenSeleccionBuscarList.Items)
+                // Cambiar el estado de las órdenes de preparación seleccionadas de EnSeleccion a Seleccionada
+                foreach (var idOrdenPrep in opSeleccionadas)
                 {
-                    if (mainItem.Text == item.Text)
+                    var ordenPrepEntidad = OrdenPreparacionAlmacen.OrdenesPreparacion.FirstOrDefault(o => o.IdOrdenPreparacion == idOrdenPrep);
+                    if (ordenPrepEntidad != null && ordenPrepEntidad.Estado == EstadoOrdenPrepEnum.Pendiente)
                     {
-                        GenerarOrdenSeleccionBuscarList.Items.Remove(mainItem);
-                        break; // Salir del bucle una vez eliminado el elemento
+                        ordenPrepEntidad.Estado = EstadoOrdenPrepEnum.EnSeleccion;
                     }
                 }
+
+                // Grabar los cambios
+                OrdenPreparacionAlmacen.Grabar();
+
+                // Generar una nueva orden y mostrar el mensaje
+                string mensaje = $"Se generó {nuevaOrdenSeleccion.IdOrdenSeleccion}";
+                MessageBox.Show(mensaje, "Orden Generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Eliminar los elementos seleccionados del ListView principal
+                foreach (ListViewItem item in GenerarOSSeleccionadasList.Items)
+                {
+                    foreach (ListViewItem mainItem in GenerarOrdenSeleccionBuscarList.Items)
+                    {
+                        if (mainItem.Text == item.Text)
+                        {
+                            GenerarOrdenSeleccionBuscarList.Items.Remove(mainItem);
+                            break; // Salir del bucle una vez eliminado el elemento
+                        }
+                    }
+                }
+
+                // Limpiar los dos ListView
+                DetalleOSList.Items.Clear(); // Limpiar el ListView de selección
+                GenerarOSSeleccionadasList.Items.Clear(); // Limpiar el ListView final
             }
-
-            // Limpiar los dos ListView
-            DetalleOSList.Items.Clear(); // Limpiar el ListView de selección
-            GenerarOSSeleccionadasList.Items.Clear(); // Limpiar el ListView final (o el que quieras limpiar)
-
-            // El primer ListView queda sin cambios, por lo que podrás seguir seleccionando y repitiendo el proceso
-            
+            else
+            {
+                // Mostrar mensaje si no se ha seleccionado ninguna orden
+                MessageBox.Show("Debe seleccionar al menos una orden.", "Selección requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private List<string> ObtenerOrdenesPreparacionSeleccionadas()
