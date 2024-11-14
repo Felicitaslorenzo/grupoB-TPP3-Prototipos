@@ -1,9 +1,7 @@
 
 CASO 1: CASO DE ACCIDENTES
 - Tocar boton "Ordenes de Entrega" en el menu principal.
-- [Se abre el menú "Órdenes de Entrega"]
 - Tocar boton "Listar Ordenes de Entrega".
-- [Se abre el menú "Listar Ordenes de Entrega"]
 - En el campo ID orden seleccionar la orden OE-005
 - Presionar boton Buscar
 - [Devuelve un listado de ordenes de entrega: OE-005]
@@ -15,4 +13,4 @@ CASO 1: CASO DE ACCIDENTES
 - Seleccionar la orden OE-001
 - [Devuelve un listado de ordenes de preparacion: OP-021, OP-022, OP-023]
 17- Presionar boton volver.
-18- [Vuelve al menú principal]
+18- Cierra sistema
