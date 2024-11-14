@@ -101,3 +101,12 @@ CASO 3: Retirar Ordenes de selección: Validaciones
       }
     ]
   }
+
+  11 - Verificar .json de Orden de selección (Cambio de estado) (1=Preparada)
+    {
+    "IdOrdenSeleccion": "OS-005",
+    "Estado": 1,
+    "FechaEstado": "2024-11-23T00:00:00",
+    "FechaEmision": "2024-11-11T00:00:00",
+    "OrdenesPreparacion": [ "OP-031" ]
+  }
