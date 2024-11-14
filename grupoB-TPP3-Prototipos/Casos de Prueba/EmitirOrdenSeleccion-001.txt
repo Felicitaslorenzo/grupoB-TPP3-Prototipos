@@ -10,7 +10,7 @@
 
 5 - Órdenes Disponibles:
 
-	OP-001 - Cliente Porter SA	 - Fecha: 30/09/2024 
+	OP-001 - Cliente Porter SA	 - Fecha: 30/10/2024 
 
 6 -	Seleccionar Orden de Preparación: OP-001	
   
@@ -24,7 +24,7 @@
 
 9-	Detalle:
 
-	OP-001 -  Porter SA	 -   30/09/2024  
+	OP-001 -  Porter SA	 -   30/10/2024  
 
 10 - Botón: "Emitir Orden"
 
@@ -36,22 +36,23 @@
 
 14- Verificar en OrdenesSeleccion.Json, nuevo registro:
 
-	{
-        "IdOrdenSeleccion": "OS-005",
+	 {
+        "IdOrdenSeleccion": "OS-006",
         "Estado": 0,
-        "FechaEstado": "2024-11-12T15:59:58.0036948-03:00",
-        "FechaEmision": "2024-11-12T15:59:58.0036919-03:00",
+        "FechaEstado": "2024-11-14T16:21:56.6747963-03:00",
+        "FechaEmision": "2024-11-14T16:21:56.6747945-03:00",
         "OrdenesPreparacion": [
             "OP-001"
         ]
     }
 15 - Verificar en OrdenPreparacion.json, que la OP-001 modifique el estado de pendiente (0) a en seleccion (1) 
 
-       {
+      {
         "IdOrdenPreparacion": "OP-001",
         "IdCliente": "CL-001",
-        "FechaEmision": "2024-10-03T00:00:00",
-        "FechaEntrega": "2024-09-30T00:00:00",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-09-30T00:00:00",
+        "FechaEntrega": "2024-10-03T00:00:00",
         "Estado": 1,
         "Prioridad": 0,
         "IdTransportista": "TR-001",
@@ -65,3 +66,4 @@
                 "Cantidad": 200
             }
         ]
+    },

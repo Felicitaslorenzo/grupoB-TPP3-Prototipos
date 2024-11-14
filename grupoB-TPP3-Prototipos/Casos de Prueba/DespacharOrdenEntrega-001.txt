@@ -1,19 +1,41 @@
-﻿Caso 001: Prueba emitir remito
+﻿Caso 1 : Crear Orden con un solo producto (Camino Feliz)
 
-1 - Menu principal => Seleccionar "Ordenes de Entrega" => [Abre menu de Ordenes de Entrega]
+1- Botón: "Ordenes de Entrega"
 
-2 - Menu Ordenes de Entrega => seleccionar "Despachar Ordenes de Entrega" => [Abre formulario de Dspachar Ordenes de Entrega]
+2- Botón: "Despachar Orden de Entrega"
 
-3 - [Se visualiza el filtro de transportista junto con un botón de "Buscar"]
+3- Transportista: TR-0014
 
-4 - Seleccionar Transportista: TR-008 => Boton "Buscar" => 
-	[Aparece en el listado de abajo: ID Orden: OP-023 - ID Cliente: CL-004] =>
-	Seleccionar la orden => Seleccionar botón "Emitir Remito" => [Aparece mensaje de éxito: "El remito RM-004 se ha generado correctamente."]
+4- Detalle:
 
-5 - Seleccionar botón "OK" => [Cierra el mensaje de éxito]
+OP-024 - CL-006
 
-6 - Seleccionar botón "Volver" => [Vuelve al menu Ordenes de Entrega]
+11- Botón: "Emitir Remito"
 
-7 - Menu Ordenes de Entrega => Cerrar menu => [Se visualiza el menu principal]
+12- Mensaje: "El remito RM-006 se ha generado correctamente."
 
-8 - Menu principal => Cerrar menu => [Finaliza la ejecucion del sistema]
+13- Botón: "Ok"
+
+14- Cerrar Sistema
+
+15- Verificar en Remito.json, nuevo registro:
+
+	{
+		"IdRemito":"RM-006",
+		"FechaEmision":"2024-11-14T16:56:10.256287-03:00",
+		"OrdenesPreparacion":["OP-024"],
+		"IdTransportista":"TR-014"}]
+	}
+
+16- Verificar en OrdenPreparacion.json, registro:
+	{
+		"IdOrdenPreparacion":"OP-024",
+		"IdCliente":"CL-006",
+		"IdDeposito":"GBAN1",
+		"FechaEmision":"2024-11-13T00:00:00",
+		"FechaEntrega":"2024-11-14T00:00:00",
+		"Estado":5,
+		"Prioridad":1,
+		"IdTransportista":"TR-014",
+		"Detalle":[{"SKUProducto":"SKU-012","Cantidad":10},{"SKUProducto":"SKU-011","Cantidad":200}]
+	},

@@ -1,20 +1,43 @@
-﻿Caso 001: Prueba de carga de formulario
+﻿Caso 1 : Crear Orden Entrega (Camino Feliz)
 
-1 - Menu principal => Seleccionar "Ordenes de Entrega" => [Abre menu de Ordenes de Entrega]
+1- Botón: "Ordenes de Entrega"
 
-2 - Menu Ordenes de Entrega => seleccionar "Emitir Ordenes de Entrega" => [Abre formulario de Emitir Ordenes de Entrega]
+2- Botón: "Emitir Orden de Entrega"
 
-3 - Listado de Emitir Ordenes de Entrega => [Aparecen todas las órdenes de entrega disponibles para emitir]
+3- Detalle: Id Orden, Cliente y Fecha Entrega
+    OP-016 CL-006 29/19/2024
+    OP-017 CL-017 30/10/2024
+    etc etc
 
-4 - Seleccionar orden ID Orden: OP-019 - Cliente: CL-009 - Fecha Entrega: 8/10/2024 => Boton "Emitir Orden de Entrega" => 
-	[Aparece mensaje de exito: "Se generó a orden de entrega OE-006"]
+11- Botón: "Emitir Orden de Entrega" seleccionando OP-016 y OP-017
 
-5 - Cerrar mensaje de éxito
+12- Mensaje: "Orden de entrega generada con ID: OE-006"
 
-6 - [La orden seleccionada cambia de estado y desaparece del listado que visualizamos]
+13- Botón: "Aceptar"
 
-7 - Seleccionar botón "Volver" => [Vuelve al menu Ordenes de Entrega]
+14- Cerrar Sistema
 
-8 - Menu Ordenes de Entrega => Cerrar menu => [Se visualiza el menu principal]
-
-9 - Menu principal => Cerrar menu => [Finaliza la ejecucion del sistema]
+15- Verificar en OrdenesPreparacion.json, nuevo registro:
+    {
+        "IdOrdenPreparacion":"OP-016",
+        "IdCliente":"CL-006",.
+        "IdDeposito":"GBAN1",
+        "FechaEmision":"2024-09-01T00:00:00",
+        "FechaEntrega":"2024-10-29T00:00:00",
+        "Estado":4,
+        "Prioridad":1,
+        "IdTransportista":"TR-016",
+        "Detalle":[{"SKUProducto":"SKU-003","Cantidad":10}
+        ,{"SKUProducto":"SKU-004","Cantidad":50}]
+    },
+    {
+        "IdOrdenPreparacion":"OP-017",
+        "IdCliente":"CL-007",
+        "IdDeposito":"GBAN1",
+        "FechaEmision":"2024-10-03T00:00:00",
+        "FechaEntrega":"2024-10-30T00:00:00",
+        "Estado":4,
+        "Prioridad":0,
+        "IdTransportista":"TR-017",
+        "Detalle":[{"SKUProducto":"SKU-011","Cantidad":150}]
+    }

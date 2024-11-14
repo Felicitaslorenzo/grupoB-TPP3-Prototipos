@@ -1222,12 +1222,12 @@
         "Cantidad": 100
       },
       {
-        "IdDeposito": "GBAS1",
+        "IdDeposito": "GBAN1",
         "Ubicacion": "1-2-6",
         "Cantidad": 500
       },
       {
-        "IdDeposito": "GBAS2",
+        "IdDeposito": "GBAN1",
         "Ubicacion": "1-2-1",
         "Cantidad": 900
       }
@@ -1244,12 +1244,12 @@
         "Cantidad": 2000
       },
       {
-        "IdDeposito": "GBAS1",
+        "IdDeposito": "GBAN1",
         "Ubicacion": "1-2-8",
         "Cantidad": 200
       },
       {
-        "IdDeposito": "GBAS2",
+        "IdDeposito": "GBAN1",
         "Ubicacion": "1-2-2",
         "Cantidad": 1300
       }

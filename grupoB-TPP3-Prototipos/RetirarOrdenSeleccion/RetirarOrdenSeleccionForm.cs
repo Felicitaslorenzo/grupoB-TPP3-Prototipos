@@ -164,6 +164,33 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
                 // Obtener el ID de la orden seleccionada
                 var idSeleccionado = OrdenSCombo.SelectedItem.ToString();
 
+                // Confirmar la orden (aquí llamamos al método que maneja la confirmación en tu modelo)
+                model.ConfirmarOrden(idSeleccionado);
+
+                // Limpiar el ListView (si es necesario para actualizar la vista de órdenes)
+                listView1.Items.Clear();
+
+                // Eliminar la orden confirmada del ComboBox
+                OrdenSCombo.Items.Remove(idSeleccionado);
+
+                // Limpiar la selección del ComboBox
+                OrdenSCombo.SelectedIndex = -1;
+
+                // Mostrar mensaje de éxito
+                MessageBox.Show($"El retiro de la(s) orden(es) de preparación se ha confirmado", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // Si no se ha seleccionado una orden
+                MessageBox.Show("Por favor, selecciona una orden antes de confirmar el retiro.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            /*
+            // Verificar si se ha seleccionado una orden en el ComboBox
+            if (OrdenSCombo.SelectedItem != null)
+            {
+                // Obtener el ID de la orden seleccionada
+                var idSeleccionado = OrdenSCombo.SelectedItem.ToString();
+
                 // Confirmar la orden
                 model.ConfirmarOrden(idSeleccionado);
 

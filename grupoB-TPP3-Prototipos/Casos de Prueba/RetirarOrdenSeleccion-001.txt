@@ -1,11 +1,68 @@
-CASO 1: Retirar Ordenes de selección: camino feliz
-1 - En MenuPrincipal, hacer click en botón "Ordenes de Seleccion" 
-2 - En MenuOrdenesSeleccion, hacer click en botón "Retirar orden de Selección"
-3 - En el campo Orden de Selección, seleccionar un IdOrdenSeleccion
-4 - Ver lista de Productos, sus cantidades y ubicaciones 
-5 - Seleccionar items de productos y sus cantidades
-6 - Hacer click en botón Confirmar 
-7 - Muestra el mensaje: "El retiro de la orden de selección se ha confirmado"
-8 - Hacer click en botón Cancelar --> vuelve al MenuOrdenesSeleccion
-9 - Menú Ordenes de Entrega => Cerrar Menú => Se visualiza el Menú principal
-10 - Menú principal => Cerrar Menú => Finaliza la ejecución del sistema
+Caso 1 : Retirar Orden Seleccion (Camino Feliz)
+
+1- Botón: "Ordenes de Seleccion"
+
+2- Botón: "Retirar Orden Seleccion"
+
+3- Orden de Seleccion: OS-001
+
+4- Productos en Orden con ubicación, producto, cantidad
+
+    2-4-2 Placas de yeso para construccion 40
+    1-2-2 Herramientas de corte industrial 120
+    2-1-5 Compresores de aire industrial 120
+
+5- Mensaje: El retiro de las ordenes de preparacion se ha confirmado
+
+6- Botón: "Ok"
+
+14- Cerrar Sistema
+
+15- Verificar en OrdenesSeleccion.json, registro:
+    {
+        "IdOrdenSeleccion":"OS-001",
+        "Estado":1,
+        "FechaEstado":"2024-11-11T00:00:00",
+        "FechaEmision":"2024-10-11T00:00:00",
+        "OrdenesPreparacion":["OP-006"]
+    }
+
+16- Verificar en OrdenesPreparecion.json, registro:
+    {
+        "IdOrdenPreparacion":"OP-006",
+        "IdCliente":"CL-010",
+        "IdDeposito":"GBAN1",
+        "FechaEmision":"2024-09-19T00:00:00",
+        "FechaEntrega":"2024-09-23T00:00:00",
+        "Estado":2,
+        "Prioridad":1,
+        "IdTransportista":"TR-006",
+        "Detalle":[
+            {"SKUProducto":"SKU-020","Cantidad":40},
+            {"SKUProducto":"SKU-021","Cantidad":120},
+            {"SKUProducto":"SKU-022","Cantidad":120}
+        ]
+    }
+
+17- Verificar en Producto.json, registro:
+    {
+        "SKUProducto":"SKU-020",
+        "DescripcionProducto":"Placas de yeso para construcci\u00F3n",
+        "IdCliente":"CL-010",
+        "Inventario":[
+            {"IdDeposito":"GBAN1","Ubicacion":"2-4-2","Cantidad":960},
+            {"IdDeposito":"GBAS2","Ubicacion":"2-18-2","Cantidad":1000},
+            {"IdDeposito":"GBAS2","Ubicacion":"2-18-3","Cantidad":1000}]
+    },
+    {
+        "SKUProducto":"SKU-021",
+        "DescripcionProducto":"Herramientas de corte industrial",
+        "IdCliente":"CL-010",
+        "Inventario":[
+            {"IdDeposito":"GBAN1","Ubicacion":"1-2-2","Cantidad":880}]
+     },
+     {
+        "SKUProducto":"SKU-022",
+        "DescripcionProducto":"Compresores de aire industrial",
+        "IdCliente":"CL-010",
+        "Inventario":[{"IdDeposito":"GBAN1","Ubicacion":"2-1-5","Cantidad":80}]},
