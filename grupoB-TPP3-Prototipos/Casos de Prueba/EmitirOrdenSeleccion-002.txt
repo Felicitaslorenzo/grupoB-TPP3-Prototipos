@@ -23,8 +23,8 @@
 
 10-	Detalle:
 
-	OP-001 -  Porter SA	 - Fecha: 03/10/2024 
-	OP-003	- Porter SA	 - Fecha: 05/10/2024 
+	OP-001 -  Porter SA	 - Fecha: 30/09/2024 
+	OP-003	- Porter SA	 - Fecha: 01/10/2024 
 	 
 
 11 - Botón: "Emitir Orden"

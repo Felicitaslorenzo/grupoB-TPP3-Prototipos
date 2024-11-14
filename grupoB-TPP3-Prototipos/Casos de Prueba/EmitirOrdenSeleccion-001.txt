@@ -16,19 +16,19 @@
   
 7 -	Detalle de la Orden:
 
-	Muebles modulares de oficina     50
-    Cementos de alta resistencia     200
+	Muebles modulares de oficina     60
+    Cementos de alta resistencia     300
 
 
 8- Botón: "Agregar Seleccionadas"
 
 9-	Detalle:
 
-	OP-001 -  Porter SA	 -   30/10/2024  
+	OP-001 -  Porter SA	 -   03/10/2024  
 
 10 - Botón: "Emitir Orden"
 
-11- Mensaje: "Se genero OS-005"
+11- Mensaje: "Se genero OS-006"
 
 12- Botón: "Ok"
 
