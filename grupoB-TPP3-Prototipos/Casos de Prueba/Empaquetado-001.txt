@@ -6,14 +6,14 @@ CASO 1: Empaquetado de Productos: camino feliz
 
 4- Detalle:
 
-Electrodomesticos inteligentes - 20
-Herramientas electricas profesionales - 80
+Muebles modulares de oficina - 50
+Cementos de alta resistencia - 200
 
-5 - Seleccionar producto Electrodomesticos inteligentes
+5 - Seleccionar producto Cementos de alta resistencia
 
 6- Botón: "Empaquetado"
 
-7- Mensaje: Exito: "La orden con ID OP-012 se ha empaquetado con exito."
+7- Mensaje: Exito: "La orden con ID OP-011 se ha empaquetado con exito."
 
 8- Botón: "Ok"
 
@@ -23,23 +23,23 @@ Herramientas electricas profesionales - 80
 
 11- Verificar en OrdenesPreparacion.json, cabmio de estado de Seleccionada(2) a Empaquetada (3):
 
- {
-        "IdOrdenPreparacion": "OP-012",
-        "IdCliente": "CL-002",
+{
+        "IdOrdenPreparacion": "OP-011",
+        "IdCliente": "CL-001",
         "IdDeposito": "GBAN1",
-        "FechaEmision": "2024-10-02T00:00:00",
-        "FechaEntrega": "2024-10-06T00:00:00",
+        "FechaEmision": "2024-10-01T00:00:00",
+        "FechaEntrega": "2024-10-05T00:00:00",
         "Estado": 3,
         "Prioridad": 0,
-        "IdTransportista": "TR-012",
+        "IdTransportista": "TR-011",
         "Detalle": [
             {
-                "SKUProducto": "SKU-003",
-                "Cantidad": 20
+                "SKUProducto": "SKU-001",
+                "Cantidad": 50
             },
             {
-                "SKUProducto": "SKU-004",
-                "Cantidad": 80
+                "SKUProducto": "SKU-002",
+                "Cantidad": 200
             }
         ]
     },
