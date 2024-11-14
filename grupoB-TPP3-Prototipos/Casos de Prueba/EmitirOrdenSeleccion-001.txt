@@ -10,7 +10,7 @@
 
 5 - Órdenes Disponibles:
 
-	OP-001 - Cliente Porter SA	 - Fecha: 30/09/2024 
+	OP-001 - Cliente Porter SA	 - Fecha: 30/10/2024 
 
 6 -	Seleccionar Orden de Preparación: OP-001	
   
@@ -24,7 +24,7 @@
 
 9-	Detalle:
 
-	OP-001 -  Porter SA	 -   30/09/2024  
+	OP-001 -  Porter SA	 -   30/10/2024  
 
 10 - Botón: "Emitir Orden"
 

@@ -62,7 +62,7 @@
   {
     "IdOrdenPreparacion": "OP-004",
     "IdCliente": "CL-005",
-    "IdDeposito": "GBAN1",
+    "IdDeposito": "GBAN2",
     "FechaEmision": "2024-09-21T00:00:00",
     "FechaEntrega": "2024-09-25T00:00:00",
     "Estado": 0,
@@ -70,7 +70,7 @@
     "IdTransportista": "TR-004",
     "Detalle": [
       {
-        "SKUProducto": "SKU-009",
+        "SKUProducto": "SKU-010",
         "Cantidad": 100
       }
     ]
