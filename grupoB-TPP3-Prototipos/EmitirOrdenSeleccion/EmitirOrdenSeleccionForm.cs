@@ -309,7 +309,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
                 // Limpiar los dos ListView
                 DetalleOSList.Items.Clear(); // Limpiar el ListView de selección
                 GenerarOSSeleccionadasList.Items.Clear(); // Limpiar el ListView final
-            }
+            } // aca esta la actu
             else
             {
                 // Mostrar mensaje si no se ha seleccionado ninguna orden
