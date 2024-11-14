@@ -70,7 +70,7 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
         {
             // Obtener las órdenes de preparación desde el almacén (como una lista de OrdenPreparacionEnt)
             var ordenesPreparacion = OrdenPreparacionAlmacen.OrdenesPreparacion
-                .Where(o => o.IdTransportista == transportista && (int)o.Estado == 4)  // Filtrar por transportista y estado 4 (Despachada)
+                .Where(o => o.IdTransportista == transportista && (int)o.Estado == 4)  // Filtrar por transportista y estado 4 (Preparada)
                 .ToList();
 
             // Convertir la lista de OrdenPreparacionEnt en una lista de OrdenEntrega

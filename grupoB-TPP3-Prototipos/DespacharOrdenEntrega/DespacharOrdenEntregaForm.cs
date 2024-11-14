@@ -143,6 +143,8 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
                 }
             }
 
+            OrdenPreparacionAlmacen.Grabar(); // VER SI SACAR
+
             // Genera el nuevo ID de remito
             var nuevoIDRemito = model.GenerarNuevoIDRemito();
 
