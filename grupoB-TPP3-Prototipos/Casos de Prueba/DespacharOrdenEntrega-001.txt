@@ -4,19 +4,21 @@
 
 2- Botón: "Despachar Orden de Entrega"
 
-3- Transportista: TR-0014
+3- Transportista: TR-014 y botón "Buscar"
 
 4- Detalle:
 
 OP-024 - CL-006
 
+Seleccionar Detalle de la OP y su cliente
+
 11- Botón: "Emitir Remito"
 
 12- Mensaje: "El remito RM-006 se ha generado correctamente."
 
-13- Botón: "Ok"
+13- Botón: "Aceptar"
 
-14- Cerrar Sistema
+14- Botón "Volver" --> Vuelve al MenúOrdenesEntrega
 
 15- Verificar en Remito.json, nuevo registro:
 
