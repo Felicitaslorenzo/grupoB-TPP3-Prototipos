@@ -98,7 +98,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
                 var ordenEntidad = OrdenPreparacionAlmacen.ObtenerOrdenPreparacion(idOrden);
                 if (ordenEntidad != null)
                 {
-                    ordenEntidad.Estado = EstadoOrdenPrepEnum.Seleccionada; // Cambiar el estado
+                    ordenEntidad.Estado = EstadoOrdenPrepEnum.Preparada; // Cambiar el estado
                 }
             }
             OrdenPreparacionAlmacen.Grabar(); // Grabar el cambio en el archivo JSON
