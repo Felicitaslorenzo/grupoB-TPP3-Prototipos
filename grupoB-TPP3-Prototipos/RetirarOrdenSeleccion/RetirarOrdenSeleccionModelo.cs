@@ -130,8 +130,79 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
             return productos;
         }
 
-
         public void ConfirmarOrden(string idOrdenSeleccion)
+        {
+            // Busca la orden de selección; lanza excepción si no se encuentra.
+            var ordenEntidad = OrdenSeleccionAlmacen.OrdenesSeleccion.FirstOrDefault(o => o.IdOrdenSeleccion == idOrdenSeleccion);
+            if (ordenEntidad == null)
+            {
+                throw new InvalidOperationException($"No se encontró la orden de selección con ID {idOrdenSeleccion}.");
+            }
+
+            ordenEntidad.Estado = EstadoOrdenSelEnum.Preparada;
+
+            // Actualiza el estado de cada orden de preparación asociada
+            foreach (var idOrdenPrep in ordenEntidad.OrdenesPreparacion)
+            {
+                var ordenPrepEntidad = OrdenPreparacionAlmacen.OrdenesPreparacion.FirstOrDefault(op => op.IdOrdenPreparacion == idOrdenPrep);
+                if (ordenPrepEntidad == null)
+                {
+                    throw new InvalidOperationException($"No se encontró la orden de preparación con ID {idOrdenPrep}.");
+                }
+                ordenPrepEntidad.Estado = EstadoOrdenPrepEnum.Seleccionada;
+            }
+
+            // Baja de inventario utilizando el SKUProducto y la cantidad
+            var depositoActual = DepositoAlmacen.DepositoActual.IdDeposito;
+
+            foreach (var idOrdenPrep in ordenEntidad.OrdenesPreparacion)
+            {
+                var ordenPrepEntidad = OrdenPreparacionAlmacen.OrdenesPreparacion.FirstOrDefault(op => op.IdOrdenPreparacion == idOrdenPrep);
+                if (ordenPrepEntidad == null) continue;
+
+                foreach (var detalle in ordenPrepEntidad.Detalle)
+                {
+                    // Obtiene el producto del almacén por SKUProducto del detalle de la orden de preparación
+                    var productoEntidad = ProductoAlmacen.Productos.FirstOrDefault(p => p.SKUProducto == detalle.SKUProducto);
+                    if (productoEntidad == null)
+                    {
+                        throw new InvalidOperationException($"No se encontró el producto con SKU {detalle.SKUProducto} en el inventario general.");
+                    }
+
+                    // Baja de inventario en cada ubicación del depósito hasta cubrir la cantidad requerida
+                    var cantidadPendiente = detalle.Cantidad;
+                    foreach (var inventario in productoEntidad.Inventario.Where(i => i.IdDeposito == depositoActual))
+                    {
+                        if (cantidadPendiente <= 0) break;
+
+                        if (inventario.Cantidad >= cantidadPendiente)
+                        {
+                            inventario.Cantidad -= cantidadPendiente;
+                            cantidadPendiente = 0;
+                        }
+                        else
+                        {
+                            cantidadPendiente -= inventario.Cantidad;
+                            inventario.Cantidad = 0;
+                        }
+                    }
+
+                    // Verifica si queda cantidad pendiente después de recorrer el inventario
+                    if (cantidadPendiente > 0)
+                    {
+                        throw new InvalidOperationException($"Inventario insuficiente para el producto con SKU {detalle.SKUProducto} en el depósito {depositoActual}.");
+                    }
+                }
+            }
+
+            // Graba los cambios en cada almacén
+            OrdenSeleccionAlmacen.Grabar();
+            OrdenPreparacionAlmacen.Grabar();
+            ProductoAlmacen.Grabar();
+        }
+
+
+        /* public void ConfirmarOrden(string idOrdenSeleccion)
         {
             var ordenEntidad = OrdenSeleccionAlmacen.OrdenesSeleccion.First(o => o.IdOrdenSeleccion == idOrdenSeleccion);
             ordenEntidad.Estado = EstadoOrdenSelEnum.Preparada;
@@ -156,7 +227,7 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
             OrdenSeleccionAlmacen.Grabar();
             OrdenPreparacionAlmacen.Grabar();
             ProductoAlmacen.Grabar();
-        }
+        } */
 
         /*public List<OrdenSeleccion> ObtenerOrdenesSeleccionadas() //Esto no se está usando, para qué está?
         {
