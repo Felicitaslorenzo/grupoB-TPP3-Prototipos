@@ -50,6 +50,8 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                     ordenEnAlmacen.Estado = (EstadoOrdenPrepEnum)3; // Cambiar a Eliminado
                 }
 
+                OrdenPreparacionAlmacen.Grabar();
+
                 // Eliminar la orden de la lista local 'ordenes'
                 ordenes.RemoveAt(indiceActual);
 
@@ -81,8 +83,7 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                 }
 
                 // Filtrar las órdenes con estado 2 (Suponiendo que 2 es el valor de "Seleccionada") y con FechaEntrega de hoy
-                if ((int)ordenEntidad.Estado == 2) // &&
-                                                   // ordenEntidad.FechaEntrega.Date == fechaHoy.Date) // Asegura que la fecha de entrega sea de hoy
+                if ((int)ordenEntidad.Estado == 2) 
                 {
                     var ordenModelo = new OrdenPreparacion
                     {
