@@ -117,6 +117,7 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
 
                     var producto = new Producto
                     {
+                        SKUProducto = productoEntidad.SKUProducto,
                         DescripcionProducto = productoEntidad.DescripcionProducto,
                         Ubicacion = inventario.Ubicacion,
                         Cantidad = cantidadAUtilizar
