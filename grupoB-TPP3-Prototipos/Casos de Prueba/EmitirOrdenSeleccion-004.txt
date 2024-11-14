@@ -14,7 +14,7 @@
 
 6- Id Orden Preparacion: OP005
 
-3 - Botón: "Buscar"
+7 - Botón: "Buscar"
 
 
 8- Botón: "Agregar Seleccionadas"
@@ -23,32 +23,38 @@
 
 9 - Botón: "Ok"
 
-10- Seleccionar Orden de Preparación: OP005
+10- Seleccionar Orden de Preparación: OP-005
 
 	Detalle de la Orden: Sillas ergonomicas de oficina x 60 unidades
 
-6- Botón: "Agregar Seleccionadas"
+11- Botón: "Agregar Seleccionadas"
 
-8- Botón: "Quitar Seleccionadas"
+12- Botón: "Quitar Seleccionadas"
 
-9- Mensaje Error de Seleccion: "No hay elementos seleccionados para eliminar."
+13- Mensaje Error de Seleccion: "No hay elementos seleccionados para eliminar."
 
-10 - Botón: "Ok"
+14 - Botón: "Ok"
 
-11-   Botón: "Volver"
+15- Seleccionar OP-005
 
-12 - Botón: "Emitir orden de Seleccion"
+16- Botón: "Quitar Seleccionadas"
 
-13- Debe seleccionar al menos una orden
+17 - Botón: "Emitir orden"
 
-13 -  Fecha Desde: 01/10/2024
+18- Mensaje sistema: "Debe seleccionar al menos una orden."
 
-14 - Botón: "Buscar"
+19- Boton: "Volver"
 
-15 - Mensaje Informacion: Botón: "No hay ordenes con los criterios seleccionados"
+20 -  Botón: "Emitir orden de Seleccion"
 
-10 - Botón: "Ok"
+21 -  Fecha Desde: 01/10/2024
 
-11 - Cerrar sistema
+22 - Botón: "Buscar"
+
+23 - Mensaje Informacion: Botón: "No hay ordenes con los criterios seleccionados"
+
+24 - Botón: "Ok"
+
+25 - Cerrar sistema
 
      
