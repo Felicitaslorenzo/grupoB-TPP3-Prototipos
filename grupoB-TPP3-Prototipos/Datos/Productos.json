@@ -79,7 +79,12 @@
       {
         "IdDeposito": "GBAN2",
         "Ubicacion": "2-4-2",
-        "Cantidad": 500
+        "Cantidad": 560
+      },
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "2-4-2",
+        "Cantidad": 60
       }
     ]
   },
