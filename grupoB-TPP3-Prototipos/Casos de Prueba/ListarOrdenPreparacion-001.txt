@@ -7,8 +7,8 @@ Caso 1: Caso feliz
 5- En el campo ID cliente seleccionar el cliente CL002
 6- En el campo estado seleccionar Pendiente
 7- En el campo prioridad seleccionar ConPrioridadDeEntrega
-8- En el campo fecha desde seleccionar 16/09/2024
-9- En el campo fecha hasta seleccionar 10/11/2024
+8- En el campo fecha desde seleccionar 25/09/2024
+9- En el campo fecha hasta seleccionar 29/09/2024
 10- En el campo nombre cliente seleccionar Ferreteria SRL
 11- Presionar boton buscar 
 12- [Devuelve un listado de ordenes de preparacion]
