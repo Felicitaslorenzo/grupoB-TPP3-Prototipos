@@ -13,7 +13,7 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
         public DespacharOrdenEntregaModel()
         {
             clientes = ObtenerClientes();
-            ordenesEntrega = ObtenerOrdenesEntrega();
+            // ordenesEntrega = ObtenerOrdenesEntrega();
         }
 
         public List<string> ObtenerTransportistas()
@@ -23,7 +23,7 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
 
             var transportistas = OrdenPreparacionAlmacen.OrdenesPreparacion
                 .Where(o => !string.IsNullOrEmpty(o.IdTransportista)
-                    && o.IdDeposito == depositoActual 
+                    && o.IdDeposito == depositoActual
                     && o.Estado == EstadoOrdenPrepEnum.Preparada
                     && o.FechaEntrega.Date == DateTime.Now.Date)  // Filtrar por fecha de entrega (hoy)
                 .Select(o => o.IdTransportista)    // Extrae el ID del transportista
@@ -65,40 +65,6 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
             // Devolver la lista de clientes con sus respectivos transportistas
             return listarClientes;
         }
-
-        public List<OrdenEntrega> ObtenerOrdenesEntrega()
-        {
-            var listarOrden = new List<OrdenEntrega>();
-
-            foreach (var ordenEntidad in OrdenPreparacionAlmacen.OrdenesPreparacion)
-            {
-                // Filtrar por fecha de entrega (hoy)
-                if (ordenEntidad.FechaEntrega.Date != DateTime.Now.Date)
-                    continue; // Solo agregamos las órdenes cuya fecha de entrega sea hoy
-
-                var idCliente = ClienteAlmacen.Clientes
-                    .Where(c => c.IdCliente == ordenEntidad.IdCliente)
-                    .Select(c => c.IdCliente)
-                    .FirstOrDefault();
-
-                var estado = ordenEntidad.Estado.ToString();
-
-                var ordenModelo = new OrdenEntrega(
-                    ordenEntidad.IdOrdenPreparacion,
-                    idCliente,
-                    estado
-                );
-
-                listarOrden.Add(ordenModelo);
-            }
-
-            return listarOrden;
-        }
-
-        /* public List<OrdenEntrega> ObtenerOrdenesEntregaPorCliente(string idCliente)
-        {
-            return ordenesEntrega.Where(o => o.IdCliente == idCliente).ToList();
-        } */
 
         public List<OrdenEntrega> ObtenerOrdenesEntregaPorTransportista(string transportista)
         {
@@ -154,6 +120,41 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
 
             return nuevoIDRemito;
         }
+
+        /*
+       public List<OrdenEntrega> ObtenerOrdenesEntrega()
+       {
+           var listarOrden = new List<OrdenEntrega>();
+
+           foreach (var ordenEntidad in OrdenPreparacionAlmacen.OrdenesPreparacion)
+           {
+               // Filtrar por fecha de entrega (hoy)
+               if (ordenEntidad.FechaEntrega.Date != DateTime.Now.Date)
+                   continue; // Solo agregamos las órdenes cuya fecha de entrega sea hoy
+
+               var idCliente = ClienteAlmacen.Clientes
+                   .Where(c => c.IdCliente == ordenEntidad.IdCliente)
+                   .Select(c => c.IdCliente)
+                   .FirstOrDefault();
+
+               var estado = ordenEntidad.Estado.ToString();
+
+               var ordenModelo = new OrdenEntrega(
+                   ordenEntidad.IdOrdenPreparacion,
+                   idCliente,
+                   estado
+               );
+
+               listarOrden.Add(ordenModelo);
+           }
+
+           return listarOrden;
+       }
+
+       /* public List<OrdenEntrega> ObtenerOrdenesEntregaPorCliente(string idCliente)
+       {
+           return ordenesEntrega.Where(o => o.IdCliente == idCliente).ToList();
+       } */
 
     }
 }

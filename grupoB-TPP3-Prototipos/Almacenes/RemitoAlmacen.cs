@@ -19,6 +19,11 @@ namespace grupoB_TPP3_Prototipos.Almacenes
             File.WriteAllText(@"Datos\Remitos.json", datos);
         }
 
+        public static void AgregarRemito(RemitoEnt nuevaOrden)
+        {
+            remitos.Add(nuevaOrden);
+        }
+
         public static void Leer()
         {
             if (!File.Exists(@"Datos\Remitos.json"))

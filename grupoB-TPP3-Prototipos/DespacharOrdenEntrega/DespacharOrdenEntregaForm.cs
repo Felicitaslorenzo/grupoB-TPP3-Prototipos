@@ -115,7 +115,17 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
                 return;
             }
 
+            // Verifica que se haya seleccionado un transportista
+            string transportistaSeleccionado = IdOrdenEntregaCombo.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(transportistaSeleccionado))
+            {
+                MessageBox.Show("Por favor, selecciona un transportista.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             // Actualiza el estado de las órdenes seleccionadas a "Despachada" (estado 5)
+            List<string> ordenesSeleccionadas = new List<string>();
+
             foreach (ListViewItem selectedItem in ListarOrdenDespacharBuscarList.SelectedItems)
             {
                 // Obtén el ID de la orden desde el ListView
@@ -129,18 +139,39 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
                 if (orden != null)
                 {
                     orden.Estado = EstadoOrdenPrepEnum.Despachada;  // Cambia el estado de la orden
+                    ordenesSeleccionadas.Add(orden.IdOrdenPreparacion);  // Agrega el ID de la orden a la lista
                 }
             }
 
-            // Verifica que la variable 'nuevoIDRemito' esté declarada
-            var nuevoIDRemito = model.GenerarNuevoIDRemito();  // Asegúrate de que 'model' esté instanciado
+            // Genera el nuevo ID de remito
+            var nuevoIDRemito = model.GenerarNuevoIDRemito();
 
-            // Después puedes usarla
+            // Crea una nueva instancia de Remito
+            Remito nuevoRemito = new Remito
+            {
+                IdRemito = nuevoIDRemito,
+                FechaEmision = DateTime.Now,  // Fecha actual
+                OrdenesPreparacion = ordenesSeleccionadas,  // Lista de órdenes seleccionadas
+                IdTransportista = transportistaSeleccionado  // Transportista seleccionado
+            };
+
+            // Convertir Remito (DespacharOrdenEntrega) a RemitoEnt (Almacenes)
+            RemitoEnt remitoEnt = new RemitoEnt
+            {
+                IdRemito = nuevoRemito.IdRemito,
+                FechaEmision = nuevoRemito.FechaEmision,
+                OrdenesPreparacion = nuevoRemito.OrdenesPreparacion,
+                IdTransportista = nuevoRemito.IdTransportista
+            };
+
+            // Agrega el nuevo remito al almacenamiento (ahora usando RemitoEnt)
+            RemitoAlmacen.AgregarRemito(remitoEnt);  // Aquí agregas el remito al almacenamiento
+
+            // Muestra un mensaje de éxito
             MessageBox.Show($"El remito {nuevoIDRemito} se ha generado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // Limpiamos la lista de órdenes de despacho después de generar el remito
             ListarOrdenDespacharBuscarList.Items.Clear();
-
         }
 
         private void VolverButton_Click(object sender, EventArgs e)
