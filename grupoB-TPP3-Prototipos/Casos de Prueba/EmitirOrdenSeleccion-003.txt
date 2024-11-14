@@ -35,7 +35,7 @@ Producto: Electrodomesticos inteligentes x50 unidades / Herramientas electricas 
 
 9 - Botón: "Emitir Orden"
 
-10- Mensaje: "Se genero OS-001"
+10- Mensaje: "Debe seleccionar al menos una orden
 
 11- Botón: "Ok"
 
@@ -51,6 +51,5 @@ Producto: Electrodomesticos inteligentes x50 unidades / Herramientas electricas 
         
       ]
 
-	  Errores: Si pongo emitir orden sin haber tocado agregar seleccionadas, se carga la os vacia
 
 	  

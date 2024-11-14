@@ -25,12 +25,7 @@
 
 10- Seleccionar Orden de Preparación: OP005
 
-	Detalle de la Orden: No muestra detalle productos
-
-	101 Producto ABC Cantidad: 100 Ubicación: Ubicación 1
-	102 Producto DEF Cantidad: 50 Ubicación: Ubicación 2
-
-	Cantidad: "10"
+	Detalle de la Orden: Sillas ergonomicas de oficina x 60 unidades
 
 6- Botón: "Agregar Seleccionadas"
 
@@ -44,6 +39,8 @@
 
 12 - Botón: "Emitir orden de Seleccion"
 
+13- Debe seleccionar al menos una orden
+
 13 -  Fecha Desde: 01/10/2024
 
 14 - Botón: "Buscar"
@@ -54,5 +51,4 @@
 
 11 - Cerrar sistema
 
-      Errores: 
-	 /  Modificar mensajes en casos de uso en el word. NO son los mismos mensajes.
+     
