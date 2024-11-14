@@ -43,7 +43,7 @@
 20- Botón: "Agregar Producto"
 
 21- Mensaje sistema: " La cantidad tiene que ser mayor a 0"  
-// Esta mal el msj ver el caso de uso  “El campo cantidad debe ser un valor numérico positivo y menor o igual al stock disponible”
+
 
 22- Botón: "Ok"
 
@@ -52,7 +52,6 @@
 24- Botón: "Agregar Producto"
 
 25- Mensaje sistema: " La cantidad tiene que ser mayor a 0"  
-// Esta mal el msj ver el caso de uso  “El campo cantidad debe ser un valor numérico positivo y menor o igual al stock disponible”
 
 26- Botón: "Ok"
 
@@ -61,7 +60,7 @@
 28- Botón: "Agregar Producto"
 
 29- Mensaje sistema: "Ingrese una cantidad válida."   
-// Esta mal el msj ver el caso de uso  “El campo cantidad debe ser un valor numérico positivo y menor o igual al stock disponible”
+
 
 30- Botón: "Ok"
 

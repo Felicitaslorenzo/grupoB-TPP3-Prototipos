@@ -65,7 +65,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
                     // Obtener la cantidad total que ya se ha solicitado para este producto en la orden
                     int cantidadTotalEnOrden = ObtenerCantidadTotalEnOrden(idProducto);
-                    int cantidadDisponible = modelo.ObtenerCantidadDisponible(idProducto); // Asegúrate de que este método exista y funcione como se espera
+                    int cantidadDisponible = modelo.ObtenerCantidadDisponible(idProducto); 
 
                     if (cantidadTotalEnOrden + cantidad > cantidadDisponible)
                     {
@@ -96,7 +96,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 }
                 else
                 {
-                    MessageBox.Show("El producto no se encontró en las órdenes de preparación.");
+                    MessageBox.Show("Seleccione un producto.");
                 }
             }
             else
