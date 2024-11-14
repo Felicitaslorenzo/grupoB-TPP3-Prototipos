@@ -1,0 +1,103 @@
+CASO 3: Retirar Ordenes de selección: Validaciones
+1 - Botón "Ordenes de Seleccion" 
+2 - Botón "Retirar orden de Selección"
+3 - Filtrar con OS-005
+5 - Muestra:
+	1-2-5	Buzos		100
+	1-2-6	Buzos		500
+	1-2-1	Buzos		400
+	1-2-7	Zapatillas	1500
+6 - Verificar json de Productos (cantidad en inventario) previo confirmación:
+
+    "SKUProducto": "SKU-101",
+    "DescripcionProducto": "Buzos",
+    "IdCliente": "CL-008",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-5",
+        "Cantidad": 100
+      },
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-6",
+        "Cantidad": 500
+      },
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-1",
+        "Cantidad": 900
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-102",
+    "DescripcionProducto": "Zapatillas",
+    "IdCliente": "CL-008",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-7",
+        "Cantidad": 2000
+      },
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-8",
+        "Cantidad": 200
+      },
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 1300
+      }
+    ]
+  }
+
+7 - Botón Confirmar
+8 - Mensaje:	"El retiro de la(s) Orden(es) de Preparación se ha confirmado"
+9 - Botón Aceptar
+10 - Verificar Productos.json (cantidades). Se restaron correctamente:
+  {
+    "SKUProducto": "SKU-101",
+    "DescripcionProducto": "Buzos",
+    "IdCliente": "CL-008",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-5",
+        "Cantidad": 0
+      },
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-6",
+        "Cantidad": 0
+      },
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-1",
+        "Cantidad": 500
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-102",
+    "DescripcionProducto": "Zapatillas",
+    "IdCliente": "CL-008",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-7",
+        "Cantidad": 500
+      },
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-8",
+        "Cantidad": 200
+      },
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 1300
+      }
+    ]
+  }
