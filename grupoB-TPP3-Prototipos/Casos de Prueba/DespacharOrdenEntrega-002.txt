@@ -1,17 +1,39 @@
-﻿Caso 002: Prueba de formulario filtrando transportista
+﻿DESPACHAR CASO DE PRUEBA: CAMINO FELIZ TAMBIEN
 
-1 - Menu principal => Seleccionar "Ordenes de Entrega" => [Abre menu de Ordenes de Entrega]
+1- Botón: "Ordenes de Entrega"
 
-2 - Menu Ordenes de Entrega => seleccionar "Despachar Ordenes de Entrega" => [Abre formulario de Despachar Ordenes de Entrega]
+2- Botón: "Despachar Orden de Entrega"
 
-3 - [Se visualiza el filtro de transportista junto con un botón de "Buscar"]
+3- Transportista: TR-008 y botón "Buscar"
 
-4 - Seleccionar Transportista: TR-001 => Boton "Buscar" => 
-	[Aparece mensaje de error: "No se encontraron órdenes de entrega para el transportista seleccionado"] =>
-	Seleccionar boton "OK" => [Cierra el mensaje de error]
+4- Detalle:
 
-5 - Seleccionar botón "Volver" => [Vuelve al menu Ordenes de Entrega]
+OP-023 - CL-004
 
-6 - Menu Ordenes de Entrega => Cerrar menu => [Se visualiza el menu principal]
+11- Botón: "Emitir Remito"
 
-7 - Menu principal => Cerrar menu => [Finaliza la ejecucion del sistema]
+12- Mensaje: "El remito RM-006 se ha generado correctamente."
+
+13- Botón: "Aceptar"
+
+14- Botón "Volver" --> Vuelve al MenúOrdenesEntrega
+
+15- Verificar en Remito.json, nuevo registro:
+
+	{	
+		"IdRemito":"RM-006",
+		"FechaEmision":"2024-11-14T19:28:22.2802788-03:00",
+		"OrdenesPreparacion":["OP-023"],"IdTransportista":"TR-008"}]
+
+16- Verificar en OrdenPreparacion.json, registro:
+	{
+		"IdOrdenPreparacion":"OP-023",
+		"IdCliente":"CL-004",
+		"IdDeposito":"GBAN1",
+		"FechaEmision":"2024-10-16T00:00:00",
+		"FechaEntrega":"2024-11-14T00:00:00",
+		"Estado":5,
+		"Prioridad":0,
+		"IdTransportista":"TR-008",
+		"Detalle":[{"SKUProducto":"SKU-008","Cantidad":50}]},
+
