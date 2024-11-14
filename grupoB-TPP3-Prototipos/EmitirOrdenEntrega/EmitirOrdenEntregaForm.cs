@@ -56,9 +56,19 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         // Botón Generar Orden de Entrega (aquí podrías agregar la lógica para generar una nueva orden)
         private void GenerarOrdenEntregaButton_Click(object sender, EventArgs e)
         {
-            var resultado = modelo.GenerarNuevoIDOrden();
-            MessageBox.Show(resultado);
-            MostrarOrdenesActuales(); // Actualiza la vista después de generar la orden
+            if (OrdenesEntregalistView.SelectedItems.Count > 0)
+            {
+                var idsSeleccionados = OrdenesEntregalistView.SelectedItems
+                                        .Cast<ListViewItem>()
+                                        .Select(item => item.SubItems[0].Text)
+                                        .ToList();
+                modelo.GenerarNuevaOrdenEntrega(idsSeleccionados); // Genera la nueva orden de entrega
+                MostrarOrdenesActuales(); // Actualiza la vista después de generar la orden
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar al menos una orden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private ListView listView1;
