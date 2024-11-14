@@ -9,29 +9,28 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
 {
     internal class ListarOrdenEntregaModel
     {
-
         public List<OrdenEntrega> OrdenesEntregadas = OrdenEntregaAlmacen.OrdenesEntrega
-    .Select(oe => new OrdenEntrega
-    {
-        IdOrdenEntrega = oe.IdOrdenEntrega,
-        FechaEmision = oe.FechaEmision,
-        FechaEntrega = oe.FechaEntrega,
-
-        // Aquí creas la lista de 'OrdenesPreparacion' de forma correcta.
-        OrdenesPreparacion = OrdenPreparacionAlmacen.OrdenesPreparacion
-            .Where(op => oe.OrdenesPreparacion.Contains(op.IdOrdenPreparacion))
-            .Select(op => new OrdenPreparacion
+            .Select(oe => new OrdenEntrega
             {
-                IdOrden = op.IdOrdenPreparacion,   // Asegúrate de que este mapeo es correcto.
-                IdCliente = op.IdCliente,
-                FechaEstado = op.FechaEntrega,
-                Estado = op.Estado.ToString(),
-            })
-            .ToList(), // Convertimos a lista
+                IdOrdenEntrega = oe.IdOrdenEntrega,
+                FechaEmision = oe.FechaEmision,
+                FechaEntrega = oe.FechaEntrega,
 
-        Estado = ObtenerEstadoPrimeraOP(oe)
-    })
-    .ToList(); // Convertimos la consulta principal a lista
+                // Filtra las OP basándose en la lista de IDs en oe.OrdenesPreparacion.
+                OrdenesPreparacion = OrdenPreparacionAlmacen.OrdenesPreparacion
+                    .Where(op => oe.OrdenesPreparacion.Contains(op.IdOrdenPreparacion))
+                    .Select(op => new OrdenPreparacion
+                    {
+                        IdOrden = op.IdOrdenPreparacion,
+                        IdCliente = op.IdCliente,
+                        FechaEstado = op.FechaEntrega,
+                        Estado = op.Estado.ToString(),
+                    })
+                    .ToList(),
+
+                Estado = ObtenerEstadoPrimeraOP(oe)
+            })
+            .ToList();
 
         private static string ObtenerEstadoPrimeraOP(OrdenEntregaEnt oeEnt)
         {
@@ -41,7 +40,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
                     .FirstOrDefault(op => op.IdOrdenPreparacion == opId)?.Estado.ToString())
                 .FirstOrDefault();
 
-            // Retornar el estado o "Sin Estado" si no hay órdenes de preparación
             return primerEstadoOP ?? "Sin Estado";
         }
 

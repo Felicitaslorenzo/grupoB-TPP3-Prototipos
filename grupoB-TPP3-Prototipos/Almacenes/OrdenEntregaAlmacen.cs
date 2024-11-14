@@ -16,9 +16,19 @@ namespace grupoB_TPP3_Prototipos.Almacenes
         public static IReadOnlyCollection<OrdenEntregaEnt> OrdenesEntrega => ordenesentrega.AsReadOnly();
 
         public static void Grabar()
-        {            
-            var datos = JsonSerializer.Serialize(ordenesentrega);
-            File.WriteAllText(@"Datos\OrdenesEntrega.json", datos);
+        {
+            try
+            {
+                Directory.CreateDirectory("Datos");  // Crea el directorio si no existe
+                var datos = JsonSerializer.Serialize(ordenesentrega, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(@"Datos\OrdenesEntrega.json", datos);
+                Console.WriteLine("Archivo JSON de OrdenesEntrega guardado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar el archivo JSON: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine($"Excepción capturada: {ex}"); // Para detalles en consola o logs
+            }
         }
 
         public static void AgregarOrdenEntrega(OrdenEntregaEnt nuevaOrden)

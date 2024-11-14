@@ -95,70 +95,36 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         {
             foreach (var idOrden in idsOrdenes)
             {
-                var ordenEntidad = OrdenPreparacionAlmacen.OrdenesPreparacion
-                    .FirstOrDefault(o => o.IdOrdenPreparacion.ToString() == idOrden);
+                var ordenEntidad = OrdenPreparacionAlmacen.ObtenerOrdenPreparacion(idOrden);
                 if (ordenEntidad != null)
                 {
                     ordenEntidad.Estado = EstadoOrdenPrepEnum.Seleccionada; // Cambiar el estado
                 }
             }
+            OrdenPreparacionAlmacen.Grabar(); // Grabar el cambio en el archivo JSON
         }
+        
 
         public void GenerarNuevaOrdenEntrega(List<string> idsSeleccionados)
         {
-            // Crear ID de la nueva OrdenEntrega
-            string nuevoIdOrdenEntrega = GenerarNuevoIDOrden(); // Esto genera el nuevo ID de la orden de entrega
+            string nuevoIdOrdenEntrega = GenerarNuevoIDOrden();
 
-            // Crear la nueva OrdenEntrega
-            OrdenEntrega nuevaOrdenEntrega = new OrdenEntrega
-            {
-                IdOrdenEntrega = nuevoIdOrdenEntrega, // Asignar el nuevo ID
-                FechaEmision = DateTime.Now, // Fecha actual
-                FechaEntrega = DateTime.Now, // Fecha de entrega
-                OrdenesPreparacion = new List<OrdenPreparacion>() // Inicializar la lista de órdenes de preparación
-            };
-
-            // Obtener las órdenes de preparación completas basadas en los IDs seleccionados
-            var ordenesPreparacionSeleccionadas = ObtenerOrdenesPorEstadoPreparada()
-                .Where(op => idsSeleccionados.Contains(op.IdOrden.ToString()))  // Filtramos por los IDs seleccionados
-                .ToList();
-
-            // Verificar que se están obteniendo las órdenes completas
-            if (ordenesPreparacionSeleccionadas.Any())
-            {
-                Console.WriteLine($"Se encontraron {ordenesPreparacionSeleccionadas.Count} órdenes de preparación seleccionadas.");
-            }
-            else
-            {
-                Console.WriteLine("No se encontraron órdenes de preparación seleccionadas.");
-            }
-
-            // Agregar las órdenes completas a la nueva OrdenEntrega
-            nuevaOrdenEntrega.OrdenesPreparacion.AddRange(ordenesPreparacionSeleccionadas);
-
-            // Verificar que las órdenes fueron agregadas correctamente
-            if (nuevaOrdenEntrega.OrdenesPreparacion.Any())
-            {
-                Console.WriteLine($"Se agregaron {nuevaOrdenEntrega.OrdenesPreparacion.Count} órdenes de preparación a la nueva orden de entrega.");
-            }
-
+            // Crear la nueva Orden de Entrega, inicializando la lista de IDs de OP
             OrdenEntregaEnt nuevaOrdenEntregaEnt = new OrdenEntregaEnt
             {
-                IdOrdenEntrega = nuevaOrdenEntrega.IdOrdenEntrega,
-                FechaEmision = nuevaOrdenEntrega.FechaEmision,
-                FechaEntrega = nuevaOrdenEntrega.FechaEntrega,
-                OrdenesPreparacion = nuevaOrdenEntrega.OrdenesPreparacion
-        .Select(op => op.IdOrden.ToString())  // Convertir cada objeto OrdenPreparacion a su ID
-        .ToList()  // Esto convertirá la lista de OrdenPreparacion a una lista de strings
+                IdOrdenEntrega = nuevoIdOrdenEntrega,
+                FechaEmision = DateTime.Now,
+                FechaEntrega = DateTime.Now,
+                OrdenesPreparacion = new List<string>() // Ahora es una lista de strings (IDs)
             };
 
+            // Agregar los IDs de las OP seleccionadas a la orden de entrega
+            nuevaOrdenEntregaEnt.OrdenesPreparacion.AddRange(idsSeleccionados);
 
-            // Guardar la nueva OrdenEntregaEnt en el almacenamiento
+            // Guardar la Orden de Entrega en el JSON con los IDs de las OP seleccionadas
             OrdenEntregaAlmacen.AgregarOrdenEntrega(nuevaOrdenEntregaEnt);
-
-            // (Opcional) Mostrar que la orden fue guardada
-            Console.WriteLine($"Nueva orden de entrega generada y guardada: {nuevoIdOrdenEntrega}");
         }
-
     }
+
+    
 }
