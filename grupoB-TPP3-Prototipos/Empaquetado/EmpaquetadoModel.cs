@@ -50,7 +50,7 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                     ordenEnAlmacen.Estado = (EstadoOrdenPrepEnum)3; // Cambiar a Eliminado
                 }
 
-                OrdenPreparacionAlmacen.Grabar();
+                OrdenPreparacionAlmacen.Grabar(); // ELEGIR SI BORRAR
 
                 // Eliminar la orden de la lista local 'ordenes'
                 ordenes.RemoveAt(indiceActual);
