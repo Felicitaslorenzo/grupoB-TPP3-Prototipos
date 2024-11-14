@@ -9,8 +9,7 @@
 - [Devuelve una lista de órdenes de selección filtrada] 
 - Seleccionar ID Orden Seleccion OS-003 de la lista 
 - [Devuelve una lista de órdenes de preparación] 
-- Seleccionar ID Orden Preparación OP-026 de la lista 
-- [Devuelve una lista de productos: 20 Paredes moviles de oficina /
-10 Cintas transportadoras industriales] 
+- Seleccionar ID Orden Preparación OP-009 de la lista.
+- [Devuelve una lista de productos: 80 sistemas de filtracion de agua] 
 - Presionar el botón "Volver"
 - [Vuelve al menú principal]

@@ -5,11 +5,13 @@
 - Presionar botón "Listar Órdenes de Selección" 
 - [Se abre el form "Listar Órdenes de selección"]
 - Seleccionar ID Orden Seleccion OS-001 de la lista
-- [Devuelve una lista de órdenes de preparación] 
-- Seleccionar ID Orden Preparación OP-021 de la lista 
-- [Devuelve una lista de productos] 
-- Presionar el botón "Volver" 
-- [Vuelve al menú principal]
+- [Devuelve una lista de órdenes de seleccion
+- Seleccionar OS-001
+- Devuelve lista de Orden de preparacion
+- Seleccionar OP-006
+- Devuelve detalle: 40 placas de yeso para construccion/ 120 herramientas...
+- Volver
+- Vuelve a menu principal
 
 
 

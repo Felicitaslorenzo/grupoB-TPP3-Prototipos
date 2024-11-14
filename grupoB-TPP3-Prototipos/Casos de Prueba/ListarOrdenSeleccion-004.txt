@@ -7,10 +7,9 @@ CASO 4 - CAMINO DE ACCIDENTES
 - Presionar boton buscar 
 - [Devuelve un listado de ordenes de seleccion]
 - Seleccionar la orden de Seleccion OS-004 del listado
-- [Devuelve un listado de ordenes de preparacion: OP-028, OP-029, OP-030]
-- Seleccionar la orden de Preparacion: OP-028
-- [Devuelve el detalle de productos: 40 Cajas fuertes de seguridad /
-60 Paneles solares portatiles].
+- [Devuelve un listado de ordenes de preparacion: OP-011]
+- Seleccionar la orden de Preparacion: OP-011
+- [Devuelve el detalle de productos: 50 Muebles modulares de oficina/ 200 cementos de alta resistencia.]
 - En el campo Id Orden Seleccion seleccionar el espacio en blanco]
 - En el campo fecha desde seleccionar 15/10/2024
 - Presionar boton buscar 
