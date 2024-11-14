@@ -18,7 +18,7 @@
 
 9- Botón: "Agregar Producto"
 
-10- Producto: SKU-012
+10- Producto: SKU-066
 
 11- Cantidad: 10
 
@@ -27,7 +27,7 @@
 13- Detalle:
 
 SKU-011 - Lamparas LED Industriales -  20
-SKU-012 - Hidrolavadoras de alta presion-  10
+SKU-066 - Equipos de automatizacion industrial -  10
 
 
 14- Seleccionar del detalle: SKU-011
@@ -36,7 +36,7 @@ SKU-012 - Hidrolavadoras de alta presion-  10
 
 16- Detalle:
 
-SKU-012 - Hidrolavadoras de alta presion-  10
+SKU-066 - Equipos de automatizacion industrial -  10
 
 17- Botón: "Volver"
 

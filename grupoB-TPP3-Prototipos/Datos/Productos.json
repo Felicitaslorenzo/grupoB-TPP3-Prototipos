@@ -17,9 +17,9 @@
     "IdCliente": "CL-001",
     "Inventario": [
       {
-        "IdDeposito": "GBAS1",
+        "IdDeposito": "GBAN1",
         "Ubicacion": "2-1-5",
-        "Cantidad": 200
+        "Cantidad": 2000
       }
     ]
   },
@@ -29,7 +29,7 @@
     "IdCliente": "CL-002",
     "Inventario": [
       {
-        "IdDeposito": "GBAS2",
+        "IdDeposito": "GBAN1",
         "Ubicacion": "2-3-1",
         "Cantidad": 400
       }
@@ -101,9 +101,9 @@
     "IdCliente": "CL-005",
     "Inventario": [
       {
-        "IdDeposito": "GBAS1",
+        "IdDeposito": "GBAN1",
         "Ubicacion": "2-1-5",
-        "Cantidad": 100
+        "Cantidad": 1000
       }
     ]
   },
@@ -173,7 +173,7 @@
     "IdCliente": "CL-008",
     "Inventario": [
       {
-        "IdDeposito": "GBAS1",
+        "IdDeposito": "GBAN1",
         "Ubicacion": "2-3-4",
         "Cantidad": 1000
       }
@@ -221,7 +221,7 @@
     "IdCliente": "CL-009",
     "Inventario": [
       {
-        "IdDeposito": "GBAS1",
+        "IdDeposito": "GBAN1",
         "Ubicacion": "2-3-4",
         "Cantidad": 900
       }
@@ -833,7 +833,7 @@
     "IdCliente": "CL-006",
     "Inventario": [
       {
-        "IdDeposito": "GBAS2",
+        "IdDeposito": "GBAN1",
         "Ubicacion": "2-3-4",
         "Cantidad": 200
       }

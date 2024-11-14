@@ -1,6 +1,6 @@
 ﻿Caso 2: Crear Orden con dos  productos (Camino Feliz)
 
-alamc 
+
 1- Botón: "Ordenes de Preparación"
 
 2- Botón: "Emitir Orden de Preparación"
@@ -19,7 +19,7 @@ alamc
 
 9- Botón: "Agregar Producto"
 
-10- Producto: SKU-012
+10- Producto: SKU-066
 
 11- Cantidad: 10
 
@@ -28,7 +28,7 @@ alamc
 13- Detalle:
 
 SKU-011 - Lamparas LED Industriales -  20
-SKU-012 - Hidrolavadoras de alta presion-  10
+SKU-066 - Equipos de automatizacion industrial -  10
 
 
 14- Botón: "Emitir Orden"
@@ -42,10 +42,11 @@ SKU-012 - Hidrolavadoras de alta presion-  10
 18- Verificar en OrdenesPreparacion.json, nuevo registro:
 
 {
-        "IdOrdenPreparacion": "OP-031",
+        "IdOrdenPreparacion": "OP-032",
         "IdCliente": "CL-006",
-        "FechaEmision": "2024-11-12T11:44:24.9468444-03:00",
-        "FechaEntrega": "2024-11-19T11:44:24.946846-03:00",  // No guarda bien la fecha de entrega VER
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-11-14T11:41:35.4159585-03:00",
+        "FechaEntrega": "2024-11-21T11:41:35.4159604-03:00",
         "Estado": 0,
         "Prioridad": 1,
         "IdTransportista": "TR-014",
@@ -55,7 +56,7 @@ SKU-012 - Hidrolavadoras de alta presion-  10
                 "Cantidad": 20
             },
             {
-                "SKUProducto": "SKU-012",
+                "SKUProducto": "SKU-066",
                 "Cantidad": 10
             }
         ]

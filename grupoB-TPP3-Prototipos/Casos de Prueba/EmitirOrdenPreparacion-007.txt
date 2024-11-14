@@ -1,0 +1,109 @@
+﻿Caso 7: Validacion calculo cantidad disponible
+
+1- Botón: "Ordenes de Preparación"
+
+2- Botón: "Emitir Orden de Preparación"
+
+3- ID Cliente: CL-001
+
+4- Prioridad: SinPrioridad
+
+5- Transportista: TR-001
+
+6- Fecha entrega: 28/11/2024
+
+7- Producto: SKU-002
+
+8- Cantidad: 2000
+
+9- Botón: "Agregar Producto"
+
+10- Mensaje sistema: Cantidad excedida: “Error: No hay suficiente stock disponible Cantidad solicitada: 2000  Cantidad disponible: 1500”
+
+11- Botón: "Ok"
+
+17- Botón: "Volver"
+
+18- Cerrar Sistema
+
+19 - Verificamos calculo de cantidad disponible para el producto SKU-002 / Ver el archivo producto.json para verificar stock inicial
+
+{
+    "SKUProducto": "SKU-002",
+    "DescripcionProducto": "Cementos de alta resistencia",
+    "IdCliente": "CL-001",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 2000
+      }
+    ]
+
+ 19 - Ver el archivo OrdenesPreparacion.json para ver las ordenes deonde figura el producto
+
+ {
+        "IdOrdenPreparacion": "OP-003",
+        "IdCliente": "CL-001",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-10-01T00:00:00",
+        "FechaEntrega": "2024-10-05T00:00:00",
+        "Estado": 0,
+        "Prioridad": 0,
+        "IdTransportista": "TR-003",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-001",
+                "Cantidad": 60
+            },
+            {
+                "SKUProducto": "SKU-002",
+                "Cantidad": 300
+            }
+        ]
+    },
+
+    {
+        "IdOrdenPreparacion": "OP-001",
+        "IdCliente": "CL-001",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-09-30T00:00:00",
+        "FechaEntrega": "2024-10-03T00:00:00",
+        "Estado": 0,
+        "Prioridad": 0,
+        "IdTransportista": "TR-001",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-001",
+                "Cantidad": 50
+            },
+            {
+                "SKUProducto": "SKU-002",
+                "Cantidad": 200
+            }
+        ]
+    },
+
+    {
+        "IdOrdenPreparacion": "OP-011",
+        "IdCliente": "CL-001",
+        "IdDeposito": "GBAN2",
+        "FechaEmision": "2024-10-01T00:00:00",
+        "FechaEntrega": "2024-10-05T00:00:00",
+        "Estado": 2,
+        "Prioridad": 0,
+        "IdTransportista": "TR-011",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-001",
+                "Cantidad": 50
+            },
+            {
+                "SKUProducto": "SKU-002",
+                "Cantidad": 200
+            }
+        ]
+    },
+
+12 - Solo resta al stock inicial los productos que se encuentran en las OP en el deposito GBAN1 o que se encuentran pendientes (500 da la suma de las dos). Resultado 1500. 
+Se encuentra correcto.

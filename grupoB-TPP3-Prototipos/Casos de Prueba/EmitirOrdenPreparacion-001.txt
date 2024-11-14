@@ -24,7 +24,7 @@ SKU026 - Sillas de oficina ergonomicas -   10
 
 11- Botón: "Emitir Orden"
 
-12- Mensaje: "Orden OP-031 creada exitosamente."
+12- Mensaje: "Orden OP-032 creada exitosamente."
 
 13- Botón: "Ok"
 
@@ -33,10 +33,11 @@ SKU026 - Sillas de oficina ergonomicas -   10
 15- Verificar en OrdenesPreparacion.json, nuevo registro:
 
  {
-        "IdOrdenPreparacion": "OP-031",
+        "IdOrdenPreparacion": "OP-032",
         "IdCliente": "CL-001",
-        "FechaEmision": "2024-11-12T10:38:19.5547356-03:00",
-        "FechaEntrega": "2024-11-19T10:38:19.5547371-03:00",   // No guarda bien la fecha de entrega VER
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-11-14T11:38:17.8443961-03:00",
+        "FechaEntrega": "2024-11-21T11:38:17.8443978-03:00",     Fecha entrega guarda mal
         "Estado": 0,
         "Prioridad": 0,
         "IdTransportista": "TR-001",

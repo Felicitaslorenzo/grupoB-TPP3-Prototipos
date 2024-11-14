@@ -18,7 +18,7 @@
 
 9- Fecha entrega: 21/11/2024
 
-10- Producto: SKU009
+10- Producto: SKU-009
 
 11- Botón: "Agregar Producto"
 
@@ -27,26 +27,27 @@
 
 13- Botón: "Ok"
 
-14- ID Cliente: CL005
+14- Campo Fecha de entrega: Deseleccionar campo
 
-15- Prioridad: SinPrioridad
+15- Botón: "Agregar Producto"
 
-16- Transportista: TR-013
-
-17- Fecha entrega: Deseleccionar campo
-
-18- Producto: SKU009
-
-19- Botón: "Agregar Producto"
-
-20- Mensaje sistema: Fecha entrega requerida:	"Debe seleccionar una fecha de entrega	."  
+16- Mensaje sistema: Fecha entrega requerida:	"Debe seleccionar una fecha de entrega	."  
  
 
-21- Botón: "Ok"
+17- Botón: "Ok"
 
-22- Fecha entrega: 21/11/2024
+18- Fecha entrega: 21/11/2024
 
-23- Cantidad: -10
+19- Cantidad: -10
+
+20- Botón: "Agregar Producto"
+
+21- Mensaje sistema: " La cantidad tiene que ser mayor a 0"  
+// Esta mal el msj ver el caso de uso  “El campo cantidad debe ser un valor numérico positivo y menor o igual al stock disponible”
+
+22- Botón: "Ok"
+
+23- Cantidad: 0
 
 24- Botón: "Agregar Producto"
 
@@ -55,38 +56,29 @@
 
 26- Botón: "Ok"
 
-27- Cantidad: 0
+27- Cantidad: /1
 
 28- Botón: "Agregar Producto"
 
-29- Mensaje sistema: " La cantidad tiene que ser mayor a 0"  
+29- Mensaje sistema: "Ingrese una cantidad válida."   
 // Esta mal el msj ver el caso de uso  “El campo cantidad debe ser un valor numérico positivo y menor o igual al stock disponible”
 
 30- Botón: "Ok"
 
-31- Cantidad: /1
+31- Cantidad: 10
 
 32- Botón: "Agregar Producto"
 
-33- Mensaje sistema: "Ingrese una cantidad válida."   
-// Esta mal el msj ver el caso de uso  “El campo cantidad debe ser un valor numérico positivo y menor o igual al stock disponible”
-
-34- Botón: "Ok"
-
-35- Cantidad: 10
-
-36- Botón: "Agregar Producto"
-
-37- Detalle:
+33- Detalle:
 
 SKU-009 - Sistemas de calefaccion industrial - 10
 
-38- Botón: "Eliminar Producto"
+34- Botón: "Eliminar Producto"
 
-39- Mensaje sistema: Error: "Por favor, seleccione un producto para eliminar."
+35- Mensaje sistema: Error: "Por favor, seleccione un producto para eliminar."
 
-40- Botón: "Ok"
+36- Botón: "Ok"
 
-41- Cerrar Sistema
+37- Cerrar Sistema
 
 
