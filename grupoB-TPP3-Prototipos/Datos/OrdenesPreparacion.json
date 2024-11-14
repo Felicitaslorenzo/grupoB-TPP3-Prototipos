@@ -562,6 +562,47 @@
         "Cantidad": 1500
       }
     ]
-  }
+  },
+  {
+    "IdOrdenPreparacion": "OP-032",
+    "IdCliente": "CL-009",
+    "IdDeposito": "GBAN1",
+    "FechaEmision": "2024-11-14T00:00:00",
+    "FechaEntrega": "2024-11-15T00:00:00",
+    "Estado": 0,
+    "Prioridad": 1,
+    "IdTransportista": "TR-022",
+    "Detalle": [
+      {
+        "SKUProducto": "SKU-103",
+        "Cantidad": 100
+      },
+      {
+        "SKUProducto": "SKU-104",
+        "Cantidad": 200
+      }
+    ]
+  },
+  {
+    "IdOrdenPreparacion": "OP-033",
+    "IdCliente": "CL-009",
+    "IdDeposito": "GBAN1",
+    "FechaEmision": "2024-11-14T00:00:00",
+    "FechaEntrega": "2024-11-15T00:00:00",
+    "Estado": 0,
+    "Prioridad": 1,
+    "IdTransportista": "TR-022",
+    "Detalle": [
+      {
+        "SKUProducto": "SKU-103",
+        "Cantidad": 1500
+      },
+      {
+        "SKUProducto": "SKU-104",
+        "Cantidad": 900
+      }
 
+    ]
+
+  }
 ]
