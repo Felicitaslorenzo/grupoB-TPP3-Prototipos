@@ -1,0 +1,52 @@
+﻿Caso 2 : Crear Orden Entrega 
+
+1- Botón: "Ordenes de Entrega"
+
+2- Botón: "Emitir Orden de Entrega"
+
+3- Seleccionar: OP-018
+
+4- Boton: "Emitir Orden de Entrega"
+
+5- Mensaje sistema: "Orden de entrega generada con ID: OE-006"
+
+6- Boton: "Ok
+
+7- Se borra del listado de ordenes de entrega la OP-018
+
+8- Botón: "Volver"
+
+9- Cerrar sistema
+
+15- Verificar en OrdenesEntrega.json, nuevo registro:
+
+ {
+        "IdOrdenEntrega": "OE-006",
+        "FechaEmision": "2024-11-14T10:10:21.90455-03:00",
+        "FechaEntrega": "2024-11-14T10:10:21.9046266-03:00",
+        "OrdenesPreparacion": []                                     (OJO NO MUESTRA ID OP) 
+    }
+
+
+15- Verificar en OrdenesPreparacion.json, cambio de estado de empaqutada (3) a preparada (4):
+
+ {
+        "IdOrdenPreparacion": "OP-018",
+        "IdCliente": "CL-008",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-10-05T00:00:00",
+        "FechaEntrega": "2024-11-12T00:00:00",
+        "Estado": 3,                                 OJO NO CAMBIA Y GUARDA EL ESTADO DE LAS OP CUANDO SE GENERA
+        "Prioridad": 1,
+        "IdTransportista": "TR-018",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-009",
+                "Cantidad": 50
+            },
+            {
+                "SKUProducto": "SKU-010",
+                "Cantidad": 10
+            }
+        ]
+    },
