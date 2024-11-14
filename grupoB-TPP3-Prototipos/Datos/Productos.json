@@ -137,7 +137,7 @@
     "IdCliente": "CL-006",
     "Inventario": [
       {
-        "IdDeposito": "GBAS2",
+        "IdDeposito": "GBAN1",
         "Ubicacion": "2-4-2",
         "Cantidad": 200
       }
@@ -221,7 +221,7 @@
     "IdCliente": "CL-009",
     "Inventario": [
       {
-        "IdDeposito": "GBAN1",
+        "IdDeposito": "GBAN2",
         "Ubicacion": "2-3-4",
         "Cantidad": 900
       }

@@ -72,10 +72,6 @@
       {
         "SKUProducto": "SKU-009",
         "Cantidad": 100
-      },
-      {
-        "SKUProducto": "SKU-010",
-        "Cantidad": 20
       }
     ]
   },
@@ -92,10 +88,6 @@
       {
         "SKUProducto": "SKU-007",
         "Cantidad": 60
-      },
-      {
-        "SKUProducto": "SKU-008",
-        "Cantidad": 70
       }
     ]
   },
@@ -170,10 +162,6 @@
     "IdTransportista": "TR-009",
     "Detalle": [
       {
-        "SKUProducto": "SKU-022",
-        "Cantidad": 200
-      },
-      {
         "SKUProducto": "SKU-023",
         "Cantidad": 80
       }
@@ -238,7 +226,7 @@
   {
     "IdOrdenPreparacion": "OP-013",
     "IdCliente": "CL-003",
-    "IdDeposito": "GBAN1",
+    "IdDeposito": "GBAN2",
     "FechaEmision": "2024-10-03T00:00:00",
     "FechaEntrega": "2024-10-07T00:00:00",
     "Estado": 2,
@@ -248,17 +236,13 @@
       {
         "SKUProducto": "SKU-005",
         "Cantidad": 50
-      },
-      {
-        "SKUProducto": "SKU-006",
-        "Cantidad": 10
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-014",
     "IdCliente": "CL-004",
-    "IdDeposito": "GBAN1",
+    "IdDeposito": "GBAS1",
     "FechaEmision": "2024-11-13T00:00:00",
     "FechaEntrega": "2024-11-13T00:00:00",
     "Estado": 2,
@@ -268,10 +252,6 @@
       {
         "SKUProducto": "SKU-013",
         "Cantidad": 60
-      },
-      {
-        "SKUProducto": "SKU-014",
-        "Cantidad": 100
       }
     ]
   },
@@ -285,10 +265,6 @@
     "Prioridad": 0,
     "IdTransportista": "TR-015",
     "Detalle": [
-      {
-        "SKUProducto": "SKU-007",
-        "Cantidad": 200
-      },
       {
         "SKUProducto": "SKU-008",
         "Cantidad": 120
@@ -328,10 +304,6 @@
       {
         "SKUProducto": "SKU-011",
         "Cantidad": 150
-      },
-      {
-        "SKUProducto": "SKU-012",
-        "Cantidad": 80
       }
     ]
   },
@@ -348,10 +320,6 @@
       {
         "SKUProducto": "SKU-009",
         "Cantidad": 50
-      },
-      {
-        "SKUProducto": "SKU-010",
-        "Cantidad": 10
       }
     ]
   },
@@ -388,17 +356,13 @@
       {
         "SKUProducto": "SKU-017",
         "Cantidad": 500
-      },
-      {
-        "SKUProducto": "SKU-018",
-        "Cantidad": 50
       }
     ]
   },
   {
     "IdOrdenPreparacion": "OP-021",
     "IdCliente": "CL-009",
-    "IdDeposito": "GBAN1",
+    "IdDeposito": "GBAN2",
     "FechaEmision": "2024-11-04T00:00:00",
     "FechaEntrega": "2024-11-12T00:00:00",
     "Estado": 4,
@@ -418,7 +382,7 @@
   {
     "IdOrdenPreparacion": "OP-022",
     "IdCliente": "CL-003",
-    "IdDeposito": "GBAN1",
+    "IdDeposito": "GBAS1",
     "FechaEmision": "2024-10-15T00:00:00",
     "FechaEntrega": "2024-11-12T00:00:00",
     "Estado": 4,
@@ -428,10 +392,6 @@
       {
         "SKUProducto": "SKU-006",
         "Cantidad": 50
-      },
-      {
-        "SKUProducto": "SKU-005",
-        "Cantidad": 5
       }
     ]
   },
@@ -445,10 +405,6 @@
     "Prioridad": 0,
     "IdTransportista": "TR-008",
     "Detalle": [
-      {
-        "SKUProducto": "SKU-007",
-        "Cantidad": 100
-      },
       {
         "SKUProducto": "SKU-008",
         "Cantidad": 50
@@ -478,17 +434,13 @@
   {
     "IdOrdenPreparacion": "OP-025",
     "IdCliente": "CL-009",
-    "IdDeposito": "GBAN1",
+    "IdDeposito": "GBAN2",
     "FechaEmision": "2024-11-13T00:00:00",
     "FechaEntrega": "2024-11-14T00:00:00",
     "Estado": 4,
     "Prioridad": 0,
     "IdTransportista": "TR-020",
     "Detalle": [
-      {
-        "SKUProducto": "SKU-017",
-        "Cantidad": 15
-      },
       {
         "SKUProducto": "SKU-018",
         "Cantidad": 50
@@ -498,17 +450,13 @@
   {
     "IdOrdenPreparacion": "OP-026",
     "IdCliente": "CL-001",
-    "IdDeposito": "GBAS2",
+    "IdDeposito": "GBAS1",
     "FechaEmision": "2024-10-21T00:00:00",
     "FechaEntrega": "2024-11-12T00:00:00",
     "Estado": 5,
     "Prioridad": 1,
     "IdTransportista": "TR-001",
     "Detalle": [
-      {
-        "SKUProducto": "SKU-025",
-        "Cantidad": 20
-      },
       {
         "SKUProducto": "SKU-024",
         "Cantidad": 10
@@ -538,17 +486,13 @@
   {
     "IdOrdenPreparacion": "OP-028",
     "IdCliente": "CL-003",
-    "IdDeposito": "GBAN1",
+    "IdDeposito": "GBAS1",
     "FechaEmision": "2024-10-23T00:00:00",
     "FechaEntrega": "2024-10-26T00:00:00",
     "Estado": 5,
     "Prioridad": 1,
     "IdTransportista": "TR-006",
     "Detalle": [
-      {
-        "SKUProducto": "SKU-005",
-        "Cantidad": 40
-      },
       {
         "SKUProducto": "SKU-006",
         "Cantidad": 60
@@ -565,10 +509,6 @@
     "Prioridad": 0,
     "IdTransportista": "TR-008",
     "Detalle": [
-      {
-        "SKUProducto": "SKU-007",
-        "Cantidad": 15
-      },
       {
         "SKUProducto": "SKU-008",
         "Cantidad": 25
@@ -596,14 +536,6 @@
       {
         "SKUProducto": "SKU-022",
         "Cantidad": 5
-      },
-      {
-        "SKUProducto": "SKU-023",
-        "Cantidad": 8
-      },
-      {
-        "SKUProducto": "SKU-024",
-        "Cantidad": 20
       },
       {
         "SKUProducto": "SKU-025",
