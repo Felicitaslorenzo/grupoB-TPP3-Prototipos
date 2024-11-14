@@ -1,13 +1,46 @@
 CASO 1: Empaquetado de Productos: camino feliz
-1 - En MenuPrinicipal, hacer click en botón "Ordenes de Entrega" 
-2 - En MenuOrdenesEntrega, hacer click en botón "Empaquetado"
-3 - Ver lista de Productos y sus cantidades 
-4 - Seleccionar fila de productos y sus cantidades
-5 - Hacer click en botón Empaquetado
-6- Muestra el mensaje: "La orden se ha empaquetado con éxito"
-7- Vuelve a empaquetar órdenes con el botón "Empaquetado"
-8 - Muestra el Mensaje: "No hay más órdenes para empaquetar."
-9 - Hacer click en Botón Volver --> vuelve al MenuOrdenesEntrega
-10 - Menú Ordenes de Entrega => Cerrar Menú => Se visualiza el Menú principal
-11 - Menú principal => Cerrar Menú => Finaliza la ejecución del sistema
+
+1- Botón: "Ordenes de Entrega"
+
+2- Botón: "Empaquetado"
+
+4- Detalle:
+
+Electrodomesticos inteligentes - 20
+Herramientas electricas profesionales - 80
+
+5 - Seleccionar producto Electrodomesticos inteligentes
+
+6- Botón: "Empaquetado"
+
+7- Mensaje: Exito: "La orden con ID OP-012 se ha empaquetado con exito."
+
+8- Botón: "Ok"
+
+9- Botón: "Volver"
+
+10- Cerrar Sistema
+
+11- Verificar en OrdenesPreparacion.json, cabmio de estado de Seleccionada(2) a Empaquetada (3):
+
+ {
+        "IdOrdenPreparacion": "OP-012",
+        "IdCliente": "CL-002",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-10-02T00:00:00",
+        "FechaEntrega": "2024-10-06T00:00:00",
+        "Estado": 3,
+        "Prioridad": 0,
+        "IdTransportista": "TR-012",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-003",
+                "Cantidad": 20
+            },
+            {
+                "SKUProducto": "SKU-004",
+                "Cantidad": 80
+            }
+        ]
+    },
 

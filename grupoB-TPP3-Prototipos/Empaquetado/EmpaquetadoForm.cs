@@ -14,7 +14,7 @@ namespace grupoB_TPP3_Prototipos.CrearOrdenEntrega
     public partial class EmpaquetadoForm : Form
     {
         private EmpaquetadoModel model = new EmpaquetadoModel();
-
+       
         public EmpaquetadoForm()
         {
             InitializeComponent();
@@ -26,6 +26,7 @@ namespace grupoB_TPP3_Prototipos.CrearOrdenEntrega
             var orden = model.ObtenerOrdenActual();
             if (orden != null)
             {
+                
                 ListarEmpaquetarOrdenList.Items.Clear(); // Limpia el ListView
 
                 foreach (var producto in orden.Producto)
@@ -47,14 +48,17 @@ namespace grupoB_TPP3_Prototipos.CrearOrdenEntrega
             // Verificar si se ha seleccionado algún producto en el ListView
             if (ListarEmpaquetarOrdenList.SelectedItems.Count > 0)
             {
+                // Obtén el ID de la orden actual antes de eliminarla
+                var idOrdenActual = model.ObtenerIdOrdenActual();
+
                 // Eliminar la orden actual
                 model.EliminarOrdenActual();
 
-                // Verificar si hay más órdenes después de eliminar la orden actual
+                // Verificar si hay más órdenes después de eliminar la orden actual 
                 var ordenSiguiente = model.ObtenerOrdenActual();
 
                 // Mostrar mensaje de éxito
-                MessageBox.Show("La orden se ha empaquetado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"La orden con ID {idOrdenActual} se ha empaquetado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Mostrar la siguiente orden si existe
                 if (ordenSiguiente != null)
@@ -78,20 +82,7 @@ namespace grupoB_TPP3_Prototipos.CrearOrdenEntrega
 
         private void EmpaquetadoForm_Load(object sender, EventArgs e)
         {
-            /*
-            var ordenActual = model.ObtenerOrdenActual();
-
-            if (ordenActual != null)
-            {
-                // model.EliminarOrdenActual(); // Elimina la orden actual
-                MostrarOrdenActual(); // Muestra la siguiente orden
-            }
-            else
-            {
-                // Si no hay más órdenes, muestra un mensaje y cierra el formulario
-                MessageBox.Show("No hay más órdenes para empaquetar.");
-                this.Close(); // Cierra el formulario
-            } */
+          
         }
 
         private void VolverButton_Click(object sender, EventArgs e)

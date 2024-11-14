@@ -62,7 +62,10 @@ namespace grupoB_TPP3_Prototipos.Empaquetado
                 }
             }
         }
-
+        public string ObtenerIdOrdenActual()
+        {
+            return (indiceActual >= 0 && indiceActual < ordenes.Count) ? ordenes[indiceActual].IdOrden : null;
+        }
         // Mantiene el método ya existente
         public List<OrdenPreparacion> ObtenerOrdenesPreparacion()
         {

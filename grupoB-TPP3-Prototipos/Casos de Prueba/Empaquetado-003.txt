@@ -1,0 +1,79 @@
+CASO 1: Empaquetado de Productos: camino feliz
+
+1- Botón: "Ordenes de Entrega"
+
+2- Botón: "Empaquetado"
+
+10- Detalle:
+
+Electrodomesticos inteligentes - 20
+Herramientas electricas profesionales - 80
+
+1 - Seleccionar producto Electrodomesticos inteligentes
+
+2- Botón: "Empaquetado"
+
+3- Mensaje: Exito: "La orden con ID OP-012 se ha empaquetado con exito."
+
+4- Botón: "Ok"
+
+5- Detalle:
+
+Cajas fuertes de seguridad - 50
+Paneles solares portatiles - 10
+
+6 - Seleccionar producto Cajas fuertes de seguridad
+
+7- Botón: "Empaquetado"
+
+8- Mensaje: Exito: "La orden con ID OP-013 se ha empaquetado con exito."
+
+9- Botón: "Ok"
+
+10- Botón: "Volver"
+
+11- Cerrar Sistema
+
+12- Verificar en OrdenesPreparacion.json, cambio de estado de Seleccionada(2) a Empaquetada (3):
+
+ {
+        "IdOrdenPreparacion": "OP-012",
+        "IdCliente": "CL-002",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-10-02T00:00:00",
+        "FechaEntrega": "2024-10-06T00:00:00",
+        "Estado": 3,
+        "Prioridad": 0,
+        "IdTransportista": "TR-012",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-003",
+                "Cantidad": 20
+            },
+            {
+                "SKUProducto": "SKU-004",
+                "Cantidad": 80
+            }
+        ]
+    },
+
+     {
+        "IdOrdenPreparacion": "OP-013",
+        "IdCliente": "CL-003",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-10-03T00:00:00",
+        "FechaEntrega": "2024-10-07T00:00:00",
+        "Estado": 3,
+        "Prioridad": 1,
+        "IdTransportista": "TR-013",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-005",
+                "Cantidad": 50
+            },
+            {
+                "SKUProducto": "SKU-006",
+                "Cantidad": 10
+            }
+        ]
+    },
