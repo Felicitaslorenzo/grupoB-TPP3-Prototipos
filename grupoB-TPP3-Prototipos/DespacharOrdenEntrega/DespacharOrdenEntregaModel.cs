@@ -103,17 +103,17 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
             // Si no existe ninguna orden, empezamos con "RM001"
             if (string.IsNullOrEmpty(ultimoId))
             {
-                return "RM001";
+                return "RM-001";
             }
 
             // Extraemos el número al final del ID, en el formato "RM###"
-            var numero = int.Parse(ultimoId.Substring(2));  // Asumimos que el ID tiene el formato "RM###" (después de "RM")
+            var numero = int.Parse(ultimoId.Substring(3));  // Asumimos que el ID tiene el formato "RM###" (después de "RM")
 
             // Incrementamos el número
             numero++;
 
             // Generamos el nuevo ID en el formato "RM###"
-            var nuevoIDRemito = $"RM{numero:D3}";  // El ":D3" asegura que el número tenga 3 dígitos, por ejemplo "RM002"
+            var nuevoIDRemito = $"RM-{numero:D3}";  // El ":D3" asegura que el número tenga 3 dígitos, por ejemplo "RM002"
 
             // Grabar cambios en el archivo JSON
             RemitoAlmacen.Grabar();
