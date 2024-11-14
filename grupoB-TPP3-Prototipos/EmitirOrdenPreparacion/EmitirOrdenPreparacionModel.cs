@@ -59,7 +59,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             };
         }
 
-        public OrdenPreparacionEnt ConvertirOrdenPreparacionEnt(OrdenPreparacion nuevaOrden, string transportista, string prioridad)
+        public OrdenPreparacionEnt ConvertirOrdenPreparacionEnt(OrdenPreparacion nuevaOrden, string transportista, string prioridad, DateTime fechaEntregaSeleccionada)
         {
             // Convertir la orden en el tipo Entidad
             OrdenPreparacionEnt nuevaOrdenEnt = new OrdenPreparacionEnt
@@ -67,7 +67,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 IdOrdenPreparacion = nuevaOrden.IDOrdenPreparacion,
                 IdCliente = nuevaOrden.Clientes.FirstOrDefault()?.IdCliente,
                 FechaEmision = DateTime.Now,
-                FechaEntrega = DateTime.Now.AddDays(7),
+                FechaEntrega = fechaEntregaSeleccionada, // Fecha seleccionada por el usuario
                 Estado = EstadoOrdenPrepEnum.Pendiente,
                 Prioridad = (PrioridadEnum)Enum.Parse(typeof(PrioridadEnum), prioridad),
                 IdTransportista = transportista
@@ -85,6 +85,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
             return nuevaOrdenEnt;
         }
+
 
         public void GuardarOrdenPreparacion(OrdenPreparacionEnt orden)
         {

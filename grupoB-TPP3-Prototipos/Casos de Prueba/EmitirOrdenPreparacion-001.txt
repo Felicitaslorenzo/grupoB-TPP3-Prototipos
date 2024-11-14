@@ -37,7 +37,7 @@ SKU026 - Sillas de oficina ergonomicas -   10
         "IdCliente": "CL-001",
         "IdDeposito": "GBAN1",
         "FechaEmision": "2024-11-14T11:38:17.8443961-03:00",
-        "FechaEntrega": "2024-11-21T11:38:17.8443978-03:00",     Fecha entrega guarda mal
+        "FechaEntrega": "2024-11-29T15:50:23.729",
         "Estado": 0,
         "Prioridad": 0,
         "IdTransportista": "TR-001",

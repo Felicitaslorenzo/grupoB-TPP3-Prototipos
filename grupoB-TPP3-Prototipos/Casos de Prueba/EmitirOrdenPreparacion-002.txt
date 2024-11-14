@@ -33,7 +33,7 @@ SKU-066 - Equipos de automatizacion industrial -  10
 
 14- Botón: "Emitir Orden"
 
-15- Mensaje: "Orden OP-031 creada exitosamente"
+15- Mensaje: "Orden OP-032 creada exitosamente"
 
 16- Botón: "Ok"
 
@@ -46,7 +46,7 @@ SKU-066 - Equipos de automatizacion industrial -  10
         "IdCliente": "CL-006",
         "IdDeposito": "GBAN1",
         "FechaEmision": "2024-11-14T11:41:35.4159585-03:00",
-        "FechaEntrega": "2024-11-21T11:41:35.4159604-03:00",
+        "FechaEntrega": "2024-11-28T15:54:15.099"
         "Estado": 0,
         "Prioridad": 1,
         "IdTransportista": "TR-014",

@@ -175,11 +175,15 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
                 productosOrden
             );
 
+            // Asegurarse de que la fecha seleccionada es válida
+            DateTime fechaEntregaSeleccionada = FechaOPPicker.Value; // Obtener la fecha seleccionada del DateTimePicker
+
             // Convertirla a OrdenPreparacionEnt
             OrdenPreparacionEnt nuevaOrdenEnt = modelo.ConvertirOrdenPreparacionEnt(
                 nuevaOrden,
                 TransportistaCombo.Text,
-                PrioridadComboBox.Text
+                PrioridadComboBox.Text,
+                fechaEntregaSeleccionada // Pasar la fecha seleccionada
             );
 
             // Guardar la orden usando el modelo
