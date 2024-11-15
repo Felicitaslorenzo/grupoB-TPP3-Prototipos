@@ -12,13 +12,15 @@ Caso 1 : Retirar Orden Seleccion (Camino Feliz)
     1-2-2 Herramientas de corte industrial 120
     2-1-5 Compresores de aire industrial 120
 
-5- Mensaje: El retiro de las ordenes de preparacion se ha confirmado
+5- Botón Confirmar
 
-6- Botón: "Ok"
+6- Mensaje: El retiro de las ordenes de preparacion se ha confirmado
 
-14- Cerrar Sistema
+7- Botón: "Ok"
 
-15- Verificar en OrdenesSeleccion.json, registro:
+8- Cerrar Sistema
+
+9- Verificar en OrdenesSeleccion.json, estado cambia a "1":
     {
         "IdOrdenSeleccion":"OS-001",
         "Estado":1,
@@ -27,7 +29,7 @@ Caso 1 : Retirar Orden Seleccion (Camino Feliz)
         "OrdenesPreparacion":["OP-006"]
     }
 
-16- Verificar en OrdenesPreparecion.json, registro:
+10- Verificar en OrdenesPreparecion.json, estado cambia a "2": 
     {
         "IdOrdenPreparacion":"OP-006",
         "IdCliente":"CL-010",
@@ -44,7 +46,47 @@ Caso 1 : Retirar Orden Seleccion (Camino Feliz)
         ]
     }
 
-17- Verificar en Producto.json, registro:
+11- Verificar en Producto.json, registro antes de confirmar:
+    {
+    "SKUProducto": "SKU-020",
+    "DescripcionProducto": "Placas de yeso para construcción",
+    "IdCliente": "CL-010",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "2-4-2",
+        "Cantidad": 1000},
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-18-2",
+        "Cantidad": 1000
+      },
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-18-3",
+        "Cantidad": 1000}
+  ]},
+  {
+    "SKUProducto": "SKU-021",
+    "DescripcionProducto": "Herramientas de corte industrial",
+    "IdCliente": "CL-010",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 1000}
+  ]},
+  {
+    "SKUProducto": "SKU-022",
+    "DescripcionProducto": "Compresores de aire industrial",
+    "IdCliente": "CL-010",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "2-1-5",
+        "Cantidad": 200}
+  ]},
+12- Verificar en Producto.json, registro actualizado: 
     {
         "SKUProducto":"SKU-020",
         "DescripcionProducto":"Placas de yeso para construcci\u00F3n",

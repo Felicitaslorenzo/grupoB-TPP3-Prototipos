@@ -1,10 +1,14 @@
-CASO 2: Retirar Ordenes de selección: Validaciones
-1 - En MenuPrincipal, hacer click en botón "Ordenes de Seleccion" 
-2 - En MenuOrdenesSeleccion, hacer click en botón "Retirar orden de Selección"
-3 - En el campo Orden de Selección, seleccionar un IdOrdenSeleccion
-4 - Ver lista de Productos, sus cantidades y ubicaciones 
-5 - Hacer click en botón Confirmar sin seleccionar ningún item en la lista de Productos 
-6 - Muestra el mensaje: "Debe seleccionar al menos una orden de selección"
-7 - Hacer click en botón Cancelar --> vuelve al MenuOrdenesSeleccion
-8 - Menú Ordenes de Entrega => Cerrar Menú => Se visualiza el Menú principal
-9 - Menú principal => Cerrar Menú => Finaliza la ejecución del sistema
+CASO 2: Retirar Ordenes de selección: VALIDACIONES
+1 - Botón: "Ordenes de Seleccion"
+
+2 - Botón: "Retirar Orden Seleccion".
+
+3 - Botón Confirmar sin seleccionar ningún item en la lista de Productos 
+
+6 - Muestra el mensaje: "Por favor, selecciona una orden antes de confirmar el retiro"
+
+7 - Botón Aceptar
+
+8 - Botón Cancelar
+
+9 - Cierro sistema
