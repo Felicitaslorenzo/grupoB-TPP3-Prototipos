@@ -39,15 +39,18 @@ namespace grupoB_TPP3_Prototipos.CrearOrdenEntrega
             else
             {
                 MessageBox.Show("No hay órdenes para empaquetar.");
-                this.Close(); // Cierra el formulario si no hay más órdenes
+                // this.Close(); // Cierra el formulario si no hay más órdenes ME DA EXCEPTION CON ESTE THIS.CLOSE
+                EmpaquetarOrdenButton.Enabled = false;
             }
         }
 
         private void EmpaquetarOrdenButton_Click(object sender, EventArgs e)
         {
-            // Verificar si se ha seleccionado algún producto en el ListView
-            if (ListarEmpaquetarOrdenList.SelectedItems.Count > 0)
+            /// Verificar si hay órdenes disponibles para empaquetar
+            if (ListarEmpaquetarOrdenList.Items.Count > 0)
             {
+                EmpaquetarOrdenButton.Enabled = true;
+
                 // Obtén el ID de la orden actual antes de eliminarla
                 var idOrdenActual = model.ObtenerIdOrdenActual();
 
@@ -72,11 +75,6 @@ namespace grupoB_TPP3_Prototipos.CrearOrdenEntrega
                     MessageBox.Show("No hay más órdenes para empaquetar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close(); // Cierra el formulario
                 }
-            }
-            else
-            {
-                // Si no se ha seleccionado ningún producto
-                MessageBox.Show("Por favor, selecciona un producto antes de empaquetar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
