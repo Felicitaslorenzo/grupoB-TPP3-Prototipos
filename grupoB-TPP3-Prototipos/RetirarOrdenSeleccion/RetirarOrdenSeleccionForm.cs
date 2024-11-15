@@ -89,13 +89,48 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
             // Recorrer los productos obtenidos y agregar cada uno al ListView
             foreach (var producto in productos)
             {
-                var item = new ListViewItem(producto.Ubicacion);
-                item.SubItems.Add(producto.DescripcionProducto);
-                item.SubItems.Add(producto.Cantidad.ToString());
+                // Verificar si la cantidad es mayor que cero antes de agregar al ListView
+                if (producto.Cantidad > 0)
+                {
+                    var item = new ListViewItem(producto.Ubicacion);
+                    item.SubItems.Add(producto.DescripcionProducto);
+                    item.SubItems.Add(producto.Cantidad.ToString());
 
-                // Agregar el item a la grilla (ListView)
-                listView1.Items.Add(item);
+                    // Agregar el item a la grilla (ListView)
+                    listView1.Items.Add(item);
+                }
             }
+            // Usamos el primer ID de la lista, ya que es la lista de ordenes de preparación que tenemos
+            /*  string idSeleccion = ordenesPreparacionIds.FirstOrDefault();  // Aseguramos que usamos el ID de la lista
+
+             if (string.IsNullOrEmpty(idSeleccion))
+             {
+                 MessageBox.Show("No se ha seleccionado ninguna orden válida.");
+                 return;
+             }
+
+             // Llamar al modelo para obtener los productos relacionados a la orden seleccionada usando idSeleccion
+             var productos = model.ObtenerProductosPorOrden(idSeleccion);  // Asegúrate de que ObtenerProductosPorOrden acepte un parámetro idSeleccion
+
+             if (productos == null || !productos.Any())
+             {
+                 MessageBox.Show("No hay productos disponibles para esta orden.");
+                 return;
+             }
+
+             // Limpiar la grilla antes de cargar los nuevos datos
+             listView1.Items.Clear();
+
+             // Recorrer los productos obtenidos y agregar cada uno al ListView
+             foreach (var producto in productos)
+             {
+                 var item = new ListViewItem(producto.Ubicacion);
+                 item.SubItems.Add(producto.DescripcionProducto);
+                 item.SubItems.Add(producto.Cantidad.ToString());
+
+                 // Agregar el item a la grilla (ListView)
+                 listView1.Items.Add(item);
+             } */
             /*
             if (ordenesPreparacionIds == null || !ordenesPreparacionIds.Any())
             {
