@@ -1,19 +1,40 @@
-﻿Caso 8: Validacion calculo cantidad disponible
+﻿Caso 8: Validacion calculo cantidad disponible emitiendo dos OP con el mismo producto
 
-1 - Agregar Cliente: CL-001 - Prioridad: SinPrioridad - Transportista: TR-003 - Fecha de Entrega: cualquier fecha
+1- Botón: "Ordenes de Preparación"
 
-2 - Agregar Producto: SKU-001 (disponible=500) cantidad a sumar: 250
-3 - Botón "Emitir Orden" => [Emite OP-035]
+2- Botón: "Emitir Orden de Preparación"
 
-4 - Ahora probar emitir otra OP con los mismos datos de cliente, prioridad, transportista y fecha que la anterior.
-	Agregar Producto: SKU-001 Cantidad a sumar: 300 => 
-	[Mensaje de error: "No hay suficiente stock disponible.
+3 - Cliente: CL-001 - Prioridad: SinPrioridad - Transportista: TR-003 - Fecha de Entrega: Today
+
+4 -  Producto: SKU-001 (disponible = 500, verificar en archivo producto.json) 
+
+5 - Cantidad: 250
+
+6- Botón: "Agregar Producto"
+
+7 - Botón "Emitir Orden" 
+
+8- Mensaje: "Orden OP-035 creada exitosamente."
+
+9- Botón: "Ok"
+
+10 - Ahora probar emitir otra OP con los mismos datos de cliente, prioridad, transportista y fecha que la anterior.
+
+11-  Producto: SKU-001  
+
+12 - Cantidad : 300 
+
+13- Botón: "Agregar Producto"
+
+14 - Botón "Emitir Orden" 
+
+15- [Mensaje de error: "No hay suficiente stock disponible.
 	                    Cantidad solicitada: 300
 						Cantidad disponible: 140"]
 
 Revisión de cálculos:
 
-5 - Cantidad SKU-001 en deposito de producto => 500
+16 - Cantidad SKU-001 en deposito de producto = 500  Verificamos en archivo prdocuto.json
 	{
         "SKUProducto": "SKU-001",
         "DescripcionProducto": "Muebles modulares de oficina",
@@ -27,10 +48,11 @@ Revisión de cálculos:
         ]
     },
 
+17- Verificamos en archivo OrdenesPreparacion.json las OP que contengan el producto SKU-001 y se encuentren en estado Pendiente (0) y Enseleccion (1)
 
 
 6 - Órdenes de preparación con SKU-001::
-	- OP-001 => 50
+	- OP-001 = 50
     {
         "IdOrdenPreparacion": "OP-001",
         "IdCliente": "CL-001",
@@ -52,7 +74,7 @@ Revisión de cálculos:
         ]
     },
 
-	- OP-003 => 60
+	- OP-003 = 60
     {
         "IdOrdenPreparacion": "OP-003",
         "IdCliente": "CL-001",
@@ -74,29 +96,8 @@ Revisión de cálculos:
         ]
     },
 
-	- OP-011 => 50
-    {
-        "IdOrdenPreparacion": "OP-011",
-        "IdCliente": "CL-001",
-        "IdDeposito": "GBAN1",
-        "FechaEmision": "2024-10-01T00:00:00",
-        "FechaEntrega": "2024-10-05T00:00:00",
-        "Estado": 2,
-        "Prioridad": 0,
-        "IdTransportista": "TR-011",
-        "Detalle": [
-            {
-                "SKUProducto": "SKU-001",
-                "Cantidad": 50
-            },
-            {
-                "SKUProducto": "SKU-002",
-                "Cantidad": 200
-            }
-        ]
-    },
 
-	- OP-035 => 250
+	- OP-035 = 250
     {
         "IdOrdenPreparacion": "OP-035",
         "IdCliente": "CL-001",
@@ -118,4 +119,4 @@ Revisión de cálculos:
         ]
     }
 
-Cantidad disponible según stock = 500 - 50 - 60 - 50 - 250 = 90
+Cantidad disponible según stock = 500 - 50 - 60 -  250 = 140   Calculo Correcto
