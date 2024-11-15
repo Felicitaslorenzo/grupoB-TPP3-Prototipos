@@ -1,4 +1,4 @@
-CASO 5: Retirar Ordenes de selección: Validaciones
+CASO 5: Retirar Ordenes de selección: Impacto de cantidades en inventario
 1 - Botón "Ordenes de Seleccion" 
 2 - Botón "Retirar orden de Selección"
 3 - Filtrar con OS-005
