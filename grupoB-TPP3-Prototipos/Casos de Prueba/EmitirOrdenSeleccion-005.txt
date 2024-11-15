@@ -1,0 +1,171 @@
+﻿Caso 5:  Probamos generar una OS con muchas OP para verificar estados.
+
+1-	Botón: "Ordenes de Seleccion"
+
+2 -  Botón: "Emitir orden de Seleccion"
+
+4 - Órdenes Disponibles:
+
+	OP-001 :Porter SA-          30/09/24
+	OP-002: Ferreteria SRL -    25/09/2024
+	OP-003: Porter SA -          01/10/24
+	OP-005: Contribuciones Beta - 24/09/24
+    OP-032: Elecro SA -          14/11/24
+    OP-033: Elecro SA -         14/11/24
+
+5 -	Seleccionamos todas las ordenes
+
+6- Botón: "Agregar Seleccionadas"
+
+8-	Detalle:
+
+	OP-001 :Porter SA-          30/09/24
+	OP-002: Ferreteria SRL -    25/09/2024
+	OP-003: Porter SA -          01/10/24
+	OP-005: Contribuciones Beta - 24/09/24
+    OP-032: Elecro SA -          14/11/24
+    OP-033: Elecro SA -         14/11/24 
+
+9 - Botón: "Emitir Orden"
+
+10- Mensaje: "Se genero OS-006"
+
+11- Botón: "Ok"
+
+12 - Cerrar Sistema
+
+12- Verificar en OrdenSeleccion.Json, nuevo registro:
+
+	{
+        "IdOrdenSeleccion": "OS-006",
+        "Estado": 0,
+        "FechaEstado": "2024-11-14T21:15:37.5264529-03:00",
+        "FechaEmision": "2024-11-14T21:15:37.5264502-03:00",
+        "OrdenesPreparacion": [
+            "OP-001",
+            "OP-002",
+            "OP-003",
+            "OP-005",
+            "OP-032",
+            "OP-033"
+        ]
+    }
+
+13- Verificamos cambios de estado en archivo OrdenesPreparacion.json, Pendiente (0) a En seleccion (1)
+
+
+	  {
+        "IdOrdenPreparacion": "OP-001",
+        "IdCliente": "CL-001",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-09-30T00:00:00",
+        "FechaEntrega": "2024-10-03T00:00:00",
+        "Estado": 1,
+        "Prioridad": 0,
+        "IdTransportista": "TR-001",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-001",
+                "Cantidad": 50
+            },
+            {
+                "SKUProducto": "SKU-002",
+                "Cantidad": 200
+            }
+        ]
+    },
+    {
+        "IdOrdenPreparacion": "OP-002",
+        "IdCliente": "CL-002",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-09-25T00:00:00",
+        "FechaEntrega": "2024-09-29T00:00:00",
+        "Estado": 1,
+        "Prioridad": 0,
+        "IdTransportista": "TR-002",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-003",
+                "Cantidad": 50
+            },
+            {
+                "SKUProducto": "SKU-004",
+                "Cantidad": 100
+            }
+        ]
+    },
+    {
+        "IdOrdenPreparacion": "OP-003",
+        "IdCliente": "CL-001",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-10-01T00:00:00",
+        "FechaEntrega": "2024-10-05T00:00:00",
+        "Estado": 1,
+        "Prioridad": 0,
+        "IdTransportista": "TR-003",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-001",
+                "Cantidad": 60
+            },
+            {
+                "SKUProducto": "SKU-002",
+                "Cantidad": 300
+            }
+        ]
+    {
+        "IdOrdenPreparacion": "OP-005",
+        "IdCliente": "CL-004",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-09-24T00:00:00",
+        "FechaEntrega": "2024-09-28T00:00:00",
+        "Estado": 1,
+        "Prioridad": 1,
+        "IdTransportista": "TR-005",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-007",
+                "Cantidad": 60
+            }
+        ]
+    },
+    {
+        "IdOrdenPreparacion": "OP-032",
+        "IdCliente": "CL-009",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-11-14T00:00:00",
+        "FechaEntrega": "2024-11-15T00:00:00",
+        "Estado": 1,
+        "Prioridad": 1,
+        "IdTransportista": "TR-022",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-103",
+                "Cantidad": 100
+            },
+            {
+                "SKUProducto": "SKU-104",
+                "Cantidad": 200
+            }
+        ]
+    },
+    {
+        "IdOrdenPreparacion": "OP-033",
+        "IdCliente": "CL-009",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-11-14T00:00:00",
+        "FechaEntrega": "2024-11-15T00:00:00",
+        "Estado": 1,
+        "Prioridad": 1,
+        "IdTransportista": "TR-022",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-103",
+                "Cantidad": 1500
+            },
+            {
+                "SKUProducto": "SKU-104",
+                "Cantidad": 900
+            }
+        ]
+    }
