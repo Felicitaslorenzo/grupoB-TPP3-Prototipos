@@ -1,0 +1,121 @@
+﻿Caso 8: Validacion calculo cantidad disponible
+
+1 - Agregar Cliente: CL-001 - Prioridad: SinPrioridad - Transportista: TR-003 - Fecha de Entrega: cualquier fecha
+
+2 - Agregar Producto: SKU-001 (disponible=500) cantidad a sumar: 250
+3 - Botón "Emitir Orden" => [Emite OP-035]
+
+4 - Ahora probar emitir otra OP con los mismos datos de cliente, prioridad, transportista y fecha que la anterior.
+	Agregar Producto: SKU-001 Cantidad a sumar: 300 => 
+	[Mensaje de error: "No hay suficiente stock disponible.
+	                    Cantidad solicitada: 300
+						Cantidad disponible: 140"]
+
+Revisión de cálculos:
+
+5 - Cantidad SKU-001 en deposito de producto => 500
+	{
+        "SKUProducto": "SKU-001",
+        "DescripcionProducto": "Muebles modulares de oficina",
+        "IdCliente": "CL-001",
+        "Inventario": [
+            {
+                "IdDeposito": "GBAN1",
+                "Ubicacion": "1-2-2",
+                "Cantidad": 500
+            }
+        ]
+    },
+
+
+
+6 - Órdenes de preparación con SKU-001::
+	- OP-001 => 50
+    {
+        "IdOrdenPreparacion": "OP-001",
+        "IdCliente": "CL-001",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-09-30T00:00:00",
+        "FechaEntrega": "2024-10-03T00:00:00",
+        "Estado": 0,
+        "Prioridad": 0,
+        "IdTransportista": "TR-001",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-001",
+                "Cantidad": 50
+            },
+            {
+                "SKUProducto": "SKU-002",
+                "Cantidad": 200
+            }
+        ]
+    },
+
+	- OP-003 => 60
+    {
+        "IdOrdenPreparacion": "OP-003",
+        "IdCliente": "CL-001",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-10-01T00:00:00",
+        "FechaEntrega": "2024-10-05T00:00:00",
+        "Estado": 0,
+        "Prioridad": 0,
+        "IdTransportista": "TR-003",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-001",
+                "Cantidad": 60
+            },
+            {
+                "SKUProducto": "SKU-002",
+                "Cantidad": 300
+            }
+        ]
+    },
+
+	- OP-011 => 50
+    {
+        "IdOrdenPreparacion": "OP-011",
+        "IdCliente": "CL-001",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-10-01T00:00:00",
+        "FechaEntrega": "2024-10-05T00:00:00",
+        "Estado": 2,
+        "Prioridad": 0,
+        "IdTransportista": "TR-011",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-001",
+                "Cantidad": 50
+            },
+            {
+                "SKUProducto": "SKU-002",
+                "Cantidad": 200
+            }
+        ]
+    },
+
+	- OP-035 => 250
+    {
+        "IdOrdenPreparacion": "OP-035",
+        "IdCliente": "CL-001",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-11-15T08:58:13.2999548-03:00",
+        "FechaEntrega": "2024-11-16T08:56:28.231",
+        "Estado": 0,
+        "Prioridad": 1,
+        "IdTransportista": "TR-003",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-001",
+                "Cantidad": 250
+            },
+            {
+                "SKUProducto": "SKU-002",
+                "Cantidad": 800
+            }
+        ]
+    }
+
+Cantidad disponible según stock = 500 - 50 - 60 - 50 - 250 = 90
