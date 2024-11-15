@@ -1,0 +1,165 @@
+﻿Caso 8: Validacion calculo cantidad disponible emitiendo 3 OP con el mismo producto, Emitiendo una 0S  y RETIRANDO la OS  
+
+1 - Verificamos cantidades iniciales en arhcivo producto.json del producto SKU-094
+
+{
+   {
+    "SKUProducto": "SKU-094",
+    "DescripcionProducto": "Computadoras industriales",
+    "IdCliente": "CL-009",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 500
+      }
+    ]
+  },
+
+1- Botón: "Ordenes de Preparación"
+
+2- Botón: "Emitir Orden de Preparación"
+
+3 - Cliente: CL-009 - Prioridad: SinPrioridad - Transportista: TR-020 - Fecha de Entrega: 30/11/2024
+
+4 -  Producto: SKU-094 
+
+5 - Cantidad: 100
+
+6- Botón: "Agregar Producto"
+
+4 -  Producto: SKU-094 disponible 
+
+5 - Cantidad: 50
+
+6- Botón: "Agregar Producto"
+
+7 - Botón "Emitir Orden" 
+
+8- Mensaje: "Orden OP-035 creada exitosamente."
+
+9- Botón: "Ok"
+
+10 - Ahora probar emitir otra OP con los mismos datos:  
+
+Cliente: CL-009 - Prioridad: SinPrioridad - Transportista: TR-020 - Fecha de Entrega: 30/11/2024
+
+11-  Producto: SKU-094
+
+12 - Cantidad : 150
+
+13- Botón: "Agregar Producto"
+
+14 - Botón "Emitir Orden" 
+
+8- Mensaje: "Orden OP-036 creada exitosamente."
+
+9- Botón: "Ok"
+
+10 - Ahora probar emitir otra OP con los mismos datos:  
+
+Cliente: CL-009 - Prioridad: SinPrioridad - Transportista: TR-020 - Fecha de Entrega: 30/11/2024
+
+11-  Producto: SKU-094
+
+12 - Cantidad : 100
+
+13- Botón: "Agregar Producto"
+
+14 - Botón "Emitir Orden" 
+
+8- Mensaje: "Orden OP-037 creada exitosamente."
+
+9- Botón: "Ok"
+
+9- Botón: "Volver"
+
+1- Cerrar menu
+
+-	Botón: "Ordenes de Seleccion"
+
+2 -  Botón: "Emitir orden de Seleccion"
+
+3 - Seleccionar ID Orden Preparación: OP-036 / OP-037
+	
+
+8- Botón: "Agregar Seleccionadas"
+
+10 - Botón: "Emitir Orden"
+
+11- Mensaje: "Se genero OS-008"
+
+12- Botón: "Ok"
+
+1- Botón: "Ordenes de Seleccion"
+
+2- Botón: "Retirar Orden Seleccion"
+
+3- Orden de Seleccion: OS-008
+
+5- Botón Confirmar
+
+6- Mensaje: El retiro de las ordenes de preparacion se ha confirmado
+
+7- Botón: "Ok"
+
+1- Cerrar menu
+
+1- Botón: "Ordenes de Preparación"
+
+2- Botón: "Emitir Orden de Preparación"
+
+3 - Cliente: CL-009 - Prioridad: SinPrioridad - Transportista: TR-020 - Fecha de Entrega: 30/11/2024
+
+4 -  Producto: SKU-094 
+
+5 - Cantidad: 200
+
+15- [Mensaje de error: "No hay suficiente stock disponible.
+	                    Cantidad solicitada: 200
+						Cantidad disponible: 100"]
+
+Revisión de cálculos:
+
+16 -  Verificamos en archivo prdocuto.json  Cantidad SKU-094 / Debe haber 250 ya que se retiraron 250 de la OS-008
+ {
+        "SKUProducto": "SKU-094",
+        "DescripcionProducto": "Computadoras industriales",
+        "IdCliente": "CL-009",
+        "Inventario": [
+            {
+                "IdDeposito": "GBAN1",
+                "Ubicacion": "1-2-2",
+                "Cantidad": 250
+            }
+        ]
+    },
+
+17- Verificamos en archivo OrdenesPreparacion.json las OP que contengan el producto SKU-001 y se encuentren en estado Pendiente (0) y Enseleccion (1)
+
+
+6 - Órdenes de preparación con SKU-001::
+	- OP-035 = 150
+    {
+        "IdOrdenPreparacion": "OP-035",
+        "IdCliente": "CL-009",
+        "IdDeposito": "GBAN1",
+        "FechaEmision": "2024-11-15T10:24:07.351346-03:00",
+        "FechaEntrega": "2024-11-30T10:22:12.244",
+        "Estado": 0,
+        "Prioridad": 1,
+        "IdTransportista": "TR-020",
+        "Detalle": [
+            {
+                "SKUProducto": "SKU-094",
+                "Cantidad": 100
+            },
+            {
+                "SKUProducto": "SKU-094",
+                "Cantidad": 50
+            }
+        ]
+    },
+
+
+Cantidad disponible según stock = 250 - 50 - 100 = 100   Calculo Correcto

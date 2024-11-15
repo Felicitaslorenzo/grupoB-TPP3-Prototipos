@@ -1,10 +1,11 @@
-﻿Caso 8: Validacion calculo cantidad disponible emitiendo dos OP con el mismo producto
+﻿Caso 8: Validacion calculo cantidad disponible emitiendo 2 OP 
+
 
 1- Botón: "Ordenes de Preparación"
 
 2- Botón: "Emitir Orden de Preparación"
 
-3 - Cliente: CL-001 - Prioridad: SinPrioridad - Transportista: TR-003 - Fecha de Entrega: Today
+3 - Cliente: CL-008 - Prioridad: SinPrioridad - Transportista: TR-018 - Fecha de Entrega: 30/11/2024
 
 4 -  Producto: SKU-001 (disponible = 500, verificar en archivo producto.json) 
 
