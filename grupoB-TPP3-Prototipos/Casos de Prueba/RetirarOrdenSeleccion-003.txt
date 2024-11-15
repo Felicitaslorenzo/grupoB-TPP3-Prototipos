@@ -110,3 +110,15 @@ CASO 3: Retirar Ordenes de selección: Validaciones
     "FechaEmision": "2024-11-11T00:00:00",
     "OrdenesPreparacion": [ "OP-031" ]
   }
+  12 - Verificar .json de OrdenPreparacion (cambio de estado)(2=Seleccionada)
+    {
+        "IdOrdenPreparacion":"OP-031",
+        "IdCliente":"CL-008",
+        "IdDeposito":"GBAN1",
+        "FechaEmision":"2024-10-30T00:00:00",
+        "FechaEntrega":"2024-11-04T00:00:00",
+        "Estado":2,
+        "Prioridad":1,
+        "IdTransportista":"TR-018",
+        "Detalle":[{"SKUProducto":"SKU-101","Cantidad":1000},{"SKUProducto":"SKU-102","Cantidad":1500}]
+    },

@@ -45,5 +45,24 @@
     "OrdenesPreparacion": [
       "OP-031"
     ]
+  },
+  {
+    "IdOrdenSeleccion": "OS-006",
+    "Estado": 0,
+    "FechaEstado": "2024-11-23T00:00:00",
+    "FechaEmision": "2024-11-11T00:00:00",
+    "OrdenesPreparacion": [
+      "OP-032",
+      "OP-033"
+    ]
+  },
+  {
+    "IdOrdenSeleccion": "OS-007",
+    "Estado": 0,
+    "FechaEstado": "2024-11-23T00:00:00",
+    "FechaEmision": "2024-11-11T00:00:00",
+    "OrdenesPreparacion": [
+      "OP-034"
+    ]
   }
 ]

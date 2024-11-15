@@ -1,0 +1,129 @@
+CASO 4: Retirar Ordenes de selección: Validaciones
+1 - Botón "Ordenes de Seleccion" 
+2 - Botón "Retirar orden de Selección"
+3 - Filtrar con OS-006
+5 - Muestra:
+	1-1-1	Remeras		95
+	1-1-2	Remeras		1505
+	1-1-3	Medias		195
+	1-1-4	Medias      905
+6 - Verificar json de Productos (cantidad en inventario) previo confirmación:
+    {
+    "SKUProducto": "SKU-103",
+    "DescripcionProducto": "Remeras",
+    "IdCliente": "CL-009",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-1-1",
+        "Cantidad": 95
+      },
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-1-2",
+        "Cantidad": 2000
+      }
+    ]
+  },
+  {
+    "SKUProducto": "SKU-104",
+    "DescripcionProducto": "Medias",
+    "IdCliente": "CL-009",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-1-3",
+        "Cantidad": 195
+      },
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-1-4",
+        "Cantidad": 5000
+      }
+    ]
+  }
+7 - Botón Confirmar
+8 - Mensaje:	"El retiro de la(s) Orden(es) de Preparación se ha confirmado"
+9 - Botón Aceptar
+10 - Verificar Productos.json (cantidades). Se restaron correctamente:
+  {
+        "SKUProducto":"SKU-103",
+        "DescripcionProducto":"Remeras",
+        "IdCliente":"CL-009",
+        "Inventario":[
+        {
+            "IdDeposito":"GBAN1",
+            "Ubicacion":"1-1-1",
+            "Cantidad":0
+        },
+        {
+            "IdDeposito":"GBAN1",
+            "Ubicacion":"1-1-2",
+            "Cantidad":495
+        }]
+    },
+    {
+        "SKUProducto":"SKU-104",
+        "DescripcionProducto":"Medias",
+        "IdCliente":"CL-009",
+        "Inventario":
+        [{
+            "IdDeposito":"GBAN1",
+            "Ubicacion":"1-1-3",
+            "Cantidad":0
+        },
+        {
+            "IdDeposito":"GBAN1",
+            "Ubicacion":"1-1-4",
+            "Cantidad":4095
+        }]
+    }
+
+  11 - Verificar .json de Orden de selección (Cambio de estado) (1=Preparada)
+    {
+        "IdOrdenSeleccion":"OS-006",
+        "Estado":1,
+        "FechaEstado":"2024-11-23T00:00:00",
+        "FechaEmision":"2024-11-11T00:00:00",
+        "OrdenesPreparacion":
+        ["OP-032","OP-033"]
+    }
+12 - Verificar .json de OrdenPreparacion (cambio de estado)(2=Seleccionada)
+    {
+        "IdOrdenPreparacion":"OP-032",
+        "IdCliente":"CL-009",
+        "IdDeposito":"GBAN1",
+        "FechaEmision":"2024-11-14T00:00:00",
+        "FechaEntrega":"2024-11-15T00:00:00",
+        "Estado":2,
+        "Prioridad":1,
+        "IdTransportista":"TR-022",
+        "Detalle":[
+        {
+            "SKUProducto":"SKU-103",
+            "Cantidad":100
+        },
+        {
+            "SKUProducto":"SKU-104",
+            "Cantidad":200
+        }]
+     },
+     {
+        "IdOrdenPreparacion":"OP-033",
+        "IdCliente":"CL-009",
+        "IdDeposito":"GBAN1",
+        "FechaEmision":"2024-11-14T00:00:00",
+        "FechaEntrega":"2024-11-15T00:00:00",
+        "Estado":2,
+        "Prioridad":1,
+        "IdTransportista":"TR-022",
+        "Detalle":
+        [{
+            "SKUProducto":"SKU-103",
+            "Cantidad":1500
+        },
+        {
+            "SKUProducto":"SKU-104",
+            "Cantidad":900
+        }]
+     }
