@@ -19,10 +19,32 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
             InitializeComponent();
             MostrarOrdenesActuales(); // Cambiamos para mostrar todas las órdenes del día
         }
+        
         // Método para mostrar todas las órdenes de preparación con fecha de entrega actual
         private void MostrarOrdenesActuales()
         {
             var ordenes = modelo.ObtenerOrdenesPorEstadoPreparada(); // Llamada al método para obtener la lista de órdenes
+            if (ordenes.Count > 0)
+            {
+                // Limpiar el ListView antes de agregar nuevos elementos
+                OrdenesEntregalistView.Items.Clear();
+
+                // Iterar sobre cada orden de preparación obtenida
+                foreach (var orden in ordenes)
+                {
+                    var listViewItem = new ListViewItem(orden.IdOrden);
+                    listViewItem.SubItems.Add(orden.IdCliente);
+                    listViewItem.SubItems.Add(orden.FechaEntrega.ToShortDateString());
+                    OrdenesEntregalistView.Items.Add(listViewItem);
+                }
+            }
+            else
+            {
+                OrdenesEntregalistView.Items.Clear();
+                MessageBox.Show("No hay órdenes de preparación en estado empaquetada.");
+            }
+
+            /* var ordenes = modelo.ObtenerOrdenesPorEstadoPreparada(); // Llamada al método para obtener la lista de órdenes
             if (ordenes.Count > 0) // Verifica si hay alguna orden para mostrar
             {
                 // Limpiar el ListView antes de agregar nuevos elementos
@@ -43,7 +65,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
             else
             {
                 MessageBox.Show("No hay órdenes de preparación en estado preparada.");
-            }
+            } */
         }
 
         // Botón Volver
@@ -58,17 +80,48 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
         {
             if (OrdenesEntregalistView.SelectedItems.Count > 0)
             {
+                // Obtener los IDs de las órdenes seleccionadas (de la primera columna)
                 var idsSeleccionados = OrdenesEntregalistView.SelectedItems
                                         .Cast<ListViewItem>()
-                                        .Select(item => item.SubItems[0].Text)
+                                        .Select(item => item.SubItems[0].Text) // Extrae el texto del primer subelemento
                                         .ToList();
-                modelo.GenerarNuevaOrdenEntrega(idsSeleccionados); // Genera la nueva orden de entrega
-                MostrarOrdenesActuales(); // Actualiza la vista después de generar la orden
+
+                // Cambia el estado de las órdenes seleccionadas
+                modelo.CambiarEstadoOrden(idsSeleccionados);
+
+                // Genera y guarda la nueva orden de entrega con los IDs seleccionados
+                modelo.GenerarNuevaOrdenEntrega(idsSeleccionados);
+
+                // Mostrar un mensaje de éxito
+                MessageBox.Show("Orden de entrega generada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Eliminar las órdenes seleccionadas del ListView
+                foreach (ListViewItem item in OrdenesEntregalistView.SelectedItems)
+                {
+                    OrdenesEntregalistView.Items.Remove(item);
+                }
+
+                // Actualizar la lista de órdenes para reflejar los cambios
+                MostrarOrdenesActuales();
             }
             else
             {
+                // Mostrar un error si no se seleccionaron órdenes
                 MessageBox.Show("Debe seleccionar al menos una orden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            /*   if (OrdenesEntregalistView.SelectedItems.Count > 0)
+              {
+                  var idsSeleccionados = OrdenesEntregalistView.SelectedItems
+                                          .Cast<ListViewItem>()
+                                          .Select(item => item.SubItems[0].Text)
+                                          .ToList();
+                  modelo.GenerarNuevaOrdenEntrega(idsSeleccionados); // Genera la nueva orden de entrega
+                  MostrarOrdenesActuales(); // Actualiza la vista después de generar la orden
+              }
+              else
+              {
+                  MessageBox.Show("Debe seleccionar al menos una orden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              } */
         }
 
         private ListView listView1;
