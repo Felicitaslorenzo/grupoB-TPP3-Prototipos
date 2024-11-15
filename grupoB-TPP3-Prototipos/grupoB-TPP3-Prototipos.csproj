@@ -20,9 +20,6 @@
     <None Update="Datos\Depositos.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Datos\InventarioMercaderias.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Datos\OrdenesEntrega.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
