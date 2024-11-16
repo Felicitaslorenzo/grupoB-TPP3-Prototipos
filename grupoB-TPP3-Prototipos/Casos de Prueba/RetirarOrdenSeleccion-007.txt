@@ -1,0 +1,65 @@
+CASO 7: Retirar Ordenes de selección: GBAN2
+
+1 - Botón "Ordenes de Seleccion" 
+2 - Botón "Retirar orden de Selección"
+3 - Filtrar con OS-003
+5 - Muestra:
+	1-1-4   Sistemas de filtración de agua  80
+    2-4-2   Sillas ergonómicas de oficina 500
+
+6 - Verificar json de Productos (cantidad en inventario) previo confirmación:
+  {
+    "SKUProducto": "SKU-006",
+    "DescripcionProducto": "Paneles solares portátiles",
+    "IdCliente": "CL-003",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS1",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 900
+      }
+    ]
+  },
+  {
+    "IdOrdenPreparacion": "OP-023",
+    "IdCliente": "CL-004",
+    "IdDeposito": "GBAN1",
+    "FechaEmision": "2024-10-16T00:00:00",
+    "FechaEntrega": "2024-11-14T00:00:00",
+    "Estado": 4,
+    "Prioridad": 0,
+    "IdTransportista": "TR-008",
+    "Detalle": [
+      {
+        "SKUProducto": "SKU-008",
+        "Cantidad": 50
+      }
+    ]
+  },
+7 - Botón "Confirmar"
+8 - Muestra mensaje: "El retiro de las ordenes de preparacion se ha confirmado"
+9 - Botón aceptar.
+
+10 - Verificar Productos.json (cantidades). Se restaron correctamente:
+{
+    "SKUProducto":"SKU-023",
+    "DescripcionProducto":"Sistemas de filtraci\u00F3n de agua",
+    "IdCliente":"CL-010",
+    "Inventario":[{"IdDeposito":"GBAN2","Ubicacion":"1-2-4","Cantidad":420}]},
+
+{
+    "SKUProducto":"SKU-006",
+    "DescripcionProducto":
+    "Paneles solares port\u00E1tiles",
+    "IdCliente":"CL-003",
+    "Inventario":[{"IdDeposito":"GBAS1","Ubicacion":"2-3-4","Cantidad":900}]},
+
+
+11 - Estado de las ordenes selección (1)
+{"IdOrdenSeleccion":"OS-003","Estado":1,"FechaEstado":"2024-11-21T00:00:00","FechaEmision":"2024-10-21T00:00:00","OrdenesPreparacion":["OP-009","OP-010"]},
+
+12- Estado de las ordenes preparación (2)
+
+{"IdOrdenPreparacion":"OP-009","IdCliente":"CL-010","IdDeposito":"GBAN2","FechaEmision":"2024-09-23T00:00:00","FechaEntrega":"2024-09-27T00:00:00","Estado":2,"Prioridad":1,"IdTransportista":"TR-009","Detalle":[{"SKUProducto":"SKU-023","Cantidad":80}]},
+
+{"IdOrdenPreparacion":"OP-010","IdCliente":"CL-004","IdDeposito":"GBAN2","FechaEmision":"2024-09-27T00:00:00","FechaEntrega":"2024-09-30T00:00:00","Estado":2,"Prioridad":0,"IdTransportista":"TR-010","Detalle":[{"SKUProducto":"SKU-007","Cantidad":500}]},
