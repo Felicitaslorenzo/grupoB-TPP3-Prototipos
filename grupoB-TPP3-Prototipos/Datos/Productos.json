@@ -676,7 +676,7 @@
       },
       {
         "IdDeposito": "GBAS1",
-        "Ubicacion": "2-1-5",
+        "Ubicacion": "2-20-5",
         "Cantidad": 200
       }
     ]
@@ -693,7 +693,7 @@
       },
       {
         "IdDeposito": "GBAS1",
-        "Ubicacion": "2-1-5",
+        "Ubicacion": "2-25-5",
         "Cantidad": 500
       }
     ]
