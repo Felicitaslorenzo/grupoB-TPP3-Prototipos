@@ -16,7 +16,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
         //TODO: Alguna pantalla tiene que darle al usuario la posibilidad de cambiar esto.
         //Por ahora (y hasta el final) lo dejamos hard-coded, y una vez que terminemos le agregamos
         //en la pantalla de menu principal la posibilidad de cambiar de deposito.
-        public static DepositoEnt DepositoActual => Depositos.First(d => d.IdDeposito =="GBAN2");
+        public static DepositoEnt DepositoActual => Depositos.First(d => d.IdDeposito =="GBAN1");
 
         public static void Grabar()
         {

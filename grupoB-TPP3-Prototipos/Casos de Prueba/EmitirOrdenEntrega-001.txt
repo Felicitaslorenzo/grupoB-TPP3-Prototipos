@@ -17,7 +17,7 @@
 
 14- Cerrar Sistema
 
-15- Verificar en OrdenesPreparacion.json, nuevo registro:
+15- Verificar en OrdenesPreparacion.json, estado 4:
     {
         "IdOrdenPreparacion":"OP-016",
         "IdCliente":"CL-006",.
@@ -41,3 +41,13 @@
         "IdTransportista":"TR-017",
         "Detalle":[{"SKUProducto":"SKU-011","Cantidad":150}]
     }
+16- Verificar nuevo registro de Ordenes Entrega en json: 
+{
+    "IdOrdenEntrega": "OE-006",
+    "FechaEmision": "2024-11-16T14:51:24.9074314-03:00",
+    "FechaEntrega": "2024-11-16T14:51:24.9094741-03:00",
+    "OrdenesPreparacion": [
+      "OP-016",
+      "OP-017"
+    ]
+  }
