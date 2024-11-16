@@ -69,6 +69,7 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
                 UBICACION B => SACA 20 Remeras
                 UBICACION C => SACA 50 Zapatillas
             */
+            var idDeposito = DepositoAlmacen.DepositoActual.IdDeposito;
 
             var ordenSeleccionada = OrdenSeleccionAlmacen.OrdenesSeleccion
                 .FirstOrDefault(o => o.IdOrdenSeleccion == idOrdenSeleccion);
@@ -81,8 +82,8 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
             var productos = new List<Producto>();
 
             var ordenesPreparacion = OrdenPreparacionAlmacen.OrdenesPreparacion
-                .Where(op => ordenSeleccionada.OrdenesPreparacion.Contains(op.IdOrdenPreparacion))
-                .ToList();
+                .Where(op => ordenSeleccionada.OrdenesPreparacion.Contains(op.IdOrdenPreparacion)
+                             && op.IdDeposito == idDeposito).ToList();
 
             Dictionary<string, int> totalRequeridoPorProducto = new();
             foreach (var ordenPreparacion in ordenesPreparacion)
@@ -108,7 +109,7 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
                     .Where(p => p.SKUProducto == productoSku)
                     .First();
 
-                foreach (var inventario in productoEntidad.Inventario)
+                foreach (var inventario in productoEntidad.Inventario.Where(i => i.IdDeposito == idDeposito))
                 {
                     if (totalRequeridoPorProducto[productoSku] <= 0) break;
 
