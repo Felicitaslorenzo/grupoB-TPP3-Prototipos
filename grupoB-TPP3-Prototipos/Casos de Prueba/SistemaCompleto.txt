@@ -1,0 +1,526 @@
+﻿Caso 1 : Corrida al sistema completo / verificaciones de grabar y cantidades
+
+1- Verificar datos iniciales de los productos a utilizar
+
+ {
+    "SKUProducto": "SKU-020",
+    "DescripcionProducto": "Placas de yeso para construcción",
+    "IdCliente": "CL-010",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "2-4-2",
+        "Cantidad": 1000
+      },
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-18-2",
+        "Cantidad": 1000
+      },
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-18-3",
+        "Cantidad": 300
+      }
+
+      {
+    "SKUProducto": "SKU-099",
+    "DescripcionProducto": "Generadores de energía eléctrica portátiles",
+    "IdCliente": "CL-010",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAS2",
+        "Ubicacion": "2-3-4",
+        "Cantidad": 100
+      }
+    ]
+
+1- Botón: "Ordenes de Preparación"
+
+2- Botón: "Emitir Orden de Preparación"
+
+3- ID Cliente: CL-010
+
+4- Prioridad: ConPrioridadDeEntrega
+
+5- Transportista: TR-022
+
+6- Fecha entrega: Today
+
+7- Producto: SKU-020
+
+8- Cantidad: 1250
+
+9- Botón: "Agregar Producto"
+
+7- Producto: SKU-099
+
+8- Cantidad: 5
+
+10- Detalle:
+
+SKU020 - Placas de yeso de construccion -   1250
+SKU099 - Generadores de energia electrica -   5
+
+11- Botón: "Emitir Orden"
+
+12- Mensaje: "Orden OP-035 creada exitosamente."
+
+13- Botón: "Ok"
+
+15  ID Cliente: CL-010
+
+4- Prioridad: ConPrioridadDeEntrega
+
+5- Transportista: TR-022
+
+6- Fecha entrega: Today
+
+7- Producto: SKU-020
+
+8- Cantidad: 15
+
+9- Botón: "Agregar Producto"
+
+7- Producto: SKU-020
+
+8- Cantidad: 1000
+
+9- Botón: "Agregar Producto"
+
+12- Mensaje Sistema: Cantidad excedida: No hay suficiente stock disponible  Cantidad solicitada: 1000 Cantidad disponible: 35
+
+9- Botón: "Ok"
+
+7- Producto: SKU-099
+
+8- Cantidad: 999
+
+9- Botón: "Agregar Producto"
+
+12- Mensaje Sistema: Cantidad excedida: No hay suficiente stock disponible  Cantidad solicitada: 999 Cantidad disponible: 95
+
+9- Botón: "Ok"
+
+8- Cantidad:  7
+
+9- Botón: "Agregar Producto"
+
+7- Producto: SKU-099
+
+8- Cantidad:  8
+
+9- Botón: "Agregar Producto"
+
+7- Producto: SKU-020
+
+8- Cantidad: 7
+
+9- Botón: "Agregar Producto"
+
+
+10- Detalle:
+
+SKU020 - Placas de yeso de construccion -   15
+SKU099 - Generadores de energia electrica -   7
+SKU020 - Placas de yeso de construccion -   8
+SKU099 - Generadores de energia electrica -  7
+
+11- Botón: "Emitir Orden"
+
+12- Mensaje: "Orden OP-036 creada exitosamente."
+
+3- ID Cliente: CL-010
+
+6- Fecha entrega: Today
+
+7- Producto: SKU-020
+
+8- Cantidad:1000
+
+9- Botón: "Agregar Producto"
+
+12- Mensaje Sistema: Cantidad excedida: No hay suficiente stock disponible  Cantidad solicitada: 1000 Cantidad disponible: 28
+
+13- Cerrar Menu OrdenesPreparacion
+
+13-	Botón: "Ordenes de Seleccion"
+
+2 -  Botón: "Emitir orden de Seleccion"
+
+3 - Seleccionar ID Orden Preparación: OP-035
+  
+7 -	Detalle de la Orden:
+
+	Placas de yeso de construccion   1250
+    Generadores de energia electrica  5
+
+
+8- Botón: "Agregar Seleccionadas"
+
+3 - Seleccionar ID Orden Preparación: OP-036
+  
+7 -	Detalle de la Orden:
+
+Placas de yeso de construccion -   15
+Generadores de energia electrica -   7
+Placas de yeso de construccion -   8
+Generadores de energia electrica -  7
+
+8- Botón: "Agregar Seleccionadas"
+
+9-	Detalle:
+
+	OP-035 -  Distribuciones Alfa	 -   16/11/2024  
+    OP-036 -  Distribuciones Alfa	 -   16/11/2024 
+
+10 - Botón: "Emitir Orden"
+
+11- Mensaje: "Se genero OS-009"
+
+12- Botón: "Ok"
+
+12- Botón: "Volver"
+
+2- Botón: "Retirar Orden Seleccion"
+
+3- Orden de Seleccion: OS-009
+
+4- Productos en Orden con ubicación, producto, cantidad
+
+    2-18-2 Placas de yeso para construccion              1000    OK CORREGIDO (OJO ACA DEBE ONER LAS UBICACIONES DEL DEPOSITO GBAS2  2-18-2) OK CORREGIDO
+    2-18-3 Placas de yeso para construccion              272    OK CORREGIDO (Y ACA DEBERIA PONER EL  2-18-3)
+    2-3-4 Generadores de energia electrica portatiles   20
+
+5- Botón Confirmar
+
+6- Mensaje: El retiro de las ordenes de preparacion se ha confirmado
+
+7- Botón: "Ok"
+
+13 - Cerrar Sistema
+
+1- Botón: "Ordenes de Preparación"
+
+2- Botón: "Emitir Orden de Preparación"
+
+3- ID Cliente: CL-010
+
+4- Prioridad: ConPrioridadDeEntrega
+
+5- Transportista: TR-022
+
+6- Fecha entrega: Today
+
+7- Producto: SKU-020
+
+8- Cantidad: 1250
+
+9- Botón: "Agregar Producto"
+
+12- Mensaje Sistema: Cantidad excedida: No hay suficiente stock disponible  Cantidad solicitada: 1250 Cantidad disponible: 28
+
+7- Producto: SKU-099
+
+8- Cantidad: 15
+
+9- Botón: "Agregar Producto"
+
+7- Producto: SKU-020
+
+8- Cantidad: 13
+
+9- Botón: "Agregar Producto"
+
+7- Producto: SKU-020
+
+8- Cantidad: 2
+
+9- Botón: "Agregar Producto"
+
+7- Producto: SKU-020
+
+8- Cantidad: 1250
+
+9- Botón: "Agregar Producto"
+
+12- Mensaje Sistema: Cantidad excedida: No hay suficiente stock disponible  Cantidad solicitada: 1250 Cantidad disponible: 13
+
+9- Botón: "oK"
+
+9- Botón: "Emitir Orden"
+
+12- Mensaje: "Orden OP-037 creada exitosamente."
+
+9- Botón: "oK"
+
+3- ID Cliente: CL-010
+
+4- Prioridad: ConPrioridadDeEntrega
+
+5- Transportista: TR-022
+
+6- Fecha entrega: Today
+
+7- Producto: SKU-099
+
+8- Cantidad: 1
+
+9- Botón: "Agregar Producto"
+
+9- Botón: "Emitir Orden"
+
+12- Mensaje: "Orden OP-038 creada exitosamente
+
+9- Botón: "oK"
+
+3- ID Cliente: CL-010
+
+4- Prioridad: ConPrioridadDeEntrega
+
+5- Transportista: TR-022
+
+6- Fecha entrega: Today
+
+7- Producto: SKU-099
+
+8- Cantidad: 64
+
+9- Botón: "Agregar Producto"
+
+9- Botón: "Emitir Orden"
+
+12- Mensaje: "Orden OP-039 creada exitosamente."
+
+13- Cerrar Menu OrdenesPreparacion
+
+1-	Botón: "Ordenes de Seleccion"
+
+2 -  Botón: "Emitir orden de Seleccion"
+
+6 -	Seleccionar Orden de Preparación: OP-039	
+
+8- Botón: "Agregar Seleccionadas"
+
+6 -	Seleccionar Orden de Preparación: OP-037	
+
+8- Botón: "Agregar Seleccionadas"
+
+9-	Detalle:
+
+	OP-039 -  Distribuciones Alfa	 -   16/11/2024  
+    OP-037 -  Distribuciones Alfa	 -   16/11/2024 
+
+10 - Botón: "Emitir Orden"
+
+11- Mensaje: "Se genero OS-010"
+
+12- Botón: "Ok"
+
+12- Botón: "Volver"
+
+13- Cerrar menu OrdenesSelecciona
+
+1- Botón: "Ordenes de Entrega"
+
+2- Botón: "Empaquetado"
+
+4- Detalle:
+
+Placas de yeso para construccion - 1250
+Generadores de energira portatil - 5
+
+6- Botón: "Empaquetado"
+
+7- Mensaje: Exito: "La orden con ID OP-035 se ha empaquetado con exito."
+
+8- Botón: "Ok"
+
+4- Detalle:
+
+Placas de yeso para construccion - 15
+Generadores de energira portatil - 7    
+Placas de yeso para construccion - 8
+Generadores de energira portatil - 7
+
+6- Botón: "Empaquetado"
+
+7- Mensaje: Exito: "La orden con ID OP-036 se ha empaquetado con exito."
+
+8- Botón: "Ok"
+
+9- Botón: "Volver"
+
+2- Botón: "Emitir Orden de Entrega"
+
+3- Detalle: Id Orden, Cliente y Fecha Entrega
+    OP-035 CL-010 16/11/2024
+    OP-036 CL-010 16/11/2024
+  
+ 4- Seleccionar OP-035 y OP-036
+
+11- Botón: "Emitir Orden de Entrega" 
+
+12- Mensaje: "Orden de entrega generada con ID: OE-006"
+
+13- Botón: "Aceptar"
+
+13- Cerrar sistema
+
+15- Verificar en OrdenesEntrega.json, nuevo registro:
+
+ {
+    "IdOrdenEntrega": "OE-006",
+    "FechaEmision": "2024-11-16T13:14:50.3986325-03:00",
+    "FechaEntrega": "2024-11-16T13:14:50.3986333-03:00",
+    "OrdenesPreparacion": [
+      "OP-035",
+      "OP-036"
+    ]
+  }
+
+1- Botón: "Ordenes de Entrega"
+
+2- Botón: "Despachar Orden de Entrega"
+
+3- Transportista: TR-022 
+
+4- Botón: "Buscar"
+
+4- Detalle:
+
+OP-035- CL-010
+OP-036 CL-010
+
+4- Seleccinar OP-036 
+
+11- Botón: "Emitir Remito"
+
+12- Mensaje: "El remito RM-006 se ha generado correctamente."
+
+13- Botón: "Aceptar"
+
+13- Cerrar sistema
+
+
+15- Verificar en remito.json, nuevo registro:
+
+  {
+        "IdRemito": "RM-006",
+        "FechaEmision": "2024-11-16T13:26:59.1692072-03:00",
+        "OrdenesPreparacion": [
+            "OP-036"
+        ],
+        "IdTransportista": "TR-022"
+    }
+
+1- Botón: "Ordenes de Seleccion"
+
+2- Botón: "Retirar Orden Seleccion"
+
+3- Orden de Seleccion: OS-010
+
+4- Productos en Orden con ubicación, producto, cantidad
+
+    2-3-4 Generadores de energia electricos portatiles 79
+    2-18-3 Placas de yeso para construccion 15
+    
+
+
+5- Botón:  Confirmar
+
+6- Mensaje: El retiro de las ordenes de preparacion se ha confirmado
+
+7- Botón: "Ok"
+
+7- cERRAR MENU
+
+2- Botón: " Ordenes de Entrega"
+
+2- Botón: "Empaquetado"
+
+4- Detalle:
+
+Generadores de energia electricos portatiles 15
+Placas de yeso para construccion 13
+Placas de yeso para construccion 2
+
+6- Botón: "Empaquetado"
+
+7- Mensaje: Exito: "La orden con ID OP-037 se ha empaquetado con exito."
+
+8- Botón: "Ok"
+
+4- Detalle:
+
+Generadores de energia electricos portatiles 64
+
+6- Botón: "Empaquetado"
+
+7- Mensaje: Exito: "La orden con ID OP-039 se ha empaquetado con exito."
+
+9- Botón: "Ok"
+
+9- Botón: "Volver"
+
+2- Botón: "Emitir Orden de Entrega"
+
+3- Detalle: Id Orden, Cliente y Fecha Entrega
+    OP-037 CL-010 16/11/2024
+    OP-039 CL-010 16/11/2024
+
+3-  Seleccionar OP-037 y OP-039
+
+11- Botón: "Emitir Orden de Entrega" 
+
+12- Mensaje: "Orden de entrega generada con ID: OE-007"
+
+13- Botón: "Ok"
+
+9- Botón: "Volver"
+
+11- Verificar en OrdenesEntrega.json, nuevo registro:
+
+ {
+    "IdOrdenEntrega": "OE-007",
+    "FechaEmision": "2024-11-16T13:29:40.2284771-03:00",
+    "FechaEntrega": "2024-11-16T13:29:40.2284787-03:00",
+    "OrdenesPreparacion": [
+      "OP-037",
+      "OP-039"
+    ]
+  }
+
+
+2- Botón: "Despachar Orden de Entrega"
+
+3- Transportista: TR-022 y botón "Buscar"
+
+4- Detalle:
+
+OP-035 - CL-010
+OP-037 - CL-010
+OP-039 - CL-010
+
+11- Seleccionar todas las OP
+
+11- Botón: "Emitir Remito"
+
+12- Mensaje: "El remito RM-007 se ha generado correctamente."
+
+13- Botón: "ok"
+
+13- Cerrar sistema
+
+15- Verificar en remito.json, nuevo registro:
+
+  {
+        "IdRemito": "RM-007",
+        "FechaEmision": "2024-11-16T13:32:18.4634566-03:00",
+        "OrdenesPreparacion": [
+            "OP-035",
+            "OP-037",
+            "OP-039"
+        ],
+        "IdTransportista": "TR-022"
+    }
