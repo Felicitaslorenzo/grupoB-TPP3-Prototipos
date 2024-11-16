@@ -1,4 +1,4 @@
-﻿Caso 1 : Crear Orden con un solo producto (Camino Feliz)
+﻿Caso 1 : Crear Orden con un solo producto (Camino Feliz) DEPOSITO: GBAN1
 
 1- Botón: "Ordenes de Preparación"
 

@@ -1,4 +1,4 @@
-﻿Caso 8: Validacion calculo cantidad disponible emitiendo 2 OP 
+﻿Caso 8: Validacion calculo cantidad disponible emitiendo 2 OP (DEPOSITO GBAN1)
 
 
 1- Botón: "Ordenes de Preparación"

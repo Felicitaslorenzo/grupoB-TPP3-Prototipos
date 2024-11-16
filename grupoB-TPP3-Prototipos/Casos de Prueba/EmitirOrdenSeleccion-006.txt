@@ -1,0 +1,48 @@
+Caso 6:  DEPOSITO GBAN2
+
+1-	Botón: "Ordenes de Seleccion"
+
+2 -  Botón: "Emitir orden de Seleccion"
+
+4 - Órdenes Disponibles:
+
+	OP-004: Techno Corp          21/09/2024
+
+5 -	Seleccionamos la orden
+
+6- Botón: "Agregar Seleccionadas"
+
+8-	Detalle:
+
+	OP-004: Techno Corp          21/09/2024
+
+9 - Botón: "Emitir Orden"
+
+10- Mensaje: "Se genero OS-009"
+
+11- Botón: "Ok"
+
+12 - Cerrar Sistema
+
+12- Verificar en OrdenSeleccion.Json, nuevo registro:
+
+	{
+        "IdOrdenSeleccion":"OS-009",
+        "Estado":0,
+        "FechaEstado":"2024-11-16T14:33:22.059482-03:00",
+        "FechaEmision":"2024-11-16T14:33:22.0594782-03:00",
+        "OrdenesPreparacion":["OP-004"]
+    }
+
+13- Verificamos cambios de estado en archivo OrdenesPreparacion.json, Pendiente (0) a En seleccion (1)
+{
+    "IdOrdenPreparacion":"OP-004",
+    "IdCliente":"CL-005",
+    "IdDeposito":"GBAN2",
+    "FechaEmision":"2024-09-21T00:00:00",
+    "FechaEntrega":"2024-09-25T00:00:00",
+    "Estado":1,
+    "Prioridad":0,
+    "IdTransportista":"TR-004",
+    "Detalle":[{"SKUProducto":"SKU-010","Cantidad":100}]
+},

@@ -1,0 +1,55 @@
+Caso 10: Crear Orden con dos  productos (Camino Feliz) DEPOSITO: GBAS2
+
+
+1- Botón: "Ordenes de Preparación"
+
+2- Botón: "Emitir Orden de Preparación"
+
+3- ID Cliente: CL-006
+
+4- Prioridad: SinPrioridad
+
+5- Transportista: TR-014
+
+6- Fecha entrega: 17/11/2024
+
+7- Producto: SKU-011
+
+8- Cantidad: 20
+
+9- Botón: "Agregar Producto"
+
+10- Mensaje: Error: "No hay suficiente stock disponible
+Cantidad solicitada: 20
+Cantidad disponible: 0"
+
+11 - Producto: SKU-073
+
+11- Cantidad: 20
+
+12- Botón: "Agregar Producto"
+
+13- Detalle:
+SKU-073 - Estanterias metalicas para el almacenaje -  20
+
+14- Botón: "Emitir Orden"
+
+15- Mensaje: "Orden OP-035 creada exitosamente"
+
+16- Botón: "Ok"
+
+17- Cerrar Sistema
+
+18- Verificar en OrdenesPreparacion.json, nuevo registro:
+{
+	"IdOrdenPreparacion":"OP-035",
+	"IdCliente":"CL-006",
+	"IdDeposito":"GBAS2",
+	"FechaEmision":"2024-11-16T14:19:32.6996998-03:00",
+	"FechaEntrega":"2024-11-17T14:14:44.915",
+	"Estado":0,
+	"Prioridad":1,
+	"IdTransportista":"TR-014",
+	"Detalle":
+	[{"SKUProducto":"SKU-073","Cantidad":20}]
+}

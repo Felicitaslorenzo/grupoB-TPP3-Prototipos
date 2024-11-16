@@ -1,4 +1,4 @@
-﻿Caso 7: Validacion calculo cantidad disponible
+﻿Caso 7: Validacion calculo cantidad disponible (DEPOSITO GBAN1)
 
 1- Botón: "Ordenes de Preparación"
 
