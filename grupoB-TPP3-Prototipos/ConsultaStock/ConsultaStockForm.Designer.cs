@@ -161,7 +161,7 @@
             // columnUbicacion
             // 
             columnUbicacion.Text = "Ubicación";
-            columnUbicacion.Width = 350;
+            columnUbicacion.Width = 120;
             // 
             // columnCantidad
             // 
