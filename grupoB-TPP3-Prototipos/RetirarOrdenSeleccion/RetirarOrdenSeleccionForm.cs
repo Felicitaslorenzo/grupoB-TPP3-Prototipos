@@ -171,7 +171,7 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
             }
             else
             {
-                MessageBox.Show("No hay órdenes pendientes para retirar.");
+                MessageBox.Show("No hay órdenes EnSeleccion para retirar.");
             }
             /* OrdenSCombo.Items.Clear();
             //ordenesSeleccion = model.OrdenesSeleccionadas;
