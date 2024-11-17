@@ -24,7 +24,7 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
         public RetirarOrdenSeleccionForm()
         {
             InitializeComponent();
-            this.Load += new System.EventHandler(this.RetirarOrdenSeleccionForm_Load);
+            // this.Load += new System.EventHandler(this.RetirarOrdenSeleccionForm_Load);
             OrdenSCombo.SelectedIndexChanged += OrdenSCombo_SelectedIndexChanged;
 
             // Asignar eventos a los botones
