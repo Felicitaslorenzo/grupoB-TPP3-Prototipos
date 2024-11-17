@@ -34,5 +34,11 @@ namespace grupoB_TPP3_Prototipos.MenuOrdenesPreparacion
         {
 
         }
+
+        private void buttonConsultarStock_Click(object sender, EventArgs e)
+        {
+            ConsultaStock.ConsultaStockForm consultaStockForm = new ConsultaStock.ConsultaStockForm();
+            consultaStockForm.ShowDialog();
+        }
     }
 }

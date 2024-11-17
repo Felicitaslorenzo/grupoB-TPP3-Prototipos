@@ -30,14 +30,14 @@
         {
             buttonListarOrdenesPreparacion = new Button();
             buttonGenerarOrden = new Button();
+            buttonConsultarStock = new Button();
             SuspendLayout();
             // 
             // buttonListarOrdenesPreparacion
             // 
-            buttonListarOrdenesPreparacion.Location = new Point(340, 81);
-            buttonListarOrdenesPreparacion.Margin = new Padding(4, 4, 4, 4);
+            buttonListarOrdenesPreparacion.Location = new Point(272, 21);
             buttonListarOrdenesPreparacion.Name = "buttonListarOrdenesPreparacion";
-            buttonListarOrdenesPreparacion.Size = new Size(250, 154);
+            buttonListarOrdenesPreparacion.Size = new Size(200, 123);
             buttonListarOrdenesPreparacion.TabIndex = 0;
             buttonListarOrdenesPreparacion.Text = "Listar Ordenes de Preparación";
             buttonListarOrdenesPreparacion.UseVisualStyleBackColor = true;
@@ -45,23 +45,32 @@
             // 
             // buttonGenerarOrden
             // 
-            buttonGenerarOrden.Location = new Point(340, 300);
-            buttonGenerarOrden.Margin = new Padding(4, 4, 4, 4);
+            buttonGenerarOrden.Location = new Point(272, 160);
             buttonGenerarOrden.Name = "buttonGenerarOrden";
-            buttonGenerarOrden.Size = new Size(250, 154);
+            buttonGenerarOrden.Size = new Size(200, 123);
             buttonGenerarOrden.TabIndex = 1;
             buttonGenerarOrden.Text = "Emitir Orden de Preparación";
             buttonGenerarOrden.UseVisualStyleBackColor = true;
             buttonGenerarOrden.Click += buttonGenerarOrden_Click;
             // 
+            // buttonConsultarStock
+            // 
+            buttonConsultarStock.Location = new Point(272, 298);
+            buttonConsultarStock.Name = "buttonConsultarStock";
+            buttonConsultarStock.Size = new Size(200, 123);
+            buttonConsultarStock.TabIndex = 2;
+            buttonConsultarStock.Text = "Consultar Stock";
+            buttonConsultarStock.UseVisualStyleBackColor = true;
+            buttonConsultarStock.Click += buttonConsultarStock_Click;
+            // 
             // MenuOrdenesPreparacionForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(925, 554);
+            ClientSize = new Size(740, 443);
+            Controls.Add(buttonConsultarStock);
             Controls.Add(buttonGenerarOrden);
             Controls.Add(buttonListarOrdenesPreparacion);
-            Margin = new Padding(4, 4, 4, 4);
             Name = "MenuOrdenesPreparacionForm";
             Text = "MenuOrdenesPreparacionForm";
             Load += MenuOrdenesPreparacionForm_Load;
@@ -72,5 +81,6 @@
 
         private Button buttonListarOrdenesPreparacion;
         private Button buttonGenerarOrden;
+        private Button buttonConsultarStock;
     }
 }
