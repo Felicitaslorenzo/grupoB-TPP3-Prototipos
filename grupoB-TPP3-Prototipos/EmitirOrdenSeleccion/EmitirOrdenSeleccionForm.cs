@@ -78,7 +78,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
                 {
                     SubItems = {
                 orden.Nombre,
-                orden.FechaEmision.ToString("dd/MM/yyyy")
+                orden.FechaEstado.ToString("dd/MM/yyyy") // ACA HICE EL CAMBIO 
             }
                 };
                 GenerarOrdenSeleccionBuscarList.Items.Add(item);
@@ -157,54 +157,54 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
                 return;
             }
 
-            // Valores seleccionados en los desplegables
-            string nombreClienteSeleccionado = DescripcionClienteCombo.Text;
-            string idOrdenSeleccionado = IdOrdenPreparacionCombo.Text;
-            string prioridadSeleccionada = PrioridadCombo.Text;
+            // Obtener los valores seleccionados en los filtros
+            string idOrdenSeleccionado = IdOrdenPreparacionCombo.Text.Trim();
+            string nombreClienteSeleccionado = DescripcionClienteCombo.Text.Trim();
+            string prioridadSeleccionada = PrioridadCombo.Text.Trim();
 
-            // Filtrar OrdenesPreparacionList directamente por el nombre del cliente
-            var ordenesFiltradas = model.ObtenerOrdenesPreparacion().Where(o =>
-                (string.IsNullOrEmpty(idOrdenSeleccionado) || o.IdOrden == idOrdenSeleccionado) &&
-                (string.IsNullOrEmpty(nombreClienteSeleccionado) || o.Nombre == nombreClienteSeleccionado) && // Usar nombre directamente
-                (string.IsNullOrEmpty(prioridadSeleccionada) || o.Prioridad == prioridadSeleccionada));
+            // Obtener todas las órdenes de preparación
+            var ordenesPreparacion = model.ObtenerOrdenesPreparacion();
 
-            // Aplicar filtros de fechas
-            if (FechaOSDesdePicker.Checked && FechaOSHastaPicker.Checked)
+            // Filtrar las órdenes basándonos en los criterios seleccionados
+            var ordenesFiltradas = ordenesPreparacion.Where(o =>
+                (string.IsNullOrEmpty(idOrdenSeleccionado) || o.IdOrden.Equals(idOrdenSeleccionado, StringComparison.OrdinalIgnoreCase)) &&
+                (string.IsNullOrEmpty(nombreClienteSeleccionado) || o.Nombre.Equals(nombreClienteSeleccionado, StringComparison.OrdinalIgnoreCase)) &&
+                (string.IsNullOrEmpty(prioridadSeleccionada) || o.Prioridad.Equals(prioridadSeleccionada, StringComparison.OrdinalIgnoreCase))
+            );
+
+            // Filtrar por Fecha Desde (FechaEmision)
+            if (FechaOSDesdePicker.Checked)
             {
-                DateTime fechaDesde = FechaOSDesdePicker.Value;
-                DateTime fechaHasta = FechaOSHastaPicker.Value;
-                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision >= fechaDesde && orden.FechaEmision <= fechaHasta);
+                DateTime fechaDesde = FechaOSDesdePicker.Value.Date;
+                ordenesFiltradas = ordenesFiltradas.Where(o => o.FechaEmision.Date >= fechaDesde);
             }
-            else if (FechaOSDesdePicker.Checked)
+
+            // Filtrar por Fecha Hasta (FechaEntrega)
+            if (FechaOSHastaPicker.Checked)
             {
-                DateTime fechaDesde = FechaOSDesdePicker.Value;
-                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision >= fechaDesde);
+                DateTime fechaHasta = FechaOSHastaPicker.Value.Date;
+                ordenesFiltradas = ordenesFiltradas.Where(o => o.FechaEstado.Date <= fechaHasta);
             }
-            else if (FechaOSHastaPicker.Checked)
-            {
-                DateTime fechaHasta = FechaOSHastaPicker.Value;
-                ordenesFiltradas = ordenesFiltradas.Where(orden => orden.FechaEmision <= fechaHasta);
-            }
-            //Filtramos solo las que están Pendientes
+
+            // Filtrar solo las órdenes pendientes
             ordenesFiltradas = ordenesFiltradas.Where(o => o.Estado == EstadoOrdenPrepEnum.Pendiente);
 
-
+            // Limpiar el ListView antes de cargar los resultados
             GenerarOrdenSeleccionBuscarList.Items.Clear();
 
+            // Mostrar mensaje si no hay resultados
             if (!ordenesFiltradas.Any())
             {
-                MessageBox.Show("No hay órdenes con los criterios seleccionados", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No hay órdenes con los criterios seleccionados.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            // Agregar elementos filtrados a la OrdenesPreparacionList
+            // Agregar las órdenes filtradas al ListView
             foreach (var ordenPreparacion in ordenesFiltradas)
             {
-                ListViewItem item = new ListViewItem();
-                item.Text = ordenPreparacion.IdOrden.ToString();
+                var item = new ListViewItem(ordenPreparacion.IdOrden.ToString());
                 item.SubItems.Add(ordenPreparacion.Nombre);
-                item.SubItems.Add(ordenPreparacion.FechaEstado.ToString("dd/MM/yyyy"));
-                item.SubItems.Add(ordenPreparacion.FechaEmision.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(ordenPreparacion.FechaEstado.ToString("dd/MM/yyyy")); // Mostrar solo FechaEntrega
 
                 GenerarOrdenSeleccionBuscarList.Items.Add(item);
             }

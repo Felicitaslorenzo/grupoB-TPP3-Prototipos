@@ -10,15 +10,14 @@
 
 5 - Órdenes Disponibles:
 
-	OP-001 - Cliente Porter SA	 - Fecha: 30/10/2024 
+	OP-001 - Cliente Porter SA	 - Fecha: 03/10/2024 
 
 6 -	Seleccionar Orden de Preparación: OP-001	
   
 7 -	Detalle de la Orden:
 
-	Muebles modulares de oficina     60
-    Cementos de alta resistencia     300
-
+	Muebles modulares de oficina     50
+    Cementos de alta resistencia     200
 
 8- Botón: "Agregar Seleccionadas"
 
@@ -28,7 +27,7 @@
 
 10 - Botón: "Emitir Orden"
 
-11- Mensaje: "Se genero OS-006"
+11- Mensaje: "Se genero OS-009"
 
 12- Botón: "Ok"
 
@@ -37,7 +36,7 @@
 14- Verificar en OrdenesSeleccion.Json, nuevo registro:
 
 	 {
-        "IdOrdenSeleccion": "OS-006",
+        "IdOrdenSeleccion": "OS-009",
         "Estado": 0,
         "FechaEstado": "2024-11-14T16:21:56.6747963-03:00",
         "FechaEmision": "2024-11-14T16:21:56.6747945-03:00",
@@ -45,25 +44,15 @@
             "OP-001"
         ]
     }
-15 - Verificar en OrdenPreparacion.json, que la OP-001 modifique el estado de pendiente (0) a en seleccion (1) 
 
-      {
-        "IdOrdenPreparacion": "OP-001",
-        "IdCliente": "CL-001",
-        "IdDeposito": "GBAN1",
-        "FechaEmision": "2024-09-30T00:00:00",
-        "FechaEntrega": "2024-10-03T00:00:00",
-        "Estado": 1,
-        "Prioridad": 0,
-        "IdTransportista": "TR-001",
-        "Detalle": [
-            {
-                "SKUProducto": "SKU-001",
-                "Cantidad": 50
-            },
-            {
-                "SKUProducto": "SKU-002",
-                "Cantidad": 200
-            }
-        ]
-    },
+15 - Verificar en OrdenPreparacion.json, que la OP-001 modifique el estado de pendiente (0) a en seleccion (1) 
+{
+    "IdOrdenPreparacion":"OP-001",
+    "IdCliente":"CL-001",
+    "IdDeposito":"GBAN1",
+    "FechaEmision":"2024-09-30T00:00:00",
+    "FechaEntrega":"2024-10-03T00:00:00",
+    "Estado":1,
+    "Prioridad":0,
+    "IdTransportista":"TR-001",
+    "Detalle":[{"SKUProducto":"SKU-001","Cantidad":50},{"SKUProducto":"SKU-002","Cantidad":200}]},
