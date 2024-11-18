@@ -1,16 +1,16 @@
 
 CASO 1: CASO DE ACCIDENTES
-- Tocar boton "Ordenes de Entrega" en el menu principal.
-- Tocar boton "Listar Ordenes de Entrega".
-- En el campo ID orden seleccionar la orden OE-005
-- Presionar boton Buscar
-- [Devuelve un listado de ordenes de entrega: OE-005]
-- Seleccionar la orden OE-005
-- [Devuelve un listado de ordenes de preparacion: OP-030]
-- En el campo fecha desde seleccionar 1/10/2024
-- Presionar boton Buscar
-- [Devuelve un listado de ordenes de preparacion: OE-001 y limpia el list de ordenes preparacion]
-- Seleccionar la orden OE-001
-- [Devuelve un listado de ordenes de preparacion: OP-021, OP-022, OP-023]
-17- Presionar boton volver.
-18- Cierra sistema
+1. Tocar boton "Ordenes de Entrega" en el menu principal.
+2. Tocar boton "Listar Ordenes de Entrega".
+3. En el campo ID orden seleccionar la orden OE-005
+4. Presionar boton Buscar
+5. [Devuelve un listado de ordenes de entrega: OE-005]
+6. Seleccionar la orden OE-005
+7. [Devuelve un listado de ordenes de preparacion: OP-030]
+8. En el campo fecha desde seleccionar 1/10/2024
+9. Presionar boton Buscar
+10. [Devuelve un listado de ordenes de preparacion: OE-001 y limpia el list de ordenes preparacion]
+11.  Seleccionar la orden OE-001
+12.  [Devuelve un listado de ordenes de preparacion: OP-021, OP-022, OP-023]
+13- Presionar boton volver.
+14- Cierra sistema
