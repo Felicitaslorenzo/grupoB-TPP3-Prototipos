@@ -44,21 +44,18 @@ namespace grupoB_TPP3_Prototipos.MenuPrincipal
         private void CargarDepositos()
         {
 
-            // Enlazar al ComboBox
-            DepositosCombo.DataSource = DepositoAlmacen.Depositos.ToList(); // Convertir a lista
-            DepositosCombo.DisplayMember = "Nombre"; // Mostrar el nombre del depósito
-            DepositosCombo.ValueMember = "IdDeposito"; // Utilizar el ID como valor interno
+            DepositosCombo.DataSource = DepositoAlmacen.Depositos.ToList();
+            DepositosCombo.DisplayMember = "Nombre";
+            DepositosCombo.ValueMember = "IdDeposito";
 
-            // Seleccionar el depósito actual en el ComboBox
             var depositoActual = DepositoAlmacen.DepositoActual;
             DepositosCombo.SelectedValue = depositoActual.IdDeposito;
         }
         private void DepositosCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Actualizar el depósito actual al cambiar la selección
             if (DepositosCombo.SelectedItem is DepositoEnt depositoSeleccionado)
             {
-                //DepositoAlmacen.CambiarDepositoActual(depositoSeleccionado);
+                DepositoAlmacen.DepositoActual = depositoSeleccionado;
             }
         }
     }

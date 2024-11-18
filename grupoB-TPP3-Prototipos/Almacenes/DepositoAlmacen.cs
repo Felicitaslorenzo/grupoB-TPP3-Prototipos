@@ -13,10 +13,29 @@ namespace grupoB_TPP3_Prototipos.Almacenes
 
         public static IReadOnlyCollection<DepositoEnt> Depositos => depositos.AsReadOnly();
 
+        private static DepositoEnt? depositoActual;
         //TODO: Alguna pantalla tiene que darle al usuario la posibilidad de cambiar esto.
         //Por ahora (y hasta el final) lo dejamos hard-coded, y una vez que terminemos le agregamos
         //en la pantalla de menu principal la posibilidad de cambiar de deposito.
-        public static DepositoEnt DepositoActual => Depositos.First(d => d.IdDeposito =="GBAS1");
+        public static DepositoEnt DepositoActual
+        {
+            get
+            {
+                // Usamos el campo privado para evitar recursión infinita
+                if (depositoActual == null)
+                {
+                    depositoActual = depositos.FirstOrDefault(d => d.IdDeposito == "GBAS1");
+                }
+                return depositoActual!;
+            }
+            set
+            {
+                if (depositos.Contains(value))
+                {
+                    depositoActual = value;
+                }
+            }
+        }
 
         public static void Grabar()
         {
