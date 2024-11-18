@@ -31,11 +31,13 @@
             buttonOrdenesPreparacion = new Button();
             buttonOrdenesSeleccion = new Button();
             buttonOrdenesDeEntrega = new Button();
+            DepositosCombo = new ComboBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // buttonOrdenesPreparacion
             // 
-            buttonOrdenesPreparacion.Location = new Point(238, 45);
+            buttonOrdenesPreparacion.Location = new Point(241, 85);
             buttonOrdenesPreparacion.Margin = new Padding(3, 2, 3, 2);
             buttonOrdenesPreparacion.Name = "buttonOrdenesPreparacion";
             buttonOrdenesPreparacion.Size = new Size(148, 64);
@@ -46,7 +48,7 @@
             // 
             // buttonOrdenesSeleccion
             // 
-            buttonOrdenesSeleccion.Location = new Point(238, 127);
+            buttonOrdenesSeleccion.Location = new Point(241, 167);
             buttonOrdenesSeleccion.Margin = new Padding(3, 2, 3, 2);
             buttonOrdenesSeleccion.Name = "buttonOrdenesSeleccion";
             buttonOrdenesSeleccion.Size = new Size(148, 64);
@@ -57,7 +59,7 @@
             // 
             // buttonOrdenesDeEntrega
             // 
-            buttonOrdenesDeEntrega.Location = new Point(238, 210);
+            buttonOrdenesDeEntrega.Location = new Point(241, 250);
             buttonOrdenesDeEntrega.Margin = new Padding(3, 2, 3, 2);
             buttonOrdenesDeEntrega.Name = "buttonOrdenesDeEntrega";
             buttonOrdenesDeEntrega.Size = new Size(148, 64);
@@ -66,11 +68,32 @@
             buttonOrdenesDeEntrega.UseVisualStyleBackColor = true;
             buttonOrdenesDeEntrega.Click += buttonOrdenesDeEntrega_Click;
             // 
+            // DepositosCombo
+            // 
+            DepositosCombo.DropDownStyle = ComboBoxStyle.DropDownList;
+            DepositosCombo.FormattingEnabled = true;
+            DepositosCombo.Location = new Point(220, 42);
+            DepositosCombo.Name = "DepositosCombo";
+            DepositosCombo.Size = new Size(226, 23);
+            DepositosCombo.TabIndex = 3;
+            DepositosCombo.SelectedIndexChanged += DepositosCombo_SelectedIndexChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(220, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(54, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Depósito";
+            // 
             // MenuPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(650, 328);
+            Controls.Add(label1);
+            Controls.Add(DepositosCombo);
             Controls.Add(buttonOrdenesDeEntrega);
             Controls.Add(buttonOrdenesSeleccion);
             Controls.Add(buttonOrdenesPreparacion);
@@ -78,6 +101,7 @@
             Name = "MenuPrincipalForm";
             Text = "MenuPrincipalForm";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -85,5 +109,7 @@
         private Button buttonOrdenesPreparacion;
         private Button buttonOrdenesSeleccion;
         private Button buttonOrdenesDeEntrega;
+        private ComboBox DepositosCombo;
+        private Label label1;
     }
 }
