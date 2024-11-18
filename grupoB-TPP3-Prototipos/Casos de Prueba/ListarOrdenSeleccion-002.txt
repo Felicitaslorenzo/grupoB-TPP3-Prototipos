@@ -8,7 +8,7 @@
 - Presionar el botón "Buscar" con el filtro aplicado
 - [Devuelve una lista de órdenes de selección filtrada] 
 - Seleccionar ID Orden Seleccion OS-003 de la lista 
-- [Devuelve una lista de órdenes de preparación] 
+- [Devuelve una lista de órdenes de preparación: OP-009 y OP-010] 
 - Seleccionar ID Orden Preparación OP-009 de la lista.
 - [Devuelve una lista de productos: 80 sistemas de filtracion de agua] 
 - Presionar el botón "Volver"

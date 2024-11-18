@@ -13,9 +13,9 @@
 - Presionar el botón "Buscar"
 - [Devuelve una lista de órdenes de selección filtrada]
 - Seleccionar ID Orden Seleccion "OS-002" de la lista 
-- [Devuelve una lista de órdenes de preparación] 
+- [Devuelve una lista de órdenes de preparación: OP-007 y OP-008] 
 - Seleccionar ID Orden Preparación "OP-007 la lista 
-- [Devuelve una lista de productos] 
+- [Devuelve una lista de productos: 5 Chillers industriales para refrigerancion] 
 - Presionar el botón "Volver"
 - [Vuelve al menú principal]
 

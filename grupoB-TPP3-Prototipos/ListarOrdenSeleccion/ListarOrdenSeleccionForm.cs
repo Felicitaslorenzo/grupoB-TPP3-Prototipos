@@ -20,7 +20,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
             InitializeComponent();
             FechaDesdeOSPicker.ValueChanged += FechaDesdeOSPicker_ValueChanged;
             FechaHastaOSPicker.ValueChanged += FechaHastaOSPicker_ValueChanged;
-            ListarOrdenSeleccionList.SelectedIndexChanged += ListarOrdenSeleccionList_SelectedIndexChanged; // Asegúrate de que este evento esté asociado
+            ListarOrdenSeleccionList.SelectedIndexChanged += ListarOrdenSeleccionList_SelectedIndexChanged;
         }
 
 
@@ -38,8 +38,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
         {
             // Obtener los valores seleccionados
             string idOrdenSeleccionada = IdOrdenSeleccionCombo.Text;
-            DateTime fechaDesdeSeleccionada = FechaDesdeOSPicker.Value.Date;  // Solo fecha sin hora
-            DateTime fechaHastaSeleccionada = FechaHastaOSPicker.Value.Date;  // Solo fecha sin hora
+            DateTime fechaDesdeSeleccionada = FechaDesdeOSPicker.Value.Date;  
+            DateTime fechaHastaSeleccionada = FechaHastaOSPicker.Value.Date;  
 
             // Validar si al menos un filtro está activo
             if (string.IsNullOrEmpty(idOrdenSeleccionada) && !FechaDesdeOSPicker.Checked && !FechaHastaOSPicker.Checked)
@@ -125,7 +125,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
 
             // Cargar datos en los ComboBox
             IdOrdenSeleccionCombo.Items.AddRange(idOrdenesSeleccion.ToArray());
-            // Si tienes otros ComboBoxes para fechas, deberías hacer lo mismo
+           
 
             // Llenar ListView
             ListarOrdenSeleccionList.Items.Clear(); // Limpiar antes de llenar
@@ -196,7 +196,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
 
                 // Buscar la orden de preparación en el modelo de datos
                 var ordenPreparacionSeleccionada = modelo.OrdenesSeleccionadas
-                    .SelectMany(o => o.OrdenesPreparacion) // Aplana la lista de órdenes de preparación
+                    .SelectMany(o => o.OrdenesPreparacion) 
                     .FirstOrDefault(op => op.IdOrden == idOrdenPreparacionSeleccionada);
 
                 if (ordenPreparacionSeleccionada != null)
@@ -209,7 +209,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
                     {
                         ListViewItem item = new ListViewItem();
                         item.Text = producto.Cantidad.ToString(); // Agregar la cantidad como subitem
-                        item.SubItems.Add(producto.DescripcionProducto); // Suponiendo que aquí agregas la descripción del producto
+                        item.SubItems.Add(producto.DescripcionProducto); 
 
                         // Agregar el item a la lista
                         ProductosList.Items.Add(item);

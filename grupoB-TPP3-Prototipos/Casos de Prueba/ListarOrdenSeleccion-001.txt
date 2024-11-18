@@ -9,7 +9,7 @@
 - Seleccionar OS-001
 - Devuelve lista de Orden de preparacion
 - Seleccionar OP-006
-- Devuelve detalle: 40 placas de yeso para construccion/ 120 herramientas...
+- Devuelve detalle: 40 placas de yeso para construccion/ 120 herramientas de corte industrial/ 120 compresores de aire industrial
 - Volver
 - Vuelve a menu principal
 
