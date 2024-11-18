@@ -38,8 +38,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
         {
             // Obtener los valores seleccionados
             string idOrdenSeleccionada = IdOrdenSeleccionCombo.Text;
-            DateTime fechaSeleccionada = FechaDesdeOSPicker.Value.Date;  // Solo fecha sin hora
-            DateTime fechaHSeleccionada = FechaHastaOSPicker.Value.Date;  // Solo fecha sin hora
+            DateTime fechaDesdeSeleccionada = FechaDesdeOSPicker.Value.Date;  // Solo fecha sin hora
+            DateTime fechaHastaSeleccionada = FechaHastaOSPicker.Value.Date;  // Solo fecha sin hora
 
             // Validar si al menos un filtro está activo
             if (string.IsNullOrEmpty(idOrdenSeleccionada) && !FechaDesdeOSPicker.Checked && !FechaHastaOSPicker.Checked)
@@ -49,7 +49,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
             }
 
             // Validar que la fecha hasta no sea menor que la fecha desde
-            if (FechaDesdeOSPicker.Checked && FechaHastaOSPicker.Checked && fechaHSeleccionada < fechaSeleccionada)
+            if (FechaDesdeOSPicker.Checked && FechaHastaOSPicker.Checked && fechaHastaSeleccionada < fechaDesdeSeleccionada)
             {
                 MessageBox.Show("La fecha hasta no puede ser menor que la fecha desde", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -68,21 +68,21 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
             // Aplicar filtros de fechas
             if (FechaDesdeOSPicker.Checked && FechaHastaOSPicker.Checked)
             {
-                // Filtrar por fecha exacta de FechaEmision y FechaEstado
+                // Filtrar por rango de fechas
                 ordenesFiltradas = ordenesFiltradas.Where(orden =>
-                    orden.FechaEmision.Date == fechaSeleccionada && orden.FechaEstado.Date == fechaHSeleccionada);
+                    orden.FechaEmision.Date >= fechaDesdeSeleccionada && orden.FechaEmision.Date <= fechaHastaSeleccionada);
             }
             else if (FechaDesdeOSPicker.Checked)
             {
-                // Filtrar solo por FechaEmision
+                // Filtrar desde la fecha seleccionada
                 ordenesFiltradas = ordenesFiltradas.Where(orden =>
-                    orden.FechaEmision.Date == fechaSeleccionada);
+                    orden.FechaEmision.Date >= fechaDesdeSeleccionada);
             }
             else if (FechaHastaOSPicker.Checked)
             {
-                // Filtrar solo por FechaEstado
+                // Filtrar hasta la fecha seleccionada
                 ordenesFiltradas = ordenesFiltradas.Where(orden =>
-                    orden.FechaEstado.Date == fechaHSeleccionada);
+                    orden.FechaEmision.Date <= fechaHastaSeleccionada);
             }
 
             // Limpiar la lista antes de agregar los elementos filtrados
