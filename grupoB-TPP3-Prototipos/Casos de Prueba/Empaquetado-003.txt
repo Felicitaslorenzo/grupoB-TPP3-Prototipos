@@ -1,8 +1,8 @@
 CASO 1: Empaquetado de Varias OP: camino feliz
 
-1- Bot髇: "Ordenes de Entrega"
+1- Bot贸n: "Ordenes de Entrega"
 
-2- Bot髇: "Empaquetado"
+2- Bot贸n: "Empaquetado"
 
 4- Detalle:
 
@@ -11,26 +11,26 @@ Cementos de alta resistencia - 200
 
 1 - Seleccionar producto Muebles modulares de oficina 
 
-2- Bot髇: "Empaquetado"
+2- Bot贸n: "Empaquetado"
 
 3- Mensaje: Exito: "La orden con ID OP-011 se ha empaquetado con exito."
 
-4- Bot髇: "Ok"
+4- Bot贸n: "Ok"
 
 5- Detalle:
 
-Cajas fuertes de seguridad - 50
-Paneles solares portatiles - 10
+Electrodomesticos inteligentes           - 20
+Herramientas 茅lectronicas profesionales  - 80
 
-6 - Seleccionar producto Cajas fuertes de seguridad
+6 - Seleccionar producto Herramientas electricas profesionales
 
-7- Bot髇: "Empaquetado"
+7- Bot贸n: "Empaquetado"
 
 8- Mensaje: Exito: "La orden con ID OP-012 se ha empaquetado con exito."
 
-9- Bot髇: "Ok"
+9- Bot贸n: "Ok"
 
-10- Bot髇: "Volver"
+10- Bot贸n: "Volver"
 
 11- Cerrar Sistema
 
