@@ -160,28 +160,31 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
             // Filtro por fechas (FechaDesdeOEPicker y FechaHastaOEPicker)
             if (FechaDesdeOEPicker.Checked && FechaHastaOEPicker.Checked)
             {
-                DateTime fechaDesde = FechaDesdeOEPicker.Value.Date;  // Solo la fecha, sin la hora
-                DateTime fechaHasta = FechaHastaOEPicker.Value.Date;  // Solo la fecha, sin la hora
+                DateTime fechaDesde = FechaDesdeOEPicker.Value.Date;  // Tomar solo la fecha, sin hora
+                DateTime fechaHasta = FechaHastaOEPicker.Value.Date.AddDays(1).AddTicks(-1); // Final del día hasta las 23:59:59
 
-                // Filtrar por FechaEmision para la fecha desde y FechaEstado para la fecha hasta
+                // Filtrar por rangos de fechas
                 ordenesFiltradas = ordenesFiltradas.Where(orden =>
-                    orden.FechaEmision.Date == fechaDesde &&  // Filtrar por FechaEmision exacta
-                    orden.FechaEntrega.Date == fechaHasta);    // Filtrar por FechaEstado exacta
+                    orden.FechaEmision.Date >= fechaDesde &&  // Desde fecha de emision
+                    orden.FechaEmision.Date <= fechaHasta);  // Hasta fecha de emision
             }
             else if (FechaDesdeOEPicker.Checked)
             {
-                DateTime fechaDesde = FechaDesdeOEPicker.Value.Date;  // Solo la fecha, sin la hora
-                                                                      // Filtrar solo por FechaEmision para la fecha desde
+                DateTime fechaDesde = FechaDesdeOEPicker.Value.Date;  // Tomar solo la fecha, sin hora
+
+                // Filtrar desde una fecha específica
                 ordenesFiltradas = ordenesFiltradas.Where(orden =>
-                    orden.FechaEmision.Date == fechaDesde);  // Filtrar por FechaEmision exacta
+                    orden.FechaEmision.Date >= fechaDesde);  // Desde fecha de emision
             }
             else if (FechaHastaOEPicker.Checked)
             {
-                DateTime fechaHasta = FechaHastaOEPicker.Value.Date;  // Solo la fecha, sin la hora
-                                                                      // Filtrar solo por FechaEstado para la fecha hasta
+                DateTime fechaHasta = FechaHastaOEPicker.Value.Date.AddDays(1).AddTicks(-1); // Final del día hasta las 23:59:59
+
+                // Filtrar hasta una fecha específica
                 ordenesFiltradas = ordenesFiltradas.Where(orden =>
-                    orden.FechaEntrega.Date == fechaHasta);  // Filtrar por FechaEstado exacta
+                    orden.FechaEmision.Date <= fechaHasta);  // Hasta fecha de emision
             }
+
 
             // Cargar las órdenes filtradas en el ListView
             CargarOrdenesEnListView(ordenesFiltradas);
