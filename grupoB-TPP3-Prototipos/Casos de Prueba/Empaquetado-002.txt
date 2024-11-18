@@ -1,45 +1,39 @@
 CASO 2: Validaciones 
 
-1- Bot髇: "Ordenes de Entrega"
+1- Bot贸n: "Ordenes de Entrega"
 
-2- Bot髇: "Empaquetado"
+2- Bot贸n: "Empaquetado"
 
 4- Detalle:
 
 Muebles modulares de oficina - 50
 Cementos de alta resistencia - 200
 
-6- Bot髇: "Empaquetado"
-
-7- Mensaje sistema: "Por favor, selecciona un producto antes de empaquetar."
-
-8- Bot髇: "Ok"
-
 5 - Seleccionar producto Cementos de alta resistencia
 
-6- Bot髇: "Empaquetado"
+6- Bot贸n: "Empaquetado"
 
 7- Mensaje: Exito: "La orden con ID OP-011 se ha empaquetado con exito."
 
-8- Bot髇: "Ok"
+8- Bot贸n: "Ok"
 
 5 - Seleccionar electrodomesticos inteligenes
 
-6- Bot髇: "Empaquetado"
+6- Bot贸n: "Empaquetado"
 
 7- Mensaje: Exito: "La orden con ID OP-012 se ha empaquetado con exito."
 
-8- Bot髇: "Ok"
+8- Bot贸n: "Ok"
 
 5 - Seleccionar camaras de vigilancia de alta definicion
 
-6- Bot髇: "Empaquetado"
+6- Bot贸n: "Empaquetado"
 
 7- Mensaje: Exito: "La orden con ID OP-015 se ha empaquetado con exito."
 
 8- Mensaje sistema: No hay mas ordenes para empaquetar.
 
-9- Bot髇: "Ok"
+9- Bot贸n: "Ok"
 
 10- Se cierra ventana y vuele a menu OrdenesEntrega
 
