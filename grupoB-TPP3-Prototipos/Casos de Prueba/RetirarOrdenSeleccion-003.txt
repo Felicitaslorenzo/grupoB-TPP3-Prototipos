@@ -1,4 +1,4 @@
-CASO 3: Retirar Ordenes de selección: Validaciones
+CASO 3: Retirar Ordenes de selección
 1 - Botón "Ordenes de Seleccion" 
 2 - Botón "Retirar orden de Selección"
 3 - Filtrar con OS-005
@@ -56,7 +56,8 @@ CASO 3: Retirar Ordenes de selección: Validaciones
 7 - Botón Confirmar
 8 - Mensaje:	"El retiro de la(s) Orden(es) de Preparación se ha confirmado"
 9 - Botón Aceptar
-10 - Verificar Productos.json (cantidades). Se restaron correctamente:
+10 - Botón Cancelar
+11 - Verificar Productos.json (cantidades). Se restaron correctamente:
   {
     "SKUProducto": "SKU-101",
     "DescripcionProducto": "Buzos",
@@ -102,7 +103,7 @@ CASO 3: Retirar Ordenes de selección: Validaciones
     ]
   }
 
-  11 - Verificar .json de Orden de selección (Cambio de estado) (1=Preparada)
+12 - Verificar .json de Orden de selección (Cambio de estado) (1=Preparada)
     {
     "IdOrdenSeleccion": "OS-005",
     "Estado": 1,
@@ -110,7 +111,8 @@ CASO 3: Retirar Ordenes de selección: Validaciones
     "FechaEmision": "2024-11-11T00:00:00",
     "OrdenesPreparacion": [ "OP-031" ]
   }
-  12 - Verificar .json de OrdenPreparacion (cambio de estado)(2=Seleccionada)
+
+13 - Verificar .json de OrdenPreparacion (cambio de estado)(2=Seleccionada)
     {
         "IdOrdenPreparacion":"OP-031",
         "IdCliente":"CL-008",

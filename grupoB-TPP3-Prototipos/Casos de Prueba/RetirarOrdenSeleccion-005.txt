@@ -92,8 +92,6 @@ CASO 5: Retirar Ordenes de selección: Impacto de cantidades en inventario
             "Cantidad":1300}]},
 10 - Filtrar con OS-007
 11 - Muestra
-    1-2-5   Buzos       0
-    1-2-6   Buzos       0
     1-2-1   Buzos       400
     1-2-7   Zapatillas  500
 12 - Botón Confirmar

@@ -1,4 +1,4 @@
-CASO 4: Retirar Ordenes de selección: Validaciones
+CASO 4: Retirar Ordenes de selección
 1 - Botón "Ordenes de Seleccion" 
 2 - Botón "Retirar orden de Selección"
 3 - Filtrar con OS-006

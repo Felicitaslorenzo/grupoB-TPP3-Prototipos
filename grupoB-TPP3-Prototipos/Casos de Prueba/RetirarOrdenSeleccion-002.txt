@@ -11,4 +11,4 @@ CASO 2: Retirar Ordenes de selección: VALIDACIONES
 
 8 - Botón Cancelar
 
-9 - Cierro sistema
+9 - Cerrar sistema

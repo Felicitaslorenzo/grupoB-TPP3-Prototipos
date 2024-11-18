@@ -46,7 +46,9 @@ CASO 5: Retirar Ordenes de selección: Impacto de cantidades en inventario
 
 
 7 - Botón "Confirmar"
+
 8 - Muestra mensaje: "El retiro de las ordenes de preparacion se ha confirmado"
+
 9 - Botón aceptar.
 
 10 - Verificar Productos.json (cantidades). Se restaron correctamente:
