@@ -1,165 +1,59 @@
-锘緾aso 8: Validacion calculo cantidad disponible emitiendo 3 OP con el mismo producto, Emitiendo una 0S  y RETIRANDO la OS  
+Caso 10: Crear Orden con dos  productos (Camino Feliz) DEPOSITO: GBAS2
 
-1 - Verificamos cantidades iniciales en arhcivo producto.json del producto SKU-094
 
-{
-   {
-    "SKUProducto": "SKU-094",
-    "DescripcionProducto": "Computadoras industriales",
-    "IdCliente": "CL-009",
-    "Inventario": [
-      {
-        "IdDeposito": "GBAN1",
-        "Ubicacion": "1-2-2",
-        "Cantidad": 500
-      }
-    ]
-  },
+1- Bot髇: "Ordenes de Preparaci髇"
 
-1- Bot贸n: "Ordenes de Preparaci贸n"
+2- Bot髇: "Emitir Orden de Preparaci髇"
 
-2- Bot贸n: "Emitir Orden de Preparaci贸n"
+3- ID Cliente: CL-006
 
-3 - Cliente: CL-009 - Prioridad: SinPrioridad - Transportista: TR-020 - Fecha de Entrega: 30/11/2024
+4- Prioridad: SinPrioridad
 
-4 -  Producto: SKU-094 
+5- Transportista: TR-014
 
-5 - Cantidad: 100
+6- Fecha entrega: 30/11/2024
 
-6- Bot贸n: "Agregar Producto"
+7- Producto: SKU-011
 
-4 -  Producto: SKU-094 disponible 
+8- Cantidad: 20
 
-5 - Cantidad: 50
+9- Bot髇: "Agregar Producto"
 
-6- Bot贸n: "Agregar Producto"
+10- Mensaje: Error: "No hay suficiente stock disponible
+Cantidad solicitada: 20
+Cantidad disponible: 0"
 
-7 - Bot贸n "Emitir Orden" 
+11 - Producto: SKU-073
 
-8- Mensaje: "Orden OP-035 creada exitosamente."
+11- Cantidad: 20
 
-9- Bot贸n: "Ok"
+12- Bot髇: "Agregar Producto"
 
-10 - Ahora probar emitir otra OP con los mismos datos:  
+13- Detalle:
+SKU-073 - Estanterias metalicas para el almacenaje -  20
 
-Cliente: CL-009 - Prioridad: SinPrioridad - Transportista: TR-020 - Fecha de Entrega: 30/11/2024
+14- Bot髇: "Emitir Orden"
 
-11-  Producto: SKU-094
+15- Mensaje: "Orden OP-035 creada exitosamente"
 
-12 - Cantidad : 150
+16- Bot髇: "Ok"
 
-13- Bot贸n: "Agregar Producto"
+17- Cerrar Sistema
 
-14 - Bot贸n "Emitir Orden" 
-
-8- Mensaje: "Orden OP-036 creada exitosamente."
-
-9- Bot贸n: "Ok"
-
-10 - Ahora probar emitir otra OP con los mismos datos:  
-
-Cliente: CL-009 - Prioridad: SinPrioridad - Transportista: TR-020 - Fecha de Entrega: 30/11/2024
-
-11-  Producto: SKU-094
-
-12 - Cantidad : 100
-
-13- Bot贸n: "Agregar Producto"
-
-14 - Bot贸n "Emitir Orden" 
-
-8- Mensaje: "Orden OP-037 creada exitosamente."
-
-9- Bot贸n: "Ok"
-
-9- Bot贸n: "Volver"
-
-1- Cerrar menu
-
--	Bot贸n: "Ordenes de Seleccion"
-
-2 -  Bot贸n: "Emitir orden de Seleccion"
-
-3 - Seleccionar ID Orden Preparaci贸n: OP-036 / OP-037
-	
-
-8- Bot贸n: "Agregar Seleccionadas"
-
-10 - Bot贸n: "Emitir Orden"
-
-11- Mensaje: "Se genero OS-008"
-
-12- Bot贸n: "Ok"
-
-1- Bot贸n: "Ordenes de Seleccion"
-
-2- Bot贸n: "Retirar Orden Seleccion"
-
-3- Orden de Seleccion: OS-008
-
-5- Bot贸n Confirmar
-
-6- Mensaje: El retiro de las ordenes de preparacion se ha confirmado
-
-7- Bot贸n: "Ok"
-
-1- Cerrar menu
-
-1- Bot贸n: "Ordenes de Preparaci贸n"
-
-2- Bot贸n: "Emitir Orden de Preparaci贸n"
-
-3 - Cliente: CL-009 - Prioridad: SinPrioridad - Transportista: TR-020 - Fecha de Entrega: 30/11/2024
-
-4 -  Producto: SKU-094 
-
-5 - Cantidad: 200
-
-15- [Mensaje de error: "No hay suficiente stock disponible.
-	                    Cantidad solicitada: 200
-						Cantidad disponible: 100"]
-
-Revisi贸n de c谩lculos:
-
-16 -  Verificamos en archivo prdocuto.json  Cantidad SKU-094 / Debe haber 250 ya que se retiraron 250 de la OS-008
+18- Verificar en OrdenesPreparacion.json, nuevo registro:
  {
-        "SKUProducto": "SKU-094",
-        "DescripcionProducto": "Computadoras industriales",
-        "IdCliente": "CL-009",
-        "Inventario": [
-            {
-                "IdDeposito": "GBAN1",
-                "Ubicacion": "1-2-2",
-                "Cantidad": 250
-            }
-        ]
-    },
-
-17- Verificamos en archivo OrdenesPreparacion.json las OP que contengan el producto SKU-001 y se encuentren en estado Pendiente (0) y Enseleccion (1)
-
-
-6 - 脫rdenes de preparaci贸n con SKU-001::
-	- OP-035 = 150
-    {
         "IdOrdenPreparacion": "OP-035",
-        "IdCliente": "CL-009",
-        "IdDeposito": "GBAN1",
-        "FechaEmision": "2024-11-15T10:24:07.351346-03:00",
-        "FechaEntrega": "2024-11-30T10:22:12.244",
+        "IdCliente": "CL-006",
+        "IdDeposito": "GBAS2",
+        "FechaEmision": "2024-11-18T12:34:28.7681368-03:00",
+        "FechaEntrega": "2024-11-30T12:33:38.55",
         "Estado": 0,
         "Prioridad": 1,
-        "IdTransportista": "TR-020",
+        "IdTransportista": "TR-014",
         "Detalle": [
             {
-                "SKUProducto": "SKU-094",
-                "Cantidad": 100
-            },
-            {
-                "SKUProducto": "SKU-094",
-                "Cantidad": 50
+                "SKUProducto": "SKU-073",
+                "Cantidad": 20
             }
         ]
-    },
-
-
-Cantidad disponible seg煤n stock = 250 - 50 - 100 = 100   Calculo Correcto
+    }

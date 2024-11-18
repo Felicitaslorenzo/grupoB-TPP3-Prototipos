@@ -1,123 +1,167 @@
-﻿Caso 8: Validacion calculo cantidad disponible emitiendo 2 OP (DEPOSITO GBAN1)
+﻿Caso 8: Validacion calculo cantidad disponible emitiendo 3 OP con el mismo producto, Emitiendo una 0S  y RETIRANDO la OS  
 
+1 - Verificamos cantidades iniciales en arhcivo producto.json del producto SKU-094
 
-1- Botón: "Ordenes de Preparación"
+{
+   {
+    "SKUProducto": "SKU-094",
+    "DescripcionProducto": "Computadoras industriales",
+    "IdCliente": "CL-009",
+    "Inventario": [
+      {
+        "IdDeposito": "GBAN1",
+        "Ubicacion": "1-2-2",
+        "Cantidad": 500
+      }
+    ]
+  },
 
-2- Botón: "Emitir Orden de Preparación"
+2- Botón: "Ordenes de Preparación"
 
-3 - Cliente: CL-008 - Prioridad: SinPrioridad - Transportista: TR-018 - Fecha de Entrega: 30/11/2024
+3- Botón: "Emitir Orden de Preparación"
 
-4 -  Producto: SKU-001 (disponible = 500, verificar en archivo producto.json) 
+4 - Cliente: CL-009 - Prioridad: SinPrioridad - Transportista: TR-020 - Fecha de Entrega: 30/11/2024
 
-5 - Cantidad: 250
+5 -  Producto: SKU-094 
 
-6- Botón: "Agregar Producto"
+6 - Cantidad: 100
 
-7 - Botón "Emitir Orden" 
+7- Botón: "Agregar Producto"
 
-8- Mensaje: "Orden OP-035 creada exitosamente."
+8 -  Producto: SKU-094 disponible 
 
-9- Botón: "Ok"
+9 - Cantidad: 50
 
-10 - Ahora probar emitir otra OP con los mismos datos de cliente, prioridad, transportista y fecha que la anterior.
+10- Botón: "Agregar Producto"
 
-11-  Producto: SKU-001  
+11 - Botón "Emitir Orden" 
 
-12 - Cantidad : 300 
+12- Mensaje: "Orden OP-035 creada exitosamente."
 
-13- Botón: "Agregar Producto"
+13- Botón: "Ok"
 
-14 - Botón "Emitir Orden" 
+14 - Ahora probar emitir otra OP con los mismos datos:  
 
-15- [Mensaje de error: "No hay suficiente stock disponible.
-	                    Cantidad solicitada: 300
-						Cantidad disponible: 140"]
+Cliente: CL-009 - Prioridad: SinPrioridad - Transportista: TR-020 - Fecha de Entrega: 30/11/2024
+
+15-  Producto: SKU-094
+
+16 - Cantidad : 150
+
+17- Botón: "Agregar Producto"
+
+18 - Botón "Emitir Orden" 
+
+19- Mensaje: "Orden OP-036 creada exitosamente."
+
+20- Botón: "Ok"
+
+21 - Ahora probar emitir otra OP con los mismos datos:  
+
+Cliente: CL-009 - Prioridad: SinPrioridad - Transportista: TR-020 - Fecha de Entrega: 30/11/2024
+
+22-  Producto: SKU-094
+
+23 - Cantidad : 100
+
+24- Botón: "Agregar Producto"
+
+25 - Botón "Emitir Orden" 
+
+26- Mensaje: "Orden OP-037 creada exitosamente."
+
+27- Botón: "Ok"
+
+28- Botón: "Volver"
+
+29- Cerrar menu
+
+30-	Botón: "Ordenes de Seleccion"
+
+31 -  Botón: "Emitir orden de Seleccion"
+
+32 - Seleccionar ID Orden Preparación: OP-036 / OP-037
+	
+
+33- Botón: "Agregar Seleccionadas"
+
+34 - Botón: "Emitir Orden"
+
+35- Mensaje: "Se genero OS-009"
+
+36- Botón: "Ok"
+
+37- Botón: "Ordenes de Seleccion"
+
+38- Botón: "Retirar Orden Seleccion"
+
+39- Orden de Seleccion: OS-008
+
+40- Botón Confirmar
+
+41- Mensaje: El retiro de las ordenes de preparacion se ha confirmado
+
+42- Botón: "Ok"
+
+43- Cerrar menu
+
+44- Botón: "Ordenes de Preparación"
+
+45- Botón: "Emitir Orden de Preparación"
+
+46 - Cliente: CL-009 - Prioridad: SinPrioridad - Transportista: TR-020 - Fecha de Entrega: 30/11/2024
+
+47 -  Producto: SKU-094 
+
+48 - Cantidad: 200
+
+49- Botón: "Agregar Producto"
+
+50- [Mensaje de error: "No hay suficiente stock disponible.
+	                    Cantidad solicitada: 200
+						Cantidad disponible: 100"]
 
 Revisión de cálculos:
 
-16 - Cantidad SKU-001 en deposito de producto = 500  Verificamos en archivo prdocuto.json
-	{
-        "SKUProducto": "SKU-001",
-        "DescripcionProducto": "Muebles modulares de oficina",
-        "IdCliente": "CL-001",
+51 -  Verificamos en archivo prdocuto.json  Cantidad SKU-094 / Debe haber 250 ya que se retiraron 250 de la OS-008
+ {
+        "SKUProducto": "SKU-094",
+        "DescripcionProducto": "Computadoras industriales",
+        "IdCliente": "CL-009",
         "Inventario": [
             {
                 "IdDeposito": "GBAN1",
                 "Ubicacion": "1-2-2",
-                "Cantidad": 500
+                "Cantidad": 250
             }
         ]
     },
 
-17- Verificamos en archivo OrdenesPreparacion.json las OP que contengan el producto SKU-001 y se encuentren en estado Pendiente (0) y Enseleccion (1)
+52- Verificamos en archivo OrdenesPreparacion.json las OP que contengan el producto SKU-001 y se encuentren en estado Pendiente (0) y Enseleccion (1)
 
 
-6 - Órdenes de preparación con SKU-001::
-	- OP-001 = 50
-    {
-        "IdOrdenPreparacion": "OP-001",
-        "IdCliente": "CL-001",
-        "IdDeposito": "GBAN1",
-        "FechaEmision": "2024-09-30T00:00:00",
-        "FechaEntrega": "2024-10-03T00:00:00",
-        "Estado": 0,
-        "Prioridad": 0,
-        "IdTransportista": "TR-001",
-        "Detalle": [
-            {
-                "SKUProducto": "SKU-001",
-                "Cantidad": 50
-            },
-            {
-                "SKUProducto": "SKU-002",
-                "Cantidad": 200
-            }
-        ]
-    },
-
-	- OP-003 = 60
-    {
-        "IdOrdenPreparacion": "OP-003",
-        "IdCliente": "CL-001",
-        "IdDeposito": "GBAN1",
-        "FechaEmision": "2024-10-01T00:00:00",
-        "FechaEntrega": "2024-10-05T00:00:00",
-        "Estado": 0,
-        "Prioridad": 0,
-        "IdTransportista": "TR-003",
-        "Detalle": [
-            {
-                "SKUProducto": "SKU-001",
-                "Cantidad": 60
-            },
-            {
-                "SKUProducto": "SKU-002",
-                "Cantidad": 300
-            }
-        ]
-    },
-
-
-	- OP-035 = 250
+53 - Órdenes de preparación con SKU-001::
+	- OP-035 = 150
     {
         "IdOrdenPreparacion": "OP-035",
-        "IdCliente": "CL-001",
+        "IdCliente": "CL-009",
         "IdDeposito": "GBAN1",
-        "FechaEmision": "2024-11-15T08:58:13.2999548-03:00",
-        "FechaEntrega": "2024-11-16T08:56:28.231",
+        "FechaEmision": "2024-11-15T10:24:07.351346-03:00",
+        "FechaEntrega": "2024-11-30T10:22:12.244",
         "Estado": 0,
         "Prioridad": 1,
-        "IdTransportista": "TR-003",
+        "IdTransportista": "TR-020",
         "Detalle": [
             {
-                "SKUProducto": "SKU-001",
-                "Cantidad": 250
+                "SKUProducto": "SKU-094",
+                "Cantidad": 100
             },
             {
-                "SKUProducto": "SKU-002",
-                "Cantidad": 800
+                "SKUProducto": "SKU-094",
+                "Cantidad": 50
             }
         ]
-    }
+    },
 
-Cantidad disponible según stock = 500 - 50 - 60 -  250 = 140   Calculo Correcto
+
+Cantidad disponible según stock = 250 - 50 - 100 = 100   Calculo Correcto

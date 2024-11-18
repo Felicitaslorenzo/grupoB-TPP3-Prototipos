@@ -54,8 +54,8 @@
 25- Mensaje sistema: " La cantidad tiene que ser mayor a 0"  
 
 26- Botón: "Ok"
-
-27- Cantidad: /1
+/1
+27- Cantidad: 
 
 28- Botón: "Agregar Producto"
 

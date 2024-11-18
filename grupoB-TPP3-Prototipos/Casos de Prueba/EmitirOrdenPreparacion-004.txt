@@ -42,7 +42,7 @@ SKU-015 - Herramientas hidraulicas -  10
 	
 20- Fecha entrega: Today
 
-21- Producto: SKU-019
+21- Producto: SKU-017
 
 22- Cantidad: 10
 
