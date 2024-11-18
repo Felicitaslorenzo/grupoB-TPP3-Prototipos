@@ -135,31 +135,14 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                 (string.IsNullOrEmpty(estadoSeleccionado) || o.Estado == estadoSeleccionado));
 
             // Aplicar filtros de fechas
-            if (FechaDesdeOPPicker.Checked && FechaHastaOPPicker.Checked)
+            if (FechaDesdeOPPicker.Checked || FechaHastaOPPicker.Checked)
             {
-                DateTime fechaDesde = FechaDesdeOPPicker.Value.Date;
-                DateTime fechaHasta = FechaHastaOPPicker.Value.Date;
+                DateTime? fechaDesde = FechaDesdeOPPicker.Checked ? FechaDesdeOPPicker.Value.Date : null;
+                DateTime? fechaHasta = FechaHastaOPPicker.Checked ? FechaHastaOPPicker.Value.Date : null;
 
-                // Filtrar por FechaEmision y FechaEstado
                 ordenesFiltradas = ordenesFiltradas.Where(orden =>
-                    orden.FechaEmision.Date == fechaDesde &&
-                    orden.FechaEstado.Date == fechaHasta);
-            }
-            else if (FechaDesdeOPPicker.Checked)
-            {
-                DateTime fechaDesde = FechaDesdeOPPicker.Value.Date;
-
-                // Filtrar solo por FechaEmision
-                ordenesFiltradas = ordenesFiltradas.Where(orden =>
-                    orden.FechaEmision.Date == fechaDesde);
-            }
-            else if (FechaHastaOPPicker.Checked)
-            {
-                DateTime fechaHasta = FechaHastaOPPicker.Value.Date;
-
-                // Filtrar solo por FechaEstado
-                ordenesFiltradas = ordenesFiltradas.Where(orden =>
-                    orden.FechaEstado.Date == fechaHasta);
+                    (!fechaDesde.HasValue || orden.FechaEmision.Date >= fechaDesde.Value) &&
+                    (!fechaHasta.HasValue || orden.FechaEmision.Date <= fechaHasta.Value));
             }
 
             // Limpiar el ListView antes de agregar los elementos filtrados
@@ -179,8 +162,6 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                 item.SubItems.Add(ordenPreparacion.IdCliente.ToString());
                 item.SubItems.Add(ordenPreparacion.Nombre);
                 item.SubItems.Add(ordenPreparacion.Estado);
-
-                // Cambiar el orden: FechaEmision primero, FechaEstado después
                 item.SubItems.Add(ordenPreparacion.FechaEmision.ToString("dd/MM/yyyy"));
                 item.SubItems.Add(ordenPreparacion.FechaEstado.ToString("dd/MM/yyyy"));
 

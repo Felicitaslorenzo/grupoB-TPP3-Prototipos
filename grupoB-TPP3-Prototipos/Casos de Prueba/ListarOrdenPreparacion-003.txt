@@ -1,17 +1,47 @@
 CASO 3: CAMINO DE ACCIDENTES
-- Tocar boton "Ordenes de preparacion" en el menu principal.
-- Tocar boton "Listar Ordenes de preparacion".
-- En el campo ID orden seleccionar la orden OP-014
-- Presionar boton buscar 
-- Seleccionar la orden de preparacion OP-014 del listado
-- [Devuelve el detalle de la orden de Preparacion: SKU-013 Equipos de aire acondicionado... 60]
-- En el campo Id Orden seleccionar el espacio en blanco
-- En el campo ID cliente seleccionar el cliente CL-005
-- Presionar boton buscar  
-- [Devuelve un listado de prepación: OP-004, OP-015]
-- En el campo fecha hasta seleccionar 01/10/2024
-- Presionar boton buscar 
-- [Devuelve un listado de ordenes de preparacion: OP-003, OP-011]
-- Seleccionamos OP-003
-- [Devuelve el detalle de la orden de Preparacion: SKU-001 Muebles modulares... 60/ SKU-002 Cementos de alta... 300
-- Presionar boton volver.
+
+1 - Tocar boton "Ordenes de preparacion" en el menu principal.
+
+2 - Tocar boton "Listar Ordenes de preparacion".
+
+3 - En el campo ID orden seleccionar la orden OP-014
+
+4 - Presionar boton buscar 
+
+5 - Seleccionar la orden de preparacion OP-014 del listado
+
+6 - [Devuelve el detalle de la orden de Preparacion: SKU-013 Equipos de aire acondicionado... 60]
+
+7 - En el campo Id Orden seleccionar el espacio en blanco
+
+8 - En el campo ID cliente seleccionar el cliente CL-005
+
+9 - Presionar boton buscar  
+
+10 - [Devuelve un listado de prepación: OP-004, OP-015]
+
+11- En el campo Id Cliente seleccionar el espacio en blanco
+
+12 - En el campo fecha hasta seleccionar 01/10/2024
+
+12 - Presionar boton buscar 
+
+13 - [Devuelve un listado de ordenes de preparacion: 
+	  OP-001, OP-002, OP-003, OP-004, OP-005, OP-006, OP-007, OP-008, OP-009, OP-010, OP-011, OP-016]
+
+14 - Seleccionamos OP-003
+
+15 - [Devuelve el detalle de la orden de Preparacion: SKU-001 Muebles modulares... 
+	  60/ SKU-002 Cementos de alta... 300]
+
+16 - Presionar boton volver.
+
+17- [Vuelve al menú de órdenes de preparación]
+
+18- Cerrar menú
+
+19- Vuelve al menú principal
+
+20- Cerrar menú
+
+21- [Finaliza la ejecución del sistema]

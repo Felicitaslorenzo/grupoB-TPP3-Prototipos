@@ -1,20 +1,42 @@
 Caso 2:Validaciones
 
 1- Tocar boton ordenes de preparacion en el menu principal.
+
 3- Tocar boton Listar ordenes de preparacion.
+
 5- Tocar boton buscar, sin seleccionar ningun filtro.
+
 6- [Aparece alerta de error "No se ha seleccionado ningun filtro"]
+
 7- Tocar aceptar.
+
 8- En el campo Nombre cliente seleccionar "Porter SA"
+
 9- Tocar boton buscar
+
 10- [Aparece lista de ordenes de preparacion]
+
 11- Tocar La orden OP-001
+
 12- [Aparece detalle de productos: SKU001 Muebles modulares de oficina 50/ 
 SKU002 Cementos de alta resistencia 200].
+
 13- Tocar en la primer ListView OP026 
+
 14- Aparece detalle de productos: 
 SKU024 Cintas transportadoras industriales 10].
+
 15- Tocar volver.
+
+16- [Vuelve al menú de órdenes de preparación]
+
+17- Cerrar menú
+
+18- Vuelve al menú principal
+
+19- Cerrar menú
+
+20- [Finaliza la ejecución del sistema]
 
 
 
