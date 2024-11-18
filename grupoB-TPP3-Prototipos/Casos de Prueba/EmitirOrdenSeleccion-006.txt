@@ -6,7 +6,7 @@ Caso 6:  DEPOSITO GBAN2
 
 4 - Órdenes Disponibles:
 
-	OP-004: Techno Corp          21/09/2024
+	OP-004: Techno Corp          25/09/2024
 
 5 -	Seleccionamos la orden
 
@@ -14,7 +14,7 @@ Caso 6:  DEPOSITO GBAN2
 
 8-	Detalle:
 
-	OP-004: Techno Corp          21/09/2024
+	OP-004: Techno Corp          25/09/2024
 
 9 - Botón: "Emitir Orden"
 

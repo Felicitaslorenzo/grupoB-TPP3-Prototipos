@@ -5,39 +5,36 @@
 2 -  Botón: "Emitir orden de Seleccion"
 
 4 - Órdenes Disponibles:
-
 	OP-001 :Porter SA-          30/09/24
-	OP-002: Ferreteria SRL -    25/09/2024
-	OP-003: Porter SA -          01/10/24
-	OP-005: Contribuciones Beta - 24/09/24
-    OP-032: Elecro SA -          14/11/24
-    OP-033: Elecro SA -         14/11/24
+	OP-002: Ferreteria SRL -    29/09/2024
+	OP-003: Porter SA -          05/10/24
+	OP-005: Contribuciones Beta - 28/09/24
+    OP-032: Elecro SA -          15/11/24
+    OP-033: Elecro SA -         15/11/24
 
 5 -	Seleccionamos todas las ordenes
 
 6- Botón: "Agregar Seleccionadas"
 
 8-	Detalle:
-
 	OP-001 :Porter SA-          30/09/24
-	OP-002: Ferreteria SRL -    25/09/2024
-	OP-003: Porter SA -          01/10/24
-	OP-005: Contribuciones Beta - 24/09/24
-    OP-032: Elecro SA -          14/11/24
-    OP-033: Elecro SA -         14/11/24 
+	OP-002: Ferreteria SRL -    29/09/2024
+	OP-003: Porter SA -          05/10/24
+	OP-005: Contribuciones Beta - 28/09/24
+    OP-032: Elecro SA -          15/11/24
+    OP-033: Elecro SA -         15/11/24
 
 9 - Botón: "Emitir Orden"
 
-10- Mensaje: "Se genero OS-006"
+10- Mensaje: "Se genero OS-009"
 
 11- Botón: "Ok"
 
 12 - Cerrar Sistema
 
 12- Verificar en OrdenSeleccion.Json, nuevo registro:
-
 	{
-        "IdOrdenSeleccion": "OS-006",
+        "IdOrdenSeleccion": "OS-009",
         "Estado": 0,
         "FechaEstado": "2024-11-14T21:15:37.5264529-03:00",
         "FechaEmision": "2024-11-14T21:15:37.5264502-03:00",
@@ -52,8 +49,6 @@
     }
 
 13- Verificamos cambios de estado en archivo OrdenesPreparacion.json, Pendiente (0) a En seleccion (1)
-
-
 	  {
         "IdOrdenPreparacion": "OP-001",
         "IdCliente": "CL-001",

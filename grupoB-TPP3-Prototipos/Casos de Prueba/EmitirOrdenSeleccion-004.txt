@@ -8,14 +8,11 @@
 
 4 - Mensaje Alerta: "No se ha seleccionado ningun filtro"
 
-
 5 -	Botón: "Ok"
-
 
 6- Id Orden Preparacion: OP005
 
 7 - Botón: "Buscar"
-
 
 8- Botón: "Agregar Seleccionadas"
 
@@ -51,10 +48,11 @@
 
 22 - Botón: "Buscar"
 
-23 - Mensaje Informacion: Botón: "No hay ordenes con los criterios seleccionados"
+23 - Ordenes Preparacion filtradas:
+	OP-003	Porter SA	05/10/2024
+	OP-032	Electro SA	15/11/2024
+	OP-033	Electro SA	15/11/2024
 
-24 - Botón: "Ok"
-
-25 - Cerrar sistema
+24 - Cerrar sistema
 
      
