@@ -36,11 +36,12 @@
             VolverButton = new Button();
             TransportistaLabel = new Label();
             IdOrdenEntregaCombo = new ComboBox();
+            label2 = new Label();
             SuspendLayout();
             // 
             // EmitirOrdenDeDespachoButton
             // 
-            EmitirOrdenDeDespachoButton.Location = new Point(493, 312);
+            EmitirOrdenDeDespachoButton.Location = new Point(439, 390);
             EmitirOrdenDeDespachoButton.Margin = new Padding(1);
             EmitirOrdenDeDespachoButton.Name = "EmitirOrdenDeDespachoButton";
             EmitirOrdenDeDespachoButton.Size = new Size(219, 41);
@@ -52,7 +53,7 @@
             // ListarOrdenDespacharBuscarList
             // 
             ListarOrdenDespacharBuscarList.Columns.AddRange(new ColumnHeader[] { IdOrdenColumna, IdClienteColumna });
-            ListarOrdenDespacharBuscarList.Location = new Point(11, 93);
+            ListarOrdenDespacharBuscarList.Location = new Point(31, 158);
             ListarOrdenDespacharBuscarList.Name = "ListarOrdenDespacharBuscarList";
             ListarOrdenDespacharBuscarList.Size = new Size(847, 195);
             ListarOrdenDespacharBuscarList.TabIndex = 78;
@@ -67,14 +68,14 @@
             // IdClienteColumna
             // 
             IdClienteColumna.Text = "ID Cliente";
-            IdClienteColumna.Width = 100;
+            IdClienteColumna.Width = 150;
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(321, 36);
+            BuscarButton.Location = new Point(361, 87);
             BuscarButton.Margin = new Padding(1);
             BuscarButton.Name = "BuscarButton";
-            BuscarButton.Size = new Size(128, 31);
+            BuscarButton.Size = new Size(145, 42);
             BuscarButton.TabIndex = 77;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
@@ -82,7 +83,7 @@
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(730, 312);
+            VolverButton.Location = new Point(750, 390);
             VolverButton.Margin = new Padding(1);
             VolverButton.Name = "VolverButton";
             VolverButton.Size = new Size(128, 41);
@@ -93,7 +94,7 @@
             // TransportistaLabel
             // 
             TransportistaLabel.AutoSize = true;
-            TransportistaLabel.Location = new Point(11, 13);
+            TransportistaLabel.Location = new Point(28, 77);
             TransportistaLabel.Name = "TransportistaLabel";
             TransportistaLabel.Size = new Size(94, 20);
             TransportistaLabel.TabIndex = 74;
@@ -102,16 +103,27 @@
             // IdOrdenEntregaCombo
             // 
             IdOrdenEntregaCombo.FormattingEnabled = true;
-            IdOrdenEntregaCombo.Location = new Point(14, 37);
+            IdOrdenEntregaCombo.Location = new Point(31, 101);
             IdOrdenEntregaCombo.Name = "IdOrdenEntregaCombo";
             IdOrdenEntregaCombo.Size = new Size(251, 28);
             IdOrdenEntregaCombo.TabIndex = 72;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(23, 21);
+            label2.Name = "label2";
+            label2.Size = new Size(461, 34);
+            label2.TabIndex = 82;
+            label2.Text = "Despachar Ordenes Preparación\r\n";
             // 
             // DespacharOrdenEntregaForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(886, 385);
+            ClientSize = new Size(908, 462);
+            Controls.Add(label2);
             Controls.Add(EmitirOrdenDeDespachoButton);
             Controls.Add(ListarOrdenDespacharBuscarList);
             Controls.Add(BuscarButton);
@@ -134,5 +146,6 @@
         private Button VolverButton;
         private Label TransportistaLabel;
         private ComboBox IdOrdenEntregaCombo;
+        private Label label2;
     }
 }
