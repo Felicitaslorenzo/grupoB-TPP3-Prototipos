@@ -46,12 +46,13 @@
             columnCantidad = new ColumnHeader();
             buttonVolver = new Button();
             buttonLimpiar = new Button();
+            label4 = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(34, 29);
+            label1.Location = new Point(21, 69);
             label1.Name = "label1";
             label1.Size = new Size(100, 20);
             label1.TabIndex = 0;
@@ -60,7 +61,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(330, 29);
+            label2.Location = new Point(317, 69);
             label2.Name = "label2";
             label2.Size = new Size(151, 20);
             label2.TabIndex = 1;
@@ -69,7 +70,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(629, 29);
+            label3.Location = new Point(616, 69);
             label3.Name = "label3";
             label3.Size = new Size(74, 20);
             label3.TabIndex = 2;
@@ -79,7 +80,7 @@
             // 
             comboSKUProducto.DropDownStyle = ComboBoxStyle.DropDownList;
             comboSKUProducto.FormattingEnabled = true;
-            comboSKUProducto.Location = new Point(34, 52);
+            comboSKUProducto.Location = new Point(21, 92);
             comboSKUProducto.Name = "comboSKUProducto";
             comboSKUProducto.Size = new Size(257, 28);
             comboSKUProducto.TabIndex = 3;
@@ -88,7 +89,7 @@
             // 
             comboDescripcionProducto.DropDownStyle = ComboBoxStyle.DropDownList;
             comboDescripcionProducto.FormattingEnabled = true;
-            comboDescripcionProducto.Location = new Point(330, 52);
+            comboDescripcionProducto.Location = new Point(317, 92);
             comboDescripcionProducto.Name = "comboDescripcionProducto";
             comboDescripcionProducto.Size = new Size(257, 28);
             comboDescripcionProducto.TabIndex = 4;
@@ -97,14 +98,14 @@
             // 
             comboCliente.DropDownStyle = ComboBoxStyle.DropDownList;
             comboCliente.FormattingEnabled = true;
-            comboCliente.Location = new Point(629, 52);
+            comboCliente.Location = new Point(616, 92);
             comboCliente.Name = "comboCliente";
             comboCliente.Size = new Size(259, 28);
             comboCliente.TabIndex = 5;
             // 
             // buttonBuscar
             // 
-            buttonBuscar.Location = new Point(766, 113);
+            buttonBuscar.Location = new Point(753, 153);
             buttonBuscar.Name = "buttonBuscar";
             buttonBuscar.Size = new Size(122, 40);
             buttonBuscar.TabIndex = 6;
@@ -115,7 +116,7 @@
             // listProducto
             // 
             listProducto.Columns.AddRange(new ColumnHeader[] { columnSKUProducto, columnDescripcionProducto, columnCliente, columnTotal });
-            listProducto.Location = new Point(34, 186);
+            listProducto.Location = new Point(21, 235);
             listProducto.Name = "listProducto";
             listProducto.Size = new Size(854, 277);
             listProducto.TabIndex = 7;
@@ -146,7 +147,7 @@
             // listDetalle
             // 
             listDetalle.Columns.AddRange(new ColumnHeader[] { columnDeposito, columnUbicacion, columnCantidad });
-            listDetalle.Location = new Point(34, 481);
+            listDetalle.Location = new Point(21, 530);
             listDetalle.Name = "listDetalle";
             listDetalle.Size = new Size(854, 277);
             listDetalle.TabIndex = 8;
@@ -170,7 +171,7 @@
             // 
             // buttonVolver
             // 
-            buttonVolver.Location = new Point(766, 776);
+            buttonVolver.Location = new Point(753, 831);
             buttonVolver.Name = "buttonVolver";
             buttonVolver.Size = new Size(122, 40);
             buttonVolver.TabIndex = 9;
@@ -179,7 +180,7 @@
             // 
             // buttonLimpiar
             // 
-            buttonLimpiar.Location = new Point(581, 113);
+            buttonLimpiar.Location = new Point(568, 153);
             buttonLimpiar.Name = "buttonLimpiar";
             buttonLimpiar.Size = new Size(122, 40);
             buttonLimpiar.TabIndex = 10;
@@ -187,11 +188,22 @@
             buttonLimpiar.UseVisualStyleBackColor = true;
             buttonLimpiar.Click += buttonLimpiar_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(12, 9);
+            label4.Name = "label4";
+            label4.Size = new Size(226, 34);
+            label4.TabIndex = 83;
+            label4.Text = "Consultar Stock\r\n";
+            // 
             // ConsultaStockForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(929, 832);
+            ClientSize = new Size(896, 885);
+            Controls.Add(label4);
             Controls.Add(buttonLimpiar);
             Controls.Add(buttonVolver);
             Controls.Add(listDetalle);
@@ -230,5 +242,6 @@
         private ColumnHeader columnCantidad;
         private Button buttonVolver;
         private Button buttonLimpiar;
+        private Label label4;
     }
 }
