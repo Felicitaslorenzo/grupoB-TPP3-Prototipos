@@ -49,17 +49,21 @@
             PrioridadLabel = new Label();
             GenerarOrdenButton = new Button();
             VolverButton = new Button();
+            label3 = new Label();
+            groupBox1 = new GroupBox();
+            label4 = new Label();
             GenerarOrdenesPreparacionGroup.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // ProductosListView
             // 
             ProductosListView.Columns.AddRange(new ColumnHeader[] { IdProductoColumna, DescripcionColumna, CantidadColumna });
             ProductosListView.FullRowSelect = true;
-            ProductosListView.Location = new Point(21, 276);
+            ProductosListView.Location = new Point(22, 337);
             ProductosListView.Margin = new Padding(1, 2, 1, 2);
             ProductosListView.Name = "ProductosListView";
-            ProductosListView.Size = new Size(723, 246);
+            ProductosListView.Size = new Size(939, 246);
             ProductosListView.TabIndex = 0;
             ProductosListView.UseCompatibleStateImageBehavior = false;
             ProductosListView.View = View.Details;
@@ -86,18 +90,18 @@
             GenerarOrdenesPreparacionGroup.Controls.Add(CantidadTextBox);
             GenerarOrdenesPreparacionGroup.Controls.Add(ProductoCombo);
             GenerarOrdenesPreparacionGroup.Controls.Add(ProductoLabel);
-            GenerarOrdenesPreparacionGroup.Location = new Point(21, 165);
+            GenerarOrdenesPreparacionGroup.Location = new Point(22, 229);
             GenerarOrdenesPreparacionGroup.Margin = new Padding(1, 2, 1, 2);
             GenerarOrdenesPreparacionGroup.Name = "GenerarOrdenesPreparacionGroup";
             GenerarOrdenesPreparacionGroup.Padding = new Padding(1, 2, 1, 2);
-            GenerarOrdenesPreparacionGroup.Size = new Size(457, 94);
+            GenerarOrdenesPreparacionGroup.Size = new Size(439, 94);
             GenerarOrdenesPreparacionGroup.TabIndex = 1;
             GenerarOrdenesPreparacionGroup.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(257, 26);
+            label1.Location = new Point(237, 26);
             label1.Margin = new Padding(1, 0, 1, 0);
             label1.Name = "label1";
             label1.Size = new Size(69, 20);
@@ -106,10 +110,10 @@
             // 
             // CantidadTextBox
             // 
-            CantidadTextBox.Location = new Point(257, 50);
+            CantidadTextBox.Location = new Point(237, 48);
             CantidadTextBox.Margin = new Padding(1, 2, 1, 2);
             CantidadTextBox.Name = "CantidadTextBox";
-            CantidadTextBox.Size = new Size(175, 27);
+            CantidadTextBox.Size = new Size(184, 27);
             CantidadTextBox.TabIndex = 16;
             // 
             // ProductoCombo
@@ -119,7 +123,7 @@
             ProductoCombo.Location = new Point(11, 46);
             ProductoCombo.Margin = new Padding(1, 2, 1, 2);
             ProductoCombo.Name = "ProductoCombo";
-            ProductoCombo.Size = new Size(219, 28);
+            ProductoCombo.Size = new Size(186, 28);
             ProductoCombo.TabIndex = 14;
             // 
             // ProductoLabel
@@ -135,17 +139,17 @@
             // FechaOPPicker
             // 
             FechaOPPicker.Checked = false;
-            FechaOPPicker.Location = new Point(21, 118);
+            FechaOPPicker.Location = new Point(680, 55);
             FechaOPPicker.Margin = new Padding(3, 2, 3, 2);
             FechaOPPicker.Name = "FechaOPPicker";
             FechaOPPicker.ShowCheckBox = true;
-            FechaOPPicker.Size = new Size(187, 27);
+            FechaOPPicker.Size = new Size(235, 27);
             FechaOPPicker.TabIndex = 21;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(21, 90);
+            label2.Location = new Point(680, 32);
             label2.Margin = new Padding(1, 0, 1, 0);
             label2.Name = "label2";
             label2.Size = new Size(123, 20);
@@ -154,10 +158,10 @@
             // 
             // AgregarProductoButton
             // 
-            AgregarProductoButton.Location = new Point(589, 229);
+            AgregarProductoButton.Location = new Point(806, 277);
             AgregarProductoButton.Margin = new Padding(1, 2, 1, 2);
             AgregarProductoButton.Name = "AgregarProductoButton";
-            AgregarProductoButton.Size = new Size(155, 30);
+            AgregarProductoButton.Size = new Size(155, 41);
             AgregarProductoButton.TabIndex = 12;
             AgregarProductoButton.Text = "Agregar Producto";
             AgregarProductoButton.UseVisualStyleBackColor = true;
@@ -166,7 +170,7 @@
             // IdClienteLabel
             // 
             IdClienteLabel.AutoSize = true;
-            IdClienteLabel.Location = new Point(15, 19);
+            IdClienteLabel.Location = new Point(11, 32);
             IdClienteLabel.Margin = new Padding(1, 0, 1, 0);
             IdClienteLabel.Name = "IdClienteLabel";
             IdClienteLabel.Size = new Size(74, 20);
@@ -177,19 +181,19 @@
             // 
             IdClienteCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             IdClienteCombo.FormattingEnabled = true;
-            IdClienteCombo.Location = new Point(15, 43);
+            IdClienteCombo.Location = new Point(11, 57);
             IdClienteCombo.Margin = new Padding(1, 2, 1, 2);
             IdClienteCombo.Name = "IdClienteCombo";
-            IdClienteCombo.Size = new Size(175, 28);
+            IdClienteCombo.Size = new Size(186, 28);
             IdClienteCombo.TabIndex = 2;
             IdClienteCombo.SelectedIndexChanged += IdClienteCombo_SelectedIndexChanged;
             // 
             // EliminarProductoButton
             // 
-            EliminarProductoButton.Location = new Point(601, 541);
+            EliminarProductoButton.Location = new Point(806, 599);
             EliminarProductoButton.Margin = new Padding(1, 2, 1, 2);
             EliminarProductoButton.Name = "EliminarProductoButton";
-            EliminarProductoButton.Size = new Size(143, 30);
+            EliminarProductoButton.Size = new Size(156, 40);
             EliminarProductoButton.TabIndex = 13;
             EliminarProductoButton.Text = "Eliminar Producto";
             EliminarProductoButton.UseVisualStyleBackColor = true;
@@ -199,26 +203,26 @@
             // 
             TransportistaCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             TransportistaCombo.FormattingEnabled = true;
-            TransportistaCombo.Location = new Point(416, 43);
+            TransportistaCombo.Location = new Point(458, 57);
             TransportistaCombo.Margin = new Padding(1, 2, 1, 2);
             TransportistaCombo.Name = "TransportistaCombo";
-            TransportistaCombo.Size = new Size(187, 28);
+            TransportistaCombo.Size = new Size(186, 28);
             TransportistaCombo.TabIndex = 7;
             // 
             // PrioridadComboBox
             // 
             PrioridadComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             PrioridadComboBox.FormattingEnabled = true;
-            PrioridadComboBox.Location = new Point(214, 43);
+            PrioridadComboBox.Location = new Point(236, 57);
             PrioridadComboBox.Margin = new Padding(1, 2, 1, 2);
             PrioridadComboBox.Name = "PrioridadComboBox";
-            PrioridadComboBox.Size = new Size(175, 28);
+            PrioridadComboBox.Size = new Size(185, 28);
             PrioridadComboBox.TabIndex = 9;
             // 
             // TransportistaLabel
             // 
             TransportistaLabel.AutoSize = true;
-            TransportistaLabel.Location = new Point(416, 19);
+            TransportistaLabel.Location = new Point(458, 32);
             TransportistaLabel.Margin = new Padding(1, 0, 1, 0);
             TransportistaLabel.Name = "TransportistaLabel";
             TransportistaLabel.Size = new Size(94, 20);
@@ -228,7 +232,7 @@
             // PrioridadLabel
             // 
             PrioridadLabel.AutoSize = true;
-            PrioridadLabel.Location = new Point(214, 19);
+            PrioridadLabel.Location = new Point(236, 32);
             PrioridadLabel.Margin = new Padding(1, 0, 1, 0);
             PrioridadLabel.Name = "PrioridadLabel";
             PrioridadLabel.Size = new Size(70, 20);
@@ -237,7 +241,7 @@
             // 
             // GenerarOrdenButton
             // 
-            GenerarOrdenButton.Location = new Point(450, 602);
+            GenerarOrdenButton.Location = new Point(655, 683);
             GenerarOrdenButton.Margin = new Padding(1, 2, 1, 2);
             GenerarOrdenButton.Name = "GenerarOrdenButton";
             GenerarOrdenButton.Size = new Size(145, 50);
@@ -248,7 +252,7 @@
             // 
             // VolverButton
             // 
-            VolverButton.Location = new Point(612, 602);
+            VolverButton.Location = new Point(817, 683);
             VolverButton.Margin = new Padding(1, 2, 1, 2);
             VolverButton.Name = "VolverButton";
             VolverButton.Size = new Size(145, 50);
@@ -257,23 +261,54 @@
             VolverButton.UseVisualStyleBackColor = true;
             VolverButton.Click += VolverButton_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(22, 20);
+            label3.Name = "label3";
+            label3.Size = new Size(355, 34);
+            label3.TabIndex = 22;
+            label3.Text = "Emitir Orden Preparación";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(FechaOPPicker);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(IdClienteCombo);
+            groupBox1.Controls.Add(PrioridadLabel);
+            groupBox1.Controls.Add(TransportistaLabel);
+            groupBox1.Controls.Add(IdClienteLabel);
+            groupBox1.Controls.Add(PrioridadComboBox);
+            groupBox1.Controls.Add(TransportistaCombo);
+            groupBox1.Location = new Point(22, 112);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(939, 112);
+            groupBox1.TabIndex = 23;
+            groupBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(22, 78);
+            label4.Name = "label4";
+            label4.Size = new Size(65, 23);
+            label4.TabIndex = 24;
+            label4.Text = "label4";
+            // 
             // EmitirOrdenPreparacionForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(776, 666);
-            Controls.Add(FechaOPPicker);
-            Controls.Add(label2);
+            ClientSize = new Size(984, 753);
+            Controls.Add(label4);
+            Controls.Add(groupBox1);
+            Controls.Add(label3);
             Controls.Add(VolverButton);
-            Controls.Add(IdClienteCombo);
             Controls.Add(AgregarProductoButton);
             Controls.Add(GenerarOrdenButton);
-            Controls.Add(PrioridadLabel);
-            Controls.Add(TransportistaLabel);
             Controls.Add(EliminarProductoButton);
-            Controls.Add(IdClienteLabel);
-            Controls.Add(PrioridadComboBox);
-            Controls.Add(TransportistaCombo);
             Controls.Add(GenerarOrdenesPreparacionGroup);
             Controls.Add(ProductosListView);
             Margin = new Padding(1, 2, 1, 2);
@@ -282,6 +317,8 @@
             Load += EmitirOrdenPreparacionForm_Load;
             GenerarOrdenesPreparacionGroup.ResumeLayout(false);
             GenerarOrdenesPreparacionGroup.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -309,5 +346,8 @@
         private Button VolverButton;
         private Label label2;
         private DateTimePicker FechaOPPicker;
+        private Label label3;
+        private GroupBox groupBox1;
+        private Label label4;
     }
 }

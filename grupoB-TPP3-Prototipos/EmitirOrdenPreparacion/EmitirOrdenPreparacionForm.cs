@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Linq;
 using grupoB_TPP3_Prototipos.MenuOrdenesPreparacion;
 using grupoB_TPP3_Prototipos.Almacenes;
+using System.Reflection.Emit;
 
 
 namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
@@ -25,6 +26,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
             //TODO: foreach cliente in clientes bla bla...
             //IdClienteCombo.Items.Add(cliente); //un objeto cliente.
+            label4.Text = $"Se generará la Orden con Id: {modelo.GenerarNuevoIDOrden()}";
         }
 
         private void FechaOPPicker_ValueChanged(object sender, EventArgs e)

@@ -93,7 +93,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
             OrdenPreparacionAlmacen.AgregarOrdenPreparacion(orden);
         }
 
-        private string GenerarNuevoIDOrden()
+        public string GenerarNuevoIDOrden()
         {
             // Leer las órdenes desde el archivo (simulamos que ya tienes la lógica para leer desde un almacenamiento)
 
