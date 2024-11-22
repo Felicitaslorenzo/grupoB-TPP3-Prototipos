@@ -33,6 +33,7 @@
             Producto = new ColumnHeader();
             Cantidad = new ColumnHeader();
             VolverButton = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // EmpaquetarOrdenButton
@@ -77,11 +78,21 @@
             VolverButton.UseVisualStyleBackColor = true;
             VolverButton.Click += VolverButton_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(23, 318);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 20);
+            label1.TabIndex = 59;
+            label1.Text = "label1";
+            // 
             // EmpaquetadoForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(888, 368);
+            Controls.Add(label1);
             Controls.Add(EmpaquetarOrdenButton);
             Controls.Add(ListarEmpaquetarOrdenList);
             Controls.Add(VolverButton);
@@ -89,6 +100,7 @@
             Text = "EmpaquetadoForm";
             Load += EmpaquetadoForm_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -99,5 +111,6 @@
         private ColumnHeader IdOrdenSeleccionColumna;
         private ColumnHeader Producto;
         private ColumnHeader Cantidad;
+        private Label label1;
     }
 }

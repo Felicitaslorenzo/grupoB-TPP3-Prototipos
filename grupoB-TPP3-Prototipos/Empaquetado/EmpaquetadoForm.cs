@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,7 +27,9 @@ namespace grupoB_TPP3_Prototipos.CrearOrdenEntrega
             var orden = model.ObtenerOrdenActual();
             if (orden != null)
             {
-                
+                // Mostrar el ID de la orden en Label1 recien añadido
+                label1.Text = $"ID Orden a empaquetar: {orden.IdOrden}";
+
                 ListarEmpaquetarOrdenList.Items.Clear(); // Limpia el ListView
 
                 foreach (var producto in orden.Producto)
