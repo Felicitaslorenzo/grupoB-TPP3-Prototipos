@@ -1,13 +1,16 @@
 ﻿using grupoB_TPP3_Prototipos.Almacenes;
 using grupoB_TPP3_Prototipos.Generar_orden_de_Selección;
 using grupoB_TPP3_Prototipos.GenerarOrdenSeleccion;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -338,6 +341,11 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
         private void PrioridadCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void EmitirOrdenSeleccionForm_Load(object sender, EventArgs e)
+        {
+            label5.Text = $"Se emitirá la Orden Selección con Id: {model.GenerarNuevaOrden()}";
         }
     }
 }
