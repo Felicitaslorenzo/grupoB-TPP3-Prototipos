@@ -33,11 +33,13 @@
             buttonGenerarOrden = new Button();
             buttonRetirarOrden = new Button();
             label2 = new Label();
+            groupBox1 = new GroupBox();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // buttonListarOrdenesSeleccion
             // 
-            buttonListarOrdenesSeleccion.Location = new Point(233, 101);
+            buttonListarOrdenesSeleccion.Location = new Point(40, 24);
             buttonListarOrdenesSeleccion.Name = "buttonListarOrdenesSeleccion";
             buttonListarOrdenesSeleccion.Size = new Size(194, 121);
             buttonListarOrdenesSeleccion.TabIndex = 0;
@@ -47,7 +49,7 @@
             // 
             // buttonGenerarOrden
             // 
-            buttonGenerarOrden.Location = new Point(233, 247);
+            buttonGenerarOrden.Location = new Point(40, 170);
             buttonGenerarOrden.Name = "buttonGenerarOrden";
             buttonGenerarOrden.Size = new Size(194, 121);
             buttonGenerarOrden.TabIndex = 1;
@@ -57,7 +59,7 @@
             // 
             // buttonRetirarOrden
             // 
-            buttonRetirarOrden.Location = new Point(233, 392);
+            buttonRetirarOrden.Location = new Point(40, 315);
             buttonRetirarOrden.Name = "buttonRetirarOrden";
             buttonRetirarOrden.Size = new Size(194, 121);
             buttonRetirarOrden.TabIndex = 2;
@@ -75,19 +77,29 @@
             label2.TabIndex = 62;
             label2.Text = "Menú Ordenes de Selección";
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(buttonRetirarOrden);
+            groupBox1.Controls.Add(buttonGenerarOrden);
+            groupBox1.Controls.Add(buttonListarOrdenesSeleccion);
+            groupBox1.Location = new Point(193, 77);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(273, 453);
+            groupBox1.TabIndex = 63;
+            groupBox1.TabStop = false;
+            // 
             // MenuOrdenesSeleccionForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(650, 575);
+            Controls.Add(groupBox1);
             Controls.Add(label2);
-            Controls.Add(buttonRetirarOrden);
-            Controls.Add(buttonGenerarOrden);
-            Controls.Add(buttonListarOrdenesSeleccion);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MenuOrdenesSeleccionForm";
             StartPosition = FormStartPosition.CenterScreen;
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -98,5 +110,6 @@
         private Button buttonGenerarOrden;
         private Button buttonRetirarOrden;
         private Label label2;
+        private GroupBox groupBox1;
     }
 }

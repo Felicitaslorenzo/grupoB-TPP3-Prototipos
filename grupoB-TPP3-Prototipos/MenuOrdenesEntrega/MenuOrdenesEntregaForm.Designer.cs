@@ -34,11 +34,13 @@
             buttonGenerarOrdenEntrega = new Button();
             button1 = new Button();
             label2 = new Label();
+            groupBox1 = new GroupBox();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // buttonListarOrdenesEntrega
             // 
-            buttonListarOrdenesEntrega.Location = new Point(259, 215);
+            buttonListarOrdenesEntrega.Location = new Point(63, 155);
             buttonListarOrdenesEntrega.Name = "buttonListarOrdenesEntrega";
             buttonListarOrdenesEntrega.Size = new Size(173, 97);
             buttonListarOrdenesEntrega.TabIndex = 0;
@@ -48,7 +50,7 @@
             // 
             // buttonDespacharOrdenEntrega
             // 
-            buttonDespacharOrdenEntrega.Location = new Point(259, 460);
+            buttonDespacharOrdenEntrega.Location = new Point(63, 400);
             buttonDespacharOrdenEntrega.Name = "buttonDespacharOrdenEntrega";
             buttonDespacharOrdenEntrega.Size = new Size(173, 97);
             buttonDespacharOrdenEntrega.TabIndex = 1;
@@ -58,7 +60,7 @@
             // 
             // buttonGenerarOrdenEntrega
             // 
-            buttonGenerarOrdenEntrega.Location = new Point(259, 335);
+            buttonGenerarOrdenEntrega.Location = new Point(63, 275);
             buttonGenerarOrdenEntrega.Name = "buttonGenerarOrdenEntrega";
             buttonGenerarOrdenEntrega.Size = new Size(173, 97);
             buttonGenerarOrdenEntrega.TabIndex = 2;
@@ -68,7 +70,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(259, 93);
+            button1.Location = new Point(63, 33);
             button1.Name = "button1";
             button1.Size = new Size(173, 97);
             button1.TabIndex = 3;
@@ -86,20 +88,30 @@
             label2.TabIndex = 61;
             label2.Text = "Menú Ordenes de Entrega";
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(buttonGenerarOrdenEntrega);
+            groupBox1.Controls.Add(buttonDespacharOrdenEntrega);
+            groupBox1.Controls.Add(buttonListarOrdenesEntrega);
+            groupBox1.Location = new Point(196, 60);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(294, 529);
+            groupBox1.TabIndex = 62;
+            groupBox1.TabStop = false;
+            // 
             // MenuOrdenesEntregaForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(679, 600);
+            Controls.Add(groupBox1);
             Controls.Add(label2);
-            Controls.Add(button1);
-            Controls.Add(buttonGenerarOrdenEntrega);
-            Controls.Add(buttonDespacharOrdenEntrega);
-            Controls.Add(buttonListarOrdenesEntrega);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MenuOrdenesEntregaForm";
             StartPosition = FormStartPosition.CenterScreen;
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -111,5 +123,6 @@
         private Button buttonGenerarOrdenEntrega;
         private Button button1;
         private Label label2;
+        private GroupBox groupBox1;
     }
 }

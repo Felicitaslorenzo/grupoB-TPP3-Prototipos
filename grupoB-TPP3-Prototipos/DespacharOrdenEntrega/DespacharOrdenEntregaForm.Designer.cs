@@ -38,6 +38,8 @@
             TransportistaLabel = new Label();
             IdOrdenEntregaCombo = new ComboBox();
             label2 = new Label();
+            groupBox1 = new GroupBox();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // EmitirOrdenDeDespachoButton
@@ -73,7 +75,7 @@
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(361, 87);
+            BuscarButton.Location = new Point(342, 24);
             BuscarButton.Margin = new Padding(1);
             BuscarButton.Name = "BuscarButton";
             BuscarButton.Size = new Size(145, 42);
@@ -95,7 +97,7 @@
             // TransportistaLabel
             // 
             TransportistaLabel.AutoSize = true;
-            TransportistaLabel.Location = new Point(28, 77);
+            TransportistaLabel.Location = new Point(9, 14);
             TransportistaLabel.Name = "TransportistaLabel";
             TransportistaLabel.Size = new Size(94, 20);
             TransportistaLabel.TabIndex = 74;
@@ -104,7 +106,7 @@
             // IdOrdenEntregaCombo
             // 
             IdOrdenEntregaCombo.FormattingEnabled = true;
-            IdOrdenEntregaCombo.Location = new Point(31, 101);
+            IdOrdenEntregaCombo.Location = new Point(12, 38);
             IdOrdenEntregaCombo.Name = "IdOrdenEntregaCombo";
             IdOrdenEntregaCombo.Size = new Size(251, 28);
             IdOrdenEntregaCombo.TabIndex = 72;
@@ -119,22 +121,33 @@
             label2.TabIndex = 82;
             label2.Text = "Despachar Ordenes Preparación\r\n";
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(BuscarButton);
+            groupBox1.Controls.Add(TransportistaLabel);
+            groupBox1.Controls.Add(IdOrdenEntregaCombo);
+            groupBox1.Location = new Point(23, 58);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(502, 87);
+            groupBox1.TabIndex = 83;
+            groupBox1.TabStop = false;
+            // 
             // DespacharOrdenEntregaForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(908, 462);
+            Controls.Add(groupBox1);
             Controls.Add(label2);
             Controls.Add(EmitirOrdenDeDespachoButton);
             Controls.Add(ListarOrdenDespacharBuscarList);
-            Controls.Add(BuscarButton);
             Controls.Add(VolverButton);
-            Controls.Add(TransportistaLabel);
-            Controls.Add(IdOrdenEntregaCombo);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "DespacharOrdenEntregaForm";
             StartPosition = FormStartPosition.CenterScreen;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -150,5 +163,6 @@
         private Label TransportistaLabel;
         private ComboBox IdOrdenEntregaCombo;
         private Label label2;
+        private GroupBox groupBox1;
     }
 }

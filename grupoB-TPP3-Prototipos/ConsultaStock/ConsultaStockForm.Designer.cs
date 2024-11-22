@@ -49,12 +49,14 @@
             buttonVolver = new Button();
             buttonLimpiar = new Button();
             label4 = new Label();
+            groupBox1 = new GroupBox();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(21, 69);
+            label1.Location = new Point(14, 23);
             label1.Name = "label1";
             label1.Size = new Size(100, 20);
             label1.TabIndex = 0;
@@ -63,7 +65,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(317, 69);
+            label2.Location = new Point(310, 23);
             label2.Name = "label2";
             label2.Size = new Size(151, 20);
             label2.TabIndex = 1;
@@ -72,7 +74,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(616, 69);
+            label3.Location = new Point(609, 23);
             label3.Name = "label3";
             label3.Size = new Size(74, 20);
             label3.TabIndex = 2;
@@ -82,7 +84,7 @@
             // 
             comboSKUProducto.DropDownStyle = ComboBoxStyle.DropDownList;
             comboSKUProducto.FormattingEnabled = true;
-            comboSKUProducto.Location = new Point(21, 92);
+            comboSKUProducto.Location = new Point(14, 49);
             comboSKUProducto.Name = "comboSKUProducto";
             comboSKUProducto.Size = new Size(257, 28);
             comboSKUProducto.TabIndex = 3;
@@ -91,7 +93,7 @@
             // 
             comboDescripcionProducto.DropDownStyle = ComboBoxStyle.DropDownList;
             comboDescripcionProducto.FormattingEnabled = true;
-            comboDescripcionProducto.Location = new Point(317, 92);
+            comboDescripcionProducto.Location = new Point(310, 49);
             comboDescripcionProducto.Name = "comboDescripcionProducto";
             comboDescripcionProducto.Size = new Size(257, 28);
             comboDescripcionProducto.TabIndex = 4;
@@ -100,14 +102,14 @@
             // 
             comboCliente.DropDownStyle = ComboBoxStyle.DropDownList;
             comboCliente.FormattingEnabled = true;
-            comboCliente.Location = new Point(616, 92);
+            comboCliente.Location = new Point(609, 49);
             comboCliente.Name = "comboCliente";
             comboCliente.Size = new Size(259, 28);
             comboCliente.TabIndex = 5;
             // 
             // buttonBuscar
             // 
-            buttonBuscar.Location = new Point(753, 153);
+            buttonBuscar.Location = new Point(746, 109);
             buttonBuscar.Name = "buttonBuscar";
             buttonBuscar.Size = new Size(122, 40);
             buttonBuscar.TabIndex = 6;
@@ -188,7 +190,7 @@
             // 
             // buttonLimpiar
             // 
-            buttonLimpiar.Location = new Point(568, 153);
+            buttonLimpiar.Location = new Point(561, 109);
             buttonLimpiar.Name = "buttonLimpiar";
             buttonLimpiar.Size = new Size(122, 40);
             buttonLimpiar.TabIndex = 10;
@@ -206,28 +208,39 @@
             label4.TabIndex = 83;
             label4.Text = "Consultar Stock\r\n";
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(buttonLimpiar);
+            groupBox1.Controls.Add(buttonBuscar);
+            groupBox1.Controls.Add(comboCliente);
+            groupBox1.Controls.Add(comboDescripcionProducto);
+            groupBox1.Controls.Add(comboSKUProducto);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Location = new Point(7, 46);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(881, 165);
+            groupBox1.TabIndex = 84;
+            groupBox1.TabStop = false;
+            // 
             // ConsultaStockForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(896, 885);
+            Controls.Add(groupBox1);
             Controls.Add(label4);
-            Controls.Add(buttonLimpiar);
             Controls.Add(buttonVolver);
             Controls.Add(listDetalle);
             Controls.Add(listProducto);
-            Controls.Add(buttonBuscar);
-            Controls.Add(comboCliente);
-            Controls.Add(comboDescripcionProducto);
-            Controls.Add(comboSKUProducto);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ConsultaStockForm";
             StartPosition = FormStartPosition.CenterScreen;
             Load += ConsultaStockForm_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -254,5 +267,6 @@
         private Button buttonLimpiar;
         private Label label4;
         private ColumnHeader columnCantComprometida;
+        private GroupBox groupBox1;
     }
 }

@@ -33,11 +33,13 @@
             buttonGenerarOrden = new Button();
             buttonConsultarStock = new Button();
             label2 = new Label();
+            groupBox1 = new GroupBox();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // buttonListarOrdenesPreparacion
             // 
-            buttonListarOrdenesPreparacion.Location = new Point(246, 92);
+            buttonListarOrdenesPreparacion.Location = new Point(48, 22);
             buttonListarOrdenesPreparacion.Name = "buttonListarOrdenesPreparacion";
             buttonListarOrdenesPreparacion.Size = new Size(200, 123);
             buttonListarOrdenesPreparacion.TabIndex = 0;
@@ -47,7 +49,7 @@
             // 
             // buttonGenerarOrden
             // 
-            buttonGenerarOrden.Location = new Point(246, 231);
+            buttonGenerarOrden.Location = new Point(48, 161);
             buttonGenerarOrden.Name = "buttonGenerarOrden";
             buttonGenerarOrden.Size = new Size(200, 123);
             buttonGenerarOrden.TabIndex = 1;
@@ -57,7 +59,7 @@
             // 
             // buttonConsultarStock
             // 
-            buttonConsultarStock.Location = new Point(246, 369);
+            buttonConsultarStock.Location = new Point(48, 299);
             buttonConsultarStock.Name = "buttonConsultarStock";
             buttonConsultarStock.Size = new Size(200, 123);
             buttonConsultarStock.TabIndex = 2;
@@ -75,20 +77,30 @@
             label2.TabIndex = 62;
             label2.Text = "Menú Ordenes de Preparación";
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(buttonConsultarStock);
+            groupBox1.Controls.Add(buttonGenerarOrden);
+            groupBox1.Controls.Add(buttonListarOrdenesPreparacion);
+            groupBox1.Location = new Point(198, 70);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(295, 442);
+            groupBox1.TabIndex = 63;
+            groupBox1.TabStop = false;
+            // 
             // MenuOrdenesPreparacionForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(679, 551);
+            Controls.Add(groupBox1);
             Controls.Add(label2);
-            Controls.Add(buttonConsultarStock);
-            Controls.Add(buttonGenerarOrden);
-            Controls.Add(buttonListarOrdenesPreparacion);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MenuOrdenesPreparacionForm";
             StartPosition = FormStartPosition.CenterScreen;
             Load += MenuOrdenesPreparacionForm_Load;
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -99,5 +111,6 @@
         private Button buttonGenerarOrden;
         private Button buttonConsultarStock;
         private Label label2;
+        private GroupBox groupBox1;
     }
 }
