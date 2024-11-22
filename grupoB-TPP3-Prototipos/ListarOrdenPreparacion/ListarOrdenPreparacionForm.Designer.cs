@@ -58,6 +58,7 @@
             Producto = new ColumnHeader();
             Cantidad = new ColumnHeader();
             groupBox1 = new GroupBox();
+            label2 = new Label();
             ListarOrdenesPreparacionGroup.SuspendLayout();
             ListaOrdenesPreparacionGroup.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -80,18 +81,18 @@
             ListarOrdenesPreparacionGroup.Controls.Add(IdClienteCombo);
             ListarOrdenesPreparacionGroup.Controls.Add(IdOrdenPreparacionLabel);
             ListarOrdenesPreparacionGroup.Controls.Add(IdOrdenPreparacionCombo);
-            ListarOrdenesPreparacionGroup.Location = new Point(15, 20);
+            ListarOrdenesPreparacionGroup.Location = new Point(22, 59);
             ListarOrdenesPreparacionGroup.Margin = new Padding(2);
             ListarOrdenesPreparacionGroup.Name = "ListarOrdenesPreparacionGroup";
             ListarOrdenesPreparacionGroup.Padding = new Padding(2);
-            ListarOrdenesPreparacionGroup.Size = new Size(750, 258);
+            ListarOrdenesPreparacionGroup.Size = new Size(949, 233);
             ListarOrdenesPreparacionGroup.TabIndex = 0;
             ListarOrdenesPreparacionGroup.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(226, 154);
+            label1.Location = new Point(730, 86);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(86, 20);
@@ -101,7 +102,7 @@
             // FechaHastaOPPicker
             // 
             FechaHastaOPPicker.Checked = false;
-            FechaHastaOPPicker.Location = new Point(226, 174);
+            FechaHastaOPPicker.Location = new Point(730, 108);
             FechaHastaOPPicker.Margin = new Padding(2);
             FechaHastaOPPicker.Name = "FechaHastaOPPicker";
             FechaHastaOPPicker.ShowCheckBox = true;
@@ -110,10 +111,10 @@
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(597, 214);
+            BuscarButton.Location = new Point(798, 177);
             BuscarButton.Margin = new Padding(2);
             BuscarButton.Name = "BuscarButton";
-            BuscarButton.Size = new Size(128, 30);
+            BuscarButton.Size = new Size(136, 40);
             BuscarButton.TabIndex = 13;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
@@ -122,7 +123,7 @@
             // FechaOrdenPreparacionLabel
             // 
             FechaOrdenPreparacionLabel.AutoSize = true;
-            FechaOrdenPreparacionLabel.Location = new Point(14, 154);
+            FechaOrdenPreparacionLabel.Location = new Point(492, 86);
             FechaOrdenPreparacionLabel.Margin = new Padding(2, 0, 2, 0);
             FechaOrdenPreparacionLabel.Name = "FechaOrdenPreparacionLabel";
             FechaOrdenPreparacionLabel.Size = new Size(91, 20);
@@ -132,17 +133,17 @@
             // FechaDesdeOPPicker
             // 
             FechaDesdeOPPicker.Checked = false;
-            FechaDesdeOPPicker.Location = new Point(14, 176);
+            FechaDesdeOPPicker.Location = new Point(492, 108);
             FechaDesdeOPPicker.Margin = new Padding(2);
             FechaDesdeOPPicker.Name = "FechaDesdeOPPicker";
             FechaDesdeOPPicker.ShowCheckBox = true;
-            FechaDesdeOPPicker.Size = new Size(191, 27);
+            FechaDesdeOPPicker.Size = new Size(204, 27);
             FechaDesdeOPPicker.TabIndex = 10;
             // 
             // PrioridadOrdenPreparacionLabel
             // 
             PrioridadOrdenPreparacionLabel.AutoSize = true;
-            PrioridadOrdenPreparacionLabel.Location = new Point(174, 90);
+            PrioridadOrdenPreparacionLabel.Location = new Point(251, 88);
             PrioridadOrdenPreparacionLabel.Margin = new Padding(2, 0, 2, 0);
             PrioridadOrdenPreparacionLabel.Name = "PrioridadOrdenPreparacionLabel";
             PrioridadOrdenPreparacionLabel.Size = new Size(70, 20);
@@ -153,10 +154,10 @@
             // 
             PrioridadOrdenPreparacionCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             PrioridadOrdenPreparacionCombo.FormattingEnabled = true;
-            PrioridadOrdenPreparacionCombo.Location = new Point(174, 110);
+            PrioridadOrdenPreparacionCombo.Location = new Point(251, 110);
             PrioridadOrdenPreparacionCombo.Margin = new Padding(2);
             PrioridadOrdenPreparacionCombo.Name = "PrioridadOrdenPreparacionCombo";
-            PrioridadOrdenPreparacionCombo.Size = new Size(137, 28);
+            PrioridadOrdenPreparacionCombo.Size = new Size(204, 28);
             PrioridadOrdenPreparacionCombo.TabIndex = 8;
             // 
             // EstadoOrdenPreparacionLabel
@@ -176,13 +177,13 @@
             EstadoOrdenPreparacionCombo.Location = new Point(14, 110);
             EstadoOrdenPreparacionCombo.Margin = new Padding(2);
             EstadoOrdenPreparacionCombo.Name = "EstadoOrdenPreparacionCombo";
-            EstadoOrdenPreparacionCombo.Size = new Size(137, 28);
+            EstadoOrdenPreparacionCombo.Size = new Size(204, 28);
             EstadoOrdenPreparacionCombo.TabIndex = 6;
             // 
             // NombreClienteLabel
             // 
             NombreClienteLabel.AutoSize = true;
-            NombreClienteLabel.Location = new Point(427, 90);
+            NombreClienteLabel.Location = new Point(492, 22);
             NombreClienteLabel.Margin = new Padding(2, 0, 2, 0);
             NombreClienteLabel.Name = "NombreClienteLabel";
             NombreClienteLabel.Size = new Size(114, 20);
@@ -193,16 +194,16 @@
             // 
             NombreClienteCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             NombreClienteCombo.FormattingEnabled = true;
-            NombreClienteCombo.Location = new Point(427, 110);
+            NombreClienteCombo.Location = new Point(492, 44);
             NombreClienteCombo.Margin = new Padding(2);
             NombreClienteCombo.Name = "NombreClienteCombo";
-            NombreClienteCombo.Size = new Size(297, 28);
+            NombreClienteCombo.Size = new Size(442, 28);
             NombreClienteCombo.TabIndex = 4;
             // 
             // IdClienteLabel
             // 
             IdClienteLabel.AutoSize = true;
-            IdClienteLabel.Location = new Point(427, 22);
+            IdClienteLabel.Location = new Point(251, 22);
             IdClienteLabel.Margin = new Padding(2, 0, 2, 0);
             IdClienteLabel.Name = "IdClienteLabel";
             IdClienteLabel.Size = new Size(74, 20);
@@ -213,10 +214,10 @@
             // 
             IdClienteCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             IdClienteCombo.FormattingEnabled = true;
-            IdClienteCombo.Location = new Point(427, 44);
+            IdClienteCombo.Location = new Point(251, 44);
             IdClienteCombo.Margin = new Padding(2);
             IdClienteCombo.Name = "IdClienteCombo";
-            IdClienteCombo.Size = new Size(297, 28);
+            IdClienteCombo.Size = new Size(204, 28);
             IdClienteCombo.TabIndex = 2;
             // 
             // IdOrdenPreparacionLabel
@@ -236,27 +237,27 @@
             IdOrdenPreparacionCombo.Location = new Point(14, 44);
             IdOrdenPreparacionCombo.Margin = new Padding(2);
             IdOrdenPreparacionCombo.Name = "IdOrdenPreparacionCombo";
-            IdOrdenPreparacionCombo.Size = new Size(297, 28);
+            IdOrdenPreparacionCombo.Size = new Size(204, 28);
             IdOrdenPreparacionCombo.TabIndex = 0;
             // 
             // ListaOrdenesPreparacionGroup
             // 
             ListaOrdenesPreparacionGroup.Controls.Add(OrdenesPreparacionList);
-            ListaOrdenesPreparacionGroup.Location = new Point(14, 270);
+            ListaOrdenesPreparacionGroup.Location = new Point(22, 293);
             ListaOrdenesPreparacionGroup.Margin = new Padding(2);
             ListaOrdenesPreparacionGroup.Name = "ListaOrdenesPreparacionGroup";
             ListaOrdenesPreparacionGroup.Padding = new Padding(2);
-            ListaOrdenesPreparacionGroup.Size = new Size(750, 248);
+            ListaOrdenesPreparacionGroup.Size = new Size(949, 248);
             ListaOrdenesPreparacionGroup.TabIndex = 1;
             ListaOrdenesPreparacionGroup.TabStop = false;
             // 
             // OrdenesPreparacionList
             // 
             OrdenesPreparacionList.Columns.AddRange(new ColumnHeader[] { IdOrdenColumna, idClienteColumna, nombreClienteColumna, estadoOrdenColumna, FechaEmisionColumna, fechaOrdenColumna });
-            OrdenesPreparacionList.Location = new Point(17, 26);
+            OrdenesPreparacionList.Location = new Point(14, 24);
             OrdenesPreparacionList.Margin = new Padding(2);
             OrdenesPreparacionList.Name = "OrdenesPreparacionList";
-            OrdenesPreparacionList.Size = new Size(729, 206);
+            OrdenesPreparacionList.Size = new Size(920, 206);
             OrdenesPreparacionList.TabIndex = 0;
             OrdenesPreparacionList.UseCompatibleStateImageBehavior = false;
             OrdenesPreparacionList.View = View.Details;
@@ -265,39 +266,39 @@
             // IdOrdenColumna
             // 
             IdOrdenColumna.Text = "ID Orden";
-            IdOrdenColumna.Width = 90;
+            IdOrdenColumna.Width = 100;
             // 
             // idClienteColumna
             // 
             idClienteColumna.Text = "ID Cliente";
-            idClienteColumna.Width = 90;
+            idClienteColumna.Width = 100;
             // 
             // nombreClienteColumna
             // 
             nombreClienteColumna.Text = "Nombre Cliente";
-            nombreClienteColumna.Width = 150;
+            nombreClienteColumna.Width = 200;
             // 
             // estadoOrdenColumna
             // 
             estadoOrdenColumna.Text = "Estado";
-            estadoOrdenColumna.Width = 100;
+            estadoOrdenColumna.Width = 150;
             // 
             // FechaEmisionColumna
             // 
             FechaEmisionColumna.Text = "Fecha de Emision";
-            FechaEmisionColumna.Width = 140;
+            FechaEmisionColumna.Width = 160;
             // 
             // fechaOrdenColumna
             // 
             fechaOrdenColumna.Text = "Fecha de Estado";
-            fechaOrdenColumna.Width = 140;
+            fechaOrdenColumna.Width = 160;
             // 
             // VolverListaButton
             // 
-            VolverListaButton.Location = new Point(635, 762);
+            VolverListaButton.Location = new Point(848, 818);
             VolverListaButton.Margin = new Padding(2);
             VolverListaButton.Name = "VolverListaButton";
-            VolverListaButton.Size = new Size(128, 30);
+            VolverListaButton.Size = new Size(122, 40);
             VolverListaButton.TabIndex = 14;
             VolverListaButton.Text = "Volver";
             VolverListaButton.UseVisualStyleBackColor = true;
@@ -309,7 +310,7 @@
             ProductosList.Location = new Point(16, 26);
             ProductosList.Margin = new Padding(2);
             ProductosList.Name = "ProductosList";
-            ProductosList.Size = new Size(729, 206);
+            ProductosList.Size = new Size(918, 206);
             ProductosList.TabIndex = 15;
             ProductosList.UseCompatibleStateImageBehavior = false;
             ProductosList.View = View.Details;
@@ -322,33 +323,44 @@
             // Producto
             // 
             Producto.Text = "Producto";
-            Producto.Width = 250;
+            Producto.Width = 300;
             // 
             // Cantidad
             // 
             Cantidad.Text = "Cantidad";
-            Cantidad.Width = 80;
+            Cantidad.Width = 150;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(ProductosList);
-            groupBox1.Location = new Point(15, 510);
+            groupBox1.Location = new Point(22, 545);
             groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(2);
-            groupBox1.Size = new Size(750, 248);
+            groupBox1.Size = new Size(948, 248);
             groupBox1.TabIndex = 16;
             groupBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(22, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(414, 34);
+            label2.TabIndex = 17;
+            label2.Text = "Lista Ordenes de Preparación";
             // 
             // ListarOrdenPreparacionForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(779, 798);
+            ClientSize = new Size(996, 874);
+            Controls.Add(label2);
+            Controls.Add(groupBox1);
             Controls.Add(VolverListaButton);
             Controls.Add(ListaOrdenesPreparacionGroup);
             Controls.Add(ListarOrdenesPreparacionGroup);
-            Controls.Add(groupBox1);
             Margin = new Padding(2);
             Name = "ListarOrdenPreparacionForm";
             Text = "Listar Órdenes de Preparación";
@@ -358,6 +370,7 @@
             ListaOrdenesPreparacionGroup.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -392,5 +405,6 @@
         private ColumnHeader Producto;
         private ColumnHeader Cantidad;
         private GroupBox groupBox1;
+        private Label label2;
     }
 }
