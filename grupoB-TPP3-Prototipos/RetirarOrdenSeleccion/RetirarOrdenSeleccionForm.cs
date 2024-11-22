@@ -93,6 +93,7 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
                 if (producto.Cantidad > 0)
                 {
                     var item = new ListViewItem(producto.Ubicacion);
+                    item.SubItems.Add(producto.SKUProducto); // agregue estooo
                     item.SubItems.Add(producto.DescripcionProducto);
                     item.SubItems.Add(producto.Cantidad.ToString());
 
