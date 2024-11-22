@@ -120,6 +120,7 @@
             // listProducto
             // 
             listProducto.Columns.AddRange(new ColumnHeader[] { columnSKUProducto, columnDescripcionProducto, columnCliente, columnCantComprometida, columnTotal });
+            listProducto.FullRowSelect = true;
             listProducto.Location = new Point(21, 235);
             listProducto.Name = "listProducto";
             listProducto.Size = new Size(854, 277);
@@ -156,6 +157,7 @@
             // listDetalle
             // 
             listDetalle.Columns.AddRange(new ColumnHeader[] { columnDeposito, columnUbicacion, columnCantidad });
+            listDetalle.FullRowSelect = true;
             listDetalle.Location = new Point(21, 530);
             listDetalle.Name = "listDetalle";
             listDetalle.Size = new Size(854, 277);

@@ -66,6 +66,7 @@
             // GenerarOrdenSeleccionBuscarList
             // 
             GenerarOrdenSeleccionBuscarList.Columns.AddRange(new ColumnHeader[] { IdOrdenPreparacionColumna, ClienteOSColumna, FechaOPColumna });
+            GenerarOrdenSeleccionBuscarList.FullRowSelect = true;
             GenerarOrdenSeleccionBuscarList.Location = new Point(22, 365);
             GenerarOrdenSeleccionBuscarList.Name = "GenerarOrdenSeleccionBuscarList";
             GenerarOrdenSeleccionBuscarList.Size = new Size(468, 195);
@@ -227,6 +228,7 @@
             // DetalleOSList
             // 
             DetalleOSList.Columns.AddRange(new ColumnHeader[] { ProductoColumna, CantidadColumna });
+            DetalleOSList.FullRowSelect = true;
             DetalleOSList.Location = new Point(505, 395);
             DetalleOSList.Name = "DetalleOSList";
             DetalleOSList.Size = new Size(410, 165);

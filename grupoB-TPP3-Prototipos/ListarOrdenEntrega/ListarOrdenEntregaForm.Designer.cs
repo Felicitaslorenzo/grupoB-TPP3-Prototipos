@@ -95,6 +95,7 @@
             // ListarOrdenEntregaList
             // 
             ListarOrdenEntregaList.Columns.AddRange(new ColumnHeader[] { IdOrdenEntregaColumna, FechaOEColumna, FechaEstadoOEColumna, Estado2Columna });
+            ListarOrdenEntregaList.FullRowSelect = true;
             ListarOrdenEntregaList.Location = new Point(12, 300);
             ListarOrdenEntregaList.Name = "ListarOrdenEntregaList";
             ListarOrdenEntregaList.Size = new Size(853, 245);
@@ -203,6 +204,7 @@
             // DetalleOrdenesPreparacionList
             // 
             DetalleOrdenesPreparacionList.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader3, columnHeader4 });
+            DetalleOrdenesPreparacionList.FullRowSelect = true;
             DetalleOrdenesPreparacionList.Location = new Point(12, 562);
             DetalleOrdenesPreparacionList.Name = "DetalleOrdenesPreparacionList";
             DetalleOrdenesPreparacionList.Size = new Size(853, 245);

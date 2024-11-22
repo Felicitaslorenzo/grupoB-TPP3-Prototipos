@@ -267,6 +267,7 @@
             // OrdenesPreparacionList
             // 
             OrdenesPreparacionList.Columns.AddRange(new ColumnHeader[] { IdOrdenColumna, idClienteColumna, nombreClienteColumna, estadoOrdenColumna, FechaEmisionColumna, fechaOrdenColumna });
+            OrdenesPreparacionList.FullRowSelect = true;
             OrdenesPreparacionList.Location = new Point(14, 24);
             OrdenesPreparacionList.Margin = new Padding(2);
             OrdenesPreparacionList.Name = "OrdenesPreparacionList";
@@ -320,6 +321,7 @@
             // ProductosList
             // 
             ProductosList.Columns.AddRange(new ColumnHeader[] { SKU, Producto, Cantidad });
+            ProductosList.FullRowSelect = true;
             ProductosList.Location = new Point(16, 26);
             ProductosList.Margin = new Padding(2);
             ProductosList.Name = "ProductosList";

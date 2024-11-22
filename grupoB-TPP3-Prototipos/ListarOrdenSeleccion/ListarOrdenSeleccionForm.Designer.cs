@@ -106,6 +106,7 @@
             // ListarOrdenSeleccionList
             // 
             ListarOrdenSeleccionList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccionColumna, FechaEmisionOSColumna, FechaEstadoColumna, EstadoColumna });
+            ListarOrdenSeleccionList.FullRowSelect = true;
             ListarOrdenSeleccionList.Location = new Point(26, 236);
             ListarOrdenSeleccionList.Name = "ListarOrdenSeleccionList";
             ListarOrdenSeleccionList.Size = new Size(735, 195);
@@ -136,7 +137,7 @@
             // 
             // VolverListaButton
             // 
-            VolverListaButton.Location = new Point(626, 871);
+            VolverListaButton.Location = new Point(626, 879);
             VolverListaButton.Margin = new Padding(2);
             VolverListaButton.Name = "VolverListaButton";
             VolverListaButton.Size = new Size(135, 40);
@@ -166,6 +167,7 @@
             // listOrdenPreparacion
             // 
             listOrdenPreparacion.Columns.AddRange(new ColumnHeader[] { IdOrdenPreparacionColumna, ClienteColumna, TransportistaColumna });
+            listOrdenPreparacion.FullRowSelect = true;
             listOrdenPreparacion.Location = new Point(26, 446);
             listOrdenPreparacion.Name = "listOrdenPreparacion";
             listOrdenPreparacion.Size = new Size(735, 195);
@@ -192,7 +194,8 @@
             // ProductosList
             // 
             ProductosList.Columns.AddRange(new ColumnHeader[] { cantidadColumna, DescripcionColumna });
-            ProductosList.Location = new Point(26, 647);
+            ProductosList.FullRowSelect = true;
+            ProductosList.Location = new Point(26, 658);
             ProductosList.Name = "ProductosList";
             ProductosList.Size = new Size(735, 195);
             ProductosList.TabIndex = 23;
@@ -250,7 +253,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(796, 930);
+            ClientSize = new Size(796, 937);
             Controls.Add(groupBox1);
             Controls.Add(label3);
             Controls.Add(VolverListaButton);

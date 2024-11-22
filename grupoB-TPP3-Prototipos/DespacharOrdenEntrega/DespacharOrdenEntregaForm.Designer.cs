@@ -56,6 +56,7 @@
             // ListarOrdenDespacharBuscarList
             // 
             ListarOrdenDespacharBuscarList.Columns.AddRange(new ColumnHeader[] { IdOrdenColumna, IdClienteColumna });
+            ListarOrdenDespacharBuscarList.FullRowSelect = true;
             ListarOrdenDespacharBuscarList.Location = new Point(31, 158);
             ListarOrdenDespacharBuscarList.Name = "ListarOrdenDespacharBuscarList";
             ListarOrdenDespacharBuscarList.Size = new Size(847, 195);
