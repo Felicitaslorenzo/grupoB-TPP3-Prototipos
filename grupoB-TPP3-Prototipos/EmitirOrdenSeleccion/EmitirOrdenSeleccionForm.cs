@@ -347,5 +347,23 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
         {
             label5.Text = $"Se emitirá la Orden Selección con Id: {model.GenerarNuevaOrden()}";
         }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            // Limpiar los filtros de los ComboBox
+            IdOrdenPreparacionCombo.SelectedIndex = 0; // Seleccionar el primer elemento vacío
+            DescripcionClienteCombo.SelectedIndex = 0; // Seleccionar el primer elemento vacío
+            PrioridadCombo.SelectedIndex = -1; // Seleccionar el primer elemento vacío
+
+            // Limpiar los DateTimePickers
+            FechaOSDesdePicker.Checked = false;
+            FechaOSHastaPicker.Checked = false;
+
+            // Volver a cargar todos los datos en los ListView
+            var modelo = new EmitirOrdenSeleccionModel();
+            var ordenesPreparacion = modelo.ObtenerOrdenesPreparacion();
+            CargarOrdenesEnListView(ordenesPreparacion);
+            CargarProductosEnListView(new List<Producto>());
+        }
     }
 }

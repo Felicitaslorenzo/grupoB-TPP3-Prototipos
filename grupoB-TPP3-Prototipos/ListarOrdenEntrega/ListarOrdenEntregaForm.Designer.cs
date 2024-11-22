@@ -51,6 +51,7 @@
             columnHeader4 = new ColumnHeader();
             label2 = new Label();
             groupBox1 = new GroupBox();
+            buttonLimpiar = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -235,6 +236,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(buttonLimpiar);
             groupBox1.Controls.Add(FechaHastaOELabel);
             groupBox1.Controls.Add(FechaHastaOEPicker);
             groupBox1.Controls.Add(label5);
@@ -251,6 +253,16 @@
             groupBox1.Size = new Size(853, 238);
             groupBox1.TabIndex = 55;
             groupBox1.TabStop = false;
+            // 
+            // buttonLimpiar
+            // 
+            buttonLimpiar.Location = new Point(539, 180);
+            buttonLimpiar.Name = "buttonLimpiar";
+            buttonLimpiar.Size = new Size(136, 41);
+            buttonLimpiar.TabIndex = 53;
+            buttonLimpiar.Text = "Limpiar";
+            buttonLimpiar.UseVisualStyleBackColor = true;
+            buttonLimpiar.Click += buttonLimpiar_Click;
             // 
             // ListarOrdenEntregaForm
             // 
@@ -295,5 +307,6 @@
         private ColumnHeader columnHeader4;
         private Label label2;
         private GroupBox groupBox1;
+        private Button buttonLimpiar;
     }
 }

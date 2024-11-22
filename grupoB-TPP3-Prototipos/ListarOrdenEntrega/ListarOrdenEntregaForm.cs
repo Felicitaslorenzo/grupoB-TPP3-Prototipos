@@ -243,6 +243,32 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenEntrega
                 DetalleOrdenesPreparacionList.Items.Add(item);
             }
         }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            // Limpiar los ComboBox, asegurando que se vuelva al valor inicial (vacío)
+            IdClienteCombo.SelectedIndex = -1;
+            IdOrdenCombo.SelectedIndex = -1;
+            EstadoCombo.SelectedIndex = -1;
+
+            // Limpiar los DateTimePicker
+            FechaDesdeOEPicker.Checked = false;
+            FechaHastaOEPicker.Checked = false;
+
+            // Volver a cargar todas las órdenes sin ningún filtro
+            var ordenesEntrega = model.ObtenerOrdenesEntrega();
+
+            if (ordenesEntrega == null || !ordenesEntrega.Any())
+            {
+                MessageBox.Show("No se encontraron órdenes de entrega", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            CargarOrdenesEnListView(ordenesEntrega);  // Cargar todas las órdenes
+
+            // Limpiar detalles de las órdenes de preparación
+            DetalleOrdenesPreparacionList.Items.Clear();
+        }
     }
 }
 
