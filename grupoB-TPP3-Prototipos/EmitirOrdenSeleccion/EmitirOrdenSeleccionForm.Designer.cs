@@ -344,7 +344,6 @@
             Controls.Add(GenerarOrdenSeleccionBuscarList);
             Controls.Add(VolverButton);
             Name = "EmitirOrdenSeleccionForm";
-            Text = "Emitir Orden de Selección";
             Load += EmitirOrdenSeleccionForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

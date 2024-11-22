@@ -363,7 +363,6 @@
             Controls.Add(ListarOrdenesPreparacionGroup);
             Margin = new Padding(2);
             Name = "ListarOrdenPreparacionForm";
-            Text = "Listar Órdenes de Preparación";
             Load += ListarOrdenPreparacionForm_Load_1;
             ListarOrdenesPreparacionGroup.ResumeLayout(false);
             ListarOrdenesPreparacionGroup.PerformLayout();

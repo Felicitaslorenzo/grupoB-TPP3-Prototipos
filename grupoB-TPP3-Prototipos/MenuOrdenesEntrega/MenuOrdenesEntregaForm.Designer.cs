@@ -32,11 +32,12 @@
             buttonDespacharOrdenEntrega = new Button();
             buttonGenerarOrdenEntrega = new Button();
             button1 = new Button();
+            label2 = new Label();
             SuspendLayout();
             // 
             // buttonListarOrdenesEntrega
             // 
-            buttonListarOrdenesEntrega.Location = new Point(222, 146);
+            buttonListarOrdenesEntrega.Location = new Point(259, 215);
             buttonListarOrdenesEntrega.Name = "buttonListarOrdenesEntrega";
             buttonListarOrdenesEntrega.Size = new Size(173, 97);
             buttonListarOrdenesEntrega.TabIndex = 0;
@@ -46,7 +47,7 @@
             // 
             // buttonDespacharOrdenEntrega
             // 
-            buttonDespacharOrdenEntrega.Location = new Point(222, 391);
+            buttonDespacharOrdenEntrega.Location = new Point(259, 460);
             buttonDespacharOrdenEntrega.Name = "buttonDespacharOrdenEntrega";
             buttonDespacharOrdenEntrega.Size = new Size(173, 97);
             buttonDespacharOrdenEntrega.TabIndex = 1;
@@ -56,7 +57,7 @@
             // 
             // buttonGenerarOrdenEntrega
             // 
-            buttonGenerarOrdenEntrega.Location = new Point(222, 266);
+            buttonGenerarOrdenEntrega.Location = new Point(259, 335);
             buttonGenerarOrdenEntrega.Name = "buttonGenerarOrdenEntrega";
             buttonGenerarOrdenEntrega.Size = new Size(173, 97);
             buttonGenerarOrdenEntrega.TabIndex = 2;
@@ -66,7 +67,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(222, 24);
+            button1.Location = new Point(259, 93);
             button1.Name = "button1";
             button1.Size = new Size(173, 97);
             button1.TabIndex = 3;
@@ -74,18 +75,29 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(12, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(371, 34);
+            label2.TabIndex = 61;
+            label2.Text = "Menú Ordenes de Entrega";
+            // 
             // MenuOrdenesEntregaForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(608, 515);
+            ClientSize = new Size(679, 600);
+            Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(buttonGenerarOrdenEntrega);
             Controls.Add(buttonDespacharOrdenEntrega);
             Controls.Add(buttonListarOrdenesEntrega);
             Name = "MenuOrdenesEntregaForm";
-            Text = "MenuOrdenesEntregaForm";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -94,5 +106,6 @@
         private Button buttonDespacharOrdenEntrega;
         private Button buttonGenerarOrdenEntrega;
         private Button button1;
+        private Label label2;
     }
 }

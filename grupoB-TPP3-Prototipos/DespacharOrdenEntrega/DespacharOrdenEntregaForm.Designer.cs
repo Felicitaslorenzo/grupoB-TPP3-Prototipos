@@ -131,7 +131,6 @@
             Controls.Add(TransportistaLabel);
             Controls.Add(IdOrdenEntregaCombo);
             Name = "DespacharOrdenEntregaForm";
-            Text = "DespacharOrdenEntregaForm";
             ResumeLayout(false);
             PerformLayout();
         }

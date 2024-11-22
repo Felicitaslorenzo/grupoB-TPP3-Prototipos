@@ -313,7 +313,6 @@
             Controls.Add(ProductosListView);
             Margin = new Padding(1, 2, 1, 2);
             Name = "EmitirOrdenPreparacionForm";
-            Text = "EmitirOrdenPreparacionForm";
             Load += EmitirOrdenPreparacionForm_Load;
             GenerarOrdenesPreparacionGroup.ResumeLayout(false);
             GenerarOrdenesPreparacionGroup.PerformLayout();

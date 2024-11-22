@@ -31,11 +31,12 @@
             buttonListarOrdenesPreparacion = new Button();
             buttonGenerarOrden = new Button();
             buttonConsultarStock = new Button();
+            label2 = new Label();
             SuspendLayout();
             // 
             // buttonListarOrdenesPreparacion
             // 
-            buttonListarOrdenesPreparacion.Location = new Point(272, 21);
+            buttonListarOrdenesPreparacion.Location = new Point(246, 92);
             buttonListarOrdenesPreparacion.Name = "buttonListarOrdenesPreparacion";
             buttonListarOrdenesPreparacion.Size = new Size(200, 123);
             buttonListarOrdenesPreparacion.TabIndex = 0;
@@ -45,7 +46,7 @@
             // 
             // buttonGenerarOrden
             // 
-            buttonGenerarOrden.Location = new Point(272, 160);
+            buttonGenerarOrden.Location = new Point(246, 231);
             buttonGenerarOrden.Name = "buttonGenerarOrden";
             buttonGenerarOrden.Size = new Size(200, 123);
             buttonGenerarOrden.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // buttonConsultarStock
             // 
-            buttonConsultarStock.Location = new Point(272, 298);
+            buttonConsultarStock.Location = new Point(246, 369);
             buttonConsultarStock.Name = "buttonConsultarStock";
             buttonConsultarStock.Size = new Size(200, 123);
             buttonConsultarStock.TabIndex = 2;
@@ -63,18 +64,29 @@
             buttonConsultarStock.UseVisualStyleBackColor = true;
             buttonConsultarStock.Click += buttonConsultarStock_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(12, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(434, 34);
+            label2.TabIndex = 62;
+            label2.Text = "Menú Ordenes de Preparación";
+            // 
             // MenuOrdenesPreparacionForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(740, 443);
+            ClientSize = new Size(679, 551);
+            Controls.Add(label2);
             Controls.Add(buttonConsultarStock);
             Controls.Add(buttonGenerarOrden);
             Controls.Add(buttonListarOrdenesPreparacion);
             Name = "MenuOrdenesPreparacionForm";
-            Text = "MenuOrdenesPreparacionForm";
             Load += MenuOrdenesPreparacionForm_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -82,5 +94,6 @@
         private Button buttonListarOrdenesPreparacion;
         private Button buttonGenerarOrden;
         private Button buttonConsultarStock;
+        private Label label2;
     }
 }

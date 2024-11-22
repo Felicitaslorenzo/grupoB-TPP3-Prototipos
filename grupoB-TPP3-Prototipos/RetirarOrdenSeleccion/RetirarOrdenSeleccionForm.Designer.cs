@@ -148,7 +148,6 @@
             Controls.Add(label2);
             Margin = new Padding(2, 3, 2, 3);
             Name = "RetirarOrdenSeleccionForm";
-            Text = "PrepararOrdenSeleccionForm";
             Load += RetirarOrdenSeleccionForm_Load;
             ResumeLayout(false);
             PerformLayout();

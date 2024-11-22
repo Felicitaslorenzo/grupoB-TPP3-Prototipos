@@ -263,7 +263,6 @@
             Controls.Add(ListarOrdenEntregaList);
             Controls.Add(VolverButton);
             Name = "ListarOrdenEntregaForm";
-            Text = "Listar Ordenes de Entrega";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

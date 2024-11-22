@@ -35,6 +35,7 @@
             label1 = new Label();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
+            label2 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -93,7 +94,7 @@
             // 
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(DepositosCombo);
-            groupBox1.Location = new Point(194, 8);
+            groupBox1.Location = new Point(191, 77);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(336, 109);
             groupBox1.TabIndex = 5;
@@ -104,25 +105,36 @@
             groupBox2.Controls.Add(buttonOrdenesDeEntrega);
             groupBox2.Controls.Add(buttonOrdenesSeleccion);
             groupBox2.Controls.Add(buttonOrdenesPreparacion);
-            groupBox2.Location = new Point(194, 123);
+            groupBox2.Location = new Point(191, 192);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(336, 347);
             groupBox2.TabIndex = 6;
             groupBox2.TabStop = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(12, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(217, 34);
+            label2.TabIndex = 62;
+            label2.Text = "Menú Principal";
+            // 
             // MenuPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(730, 482);
+            ClientSize = new Size(716, 578);
+            Controls.Add(label2);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "MenuPrincipalForm";
-            Text = "MenuPrincipalForm";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -134,5 +146,6 @@
         private Label label1;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
+        private Label label2;
     }
 }

@@ -245,7 +245,6 @@
             Controls.Add(listOrdenPreparacion);
             Controls.Add(ListarOrdenSeleccionList);
             Name = "ListarOrdenSeleccionForm";
-            Text = "ListarOrdenSeleccionForm";
             Load += ListarOrdenSeleccionForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

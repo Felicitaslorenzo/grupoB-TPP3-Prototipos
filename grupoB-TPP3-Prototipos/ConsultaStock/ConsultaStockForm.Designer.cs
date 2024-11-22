@@ -216,7 +216,6 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "ConsultaStockForm";
-            Text = "ConsultaStockForm";
             Load += ConsultaStockForm_Load;
             ResumeLayout(false);
             PerformLayout();

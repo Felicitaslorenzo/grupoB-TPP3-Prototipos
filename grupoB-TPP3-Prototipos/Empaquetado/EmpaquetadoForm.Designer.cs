@@ -110,7 +110,6 @@
             Controls.Add(ListarEmpaquetarOrdenList);
             Controls.Add(VolverButton);
             Name = "EmpaquetadoForm";
-            Text = "EmpaquetadoForm";
             Load += EmpaquetadoForm_Load;
             ResumeLayout(false);
             PerformLayout();

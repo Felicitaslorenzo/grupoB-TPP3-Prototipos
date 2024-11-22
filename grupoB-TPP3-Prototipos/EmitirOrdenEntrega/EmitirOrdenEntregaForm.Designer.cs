@@ -121,7 +121,6 @@
             Margin = new Padding(2);
             MaximizeBox = false;
             Name = "EmitirOrdenEntregaForm";
-            Text = "Emitir Orden de Entrega";
             Load += EmitirOrdenEntregaForm_Load;
             ResumeLayout(false);
             PerformLayout();
