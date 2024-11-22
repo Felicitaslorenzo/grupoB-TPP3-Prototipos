@@ -103,7 +103,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(12, 52);
+            label4.Location = new Point(22, 52);
             label4.Name = "label4";
             label4.Size = new Size(65, 23);
             label4.TabIndex = 56;

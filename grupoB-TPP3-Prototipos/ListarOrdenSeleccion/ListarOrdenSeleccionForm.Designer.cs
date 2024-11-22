@@ -59,19 +59,19 @@
             // 
             IdOrdenSeleccionCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             IdOrdenSeleccionCombo.FormattingEnabled = true;
-            IdOrdenSeleccionCombo.Location = new Point(14, 59);
+            IdOrdenSeleccionCombo.Location = new Point(14, 57);
             IdOrdenSeleccionCombo.Name = "IdOrdenSeleccionCombo";
-            IdOrdenSeleccionCombo.Size = new Size(185, 28);
+            IdOrdenSeleccionCombo.Size = new Size(235, 28);
             IdOrdenSeleccionCombo.TabIndex = 0;
             IdOrdenSeleccionCombo.SelectedIndexChanged += IdOrdenSeleccionCombo_SelectedIndexChanged;
             // 
             // FechaDesdeOSPicker
             // 
             FechaDesdeOSPicker.Checked = false;
-            FechaDesdeOSPicker.Location = new Point(236, 57);
+            FechaDesdeOSPicker.Location = new Point(264, 58);
             FechaDesdeOSPicker.Name = "FechaDesdeOSPicker";
             FechaDesdeOSPicker.ShowCheckBox = true;
-            FechaDesdeOSPicker.Size = new Size(185, 27);
+            FechaDesdeOSPicker.Size = new Size(235, 27);
             FechaDesdeOSPicker.TabIndex = 1;
             // 
             // label1
@@ -86,7 +86,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(236, 34);
+            label2.Location = new Point(264, 34);
             label2.Name = "label2";
             label2.Size = new Size(91, 20);
             label2.TabIndex = 3;
@@ -149,16 +149,16 @@
             // FechaHastaOSPicker
             // 
             FechaHastaOSPicker.Checked = false;
-            FechaHastaOSPicker.Location = new Point(458, 57);
+            FechaHastaOSPicker.Location = new Point(514, 57);
             FechaHastaOSPicker.Name = "FechaHastaOSPicker";
             FechaHastaOSPicker.ShowCheckBox = true;
-            FechaHastaOSPicker.Size = new Size(185, 27);
+            FechaHastaOSPicker.Size = new Size(235, 27);
             FechaHastaOSPicker.TabIndex = 19;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(458, 33);
+            label4.Location = new Point(514, 34);
             label4.Name = "label4";
             label4.Size = new Size(86, 20);
             label4.TabIndex = 21;

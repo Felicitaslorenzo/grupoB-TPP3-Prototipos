@@ -266,7 +266,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(22, 20);
+            label3.Location = new Point(12, 19);
             label3.Name = "label3";
             label3.Size = new Size(355, 34);
             label3.TabIndex = 22;
@@ -292,7 +292,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(22, 78);
+            label4.Location = new Point(22, 74);
             label4.Name = "label4";
             label4.Size = new Size(65, 23);
             label4.TabIndex = 24;
