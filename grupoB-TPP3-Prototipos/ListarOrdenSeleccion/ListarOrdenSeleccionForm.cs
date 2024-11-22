@@ -38,8 +38,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
         {
             // Obtener los valores seleccionados
             string idOrdenSeleccionada = IdOrdenSeleccionCombo.Text;
-            DateTime fechaDesdeSeleccionada = FechaDesdeOSPicker.Value.Date;  
-            DateTime fechaHastaSeleccionada = FechaHastaOSPicker.Value.Date;  
+            DateTime fechaDesdeSeleccionada = FechaDesdeOSPicker.Value.Date;
+            DateTime fechaHastaSeleccionada = FechaHastaOSPicker.Value.Date;
 
             // Validar si al menos un filtro está activo
             if (string.IsNullOrEmpty(idOrdenSeleccionada) && !FechaDesdeOSPicker.Checked && !FechaHastaOSPicker.Checked)
@@ -125,7 +125,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
 
             // Cargar datos en los ComboBox
             IdOrdenSeleccionCombo.Items.AddRange(idOrdenesSeleccion.ToArray());
-           
+
 
             // Llenar ListView
             ListarOrdenSeleccionList.Items.Clear(); // Limpiar antes de llenar
@@ -155,6 +155,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
         {
             // Limpiar la lista de órdenes de preparación antes de cargar los nuevos
             listOrdenPreparacion.Items.Clear();
+            ProductosList.Items.Clear();
 
             // Verificar si hay una selección
             if (ListarOrdenSeleccionList.SelectedItems.Count > 0)
@@ -196,7 +197,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
 
                 // Buscar la orden de preparación en el modelo de datos
                 var ordenPreparacionSeleccionada = modelo.OrdenesSeleccionadas
-                    .SelectMany(o => o.OrdenesPreparacion) 
+                    .SelectMany(o => o.OrdenesPreparacion)
                     .FirstOrDefault(op => op.IdOrden == idOrdenPreparacionSeleccionada);
 
                 if (ordenPreparacionSeleccionada != null)
@@ -209,7 +210,7 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
                     {
                         ListViewItem item = new ListViewItem();
                         item.Text = producto.Cantidad.ToString(); // Agregar la cantidad como subitem
-                        item.SubItems.Add(producto.DescripcionProducto); 
+                        item.SubItems.Add(producto.DescripcionProducto);
 
                         // Agregar el item a la lista
                         ProductosList.Items.Add(item);
@@ -220,6 +221,43 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenSeleccion
 
         private void IdOrdenSeleccionCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            // Limpiar el ComboBox de orden seleccionada (restablecer a vacío)
+            IdOrdenSeleccionCombo.SelectedIndex = -1;
+
+            // Desmarcar los DateTimePicker (si están marcados)
+            FechaDesdeOSPicker.Checked = false;
+            FechaHastaOSPicker.Checked = false;
+
+            // Limpiar las listas de items de los otros ListView
+            listOrdenPreparacion.Items.Clear();
+            ProductosList.Items.Clear();
+
+            // Volver a cargar todas las órdenes en el ListView ListarOrdenSeleccionList
+            var ordenesSeleccion = modelo.OrdenesSeleccionadas;
+
+            // Limpiar el ListView antes de agregar los elementos
+            ListarOrdenSeleccionList.Items.Clear();
+
+            // Agregar todas las órdenes al ListView
+            foreach (var ordenSeleccion in ordenesSeleccion)
+            {
+                ListViewItem item = new ListViewItem
+                {
+                    Text = ordenSeleccion.IdOrdenSeleccion.ToString(),
+                    SubItems =
+            {
+                ordenSeleccion.FechaEmision.ToString("dd/MM/yyyy"),
+                ordenSeleccion.FechaEstado.ToString("dd/MM/yyyy"),
+                ordenSeleccion.Estado
+            }
+                };
+
+                ListarOrdenSeleccionList.Items.Add(item);
+            }
         }
     }
 }

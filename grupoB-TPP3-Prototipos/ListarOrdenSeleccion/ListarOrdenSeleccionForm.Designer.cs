@@ -50,6 +50,7 @@
             DescripcionColumna = new ColumnHeader();
             label3 = new Label();
             groupBox1 = new GroupBox();
+            buttonLimpiar = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -220,6 +221,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(buttonLimpiar);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(FechaHastaOSPicker);
             groupBox1.Controls.Add(BuscarButton);
@@ -232,6 +234,16 @@
             groupBox1.Size = new Size(766, 174);
             groupBox1.TabIndex = 25;
             groupBox1.TabStop = false;
+            // 
+            // buttonLimpiar
+            // 
+            buttonLimpiar.Location = new Point(440, 116);
+            buttonLimpiar.Name = "buttonLimpiar";
+            buttonLimpiar.Size = new Size(136, 40);
+            buttonLimpiar.TabIndex = 55;
+            buttonLimpiar.Text = "Limpiar";
+            buttonLimpiar.UseVisualStyleBackColor = true;
+            buttonLimpiar.Click += buttonLimpiar_Click;
             // 
             // ListarOrdenSeleccionForm
             // 
@@ -277,5 +289,6 @@
         private ColumnHeader DescripcionColumna;
         private Label label3;
         private GroupBox groupBox1;
+        private Button buttonLimpiar;
     }
 }

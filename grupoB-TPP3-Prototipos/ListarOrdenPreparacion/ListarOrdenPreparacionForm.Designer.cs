@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             ListarOrdenesPreparacionGroup = new GroupBox();
+            buttonLimpiar = new Button();
             label1 = new Label();
             FechaHastaOPPicker = new DateTimePicker();
             BuscarButton = new Button();
@@ -66,6 +67,7 @@
             // 
             // ListarOrdenesPreparacionGroup
             // 
+            ListarOrdenesPreparacionGroup.Controls.Add(buttonLimpiar);
             ListarOrdenesPreparacionGroup.Controls.Add(label1);
             ListarOrdenesPreparacionGroup.Controls.Add(FechaHastaOPPicker);
             ListarOrdenesPreparacionGroup.Controls.Add(BuscarButton);
@@ -88,6 +90,16 @@
             ListarOrdenesPreparacionGroup.Size = new Size(949, 233);
             ListarOrdenesPreparacionGroup.TabIndex = 0;
             ListarOrdenesPreparacionGroup.TabStop = false;
+            // 
+            // buttonLimpiar
+            // 
+            buttonLimpiar.Location = new Point(626, 177);
+            buttonLimpiar.Name = "buttonLimpiar";
+            buttonLimpiar.Size = new Size(136, 40);
+            buttonLimpiar.TabIndex = 54;
+            buttonLimpiar.Text = "Limpiar";
+            buttonLimpiar.UseVisualStyleBackColor = true;
+            buttonLimpiar.Click += buttonLimpiar_Click;
             // 
             // label1
             // 
@@ -406,5 +418,6 @@
         private ColumnHeader Cantidad;
         private GroupBox groupBox1;
         private Label label2;
+        private Button buttonLimpiar;
     }
 }

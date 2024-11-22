@@ -24,21 +24,21 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
             FechaHastaOPPicker.ValueChanged += FechaHastaOSPicker_ValueChanged;
         }
 
-        
-
-    private void FechaDesdeOSPicker_ValueChanged(object? sender, EventArgs e)
-    {
-        FechaDesdeOPPicker.Format = DateTimePickerFormat.Short;
-    }
-
-    private void FechaHastaOSPicker_ValueChanged(object? sender, EventArgs e)
-    {
-        FechaHastaOPPicker.Format = DateTimePickerFormat.Short;
-    }
 
 
-    private void ListarOrdenPreparacionForm_Load(object sender, EventArgs e)
-    {
+        private void FechaDesdeOSPicker_ValueChanged(object? sender, EventArgs e)
+        {
+            FechaDesdeOPPicker.Format = DateTimePickerFormat.Short;
+        }
+
+        private void FechaHastaOSPicker_ValueChanged(object? sender, EventArgs e)
+        {
+            FechaHastaOPPicker.Format = DateTimePickerFormat.Short;
+        }
+
+
+        private void ListarOrdenPreparacionForm_Load(object sender, EventArgs e)
+        {
             var ordenesPreparacion = model.ObtenerOrdenesPreparacion();
 
             // Extraer datos para cada ComboBox
@@ -104,8 +104,8 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
             OrdenesPreparacionList.SelectedIndexChanged += OrdenesPreparacionList_SelectedIndexChanged;
         }
 
-    private void BuscarButton_Click(object sender, EventArgs e)
-    {
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
             // Validar si se ha seleccionado algún filtro
             if (string.IsNullOrEmpty(IdOrdenPreparacionCombo.Text) &&
                 string.IsNullOrEmpty(IdClienteCombo.Text) &&
@@ -201,11 +201,11 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
                         // Agregamos cada producto al ListView de productos
                         foreach (var producto in ordenSeleccionada.Producto)
                         {
-                            ListViewItem item = new ListViewItem(producto.IDProducto); 
-                            item.SubItems.Add(producto.DescripcionProducto); 
-                            item.SubItems.Add(producto.Cantidad.ToString()); 
+                            ListViewItem item = new ListViewItem(producto.IDProducto);
+                            item.SubItems.Add(producto.DescripcionProducto);
+                            item.SubItems.Add(producto.Cantidad.ToString());
 
-                            ProductosList.Items.Add(item); 
+                            ProductosList.Items.Add(item);
                         }
                     }
                     else
@@ -221,6 +221,49 @@ namespace grupoB_TPP3_Prototipos.ListarOrdenPreparacion
         private void VolverListaButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            // Limpiar los ComboBox, asegurando que se vuelva al valor inicial (vacío)
+            IdOrdenPreparacionCombo.SelectedIndex = -1;
+            NombreClienteCombo.SelectedIndex = -1;
+            IdClienteCombo.SelectedIndex = -1;
+            PrioridadOrdenPreparacionCombo.SelectedIndex = -1;
+            EstadoOrdenPreparacionCombo.SelectedIndex = -1;
+
+            // Limpiar los DateTimePicker
+            FechaDesdeOPPicker.Checked = false;
+            FechaHastaOPPicker.Checked = false;
+
+            // Volver a cargar todas las órdenes sin ningún filtro
+            var ordenesPreparacion = model.ObtenerOrdenesPreparacion();
+
+            if (ordenesPreparacion == null || !ordenesPreparacion.Any())
+            {
+                MessageBox.Show("No se encontraron órdenes de preparación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Limpiar el ListView antes de agregar las órdenes
+            OrdenesPreparacionList.Items.Clear();
+
+            // Agregar todas las órdenes al ListView
+            foreach (var ordenPreparacion in ordenesPreparacion)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = ordenPreparacion.IdOrden.ToString();
+                item.SubItems.Add(ordenPreparacion.IdCliente.ToString());
+                item.SubItems.Add(ordenPreparacion.Nombre);
+                item.SubItems.Add(ordenPreparacion.Estado);
+                item.SubItems.Add(ordenPreparacion.FechaEmision.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(ordenPreparacion.FechaEstado.ToString("dd/MM/yyyy"));
+
+                OrdenesPreparacionList.Items.Add(item);
+            }
+
+            // Limpiar la lista de productos
+            ProductosList.Items.Clear();
         }
     }
 }
