@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,6 +41,15 @@ namespace grupoB_TPP3_Prototipos.PrepararOrdenSeleccion
             {
                 // Obtener el ID seleccionado en el ComboBox
                 var idSeleccionado = OrdenSCombo.SelectedItem.ToString();
+
+                // Obtener las órdenes de preparación asociadas
+                var ordenSeleccionada = OrdenSeleccionAlmacen.OrdenesSeleccion
+                    .FirstOrDefault(o => o.IdOrdenSeleccion == idSeleccionado);
+
+                    // Concatenar las órdenes de preparación asociadas
+                    var ordenesPreparacionTexto = string.Join(", ", ordenSeleccionada.OrdenesPreparacion);
+                    label4.Text = $"Órdenes de Preparación asociadas: {ordenesPreparacionTexto}";
+                // Hasta acá lo que añadi
 
                 // Crear una lista con el ID seleccionado (aunque sea solo uno)
                 var ordenesPreparacionIds = new List<string> { idSeleccionado };

@@ -40,12 +40,13 @@
             label3 = new Label();
             OrdenSCombo = new ComboBox();
             label1 = new Label();
+            label4 = new Label();
             SuspendLayout();
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(24, 139);
+            label2.Location = new Point(24, 142);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(139, 20);
@@ -55,7 +56,7 @@
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { UbicacionColumna, SKUColumna, ProductoColumna, CantidadColumna });
-            listView1.Location = new Point(24, 161);
+            listView1.Location = new Point(24, 164);
             listView1.Margin = new Padding(2, 3, 2, 3);
             listView1.Name = "listView1";
             listView1.Size = new Size(909, 192);
@@ -85,7 +86,7 @@
             // 
             // ConfirmarButton
             // 
-            ConfirmarButton.Location = new Point(626, 381);
+            ConfirmarButton.Location = new Point(626, 384);
             ConfirmarButton.Margin = new Padding(2, 3, 2, 3);
             ConfirmarButton.Name = "ConfirmarButton";
             ConfirmarButton.Size = new Size(129, 41);
@@ -96,7 +97,7 @@
             // 
             // CancelarButton
             // 
-            CancelarButton.Location = new Point(804, 381);
+            CancelarButton.Location = new Point(804, 384);
             CancelarButton.Margin = new Padding(2, 3, 2, 3);
             CancelarButton.Name = "CancelarButton";
             CancelarButton.Size = new Size(129, 41);
@@ -135,11 +136,22 @@
             label1.TabIndex = 23;
             label1.Text = "Retirar Orden Selección\r\n";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century", 9F);
+            label4.Location = new Point(24, 407);
+            label4.Name = "label4";
+            label4.Size = new Size(254, 18);
+            label4.TabIndex = 24;
+            label4.Text = "Órdenes de Preparación asociadas:";
+            // 
             // RetirarOrdenSeleccionForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(958, 447);
+            ClientSize = new Size(958, 451);
+            Controls.Add(label4);
             Controls.Add(label1);
             Controls.Add(OrdenSCombo);
             Controls.Add(label3);
@@ -169,5 +181,6 @@
         private ComboBox OrdenSCombo;
         private ColumnHeader SKUColumna;
         private Label label1;
+        private Label label4;
     }
 }
