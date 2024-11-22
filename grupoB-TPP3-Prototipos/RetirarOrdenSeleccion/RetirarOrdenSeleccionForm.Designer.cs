@@ -31,19 +31,20 @@
             label2 = new Label();
             listView1 = new ListView();
             UbicacionColumna = new ColumnHeader();
+            SKUColumna = new ColumnHeader();
             ProductoColumna = new ColumnHeader();
             CantidadColumna = new ColumnHeader();
             ConfirmarButton = new Button();
             CancelarButton = new Button();
             label3 = new Label();
             OrdenSCombo = new ComboBox();
-            SKUColumna = new ColumnHeader();
+            label1 = new Label();
             SuspendLayout();
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(13, 87);
+            label2.Location = new Point(24, 139);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(139, 20);
@@ -53,7 +54,7 @@
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { UbicacionColumna, SKUColumna, ProductoColumna, CantidadColumna });
-            listView1.Location = new Point(13, 109);
+            listView1.Location = new Point(24, 161);
             listView1.Margin = new Padding(2, 3, 2, 3);
             listView1.Name = "listView1";
             listView1.Size = new Size(909, 192);
@@ -64,7 +65,12 @@
             // UbicacionColumna
             // 
             UbicacionColumna.Text = "Ubicación";
-            UbicacionColumna.Width = 100;
+            UbicacionColumna.Width = 140;
+            // 
+            // SKUColumna
+            // 
+            SKUColumna.Text = "SKU Producto";
+            SKUColumna.Width = 120;
             // 
             // ProductoColumna
             // 
@@ -74,14 +80,14 @@
             // CantidadColumna
             // 
             CantidadColumna.Text = "Cantidad";
-            CantidadColumna.Width = 100;
+            CantidadColumna.Width = 120;
             // 
             // ConfirmarButton
             // 
-            ConfirmarButton.Location = new Point(696, 308);
+            ConfirmarButton.Location = new Point(626, 381);
             ConfirmarButton.Margin = new Padding(2, 3, 2, 3);
             ConfirmarButton.Name = "ConfirmarButton";
-            ConfirmarButton.Size = new Size(103, 36);
+            ConfirmarButton.Size = new Size(129, 41);
             ConfirmarButton.TabIndex = 5;
             ConfirmarButton.Text = "Confirmar";
             ConfirmarButton.UseVisualStyleBackColor = true;
@@ -89,10 +95,10 @@
             // 
             // CancelarButton
             // 
-            CancelarButton.Location = new Point(819, 308);
+            CancelarButton.Location = new Point(804, 381);
             CancelarButton.Margin = new Padding(2, 3, 2, 3);
             CancelarButton.Name = "CancelarButton";
-            CancelarButton.Size = new Size(103, 36);
+            CancelarButton.Size = new Size(129, 41);
             CancelarButton.TabIndex = 6;
             CancelarButton.Text = "Cancelar";
             CancelarButton.UseVisualStyleBackColor = true;
@@ -100,7 +106,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(11, 15);
+            label3.Location = new Point(22, 67);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(138, 20);
@@ -111,23 +117,29 @@
             // 
             OrdenSCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             OrdenSCombo.FormattingEnabled = true;
-            OrdenSCombo.Location = new Point(11, 36);
+            OrdenSCombo.Location = new Point(22, 88);
             OrdenSCombo.Margin = new Padding(1);
             OrdenSCombo.Name = "OrdenSCombo";
             OrdenSCombo.Size = new Size(911, 28);
             OrdenSCombo.TabIndex = 15;
             OrdenSCombo.SelectedIndexChanged += OrdenSCombo_SelectedIndexChanged;
             // 
-            // SKUColumna
+            // label1
             // 
-            SKUColumna.Text = "SKU Producto";
-            SKUColumna.Width = 120;
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(13, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(338, 34);
+            label1.TabIndex = 23;
+            label1.Text = "Retirar Orden Selección\r\n";
             // 
             // RetirarOrdenSeleccionForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(933, 372);
+            ClientSize = new Size(958, 447);
+            Controls.Add(label1);
             Controls.Add(OrdenSCombo);
             Controls.Add(label3);
             Controls.Add(CancelarButton);
@@ -153,5 +165,6 @@
         private Label label3;
         private ComboBox OrdenSCombo;
         private ColumnHeader SKUColumna;
+        private Label label1;
     }
 }
