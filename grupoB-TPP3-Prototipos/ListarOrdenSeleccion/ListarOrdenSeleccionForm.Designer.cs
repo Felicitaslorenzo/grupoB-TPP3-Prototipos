@@ -48,22 +48,25 @@
             ProductosList = new ListView();
             cantidadColumna = new ColumnHeader();
             DescripcionColumna = new ColumnHeader();
+            label3 = new Label();
+            groupBox1 = new GroupBox();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // IdOrdenSeleccionCombo
             // 
             IdOrdenSeleccionCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             IdOrdenSeleccionCombo.FormattingEnabled = true;
-            IdOrdenSeleccionCombo.Location = new Point(23, 46);
+            IdOrdenSeleccionCombo.Location = new Point(14, 59);
             IdOrdenSeleccionCombo.Name = "IdOrdenSeleccionCombo";
-            IdOrdenSeleccionCombo.Size = new Size(250, 28);
+            IdOrdenSeleccionCombo.Size = new Size(185, 28);
             IdOrdenSeleccionCombo.TabIndex = 0;
             IdOrdenSeleccionCombo.SelectedIndexChanged += IdOrdenSeleccionCombo_SelectedIndexChanged;
             // 
             // FechaDesdeOSPicker
             // 
             FechaDesdeOSPicker.Checked = false;
-            FechaDesdeOSPicker.Location = new Point(331, 47);
+            FechaDesdeOSPicker.Location = new Point(236, 57);
             FechaDesdeOSPicker.Name = "FechaDesdeOSPicker";
             FechaDesdeOSPicker.ShowCheckBox = true;
             FechaDesdeOSPicker.Size = new Size(185, 27);
@@ -72,7 +75,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(23, 22);
+            label1.Location = new Point(14, 35);
             label1.Name = "label1";
             label1.Size = new Size(136, 20);
             label1.TabIndex = 2;
@@ -81,7 +84,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(331, 24);
+            label2.Location = new Point(236, 34);
             label2.Name = "label2";
             label2.Size = new Size(91, 20);
             label2.TabIndex = 3;
@@ -89,10 +92,10 @@
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(588, 85);
+            BuscarButton.Location = new Point(614, 116);
             BuscarButton.Margin = new Padding(2);
             BuscarButton.Name = "BuscarButton";
-            BuscarButton.Size = new Size(132, 30);
+            BuscarButton.Size = new Size(135, 40);
             BuscarButton.TabIndex = 15;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
@@ -101,7 +104,7 @@
             // ListarOrdenSeleccionList
             // 
             ListarOrdenSeleccionList.Columns.AddRange(new ColumnHeader[] { IdOrdenSeleccionColumna, FechaEmisionOSColumna, FechaEstadoColumna, EstadoColumna });
-            ListarOrdenSeleccionList.Location = new Point(14, 129);
+            ListarOrdenSeleccionList.Location = new Point(26, 236);
             ListarOrdenSeleccionList.Name = "ListarOrdenSeleccionList";
             ListarOrdenSeleccionList.Size = new Size(735, 195);
             ListarOrdenSeleccionList.TabIndex = 16;
@@ -117,24 +120,24 @@
             // FechaEmisionOSColumna
             // 
             FechaEmisionOSColumna.Text = "Fecha Emision";
-            FechaEmisionOSColumna.Width = 160;
+            FechaEmisionOSColumna.Width = 180;
             // 
             // FechaEstadoColumna
             // 
             FechaEstadoColumna.Text = "Fecha Estado";
-            FechaEstadoColumna.Width = 150;
+            FechaEstadoColumna.Width = 180;
             // 
             // EstadoColumna
             // 
             EstadoColumna.Text = "Estado";
-            EstadoColumna.Width = 140;
+            EstadoColumna.Width = 180;
             // 
             // VolverListaButton
             // 
-            VolverListaButton.Location = new Point(621, 767);
+            VolverListaButton.Location = new Point(626, 871);
             VolverListaButton.Margin = new Padding(2);
             VolverListaButton.Name = "VolverListaButton";
-            VolverListaButton.Size = new Size(128, 30);
+            VolverListaButton.Size = new Size(135, 40);
             VolverListaButton.TabIndex = 18;
             VolverListaButton.Text = "Volver";
             VolverListaButton.UseVisualStyleBackColor = true;
@@ -143,16 +146,16 @@
             // FechaHastaOSPicker
             // 
             FechaHastaOSPicker.Checked = false;
-            FechaHastaOSPicker.Location = new Point(544, 48);
+            FechaHastaOSPicker.Location = new Point(458, 57);
             FechaHastaOSPicker.Name = "FechaHastaOSPicker";
             FechaHastaOSPicker.ShowCheckBox = true;
-            FechaHastaOSPicker.Size = new Size(177, 27);
+            FechaHastaOSPicker.Size = new Size(185, 27);
             FechaHastaOSPicker.TabIndex = 19;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(544, 25);
+            label4.Location = new Point(458, 33);
             label4.Name = "label4";
             label4.Size = new Size(86, 20);
             label4.TabIndex = 21;
@@ -161,7 +164,7 @@
             // listOrdenPreparacion
             // 
             listOrdenPreparacion.Columns.AddRange(new ColumnHeader[] { IdOrdenPreparacionColumna, ClienteColumna, TransportistaColumna });
-            listOrdenPreparacion.Location = new Point(14, 340);
+            listOrdenPreparacion.Location = new Point(26, 446);
             listOrdenPreparacion.Name = "listOrdenPreparacion";
             listOrdenPreparacion.Size = new Size(735, 195);
             listOrdenPreparacion.TabIndex = 22;
@@ -177,17 +180,17 @@
             // ClienteColumna
             // 
             ClienteColumna.Text = "Ciente";
-            ClienteColumna.Width = 100;
+            ClienteColumna.Width = 150;
             // 
             // TransportistaColumna
             // 
             TransportistaColumna.Text = "Transportista";
-            TransportistaColumna.Width = 120;
+            TransportistaColumna.Width = 150;
             // 
             // ProductosList
             // 
             ProductosList.Columns.AddRange(new ColumnHeader[] { cantidadColumna, DescripcionColumna });
-            ProductosList.Location = new Point(14, 552);
+            ProductosList.Location = new Point(26, 647);
             ProductosList.Name = "ProductosList";
             ProductosList.Size = new Size(735, 195);
             ProductosList.TabIndex = 23;
@@ -198,32 +201,54 @@
             // cantidadColumna
             // 
             cantidadColumna.Text = "Cantidad";
-            cantidadColumna.Width = 100;
+            cantidadColumna.Width = 140;
             // 
             // DescripcionColumna
             // 
             DescripcionColumna.Text = "Descripción Producto";
             DescripcionColumna.Width = 300;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(12, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(340, 34);
+            label3.TabIndex = 24;
+            label3.Text = "Lista Ordenes Selección";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(FechaHastaOSPicker);
+            groupBox1.Controls.Add(BuscarButton);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(FechaDesdeOSPicker);
+            groupBox1.Controls.Add(IdOrdenSeleccionCombo);
+            groupBox1.Location = new Point(12, 46);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(766, 174);
+            groupBox1.TabIndex = 25;
+            groupBox1.TabStop = false;
+            // 
             // ListarOrdenSeleccionForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(760, 805);
+            ClientSize = new Size(796, 930);
+            Controls.Add(groupBox1);
+            Controls.Add(label3);
+            Controls.Add(VolverListaButton);
             Controls.Add(ProductosList);
             Controls.Add(listOrdenPreparacion);
-            Controls.Add(label4);
-            Controls.Add(FechaHastaOSPicker);
-            Controls.Add(VolverListaButton);
             Controls.Add(ListarOrdenSeleccionList);
-            Controls.Add(BuscarButton);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(FechaDesdeOSPicker);
-            Controls.Add(IdOrdenSeleccionCombo);
             Name = "ListarOrdenSeleccionForm";
             Text = "ListarOrdenSeleccionForm";
             Load += ListarOrdenSeleccionForm_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -250,5 +275,7 @@
         private ListView ProductosList;
         private ColumnHeader cantidadColumna;
         private ColumnHeader DescripcionColumna;
+        private Label label3;
+        private GroupBox groupBox1;
     }
 }
