@@ -26,7 +26,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenPreparacion
 
             //TODO: foreach cliente in clientes bla bla...
             //IdClienteCombo.Items.Add(cliente); //un objeto cliente.
-            label4.Text = $"Se generará la Orden con Id: {modelo.GenerarNuevoIDOrden()}";
+            label4.Text = $"Se emitirá la Orden con Id: {modelo.GenerarNuevoIDOrden()}";
         }
 
         private void FechaOPPicker_ValueChanged(object sender, EventArgs e)

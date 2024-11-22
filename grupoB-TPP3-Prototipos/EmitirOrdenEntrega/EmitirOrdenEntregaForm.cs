@@ -19,7 +19,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
             InitializeComponent();
             MostrarOrdenesActuales(); // Cambiamos para mostrar todas las órdenes del día
         }
-        
+
         // Método para mostrar todas las órdenes de preparación con fecha de entrega actual
         private void MostrarOrdenesActuales()
         {
@@ -172,6 +172,11 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
                 var idSeleccionado = OrdenesEntregalistView.SelectedItems[0].Text;
                 Console.WriteLine($"Orden seleccionada con ID: {idSeleccionado}");
             }
+        }
+
+        private void EmitirOrdenEntregaForm_Load(object sender, EventArgs e)
+        {
+            label4.Text = $"Se emitirá una Orden Entrega con Id: {modelo.GenerarNuevoIDOrden()}";
         }
     }
 }
