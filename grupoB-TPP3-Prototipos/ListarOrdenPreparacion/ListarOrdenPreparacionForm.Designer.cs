@@ -376,6 +376,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2);
             Name = "ListarOrdenPreparacionForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += ListarOrdenPreparacionForm_Load_1;
             ListarOrdenesPreparacionGroup.ResumeLayout(false);
             ListarOrdenesPreparacionGroup.PerformLayout();

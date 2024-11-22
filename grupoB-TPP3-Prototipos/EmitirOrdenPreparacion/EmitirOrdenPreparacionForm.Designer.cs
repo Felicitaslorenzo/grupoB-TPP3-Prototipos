@@ -314,6 +314,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(1, 2, 1, 2);
             Name = "EmitirOrdenPreparacionForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += EmitirOrdenPreparacionForm_Load;
             GenerarOrdenesPreparacionGroup.ResumeLayout(false);
             GenerarOrdenesPreparacionGroup.PerformLayout();

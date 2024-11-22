@@ -218,6 +218,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ConsultaStockForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += ConsultaStockForm_Load;
             ResumeLayout(false);
             PerformLayout();

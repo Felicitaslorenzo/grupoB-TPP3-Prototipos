@@ -258,6 +258,7 @@
             Controls.Add(ListarOrdenSeleccionList);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ListarOrdenSeleccionForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += ListarOrdenSeleccionForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

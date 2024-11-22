@@ -357,6 +357,7 @@
             Controls.Add(VolverButton);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "EmitirOrdenSeleccionForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += EmitirOrdenSeleccionForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

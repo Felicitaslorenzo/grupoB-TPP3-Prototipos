@@ -85,6 +85,7 @@
             Controls.Add(buttonListarOrdenesSeleccion);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MenuOrdenesSeleccionForm";
+            StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);
             PerformLayout();
         }

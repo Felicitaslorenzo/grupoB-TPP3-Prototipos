@@ -149,6 +149,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2, 3, 2, 3);
             Name = "RetirarOrdenSeleccionForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += RetirarOrdenSeleccionForm_Load;
             ResumeLayout(false);
             PerformLayout();

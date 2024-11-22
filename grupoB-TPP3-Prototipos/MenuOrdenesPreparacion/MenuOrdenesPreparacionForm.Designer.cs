@@ -85,6 +85,7 @@
             Controls.Add(buttonListarOrdenesPreparacion);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MenuOrdenesPreparacionForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += MenuOrdenesPreparacionForm_Load;
             ResumeLayout(false);
             PerformLayout();

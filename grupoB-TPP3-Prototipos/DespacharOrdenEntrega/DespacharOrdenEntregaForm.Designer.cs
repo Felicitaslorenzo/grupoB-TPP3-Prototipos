@@ -132,6 +132,7 @@
             Controls.Add(IdOrdenEntregaCombo);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "DespacharOrdenEntregaForm";
+            StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);
             PerformLayout();
         }

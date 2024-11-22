@@ -97,6 +97,7 @@
             Controls.Add(buttonListarOrdenesEntrega);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MenuOrdenesEntregaForm";
+            StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -111,6 +111,7 @@
             Controls.Add(VolverButton);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "EmpaquetadoForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += EmpaquetadoForm_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -122,6 +122,7 @@
             Margin = new Padding(2);
             MaximizeBox = false;
             Name = "EmitirOrdenEntregaForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += EmitirOrdenEntregaForm_Load;
             ResumeLayout(false);
             PerformLayout();

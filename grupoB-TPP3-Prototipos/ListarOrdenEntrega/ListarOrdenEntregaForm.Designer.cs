@@ -276,6 +276,7 @@
             Controls.Add(VolverButton);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ListarOrdenEntregaForm";
+            StartPosition = FormStartPosition.CenterScreen;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

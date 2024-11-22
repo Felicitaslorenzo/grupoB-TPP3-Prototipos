@@ -131,6 +131,7 @@
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MenuPrincipalForm";
+            StartPosition = FormStartPosition.CenterScreen;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
