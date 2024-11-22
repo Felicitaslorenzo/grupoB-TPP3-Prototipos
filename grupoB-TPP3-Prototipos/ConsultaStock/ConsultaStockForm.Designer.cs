@@ -40,6 +40,7 @@
             columnSKUProducto = new ColumnHeader();
             columnDescripcionProducto = new ColumnHeader();
             columnCliente = new ColumnHeader();
+            columnCantComprometida = new ColumnHeader();
             columnTotal = new ColumnHeader();
             listDetalle = new ListView();
             columnDeposito = new ColumnHeader();
@@ -116,7 +117,7 @@
             // 
             // listProducto
             // 
-            listProducto.Columns.AddRange(new ColumnHeader[] { columnSKUProducto, columnDescripcionProducto, columnCliente, columnTotal });
+            listProducto.Columns.AddRange(new ColumnHeader[] { columnSKUProducto, columnDescripcionProducto, columnCliente, columnCantComprometida, columnTotal });
             listProducto.Location = new Point(21, 235);
             listProducto.Name = "listProducto";
             listProducto.Size = new Size(854, 277);
@@ -127,22 +128,27 @@
             // 
             // columnSKUProducto
             // 
-            columnSKUProducto.Text = "SKU Producto";
-            columnSKUProducto.Width = 120;
+            columnSKUProducto.Text = "SKU ";
+            columnSKUProducto.Width = 100;
             // 
             // columnDescripcionProducto
             // 
             columnDescripcionProducto.Text = "Descripción Producto";
-            columnDescripcionProducto.Width = 350;
+            columnDescripcionProducto.Width = 300;
             // 
             // columnCliente
             // 
             columnCliente.Text = "ID Cliente";
             columnCliente.Width = 120;
             // 
+            // columnCantComprometida
+            // 
+            columnCantComprometida.Text = "Cant. Comprometida";
+            columnCantComprometida.Width = 160;
+            // 
             // columnTotal
             // 
-            columnTotal.Text = "Cantidad total";
+            columnTotal.Text = "Cantidad Total";
             columnTotal.Width = 120;
             // 
             // listDetalle
@@ -247,5 +253,6 @@
         private Button buttonVolver;
         private Button buttonLimpiar;
         private Label label4;
+        private ColumnHeader columnCantComprometida;
     }
 }

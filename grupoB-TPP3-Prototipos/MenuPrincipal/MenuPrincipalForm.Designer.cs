@@ -118,9 +118,9 @@
             label2.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(12, 9);
             label2.Name = "label2";
-            label2.Size = new Size(217, 34);
+            label2.Size = new Size(457, 34);
             label2.TabIndex = 62;
-            label2.Text = "Menú Principal";
+            label2.Text = "Menú Principal - Pampazon S.A. ";
             // 
             // MenuPrincipalForm
             // 
