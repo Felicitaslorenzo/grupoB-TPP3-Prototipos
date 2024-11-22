@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RetirarOrdenSeleccionForm));
             label2 = new Label();
             listView1 = new ListView();
             UbicacionColumna = new ColumnHeader();
@@ -147,6 +148,7 @@
             Controls.Add(listView1);
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
             Name = "RetirarOrdenSeleccionForm";
             StartPosition = FormStartPosition.CenterScreen;

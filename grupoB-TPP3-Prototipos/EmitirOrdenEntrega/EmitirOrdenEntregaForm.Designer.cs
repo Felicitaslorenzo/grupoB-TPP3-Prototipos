@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmitirOrdenEntregaForm));
             OrdenesEntregalistView = new ListView();
             IdOrdenPreparacionColumna = new ColumnHeader();
             ClienteColumna = new ColumnHeader();
@@ -119,6 +120,7 @@
             Controls.Add(VolverButton);
             Controls.Add(OrdenesEntregalistView);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             MaximizeBox = false;
             Name = "EmitirOrdenEntregaForm";

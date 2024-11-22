@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuOrdenesSeleccionForm));
             buttonListarOrdenesSeleccion = new Button();
             buttonGenerarOrden = new Button();
             buttonRetirarOrden = new Button();
@@ -84,6 +85,7 @@
             Controls.Add(buttonGenerarOrden);
             Controls.Add(buttonListarOrdenesSeleccion);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MenuOrdenesSeleccionForm";
             StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);

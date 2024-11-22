@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmpaquetadoForm));
             EmpaquetarOrdenButton = new Button();
             ListarEmpaquetarOrdenList = new ListView();
             Producto = new ColumnHeader();
@@ -110,6 +111,7 @@
             Controls.Add(ListarEmpaquetarOrdenList);
             Controls.Add(VolverButton);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EmpaquetadoForm";
             StartPosition = FormStartPosition.CenterScreen;
             Load += EmpaquetadoForm_Load;

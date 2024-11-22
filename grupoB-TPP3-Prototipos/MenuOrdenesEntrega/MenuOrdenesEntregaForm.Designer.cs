@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuOrdenesEntregaForm));
             buttonListarOrdenesEntrega = new Button();
             buttonDespacharOrdenEntrega = new Button();
             buttonGenerarOrdenEntrega = new Button();
@@ -96,6 +97,7 @@
             Controls.Add(buttonDespacharOrdenEntrega);
             Controls.Add(buttonListarOrdenesEntrega);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MenuOrdenesEntregaForm";
             StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);

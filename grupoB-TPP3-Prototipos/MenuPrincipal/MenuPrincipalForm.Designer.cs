@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipalForm));
             buttonOrdenesPreparacion = new Button();
             buttonOrdenesSeleccion = new Button();
             buttonOrdenesDeEntrega = new Button();
@@ -130,6 +131,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MenuPrincipalForm";
             StartPosition = FormStartPosition.CenterScreen;
             groupBox1.ResumeLayout(false);

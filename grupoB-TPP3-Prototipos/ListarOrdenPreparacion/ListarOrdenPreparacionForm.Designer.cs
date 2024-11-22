@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarOrdenPreparacionForm));
             ListarOrdenesPreparacionGroup = new GroupBox();
             buttonLimpiar = new Button();
             label1 = new Label();
@@ -374,6 +375,7 @@
             Controls.Add(ListaOrdenesPreparacionGroup);
             Controls.Add(ListarOrdenesPreparacionGroup);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             Name = "ListarOrdenPreparacionForm";
             StartPosition = FormStartPosition.CenterScreen;

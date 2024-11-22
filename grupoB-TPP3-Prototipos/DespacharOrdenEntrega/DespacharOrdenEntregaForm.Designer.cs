@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DespacharOrdenEntregaForm));
             EmitirOrdenDeDespachoButton = new Button();
             ListarOrdenDespacharBuscarList = new ListView();
             IdOrdenColumna = new ColumnHeader();
@@ -131,6 +132,7 @@
             Controls.Add(TransportistaLabel);
             Controls.Add(IdOrdenEntregaCombo);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "DespacharOrdenEntregaForm";
             StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);

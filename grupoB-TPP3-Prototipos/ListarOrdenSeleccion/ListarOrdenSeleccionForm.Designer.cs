@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarOrdenSeleccionForm));
             IdOrdenSeleccionCombo = new ComboBox();
             FechaDesdeOSPicker = new DateTimePicker();
             label1 = new Label();
@@ -257,6 +258,7 @@
             Controls.Add(listOrdenPreparacion);
             Controls.Add(ListarOrdenSeleccionList);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ListarOrdenSeleccionForm";
             StartPosition = FormStartPosition.CenterScreen;
             Load += ListarOrdenSeleccionForm_Load;

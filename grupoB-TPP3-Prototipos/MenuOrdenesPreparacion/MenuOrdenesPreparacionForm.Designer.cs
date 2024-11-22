@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuOrdenesPreparacionForm));
             buttonListarOrdenesPreparacion = new Button();
             buttonGenerarOrden = new Button();
             buttonConsultarStock = new Button();
@@ -84,6 +85,7 @@
             Controls.Add(buttonGenerarOrden);
             Controls.Add(buttonListarOrdenesPreparacion);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MenuOrdenesPreparacionForm";
             StartPosition = FormStartPosition.CenterScreen;
             Load += MenuOrdenesPreparacionForm_Load;

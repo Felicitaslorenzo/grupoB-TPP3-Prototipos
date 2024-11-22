@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmitirOrdenSeleccionForm));
             GenerarOrdenSeleccionBuscarList = new ListView();
             IdOrdenPreparacionColumna = new ColumnHeader();
             ClienteOSColumna = new ColumnHeader();
@@ -356,6 +357,7 @@
             Controls.Add(GenerarOrdenSeleccionBuscarList);
             Controls.Add(VolverButton);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EmitirOrdenSeleccionForm";
             StartPosition = FormStartPosition.CenterScreen;
             Load += EmitirOrdenSeleccionForm_Load;

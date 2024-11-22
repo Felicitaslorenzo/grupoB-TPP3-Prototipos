@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarOrdenEntregaForm));
             label5 = new Label();
             EstadoCombo = new ComboBox();
             label4 = new Label();
@@ -275,6 +276,7 @@
             Controls.Add(ListarOrdenEntregaList);
             Controls.Add(VolverButton);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ListarOrdenEntregaForm";
             StartPosition = FormStartPosition.CenterScreen;
             groupBox1.ResumeLayout(false);

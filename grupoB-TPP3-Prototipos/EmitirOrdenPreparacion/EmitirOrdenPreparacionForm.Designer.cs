@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmitirOrdenPreparacionForm));
             ProductosListView = new ListView();
             IdProductoColumna = new ColumnHeader();
             DescripcionColumna = new ColumnHeader();
@@ -312,6 +313,7 @@
             Controls.Add(GenerarOrdenesPreparacionGroup);
             Controls.Add(ProductosListView);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(1, 2, 1, 2);
             Name = "EmitirOrdenPreparacionForm";
             StartPosition = FormStartPosition.CenterScreen;
