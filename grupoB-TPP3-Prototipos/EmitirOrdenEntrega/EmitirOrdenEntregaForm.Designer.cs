@@ -118,6 +118,7 @@
             Controls.Add(GenerarOEbutton);
             Controls.Add(VolverButton);
             Controls.Add(OrdenesEntregalistView);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2);
             MaximizeBox = false;
             Name = "EmitirOrdenEntregaForm";

@@ -146,6 +146,7 @@
             Controls.Add(ConfirmarButton);
             Controls.Add(listView1);
             Controls.Add(label2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2, 3, 2, 3);
             Name = "RetirarOrdenSeleccionForm";
             Load += RetirarOrdenSeleccionForm_Load;

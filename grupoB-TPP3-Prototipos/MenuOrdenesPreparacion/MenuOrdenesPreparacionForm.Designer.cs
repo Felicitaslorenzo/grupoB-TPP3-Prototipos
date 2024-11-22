@@ -83,6 +83,7 @@
             Controls.Add(buttonConsultarStock);
             Controls.Add(buttonGenerarOrden);
             Controls.Add(buttonListarOrdenesPreparacion);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MenuOrdenesPreparacionForm";
             Load += MenuOrdenesPreparacionForm_Load;
             ResumeLayout(false);

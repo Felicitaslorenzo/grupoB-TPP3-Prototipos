@@ -244,6 +244,7 @@
             Controls.Add(ProductosList);
             Controls.Add(listOrdenPreparacion);
             Controls.Add(ListarOrdenSeleccionList);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ListarOrdenSeleccionForm";
             Load += ListarOrdenSeleccionForm_Load;
             groupBox1.ResumeLayout(false);

@@ -262,6 +262,7 @@
             Controls.Add(DetalleOrdenesPreparacionList);
             Controls.Add(ListarOrdenEntregaList);
             Controls.Add(VolverButton);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ListarOrdenEntregaForm";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

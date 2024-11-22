@@ -129,6 +129,7 @@
             Controls.Add(label2);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MenuPrincipalForm";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

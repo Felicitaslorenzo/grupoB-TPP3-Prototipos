@@ -160,7 +160,12 @@ namespace grupoB_TPP3_Prototipos.ConsultaStock
                 listProducto.Items.Add(listItem);
             }
 
-            listDetalle.Items.Clear(); 
+            listDetalle.Items.Clear();
+        }
+
+        private void buttonVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

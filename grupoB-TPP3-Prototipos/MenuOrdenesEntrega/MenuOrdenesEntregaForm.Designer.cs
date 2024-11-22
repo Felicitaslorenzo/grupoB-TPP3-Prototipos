@@ -95,6 +95,7 @@
             Controls.Add(buttonGenerarOrdenEntrega);
             Controls.Add(buttonDespacharOrdenEntrega);
             Controls.Add(buttonListarOrdenesEntrega);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MenuOrdenesEntregaForm";
             ResumeLayout(false);
             PerformLayout();

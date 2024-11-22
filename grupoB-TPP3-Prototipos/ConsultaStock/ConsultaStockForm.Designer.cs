@@ -177,6 +177,7 @@
             buttonVolver.TabIndex = 9;
             buttonVolver.Text = "Volver";
             buttonVolver.UseVisualStyleBackColor = true;
+            buttonVolver.Click += buttonVolver_Click;
             // 
             // buttonLimpiar
             // 
@@ -215,6 +216,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ConsultaStockForm";
             Load += ConsultaStockForm_Load;
             ResumeLayout(false);

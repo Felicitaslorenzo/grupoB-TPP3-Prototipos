@@ -343,6 +343,7 @@
             Controls.Add(GenerarOrdenButton);
             Controls.Add(GenerarOrdenSeleccionBuscarList);
             Controls.Add(VolverButton);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "EmitirOrdenSeleccionForm";
             Load += EmitirOrdenSeleccionForm_Load;
             groupBox1.ResumeLayout(false);

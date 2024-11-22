@@ -109,6 +109,7 @@
             Controls.Add(EmpaquetarOrdenButton);
             Controls.Add(ListarEmpaquetarOrdenList);
             Controls.Add(VolverButton);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "EmpaquetadoForm";
             Load += EmpaquetadoForm_Load;
             ResumeLayout(false);

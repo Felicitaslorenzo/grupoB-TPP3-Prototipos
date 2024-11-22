@@ -130,6 +130,7 @@
             Controls.Add(VolverButton);
             Controls.Add(TransportistaLabel);
             Controls.Add(IdOrdenEntregaCombo);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "DespacharOrdenEntregaForm";
             ResumeLayout(false);
             PerformLayout();

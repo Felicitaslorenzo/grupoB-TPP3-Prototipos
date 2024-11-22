@@ -311,6 +311,7 @@
             Controls.Add(EliminarProductoButton);
             Controls.Add(GenerarOrdenesPreparacionGroup);
             Controls.Add(ProductosListView);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(1, 2, 1, 2);
             Name = "EmitirOrdenPreparacionForm";
             Load += EmitirOrdenPreparacionForm_Load;

@@ -361,6 +361,7 @@
             Controls.Add(VolverListaButton);
             Controls.Add(ListaOrdenesPreparacionGroup);
             Controls.Add(ListarOrdenesPreparacionGroup);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2);
             Name = "ListarOrdenPreparacionForm";
             Load += ListarOrdenPreparacionForm_Load_1;

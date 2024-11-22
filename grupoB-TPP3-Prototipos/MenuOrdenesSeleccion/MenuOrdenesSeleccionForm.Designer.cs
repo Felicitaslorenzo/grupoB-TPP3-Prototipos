@@ -83,6 +83,7 @@
             Controls.Add(buttonRetirarOrden);
             Controls.Add(buttonGenerarOrden);
             Controls.Add(buttonListarOrdenesSeleccion);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MenuOrdenesSeleccionForm";
             ResumeLayout(false);
             PerformLayout();
