@@ -89,8 +89,10 @@ namespace grupoB_TPP3_Prototipos.ConsultaStock
                 var listItem = new ListViewItem(producto.SKUProducto); // SKU en la primera columna
                 listItem.SubItems.Add(producto.DescripcionProducto); // Descripción en la segunda columna
                 listItem.SubItems.Add(producto.IdCliente); // Cliente en la tercera columna
-                listItem.SubItems.Add(producto.TotalComprometido.ToString());
                 listItem.SubItems.Add(producto.TotalCantidad.ToString()); // TotalCantidad en la cuarta columna
+                listItem.SubItems.Add(producto.TotalComprometido.ToString());
+                listItem.SubItems.Add(producto.TotalDisponible.ToString());
+
                 listProducto.Items.Add(listItem);
             }
         }

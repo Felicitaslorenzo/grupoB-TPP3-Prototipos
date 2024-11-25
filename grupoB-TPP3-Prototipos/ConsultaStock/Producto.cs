@@ -14,6 +14,7 @@ namespace grupoB_TPP3_Prototipos.ConsultaStock
         public string IdCliente { get; set; }
         public int TotalCantidad { get; set; }
         public int TotalComprometido { get; set; }
+        public int TotalDisponible { get; set; }
         public new List<Inventario> Inventario { get; set; }
     }
 }
