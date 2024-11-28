@@ -198,9 +198,9 @@ namespace grupoB_TPP3_Prototipos.RetirarOrdenSeleccion
             }
 
             // Graba los cambios en cada almacén
-            OrdenSeleccionAlmacen.Grabar();
-            OrdenPreparacionAlmacen.Grabar();
-            ProductoAlmacen.Grabar();
+            //OrdenSeleccionAlmacen.Grabar();
+            //OrdenPreparacionAlmacen.Grabar();
+            //ProductoAlmacen.Grabar();
         }
 
 

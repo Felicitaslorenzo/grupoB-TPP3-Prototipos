@@ -101,7 +101,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenEntrega
                     ordenEntidad.Estado = EstadoOrdenPrepEnum.Preparada; // Cambiar el estado 4
                 }
             }
-            OrdenPreparacionAlmacen.Grabar(); // Grabar el cambio en el archivo JSON
+            // OrdenPreparacionAlmacen.Grabar(); // Grabar el cambio en el archivo JSON
         }
         
 

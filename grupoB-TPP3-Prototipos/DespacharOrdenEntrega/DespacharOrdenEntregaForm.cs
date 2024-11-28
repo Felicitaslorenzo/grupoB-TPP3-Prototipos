@@ -143,7 +143,7 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
                 }
             }
 
-            OrdenPreparacionAlmacen.Grabar(); // VER SI SACAR
+            // OrdenPreparacionAlmacen.Grabar(); // VER SI SACAR
 
             // Genera el nuevo ID de remito
             var nuevoIDRemito = model.GenerarNuevoIDRemito();
@@ -168,7 +168,7 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
 
             // Agrega el nuevo remito al almacenamiento (ahora usando RemitoEnt)
             RemitoAlmacen.AgregarRemito(remitoEnt);  // Aquí agregas el remito al almacenamiento
-            RemitoAlmacen.Grabar(); // AÑADI ESTO 
+            // RemitoAlmacen.Grabar(); // AÑADI ESTO 
 
             // Muestra un mensaje de éxito
             MessageBox.Show($"El remito {nuevoIDRemito} se ha generado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);

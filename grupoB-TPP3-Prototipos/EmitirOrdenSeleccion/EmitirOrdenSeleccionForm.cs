@@ -290,7 +290,7 @@ namespace grupoB_TPP3_Prototipos.GenerarOrdenSelección
                 }
 
                 // Grabar los cambios
-                OrdenPreparacionAlmacen.Grabar();
+                // OrdenPreparacionAlmacen.Grabar();
 
                 // Generar una nueva orden y mostrar el mensaje
                 string mensaje = $"Se generó {nuevaOrdenSeleccion.IdOrdenSeleccion}";

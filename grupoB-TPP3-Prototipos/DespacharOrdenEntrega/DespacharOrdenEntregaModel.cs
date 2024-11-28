@@ -118,7 +118,7 @@ namespace grupoB_TPP3_Prototipos.DespacharOrdenEntrega
             var nuevoIDRemito = $"RM-{numero:D3}";  // El ":D3" asegura que el número tenga 3 dígitos, por ejemplo "RM002"
 
             // Grabar cambios en el archivo JSON
-            RemitoAlmacen.Grabar();
+            // RemitoAlmacen.Grabar();
 
             return nuevoIDRemito;
         }
