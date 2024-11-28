@@ -41,7 +41,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
                 Console.WriteLine($"Excepción capturada: {ex}"); // Para detalles en consola o logs
             }
             */
-            Grabar();
+            // Grabar();
         }
 
         public static void Leer()

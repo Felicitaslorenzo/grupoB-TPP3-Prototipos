@@ -34,7 +34,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
         public static void AgregarOrdenEntrega(OrdenEntregaEnt nuevaOrden)
         {
             ordenesentrega.Add(nuevaOrden);
-            Grabar();
+            // Grabar();
         }
 
         public static void Leer()

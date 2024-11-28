@@ -28,7 +28,7 @@ namespace grupoB_TPP3_Prototipos.Almacenes
             {
                 MessageBox.Show($"Error al escribir en el archivo JSON: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }*/
-            Grabar();
+            // Grabar();
         }
         public static void Grabar()
         {            
