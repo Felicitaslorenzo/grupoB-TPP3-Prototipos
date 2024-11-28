@@ -78,7 +78,7 @@
             // DescripcionColumna
             // 
             DescripcionColumna.Text = "Descripcion Productos";
-            DescripcionColumna.Width = 200;
+            DescripcionColumna.Width = 300;
             // 
             // CantidadColumna
             // 
